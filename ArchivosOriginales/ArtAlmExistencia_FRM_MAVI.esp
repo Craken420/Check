@@ -1,0 +1,12 @@
+[ArtAlmExistencia.frm/Acciones.PorSuritir]
+ActivoCondicion=1=1
+
+
+
+[ArtAlmExistencia.frm/Acciones.Plan]
+ActivoCondicion=(ArtAlmExistencias:Espacios o Usuario.ConsultarCompraPendiente)<BR>y<BR>(((sql(<T>select count(usuario) from(SELECT Usuario FROM USUARIO WHERE acceso in (select Nombre from tablastd where tablast=:tUsu1))x where usuario=:tusu<T>,<T>CFG PERFIL COSTOS VTAS<T>,usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)=<T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)=<T>MERCANCIA DE LINEA<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)<><T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)<><T<CONTINUA>
+ActivoCondicion002=<CONTINUA>>MERCANCIA DE LINEA<T>)))
+[ArtAlmExistencia.frm/Acciones.PorRecibir]
+ActivoCondicion=1=1
+
+

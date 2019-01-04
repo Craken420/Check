@@ -1,0 +1,59 @@
+[CancelarVentaPendiente.dlg/Dialogo]
+ListaAcciones=Todo<BR>VentaPerdida<BR>Indicado<BR>Pendiente
+
+[CancelarVentaPendiente.dlg/Acciones.Indicado]
+Nombre=Indicado
+Boton=0
+NombreDesplegar=Cantidad &Indicada
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+ConfirmarAntes=S
+DialogoMensaje=MovCancelarD
+Expresion=Cancelar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Seleccion<T>)
+Visible=N
+VisibleCondicion=SQL(<T>Select Acceso From usuario Where usuario=:tusr<T>, Usuario )  en (<T>VENTM_GERA<T>,<T>VENTM_AUXA<T>,<T>VENTM_AUDA<T>,<T>VENTM_USRA<T>)
+
+[CancelarVentaPendiente.dlg/Acciones.Pendiente]
+Nombre=Pendiente
+Boton=0
+NombreDesplegar=Todo el &Pendiente
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+ConfirmarAntes=S
+DialogoMensaje=MovCancelarD
+Expresion=Cancelar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Pendiente<T>)
+Visible=N
+VisibleCondicion=SQL(<T>Select Acceso From usuario Where usuario=:tusr<T>, Usuario )  en (<T>VENTM_GERA<T>,<T>VENTM_AUXA<T>,<T>VENTM_AUDA<T>,<T>VENTM_USRA<T>)
+
+[CancelarVentaPendiente.dlg/Acciones.Todo]
+Nombre=Todo
+Boton=0
+NombreDesplegar=&Movimiento Completo
+EnMenu=S
+EnBarraAcciones=S
+ConfirmarAntes=S
+DialogoMensaje=MovCancelarD
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Cancelar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>)
+
+[CancelarVentaPendiente.dlg/Acciones.VentaPerdida]
+Nombre=VentaPerdida
+Boton=0
+NombreDesplegar=Generar Venta &Perdida
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.VentaPerdida)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+Visible=N
+VisibleCondicion=SQL(<T>Select Acceso From usuario Where usuario=:tusr<T>, Usuario )  en (<T>VENTM_GERA<T>,<T>VENTM_AUXA<T>,<T>VENTM_AUDA<T>,<T>VENTM_USRA<T>)
+
+

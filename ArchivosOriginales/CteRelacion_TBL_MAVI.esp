@@ -1,0 +1,174 @@
+;**** Modificacion Anterior:01-Ago-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:Integracion del desarrollo de mexico
+;**** Modificacion Reciente: 28-Nov-08
+;**** Modifico: Edgar Montelongo
+;**** Se modifico: Opciones de Busqueda de Coincidencias
+;**** Nota: Los comentarios de las modificaciones del
+;****       28 de Nov se marcaran como (EM)
+
+
+
+
+;***** Se agregaron nuevos campos: TipoRelacionMAVI, CoincidenciaMAVI ******
+;******* (EM) Nuevos campos agregados CteRelacion.FechaBusqueda, CteRelacion.UsuarioBusqueda, CteRelacion.FechaValidacion ****
+;******* CteRelacion.UsuarioValidacion, CteRelacion.Observaciones, CteRelacion.UltimoCambioB, CteRelacion.UsuarioUltimoCambioB ****
+;******* CteRelacion.UltimoCambioV, CteRelacion.UsuarioUltimoCambioV, CteRelacion.Situacion *****
+[CteRelacion.tbl/Tabla]
+ListaCampos=Cliente<BR>Relacion<BR>TipoRelacionMAVI<BR>CoincidenciaMAVI<BR>FechaBusqueda<BR>UsuarioBusqueda<BR>FechaValidacion<BR>UsuarioValidacion<BR>Observaciones<BR>UltimoCambioB<BR>UsuarioUltimoCambioB<BR>UltimoCambioV<BR>UsuarioUltimoCambioV<BR>Situacion<BR>ID<BR>MaviEstatus
+Nombre=Relacionados
+Singular=Relación
+ListaRelaciones=Cte<BR>CteDestino
+LlavePrimaria=ID
+ControlID=S
+CampoID=ID
+SQL=SELECT<BR>  Cliente,<BR>  Relacion,<BR>  TipoRelacionMAVI,<BR>  CoincidenciaMAVI,<BR>  FechaBusqueda,<BR>  UsuarioBusqueda,<BR>  FechaValidacion,<BR>  UsuarioValidacion,<BR>  Observaciones,<BR>  UltimoCambioB,<BR>  UsuarioUltimoCambioB,<BR>  UltimoCambioV,<BR>  UsuarioUltimoCambioV,<BR>  Situacion,<BR>  ID,<BR>MaviEstatus<BR>FROM<BR>  CteRelacion
+;ListaCampos.Cambios=Insertar<TAB>TipoRelacionMAVI<TAB>2<BR>Insertar<TAB>CoincidenciaMAVI<TAB>3
+;SQL.Cambios=Eliminar<TAB>  Relacion<BR>Insertar<TAB>  Relacion,<TAB>2<BR>Insertar<TAB>  TipoRelacionMAVI,<TAB>3<BR>Insertar<TAB>  CoincidenciaMAVI<TAB>4
+
+[CteRelacion.tbl/Relacion]
+Clave=Relacion
+Nombre=Cliente
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+UnicamenteLectura=S
+
+[CteRelacion.tbl/TipoRelacionMAVI]
+Clave=TipoRelacionMAVI
+Nombre=TipoRelacionMAVI
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+[CteRelacion.tbl/CoincidenciaMAVI]
+Clave=CoincidenciaMAVI
+Nombre=CoincidenciaMAVI
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+[CteRelacion.tbl/FechaBusqueda]
+Clave=FechaBusqueda
+Nombre=FechaBusqueda
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+TipoDatos=FechaHora
+[CteRelacion.tbl/MaviEstatus]
+Clave=MaviEstatus
+Nombre=MaviEstatus
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=30
+TipoDatos=Texto
+Tamano=30
+
+;******* (EM) Nuevos Campos Agregados ******
+[CteRelacion.tbl/UsuarioBusqueda]
+Clave=UsuarioBusqueda
+Nombre=UsuarioBusqueda
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+[CteRelacion.tbl/FechaValidacion]
+Clave=FechaValidacion
+Nombre=FechaValidacion
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+TipoDatos=FechaHora
+ValorRefrescar=Si<BR>  FechaValidacion= Nulo<BR>Entonces<BR>  Hoy+Hora<BR>Sino<BR>  FechaValidacion<BR>Fin
+[CteRelacion.tbl/UsuarioValidacion]
+Clave=UsuarioValidacion
+Nombre=UsuarioValidacion
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Texto
+ValorRefrescar=Si<BR>  UsuarioValidacion= Nulo<BR>Entonces<BR>  Usuario<BR>Sino<BR>  UsuarioValidacion<BR>Fin
+Tamano=10
+
+[CteRelacion.tbl/Observaciones]
+Clave=Observaciones
+Nombre=Observaciones
+Visible=S
+TamanoValidacion=50x3
+Tamano=255
+AlCambiar=Asigna(Info.Observaciones2, Observaciones)<BR>EjecutarSQL(<T>xpCoincidenciasMAVIHistorial :nID, :tUser, :tCliente, :tObserva, :nSituacion<T>,ID,Usuario,Info.ClienteD,Info.Observaciones2,Info.ValidaRel)
+
+[CteRelacion.tbl/UltimoCambioB]
+Clave=UltimoCambioB
+Nombre=UltimoCambioB
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+TipoDatos=FechaHora
+
+[CteRelacion.tbl/UsuarioUltimoCambioB]
+Clave=UsuarioUltimoCambioB
+Nombre=UsuarioUltimoCambioB
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+
+[CteRelacion.tbl/UltimoCambioV]
+Clave=UltimoCambioV
+Nombre=UltimoCambioV
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+TipoDatos=FechaHora
+ValorRefrescar=Si<BR>  FechaValidacion<> Nulo<BR>Entonces<BR>  Hoy+Hora<BR>Sino<BR>  UltimoCambioV<BR>Fin
+
+[CteRelacion.tbl/UsuarioUltimoCambioV]
+Clave=UsuarioUltimoCambioV
+Nombre=UsuarioUltimoCambioV
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Texto
+ValorRefrescar=Si<BR>  FechaValidacion<> Nulo<BR>Entonces<BR>  Usuario<BR>Sino<BR>  UsuarioUltimoCambioV<BR>Fin
+Tamano=10
+
+[CteRelacion.tbl/Situacion]
+Clave=Situacion
+Nombre=Situacion
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Si - No
+AlCambiar=Asigna(Info.ValidaRel, Situacion)<BR>EjecutarSQL('EXEC xpCoincidenciasMAVIHistorial :nID, :tUser, :tCte, :tObserva, :nSit', ID, Usuario, Info.ClienteD, Info.Observaciones2, Info.ValidaRel)
+ListaRefrescar=FechaValidacion<BR>UsuarioValidacion<BR>UltimoCambioV<BR>UsuarioUltimoCambioV
+ConRefrescar=S
+
+[CteRelacion.tbl/ID]
+Clave=ID
+Nombre=ID
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=AutoInc
+UnicamenteLectura=S

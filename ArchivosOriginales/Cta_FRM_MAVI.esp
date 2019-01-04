@@ -1,0 +1,90 @@
+;se agregaron campos a la carpeta detalle para igualar a la forma de contabilidad electronica, asi como mas acciones y un menu mas para esas acciones
+;Fernando Romero Robles  21/04/2015 
+
+[Cta.frm/Forma]
+PosicionInicialIzquierda=243
+PosicionInicialArriba=148
+PosicionInicialAltura=569
+PosicionInicialAncho=793
+ListaAcciones=Guardar<BR>Nueva<BR>Eliminar<BR>Propiedades<BR>CentrosCostos<BR>CtaMov<BR>Anexos<BR>Doc<BR>Presupuesto<BR>Informacion<BR>RepCta<BR>Navegador<BR>Actualizar<BR>Cerrar<BR>CtaCat<BR>CtaGrupo<BR>CtaFam<BR>ContUso<BR>CtaIVA<BR>Otros1<BR>Otros2<BR>Otros3<BR>Otros4<BR>Otros5<BR>Otros6<BR>Otros7<BR>Otros8<BR>Otros9<BR>GenCatalogo<BR>Balanza
+MenuPrincipal=&Archivo<BR>&Edición<BR>&Ver<BR>&Maestros
+
+
+[Cta.frm/Detalle]
+ListaEnCaptura=Cta.Cuenta<BR>Cta.Descripcion<BR>Cta.Tipo<BR>Cta.Bucket<BR>Cta.Rama<BR>CtaLista.Descripcion<BR>Cta.Estatus<BR>Cta.CuentaDistribucion<BR>Cta.EsAcumulativa<BR>Cta.EsAcreedora<BR>Cta.ContSATCFD<BR>Cta.ContSATDin<BR>Cta.ClaveSAT<BR>CodigoAgrupador.Descripcion<BR>CodigoAgrupador.ClaveSup<BR>CodigoAgrupador.Nivel
+
+
+[Cta.frm/Detalle.Cta.ClaveSAT]
+Carpeta=Detalle
+Clave=Cta.ClaveSAT
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=40
+ColorFondo=Blanco
+ColorFuente=Negro
+[Cta.frm/Detalle.CodigoAgrupador.Descripcion]
+Carpeta=Detalle
+Clave=CodigoAgrupador.Descripcion
+Editar=S
+ValidaNombre=S
+3D=S
+Tamano=50
+ColorFondo=Blanco
+ColorFuente=Negro
+[Cta.frm/Detalle.CodigoAgrupador.ClaveSup]
+Carpeta=Detalle
+Clave=CodigoAgrupador.ClaveSup
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=40
+ColorFondo=Blanco
+ColorFuente=Negro
+[Cta.frm/Detalle.CodigoAgrupador.Nivel]
+Carpeta=Detalle
+Clave=CodigoAgrupador.Nivel
+Editar=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+
+
+; **** Archivo creado por Mavi
+;26/dic/2011	Victor Enrique Murillo Torres
+; **** Modificacion: Integracion de accion modificada CtaIVA, CtaCat, CtaGrupo, CtaFam, ContUso por accesos por perfiles, 26/dic/2011 Victor Enrique Murillo Torres, para desarrollo DM0169 Modificaciones Especiales dentro del paquete DM0169_27122011. JR 27-Dic-2011. ****
+
+[Cta.frm/Acciones.CtaIVA]
+Activo=
+ActivoCondicion=SQL(<T>select case when (select Acceso From Usuario Where Usuario=<T>+comillas(usuario)+<T>)<BR>In (Select Nombre From TablaStD Where TablaSt = <T>+comillas(<T>PERFILES MAESTROS ART/AGTE<T>)+<T>)<BR>then 1 else 0 End<T>)=1
+
+[Cta.frm/Acciones.CtaCat]
+Activo=
+ActivoCondicion=SQL(<T>select case when (select Acceso From Usuario Where Usuario=<T>+comillas(usuario)+<T>)<BR>In (Select Nombre From TablaStD Where TablaSt = <T>+comillas(<T>PERFILES MAESTROS ART/AGTE<T>)+<T>)<BR>then 1 else 0 End<T>)=1
+
+[Cta.frm/Acciones.CtaGrupo]
+Activo=
+ActivoCondicion=SQL(<T>select case when (select Acceso From Usuario Where Usuario=<T>+comillas(usuario)+<T>)<BR>In (Select Nombre From TablaStD Where TablaSt = <T>+comillas(<T>PERFILES MAESTROS ART/AGTE<T>)+<T>)<BR>then 1 else 0 End<T>)=1
+
+[Cta.frm/Acciones.CtaFam]
+Activo=
+ActivoCondicion=SQL(<T>select case when (select Acceso From Usuario Where Usuario=<T>+comillas(usuario)+<T>)<BR>In (Select Nombre From TablaStD Where TablaSt = <T>+comillas(<T>PERFILES MAESTROS ART/AGTE<T>)+<T>)<BR>then 1 else 0 End<T>)=1
+
+[Cta.frm/Acciones.ContUso]
+Activo=
+ActivoCondicion=SQL(<T>select case when (select Acceso From Usuario Where Usuario=<T>+comillas(usuario)+<T>)<BR>In (Select Nombre From TablaStD Where TablaSt = <T>+comillas(<T>PERFILES MAESTROS ART/AGTE<T>)+<T>)<BR>then 1 else 0 End<T>)=1
+
+;Se hizo obligatorio el campo clave sat para guardar Fernando Romero 21/04/2015
+[Cta.frm/Acciones.Guardar]
+ConCondicion=S
+EjecucionCondicion=ConDatos(Cta:Cta.ClaveSAT)
+EjecucionMensaje=<T>La Clave SAT es Obligatoria<T>
+EjecucionConError=S
+
+
+

@@ -1,0 +1,9 @@
+; **** Archivos creado por MAVI. JR 26-Dic-2011. ****
+;Jesus Del Toro Andrade 
+;26-12-2011
+;Se Modifica la accion al mostrar para evitar que los usuarios 
+;puedan hacer uso de ella
+
+
+[DemandaPendiente.frm/Forma]
+ExpresionesAlMostrar=Error(<T>No se puede Realizar esta Accion<T>)<BR>Forma.Accion(AbortarOperacion)

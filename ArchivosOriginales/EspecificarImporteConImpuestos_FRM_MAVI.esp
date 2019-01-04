@@ -1,0 +1,6 @@
+;*** Se integro modificacion Anticipos MAVI Moises Garcia 26/03/2009 MAVI0001
+[EspecificarImporteConImpuestos.frm/Forma]
+ExpresionesAlMostrar=Asigna(Info.PorcentajeImpuesto,SQL(<T>Select DefImpuesto from EmpresaGral where Empresa=:tval1<T>,Empresa))
+
+[EspecificarImporteConImpuestos.frm/(Variables).Info.PorcentajeImpuesto]
+Editar=S

@@ -1,0 +1,28 @@
+
+
+
+;**** Nuevos campos agregados: ComisionChoferesMAVI ****
+[Puesto.vis/Vista]
+ListaCampos=Puesto.Puesto<BR>Puesto.Descripcion<BR>Puesto.SueldoDef<BR>Puesto.RequiereExperiencia<BR>Puesto.Titulado<BR>Puesto.TiempoExperienciaRequerido<BR>Puesto.TiempoExperienciaPuesto<BR>Puesto.TiempoExperienciaArea<BR>Puesto.GradoEstudio<BR>Puesto.Conocimientos<BR>Puesto.Idioma1<BR>Puesto.PorcentajeHablado1<BR>Puesto.PorcentajeLectura1<BR>Puesto.PorcentajeEscrito1<BR>Puesto.Idioma2<BR>Puesto.PorcentajeHablado2<BR>Puesto.PorcentajeLectura2<BR>Puesto.PorcentajeEscrito2<BR>Puesto.RequiereViajar<BR>Puesto.RequiereAutomovil<BR>Puesto.RequiereCambioResidencia<BR>Puesto.Actividades<BR>Puesto.EdadMinima<BR>Puesto.EdadMaxima<BR>Puesto.EstadoCivil<BR>Puesto.Sexo<BR>Puesto.SueldoRangoMinimo<BR>Puesto.SueldoRangoMaximo<BR>Puesto.PuestoReporta<BR>Puesto.PuestoSustituye<BR>Puesto.Area<BR>Puesto.Departamento<BR<CONTINUA>
+ListaCampos002=<CONTINUA>>Puesto.Objetivo<BR>Puesto.Alcance<BR>Puesto.Funciones<BR>Puesto.Responsabilidades<BR>Puesto.Autoridad<BR>Puesto.ComisionChoferesMAVI
+SQL=SELECT<BR>  Puesto.Puesto,<BR>  Puesto.Descripcion,<BR>  Puesto.SueldoDef,<BR>  Puesto.RequiereExperiencia,<BR>  Puesto.Titulado,<BR>  Puesto.TiempoExperienciaRequerido,<BR>  Puesto.TiempoExperienciaPuesto,<BR>  Puesto.TiempoExperienciaArea,<BR>  Puesto.GradoEstudio,<BR>  Puesto.Conocimientos,<BR>  Puesto.Idioma1,<BR>  Puesto.PorcentajeHablado1,<BR>  Puesto.PorcentajeLectura1,<BR>  Puesto.PorcentajeEscrito1,<BR>  Puesto.Idioma2,<BR>  Puesto.PorcentajeHablado2,<BR>  Puesto.PorcentajeLectura2,<BR>  Puesto.PorcentajeEscrito2,<BR>  Puesto.RequiereViajar,<BR>  Puesto.RequiereAutomovil,<BR>  Puesto.RequiereCambioResidencia,<BR>  Puesto.Actividades,<BR>  Puesto.EdadMinima,<BR>  Puesto.EdadMaxima,<BR>  Puesto.EstadoCivil,<BR>  Puesto.Sexo,<BR>  Puesto.SueldoRangoMinimo,<BR>  Puesto.SueldoRangoMaxi<CONTINUA>
+SQL002=<CONTINUA>mo,<BR>  Puesto.PuestoReporta,<BR>  Puesto.PuestoSustituye,<BR>  Puesto.Area,<BR>  Puesto.Departamento,<BR>  Puesto.Objetivo,<BR>  Puesto.Alcance,<BR>  Puesto.Funciones,<BR>  Puesto.Responsabilidades,<BR>  Puesto.Autoridad,<BR>  Puesto.ComisionChoferesMAVI<BR><BR>FROM<BR>  Puesto
+
+
+
+;**** Nuevo campo agregado ARC 28-Feb-09 ****
+[Puesto.vis/Puesto.ComisionChoferesMAVI]
+Clave=Puesto.ComisionChoferesMAVI
+Nombre=Comisión Choferes
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+LigaTabla=Puesto
+LigaCampo=ComisionChoferesMAVI
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=ComisionChoferesMAVI
+
+
+
+

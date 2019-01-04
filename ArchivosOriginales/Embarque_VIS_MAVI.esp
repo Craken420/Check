@@ -1,0 +1,167 @@
+;**** Ultima modificación:26-May-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:
+
+
+
+
+;***** Se agrego un nuevo campo: Embarque.FleteMagisterio GRB 18-Feb-2010
+;***** Se agregaron nuevos campos: LicenciaAgente, Agente2, LicenciaAgente2, Vehiculo.TipoUnidadVehicular, Ruta.Ruta, Ruta.kms ****
+;***** Se agrego una nueva tabla en la vista: Ruta
+;***** Se agrego una nueva relacion: Embarque.Ruta
+[Embarque.vis/Vista]
+ListaTablas=Embarque<BR>Vehiculo<BR>Agente<BR>Prov<BR>UEN<BR>Personal<BR>CtaDinero<BR>AgenteAux<BR>Ruta
+ListaCampos=Embarque.ID<BR>Embarque.Empresa<BR>Embarque.Mov<BR>Embarque.MovID<BR>Embarque.FechaEmision<BR>Embarque.ProgramadoPara<BR>Embarque.UltimoCambio<BR>Embarque.Proyecto<BR>Embarque.Usuario<BR>Embarque.Autorizacion<BR>Embarque.Concepto<BR>Embarque.Referencia<BR>Embarque.DocFuente<BR>Embarque.Observaciones<BR>Embarque.Estatus<BR>Embarque.Situacion<BR>Embarque.SituacionFecha<BR>Embarque.SituacionUsuario<BR>Embarque.SituacionNota<BR>Embarque.Vehiculo<BR>Embarque.Ruta<BR>Embarque.Agente<BR>Embarque.Peso<BR>Embarque.Volumen<BR>Embarque.Paquetes<BR>Embarque.Ejercicio<BR>Embarque.Periodo<BR>Embarque.FechaSalida<BR>Embarque.FechaRetorno<BR>Embarque.CtaDinero<BR>Embarque.Proveedor<BR>Embarque.Importe<BR>Embarque.Impuestos<BR>Embarque.Gastos<BR>Embarque.Sucursal<BR>Embarque.SucursalDestino<BR>Embarque.SucursalOrigen<BR>Embarque.UEN<CONTINUA>
+ListaCampos002=<CONTINUA><BR>Embarque.PersonalCobrador<BR>Embarque.KmsSalida<BR>Embarque.KmsRetorno<BR>Embarque.TermoInicio<BR>Embarque.TermoFin<BR>Embarque.LicenciaAgente<BR>Embarque.Agente2<BR>Embarque.LicenciaAgente2<BR>Vehiculo.Vehiculo<BR>Vehiculo.Descripcion<BR>Vehiculo.Placas<BR>Vehiculo.Volumen<BR>Vehiculo.Peso<BR>Vehiculo.Ruta<BR>Vehiculo.Estatus<BR>Vehiculo.TipoUnidadVehicular<BR>Agente.Agente<BR>Agente.Nombre<BR>Agente.Estatus<BR>Prov.Proveedor<BR>Prov.Nombre<BR>Prov.Tipo<BR>Prov.Estatus<BR>UEN.UEN<BR>UEN.Nombre<BR>Personal.Personal<BR>Personal.ApellidoPaterno<BR>Personal.ApellidoMaterno<BR>Personal.Nombre<BR>Personal.Tipo<BR>CtaDinero.CtaDinero<BR>CtaDinero.Descripcion<BR>CtaDinero.Tipo<BR>AgenteAux.Nombre<BR>Ruta.Ruta<BR>Ruta.Kms<BR>Embarque.FleteMagisterio
+ListaRelaciones=Embarque.Agente<BR>Embarque.Vehiculo<BR>Embarque.Prov<BR>Embarque.UEN<BR>Embarque.Personal<BR>Embarque.CtaDinero<BR>Embarque.Agente2<BR>Embarque.Ruta<BR>Vehiculo.Agente<BR>Vehiculo.Prov<BR>Agente.Personal<BR>Prov.CtaDinero<BR>Prov.Agente<BR>Personal.Prov<BR>Personal.Vehiculo<BR>Personal.UEN<BR>AgenteAux.Personal
+SQL=SELECT<BR>  Embarque.ID,<BR>  Embarque.Empresa,<BR>  Embarque.Mov,<BR>  Embarque.MovID,<BR>  Embarque.FechaEmision,<BR>  Embarque.ProgramadoPara, <BR>  Embarque.UltimoCambio,<BR>  Embarque.Proyecto,<BR>  Embarque.Usuario,<BR>  Embarque.Autorizacion,<BR>  Embarque.Concepto,<BR>  Embarque.Referencia,<BR>  Embarque.DocFuente,<BR>  Embarque.Observaciones,<BR>  Embarque.Estatus,<BR>  Embarque.Situacion,<BR>  Embarque.SituacionFecha,<BR>  Embarque.SituacionUsuario,<BR>  Embarque.SituacionNota,<BR>  Embarque.Vehiculo,<BR>  Embarque.Ruta,<BR>  Embarque.Agente,<BR>  Embarque.Peso,<BR>  Embarque.Volumen,<BR>  Embarque.Paquetes,<BR>  Embarque.Ejercicio,<BR>  Embarque.Periodo,<BR>  Embarque.FechaSalida,<BR>  Embarque.FechaRetorno,<BR>  Embarque.CtaDinero,<BR>  Embarque.Proveedor,<BR>  Embarque.Importe,<BR>  Embarque.Impuestos,<BR> <CONTINUA>
+SQL002=<CONTINUA> Embarque.Gastos,<BR>  Embarque.Sucursal,<BR>  Embarque.SucursalDestino,<BR>  Embarque.SucursalOrigen,<BR>  Embarque.UEN,<BR>  Embarque.PersonalCobrador,<BR>  Embarque.KmsSalida,<BR>  Embarque.KmsRetorno,<BR>  Embarque.TermoInicio,<BR>  Embarque.TermoFin,<BR>  Embarque.LicenciaAgente,<BR>  Embarque.Agente2,<BR>  Embarque.LicenciaAgente2,<BR>Embarque.FleteMagisterio,<BR>  Vehiculo.Vehiculo,<BR>  Vehiculo.Descripcion,<BR>  Vehiculo.Placas,<BR>  Vehiculo.Volumen,<BR>  Vehiculo.Peso,<BR>  Vehiculo.Ruta,<BR>  Vehiculo.Estatus,<BR>  Vehiculo.TipoUnidadVehicular,<BR>  Agente.Agente,<BR>  Agente.Nombre,<BR>  Agente.Estatus,<BR>  Prov.Proveedor,<BR>  Prov.Nombre,<BR>  Prov.Tipo,<BR>  Prov.Estatus,<BR>  UEN.UEN,<BR>  UEN.Nombre,<BR>  Personal.Personal,<BR>  Personal.ApellidoPaterno,<BR>  Personal.ApellidoMaterno,<BR>  Personal.Nombre,<BR>  Personal.Tipo,<CONTINUA>
+SQL003=<CONTINUA><BR>  CtaDinero.CtaDinero,<BR>  CtaDinero.Descripcion,<BR>  CtaDinero.Tipo,<BR>  AgenteAux.Nombre,<BR>  Ruta.Ruta,<BR>  Ruta.Kms<BR><BR>FROM<BR>  Embarque<BR>  LEFT OUTER JOIN Agente ON Embarque.Agente=Agente.Agente<BR>  LEFT OUTER JOIN Vehiculo ON Embarque.Vehiculo=Vehiculo.Vehiculo<BR>  LEFT OUTER JOIN Prov ON Embarque.Proveedor=Prov.Proveedor<BR>  LEFT OUTER JOIN UEN ON Embarque.UEN=UEN.UEN<BR>  LEFT OUTER JOIN Personal ON Embarque.PersonalCobrador=Personal.Personal<BR>  LEFT OUTER JOIN CtaDinero ON Embarque.CtaDinero=CtaDinero.CtaDinero<BR>  LEFT OUTER JOIN Agente AgenteAux ON Embarque.Agente2=AgenteAux.Agente<BR>  LEFT OUTER JOIN Ruta ON Embarque.Ruta=Ruta.Ruta
+
+
+; **** Nuevo campo agregado****
+[Embarque.vis/Vehiculo.TipoUnidadVehicular]
+Clave=Vehiculo.TipoUnidadVehicular
+Nombre=Tipo de Unidad
+Visible=S
+TamanoValidacion=20
+Tamano=20
+RequeridoActivo=S
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Validar captura en la lista
+AyudaMemRenglones=12
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>Select TipoUnidad from TipoUnidadVehicularMAVI<T> )
+TipoDatos=Texto
+LigaTabla=Vehiculo
+LigaCampo=TipoUnidadVehicular
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=TipoUnidadVehicular
+
+
+; **** Nuevo campo agregado****
+[Embarque.vis/Embarque.LicenciaAgente]
+Clave=Embarque.LicenciaAgente
+LigaTabla=Embarque
+LigaCampo=LicenciaAgente
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=LicenciaAgente
+
+
+; **** Nuevo campo agregado****
+[Embarque.vis/Embarque.Agente2]
+Clave=Embarque.Agente2
+LigaTabla=Embarque
+LigaCampo=Agente2
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=10
+ClaveBDE=Agente2
+
+
+; **** Nuevo campo agregado****
+[Embarque.vis/Embarque.LicenciaAgente2]
+Clave=Embarque.LicenciaAgente2
+LigaTabla=Embarque
+LigaCampo=LicenciaAgente2
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=LicenciaAgente2
+
+
+; **** Nuevo campo agregado ****
+[Embarque.vis/AgenteAux.Nombre]
+Clave=AgenteAux.Nombre
+Nombre=Nombre
+Tamano=100
+TamanoValidacion=50
+TipoDatos=Texto
+LigaTabla=AgenteAux
+LigaCampo=Nombre
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Nombre_4
+
+
+; **** Nuevo campo agregado ****
+[Embarque.vis/Ruta.Ruta]
+Clave=Ruta.Ruta
+Nombre=Ruta
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+LigaTabla=Ruta
+LigaCampo=Ruta
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Ruta_2
+
+
+; **** Nuevo campo agregado ****
+[Embarque.vis/Ruta.Kms]
+Clave=Ruta.Kms
+LigaTabla=Ruta
+LigaCampo=Kms
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=NumFlotante
+ClaveBDE=Kms
+
+
+; **** Nueva relacion agregada *****
+[Embarque.vis/Relaciones.Embarque.Agente2]
+Clave=Embarque.Agente2
+TablaRemota=AgenteAux
+LlaveLocal=Embarque.Agente2
+LlaveRemota=Agente
+TipoRelacion=Opcional
+
+
+; **** Nueva relacion agregada ****
+[Embarque.vis/Relaciones.AgenteAux.Personal]
+Clave=AgenteAux.Personal
+TablaRemota=Personal
+LlaveLocal=AgenteAux.Personal
+LlaveRemota=Personal
+TipoRelacion=Opcional
+
+
+; **** Nueva relacion agregada ****
+[Embarque.vis/Relaciones.Embarque.Ruta]
+Clave=Embarque.Ruta
+TablaRemota=Ruta
+LlaveLocal=Embarque.Ruta
+LlaveRemota=Ruta
+TipoRelacion=Opcional
+
+
+; *** Agregamos nuevo campo  GRB 18-Feb-2010**
+[Embarque.vis/Embarque.FleteMagisterio]
+Clave=Embarque.FleteMagisterio
+Nombre=FleteMagisterio
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorPorOmision=SQL(<T>SELECT FactorCosteoMagisterio FROM FactorCosteoFleteMagisterio <T>)
+CondicionEdicion=Embarque.Estatus=EstatusSinAfectar
+LigaTabla=Embarque
+LigaCampo=FleteMagisterio
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=FleteMagisterio
+
+[Embarque.vis/Embarque.ProgramadoPara]
+Clave=Embarque.ProgramadoPara
+LigaTabla=Embarque
+LigaCampo=ProgramadoPara
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Fecha
+ClaveBDE=ProgramadoPara

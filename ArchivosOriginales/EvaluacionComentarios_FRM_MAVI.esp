@@ -1,0 +1,10 @@
+;Ultima modificacion: 23-Jul-2008
+;Responsable: Arly Rubio  
+;Modifico: Creacion.
+
+
+
+
+;**** Se cambio la variable Info.Fecha por Info.FechaEvaluacionMAVI tambien la funcion FechaFormatoServidor por FechaEnTexto ****
+[EvaluacionComentarios.frm/Ficha]
+FiltroGeneral=EvaluacionComentarios.Evaluacion=<T>{Info.Evaluacion}<T> AND<BR>EvaluacionComentarios.Fecha=<T>{FechaEnTexto(Info.FechaEvaluacionMAVI,<T>aaaa/mm/dd hh:mm:ss<T>)}<T> AND<BR>EvaluacionComentarios.Contacto=<T>{Info.Clave}<T>

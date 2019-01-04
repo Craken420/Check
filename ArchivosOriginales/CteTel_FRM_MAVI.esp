@@ -1,0 +1,39 @@
+;ARC 19-May-09 integracion desarrollo cte Express (Mexico)
+
+; ***** Modifico: Judith Ramirez 04-Dic-09. *****
+; ***** Modificacion: Cambio en pestaña Lista para cte express. Cambio por Arturo Guizer. ****
+
+[CteTel.frm/Forma]
+Icono=67
+PosicionInicialIzquierda=428
+PosicionInicialArriba=248
+PosicionInicialAlturaCliente=190
+PosicionInicialAncho=450
+VentanaEstadoInicial=Normal
+
+; ***** JR 04-Dic-09. Cambio linea de listaEnCaptura para cte express. Cambio por Arturo Guizer. **** 
+[CteTel.frm/Lista]
+;ListaEnCaptura.Cambios=Eliminar<TAB>CteTel.Extencion<BR>Eliminar<TAB>CteTel.Lada<BR>Insertar<TAB>CteTel.Lada<TAB>2<BR>Insertar<TAB>CteTel.Extencion<TAB>3
+;ListaEnCaptura.Cambios=Eliminar<TAB>CteTel.Extencion<BR>Eliminar<TAB>CteTel.Lada<BR>Insertar<TAB>CteTel.Lada<TAB>1<BR>Insertar<TAB>CteTel.Extencion<TAB>3
+ListaEnCaptura=CteTel.Tipo<BR>CteTel.Lada<BR>CteTel.Telefono<BR>CteTel.Fecha
+OtroOrden=S
+ListaOrden=CteTel.Fecha<TAB>(Acendente)
+
+[CteTel.frm/Acciones.Aceptar]
+EjecucionCondicion=Asigna(Temp.Texto,ListaBuscarDuplicados(CampoEnLista(CteTel.Telefono)))<BR>Vacio(Temp.Texto)<BR>SI(Condatos(CteTel:CteTel.Telefono),SQL(<T>Sp_ValidadCamposMavi :tLad,:tTipo,:tLada<T>,<T>Telefonos<T>,CteTel:CteTel.Tipo,CteTel:CteTel.Lada))
+EjecucionMensaje=Si<BR>  Temp.Texto <> <T><T><BR>Entonces<BR>  Comillas(Temp.Texto)+<T>Duplicado<T><BR>Sino<BR>  <T>Los Campos Tipo y  Lada son Obligatorios<T><BR>Fin
+
+[CteTel.frm/Acciones.Asistente]
+Visible=N
+;VisibleCondicion=Info.CategoriaMavi = nulo
+
+
+[CteTel.frm/Lista.CteTel.Fecha]
+Carpeta=Lista
+Clave=CteTel.Fecha
+Editar=N
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro

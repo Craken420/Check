@@ -1,0 +1,21 @@
+[Consecutivo.vis/Vista]
+ListaCampos=Consecutivo.Tipo<BR>Consecutivo.Nivel<BR>Consecutivo.Prefijo<BR>Consecutivo.Consecutivo<BR>Consecutivo.TieneControl<BR>Consecutivo.Concurrencia<BR>Consecutivo.DividirSeries
+SQL=SELECT<BR>  Consecutivo.Tipo,<BR>  Consecutivo.Nivel,<BR>  Consecutivo.Prefijo,<BR>  Consecutivo.Consecutivo,<BR>  Consecutivo.TieneControl,<BR>  Consecutivo.Concurrencia,<BR>Consecutivo.DividirSeries<BR>FROM<BR>  Consecutivo
+
+[Consecutivo.vis/Consecutivo.DividirSeries]
+Clave=Consecutivo.DividirSeries
+Nombre=DividirSeries
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=1
+Tamano=1
+ValorPorOmision=<T>No<T>
+AyudaEnCaptura=Lista de Opciones
+ListaOpciones=Alta<BR>Si<BR>No
+LigaTabla=Consecutivo
+LigaCampo=DividirSeries
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Lógico
+ClaveBDE=DividirSeries

@@ -1,0 +1,9 @@
+[Agent.tbl/FormaPago]
+CondicionDespliege=(Mov en (<T>Cobro Dif Caja<T>)) o ((no Agent:Agente.Nomina) y MovTipoEn(<T>AGENT<T>,Mov, (AGENT.P, AGENT.A)))
+
+[Agent.tbl/CtaDinero]
+CondicionDespliege=(Mov en (<T>Cobro Dif Caja<T>)) o ((no Agent:Agente.Nomina) y MovTipoEn(<T>AGENT<T>,Mov, (AGENT.P, AGENT.A)))
+
+[Agent.tbl/Agente]
+ValidacionUsaTabla=N
+ValidacionTablas=

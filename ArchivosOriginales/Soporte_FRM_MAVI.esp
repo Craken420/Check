@@ -1,0 +1,384 @@
+;**** Ultima modificación:16-Jul-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:Se modifico la condicion de actividad de la accion "Cancelar"
+
+
+
+;*********************************************************************************
+;************************* Desarrollo I04 ****************************************
+
+
+
+
+;***** Se modificaron las dimensiones de la forma *******
+;***** Se agregaron nuevas acciones: EntradaServicio, SalidaServicio ****** 
+[Soporte.frm/Forma]
+PosicionInicialIzquierda=148
+PosicionInicialArriba=68
+PosicionInicialAncho=728
+ListaAcciones=Nuevo<BR>MovCopiar<BR>Abrir<BR>Localizar<BR>Guardar<BR>OtrosDatos<BR>MovPersonal<BR>Evaluaciones<BR>Propiedades<BR>Imprimir<BR>RepPantalla<BR>PlantillasOffice<BR>FormaAnexo<BR>EnviarCorreo<BR>Verificar<BR>Situacion<BR>Sucursal<BR>Prioridad<BR>Afectar<BR>Eliminar<BR>Cancelar<BR>Devolver<BR>Transferir<BR>Responsable<BR>RepExpress<BR>CteExpress<BR>CamposExtras<BR>Tareas<BR>Anexos<BR>AgregarEvento<BR>SoporteCambio<BR>EntradaServicio<BR>SalidaServicio<BR>Anterior<BR>Siguiente<BR>CtoInfo<BR>CteInfo<BR>ProvInfo<BR>PersonalInfo<BR>AgenteInfo<BR>ProyInfo<BR>ArtInfo<BR>Mensaje<BR>Tiempo<BR>Politica<BR>PoliticaConcepto<BR>Bitacora<BR>ColaUsuario<BR>Actividades<BR>MovPos<BR>Navegador<BR>Cerrar<BR>Otros1<BR>Otros2<BR>Otros3<BR>Otros4<BR>Otros5<BR>Otros6<BR>Otros7<BR>Otros8<BR>Otros9
+VentanaBloquearAjuste=
+PosicionInicialAlturaCliente=604
+
+[Soporte.frm/(Carpeta Abrir)]
+ListaEnCaptura=Soporte.Titulo<BR>Soporte.FechaEmision<BR>Soporte.FechaConclusion<BR>Soporte.Vencimiento<BR>Dias<BR>Atraso<BR>Soporte.Estado<BR>Soporte.Cliente<BR>Soporte.SoporteSucursal
+[Soporte.frm/(Carpeta Abrir).Soporte.SoporteSucursal]
+Carpeta=(Carpeta Abrir)
+Clave=Soporte.SoporteSucursal
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+[Soporte.frm/Ficha]
+ListaEnCaptura=Soporte.Mov<BR>Soporte.MovID<BR>Soporte.Proyecto<BR>Soporte.UEN<BR>Soporte.ProyectoFolio<BR>Soporte.FechaEmision<BR>Soporte.FechaConclusion<BR>Soporte.Cliente<BR>Cte.Nombre<BR>Soporte.EnviarA<BR>CteEnviarA.Nombre<BR>Soporte.Proveedor<BR>Prov.Nombre<BR>Soporte.Personal<BR>NombreCompleto<BR>NombreSucursalTrabajo<BR>Soporte.LineaCredito<BR>LC.Descripcion<BR>Soporte.Reporte<BR>Rep.Asunto<BR>Rep.Tipo<BR>Soporte.Agente<BR>Soporte.Articulo<BR>Soporte.SerieLote<BR>Soporte.Fuente<BR>Soporte.SoporteSucursal<BR>Soporte.Espacio<BR>Soporte.Contacto<BR>Soporte.Telefono<BR>Soporte.Extencion<BR>Soporte.eMail<BR>Soporte.Fax<BR>Soporte.Clase<BR>Soporte.Subclase<BR>Soporte.Concepto<BR>Soporte.Elemento<BR>Soporte.Referencia<BR>Soporte.Medio<BR>Soporte.Observaciones<BR>Soporte.TieneContrato<BR>Soporte.ReferenciaInicial<BR>Soporte.Usuari<CONTINUA>
+ListaEnCaptura002=<CONTINUA>oResponsable<BR>UsuarioCopia.Nombre<BR>Soporte.Usuario<BR>UsuarioRelacion.Nombre
+
+
+
+;***** Nuevo campo agregado en la lista en captura *****
+[Soporte.frm/Ficha.Soporte.SoporteSucursal]
+Carpeta=Ficha
+Clave=Soporte.SoporteSucursal
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=10
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+
+;***** Se modifico campo para que fuera editable sin importar el estatus *****
+[Soporte.frm/Ficha.Soporte.Proveedor]
+EditarConBloqueo=S
+
+;**** PENDIENTEINTEGRACIONMOISES QUE NO SE PUEDAN EDITAR LOS CAMPOS DE Soporte.Referencia Moises MAVI 05 NOv 2009
+[Soporte.frm/Ficha.Soporte.Referencia]
+Editar=N
+ColorFondo=Plata
+
+
+[Soporte.frm/Ficha.Soporte.Agente]
+Carpeta=Ficha
+Clave=Soporte.Agente
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=25
+EspacioPrevio=N
+ColorFondo=Blanco
+ColorFuente=Negro
+EditarConBloqueo=s
+
+;**** Campo No Editable, Integracion Moises Garcia 11/SEP/2009, Agregó FLR
+[Soporte.frm/Ficha.Soporte.Contacto]
+Editar=S
+
+;**** Campo No Editable, Integracion Moises Garcia 11/SEP/2009, Agregó FLR
+[Soporte.frm/Ficha.Soporte.FechaConclusion]
+Editar=S
+
+;**** Campo No Editable, Integracion Moises Garcia 11/SEP/2009, Agregó FLR
+[Soporte.frm/Ficha.Soporte.Fax]
+Editar=N
+ColorFondo=Plata
+
+
+;**** PENDIENTEINTEGRACIONMOISES QUE NO SE PUEDAN EDITAR LOS CAMPOS DE Soporte.eMail Moises MAVI 05 NOv 2009
+[Soporte.frm/Ficha.Soporte.eMail]
+Editar=N
+ColorFondo=Plata
+
+;**** PENDIENTEINTEGRACIONMOISES QUE NO SE PUEDAN EDITAR LOS CAMPOS DE Soporte.Subclase Moises MAVI 05 NOv 2009
+[Soporte.frm/Ficha.Soporte.Subclase]
+Editar=N
+ColorFondo=Plata
+
+;**** PENDIENTEINTEGRACIONMOISES QUE NO SE PUEDAN EDITAR LOS CAMPOS DE Soporte.Fuente Moises MAVI 05 NOv 2009
+[Soporte.frm/Ficha.Soporte.Fuente]
+Editar=N
+ColorFondo=Plata
+
+;**** PENDIENTEINTEGRACIONMOISES QUE NO SE PUEDAN EDITAR LOS CAMPOS DE Soporte.Reporte Moises MAVI 05 NOv 2009
+[Soporte.frm/Ficha.Soporte.Reporte]
+Editar=N
+ColorFondo=Plata
+
+;***** Modificacion para que no fuera visible esta pestaña *****
+[Soporte.frm/Clasificacion]
+CarpetaVisible=N
+CondicionVisible=Nulo
+
+;***** Se quito de la lista en camptura los campos: Soporte.version *****
+;***** Se agregaron en la lista en camptura los campos: Soporte.Destino *****
+[Soporte.frm/Problema]
+ListaEnCaptura=Soporte.Titulo<BR>Soporte.Cliente<BR>Soporte.Prioridad<BR>Soporte.Problema<BR>Soporte.Vencimiento<BR>Soporte.Estado<BR>Soporte.FechaInicio<BR>Soporte.Tiempo<BR>Soporte.TiempoUnidad<BR>Soporte.FechaInicioEst<BR>Soporte.FechaFinEst<BR>Soporte.FechaRevision<BR>Soporte.FechaAprobacion<BR>Soporte.Importe<BR>Soporte.CondicionPago<BR>Soporte.Destino<BR>Soporte.CondicionEntrega
+;ListaEnCaptura.Cambios=Eliminar<TAB>Soporte.CondicionEntrega<BR>Eliminar<TAB>Soporte.Importe<BR>Eliminar<TAB>Soporte.CondicionPago<BR>Eliminar<TAB>Soporte.Version<BR>Insertar<TAB>Soporte.Importe<TAB>13<BR>Insertar<TAB>Soporte.CondicionPago<TAB>14<BR>Insertar<TAB>Soporte.CondicionEntrega<TAB>15<BR>Insertar<TAB>Soporte.Destino<TAB>16
+
+
+
+;***** Modifico campo: No Salto de Linea ****
+[Soporte.frm/Problema.Soporte.CondicionEntrega]
+LineaNueva=N
+
+
+
+;***** Modifico campo: Salto de Linea ****
+[Soporte.frm/Problema.Soporte.Importe]
+LineaNueva=S
+Carpeta=Problema
+Clave=Soporte.Importe
+Editar=S
+EditarConBloqueo=S
+ValidaNombre=S
+3D=S
+Tamano=21
+ColorFondo=Blanco
+ColorFuente=Negro
+
+;***** Nuevo Campo agregado ****
+[Soporte.frm/Problema.Soporte.Destino]
+Carpeta=Problema
+Clave=Soporte.Destino
+Editar=S
+LineaNueva=N
+ValidaNombre=S
+3D=S
+Tamano=21
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[Soporte.frm/Problema.Soporte.Vencimiento]
+Carpeta=Problema
+Clave=Soporte.Vencimiento
+Editar=S
+EditarConBloqueo=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=21
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[Soporte.frm/Problema.Soporte.Tiempo]
+Carpeta=Problema
+Clave=Soporte.Tiempo
+Editar=S
+ValidaNombre=S
+3D=S
+Tamano=10
+ColorFondo=Blanco
+ColorFuente=Negro
+EditarConBloqueo=S
+Efectos=[Negritas]
+
+
+[Soporte.frm/Problema.Soporte.TiempoUnidad]
+Carpeta=Problema
+Clave=Soporte.TiempoUnidad
+Editar=S
+EditarConBloqueo=S
+ValidaNombre=S
+3D=S
+Tamano=10
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+[Soporte.frm/Problema.Soporte.FechaInicioEst]
+Carpeta=Problema
+Clave=Soporte.FechaInicioEst
+Editar=S
+EditarConBloqueo=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=21
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[Soporte.frm/Problema.Soporte.FechaFinEst]
+Carpeta=Problema
+Clave=Soporte.FechaFinEst
+Editar=S
+EditarConBloqueo=S
+ValidaNombre=S
+3D=S
+Tamano=21
+ColorFondo=Blanco
+ColorFuente=Negro
+EditarConBloqueo=S
+EditarConBloqueo=S
+
+[Soporte.frm/Problema.Soporte.FechaRevision]
+Carpeta=Problema
+Clave=Soporte.FechaRevision
+Editar=S
+EditarConBloqueo=S
+ValidaNombre=S
+3D=S
+Tamano=21
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[Soporte.frm/Problema.Soporte.FechaAprobacion]
+Carpeta=Problema
+Clave=Soporte.FechaAprobacion
+Editar=S
+EditarConBloqueo=S
+ValidaNombre=S
+3D=S
+Tamano=21
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[Soporte.frm/Ficha.Soporte.SerieLote]
+Carpeta=Ficha
+Clave=Soporte.SerieLote
+Editar=S
+EditarConBloqueo=S
+3D=S
+Pegado=S
+Tamano=15
+ColorFondo=Blanco
+ColorFuente=Negro
+
+;**** PENDIENTEINTEGRACIONMOISES QUE NO SE PUEDAN EDITAR LOS CAMPOS DE Soporte.Referencia Moises MAVI 05 NOv 2009
+[Soporte.frm/Ficha.Soporte.Referencia]
+Editar=N
+ColorFondo=Plata
+
+
+;**** PENDIENTEINTEGRACIONMOISES QUE NO SE PUEDAN EDITAR LOS CAMPOS DE Soporte.Subclase Moises MAVI 05 NOv 2009
+[Soporte.frm/Ficha.Soporte.Subclase]
+Editar=N
+ColorFondo=Plata
+
+
+
+;************************ ACCIONES ****************************************************
+;**************************************************************************************
+
+
+
+
+;**** Nueva Accion Agregada *****
+[Soporte.frm/Acciones.EntradaServicio]
+Nombre=EntradaServicio
+Boton=0
+NombreEnBoton=S
+Menu=&Edición
+UsaTeclaRapida=S
+TeclaRapida=Ctrl+G
+NombreDesplegar=Entrada Servicio
+EnMenu=S
+TipoAccion=Expresion
+EspacioPrevio=S
+ConCondicion=S
+EjecucionConError=S
+Expresion=Si<BR>  (Soporte:Soporte.ID<>Nulo) y (Soporte:Soporte.Articulo<>Nulo)<BR>Entonces<BR>  Asigna(Info.ArticuloA,Soporte:Soporte.Articulo)<BR>  Asigna(Info.SopMov,Soporte:Soporte.Mov)<BR>  Asigna(Info.Mensaje,<T>Entrada Servicio<T>)<BR>  Asigna(Info.ID, Nulo)<BR>  Asigna(Info.Cantidad2,Soporte:Soporte.ID)<BR>  Asigna(Info.ArtSerie,Soporte:Soporte.SerieLote)<BR>  Asigna(Info.SopMovID,Soporte:Soporte.MovID)<BR>  GuardarCambios<BR>  Forma.Accion(<T>Cerrar<T>)<BR>  Forma(<T>MAVIInv<T>)<BR>Fin
+ActivoCondicion=Soporte:Soporte.Estatus en(<T>PENDIENTE<T>)
+EjecucionCondicion=SQL(<T>Select count(Mov) from Inv where Origen=:tOrigen and OrigenID=:tOrigenID and Estatus<>:tEstatus<T>,Soporte:Soporte.Mov,Soporte:Soporte.MovID,<T>CANCELADO<T>)=0
+EjecucionMensaje=<T>Ya se realizó la entrada del artículo<T>
+VisibleCondicion=Soporte:Soporte.Mov=<T>Reporte Servicio<T>
+
+
+;***** Nueva Accion Agregada *****
+[Soporte.frm/Acciones.SalidaServicio]
+Nombre=SalidaServicio
+Boton=0
+Menu=&Edición
+UsaTeclaRapida=S
+TeclaRapida=Ctrl+S
+NombreDesplegar=Salida Servicio
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Expresion
+Expresion=Si<BR>  (Soporte:Soporte.ID<>Nulo) y (Soporte:Soporte.Articulo<>Nulo)<BR>Entonces<BR>  Asigna(Info.ArticuloA,Soporte:Soporte.Articulo)<BR>  Asigna(Info.SopMov,Soporte:Soporte.Mov) <BR>  Asigna(Info.Mensaje,<T>Salida Servicio<T>)<BR>  Asigna(Info.ID,Nulo)<BR>  Asigna(Info.Cantidad2,Soporte:Soporte.ID)<BR>  Asigna(Info.ArtSerie,Soporte:Soporte.SerieLote)<BR>  Asigna(Info.SopMovID,Soporte:Soporte.MovID)<BR>  GuardarCambios<BR>  Forma.Accion(<T>Cerrar<T>)<BR>  Forma(<T>MAVIInv<T>)<BR>Fin
+ActivoCondicion=Soporte:Soporte.Estatus en(<T>PENDIENTE<T>) y SQL(<T>Select count(Mov) from Inv where Origen=:tOrigen and OrigenID=:tOrigenID and Estatus<>:tEstatus and Mov=:tMov<T>,Soporte:Soporte.Mov,Soporte:Soporte.MovID,<T>CANCELADO<T>,<T>Entrada Servicio<T>)>=1
+ConCondicion=S
+EjecucionCondicion=SQL(<T>Select count(Mov) from Inv where Origen=:tOrigen and OrigenID=:tOrigenID and Estatus<>:tEstatus and Mov=:tMov<T>,Soporte:Soporte.Mov,Soporte:Soporte.MovID,<T>CANCELADO<T>,<T>Salida Servicio<T>)=0
+EjecucionMensaje=<T>Ya se realizó la salida del artículo<T>
+EjecucionConError=S
+VisibleCondicion=Soporte:Soporte.Mov=<T>Reporte Servicio<T>
+
+
+
+;***** Se modifico la expresion antes de ejecutar *****
+;**** Se habulito el boton de cancelar cuando el estatus es concluido --Miguel Peña*******
+[Soporte.frm/Acciones.Cancelar]
+AntesExpresiones=Asigna( Afectar.Mov, Soporte:Soporte.Mov )<BR>Asigna( Afectar.MovID, Soporte:Soporte.MovID )<BR>Si Soporte:Soporte.Mov = <T>Reporte Servicio<T><BR>  Entonces<BR>    SI(SQL(<T>Select count(Mov) from Inv where Origen=:tOrigen and OrigenID=:tOrigenID and Estatus<>:tEstatus<T>,Soporte:Soporte.Mov,Soporte:Soporte.MovID,<T>CANCELADO<T>)>=1,Si(Informacion(<T>El movimiento tiene aplicaciones<T>,BotonAceptar)=BotonAceptar,AbortarOperacion,AbortarOperacion))<BR>  Fin
+ActivoCondicion=PuedeAfectar(Usuario.Cancelar, Usuario.CancelarOtrosMovs, Soporte:Soporte.Usuario) y ConDatos(Soporte:Soporte.ID) y ConDatos(Soporte:Soporte.MovID) y<BR>((Soporte:Soporte.Estatus en (EstatusSinAfectar, EstatusSincro, EstatusPendiente, EstatusAltaPrioridad, EstatusPrioridadBaja,EstatusConcluido)) o<BR>((MovTipo(<T>ST<T>, Soporte:Soporte.Mov) en (ST.S, ST.F)) y (Soporte:Soporte.Estatus=EstatusConcluido)))
+
+
+
+;*********************************************************************************
+;************************* Termina Desarrollo I04 ****************************************
+
+;**** Se modifico la expresion antes de afectar para verificar que los datos titulo, problema, articulo, cliente, sucursal tengan datos antes de afectar*****
+;******Se agrgo validacion para que sean abligatorios los campos Observaciones,SerieLote
+
+[Soporte.frm/Acciones.Afectar]
+DespuesGuardar=
+;AntesExpresiones=Si(ConDatos(Soporte:Soporte.Titulo),<T><T>,Si(Error(<T>Falta indicar el titulo<T>,BotonAceptar)=BotonAceptar,AbortarOperacion,AbortarOperacion))<BR>Si MovTipoEn(<T>ST<T>,Soporte:Soporte.Mov,(<T>ST.S<T>,<T>ST.R<T>,<T>ST.P<T>,<T>ST.I<T>,<T>ST.F<T>,<T>ST.A<T>))<BR>  Entonces<BR>    Si ((Vacio(Soporte:Soporte.Problema)) o (Soporte:Soporte.Problema = <T> <T>))<BR>      Entonces<BR>        Si(Error(<T>Falta indicar el problema<T>,BotonAceptar)=BotonAceptar,AbortarOperacion,AbortarOperacion)<BR>      Fin<BR>  Fin<BR>Si Soporte:Soporte.Mov = <T>Reporte Servicio<T><BR>  Entonces<BR>    Si(ConDatos(Soporte:Soporte.Cliente),<T><T>,Si(ConDatos(Soporte:Soporte.SoporteSucursal),<T><T>,Si(Error(<T>Falta indicar el cliente o la sucursal<T>,BotonAceptar)=BotonAceptar,AbortarOperacion,AbortarOperacion)))<BR<CONTINUA>
+;AntesExpresiones002=<CONTINUA>>    Si(ConDatos(Soporte:Soporte.Articulo),<T><T>,Si(Error(<T>Falta indicar el artículo<T>,BotonAceptar)=BotonAceptar,AbortarOperacion,AbortarOperacion))<BR>  Fin<BR>Si<BR>  General.CamposExtras=<T>Campos Extras<T> y (Soporte:Soporte.Estatus en (EstatusSinAfectar, EstatusPorConfirmar, EstatusBorrador)) y SQL(<T>SELECT CEAntesAfectar FROM MovTipo WHERE Modulo=:tModulo AND Mov=:tMov AND CE=1<T>, <T>ST<T>, Soporte:Soporte.Mov)<BR>Entonces<BR>  Si(no CamposExtrasMovimiento(<T>ST<T>, Soporte:Soporte.Mov, Soporte:Soporte.ID, Verdadero, Soporte:Soporte.Estatus noen (EstatusSinAfectar, EstatusPorConfirmar, EstatusBorrador)), AbortarOperacion)<BR>FIn
+;EjecucionCondicion=ConDatos(Soporte:Soporte.Mov)y condatos(Soporte:Soporte.Observaciones) y condatos(Soporte:Soporte.SerieLote)
+
+;Se vuelve Obligatoria el campo Personal para el movimeinto mantenimiento
+
+;Fernando Romero Robles 15/11/2013
+EjecucionCondicion=Si ( ConDatos( Soporte:Soporte.Mov)  y (Soporte:Soporte.Mov=<T>Reporte Servicio<T>) )<BR>Entonces<BR>   ConDatos( Soporte:Soporte.Observaciones) y  ConDatos( Soporte:Soporte.SerieLote)<BR>Sino<BR>   ConDatos( Soporte:Soporte.Mov)<BR>Fin<BR><BR>Si<BR>    (Soporte:Soporte.Mov=<T>Mantenimiento<T>) y  Vacio(Soporte:Soporte.Personal)<BR>Entonces<BR>      Error(<T>Debe Ingresar Personal Responsable<T>)<BR>     AbortarOperacion<BR>Sino<BR>      VERDADERO<BR>Fin
+EjecucionMensaje=si vacio(Soporte:Soporte.SerieLote) entonces <T>Introducir No. de Serie Lote<T>
+EjecucionConError=S
+;AntesExpresiones=Asigna(Info.IDMAVI, Soporte:Soporte.ID)<BR>Si(ConDatos(Soporte:Soporte.Titulo),<T><T>,Si(Error(<T>Falta indicar el titulo<T>,BotonAceptar)=BotonAceptar,AbortarOperacion,AbortarOperacion))<BR>Si MovTipoEn(<T>ST<T>,Soporte:Soporte.Mov,(<T>ST.S<T>,<T>ST.R<T>,<T>ST.P<T>,<T>ST.I<T>,<T>ST.F<T>,<T>ST.A<T>))<BR>  Entonces<BR>    Si ((Vacio(Soporte:Soporte.Problema)) o (Soporte:Soporte.Problema = <T> <T>))<BR>      Entonces<BR>        Si(Error(<T>Falta indicar el problema<T>,BotonAceptar)=BotonAceptar,AbortarOperacion,AbortarOperacion)<BR>      Fin<BR>  Fin<BR>Si Soporte:Soporte.Mov = <T>Reporte Servicio<T><BR>  Entonces<BR>    Si(ConDatos(Soporte:Soporte.Cliente),<T><T>,Si(ConDatos(Soporte:Soporte.SoporteSucursal),<T><T>,Si(Error(<T>Falta indicar el cliente o la sucursal<T>,BotonAceptar)=BotonAceptar,AbortarOperacion,AbortarOperacion)))<BR<CONTINUA>
+;AntesExpresiones002=<CONTINUA>>    Si(ConDatos(Soporte:Soporte.Articulo),<T><T>,Si(Error(<T>Falta indicar el artículo<T>,BotonAceptar)=BotonAceptar,AbortarOperacion,AbortarOperacion))<BR>  Fin<BR>Si Soporte:Soporte.Mov = <T>Servicio Mantto<T><BR>  Entonces<BR>    Si(ConDatos(Soporte:Soporte.Personal),<T><T>,Si(Error(<T>Falta indicar el personal<T>,BotonAceptar)=BotonAceptar,AbortarOperacion,AbortarOperacion))<BR>  Fin<BR>Si<BR>  General.CamposExtras=<T>Campos Extras<T> y (Soporte:Soporte.Estatus en (EstatusSinAfectar, EstatusPorConfirmar, EstatusBorrador)) y SQL(<T>SELECT CEAntesAfectar FROM MovTipo WHERE Modulo=:tModulo AND Mov=:tMov AND CE=1<T>, <T>ST<T>, Soporte:Soporte.Mov)<BR>Entonces<BR>  Si(no CamposExtrasMovimiento(<T>ST<T>, Soporte:Soporte.Mov, Soporte:Soporte.ID, Verdadero, Soporte:Soporte.Estatus noen (Estat<CONTINUA>
+;AntesExpresiones003=<CONTINUA>usSinAfectar, EstatusPorConfirmar, EstatusBorrador)), AbortarOperacion)<BR>FIn
+AntesExpresiones=GuardarCambios<BR>Asigna(Info.IDMAVI, Soporte:Soporte.ID)<BR>Si(ConDatos(Soporte:Soporte.Titulo),<T><T>,Si(Error(<T>Falta indicar el titulo<T>,BotonAceptar)=BotonAceptar,AbortarOperacion,AbortarOperacion))<BR>Si MovTipoEn(<T>ST<T>,Soporte:Soporte.Mov,(<T>ST.S<T>,<T>ST.R<T>,<T>ST.P<T>,<T>ST.I<T>,<T>ST.F<T>,<T>ST.A<T>))<BR>  Entonces<BR>    Si ((Vacio(Soporte:Soporte.Problema)) o (Soporte:Soporte.Problema = <T> <T>))<BR>      Entonces<BR>        Si(Error(<T>Falta indicar el problema<T>,BotonAceptar)=BotonAceptar,AbortarOperacion,AbortarOperacion)<BR>      Fin<BR>  Fin<BR>Si ((Soporte:Soporte.Mov = <T>Reporte Servicio<T>)y(Soporte:Soporte.Estatus en (EstatusSinAfectar)))<BR>  Entonces<BR>    Si(ConDatos(Soporte:Soporte.Cliente),<T><T>,Si(ConDatos(Soporte:Soporte.SoporteSucursal),<T><T>,Si(Err<CONTINUA>
+AntesExpresiones002=<CONTINUA>or(<T>Falta indicar el cliente o la sucursal<T>,BotonAceptar)=BotonAceptar,AbortarOperacion,AbortarOperacion)))<BR>    Si(ConDatos(Soporte:Soporte.Articulo),<T><T>,Si(Error(<T>Falta indicar el artículo<T>,BotonAceptar)=BotonAceptar,AbortarOperacion,AbortarOperacion))<BR>    Si(ConDatos(Soporte:Soporte.SoporteSucursal),<T><T>,Si(Error(<T>Falta indicar la sucursal<T>,BotonAceptar)=BotonAceptar,AbortarOperacion,AbortarOperacion))<BR>  Fin<BR>Si Soporte:Soporte.Mov = <T>Servicio Mantto<T><BR>  Entonces<BR>    Si(ConDatos(Soporte:Soporte.Personal),<T><T>,Si(Error(<T>Falta indicar el personal<T>,BotonAceptar)=BotonAceptar,AbortarOperacion,AbortarOperacion))<BR>  Fin<BR>Si<BR>  General.CamposExtras=<T>Campos Extras<T> y (Soporte:Soporte.Estatus en (EstatusSinAfectar, EstatusPorConfirmar, EstatusB<CONTINUA>
+AntesExpresiones003=<CONTINUA>orrador)) y SQL(<T>SELECT CEAntesAfectar FROM MovTipo WHERE Modulo=:tModulo AND Mov=:tMov AND CE=1<T>, <T>ST<T>, Soporte:Soporte.Mov)<BR>Entonces<BR>  Si(no CamposExtrasMovimiento(<T>ST<T>, Soporte:Soporte.Mov, Soporte:Soporte.ID, Verdadero, Soporte:Soporte.Estatus noen (EstatusSinAfectar, EstatusPorConfirmar, EstatusBorrador)), AbortarOperacion)<BR>FIn
+
+
+
+;***** Se configuro para que se ejecutaran acciones "antes de ejecutar" (ARC 12-Dic-08) ****
+[Soporte.frm/Acciones.CamposExtras]
+Antes=S
+DespuesGuardar=S
+AntesExpresiones=Asigna(Info.IDMAVI, Soporte:Soporte.ID)
+
+;*** Paquete integrado DM0167_15122011 BVF 16122011
+;TEM 14 Dic 2011 Se pone una condicion para que esta accion este desactivada para los usuarios que no se encuentren dados de alta en las tablas de conversion con el campo 'CFG ACCESOS ESPECIALES'
+; **** Modificacion de ActivoCondicion para bloqueo del campo por cambio de estructura en la tablaSTD, y se agrego el campo valor separado por casillas, 22/Dic/2011 Victor Enrique Murillo Torres, para desarrollo DM0167 Validacion de tareas en la forma SOPORTE dentro del paquete DM0167_23122011. JR 23-Dic-2011. ****
+; **** Modificacion de ActivoCondicion para contener unas sola casilla para desarrollo DM0167 Validacion de tareas en la forma SOPORTE dentro del paquete DM0167_26122011. JR 26-Dic-2011. ****
+[Soporte.frm/Acciones.Tareas]
+Activo=
+;ActivoCondicion=Usuario=(sql(<T>select Usuario from usuario where acceso in (select Nombre from TablastD where tablast=:tCampo) and Usuario=:tUsu<T>,<T>CFG ACCESOS ESPECIALES<T>,Usuario))
+;ActivoCondicion=SQL(<T>select count(*) from usuario where Acceso in (select Nombre from TablastD where tablast=:tespecial and substring(valor,4,1)=1) and Usuario=:tusado<T>,<T>CFG ACCESOS ESPECIALES<T>,usuario)
+ActivoCondicion=SQL(<T>select count(*) from usuario where Acceso in (select Nombre from TablastD where tablast=:tespecial and substring(valor,1,1)=1) and Usuario=:tusado<T>,<T>CFG ACCESOS ESPECIALES<T>,usuario)
+
+
+;Victor Enrique Murillo Torres  12/Diciembre/2011 DM0166 Actualizo BVF paquete DM0166_15122011 16122011
+;Se bloqueo la opcion de Cliente.
+[Soporte.frm/Acciones.CteExpress]
+Activo=N
+ActivoCondicion=1=0
+
+;19/Dic/2011 Integracion paquete DM0167_21122011 BVF 
+;Se bloquea la accion para que no se ponga activa
+[Soporte.frm/Acciones.Prioridad]
+ActivoCondicion=/*Soporte:Soporte.Estatus en (EstatusPendiente, EstatusAltaPrioridad, EstatusPrioridadBaja) y PuedeModificar(Soporte:Soporte.Usuario)<BR>y */1=0
+
+;**** Ultima modificación:28 / Jun / 13
+;**** Modifico:Fernando Rodriguez
+;**** Se modifico:Orden de El campo Vencimiento y Fecha Inicio de Soporte Frm
+
+[Soporte.frm/C7]
+Expresion=Si(MovTipo(<T>ST<T>, Soporte.Mov) = ST.R, CampoNombre(Soporte.Vencimiento)+<T>:<T>)<BR>Si(MovTipo(<T>ST<T>, Soporte.Mov) = ST.R, CampoNombre(Soporte.FechaInicio)+<T>:<T>)<BR>Si(MovTipo(<T>ST<T>, Soporte.Mov) = ST.R, CampoNombre(Soporte.FechaConclusion)+<T>:<T>)
+
+[Soporte.frm/Solucion]
+CondicionVisible=MovTipoEn(<T>ST<T>, Soporte:Soporte.Mov, (ST.R, ST.P, ST.S, ST.I, ST.A, ST.F))

@@ -1,0 +1,13 @@
+;Ultima modificacion: 09-Jul-2008
+;Responsable: Arly Rubio  
+;Modifico: Integracion cambio mexico Carpeta Abrir.
+
+
+
+
+
+
+;***** Cambio Mexico *******
+[NominaAuto.frm/(Carpeta Abrir)]
+FiltroAutoCampo=Nomina.Moneda
+FiltroAutoValidar=Nomina.Moneda

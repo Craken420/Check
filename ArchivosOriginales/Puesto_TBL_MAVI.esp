@@ -1,0 +1,20 @@
+
+
+
+;**** Nuevos campos agregados : ComisionChoferesMAVI ****
+[Puesto.tbl/Tabla]
+ListaCampos=Puesto<BR>Descripcion<BR>SueldoDef<BR>RequiereExperiencia<BR>Titulado<BR>TiempoExperienciaRequerido<BR>TiempoExperienciaPuesto<BR>TiempoExperienciaArea<BR>GradoEstudio<BR>Conocimientos<BR>Idioma1<BR>PorcentajeHablado1<BR>PorcentajeLectura1<BR>PorcentajeEscrito1<BR>Idioma2<BR>PorcentajeHablado2<BR>PorcentajeLectura2<BR>PorcentajeEscrito2<BR>RequiereViajar<BR>RequiereAutomovil<BR>RequiereCambioResidencia<BR>Actividades<BR>EdadMinima<BR>EdadMaxima<BR>EstadoCivil<BR>Sexo<BR>SueldoRangoMinimo<BR>SueldoRangoMaximo<BR>PuestoReporta<BR>PuestoSustituye<BR>Area<BR>Departamento<BR>Objetivo<BR>Alcance<BR>Funciones<BR>Responsabilidades<BR>Autoridad<BR>ComisionChoferesMAVI
+SQL=SELECT<BR>  Puesto,<BR>  Descripcion,<BR>  SueldoDef,<BR>  Titulado,<BR>  RequiereExperiencia,<BR>  TiempoExperienciaRequerido,<BR>  TiempoExperienciaPuesto,<BR>  TiempoExperienciaArea,<BR>  GradoEstudio,<BR>  Conocimientos,<BR>  Idioma1,<BR>  PorcentajeHablado1,<BR>  PorcentajeLectura1,<BR>  PorcentajeEscrito1,<BR>  Idioma2,<BR>  PorcentajeHablado2,<BR>  PorcentajeLectura2,<BR>  PorcentajeEscrito2,<BR>  RequiereViajar,<BR>  RequiereAutomovil,<BR>  RequiereCambioResidencia,<BR>  Actividades,<BR>  EdadMinima,<BR>  EdadMaxima,<BR>  EstadoCivil,<BR>  Sexo,<BR>  SueldoRangoMinimo,<BR>  SueldoRangoMaximo,<BR>  PuestoReporta,<BR>  PuestoSustituye,<BR>  Area,<BR>  Departamento,<BR>  Objetivo,<BR>  Alcance,<BR>  Funciones,<BR>  Responsabilidades,<BR>  Autoridad,<BR>  ComisionChoferesMAVI<BR><BR>FR<CONTINUA>
+SQL002=<CONTINUA>OM<BR>  Puesto
+
+
+
+;**** Nuevo campo agregado ARC 28-Feb-09 ****
+[Puesto.tbl/ComisionChoferesMAVI]
+Clave=ComisionChoferesMAVI
+Nombre=Comisión Choferes
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+

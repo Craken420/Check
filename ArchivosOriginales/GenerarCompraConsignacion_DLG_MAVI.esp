@@ -1,0 +1,27 @@
+;**** Ultima modificación:01-Feb-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:
+
+
+; **** Modificacion para agregar nuevas acciones: "CompraGastos" y modificación del parametro "PosicionInicialIzquierda" de 365 a 500 para que el diálogo apareciera un poco más grande****
+[GenerarCompraConsignacion.dlg/Dialogo]
+PosicionInicialIzquierda=500
+PosicionInicialArriba=301
+PosicionInicialAltura=141
+PosicionInicialAncho=294
+ListaAcciones=Factura<BR>CompraGastos<BR>Devolucion
+
+
+; **** Nueva Acción ****
+[GenerarCompraConsignacion.dlg/Acciones.CompraGastos]
+Nombre=CompraGastos
+Boton=0
+NombreDesplegar=Generar Entrada Compra ( Con Gastos )
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPendiente
+Activo=S
+Antes=S
+AntesExpresiones=Asigna( Afectar.GenerarMov, <T>Entrada Con Gastos<T> )<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+Visible=S

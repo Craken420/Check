@@ -1,21 +1,27 @@
-[Cont.frm/Acciones.DesAfectar]
-ActivoCondicion=Cont:Cont.Estatus=EstatusConcluido
+[Cont.frm/Acciones.Eliminar]
+Multiple=S
+ListaAccionesMultiples=Documento Eliminar<BR>Expresion
+;ActivoCondicion=Vacio(Cont:Cont.OrigenTipo) y Vacio(Cont:Cont.MovID) y (Cont:Cont.Estatus en (EstatusSinAfectar, EstatusPorConfirmar)) y PuedeAfectar(Verdadero, Usuario.ModificarOtrosMovs, Cont:Cont.Usuario)
+ActivoCondicion=(Cont:Cont.Estatus en (EstatusSinAfectar, EstatusPorConfirmar)) y PuedeAfectar(Verdadero, Usuario.ModificarOtrosMovs, Cont:Cont.Usuario)
+Antes=S
+AntesExpresiones=Asigna(Info.IDMAVI,Cont:Cont.ID)
 
+[Cont.frm/Acciones.Eliminar.Documento Eliminar]
+Nombre=Documento Eliminar
+Boton=0
+TipoAccion=Controles Captura
+ClaveAccion=Documento Eliminar
+Activo=S
+Visible=S
 
-[Cont.frm/Acciones.DesafectarLote]
-Expresion=Si<BR>  (ContA:Cont.Estatus=EstatusConcluido)<BR>Entonces<BR>  DesAfectar(<T>Cont<T>, ContA:Cont.ID, ContA:Cont.Mov, ContA:Cont.MovID)<BR>Fin
+[Cont.frm/Acciones.Eliminar.Expresion]
+Nombre=Expresion
+Boton=0
+TipoAccion=Expresion
+Expresion=SQL(<T>EXEC dbo.SP_EliminaContReg :nID<T>,Info.IDMAVI)
+Activo=S
+Visible=S
 
-
-
-
-
-[Cont.frm/Acciones.DesAfectar]
-ActivoCondicion=Cont:Cont.Estatus=EstatusConcluido
-
-
-
-[Cont.frm/Acciones.DesafectarLote]
-Expresion=Si<BR>  (ContA:Cont.Estatus=EstatusConcluido)<BR>Entonces<BR>  DesAfectar(<T>Cont<T>, ContA:Cont.ID, ContA:Cont.Mov, ContA:Cont.MovID)<BR>Fin
-
-
-
+[Cont.frm/Acciones.Cancelar]
+;ActivoCondicion=Vacio(Cont:Cont.OrigenTipo) y PuedeAfectar(Usuario.Cancelar, Usuario.CancelarOtrosMovs, Cont:Cont.Usuario) y ConDatos(Cont:Cont.ID) y (ConDatos(Cont:Cont.MovID) o (Cont:Cont.Estatus=EstatusBorrador)) y<BR>(Cont:Cont.Estatus en (EstatusSinAfectar, EstatusPorConfirmar, EstatusBorrador, EstatusSincro, EstatusConcluido))
+ActivoCondicion=PuedeAfectar(Usuario.Cancelar, Usuario.CancelarOtrosMovs, Cont:Cont.Usuario) y ConDatos(Cont:Cont.ID) y (ConDatos(Cont:Cont.MovID) o (Cont:Cont.Estatus=EstatusBorrador)) y<BR>(Cont:Cont.Estatus en (EstatusSinAfectar, EstatusPorConfirmar, EstatusBorrador, EstatusSincro, EstatusConcluido))

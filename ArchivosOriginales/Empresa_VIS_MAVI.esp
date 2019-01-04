@@ -1,0 +1,33 @@
+[Empresa.vis/Vista]
+;ListaCampos.Cambios=Insertar<TAB>Empresa.FiscalRegimen<TAB>27<BR>
+;SQL.Cambios=Insertar<TAB>  Empresa.FiscalRegimen,<TAB>28<BR>
+ListaCampos=Empresa.Empresa<BR>Empresa.Nombre<BR>Empresa.Grupo<BR>Empresa.Direccion<BR>Empresa.DireccionNumero<BR>Empresa.DireccionNumeroInt<BR>Empresa.Colonia<BR>Empresa.Poblacion<BR>Empresa.Estado<BR>Empresa.Pais<BR>Empresa.CodigoPostal<BR>Empresa.Telefonos<BR>Empresa.Fax<BR>Empresa.Encabezado1<BR>Empresa.Encabezado2<BR>Empresa.Estatus<BR>Empresa.UltimoCambio<BR>Empresa.UltimaCorrida<BR>Empresa.Alta<BR>Empresa.RFC<BR>Empresa.RegistroPatronal<BR>Empresa.ClaveActividad<BR>Empresa.Representante<BR>Empresa.RepresentanteRFC<BR>Empresa.RepresentanteCURP<BR>Empresa.Zona<BR>Empresa.Numero<BR>Empresa.TieneMovimientos<BR>Empresa.CambioBloquear<BR>Empresa.Controladora<BR>Empresa.FactorIntegracion<BR>Empresa.Tipo<BR>Empresa.ImportadorRegimen<BR>Empresa.ImportadorRegistro<BR>Empresa.ImportadorFechaD<BR>Empresa.ImportadorFechaA<BR>Empresa.Delegacion<BR>Empresa.GLN<BR>Empresa.CFD<BR>Empresa.CFD_noCertificado<BR>Empresa.CFD_version<BR>Empresa.CFD_versionFecha<BR>Empresa.CFD_versionAnterior<BR>Empresa.CFD_EAN13<BR>Empresa.CFD_DUN14<BR>Empresa.CFD_SKU<BR>Empresa.CFD_SKUCodigoInterno<BR>Empresa.CFD_Llave<BR>Empresa.CFD_Certificado<BR>Empresa.CFD_ContrasenaSello<BR>Empresa.FiscalRegimen<BR>Controladora.Empresa<BR>Controladora.Nombre
+SQL=SELECT<BR>  Empresa.Empresa,<BR>  Empresa.Nombre,<BR>  Empresa.Grupo,<BR>  Empresa.Direccion,<BR>  Empresa.DireccionNumero,<BR>  Empresa.DireccionNumeroInt,<BR>  Empresa.Colonia,<BR>  Empresa.Poblacion,<BR>  Empresa.Estado,<BR>  Empresa.Pais,<BR>  Empresa.CodigoPostal,<BR>  Empresa.Telefonos,<BR>  Empresa.Fax,<BR>  Empresa.Encabezado1,<BR>  Empresa.Encabezado2,<BR>  Empresa.Estatus,<BR>  Empresa.UltimoCambio,<BR>  Empresa.UltimaCorrida,<BR>  Empresa.Alta,<BR>  Empresa.RFC,<BR>  Empresa.RegistroPatronal,<BR>  Empresa.ClaveActividad,<BR>  Empresa.Representante,<BR>  Empresa.RepresentanteRFC,<BR>  Empresa.RepresentanteCURP,<BR>  Empresa.Zona,<BR>  Empresa.Numero,<BR>  Empresa.TieneMovimientos,<BR>  Empresa.CambioBloquear,<BR>  Empresa.Controladora,<BR>  Empresa.FactorIntegracion,<BR>  Empresa.Tipo,<BR>  Empresa.ImportadorRegimen,<BR>  Empresa.ImportadorRegistro,<BR>  Empresa.ImportadorFechaD,<BR>  Empresa.ImportadorFechaA,<BR>  Empresa.Delegacion,<BR>  Empresa.GLN,<BR>  Empresa.CFD,<BR>  Empresa.CFD_noCertificado,<BR>  Empresa.CFD_version,<BR>  Empresa.CFD_versionFecha,<BR>  Empresa.CFD_versionAnterior,<BR>  Empresa.CFD_EAN13,<BR>  Empresa.CFD_DUN14,<BR>  Empresa.CFD_SKU,<BR>  Empresa.CFD_SKUCodigoInterno,<BR>  Empresa.CFD_Llave,<BR>  Empresa.CFD_Certificado,<BR>  Empresa.CFD_ContrasenaSello,<BR>  Empresa.FiscalRegimen,<BR>  Controladora.Empresa,<BR>  Controladora.Nombre<BR><BR>FROM<BR>  Empresa<BR>  LEFT OUTER JOIN Empresa Controladora ON Empresa.Controladora=Controladora.Empresa
+
+
+;[Empresa.vis/Empresa.FiscalRegimen]
+;Clave=Empresa.FiscalRegimen
+;LigaTabla=Empresa
+;LigaCampo=FiscalRegimen
+;Ligado=S
+;TipoCampo=Tabla
+;TipoDatos=Texto
+;Tamano=100
+;ClaveBDE=FiscalRegimen
+
+
+[Empresa.vis/Empresa.FiscalRegimen]
+Clave=Empresa.FiscalRegimen
+Nombre=FiscalRegimen
+Visible=S
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Unicamente opciones listadas
+Formula=SQLEnLista(<T>SELECT FiscalRegimen FROM FiscalRegimen<T>)
+LigaTabla=Empresa
+LigaCampo=FiscalRegimen
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=FiscalRegimen

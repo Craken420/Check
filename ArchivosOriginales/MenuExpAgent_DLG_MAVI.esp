@@ -1,0 +1,9 @@
+;**** Ultima modificación:23-Jun-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:Nombre a desplegar
+
+
+
+;***** Se modifico el nombre a desplegar de "Comisiones y Destajos" a "Resultados Caja"
+[MenuExpAgent.dlg/Acciones.Explorar]
+NombreDesplegar=Resultados Caja

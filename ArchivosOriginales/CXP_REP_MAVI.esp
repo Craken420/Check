@@ -1,0 +1,14 @@
+;Modificacion el dia 26/Dic/2011, Por: Javier Quiñones(validacion para consultar costos)
+;Modificacion el dia 02/01/2012, Por: Jesus Del Toro A
+;Validacion para mostrar los importes, Integro BVF 09022012 paquete DM0135_09022012
+
+; **** Modificacion de Visible, se cambia el campo Configurcion por el campo Acceso Para los filtros de los usuarios, J del Toro 11-02-2012, para desarrollo DM0135 Informacion Del Articulo dentro del paquete DM0135_13022012. JR 13-Feb-2012. ****
+[CXP.rep/Linea6]
+;Visible=(((sql(<T>SELECT COUNT(Configuracion) FROM dbo.TablaStD St INNER JOIN dbo.Usuario U ON U.Configuracion=St.Nombre WHERE TablaSt=:tPer AND U.Usuario=:tUs<T>,<T>CFG PERFIL COSTOS VTAS<T>,Usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(SQL(<T>SELECT COUNT(Nombre) FROM dbo.TablaStD WHERE TablaSt=:tPer AND Nombre=:tNom<T>,<T>CONTROL COSTOS MOVIMIENTOS<T>,Cxp.Origen)=0) ))
+Visible=(((sql(<T>SELECT COUNT(Acceso) FROM dbo.TablaStD St INNER JOIN dbo.Usuario U ON U.Acceso=St.Nombre WHERE TablaSt=:tPer AND U.Usuario=:tUs<T>,<T>CFG PERFIL COSTOS VTAS<T>,Usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(SQL(<T>SELECT COUNT(Nombre) FROM dbo.TablaStD WHERE TablaSt=:tPer AND Nombre=:tNom<T>,<T>CONTROL COSTOS MOVIMIENTOS<T>,Cxp.Origen)=0) ))
+
+
+; **** Modificacion de Visible, se cambia el campo Configurcion por el campo Acceso Para los filtros de los usuarios, J del Toro 11-02-2012, para desarrollo DM0135 Informacion Del Articulo dentro del paquete DM0135_13022012. JR 13-Feb-2012. ****
+[CXP.rep/Linea9]
+;Visible=CxpD.Aplica<> Nulo y<BR>(((sql(<T>SELECT COUNT(Configuracion) FROM dbo.TablaStD St INNER JOIN dbo.Usuario U ON U.Configuracion=St.Nombre WHERE TablaSt=:tPer AND U.Usuario=:tUs<T>,<T>CFG PERFIL COSTOS VTAS<T>,Usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(SQL(<T>SELECT COUNT(Nombre) FROM dbo.TablaStD WHERE TablaSt=:tPer AND Nombre=:tNom<T>,<T>CONTROL COSTOS MOVIMIENTOS<T>,Cxp.Origen)=0) ))Visible=CxpD.Aplica<> Nulo y<BR>(((sql(<T>SELECT COUNT(Acceso) FROM dbo.TablaStD St INNER JOIN dbo.Usuario U ON U.Acceso=St.Nombre WHERE TablaSt=:tPer AND U.Usuario=:tUs<T>,<T>CFG PERFIL COSTOS VTAS<T>,Usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(SQL(<T>SELECT COUNT(Nombre) FROM dbo.TablaStD WHERE TablaSt=:tPer AND Nombre=:tNom<T>,<T>CONTROL COSTOS MOVIMIENTOS<T>,Cxp.Origen)=0) ))
+

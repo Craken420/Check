@@ -1,0 +1,72 @@
+;**** Ultima modificación:03-Jun-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:Agrego Campo UnidadPropiaMAVI
+
+
+
+
+
+
+
+; ****Se agregaron nuevos campos: TipoUnidadVehicular, UnidadPropiaMAVI****
+[Vehiculo.tbl/Tabla]
+ListaCampos=Vehiculo<BR>Descripcion<BR>Placas<BR>Volumen<BR>Peso<BR>Agente<BR>Ruta<BR>Estatus<BR>Cxp<BR>Proveedor<BR>Condicion<BR>Concepto<BR>TieneMovimientos<BR>GenerarGasto<BR>Impuestos<BR>Retencion<BR>Retencion2<BR>Retencion3<BR>Clase<BR>Subclase<BR>Articulo<BR>Serie<BR>RendimientoCombustible<BR>RendimientoTermo<BR>Agente2<BR>Agente3<BR>Descripcion1<BR>Descripcion2<BR>Descripcion3<BR>Descripcion4<BR>Descripcion5<BR>TipoUnidadVehicular<BR>UnidadPropiaMAVI
+SQL=SELECT<BR>  Vehiculo,<BR>  Descripcion,<BR>  Placas,<BR>  Volumen,<BR>  Peso,<BR>  Agente,<BR>  Ruta,<BR>  Estatus,<BR>  Cxp,<BR>  TieneMovimientos,<BR>  Proveedor,<BR>  Condicion,<BR>  Concepto,<BR>  GenerarGasto,<BR>  Clase,<BR>  Subclase,<BR>  Impuestos,<BR>  Retencion,<BR>  Retencion2,<BR>  Articulo,<BR>  Serie,<BR>  RendimientoCombustible,<BR>  RendimientoTermo,<BR>  Agente2,<BR>  Agente3,<BR>  Descripcion1,<BR>  Descripcion2,<BR>  Descripcion3,<BR>  Descripcion4,<BR>  Descripcion5,<BR>  Retencion3,<BR>  TipoUnidadVehicular,<BR>  UnidadPropiaMAVI<BR><BR>FROM<BR>  Vehiculo
+
+
+
+
+;****Nuevo campo agregado****
+[Vehiculo.tbl/TipoUnidadVehicular]
+Clave=TipoUnidadVehicular
+Nombre=Tipo de Unidad
+Visible=S
+TamanoValidacion=20
+Tamano=20
+RequeridoActivo=S
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Validar captura en la lista
+AyudaMemRenglones=12
+AyudaRefrescar=S
+Formula=SQLEnLista(<T>Select TipoUnidad from TipoUnidadVehicularMAVI<T> )
+
+
+
+;****Nuevo campo agregado****
+[vehiculo.tbl/UnidadPropiaMAVI]
+Clave=UnidadPropiaMAVI
+Nombre=Unidad Propia
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=0
+
+
+
+;**** Modificacion de la vista de ayuda 01-Sep-08 (Arly Rubio)*****
+[vehiculo.tbl/Articulo]
+AyudaVista=MaviArtA
+
+
+[Vehiculo.tbl/Agente]
+ValidacionUsaTabla=N
+ValidacionTablas=
+
+;** Cambio Agente Destino ALQG
+[Vehiculo.tbl/Agente2]
+AyudaEnCaptura=Vista
+AyudaForma=AgenteLista
+AyudaVista=AgenteA
+AyudaCampo=Agente.Agente
+ValidacionUsaTabla=N
+ValidacionTablas=
+
+[Vehiculo.tbl/Agente3]
+ValidacionUsaTabla=N
+ValidacionTablas=
+
+[Vehiculo.tbl/Estatus]
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>No es posible el cambio de Estatus,<BR>la unidad cuenta con los siguientes movimientos pendientes:<T>+NuevaLinea+NuevaLinea<BR>+Info.Mensaje<BR>+NuevaLinea+NuevaLinea+<T>Favor de concluirlos para poder continuar.<T>
+ValidacionCondicion=SI (Estatus = <T>BLOQUEADO<T>) o (Estatus = <T>BAJA<T>) ENTONCES<BR>    Asigna(Info.Mensaje,SQLEnLista(<T>SET ANSI_NULLS ON<BR>                                    SET ANSI_WARNINGS ON <BR>                                    Select * from  dbo.FnAFListMovPendVehiculo (:tMov,:tVal)<T>,<T>VEHICULO<T>,Articulo))<BR>    SI conDatos(Info.Mensaje) ENTONCES<BR>        FALSO<BR>    SINO<BR>        VERDADERO<BR>    FIN<BR>SINO<BR>    VERDADERO<BR>FIN
+ListaOpciones=DISPONIBLE<BR>ENTRANSITO<BR>BLOQUEADO<BR>BAJA

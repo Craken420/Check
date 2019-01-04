@@ -1,0 +1,400 @@
+;**** Ultima modificación:18-Dicl-08
+;**** Modifico: Leticia Quezada
+;**** Se modifico: Integracion del desarrollo de Cobranza Instituciones
+
+;**** Modificación:04-Jul-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:Integracion del desarrollo de mexico
+
+;***** Modificacion: 09-Ene-09
+;***** Modifico: Judith Ramirez
+;***** Se modifico: Se agrego campo seenviaburocreditomavi para desarrollo buro credito
+
+; ***** Modifico: 04-Dic-09 Judith Ramirez. *****
+; ***** Modificacion: Cambios en acciones: Aceptar, OtrosDatos para cte express. Cambio por Arturo Guizer. *****
+
+
+; **** Se modifico el titulo de la forma de "Sucursales del Cliente" a "Canales de Venta del Cliente"
+[CteEnviarA.frm/Forma]
+Nombre=<T>Canales de Venta del Cliente<T>
+ListaCarpetas=Lista<BR>Detalle<BR>Direccion<BR>ReglaNegocio<BR>CamposInst
+PosicionInicialIzquierda=340
+PosicionInicialArriba=60
+PosicionInicialAltura=564
+PosicionInicialAncho=600
+PosicionInicialAlturaCliente=680
+PosicionSec1=189
+
+
+;*****Se agregaron nuevos campos en la captura de la pestaña: DesarrolloMexico(CteEnviarA.UENMAVI, CteEnviarA.SeccionCobranzaMAVI, CteEnviarA.NivelCobranzaMAVI, MAVINivelCobranza.Nombre, CteEnviarA.RutaCobranzaMAVI)*********
+[CteEnviarA.frm/ReglaNegocio]
+ListaEnCaptura=CteEnviarA.Nombre<BR>CteEnviarA.ID<BR>CteEnviarA.ListaPreciosEsp<BR>CteEnviarA.Condicion<BR>CteEnviarA.Descuento<BR>CteEnviarA.UENMAVI<BR>CteEnviarA.FormaEnvio<BR>CteEnviarA.ZonaImpuesto<BR>CteEnviarA.Proyecto<BR>CteEnviarA.SucursalEmpresa<BR>Sucursal.Nombre<BR>CteEnviarA.Almacen<BR>CteEnviarA.PersonalCobrador<BR>PersonalNombre<BR>CteEnviarA.AlmacenVtasConsignacion<BR>CteEnviarA.Unidad<BR>CteEnviarA.wMovVentas<BR>CteEnviarA.ModificarVencimiento<BR>CteEnviarA.SeccionCobranzaMAVI<BR>CteEnviarA.NivelCobranzaMAVI<BR>CteEnviarA.CobraAval<BR>CteEnviarA.AvalResponsable<BR>ContactoNombre<BR>CteEnviarA.SeEnviaBuroCreditoMavi
+
+;*****Nuevo Campo agregado ***********
+[CteEnviarA.frm/ReglaNegocio.CteEnviarA.UENMAVI]
+Carpeta=ReglaNegocio
+Clave=CteEnviarA.UENMAVI
+Editar=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+Tamano=16
+
+
+;*****Nuevo Campo agregado ***********
+[CteEnviarA.frm/ReglaNegocio.CteEnviarA.SeccionCobranzaMAVI]
+Carpeta=ReglaNegocio
+Clave=CteEnviarA.SeccionCobranzaMAVI
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+
+
+;*****Nuevo Campo agregado ***********
+[CteEnviarA.frm/ReglaNegocio.CteEnviarA.NivelCobranzaMAVI]
+Carpeta=ReglaNegocio
+Clave=CteEnviarA.NivelCobranzaMAVI
+Editar=S
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+ColorFuente=Negro
+Pegado=N
+
+
+;*****Nuevo Campo agregado ***********
+;[CteEnviarA.frm/ReglaNegocio.CteEnviarA.RutaCobranzaMAVI]
+;Carpeta=ReglaNegocio
+;Clave=CteEnviarA.RutaCobranzaMAVI
+;Editar=S
+;ValidaNombre=S
+;3D=S
+;Tamano=20
+;ColorFondo=Blanco
+;ColorFuente=Negro
+
+
+;*****Nuevo Campo agregado ***********
+;[CteEnviarA.frm/ReglaNegocio.MAVINivelCobranza.Nombre]
+;Carpeta=ReglaNegocio
+;Clave=MAVINivelCobranza.Nombre
+;ValidaNombre=S
+;3D=S
+;Tamano=20
+;ColorFondo=Plata
+;ColorFuente=Negro
+;Pegado=S
+;OcultaNombre=N
+
+
+;*** ARC 19-May-09 Desarrollo Cobranza Menudeo  ***
+[CteEnviarA.frm/ReglaNegocio.CteEnviarA.CobraAval]
+Carpeta=ReglaNegocio
+Clave=CteEnviarA.CobraAval
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+Tamano=3
+Pegado=S
+EspacioPrevio=S
+
+;*** ARC 19-May-09 Desarrollo Cobranza Menudeo  ***
+[CteEnviarA.frm/ReglaNegocio.CteEnviarA.AvalResponsable]
+Carpeta=ReglaNegocio
+Clave=CteEnviarA.AvalResponsable
+Editar=S
+ValidaNombre=N
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+Tamano=2
+Pegado=N
+OcultaNombre=N
+LineaNueva=S
+
+
+;*** ARC 19-May-09 Desarrollo Cobranza Menudeo  ***
+[CteEnviarA.frm/ReglaNegocio.ContactoNombre]
+Carpeta=ReglaNegocio
+Clave=ContactoNombre
+Editar=S
+3D=S
+Pegado=S
+Tamano=59
+ColorFondo=Blanco
+ColorFuente=Negro
+ValidaNombre=N
+OcultaNombre=N
+
+
+;**** Se modifico el orden de los campos****
+[CteEnviarA.frm/Detalle]
+ListaEnCaptura=CteEnviarA.ID<BR>CteEnviarA.Clave<BR>CteEnviarA.Nombre<BR>CteEnviarA.Categoria<BR>CteEnviarA.Estatus<BR>CteEnviarA.Grupo<BR>CteEnviarA.Familia<BR>CteEnviarA.Encargado<BR>CteEnviarA.Cadena<BR>CteEnviarA.Telefonos<BR>CteEnviarA.Fax<BR>CteEnviarA.Contacto1<BR>CteEnviarA.Extencion1<BR>CteEnviarA.Contacto2<BR>CteEnviarA.Extencion2<BR>CteEnviarA.eMail1<BR>CteEnviarA.eMail2<BR>CteEnviarA.eMailAuto<BR>CteEnviarA.Agente<BR>AgenteEnviarA.Nombre<BR>CteEnviarA.Observaciones<BR>CteEnviarA.Contrasena
+
+
+;**** Se modifico este campo para que desplegara el nombre ****
+[CteEnviarA.frm/Detalle.CteEnviarA.ID]
+Pegado=N
+LineaNueva=S
+ValidaNombre=S
+EspacioPrevio=N
+
+
+;**** Se modifico este campo para que no fuera editable ****
+[CteEnviarA.frm/Detalle.CteEnviarA.Clave]
+Editar=N
+
+
+;**** Se modifico para que este campo no fuera editable ****
+[CteEnviarA.frm/Detalle.CteEnviarA.Nombre]
+Editar=N
+LineaNueva=N
+ValidaNombre=N
+Pegado=S
+
+
+;**** Se modifico para que este campo no fuera editable ****
+[CteEnviarA.frm/Detalle.CteEnviarA.Categoria]
+Editar=N
+
+
+
+;**** Se modifico para que este campo no fuera editable ****
+[CteEnviarA.frm/Detalle.CteEnviarA.Cadena]
+Editar=N
+
+
+;**** Inicia modificacion de Cobranza Instituciones ****
+[CteEnviarA.frm/CamposInst]
+Estilo=Ficha
+Pestana=S
+PestanaOtroNombre=S
+PestanaNombre=Datos Institucion
+Clave=CamposInst
+PermiteEditar=S
+AlineacionAutomatica=S
+AcomodarTexto=S
+MostrarConteoRegistros=S
+Zona=B1
+Vista=CteEnviarA
+Fuente={Tahoma, 8, Negro, []}
+FichaEspacioEntreLineas=6
+FichaEspacioNombres=100
+FichaEspacioNombresAuto=S
+FichaNombres=Arriba
+FichaAlineacion=Izquierda
+FichaColorFondo=Plata
+FichaAlineacionDerecha=S
+CampoColorLetras=Negro
+CampoColorFondo=Plata
+ListaEnCaptura=CteEnviarA.Nombre<BR>CteEnviarA.ID<BR>CteEnviarA.Puesto<BR>CteEnviarA.Cargo<BR>CteEnviarA.ClaveInst<BR>CteEnviarA.Municipio<BR>CteEnviarA.Nomina<BR>CteEnviarA.RFCInstitucion
+CarpetaVisible=S
+
+[CteEnviarA.frm/CamposInst.CteEnviarA.Nombre]
+Carpeta=CamposInst
+Clave=CteEnviarA.Nombre
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=41
+ColorFondo=Plata
+ColorFuente=Negro
+Efectos=[Negritas]
+
+[CteEnviarA.frm/CamposInst.CteEnviarA.ID]
+Carpeta=CamposInst
+Clave=CteEnviarA.ID
+ValidaNombre=S
+3D=S
+Tamano=19
+ColorFondo=Plata
+ColorFuente=Negro
+Efectos=[Negritas]
+
+[CteEnviarA.frm/CamposInst.CteEnviarA.Cargo]
+Carpeta=CamposInst
+Clave=CteEnviarA.Cargo
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=41
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[CteEnviarA.frm/CamposInst.CteEnviarA.ClaveInst]
+Carpeta=CamposInst
+Clave=CteEnviarA.ClaveInst
+Editar=S
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+ColorFuente=Negro
+LineaNueva=S
+
+[CteEnviarA.frm/CamposInst.CteEnviarA.Puesto]
+Carpeta=CamposInst
+Clave=CteEnviarA.Puesto
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=61
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[CteEnviarA.frm/CamposInst.CteEnviarA.Municipio]
+Carpeta=CamposInst
+Clave=CteEnviarA.Municipio
+Editar=S
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[CteEnviarA.frm/CamposInst.CteEnviarA.Nomina]
+Carpeta=CamposInst
+Clave=CteEnviarA.Nomina
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=30
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[CteEnviarA.frm/CamposInst.CteEnviarA.RFCInstitucion]
+Carpeta=CamposInst
+Clave=CteEnviarA.RFCInstitucion
+Editar=S
+ValidaNombre=S
+3D=S
+Tamano=30
+ColorFondo=Blanco
+ColorFuente=Negro
+
+;****Termina modificacion de Cobranza Instituciones ****
+
+
+
+;***** nuevo campo para buro de credito 30/12/2008 *****
+[CteEnviarA.frm/ReglaNegocio.CteEnviarA.SeEnviaBuroCreditoMavi]
+Carpeta=ReglaNegocio
+Clave=CteEnviarA.SeEnviaBuroCreditoMavi
+Editar=S
+EditarConBloqueo=S
+LineaNueva=S
+3D=S
+Tamano=25
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+;***** se modifico acciones para buro credito *****
+
+
+; ***** JR 04-Dic-09. Se agrego lineas: Multiple, ListaAccionesMultiples, para cte express. Cambio por Arturo Guizer. *****
+[CteEnviarA.frm/Acciones.Aceptar]
+Nombre=Aceptar
+Boton=3
+NombreEnBoton=S
+NombreDesplegar=&Guardar y cerrar
+EnBarraHerramientas=S
+TipoAccion=Ventana
+ClaveAccion=Aceptar
+Visible=S
+Activo=S
+GuardarAntes=S
+Antes=S
+AntesExpresiones=EjecutarSQL(<T>spActualizaCteEnviarBuro :tcte<T>, CteEnviarA:CteEnviarA.Cliente)
+DespuesGuardar=S
+Multiple=S
+ListaAccionesMultiples=mayoreo<BR>gyc
+
+; ***** JR 04-Dic-09. Accion nueva para cte express. Cambio por Arturo Guizer. *****
+[CteEnviarA.frm/Acciones.Aceptar.gyc]
+Nombre=gyc
+Boton=0
+TipoAccion=Ventana
+ClaveAccion=Aceptar
+Activo=S
+Visible=S
+
+; ***** JR 04-Dic-09. Accion nueva para cte express. Cambio por Arturo Guizer. *****
+[CteEnviarA.frm/Acciones.Aceptar.mayoreo]
+Nombre=mayoreo
+Boton=0
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=EjecutarSQL(<T>SP_ActualizaCteMayoreoMavi :tc,:tcat<T>,CteEnviarA:CteEnviarA.Cliente,CteEnviarA:CteEnviarA.Categoria)
+
+; ***** JR 04-Dic-09. Cambio de accion enviar a otros datos. Cambio por Arturo Guizer. *****
+[CteEnviarA.frm/Acciones.OtrosDatos]
+Nombre=OtrosDatos
+Boton=38
+NombreDesplegar=Otros Datos...
+EnBarraHerramientas=S
+TipoAccion=Formas
+ClaveAccion=CteEnviarAOtrosDatos
+Activo=S
+Visible=S
+Antes=S
+Multiple=S
+ListaAccionesMultiples=Cual
+AntesExpresiones=Asigna(Info.ID, CteEnviarA:CteEnviarA.ID)<BR>Asigna(Info.Descripcion, CteEnviarA:CteEnviarA.Nombre)<BR>Asigna(Info.DescTipo,CteEnviarA:CteEnviarA.Categoria)
+
+; ***** JR 04-Dic-09. Accion nueva de enviar a otros datos. Cambio por Arturo Guizer. *****
+[CteEnviarA.frm/Acciones.OtrosDatos.Cual]
+Nombre=Cual
+Boton=0
+TipoAccion=expresion
+Expresion=Si Info.DescTipo en(<T>CREDITO MENUDEO<T>,<T>ASOCIADOS<T>)<BR>   Entonces  forma(<T>EnviarAOtrosDatosMenMavi<T>)<BR>Sino<BR>    Si Info.DescTipo=<T>MAYOREO<T><BR>       Entonces forma(<T>EnviarAOtrosDatosMayMavi<T>)<BR>    Sino forma(<T>CteEnviarAOtrosDatos<T>)<BR>    Fin<BR>Fin
+Activo=S
+Visible=S
+
+
+
+;*** ARC 19-May-09 Modificacion mexico desarrollo CteExpress ***
+
+[CteEnviarA.frm/Direccion.CteEnviarA.Direccion]
+Editar=N
+
+[CteEnviarA.frm/Direccion.CteEnviarA.Colonia]
+Editar=N
+
+[CteEnviarA.frm/Direccion.CteEnviarA.CodigoPostal]
+Editar=N
+
+[CteEnviarA.frm/Direccion.CteEnviarA.Poblacion]
+Editar=N
+
+[CteEnviarA.frm/Direccion.CteEnviarA.Estado]
+Editar=N
+
+[CteEnviarA.frm/Direccion.CteEnviarA.Pais]
+Editar=N
+
+[CteEnviarA.frm/Direccion.CteEnviarA.Delegacion]
+Editar=N
+
+[CteEnviarA.frm/Direccion.CteEnviarA.DireccionNumero]
+Editar=N
+
+[CteEnviarA.frm/Direccion.CteEnviarA.DireccionNumeroInt]
+Editar=N
+
+

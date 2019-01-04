@@ -1,0 +1,7 @@
+;**** Ultima modificación:29-May-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:Se agrergo el campo Licencia
+
+;**** Se agregaron campos de busqueda rapida: Ruta, Kms; ARC 19-May-2009: Ruta.RutaZona ****
+[Ruta.vis/Vista]
+CamposBusquedaRapida=Ruta.Ruta<BR>Ruta.Zona<BR>Ruta.Kms

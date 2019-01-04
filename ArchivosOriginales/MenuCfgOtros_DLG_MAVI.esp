@@ -1,0 +1,17 @@
+;**** Ultima modificación:26-Dic-08
+;**** Modifico:Edgar Montelongo
+;**** Se modifico:Se agrego Accion PreguntaCte
+
+[MenuCfgOtros.dlg/Dialogo]
+ListaAcciones=Tablas<BR>Impresion<BR>CodigosBarras<BR>TiposBloqueos<BR>TiposPresupuestos<BR>Excel<BR>Pais<BR>DiaFestivo<BR>AgendaHora<BR>CodigoPostal<BR>ZonaImp<BR>LoteFijo<BR>Anuncio<BR>Tareas<BR>InstitucionFin<BR>Idioma<BR>Importacion<BR>Escuelas<BR>SeguroTipoPoliza<BR>RefTipo<BR>Religion<BR>CteTitulos<BR>Eventos<BR>ListaNegra<BR>ListaNegraColonia<BR>ListaPoliticos<BR>Cubo<BR>Web<BR>Consecutivo<BR>SincroRama<BR>MovTurno<BR>Modulo<BR>MovCte<BR>MovProv<BR>MovProy<BR>MenuCfgTipo<BR>GRP<BR>Acronimo<BR>DiasEsp<BR>Tasas<BR>Opcion1<BR>Opcion2<BR>Opcion3<BR>Otros1<BR>Otros2<BR>Otros3<BR>Otros4<BR>Otros5<BR>Otros6<BR>Otros7<BR>Otros8<BR>Otros9<BR>Parentesco<BR>Color<BR>PreguntaCte
+
+[MenuCfgOtros.dlg/Acciones.PreguntaCte]
+Nombre=PreguntaCte
+Boton=0
+NombreDesplegar=Configurar Preguntas Clientes
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=PreguntaCte
+Activo=S
+Visible=S

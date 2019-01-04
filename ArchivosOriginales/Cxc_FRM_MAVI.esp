@@ -1,0 +1,336 @@
+[Cxc.frm/Forma]
+ListaAcciones=Nuevo<BR>MovCopiar<BR>CopiarMeses<BR>Abrir<BR>Localizar<BR>Guardar<BR>MovPersonal<BR>Evaluaciones<BR>Propiedades<BR>Imprimir<BR>RepPantalla<BR>PlantillasOffice<BR>FormasAnexas<BR>Excel<BR>Verificar<BR>Situacion<BR>Sucursal<BR>Afectar<BR>Consecutivo<BR>Eliminar<BR>Cancelar<BR>Sugerir<BR>ReasignarUsuario<BR>ACRecorrerVencimiento<BR>ACBajaParcial<BR>Embarcar<BR>Campos<BR>CamposExtras<BR>Totalizar<BR>Voucher<BR>MovExpress<BR>LCExpress<BR>Tareas<BR>Anexos<BR>AgregarEvento<BR>Vales<BR>Tarjetas<BR>ImporteConImpuestos<BR>Asistente Aplicacion<BR>Anticipos<BR>AnticiposFacturados<BR>Anterior<BR>Siguiente<BR>Infomacion<BR>Correo_ClienteCxc<BR>InfoCtaDinero<BR>ProyInfo<BR>TablaAmortizacion<BR>DepositosAnticipados<BR>Tiempo<BR>Politica<BR>PoliticaConcepto<BR>MovBitacora<BR>RecuperacionFin<<CONTINUA>
+ListaAcciones002=<CONTINUA>BR>MovPos<BR>Navegador<BR>Cerrar<BR>Otros1<BR>Otros2<BR>Otros3<BR>Otros4<BR>Otros5<BR>Otros6<BR>Otros7<BR>Otros8<BR>Otros9<BR>Refinanciamiento
+ExpresionesAlMostrar=Asigna(Info.Mov, Nulo)<BR>Asigna(Info.MovID, Nulo)<BR>Asigna(Info.Importe, 0.0)<BR>Asigna(Def.CxImpuesto, General.DefImpuesto)<BR>Asigna(Info.Monto, Nulo)<BR>Asigna(MAVI.DM0116FaseC,0)
+ExpresionesAlCerrar=Asigna(Filtro.Cliente, Nulo)<BR>Asigna(Filtro.Mov, Nulo)<BR>Asigna(Filtro.Proyecto, Nulo)<BR>Asigna(Filtro.Actividad, Nulo)<BR>Asigna(Info.Monto, Nulo)<BR>SI(((Cxc:Cxc.Estatus <> <T>CONCLUIDO<T>)y (Cxc:Cxc.Mov = <T>Cobro<T>) y (Vacio(Cxc:Cxc.MovID,Nulo) <> Nulo)), (EjecutarSQL('SPCancelaCobroMAVI :n',Cxc:Cxc.ID )))<BR>
+PosicionInicialIzquierda=304
+PosicionInicialArriba=106
+PosicionInicialAlturaCliente=650
+PosicionInicialAncho=700
+PosicionSec1=390
+PosicionSec2=520
+PosicionInicialArriba=11
+PosicionInicialAlturaCliente=968
+
+[Cxc.frm/(Carpeta Abrir)]
+;FiltroAutoCampo=Cxc.Moneda
+;FiltroAutoValidar=Cxc.Moneda
+FiltroMovsTodos=
+FiltroFechasDefault=Hoy
+FiltroMovDefault=Documento
+FiltroEstilo=
+FiltroTipo=General
+FiltroFechasCambiar=S
+FiltroFechasVencimiento=S
+BusquedaActualizacionManual=S
+
+[Cxc.frm/Ficha]
+ListaEnCaptura=Cxc.Mov<BR>Cxc.MovID<BR>Cxc.Proyecto<BR>Cxc.UEN<BR>Cxc.Moneda<BR>Cxc.TipoCambio<BR>Cxc.FechaEmision<BR>Cxc.FechaOriginal<BR>Cxc.CtaDinero<BR>Cxc.Cliente<BR>Cte.Nombre<BR>Cxc.Cajero<BR>Cxc.ClienteEnviarA<BR>CteEnviarA.Cadena<BR>Cxc.Agente<BR>Cxc.Importe<BR>Cxc.Impuestos<BR>ImporteTotal<BR>Cxc.Concepto<BR>Cxc.FormaCobro<BR>Cxc.PersonalCobrador<BR>Cxc.Referencia<BR>Cxc.NoCtaPago<BR>Cxc.RefAnticipoMAVI<BR>Cxc.Condicion<BR>Cxc.Vencimiento<BR>Cxc.CondRef<BR>Cxc.Observaciones<BR>Cxc.Saldo<BR>Cxc.AplicaManual<BR>Cxc.ConDesglose<BR>Cxc.ClienteMoneda<BR>Cxc.ClienteTipoCambio<BR>CxcSaldo.Saldo<BR>Cxc.Financiamiento<BR>Cxc.SeEnviaBuroCreditoMavi<BR>Cxc.FacDesgloseIVA
+
+
+[Cxc.frm/Ficha.Cxc.NoCtaPago]
+Carpeta=Ficha
+Clave=Cxc.NoCtaPago
+Editar=S
+LineaNueva=N
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[Cxc.frm/Ficha.CteEnviarA.Cadena]
+Carpeta=Ficha
+Clave=CteEnviarA.Cadena
+Editar=S
+3D=S
+Tamano=29
+ColorFondo=Plata
+ColorFuente=Negro
+Pegado=N
+
+[Cxc.frm/Ficha.Cxc.Financiamiento]
+Carpeta=Ficha
+Clave=Cxc.Financiamiento
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=25
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[Cxc.frm/Ficha.Cxc.SeEnviaBuroCreditoMavi]
+Carpeta=Ficha
+Clave=Cxc.SeEnviaBuroCreditoMavi
+Editar=S
+LineaNueva=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+ColorFuente=Negro
+EditarConBloqueo=S
+
+
+[Cxc.frm/Ficha.Cxc.FacDesgloseIVA]
+Carpeta=Ficha
+Clave=Cxc.FacDesgloseIVA
+Editar=N
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=50
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[Cxc.frm/Ficha.Cxc.ConTramites]
+Carpeta=Ficha
+Clave=Cxc.ConTramites
+Editar=S
+LineaNueva=N
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+Tamano=2
+
+[Cxc.frm/Acciones.MovCopiar]
+TeclaRapida=Shift+F11
+ActivoCondicion=(Cxc:Cxc.Mov <> (<T>Sol Refinanciamiento<T>)) y<BR>(Cxc:Cxc.Mov <> (<T>Refinanciamiento<T>))
+Antes=S
+AntesExpresiones=SI(((Cxc:Cxc.Estatus <> <T>CONCLUIDO<T>)y (Cxc:Cxc.Mov = <T>Cobro<T>) y (Vacio(Cxc:Cxc.MovID,Nulo) <> Nulo)), (EjecutarSQL(<T>SPCancelaCobroMAVI :n<T>,Cxc:Cxc.ID )))
+
+[Cxc.frm/Acciones.RecuperacionFin]
+Nombre=RecuperacionFin
+Boton=51
+Menu=&Ver
+NombreDesplegar=Recuperacion Financiamiento
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Formas
+ClaveAccion=RecuperacionCredilanasPPMAVI
+Visible=S
+Antes=S
+EspacioPrevio=S
+ActivoCondicion=(Cxc:Cxc.Mov en (<T>Credilana<T>,<T>Prestamo Personal<T>,<T>Refinanciamiento<T>)) y (Cxc:Cxc.Estatus en (EstatusConcluido, EstatusPendiente))
+AntesExpresiones=Asigna(Info.IDCredilanaPP, Cxc:Cxc.ID)<BR>Asigna(Info.CredilanaPP, (Cxc:Cxc.Mov+<T> <T>+Cxc:Cxc.MovID))
+
+Expresion=Asigna(Info.SugerirCobro, Nulo)<BR>Asigna(Info.Mov, Cxc:Cxc.Mov)<BR>Asigna(Info.Importe, Vacio(Cxc:ImporteTotal, Nulo))<BR>Asigna(Info.Acreditado, Cxc:Cxc.Cliente)<BR>Asigna(Info.ID, Cxc:Cxc.ID)<BR>Asigna(Info.Cliente,Cxc:Cxc.Cliente)<BR>Asigna(Mavi.DM0138MovCorreo,Cxc:Cxc.Mov)<BR>Asigna(Info.IDMAVI,Cxc:Cxc.ID)<BR>Asigna(Mavi.DM0138MovEstatus,Cxc:Cxc.Estatus)<BR>Asigna(Mavi.DM0138Modulo,<T>CXC<T>)<BR>Asigna(Mavi.DM0138Bandera,1)<BR>Forma(<T>SugerirCobroPMMAVI<T>)
+Visible=S
+ActivoCondicion=(Cxc:Cxc.Estatus en (EstatusSinAfectar, EstatusPorConfirmar)) y <BR>(MovTipoEn(<T>CXC<T>, Cxc:Cxc.Mov, (CXC.C))) y (no Cxc:Cxc.AplicaManual) y (Cxc:Cxc.Mov = <T>Cobro<T>)
+EspacioPrevio=S
+
+[Cxc.frm/Acciones.Afectar]
+GuardarAntes=S
+AntesExpresiones=Si<BR> Cxc:Cxc.Mov en (<T>Dev Anticipo Contado<T>,<T>Devolucion<T>,<T>Devolucion Enganche<T>)<BR>Entonces<BR>    Asigna(Mavi.DM0209CxcUsuario,Usuario)<BR>    Asigna( Info.Mov, Cxc:Cxc.Mov )<BR>    Asigna( Info.MovID,Cxc:Cxc.ID )<BR>    si<BR>      sql(<T>Select dbo.FN_DM0259ComprovarMovAutorizados (:tMov,:tMovRef)<T>,Info.Mov,Info.MovID)= 0<BR>    Entonces<BR>      Si<BR>        (Condatos(CxcD:CxcD.Aplica)) y (Cxc:Cxc.AplicaManual) y<BR>        (SQL(<T>SELECT MovCredito FROM TcIDM0224_ConfigNotasEspejo WHERE MovCredito=<T>&Comillas(CxcD:CxcD.Aplica)&<T> AND FechaDesde <= GETDATE() AND ConceptoCredito=(SELECT Concepto FROM Cxc WHERE Mov=<T>&Comillas(CxcD:CxcD.Aplica)&<T> AND MovID=<T>&Comillas(CxcD:CxcD.AplicaID)&<T>)<T>)=CxcD:CxcD.Aplica)<BR>      Entonces<BR>        Si(Precaucion(<T>No es posible hacer la devolucion porque la Nota Credito es de un movimiento espejo <T>, BotonAceptar)=BotonAceptar, AbortarOperacion,AbortarOperacion)<BR>      Fin<BR>      Forma(<T>DM0259CXCValidarDevolucion<T>)<BR>      AbortarOperacion<BR>    fin<BR>sino<BR>GuardarCambios<BR><BR>Asigna(Info.IDMAVI, Cxc:Cxc.ID)<BR>Caso  SQL(<T>SELECT dbo.fn_MaviDM0169CampoExtra(:nId,:nEnviarA)<T>,Cxc:Cxc.ID,Cxc:Cxc.ClienteEnviarA)<BR>  Es 1 Entonces si(Precaucion(<T>El campoExtra para el Folio de la Factura es OBLIGATORIO<T>,BotonAceptar)=BotonAceptar,AbortarOperacion,AbortarOperacion)<BR>  Es 2 Entonces si(Precaucion(<T>El campoExtra para el Folio de la Nota de Credito es OBLIGATORIO<T>,BotonAceptar)=BotonAceptar,AbortarOperacion,AbortarOperacion)<BR>  Es 3 Entonces si(Precaucion(<T>El campoExtra para el Folio del Cobro es OBLIGATORIO<T>,BotonAceptar)=BotonAceptar,AbortarOperacion,AbortarOperacion)<BR>  Es 4 Entonces si(Precaucion(<T>El campoExtra para la Fecha de Deposito es OBLIGATORIO<T>,BotonAceptar)=BotonAceptar,AbortarOperacion,AbortarOperacion)<BR>  Es 5 Entonces si(Precaucion(<T>El campoExtra para el Folio del Documento es OBLIGATORIO<T>,BotonAceptar)=BotonAceptar,AbortarOperacion,AbortarOperacion)<BR>Sino<BR>  Falso<BR>Fin<BR><BR>SI (cxc:cxc.concepto = <T>MAVICOB<T>)    y  ( Cxc:Cxc.Estatus = <T>SINAFECTAR<T>)  y (Cxc:Cxc.Mov EN(<T>Cta Incobrable F<T>,<T>Cta Incobrable NV<T>))<BR>Entonces<BR>    Si (SQL(<T>Select count (id) Totid from (Select count(id) id, aplica,aplicaid<BR>                from cxcd where id = :Ni Group by aplica,aplicaid  Having count(id) >1 )E<T>, Cxc:Cxc.ID )>0 )<BR>     Entonces<BR>      Si(Precaucion(<T>      NO SE PUEDE DUPLICAR<BR> MOVIMIENTOS EN EL  DETALLE<BR><BR>     <T>+ SQLEnLista(<T> Select aplica,aplicaid from (<BR>Select count(id) id, aplica,aplicaid<BR>from cxcd<BR>where id = :Ni<BR>Group by aplica,aplicaid<BR>Having count(id) >1 )E <T>, Cxc:Cxc.ID ) , BotonAceptar)=BotonAceptar, AbortarOperacion,AbortarOperacion)<BR>    FIN<BR><BR><BR>  SI (SQL(<T>Select SUM(Revisa)<BR>From<BR>(--F<BR>Select Case When Count(ISNULL(c1.id,0)) != Totmovinc OR Difimpo >0 THEN 1 ELSE 0 END Revisa<BR> FROM<BR> (--A<BR>  Select Padremavi,padreidmavi,COUNT(id) Totmovinc, SUM( CASE WHEN ISNULL(c.Saldo,0) != ISNULL(D.Importe,0) OR c.id IS NULL THEN 1 ELSE 0 END ) Difimpo<BR>  FRom<BR>   (--D<BR>       Select Aplica,Aplicaid,importe<BR>       From<BR>       CXCD<BR>        Where ID = :Nid<BR>        Group by Aplica,Aplicaid,importe<BR>    )D<BR>    Left join CXC C on D.aplica = c.mov<BR>    AND D.aplicaid = c.movid AND  c.Estatus =   <T>+ Comillas(<T>Pendiente<T>)+<BR>   <T>  GROUP BY Padremavi,padreidmavi<BR><BR>   )A<BR>   left join cxc c1 on  c1.padremavi =  A.padremavi and c1.padreidmavi = A.padreidmavi<BR>    AND Estatus = <T>+ Comillas(<T>Pendiente<T>)+<BR>  <T> GROUP BY A.Padremavi,A.padreidmavi, A.Totmovinc,A.Difimpo<BR>   )F <T>, Cxc:Cxc.ID)>0 )<BR><BR>  ENTONCES<BR>    precaucion(<T>Falta incluir alguno de los movimientos del Padre<BR>     o los importes no corresponde con el saldo<T>)<BR>    Abortaroperacion<BR> SINO<BR>  si (SQL(<T>Select Sum(importe) from cxcd where id = :Nid<T>,Cxc:Cxc.ID)<> Cxc:Cxc.Importe + Cxc:Cxc.Impuestos)<BR>    Entonces<BR>    Precaucion(<T>El importe debe ser igual a la suma Total de los saldos<T>)<BR>    Abortaroperacion<BR>  Fin<BR><BR> FIN<BR><BR>Fin<BR><BR>  Si<BR>    Cxc:Cxc.Mov <> <T>Ajuste<T><BR>        Entonces<BR>            Si<BR>                ((ConDatos(Cxc:Cxc.Importe))y(Cxc:Cxc.Importe>0))<BR>                Entonces<BR>                Verdadero<BR>                SiNo<BR>                Si(Precaucion(<T>El Importe debe ser Mayor a 0...<T>, BotonAceptar)=BotonAceptar, AbortarOperacion,AbortarOperacion)<BR>            Fin<BR>Fin<BR><BR>Si ((Cxc:Cxc.Mov = <T>Cobro Instituciones<T>)y(Cxc:Cxc.Estatus=<T>SINAFECTAR<T>))<BR>Entonces<BR>    Si (SQL(<T>SELECT Categoria FROM dbo.VentasCanalMAVI WHERE ID=:tI<T>,Cxc:Cxc.ClienteEnviarA)<><T>INSTITUCIONES<T>)<BR>    Entonces<BR>        Si(Precaucion(<T>Canal de Venta no Valido...<T>, BotonAceptar)=BotonAceptar, AbortarOperacion,AbortarOperacion)<BR>    Fin<BR>Fin<BR><BR>Si<BR>    ((Cxc:Cxc.Mov en(<T>Cancela Credilana<T>,<T>Cancela Prestamo<T>,<T>Cancela Seg Auto<T>,<T>Cancela Seg Vida<T>))y(Cxc:Cxc.Estatus=<T>SINAFECTAR<T>))<BR>      Entonces<BR>        Si (SQL(<T>SELECT ID = COUNT(ID) FROM dbo.CxcD D WITH(NOLOCK) JOIN dbo.MovTipo M WITH(NOLOCK) ON M.Mov=D.Aplica AND M.Clave=:tC AND D.ID=:tI<T>,<T>CXC.NC<T>,Cxc:Cxc.ID)<>0)<BR>            Entonces<BR>            Si(Precaucion(<T>Movimientos Incompatibles en el Detalle...<T>, BotonAceptar)=BotonAceptar, AbortarOperacion,AbortarOperacion)<BR> Fin<BR><BR>   Si ((Cxc:Cxc.AplicaManual=0)y(Cxc:Cxc.Concepto noen(<T>DEVOLUCION COBRO<T>,<T>BONIFICACION DEVOLUCION<T>)))<BR>    Entonces<BR>        Si(Precaucion(<T>El Movimiento debe contener detalle...<T>, BotonAceptar)=BotonAceptar, AbortarOperacion,AbortarOperacion)<BR>    Fin<BR>Fin<BR><BR><BR>Si<BR>    ((Cxc:Cxc.Mov=<T>Nota Cargo<T>)y(SQL(<T>SELECT Categoria FROM dbo.VentasCanalMAVI WHERE ID=:tI<T>,Cxc:Cxc.ClienteEnviarA)=<T>INSTITUCIONES<T>) y(Cxc:Cxc.Concepto en(<T>CANC COBRO FACTURA<T>,<T>CANC COBRO CRED Y PP<T>)) y(Cxc:Cxc.Estatus=<T>SINAFECTAR<T>))<BR> Entonces<BR>    Si Cxc:Cxc.Observaciones noen(<T>CGO OTROS<T>,<T>CGO CANC INST CHEQUES CANCELADOS<T>)<BR>     Entonces<BR>       Si(Precaucion(<T>El campo Observaciones debe ser:<T>+Comillas(<T>CGO OTROS<T>)+<T> o <T>+Comillas(<T>CGO CANC INST CHEQUES CANCELADOS<T>)+<T> ...<T>, BotonAceptar)=BotonAceptar, AbortarOperacion,AbortarOperacion)<BR>    Fin<BR>Fin<BR><BR>Si<BR>    ((Cxc:Cxc.Mov en (<T>Dev Anticipo Contado<T>,<T>Dev Anticipo Mayoreo<T>,<T>Devolucion Enganche<T>,<T>Prestamo<T>))y(Cxc:Cxc.Estatus=<T>SINAFECTAR<T>))<BR>    Entonces<BR>     Si Vacio(Cxc:Cxc.CtaDinero)<BR>      Entonces<BR>        Si(Precaucion(<T>Falta capturar una Cuenta de Banco...<T>, BotonAceptar)=BotonAceptar, AbortarOperacion,AbortarOperacion)<BR>     Fin<BR>Fin<BR><BR>Si<BR>    ((Cxc:Cxc.Mov en(<T>React Incobrable F<T>,<T>React Incobrable NV<T>))y(Cxc:Cxc.Estatus=<T>SINAFECTAR<T>))<BR>  Entonces<BR>    Si ((Cxc:Cxc.AplicaManual = 0) o (Vacio(Cxc:Cxc.AplicaManual)))<BR>     Entonces<BR>        Si(Precaucion(<T>Falta Activar el check Aplica Manual...<T>, BotonAceptar)=BotonAceptar, AbortarOperacion,AbortarOperacion)<BR>     Fin<BR>Fin<BR><BR>Si<BR>   (MovTipo(<T>CXC<T>,Cxc:Cxc.Mov) en(CXC.NC, CXC.CA) o (Cxc:Cxc.Mov en (<T>Cobro Instituciones<T>,<T>Cheque Devuelto<T>))) y (Cxc:Cxc.Estatus=<T>SINAFECTAR<T>)<BR>    Entonces<BR>      Si Vacio(Cxc:Cxc.ClienteEnviarA)<BR>       Entonces<BR>        Si(Precaucion(<T>Capturar un Canal de Venta Valido...<T>, BotonAceptar)=BotonAceptar, AbortarOperacion,AbortarOperacion)<BR>     Fin<BR>Fin<BR><BR>Si<BR>   ((Cxc:Cxc.Mov=<T>Cobro Div Deudores<T>) o ((Cxc:Cxc.Mov=<T>Cobro<T>)y(Cxc:Cte.Tipo=<T>Deudor<T>)))<BR> Entonces<BR>    Si Vacio(Cxc:Cxc.CtaDinero)<BR>    Entonces<BR>        Si(Precaucion(<T>Falta capturar una Cuenta de Banco...<T>, BotonAceptar)=BotonAceptar, AbortarOperacion,AbortarOperacion)<BR>   Fin<BR>Fin<BR><BR>Si<BR>    General.CamposExtras=<T>Campos Extras<T> y (Cxc:Cxc.Estatus en (EstatusSinAfectar, EstatusPorConfirmar, EstatusBorrador)) y SQL(<T>SELECT CEAntesAfectar FROM MovTipo WHERE Modulo=:tModulo AND Mov=:tMov AND CE=1<T>, <T>CXC<T>, Cxc:Cxc.Mov)<BR>    Entonces<BR>        Si(no CamposExtrasMovimiento(<T>CXC<T>, Cxc:Cxc.Mov, Cxc:Cxc.ID, Verdadero, Cxc:Cxc.Estatus noen (EstatusSinAfectar, EstatusPorConfirmar, EstatusBorrador)), AbortarOperacion)<BR>Fin<BR><BR>Si<BR>   Cxc:Cxc.Mov =<T>Cobro<T><BR>   Entonces<BR>    EjecutarSQL(<T>spValorAfectar :nid<T>,Cxc:Cxc.ID )<BR>Fin<BR><BR>Si ((MovTipoEn(<T>CXC<T>, Cxc:Cxc.Mov, (CXC.DM)))y(Cxc:Cxc.Estatus en (EstatusSinAfectar)))<BR>Entonces<BR>    Si (Vacio(Cxc:Cxc.ClienteEnviarA)o(SQL(<T>SELECT COUNT(D.ID)N FROM dbo.CxcD D JOIN dbo.Cxc C ON D.Aplica=C.Mov AND D.AplicaID=C.MovID AND D.ID=:tI AND C.ClienteEnviarA!=:tC<T>,Cxc:Cxc.ID,Cxc:Cxc.ClienteEnviarA)<>0))<BR>    Entonces<BR>        Si(Precaucion(<T>Capturar un Canal de Venta Valido...<T>, BotonAceptar)=BotonAceptar, AbortarOperacion,AbortarOperacion)<BR>    Fin<BR>Fin<BR><BR>Si<BR>  (Condatos(CxcD:CxcD.Aplica)) y (Cxc:Cxc.AplicaManual) y<BR>  (SQL(<T>SELECT C.Mov FROM Cxc C JOIN Cxc C1 ON C.PadreMAVI=C1.Mov AND C.PadreIDMAVI=C1.MovID JOIN TcIDM0224_ConfigNotasEspejo N ON C1.Mov=N.MovCargo AND C1.Concepto=ConceptoCargo AND C1.FechaEmision>=N.FechaDesde WHERE C.Mov=<T>&Comillas(CxcD:CxcD.Aplica)&<T> AND C.MovID=<T>&Comillas(CxcD:CxcD.AplicaID))=CxcD:CxcD.Aplica)<BR>Entonces<BR>  Si<BR>    (SQL(<T>SELECT Mov FROM MovTIpo WHERE Modulo=<T>&Comillas(<T>CXC<T>)&<T> AND Clave=<T>&Comillas(<T>CXC.C<T>)&<T> AND Mov=<T>&Comillas(Cxc:Cxc.Mov))=Cxc:Cxc.Mov) o<BR>    ((SQL(<T>SELECT Mov FROM MovTIpo WHERE Modulo=<T>&Comillas(<T>CXC<T>)&<T> AND Clave=<T>&Comillas(<T>CXC.NC<T>)&<T> AND Mov=<T>&Comillas(Cxc:Cxc.Mov))=Cxc:Cxc.Mov) y<BR>      (SQL(<T>SELECT Concepto FROM Concepto WHERE Clase=<T>&Comillas(<T>COBROS<T>)&<T> AND Concepto=<T>&Comillas(Cxc:Cxc.Concepto))=Cxc:Cxc.Concepto)) o<BR>    ((SQL(<T>SELECT Mov FROM MovTIpo WHERE Modulo=<T>&Comillas(<T>CXC<T>)&<T> AND Clave=<T>&Comillas(<T>CXC.ANC<T>)&<T> AND Mov=<T>&Comillas(Cxc:Cxc.Mov))=Cxc:Cxc.Mov) y<BR>      (SQL(<T>SELECT Referencia FROM Cxc WHERE Mov=<T>&Comillas(Cxc:Cxc.MovAplica)&<T> AND MovID=<T>&Comillas(Cxc:Cxc.MovAplicaID))=SQL(<T>SELECT CONVERT(VARCHAR,C1.ID)+<T>&Comillas(<T>_<T>)&<T>+C1.MovID FROM Cxc C LEFT JOIN Cxc C1 ON C.PadreMAVI=C1.Mov AND C.PadreIDMAVI=C1.MovID WHERE C.Mov=<T>&Comillas(CxcD:CxcD.Aplica)&<T> AND C.MovID=<T>&Comillas(CxcD:CxcD.AplicaID))))<BR>  Entonces<BR>    Verdadero<BR>  Sino<BR>    Si(Precaucion(<T>No es posible generar este movimiento porque la Nota Cargo tiene un movimiento espejo <T>, BotonAceptar)=BotonAceptar, AbortarOperacion,AbortarOperacion)<BR>  Fin<BR>Fin<BR><BR>Si<BR>  (Condatos(Cxc:Cxc.MovAplica)) y<BR>  (SQL(<T>SELECT C.Mov FROM Cxc C JOIN TcIDM0224_ConfigNotasEspejo N ON C.Mov=N.MovCredito AND C.Concepto=N.ConceptoCredito AND C.FechaEmision>=N.FechaDesde WHERE C.Mov=<T>&Comillas(Cxc:Cxc.MovAplica)&<T> AND C.MovID=<T>&Comillas(Cxc:Cxc.MovAplicaID))=Cxc:Cxc.MovAplica) y<BR>  (SQL(<T>SELECT C.Mov FROM Cxc C JOIN Cxc C1 ON C1.ID=CASE WHEN PATINDEX(<T>&Comillas(<T>%[_]%<T>)&<T>,C.Referencia)>0 THEN SUBSTRING(C.Referencia,1,PATINDEX(<T>&Comillas(<T>%[_]%<T>)&<T>,C.Referencia)-1) END JOIN TcIDM0224_ConfigNotasEspejo N ON C1.Mov=N.MovCargo AND C1.Concepto=ConceptoCargo AND C1.FechaEmision>=N.FechaDesde WHERE C.Mov=<T>&Comillas(Cxc:Cxc.MovAplica)&<T> AND C.MovID=<T>&Comillas(Cxc:Cxc.MovAplicaID))=Cxc:Cxc.MovAplica)<BR>Entonces<BR>  Si<BR>    (SQL(<T>SELECT Mov FROM MovTIpo WHERE Modulo=<T>&Comillas(<T>CXC<T>)&<T> AND Clave=<T>&Comillas(<T>CXC.ANC<T>)&<T> AND Mov=<T>&Comillas(Cxc:Cxc.Mov))=Cxc:Cxc.Mov) y<BR>    ((SQL(<T>SELECT Referencia FROM Cxc WHERE Mov=<T>&Comillas(Cxc:Cxc.MovAplica)&<T> AND MovID=<T>&Comillas(Cxc:Cxc.MovAplicaID))=SQL(<T>SELECT CONVERT(VARCHAR,C1.ID)+<T>&Comillas(<T>_<T>)&<T>+C1.MovID FROM Cxc C LEFT JOIN Cxc C1 ON C1.Mov=C.PadreMAVI AND C1.MovID=C.PadreIDMAVI WHERE C.Mov=<T>&Comillas(CxcD:CxcD.Aplica)&<T> AND C.MovID=<T>&Comillas(CxcD:CxcD.AplicaID))))<BR>  Entonces<BR>    Verdadero<BR>  Sino<BR>    Si(Precaucion(<T>No es posible generar este movimiento porque la Nota Credito es de un movimiento espejo <T>, BotonAceptar)=BotonAceptar, AbortarOperacion,AbortarOperacion)<BR>  Fin<BR>Fin<BR><BR>Fin
+Expresion=SI(((Cxc:Cxc.Estatus <> <T>CONCLUIDO<T>)y (Cxc:Cxc.Mov  en (<T>Cobro<T>,<T>Cobro Instituciones<T>)) y (Vacio(Cxc:Cxc.MovID))), (EjecutarSQL( <T>EXEC spConsecutivoGral :nID, :tMod, :bApl<T> ,Cxc:Cxc.ID, <T>CXC<T>, Cxc:Cxc.AplicaManual)))Asigna(Afectar.Modulo, <T>CXC<T>)<BR>    Asigna(Afectar.ID, Cxc:Cxc.ID)<BR>    Asigna(Afectar.Mov, Cxc:Cxc.Mov)<BR>    Asigna(Afectar.MovID, Cxc:Cxc.MovID)<BR>    Asigna(Info.MovTipo, MovTipo(<T>CXC<T>, Cxc:Cxc.Mov))<BR>    Asigna(Info.Cliente, Cxc:Cxc.Cliente)<BR>    Asigna(Info.EnviarA, Cxc:Cxc.ClienteEnviarA)<BR>    Asigna(Info.Agente, Cxc:Cte.Agente)<BR>    Asigna(Info.Referencia, Cxc:Cxc.Referencia)<BR>    Asigna(Info.Saldo, Suma(CxcD:ImporteNeto)-Cxc:ImporteTotal)//ARC redondea<BR>    Si<BR>        Cxc:Cxc.Estatus en (EstatusSinAfectar, EstatusPorConfi<CONTINUA>
+Expresion002=<CONTINUA>rmar)<BR>    Entonces<BR>        Si Cxc:Cxc.Mov noen(<T>Cancela Credilana<T>,<T>Cancela Prestamo<T>,<T>Cancela Seg Vida<T>,<T>Cancela Seg Auto<T>)y<BR>            (Info.MovTipo en (CXC.C, CXC.D, CXC.DM, CXC.NC, CXC.NCD, CXC.NCF, CXC.ANC, CXC.ACA, CXC.AE)) y Cxc:Cxc.AplicaManual y (ABS(Info.Saldo) > Config.CxcAutoAjuste)<BR>        Entonces<BR>            Si(no Forma(<T>CxcAplicaDif<T>), AbortarOperacion)<BR>        Fin<BR>        Afectar(<T>CXC<T>, Cxc:Cxc.ID, Cxc:Cxc.Mov, Cxc:Cxc.MovID, <T>Todo<T>, <T><T>, <T>Cxc<T>)<BR>    Sino<BR>        Asigna(Info.Modulo, <T>CXC<T>)<BR>        Asigna(Info.Mov, Cxc:Cxc.Mov)<BR>        Asigna(Info.MovID, Cxc:Cxc.MovID)<BR>        Asigna(Afectar.Modulo, <T>CXC<T>)<BR>        Asigna(Afectar.ID, Cxc:Cxc.ID)<BR>        Asigna(Afectar.Mov, Cxc:Cxc.Mov)<BR>  <CONTINUA>
+Expresion003=<CONTINUA>      Asigna(Afectar.MovID, Cxc:Cxc.MovID)<BR>        Asigna(Afectar.FormaCaptura, <T>Cxc<T>)<BR>        Asigna(Info.TituloDialogo, Afectar.Mov+<T> <T>+Afectar.MovID)<BR><BR> /* Si<BR>    Empresa.CFD y SQL(<T>spVerMovTipoCFD :tEmpresa, :tModulo, :tMov<T>, Empresa, Afectar.Modulo, Afectar.Mov)<BR>  Entonces<BR>    EjecutarSQL(<T>spAfectar :tModulo, :nID, :tAccion<T>, Afectar.Modulo, Afectar.ID, <T>CONSECUTIVO<T>)<BR>    Si(no CFD.Generar(Afectar.Modulo, Afectar.ID), Forma.ActualizarForma AbortarOperacion)<BR>    Asigna(Afectar.EnviarCFD, SQL(<T>SELECT EnviarAlAfectar FROM EmpresaCFD WHERE Empresa=:tEmpresa<T>, Empresa))<BR>  Fin*/<BR><BR>        Si<BR>            ConfigModulo(Info.Modulo, <T>FlujoAbierto<T>) = <T>Si<T><BR>        Entonces<BR>            Si<BR>                Forma(<T>Genera<CONTINUA>
+Expresion004=<CONTINUA>rMovFlujo<T>)<BR>            Entonces<BR>                Asigna(Afectar.GenerarMov, Info.MovGenerar)<BR>                Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, Afectar.GenerarMov, Afectar.FormaCaptura)<BR>            Fin<BR>        Sino<BR><BR>            Asigna(Mavi.MonederoRedimeMensaje,SQL(<T>EXEC dbo.SP_MensajeDevMonedero :tFac,:tFacId,:nOp<T>,Cxc:Cxc.Mov,Cxc:Cxc.MovID,3))<BR>            SI ConDatos(Mavi.MonederoRedimeMensaje)<BR>            ENTONCES<BR>                Precaucion(Mavi.MonederoRedimeMensaje)<BR>            SINO<BR>                1=1<BR>            FIN<BR>        Caso Info.MovTipo<BR>          Es CXC.A   Entonces Dialogo(<T>GenerarCxcAnticipo<T>)<BR>          Es CXC.AR  Entonces Dialogo(<T>GenerarCxcAnticipo<T>)<BR>          Es CXC.DA<CONTINUA>
+Expresion005=<CONTINUA>  Entonces Dialogo(<T>GenerarCxcDocumentoAnticipo<T>)<BR>          Es CXC.NC  Entonces Dialogo(<T>GenerarCxcNCredito<T>)<BR>          Es CXC.DAC Entonces Dialogo(<T>GenerarCxcNCredito<T>)<BR>          Es CXC.NCD Entonces Dialogo(<T>GenerarCxcNCredito<T>)<BR>          Es CXC.NCF Entonces Dialogo(<T>GenerarCxcNCredito<T>)<BR>          Es CXC.DV Entonces Dialogo(<T>GenerarCxcNCredito<T>)<BR>          Es CXC.NCP Entonces Asigna(Afectar.GenerarMov, ConfigMov.CxcAplicacion) Dialogo(<T>GenerarAplicacionCredito<T>)<BR>          Es CXC.DP  Entonces Dialogo(<T>GenerarCxcCobroPosfechado<T>)<BR>          Es CXC.EST Entonces EjecutarSQL(<T>EXEC SpRefRefinMavi :nID<T>,Afectar.ID) Asigna(Afectar.GenerarMov, <T>Refinanciamiento<T>) Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T><CONTINUA>
+Expresion006=<CONTINUA>, Afectar.GenerarMov, Afectar.FormaCaptura)<BR>        Sino Dialogo(<T>GenerarCxcCobro<T>)<BR>       Fin<BR>      Fin<BR>/*<BR>  Si(Afectar.EnviarCFD, CFD.Enviar(Afectar.Modulo, Afectar.ID))*/<BR>Fin<BR>Si<BR>   Cxc:Cxc.Mov=<T>Aplicacion<T> y ((Cxc:Cxc.Concepto=<T>ADJUDICACION + DE 12<T>)o( Cxc:Cxc.Concepto=<T>ADJUDICACION 1 A 12<T>))<BR>   Entonces<BR>    EjecutarSQL(<T>EXEC SP_DM0302NotaCargoMonedero :nIdmov, :nOp<T>,Cxc:Cxc.ID,1)<BR>Fin<BR>  Si Cxc:Cxc.Mov=<T>Cancela Credilana<T><BR>      Entonces<BR>     EjecutarSQL(<T>EXEC SP_DM0302NotaCargoMonedero :nIdmov, :nOp<T>,Cxc:Cxc.ID,1)<BR>   fin
+ActivoCondicion=PuedeAfectar(Usuario.Afectar, Usuario.AfectarOtrosMovs, Cxc:Cxc.Usuario) y<BR>((Cxc:Cxc.Estatus en (EstatusSinAfectar, EstatusPorConfirmar)) o ((Cxc:Cxc.Estatus=EstatusPendiente) y MovTipoEn(<T>CXC<T>, Cxc:Cxc.Mov, (CXC.F, CXC.FA, CXC.AF, CXC.CA, CXC.CAD, CXC.CAP, CXC.VV, CXC.OV, CXC.IM, CXC.RM, CXC.D, CXC.DM, CXC.DP, CXC.CD, CXC.A, CXC.AR, CXC.DA, CXC.NC, CXC.NCD, CXC.NCF, CXC.DV, CXC.NCP, CXC.FAC, CXC.DAC, CXC.EST))))  y<BR>PuedeAvanzarEstatus(<T>CXC<T>, Cxc:Cxc.Mov, Cxc:Cxc.Estatus, FormaSituacion)
+EjecucionCondicion=GuardarCambios<BR>    SI SQL(<T>SELECT Tipo FROM Cte WITH(NOLOCK) WHERE Cliente=:tUsuario<T>,Cxc:Cxc.Cliente)<><T>Prospecto<T>  /*2 */<BR>    ENTONCES<BR>        SI (SQL(<T>EXEC dbo.SP_MAVIDM0124ExistePedido :nID<T>,Cxc:Cxc.ID)=<T>1<T>)  /*3*/<BR>        ENTONCES<BR>            1=0<BR>        SINO<BR>            SI SQL(<T>SELECT COUNT(Mov) FROM MovTipo WHERE Clave=<T>+Comillas(<T>CXC.AA<T>)+<T> AND Modulo = <T>+Comillas(<T>CXC<T>)+<T> AND Mov= :tMov<T>,Cxc:Cxc.Mov)>0  /*4*/<BR>            ENTONCES<BR>                Cxc:Cxc.Importe>0<BR>            SINO<BR>                Caso 1=1<BR>                    Es (Cxc:Cxc.Mov=<T>Devolucion<T>) y (sql(<T>Select acceso From Usuario Where Usuario=:tUsu<T>,Usuario) en (<T>VENTP_GERA<T>,<T>VENTP_USRB<T>)) /*5*/<BR>                    Entonces<BR>                        (sql(<T>SELECT dbo.FN_MAVIDM0124ConceptoNC(:nID)<T>,Cxc:Cxc.ID)=<T>1<T>)y<BR>                        (Cxc:Cxc.Importe<=Sql(<T>exec Sp_MaviDM0124AbonosCliente :nId,:tCte<T>,Cxc:Cxc.ID,Cxc:Cxc.Cliente))<BR>                    Sino<BR>                        (ConDatos(Cxc:Cxc.Mov))<BR>                        y (Cxc:Cxc.Mov=<T>Anticipo Contado<T>)<BR>                        y ((SQL(<T>Exec SP_MaviVentasCxCPuedeGenerarAnticipo :tval1,:nval2,:nval3<T>,Cxc:Cxc.Referencia,2,0)=0)<BR>                        y ((Medio(Cxc:Cxc.Referencia,1,11)<><T>Seguro Auto<T>)<BR>                        y (Medio(Cxc:Cxc.Referencia,1,11)<><T>Seguro Vida<T>)))<BR>                        o ((ConDatos(Cxc:Cxc.Mov)) y (Cxc:Cxc.Mov<><T>Anticipo Contado<T>) y (SQL(<T>EXEC dbo.SP_MAVIDM0124ExistePedido :nID<T>,Cxc:Cxc.ID)=<T>0<T>))<BR>                    Fin /*5*/<BR>            FIN /*4*/           <BR>        FIN /*3*/<BR>    SINO<BR>        1=0<BR>    FIN /*2*/<BR><BR>Asigna(Info.Dialogo,SQL(<T>EXEC SPCXCValidacionBonificacion :nID<T>,Cxc:Cxc.ID))<BR>Si<BR>    Info.Dialogo = <T>SIN ERRORES<T><BR>Entonces<BR>    Verdadero<BR>Sino<BR>    Error(Info.Dialogo)<BR>    AbortarOperacion<BR>Fin
+
+[Cxc.frm/Acciones.Cancelar]
+AntesExpresiones=Asigna(Mavi.DM0209CxcUsuario,Usuario)<BR>Asigna( Mavi.DM0209CxcValidaCancelacion_ID,Cxc:Cxc.ID)<BR>Asigna( Afectar.Mov, Cxc:Cxc.Mov )<BR>Asigna( Afectar.MovID, Cxc:Cxc.MovID )<BR>Si(ConDatos(Cxc:Cxc.OrigenTipo), Si(Cxc:Cxc.OrigenTipo <> <T>CXC<T>,  Si(Precaucion(<T>El movimiento que se esta intentando cancelar proviene de otro modulo<T>, BotonAceptar)=BotonAceptar, AbortarOperacion, AbortarOperacion)))<BR>Si(Cxc:Cxc.Mov = <T>Documento<T>, Si(ConDatos(Cxc:Cxc.OrigenID),Si(Precaucion(<T>No se pueden cancelar documentos que provienen de un movimiento de otro modulo<T>,BotonAceptar)= BotonAceptar,AbortarOperacion, AbortarOperacion)))<BR>Si(SQL(<T>SELECT COUNT(0) FROM RefinIDInvolucra WHERE IDCxc=:nID<T>, Cxc:Cxc.ID)>0,Si(Precaucion(<T>El movimiento no se puede cancelar directamente<T>,BotonAce<CONTINUA>
+AntesExpresiones002=<CONTINUA>ptar)=BotonAceptar, AbortarOperacion, AbortarOperacion))
+
+ActivoCondicion=PuedeAfectar(Usuario.Cancelar, Usuario.CancelarOtrosMovs, Cxc:Cxc.Usuario) y ConDatos(Cxc:Cxc.ID) y ConDatos(Cxc:Cxc.MovID) y<BR>(Cxc:Cxc.Estatus en (EstatusSinAfectar, EstatusPorConfirmar, EstatusSincro, EstatusConcluido, EstatusPendiente))<BR>y ((Cxc:Cxc.Mov <> <T>Sol Refinanciamiento<T>) y (Cxc:Cxc.Mov <> <T>Cargo Moratorio Est<T>) o (Cxc:Cxc.Estatus <> EstatusConcluido))
+Expresion=Si<BR>Cxc:Cxc.Mov en (<T>Cobro<T>, <T>Anticipo Contado<T>, <T>Enganche<T>)<BR>Entonces<BR>    Si<BR>      sql(<T>Select dbo.FN_DM0209ComprobarCancelado (:tMov,:tMovID)<T>,Cxc:Cxc.Mov,Cxc:Cxc.MovID)= 0<BR>    Entonces<BR>       Forma(<T>DM0209CXCValidarCancelacion<T>)<BR>    Sino<BR>        Si(SQL(<T>Select count(cobroticket) From Cxc with(noLock) where ID=:nID and cobroticket is not null<T>,Cxc:Cxc.ID) =0 ,Cancelar(<T>CXC<T>, Cxc:Cxc.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, <T><T>, <T>Cxc<T>),EjecutarSQLAnimado(<T>EXEC SPDM0253CancelaCobros :nID,:tUsr<T>,Cxc:Cxc.ID, Usuario))<BR>        SI(Cxc:Cxc.FormaCobro=<T>DEPOSITO EN CTA<T>, EjecutarSQL(<T>EXEC SP_DM0243DevuelveSaldo :nIdva, :tCte, :nImpo, :nId<T>, Info.Folio,Cxc:Cxc.Cliente,Cxc:Cxc.Importe,Cxc:Cxc.ID),Falso)<BR>        Asigna(Mav<CONTINUA>
+Expresion002=<CONTINUA>i.MonederoRedimeMensaje,SQL(<T>EXEC dbo.SP_MensajeDevMonedero :tFac,:tFacId,:nOp<T>,Cxc:Cxc.Mov,Cxc:Cxc.MovID,1))<BR>        SI ConDatos(Mavi.MonederoRedimeMensaje)<BR>            ENTONCES<BR>                Precaucion(Mavi.MonederoRedimeMensaje)<BR>            SINO<BR>                SQL(<T>EXEC dbo.SP_DM0209CXCMovCancelados :tUsuario,:tUsuarioAutorizo,:tMov,:tMovID,:nCancelado<T>,Mavi.DM0209CxcUsuario,Mavi.DM0209CxcValidaUsuario,Afectar.Mov,Afectar.MovID,0)<BR>                Verdadero<BR>        FIN                                                            <BR>    Fin<BR>Sino<BR>    Cancelar(<T>CXC<T>, Cxc:Cxc.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, <T><T>, <T>Cxc<T>)<BR>    Asigna(Mavi.MonederoRedimeMensaje,SQL(<T>EXEC dbo.SP_MensajeDevMonedero :tFac,:tFacId,:nOp<T>,Cxc:Cxc.Mov,Cx<CONTINUA>
+Expresion003=<CONTINUA>c:Cxc.MovID,1))<BR>    SI ConDatos(Mavi.MonederoRedimeMensaje)<BR>        ENTONCES<BR>            Precaucion(Mavi.MonederoRedimeMensaje)<BR>        SINO<BR>            Verdadero<BR>    FIN<BR>Fin<BR>   Si<BR>   Cxc:Cxc.Mov=<T>Aplicacion<T> y ((Cxc:Cxc.Concepto=<T>ADJUDICACION + DE 12<T>)o( Cxc:Cxc.Concepto=<T>ADJUDICACION 1 A 12<T>))<BR>   Entonces<BR>    EjecutarSQL(<T>EXEC SP_DM0302NotaCargoMonedero :nIdmov, :nOp<T>,Cxc:Cxc.ID,2)<BR>Fin<BR>  Si Cxc:Cxc.Mov=<T>Cancela Credilana<T><BR>      Entonces<BR>     EjecutarSQL(<T>EXEC SP_DM0302NotaCargoMonedero :nIdmov, :nOp<T>,Cxc:Cxc.ID,2)<BR>   fin
+
+[Cxc.frm/Acciones.CamposExtras]
+Antes=S
+DespuesGuardar=S
+AntesExpresiones=Asigna(Info.IDMAVI, Cxc:Cxc.ID)
+
+
+[Cxc.frm/Ficha.Cxc.RefAnticipoMAVI]
+Carpeta=Ficha
+Clave=Cxc.RefAnticipoMAVI
+Editar=S
+LineaNueva=N
+ValidaNombre=S
+3D=S
+Tamano=37
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+[Cxc.frm/Ficha.Cxc.Condicion]
+LineaNueva=S
+Tamano=25
+
+[Cxc.frm/Ficha.Cxc.Vencimiento]
+Tamano=20
+
+
+[Cxc.frm/Ficha.Cxc.CondRef]
+Carpeta=Ficha
+Clave=Cxc.CondRef
+Editar=S
+EditarConBloqueo=S
+ValidaNombre=S
+3D=S
+Tamano=25
+ColorFondo=Blanco
+ColorFuente=Negro
+LineaNueva=S
+
+[Cxc.frm/Comentarios]
+ListaEnCaptura=Cxc.Comentarios<BR>Cxc.Nota<BR>Cxc.ContUso<BR>Cxc.VIN<BR>Cxc.FacDesgloseIva
+
+[Cxc.frm/Comentarios.Cxc.FacDesgloseIVA]
+Carpeta=Comentarios
+Clave=Cxc.FacDesgloseIva
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+[Cxc.frm/Acciones.ImporteConImpuestos]
+ActivoCondicion=(Cxc:Cxc.Estatus en (EstatusSinAfectar, EstatusPorConfirmar)) y <BR>(MovTipoEn(<T>CXC<T>, Cxc:Cxc.Mov, (CXC.F,CXC.FA,CXC.AF,CXC.NC,CXC.CA,CXC.IM,CXC.RM,CXC.A,CXC.AR,CXC.AA,CXC.DE)) o <BR>(MovTipoEn(<T>CXC<T>, Cxc:Cxc.Mov, (CXC.C, CXC.CD)) y Config.CxcCobroImpuestos)) y (no Cxc:Cxc.AplicaManual)
+Expresion=Asigna(Info.Importe, Cxc:ImporteTotal)<BR>Asigna(Info.PorcentajeImpuesto, ImpuestoZona(Redondea(Def.CxImpuesto, 8), Cxc:Cte.ZonaImpuesto, Cxc:Cxc.ClienteEnviarA, Cxc:CteEnviarA.ZonaImpuesto))<BR>Si<BR>(Cxc:Cxc.Mov en (<T>Anticipo Contado<T>,<T>Apartado<T>,<T>Anticipo Mayoreo<T>,<T>Dev Anticipo Contado<T>,<T>Devolucion Apartado<T>,<T>Enganche<T>,<T>Devolucion Enganche<T>))<BR>Entonces<BR>Forma(<T>EspecificarImporteConImpuestosVtas<T>)<BR>Asigna(Cxc:Cxc.Importe,Redondea(Info.Importe/(1+(Info.PorcentajeImpuesto/100)), 4))<BR>    Asigna(Cxc:Cxc.Impuestos,Info.Importe-Cxc:Cxc.Importe)<BR>sino<BR>Forma(<T>EspecificarImporteConImpuestos<T>)<BR>    Asigna(Cxc:Cxc.Impuestos, Info.Importe-Cxc:Cxc.Importe)<BR>    Asigna(Cxc:Cxc.Importe,  Redondea(Info.Importe/(1+(Info.PorcentajeImpuesto/100)), 4))<BR<CONTINUA>
+Expresion002=<CONTINUA>>Fin<BR><BR>Si ((Mayusculas(Cxc:Cxc.Concepto)=<T>GTOS ADJUDICACION<T>) y (Cxc:Cxc.Mov en (<T>Nota Cargo<T>,<T>Nota Cargo VIU<T>)))<BR>Entonces<BR>  Asigna(Info.Monto,(Vacio(Cxc:Cxc.Impuestos,0.0)+Vacio(Cxc:Cxc.Importe,0.0)))<BR>  Asigna(Cxc:Cxc.Condicion,(SQL(<T>SELECT Condicion FROM MAVIMontoAdjudicacion WHERE :nMonto BETWEEN MontoMin AND MontoMax<T>,Info.Monto)))<BR>Fin
+
+[Cxc.frm/Detalle]
+CondicionVisible=ConDatos(Cxc:Cxc.Mov) y<BR>((MovTipo(<T>CXC<T>, Cxc:Cxc.Mov) noen (CXC.F, CXC.A, CXC.DFA, CXC.AR, CXC.FA, CXC.AF, CXC.VV, CXC.OV, CXC.AV, CXC.CD, CXC.DE, CXC.DI, CXC.AJE, CXC.AJR, CXC.NCP)) y (Cxc:Cxc.AplicaManual o ((Cxc:Cxc.Estatus noen (EstatusSinAfectar, EstatusPorConfirmar)) y (MovTipo(<T>CXC<T>, Cxc:Cxc.Mov) noen (CXC.NC, CXC.NCD, CXC.NCF, CXC.DV, CXC.RA, CXC.FAC, CXC.DAC, CXC.PR, CXC.SD, CXC.SCH)))) o<BR>(MovTipoEn(<T>CXC<T>, Cxc:Cxc.Mov, (CXC.IM, CXC.RM, CXC.EST)))))
+CondicionEdicion=((Cxc:Cxc.Estatus en (EstatusSinAfectar, EstatusPorConfirmar))y(Cxc:Cxc.Mov noen (<T>Sol Refinanciamiento<T>,<T>Refinanciamiento<T>))) o (MovTipoEn(<T>CXC<T>,Cxc:Cxc.Mov, (CXC.NC, CXC.NCD, CXC.NCF, CXC.DV, CXC.NCP)) y (Cxc:Cxc.Estatus=EstatusPendiente))
+CampoColorLetras=Negro
+
+[Cxc.frm/Acciones.CopiarMeses]
+Activo=
+ActivoCondicion=(Cxc:Cxc.Mov <> (<T>Sol Refinanciamiento<T>)) y<BR>(Cxc:Cxc.Mov <> (<T>Refinanciamiento<T>))
+Antes=S
+AntesExpresiones=SI(((Cxc:Cxc.Estatus <> <T>CONCLUIDO<T>)y (Cxc:Cxc.Mov = <T>Cobro<T>) y (Vacio(Cxc:Cxc.MovID,Nulo) <> Nulo)), (EjecutarSQL(<T>SPCancelaCobroMAVI :n<T>,Cxc:Cxc.ID )))
+
+[Cxc.frm/Acciones.Refinanciamiento]
+Nombre=Refinanciamiento
+Boton=50
+Menu=&Otros
+NombreDesplegar=&Refinanciamientos
+GuardarAntes=S
+EnBarraHerramientas=S
+EspacioPrevio=S
+TipoAccion=Formas
+ClaveAccion=MaviCxcRefinancia
+Visible=S
+Antes=S
+DespuesGuardar=S
+Multiple=S
+ListaAccionesMultiples=Formas
+AntesExpresiones=Asigna(Info.Cliente, Cxc:Cxc.Cliente)<BR>Asigna(Info.Beneficiario, Cxc:Cxc.ClienteEnviarA)<BR>Asigna(Info.ID, Cxc:Cxc.ID)<BR>Asigna(Info.IDMAVI,  SQL(<T>SELECT dbo.fnIDDelMovimientoMAVI(:tMov,:tMovID)<T>,Cxc:Cxc.Origen, Cxc:Cxc.OrigenID))
+ActivoCondicion=(Cxc:Cxc.Mov en (<T>Sol Refinanciamiento<T>,<T>Refinanciamiento<T>)) y (ConDatos(Cxc:Cxc.Cliente)) y (ConDatos(Cxc:Cxc.ClienteEnviarA)) y (SQL(<T>SELECT Categoria FROM VentasCanalMAVI WHERE ID=:nCanalV<T>,Cxc:Cxc.ClienteEnviarA)=<T>INSTITUCIONES<T>)
+
+[Cxc.frm/Acciones.Refinanciamiento.Formas]
+Nombre=Formas
+Boton=0
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Si Cxc:Cxc.Mov=<T>Refinanciamiento<T><BR>Entonces Forma(<T>MaviCxcRefinanciaInfo2<T>)<BR>sino Si Cxc:Cxc.Estatus en (EstatusPorConfirmar,EstatusConcluido,EstatusPendiente,EstatusCancelado)<BR>  Entonces<BR>    Forma(<T>MaviCxcRefinanciaInfo<T>)<BR>  Sino<BR>    Forma(<T>MaviCxcRefinancia<T>)<BR>    ActualizarForma(<T>CXC<T>)<BR>Fin<BR>Fin
+
+
+[Cxc.frm/Acciones.Totalizar]
+ActivoCondicion=(Cxc:Cxc.Estatus en (EstatusSinAfectar, EstatusPorConfirmar)) y (no MovTipoEn(<T>CXC<T>, Cxc:Cxc.Mov, (CXC.F, CXC.FA, CXC.AF, CXC.CAD, CXC.CAP, CXC.VV, CXC.OV, CXC.IM, CXC.RM))) y (Cxc:Cxc.AplicaManual)
+
+[Cxc.frm/Acciones.Totalizar.TotalizarCopiar]
+Nombre=TotalizarCopiar
+Boton=0
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Si<BR>  Cxc:Cxc.AplicaManual y MovTipoEn(<T>CXC<T>, Cxc:Cxc.Mov, (CXC.C, CXC.CD, CXC.D, CXC.DM, CXC.NC, CXC.CA)) y Config.CxcCobroImpuestos<BR>Entonces<BR>  Asigna(Cxc:Cxc.Importe, Suma(CxcD:ImporteNeto)-Suma(CxcD:ImporteIVAFiscal))<BR>  Asigna(Cxc:Cxc.Impuestos, Suma(CxcD:ImporteIVAFiscal))<BR>Sino<BR>   Asigna(Cxc:Cxc.Importe, Suma(CxcD:ImporteNeto) / (1+(Si(MovTipoEn(<T>CXC<T>, Cxc:Cxc.Mov, (CXC.F,CXC.FA,CXC.AF,CXC.NC,CXC.CA,CXC.IM,CXC.RM)), (ImpuestoZona(General.DefImpuesto, Cxc:Cte.ZonaImpuesto, Cxc:Cxc.ClienteEnviarA, Cxc:CteEnviarA.ZonaImpuesto)/100), 0))))<BR>Fin
+
+[Cxc.frm/Acciones.Sugerir]
+RefrescarDespues=S
+GuardarAntes=S
+Expresion=Asigna(Info.CxcMovID, Cxc:Cxc.MovID)<BR>Asigna(Info.Importe, Vacio(Cxc:ImporteTotal, Nulo))<BR>Asigna(Info.Acreditado, Cxc:Cxc.Cliente)<BR>Asigna(Info.ID, Cxc:Cxc.ID)}<BR>Asigna(Info.Cliente,Cxc:Cxc.Cliente)<BR>Asigna(Mavi.DM0138MovCorreo,Cxc:Cxc.Mov)<BR>Asigna(Info.IDMAVI,Cxc:Cxc.ID)                              <BR>Asigna(Mavi.DM0138MovEstatus,Cxc:Cxc.Estatus)<BR>Asigna(Mavi.DM0138Modulo,<T>CXC<T>)<BR>Asigna(Mavi.DM0138Bandera,1)<BR>Asigna(Info.Modulo,<T>CXC<T>)<BR>Asigna(Info.UEN, Cxc:Cxc.UEN)<BR>Asigna(Info.FormaPago,Cxc:Cxc.FormaCobro)<BR>//Si(Forma(<T>SugerirCobroMAVI<T>), EjecutarSQL(<T>spSugerirCobro :tSugerir, :tModulo, :nID, :nTotal<T>, Info.SugerirCobro, <T>CXC<T>, Cxc:Cxc.ID, Info.Importe))<BR>Forma(<T>SugerirCobroMAVI<T>)
+
+
+ActivoCondicion=(Cxc:Cxc.Estatus en (EstatusSinAfectar, EstatusPorConfirmar)) y MovTipoEn(<T>CXC<T>, Cxc:Cxc.Mov, (CXC.C, CXC.D, CXC.DM))
+
+[Cxc.frm/Acciones.Eliminar]
+ActivoCondicion=Vacio(Cxc:Cxc.MovID) y (Cxc:Cxc.Estatus en (EstatusSinAfectar, EstatusPorConfirmar)) y PuedeAfectar(Verdadero, Usuario.ModificarOtrosMovs, Cxc:Cxc.Usuario)
+ConCondicion=S
+EjecucionCondicion=Vacio(SQL(<T>SELECT MovID FROM Cxc WHERE ID=:nID<T>, Cxc:Cxc.ID))
+
+[Cxc.frm/Acciones.MovExpress]
+Antes=S
+AntesExpresiones=SI(((Cxc:Cxc.Estatus <> <T>CONCLUIDO<T>)y (Cxc:Cxc.Mov = <T>Cobro<T>) y (Vacio(Cxc:Cxc.MovID,Nulo) <> Nulo)), (EjecutarSQL(<T>SPCancelaCobroMAVI :n<T>,Cxc:Cxc.ID )))<BR>Asigna(Def.Cliente, Cxc:Cxc.Cliente)<BR>Asigna(Def.EnviarA, Cxc:Cxc.ClienteEnviarA)<BR>Asigna(Def.Agente, Cxc:Cxc.Agente)<BR>Si<BR>  Cxc:Cxc.Mov en (<T>Aplicacion<T>,<T>Cancela Seg Auto<T>,<T>Cancela Seg Vida<T>)<BR>Entonces<BR>    Asigna(Def.Mov, <T>Complto Canc Seg<T>)<BR>    Asigna(Def.Referencia, <T>Complemento Seguros<T>)<BR>    Asigna(Def.Importe, SQL(<T>SELECT ((a.Importe + Isnull(a.Impuestos,0)) - Sum(b.Importe)) FROM Cxc a, CxcD b WHERE a.id = b.id and a.id =:nid group by (a.Importe + Isnull(a.Impuestos,0))<T>,Cxc:Cxc.ID))<BR>    Asigna(Def.Impuestos, 0)<BR>Fin
+
+
+[Cxc.frm/Ficha.Cxc.FechaOriginal]
+Editar=N
+
+[Cxc.frm/Acciones.RepPantalla]
+ActivoCondicion=1=0
+Antes=S
+AntesExpresiones=Asigna(Info.ID,Cxc:Cxc.ID)<BR>Asigna(Info.ABC,Cxc:Cxc.Mov)<BR>Asigna(Info.Concepto,Cxc:Cxc.MovID)<BR>Asigna(Info.Cliente,Cxc:Cxc.Cliente)
+Expresion=GuardarCambios<BR>Asigna(Mavi.ClienteA,Cxc:Cxc.Cliente)<BR>Asigna(Mavi.SucursalA,Sucursal)<BR>Asigna(Mavi.UEN,SUCURSAL.wUEN)<BR>Asigna(Mavi.UsuarioCredito,USUARIO)<BR>Asigna(Info.EstacionTrabajoA,EstacionTrabajo)<BR>Si (Cxc:Cxc.Mov en(<T>Cobro<T>,<T>Cobro Instituciones<T>,<T>Cobro Div Deudores<T>,<T>Apartado<T>,<T>Anticipo Contado<T>, <T>Anticipo Mayoreo<T>,<T>Enganche<T>)) y (Cxc:Cxc.Estatus=<T>CONCLUIDO<T>)<BR>Entonces<BR>    SI SQL(<T>SELECT COUNT(Numero) FROM dbo.TablaNumD WHERE TablaNum=:tTB AND CAST(Numero AS INT)=:nSuc<T>,<T>SUCURSALES RDP<T>,Mavi.SucursalA)=1<BR>    ENTONCES<BR>        SI SQL(<T>Select ISNULL(Valor,0) From TablaStD Where TablaSt=:tA<T>,<T>LIMITE CREDITO COBRO<T>)=1<BR>        ENTONCES<BR>            Ejecutar(<T>C:\AppsMavi\LimiteCredito.exe <T>+Mavi.ClienteA+<T> <T<CONTINUA>
+Expresion002=<CONTINUA>>+Mavi.UsuarioCredito+<T> N 0 S <T>+Mavi.UEN,Verdadero)<BR>        SINO<BR>            VERDADERO<BR>        FIN<BR>        Ejecutar(<T>PlugIns\RutaTicket.exe <T>+<T>CXC<T>+<T> <T>+Cxc:Cxc.ID+<T> <T>+Mavi.UsuarioCredito+<T> <T>+<T>0<T>+<T> <T>+Mavi.SucursalA+<T> <T>+Info.EstacionTrabajoA)<BR>    SINO<BR>        SI SQL(<T>Select ISNULL(Valor,0) From TablaStD Where TablaSt=:tA<T>,<T>LIMITE CREDITO COBRO<T>)=1<BR>        ENTONCES<BR>            Ejecutar(<T>C:\AppsMavi\Inte602.exe <T>+Mavi.ClienteA+<T> <T>+Mavi.UsuarioCredito+<T> N 0 S <T>+Mavi.UEN,Verdadero)<BR>        SINO<BR>            VERDADERO<BR>        FIN<BR>        Ejecutar(<T>C:\AppsMavi\Cobro.exe <T>+Cxc:Cxc.ID+<T> <T>+Mavi.UsuarioCredito+<T> <T>+0)<BR>    FIN<BR>Sino<BR>  Si (Cxc:Cxc.Mov=<T>Cheque Posfechado<T>) y (Cxc:Cxc.Estatus=<CONTINUA>
+Expresion003=<CONTINUA><T>PENDIENTE<T>)<BR>  Entonces<BR>    ReportePantalla(ReporteMovPantalla(<T>RM0937ReciboChequePFRep<T>,Cxc:Cxc.ID),Cxc:Cxc.ID)<BR>  Sino<BR>Si (Cxc:Cxc.Mov=<T>Cheque Devuelto<T>) y (Cxc:Cxc.Estatus=<T>PENDIENTE<T>)<BR>  Entonces<BR>     ReportePantalla(ReporteMovPantalla(<T>RM0961CxcFormCheqDevRep<T>,Cxc:Cxc.ID),Cxc:Cxc.ID)<BR>  Sino<BR>     ReportePantalla(ReporteMovPantalla(<T>CXC<T>, Cxc:Cxc.Mov, Cxc:Cxc.Estatus), Cxc:Cxc.ID)<BR>  Fin<BR>Fin
+ConCondicion=S
+EjecucionConError=S
+EjecucionCondicion=((Cxc:Cxc.Mov en(<T>Cobro<T>,<T>Cobro Instituciones<T>,<T>Cobro Div Deudores<T>,<T>Apartado<T>,<T>Anticipo Contado<T>, <T>Anticipo Mayoreo<T>,<T>Enganche<T>))<BR>y (Cxc:Cxc.Estatus=<T>CONCLUIDO<T>)) o (Cxc:Cxc.Mov en (<T>Cheque Posfechado<T>,<T>Cheque Devuelto<T>) y (Cxc:Cxc.Estatus=<T>PENDIENTE<T>)) o ((Cxc:Cxc.Estatus=<T>CONCLUIDO<T>))
+EjecucionMensaje=<T>El movimiento debe estar Concluido...<T>
+
+
+[Cxc.frm/Acciones.Imprimir]
+Antes=S
+AntesExpresiones=Asigna(Info.ID,Cxc:Cxc.ID)<BR>Asigna(Info.ABC,Cxc:Cxc.Mov)<BR>Asigna(Info.Concepto,Cxc:Cxc.MovID)<BR>Asigna(Info.Cliente,Cxc:Cxc.Cliente)<BR>Si<BR>  (SQL(<T>Select Count(*) from AsignacionAvalesClientesJob With(NoLock) where Aval =:tCte<T>,Cxc:Cxc.Cliente) > 0) y (Cxc:Cxc.Mov=<T>Cobro<T>)<BR>Entonces<BR>  Precaucion(<T>Informar al cliente que su limite de crédito ha sido disminuido.<BR> Es aval de clientes con cuentas vencidas... Ver detalles en el recibo,<BR> parte inferior<T>)<BR>Sino<BR>  Verdadero<BR>Fin
+Expresion=SI (Cxc:Cxc.Mov = <T>Sol Refinanciamiento<T>) ENTONCES<BR>    asigna(Info.Observaciones2,Cxc:Cxc.Observaciones)<BR>    asigna(Info.MAVIMovId,Cxc:Cxc.MovID)<BR>    asigna(Info.Cliente,Cxc:Cxc.Cliente)<BR>    asigna(Mavi.RM0847CAval,0)<BR><BR>    ReporteImpresora(<T>RM0847DSolCreditoInsPisoRepImp<T>)<BR><BR><BR>    si( Confirmacion( <T>Imprimir Autorizacion Descuento via Nomina cliente<T> ,BotonAceptar  )= BotonAceptar,<BR>    ReporteImpresora(<T>RM0847EAutDesViaNominaRepImp<T>),<T><T>)<BR><BR>    si<BR><BR>         sql(<T>select dbo.FN_RM0847DValSolicitudAnalisis (:tid,:cid)<T>,Info.MAVIMovId, Info.Cliente)=1<BR><BR>    entonces<BR>          asigna(Mavi.RM0847CAval,1)<BR>          si( Confirmacion( <T>Imprimir Autorizacion Descuento via Nomina Aval<T> ,BotonAceptar  )= BotonAceptar,<BR> ReporteImpresora<CONTINUA> Expresion002=<CONTINUA>(<T>RM0847EAutDesViaNominaARepImp<T>),<T><T>)<BR><BR>    fin<BR><BR><BR>Sino<BR>    GuardarCambios<BR>    Asigna(MAVI.DM0116FaseC,1)<BR>    ActualizarForma<BR>    Si (Cxc:Cxc.Mov en(<T>Cobro<T>,<T>Cobro Instituciones<T>,<T>Cobro Div Deudores<T>,<T>Apartado<T>,<T>Anticipo Contado<T>,<T>Anticipo Mayoreo<T>,<T>Enganche<T>)) y (Cxc:Cxc.Estatus=<T>CONCLUIDO<T>)<BR>     Entonces<BR>      Ejecutar(<T>PlugIns\ImprimeLC.exe <T>+Cxc:Cxc.ID+<T> <T>+USUARIO)<BR>     Sino<BR>       Si (Cxc:Cxc.Mov=<T>Cheque Posfechado<T>) y (Cxc:Cxc.Estatus=<T>PENDIENTE<T>)<BR>         Entonces<BR>           ReporteImpresora(ReporteMovImpresora(<T>RM0937ReciboChequePFRep<T>,Cxc:Cxc.ID),Cxc:Cxc.ID)<BR>         Sino<BR>           Si (Cxc:Cxc.Mov=<T>Cheque Devuelto<T>) y (Cxc:Cxc.Estatus=<T>PENDIENTE<T>)<BR> Entonces<BR> ReporteImpresora(ReporteMovImpresora<CONTINUA>
+Expresion003=<CONTINUA>(<T>RM0961CxcFormCheqDevRep<T>,Cxc:Cxc.ID),Cxc:Cxc.ID)<BR>             Sino<BR>               ReporteImpresora(ReporteMovImpresora(<T>CXC<T>, Cxc:Cxc.Mov,Cxc:Cxc.Estatus),Cxc:Cxc.ID)<BR>           Fin<BR>       Fin<BR>    Fin<BR><BR>Fin
+ActivoCondicion=MAVI.DM0116FaseC<>1
+ConCondicion=S
+EjecucionConError=S
+EjecucionCondicion=((Cxc:Cxc.Mov = <T>Sol Refinanciamiento<T>) o ((Cxc:Cxc.Mov en(<T>Cobro<T>,<T>Cobro Instituciones<T>,<T>Cobro Div Deudores<T>,<T>Apartado<T>,<T>Anticipo Contado<T>, <T>Anticipo Mayoreo<T>,<T>Enganche<T>))<BR>y (Cxc:Cxc.Estatus=<T>CONCLUIDO<T>)) o (Cxc:Cxc.Mov en (<T>Cheque Posfechado<T>,<T>Cheque Devuelto<T>) y (Cxc:Cxc.Estatus=<T>PENDIENTE<T>)) o ((Cxc:Cxc.Estatus=<T>CONCLUIDO<T>)))
+EjecucionMensaje=<T>El movimiento debe estar Concluido...<T>
+
+
+
+[CxC.frm/Desglose.Cxc.DelEfectivo]
+Editar=N
+
+[Cxc.frm/Acciones.Voucher]
+Activo=
+ActivoCondicion=SQL(<T>select count(*) from usuario where Acceso in (select Nombre from TablastD where tablast=:tespecial and substring(valor,1,1)=1) and Usuario=:tusado<T>,<T>CFG ACCESOS ESPECIALES<T>,usuario)
+
+
+[Cxc.Frm/Acciones.Consecutivo]
+ActivoCondicion=//Vacio(Cxc:Cxc.MovID) y PuedeAfectar(Usuario.Afectar, Usuario.AfectarOtrosMovs, Cxc:Cxc.Usuario)<BR>1=0
+
+[Cxc.frm/Acciones.Nuevo]
+Antes=S
+AntesExpresiones=SI(((Cxc:Cxc.Estatus <> <T>CONCLUIDO<T>)y (Cxc:Cxc.Mov = <T>Cobro<T>) y (Vacio(Cxc:Cxc.MovID,Nulo) <> Nulo)), (EjecutarSQL(<T>SPCancelaCobroMAVI :n<T>,Cxc:Cxc.ID )))<BR>Asigna(MAVI.DM0116FaseC,0)
+
+[Cxc.frm/Acciones.Abrir]
+Antes=S
+AntesExpresiones=SI(((Cxc:Cxc.Estatus <> <T>CONCLUIDO<T>)y (Cxc:Cxc.Mov = <T>Cobro<T>) y (Vacio(Cxc:Cxc.MovID,Nulo) <> Nulo)), (EjecutarSQL(<T>SPCancelaCobroMAVI :n<T>,Cxc:Cxc.ID )))<BR>Asigna(MAVI.DM0116FaseC,0)
+
+[Cxc.frm/Acciones.Localizar]
+Antes=S
+AntesExpresiones=SI(((Cxc:Cxc.Estatus <> <T>CONCLUIDO<T>)y (Cxc:Cxc.Mov = <T>Cobro<T>) y (Vacio(Cxc:Cxc.MovID,Nulo) <> Nulo)), (EjecutarSQL(<T>SPCancelaCobroMAVI :n<T>,Cxc:Cxc.ID )))
+
+
+[Cxc.frm/Acciones.Correo_ClienteCxc]
+Nombre=Correo_ClienteCxc
+Boton=84
+NombreDesplegar=&Correo
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Formas
+ClaveAccion=DM0138CapturaCorreo
+Activo=S
+Visible=S
+Antes=S
+AntesExpresiones=Asigna(Info.Cliente,Cxc:Cxc.Cliente)<BR>Asigna(Mavi.DM0138MovCorreo,Cxc:Cxc.Mov)<BR>Asigna(Info.IDMAVI, Cxc:Cxc.ID)<BR>Asigna(Mavi.DM0138MovEstatus,Cxc:Cxc.Estatus)<BR>Asigna(Mavi.DM0138Modulo,<T>CXC<T>)<BR>ASIGNA(Mavi.DM0138Bandera,0)
+
+
+
+
+

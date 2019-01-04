@@ -1,0 +1,55 @@
+;se valida con un SP que movimientos se pueden embarcar EFMARTINEZ 05-ago-2013
+[EmbarqueAsignar.frm/Forma]
+ExpresionesAlMostrar=Asigna(Mavi.DM0125Bandera,<T>VERDADERO<T>)
+ExpresionesAlCerrar=Si<BR>  condatos(Info.ID) <BR>Entonces<BR>     Si<BR>        Mavi.MovEmbarque  en (<T>Embarque<T>,<T>Embarque Mayoreo<T>,<T>Embarque Magisterio<T>,<T>Embarque Sucursales<T>)<BR>    Entonces<BR>       Si(SQL(<T>SP_MaviValidarMovParaEmbarques :nID<T>,Info.ID)=1,Si(Precaucion(<T>tiene movimientos no permitidos, para este embarque<T>, BotonCancelar)=BotonCancelar, AbortarOperacion))<BR><BR>    Fin<BR><BR>Fin
+
+
+;Se modifico el SP de movimiento a embarcar para las facturas que no pertenecieran al almacen 96 FEROBLES 18/12/2013
+
+
+[EmbarqueAsignar.frm/Acciones.Aceptar]
+Antes=S
+AntesExpresiones=Si<BR>Mavi.MovEmbarque  en (<T>Embarque<T>,<T>Embarque Mayoreo<T>,<T>Embarque Magisterio<T>,<T>Embarque Sucursales<T>)<BR>Entonces<BR>Si(SQL(<T>SP_MaviValidarMovParaEmbarques :nID<T>,EmbarqueAsignado:EmbarqueD.ID)=1,Si(Precaucion(<T>tiene movimientos no permitidos, para este embarque O Facturas de otro Almacen<T>, BotonCancelar)=BotonCancelar, AbortarOperacion))<BR>Fin
+
+
+[EmbarqueAsignar.frm/Acciones.Asignar]
+Antes=S
+AntesExpresiones=Si<BR>Mavi.MovEmbarque  en (<T>Embarque<T>,<T>Embarque Mayoreo<T>,<T>Embarque Magisterio<T>,<T>Embarque Sucursales<T>)<BR>Entonces<BR>Si(SQL(<T>SP_MaviValidarMovParaEmbarques :nID<T>,EmbarqueAsignado:EmbarqueD.ID)=1,Si(Precaucion(<T>tiene movimientos no permitidos, para este embarque O Facturas de otro Almacen<T>, BotonCancelar)=BotonCancelar, AbortarOperacion))<BR>Fin
+
+
+[EmbarqueAsignar.frm/Acciones.AsignarTodo]
+Antes=S
+AntesExpresiones=Si<BR>Mavi.MovEmbarque  en (<T>Embarque<T>,<T>Embarque Mayoreo<T>,<T>Embarque Magisterio<T>,<T>Embarque Sucursales<T>)<BR>Entonces<BR>Si(SQL(<T>SP_MaviValidarMovParaEmbarques :nID<T>,EmbarqueAsignado:EmbarqueD.ID)=1,Si(Precaucion(<T>tiene movimientos no permitidos, para este embarque O Facturas de otro Almacen<T>, BotonCancelar)=BotonCancelar, AbortarOperacion))<BR>Fin
+
+
+
+
+[EmbarqueAsignar.frm/Acciones.PendientesSeleccionarTodo]
+Antes=S
+AntesExpresiones=Si<BR>Mavi.MovEmbarque  en (<T>Embarque<T>,<T>Embarque Mayoreo<T>,<T>Embarque Magisterio<T>,<T>Embarque Sucursales<T>)<BR>Entonces<BR>Si(SQL(<T>SP_MaviValidarMovParaEmbarques :nID<T>,EmbarqueAsignado:EmbarqueD.ID)=1,Si(Precaucion(<T>tiene movimientos no permitidos, para este embarque O Facturas de otro Almacen<T>, BotonCancelar)=BotonCancelar, AbortarOperacion))<BR>Fin
+
+
+[EmbarqueAsignar.frm/Acciones.PendientesAsignar]
+Antes=S
+AntesExpresiones=Si<BR>Mavi.MovEmbarque  en (<T>Embarque<T>,<T>Embarque Mayoreo<T>,<T>Embarque Magisterio<T>,<T>Embarque Sucursales<T>)<BR>Entonces<BR>Si(SQL(<T>SP_MaviValidarMovParaEmbarques :nID<T>,EmbarqueAsignado:EmbarqueD.ID)=1,Si(Precaucion(<T>tiene movimientos no permitidos, para este embarque O Facturas de otro Almacen<T>, BotonCancelar)=BotonCancelar, AbortarOperacion))<BR>Fin
+
+[EmbarqueAsignar.frm/Pendientes]
+FiltroTodoNombre=Todos los Movimientos
+FiltroGrupo1=EmbarqueMov.Mov
+FiltroValida1=EmbarqueMov.Mov
+FiltroGrupo2=EmbarqueMov.Nombre
+FiltroValida2=EmbarqueMov.Nombre
+FiltroGrupo3=EmbarqueMov.Almacen
+FiltroValida3=EmbarqueMov.Almacen
+FiltroGeneral=EmbarqueMov.MovEstatus<><T>CANCELADO<T> AND<BR>EmbarqueMov.AsignadoID = {Si(Info.AntecedenteID = 0, <T>NULL<T>, Info.AntecedenteID)}<BR>AND EmbarqueMov.Modulo<><T>CXC<T>  and ((EmbarqueMov.Mov in(<T>Factura Mayoreo<T>,<T>Factura<T>,<T>Factura VIU<T>) and (EmbarqueMov.MovEstatus  <> <T>CANCELADO<T> and (EmbarqueMov.Almacen=<T>V00096<T> or EmbarqueMov.almacen is null))) or (EmbarqueMov.Mov=<T>Orden Traspaso<T>))
+OtroOrden=S
+ListaOrden=EmbarqueMov.FechaEmision<TAB>(Decendente)<BR>EmbarqueMov.MovID<TAB>(Decendente)
+
+[EmbarqueAsignar.frm/Acciones.AsignadoQuitar.Expresion]
+Expresion=RegistrarSeleccionID(<T>Asignado<T>)<BR>Si<BR>  (SQL(<T>Select Count(I.ID) From Inv I with(Nolock)<BR>join EmbarqueMov M with(Nolock) ON I.Mov=M.Mov and I.MovID=M.MovID<BR>join ListaID D with(Nolock) ON D.ID=M.ID and D.Estacion=:nEst<BR>Where I.Mov=<T>+comillas(<T>Orden Traspaso<T>)+ <T> and Estatus=<T>+comillas(<T>CONCLUIDO<T>)+<T> and I.Almacen <> <T>+Comillas(<T>V00096<T>),EstacionTrabajo) > 0) y (Mavi.DM0125Bandera=<T>VERDADERO<T>)        <BR>Entonces<BR>  Forma(<T>DM0125ClavedeAutorizacionFrm<T>)<BR>Sino<BR>  EjecutarSQL(<T>spEmbarqueDesAsignar :nEstacion, :nID, :nAntecedenteID<T>, EstacionTrabajo, Info.ID, Info.AntecedenteID)<BR>Fin
+
+[EmbarqueAsignar.frm/Acciones.AsignadoQuitar]
+Antes=S
+ConCondicion=S
+EjecucionCondicion=Si EmbarqueAsignado:EmbarqueMov.Mov = <T>Orden Traspaso<T><BR>Entonces<BR>    Si<BR>    ((SQL(<T>SELECT  Count(Estatus)  FROM INV WHERE MovID=:tMovId AND Mov=:tMovMov and almacen =:tV  and Estatus=:tEst <T>,EmbarqueAsignado:EmbarqueMov.MovID,EmbarqueAsignado:EmbarqueMov.Mov,<T>V00096<T>,<T>CONCLUIDO<T>)) = 0)<BR>    Entonces<BR>    VERDADERO<BR>    Sino<BR>    Informacion(<T>Orden Trapaso concluida, no es posible desembarcar                     <BR>    Favor de cancelar el Transito correspondiente para poder continuar<T>)<BR>    Fin<BR>Sino<BR>Verdadero<BR>Fin
+

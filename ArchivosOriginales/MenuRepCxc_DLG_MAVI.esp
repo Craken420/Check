@@ -1,0 +1,7 @@
+;Jesus Del Toro Andrade
+;30-10-2012
+;Se quita la accion del reporte CxcEstadoCuenta ya que se quiere
+;en otro menu
+
+[MenuRepCxc.dlg/Dialogo]
+ListaAcciones=Saldos<BR>Pendientes<BR>Antiguedad<BR>Pronostico<BR>ConcentradoDiario<BR>Acum<BR>Aux<BR>Mov<BR>Cortes<BR>Ref<BR>General<BR>Diario<BR>Intereses

@@ -1,0 +1,52 @@
+;**** Ultima modificación:16-Jun-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:Campos Busqueda Rapida
+
+
+
+
+
+;**** Se modifico la lista en captura para agregar los campos: Vehiculo.TipoUnidadVehicular, vehiculo.Proveedor, Prov.Nombre
+[VehiculoLista.frm/Lista]
+ListaEnCaptura=Vehiculo.Descripcion<BR>Vehiculo.TipoUnidadVehicular<BR>Vehiculo.Proveedor<BR>Prov.Nombre<BR>Vehiculo.Placas<BR>Vehiculo.Volumen<BR>Vehiculo.Peso
+
+
+
+;**** Nuevo Campo Agregado ****
+[VehiculoLista.frm/Lista.Vehiculo.TipoUnidadVehicular]
+Carpeta=Lista
+Clave=Vehiculo.TipoUnidadVehicular
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+;**** Nuevo Campo Agregado ****
+[VehiculoLista.frm/Lista.Vehiculo.Proveedor]
+Carpeta=Lista
+Clave=Vehiculo.Proveedor
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=10
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+
+;**** Nuevo Campo Agregado ****
+[VehiculoLista.frm/Lista.Prov.Nombre]
+Carpeta=Lista
+Clave=Prov.Nombre
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=100
+ColorFondo=Blanco
+ColorFuente=Negro

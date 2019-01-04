@@ -1,0 +1,33 @@
+;**** Ultima modificación:10-May-2017
+;**** Modifico:Pedro Aguayo Hernández
+;**** Se modifico: Se agrega un campo calculado(Modelo) el cual se obtiene el modelo del artículo siempre y cuando su línea sea 'MOTOCICLETAS'
+;*****
+
+
+[ExplorarInvSerieLote.frm/Lista]
+
+ListaEnCaptura=SerieLote.Articulo<BR>Art.Descripcion1<BR>SerieLote.SerieLote<BR>SerieLote.Almacen<BR>SerieLote.Existencia<BR>Modelo
+
+[ExplorarInvSerieLote.frm/Lista.Columnas]
+0=96
+1=181
+2=97
+3=52
+4=75
+Articulo=124
+Descripcion1=184
+SerieLote=124
+Almacen=64
+Existencia=64
+Modelo=103
+
+[ExplorarInvSerieLote.frm/Lista.Modelo]
+Carpeta=Lista
+Clave=Modelo
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=50
+ColorFondo=Blanco
+ColorFuente=Negro

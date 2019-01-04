@@ -1,0 +1,155 @@
+;**** Modificacion: 22-Abr-09
+;**** MOdifico: Edgar Montelongo
+;**** Se Modifico: Integracion de Campo LeasingMAVI
+
+;**** Ultima modificación:09-Jun-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:
+
+
+;***** 26-Ago-08(Arly): Se agregaron nuevas acciones: GruposPropre *****
+[Condicion.frm/Forma]
+PosicionInicialIzquierda=288
+PosicionInicialArriba=103
+ListaAcciones=Aceptar<BR>Nuevo<BR>Eliminar<BR>Ordenar<BR>Grupos<BR>GruposPropre<BR>Navegador<BR>CondicionAccesoMAVI
+PosicionInicialAlturaCliente=630
+
+
+
+;**** Se agregaron nuevos campos en la captura del detalle: TipoVenta, Condicion.PROPREGrupo,Condicion.PROPRECanal  ****
+[Condicion.frm/Detalle]
+ListaEnCaptura=Condicion.Condicion<BR>Condicion.TipoCondicion<BR>Condicion.DiasVencimiento<BR>Condicion.TipoDias<BR>Condicion.DiasHabiles<BR>Condicion.PorMeses<BR>Condicion.Meses<BR>Condicion.PorSemanas<BR>Condicion.Semanas<BR>Condicion.ControlAnticipos<BR>Condicion.TipoVenta<BR>Condicion.AnticipadoNumero<BR>Condicion.AnticipadoPeriodo<BR>Condicion.LeasingMAVI<BR>Condicion.Corte<BR>Condicion.CorteDia<BR>Condicion.DA<BR>Condicion.InteresesDevengados<BR>Condicion.ProntoPago<BR>Condicion.Neteo<BR>Condicion.ListTemp<BR>Condicion.ProdUnic<BR>Condicion.DIMA<BR>Condicion.FacturaCobroIntegradoParcial<BR>Condicion.Grupo<BR>Condicion.NivelAcceso<BR>Condicion.PROPREGrupo
+
+
+
+
+;**** Nuevo campo agregado en el detalle ****
+[Condicion.frm/Detalle.Condicion.TipoVenta]
+Carpeta=Detalle
+Clave=Condicion.TipoVenta
+Editar=S
+LineaNueva=N
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+
+;***** 26-Ago-08(Arly): Nuevo Campo Agregado *****
+[Condicion.frm/Detalle.Condicion.PROPREGrupo]
+Carpeta=Detalle
+Clave=Condicion.PROPREGrupo
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=29
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+;***** 26-Ago-08(Arly): Nuevo Campo Agregado *****
+;[Condicion.frm/Detalle.Condicion.PROPRECanal]
+;Carpeta=Detalle
+;Clave=Condicion.PROPRECanal
+;Editar=S
+;ValidaNombre=S
+;3D=S
+;Tamano=13
+;ColorFondo=Blanco
+;ColorFuente=Negro
+;LineaNueva=N
+
+
+
+
+;*************************************************************ACCIONES********************************************************
+;*****************************************************************************************************************************
+
+;***** 26-Ago-08(Arly):Nueva accion agregada *****
+[Condicion.frm/Acciones.GruposPropre]
+Nombre=GruposPropre
+Boton=91
+NombreEnBoton=S
+NombreDesplegar=Grupos Propre
+EnBarraHerramientas=S
+TipoAccion=Formas
+ClaveAccion=PropreCondicionGrupo
+Activo=S
+Visible=S
+
+
+
+;*** 20-Oct- 08 LQG : Se agrego la validacion por usuario ***
+;*** 18-08-09 GRB: Se modifico el nivel de acceso de "Delimitado" a "Especifico"
+[Condicion.frm/Acciones.CondicionAccesoMAVI]
+Nombre=CondicionAccesoMAVI
+Boton=80
+NombreEnBoton=S
+NombreDesplegar=Acceso &Especifico
+EnBarraHerramientas=S
+EspacioPrevio=S
+TipoAccion=Formas
+ClaveAccion=CondicionAccesoMAVI
+ActivoCondicion=Condicion:Condicion.NivelAcceso = <T>(Especifico)<T>
+Antes=S
+AntesExpresiones=Asigna(Info.Condicion,Condicion:Condicion.Condicion)
+Visible=S
+
+
+;****** Integracion LeasingMAVI
+[Condicion.frm/Detalle.Condicion.LeasingMAVI]
+Carpeta=Detalle
+Clave=Condicion.LeasingMAVI
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+EspacioPrevio=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+;***Integracion CFDFlex BVF 28062012
+;[Condicion.frm/CFD]
+;CarpetaVisible=
+;CondicionVisible=(Empresa.CFD) o (General.CFDFlex)
+
+;**** para CfdAdaflex siempre visible 
+[Condicion.frm/CFD]
+CondicionVisible=
+CarpetaVisible=S
+
+[Condicion.frm/Detalle.Condicion.ListTemp]
+Carpeta=Detalle
+Clave=Condicion.ListTemp
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+Tamano=30
+
+[Condicion.frm/Detalle.Condicion.ProdUnic]
+Carpeta=Detalle
+Clave=Condicion.ProdUnic
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+Tamano=30
+
+[Condicion.frm/Detalle.Condicion.DIMA]
+Carpeta=Detalle
+Clave=Condicion.DIMA
+Editar=S
+LineaNueva=S
+ValidaNombre=N
+3D=S
+ColorFondo=Blanco
+Tamano=30
+

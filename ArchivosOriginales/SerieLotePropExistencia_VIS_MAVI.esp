@@ -1,0 +1,17 @@
+;**** Ultima modificación:10-May-2017
+;**** Modifico:Pedro Aguayo Hernández
+;**** Se modifico: Se agrega un campo calculado(Modelo) el cual se obtiene el modelo del artículo siempre y cuando su línea sea 'MOTOCICLETAS'
+;*****
+
+[SerieLotePropExistencia.vis/Vista]
+
+ListaCalculados=Modelo
+
+[SerieLotePropExistencia.vis/Modelo]
+Clave=Modelo
+Tamano=50
+TipoCampo=Calculado
+TamanoValidacion=50
+Alineacion=por Omisión
+Nombre=Modelo
+Formula=Si(Art.Linea=<T>MOTOCICLETAS<T>,SerieLoteProp.Extra3,<T>N/A<T>)

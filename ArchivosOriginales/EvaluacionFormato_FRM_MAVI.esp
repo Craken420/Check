@@ -1,0 +1,23 @@
+;***** Modificacion: 20-Feb-09
+;***** Modifico: Edgar Montelongo
+;***** Descripcion: Agrega campo ValorNumerico
+
+
+
+
+
+[EvaluacionFormato.frm/Lista]
+ListaEnCaptura=EvaluacionFormato.Punto<BR>EvaluacionFormato.ValorNumerico<BR>EvaluacionFormato.Seccion<BR>EvaluacionFormato.Respuesta<BR>EvaluacionFormato.Peso<BR>EvaluacionFormato.Referencia
+
+[EvaluacionFormato.frm/Lista.Columnas]
+ValorNumerico=72
+
+[EvaluacionFormato.frm/Lista.EvaluacionFormato.ValorNumerico]
+Carpeta=Lista
+Clave=EvaluacionFormato.ValorNumerico
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro

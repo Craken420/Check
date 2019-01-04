@@ -1,0 +1,69 @@
+;**** Ultima modificación: 25-Ago-08
+;**** Modifico: Leticia Quezada
+;**** Se modifico: Se agregaron los campos de EsAcreedora y Estatus
+;**** Ultima modificación: 24-Jul-09
+;**** Modifico: Joel García (Mex)
+;**** Se modifico: Se agrego el campo ConceptoBonificacion
+
+[Concepto.vis/Vista]
+ListaCampos=Concepto.Modulo<BR>Concepto.Concepto<BR>Concepto.PorcentajeDeducible<BR>Concepto.LimiteDeducible<BR>Concepto.ConSueldo<BR>Concepto.Orden<BR>Concepto.Bloqueo<BR>Concepto.Cuenta<BR>Concepto.CuentaPresupuesto<BR>Concepto.Impuestos<BR>Concepto.Retencion<BR>Concepto.Retencion2<BR>Concepto.Retencion3<BR>Concepto.Clase<BR>Concepto.SubClase<BR>Concepto.ValidarPresupuesto<BR>Concepto.Tipo<BR>Concepto.AcreedorDef<BR>Concepto.Indirecto<BR>Concepto.NivelAcceso<BR>Concepto.TipoProrrateo<BR>Concepto.EstimuloFiscal<BR>Concepto.CR<BR>Concepto.UEN<BR>Concepto.ConceptoCxp<BR>Concepto.Provisionable<BR>Concepto.ProvisionImporte<BR>Concepto.CalcularPresupuesto<BR>Concepto.InflacionPresupuesto<BR>Concepto.DepartamentoDetallista<BR>Concepto.Impuesto1Excento<BR>Concepto.Proyecto<BR>Concepto.Actividad<BR>Concepto.<CONTINUA>
+ListaCampos002=<CONTINUA>TipoOperacion<BR>Concepto.Numero<BR>Concepto.Descripcion<BR>Concepto.CostoEstandar<BR>Concepto.UltimoCosto<BR>Concepto.UltimoGasto<BR>Concepto.MonedaCosto<BR>Concepto.Excento2<BR>Concepto.Excento3<BR>Concepto.EsAcreedora<BR>Concepto.EstatusConcepto<BR>Concepto.ConceptoBonificacion<BR>Concepto.NoPedirCfdiMavi<BR>Cta.Cuenta<BR>Cta.Descripcion<BR>Cta.Tipo<BR>Cta.Estatus<BR>CtaPresupuesto.Descripcion<BR>Prov.Proveedor<BR>Prov.Nombre<BR>Prov.Estatus<BR>UEN.Nombre<BR>DepartamentoDetallista.Departamento<BR>DepartamentoDetallista.Nombre<BR>DepartamentoDetallista.Merma<BR>ProyectoDEnFirme.Asunto
+SQL=SELECT<BR>  Concepto.Modulo,<BR>  Concepto.Concepto,<BR>  Concepto.PorcentajeDeducible,<BR>  Concepto.LimiteDeducible,<BR>  Concepto.ConSueldo,<BR>  Concepto.Orden,<BR>  Concepto.Bloqueo,<BR>  Concepto.Cuenta,<BR>  Concepto.CuentaPresupuesto,<BR>  Concepto.Impuestos,<BR>  Concepto.Retencion,<BR>  Concepto.Retencion2,<BR>  Concepto.Retencion3,<BR>  Concepto.Clase,<BR>  Concepto.SubClase,<BR>  Concepto.ValidarPresupuesto,<BR>  Concepto.Tipo,<BR>  Concepto.AcreedorDef,<BR>  Concepto.Indirecto,<BR>  Concepto.NivelAcceso,<BR>  Concepto.TipoProrrateo,<BR>  Concepto.EstimuloFiscal,<BR>  Concepto.CR,<BR>  Concepto.UEN,<BR>  Concepto.ConceptoCxp,<BR>  Concepto.Provisionable,<BR>  Concepto.ProvisionImporte,<BR>  Concepto.CalcularPresupuesto,<BR>  Concepto.InflacionPresupuesto,<BR>  Concepto.Departam<CONTINUA>
+SQL002=<CONTINUA>entoDetallista,<BR>  Concepto.Impuesto1Excento,<BR>  Concepto.Proyecto,<BR>  Concepto.Actividad,<BR>  Concepto.TipoOperacion,<BR>  Concepto.Numero,<BR>  Concepto.Descripcion,<BR>  Concepto.CostoEstandar,<BR>  Concepto.UltimoCosto,<BR>  Concepto.UltimoGasto,<BR>  Concepto.MonedaCosto,<BR>  Concepto.Excento2,<BR>  Concepto.Excento3,<BR>  Concepto.EsAcreedora,<BR>  Concepto.EstatusConcepto,<BR>  Concepto.ConceptoBonificacion,<BR>  Concepto.NoPedirCfdiMavi,<BR>  Cta.Cuenta,<BR>  Cta.Descripcion,<BR>  Cta.Tipo,<BR>  Cta.Estatus,<BR>  CtaPresupuesto.Descripcion,<BR>  Prov.Proveedor,<BR>  Prov.Nombre,<BR>  Prov.Estatus,<BR>  UEN.Nombre,<BR>  DepartamentoDetallista.Departamento,<BR>  DepartamentoDetallista.Nombre,<BR>  DepartamentoDetallista.Merma,<BR>  ProyectoDEnFirme.Asunto<BR><BR>FROM<BR>  Concepto<BR>  LEFT OUTER JOIN Cta ON <CONTINUA>
+SQL003=<CONTINUA>Concepto.Cuenta=Cta.Cuenta<BR>  LEFT OUTER JOIN Prov ON Concepto.AcreedorDef=Prov.Proveedor<BR>  LEFT OUTER JOIN UEN ON Concepto.UEN=UEN.UEN<BR>  LEFT OUTER JOIN Cta CtaPresupuesto ON Concepto.CuentaPresupuesto=CtaPresupuesto.Cuenta<BR>  LEFT OUTER JOIN DepartamentoDetallista ON Concepto.DepartamentoDetallista=DepartamentoDetallista.Departamento<BR>  LEFT OUTER JOIN ProyectoDEnFirme ON Concepto.Proyecto=ProyectoDEnFirme.Proyecto AND Concepto.Actividad=ProyectoDEnFirme.Actividad
+
+
+[Concepto.vis/Concepto.EsAcreedora]
+Clave=Concepto.EsAcreedora
+Nombre=EsAcreedora
+TipoDatos=Lógico
+LigaTabla=Concepto
+LigaCampo=EsAcreedora
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=EsAcreedora
+
+
+[Concepto.vis/Concepto.EstatusConcepto]
+Clave=Concepto.EstatusConcepto
+Nombre=Estatus
+TipoDatos=Texto
+Tamano=5
+LigaTabla=Concepto
+LigaCampo=EstatusConcepto
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=EstatusConcepto
+
+[Concepto.vis/Concepto.ConceptoBonificacion]
+Clave=Concepto.ConceptoBonificacion
+Nombre=ConceptoBonificacion
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+LigaTabla=Concepto
+LigaCampo=ConceptoBonificacion
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=ConceptoBonificacion
+
+[Concepto.vis/Concepto.NoPedirCfdiMavi]
+Clave=Concepto.NoPedirCfdiMavi
+Nombre=NoPedirCfdiMavi
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+LigaTabla=Concepto
+LigaCampo=NoPedirCfdiMavi
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=NoPedirCfdiMavi
+
+
+
+
+

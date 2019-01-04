@@ -1,0 +1,57 @@
+[EmpresaConceptoValidar.tbl/Tabla]
+
+ListaCampos=Empresa<BR>Modulo<BR>Mov<BR>Concepto<BR>CR<BR>TipoCfdi<BR>PeriodoCfdi
+
+SQL=SELECT<BR>  Empresa,<BR>  Modulo,<BR>  Mov,<BR>  Concepto,<BR>  CR,<BR>  TipoCfdi,<BR>  PeriodoCfdi<BR><BR>FROM<BR>  EmpresaConceptoValidar
+
+
+[EmpresaConceptoValidar.Tbl/TipoCfdi]
+Clave=TipoCfdi
+Nombre=TipoCfdi
+Visible=S
+TamanoValidacion=1
+TipoDatos=Texto
+Tamano=1
+ValorPorOmision=SQL(<T>SELECT TipoCfdi FROM EmpresaConcepto WHERE Empresa=:tEmpresa and Modulo=:tMod and Mov=:tMov<T>,Empresa,Modulo,Mov)
+ValorRefrescar=SQL(<T>SELECT TipoCfdi FROM EmpresaConcepto WHERE Empresa=:tEmpresa and Modulo=:tMod and Mov=:tMov<T>,Empresa,Modulo,Mov)
+
+
+[EmpresaConceptoValidar.Tbl/PeriodoCfdi]
+Clave=PeriodoCfdi
+Nombre=PeriodoCfdi
+Visible=S
+TamanoValidacion=3
+TipoDatos=Texto
+Tamano=3
+ListaRefrescar=TipoCfdi
+Mayusculas=S
+AlCambiar=Si  PeriodoCfdi en (<T>MEN<T>,<T>ANU<T>,<T>OPE<T>,<T>N/A<T>)<BR>Entonces<BR>  VERDADERO<BR>Sino<BR>  ERROR(<T>EL VALOR NO CORRESPONDE A LA LISTA<T>)<BR>  AbortarOperacion<BR>Fin
+AyudaEnCaptura=Lista de Opciones
+ListaOpciones=MEN<BR>ANU<BR>OPE<BR>N/A
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+
+[EmpresaConceptoValidar.Tbl/Concepto]
+Clave=Concepto
+Nombre=Concepto
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+AyudaEnCaptura=Vista
+AyudaForma=ConceptoLista
+AyudaVista=Concepto
+AyudaCampo=Concepto.Concepto
+AyudaMultiple=S
+AyudaRefrescar=S
+ValidacionUsaTabla=S
+ValidacionTablas=Concepto
+Requerido=S
+TipoDatos=Texto
+
+ConRefrescar=S
+ListaRefrescar=TipoCfdi
+

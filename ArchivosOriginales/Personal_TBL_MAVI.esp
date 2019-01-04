@@ -1,0 +1,80 @@
+; Ultima Modificacion: 30 Enero 2009
+; Modifico: Edgar Montelongo
+
+[P;*** Desarrollo de Campañas 27/08/09, Modifico:Joel García (Mex), se agrego un campo adicional. ersonal.tbl/Tabla]
+ListaCampos=Personal<BR>ApellidoPaterno<BR>ApellidoMaterno<BR>Nombre<BR>Tipo<BR>Direccion<BR>DireccionNumero<BR>DireccionNumeroInt<BR>Colonia<BR>Delegacion<BR>Poblacion<BR>Estado<BR>Pais<BR>CodigoPostal<BR>Telefono<BR>eMail<BR>FormaPago<BR>CtaDinero<BR>PersonalCuenta<BR>PersonalSucursal<BR>Afore<BR>FechaNacimiento<BR>Hijos<BR>Dependientes<BR>Nacionalidad<BR>Permiso<BR>Pasaporte<BR>Cartilla<BR>NivelAcademico<BR>Sexo<BR>EstadoCivil<BR>Beneficiario<BR>Parentesco<BR>Valuacion<BR>ReportaA<BR>ZonaEconomica<BR>MinimoProfesional<BR>TipoSueldo<BR>SueldoDiario<BR>SueldoDiarioComplemento<BR>SDI<BR>SDIBimestral<BR>Departamento<BR>TipoContrato<BR>Grupo<BR>Puesto<BR>PeriodoTipo<BR>Jornada<BR>Categoria<BR>Moneda<BR>Registro<BR>Registro2<BR>Registro3<BR>Registro4<BR>FechaAlta<BR>FechaAntiguedad<BR>FechaBaja<BR>Concep<CONTINUA>
+ListaCampos002=<CONTINUA>toBaja<BR>UltimaModificacion<BR>VencimientoContrato<BR>AspiraSueldo<BR>AspiraDepartamento<BR>AspiraGrupo<BR>AspiraPuesto<BR>AspiraCategoria<BR>AspiraFecha<BR>Estatus<BR>UltimoPago<BR>UltimoCambio<BR>Situacion<BR>SituacionFecha<BR>SituacionUsuario<BR>SituacionNota<BR>EstaPresente<BR>TieneMovimientos<BR>SucursalTrabajo<BR>LugarNacimiento<BR>NivelAcceso<BR>Padre<BR>Madre<BR>UnidadMedica<BR>CentroCostos<BR>Sindicato<BR>SDIAnterior<BR>Vehiculo<BR>TablaCobranza<BR>TablaCobranzaBono<BR>TablaCobranzaCascada<BR>TablaCobranzaBonoCascada<BR>TablaVentaCascada<BR>Porcentaje<BR>Beneficiario2<BR>Parentesco2<BR>Porcentaje2<BR>Beneficiario3<BR>Parentesco3<BR>Porcentaje3<BR>Beneficiario4<BR>Parentesco4<BR>Porcentaje4<BR>Beneficiario5<BR>Parentesco5<BR>Porcentaje5<BR>Beneficiario6<BR>Parentesco6<BR>Porcentaj<CONTINUA>
+ListaCampos003=<CONTINUA>e6<BR>Beneficiario7<BR>Parentesco7<BR>Porcentaje7<BR>Beneficiario8<BR>Parentesco8<BR>Porcentaje8<BR>UEN<BR>Area<BR>Fuente<BR>Reclutador<BR>RecomendadoPor<BR>Cuenta<BR>CuentaRetencion<BR>MovNomina<BR>Contrasena<BR>Configuracion<BR>BeneficiarioNacimiento<BR>Beneficiario2Nacimiento<BR>Beneficiario3Nacimiento<BR>Beneficiario4Nacimiento<BR>Beneficiario5Nacimiento<BR>Beneficiario6Nacimiento<BR>Beneficiario7Nacimiento<BR>Beneficiario8Nacimiento<BR>Referencia<BR>ReferenciaDireccion<BR>ReferenciaTelefono<BR>Referencia2<BR>Referencia2Direccion<BR>Referencia2Telefono<BR>Referencia3<BR>Referencia3Direccion<BR>Referencia3Telefono<BR>Licencia<BR>LicenciaVencimiento<BR>Cliente<BR>eMailAuto<BR>Incremento<BR>EsSocio<BR>DiasPeriodo<BR>IndemnizacionPct<BR>Proyecto<BR>Actividad<BR>Plaza<BR>Empresa<BR>SueldoMe<CONTINUA>
+ListaCampos004=<CONTINUA>nsual<BR>ISRFijoPeriodo<BR>RataHora<BR>DeclaraRenta<BR>LocalidadCNBV<BR>Sembrado
+SQL=SELECT<BR>  Personal,<BR>  ApellidoPaterno,<BR>  ApellidoMaterno,<BR>  Nombre,<BR>  Tipo,<BR>  Direccion,<BR>  DireccionNumero,<BR>  DireccionNumeroInt,<BR>  Colonia,<BR>  Delegacion,<BR>  Poblacion,<BR>  Estado,<BR>  Pais,<BR>  CodigoPostal,<BR>  Telefono,<BR>  eMail,<BR>  eMailAuto,<BR>  ZonaEconomica,<BR>  Registro,<BR>  Registro2,<BR>  Registro3,<BR>  Registro4,<BR>  FormaPago,<BR>  CtaDinero,<BR>  Afore,<BR>  PersonalSucursal,<BR>  PersonalCuenta,<BR>  FechaNacimiento,<BR>  LugarNacimiento,<BR>  Nacionalidad,<BR>  Pasaporte,<BR>  Cartilla,<BR>  Permiso,<BR>  NivelAcademico,<BR>  Sexo,<BR>  EstadoCivil,<BR>  Hijos,<BR>  Dependientes,<BR>  Beneficiario,<BR>  BeneficiarioNacimiento,<BR>  Parentesco,<BR>  Porcentaje,<BR>  Beneficiario2,<BR>  Beneficiario2Nacimiento,<BR>  Parentesco2,<BR> <CONTINUA>
+SQL002=<CONTINUA> Porcentaje2,<BR>  Beneficiario3,<BR>  Beneficiario3Nacimiento,<BR>  Parentesco3,<BR>  Porcentaje3,<BR>  Beneficiario4,<BR>  Beneficiario4Nacimiento,<BR>  Parentesco4,<BR>  Porcentaje4,<BR>  Beneficiario5,<BR>  Beneficiario5Nacimiento,<BR>  Parentesco5,<BR>  Porcentaje5,<BR>  Beneficiario6,<BR>  Beneficiario6Nacimiento,<BR>  Parentesco6,<BR>  Porcentaje6,<BR>  Beneficiario7,<BR>  Beneficiario7Nacimiento,<BR>  Parentesco7,<BR>  Porcentaje7,<BR>  Beneficiario8,<BR>  Beneficiario8Nacimiento,<BR>  Parentesco8,<BR>  Porcentaje8,<BR>  Valuacion,<BR>  Padre,<BR>  Madre,<BR>  UnidadMedica,<BR>  CentroCostos,<BR>  ReportaA,<BR>  AspiraSueldo,<BR>  AspiraCategoria,<BR>  AspiraDepartamento,<BR>  AspiraGrupo,<BR>  AspiraPuesto,<BR>  AspiraFecha,<BR>  Categoria,<BR>  Departamento,<BR>  Grupo,<BR>  Pues<CONTINUA>
+SQL003=<CONTINUA>to,<BR>  TipoContrato,<BR>  PeriodoTipo,<BR>  Jornada,<BR>  TipoSueldo,<BR>  Moneda,<BR>  DiasPeriodo,<BR>  SueldoDiario,<BR>  SDI,<BR>  SDIBimestral,<BR>  SDIAnterior,<BR>  SueldoDiarioComplemento,<BR>  FechaAlta,<BR>  FechaBaja,<BR>  ConceptoBaja,<BR>  FechaAntiguedad,<BR>  UltimaModificacion,<BR>  UltimoPago,<BR>  VencimientoContrato,<BR>  Estatus,<BR>  UltimoCambio,<BR>  Situacion,<BR>  SituacionFecha,<BR>  SituacionUsuario,<BR>  SituacionNota,<BR>  EstaPresente,<BR>  TieneMovimientos,<BR>  SucursalTrabajo,<BR>  NivelAcceso,<BR>  MinimoProfesional,<BR>  Sindicato,<BR>  Vehiculo,<BR>  TablaCobranza,<BR>  TablaCobranzaBono,<BR>  TablaCobranzaCascada,<BR>  TablaCobranzaBonoCascada,<BR>  TablaVentaCascada,<BR>  UEN,<BR>  Actividad,<BR>  Area,<BR>  Fuente,<BR>  Reclutador,<BR>  RecomendadoP<CONTINUA>
+SQL004=<CONTINUA>or,<BR>  Cuenta,<BR>  CuentaRetencion,<BR>  MovNomina,<BR>  Contrasena,<BR>  Configuracion,<BR>  Referencia,<BR>  ReferenciaDireccion,<BR>  ReferenciaTelefono,<BR>  Referencia2,<BR>  Referencia2Direccion,<BR>  Referencia2Telefono,<BR>  Referencia3,<BR>  Referencia3Direccion,<BR>  Referencia3Telefono,<BR>  Licencia,<BR>  LicenciaVencimiento,<BR>  Cliente,<BR>  Incremento,<BR>  EsSocio,<BR>  IndemnizacionPct,<BR>  Proyecto,<BR>  Plaza,<BR>  Empresa,<BR>  SueldoMensual,<BR>  ISRFijoPeriodo,<BR>  RataHora,<BR>  DeclaraRenta,<BR>  LocalidadCNBV,<BR> Sembrado<BR><BR>FROM<BR>  Personal
+
+; ****** Se modificaron los campos Delegacion, Colonia, CodigoPostal para ser siempre requeridos
+[Personal.tbl/Colonia]
+ListaRefrescar=Delegacion<BR>CodigoPostal<BR>Estado<BR>Pais<BR>Poblacion<BR>LocalidadCNBV<BR>Tipo
+Requerido=S
+
+[Personal.tbl/CodigoPostal]
+ListaRefrescar=Colonia<BR>Delegacion<BR>Estado<BR>Pais<BR>Poblacion<BR>LocalidadCNBV<BR>Tipo
+Requerido=S
+
+[Personal.tbl/Delegacion]
+ListaRefrescar=Colonia<BR>CodigoPostal<BR>Estado<BR>Pais<BR>Poblacion<BR>LocalidadCNBV<BR>Tipo
+AyudaEnCaptura=No
+CondicionEdicion=1=2
+Requerido=S
+
+[Personal.tbl/Estado]
+AyudaMemOpc=Consulta Opcional
+ValorRefrescar=Si(Info.Copiar, Info.Estado, Estado)
+Requerido=S
+ConRefrescar=S
+ListaRefrescar=LocalidadCNBV<BR>Tipo
+
+[Personal.tbl/Tipo]
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+ValorRefrescar=Asigna(Info.Copiar, Falso)
+
+[Personal.tbl/LocalidadCNBV]
+Clave=LocalidadCNBV
+Nombre=LocalidadCNBV
+Visible=S
+TamanoValidacion=10
+Tamano=10
+ValorRefrescar=Si(Info.Copiar, Info.Localidad, <T>X<T>)
+AyudaEnCaptura=Vista
+AyudaForma=LocalidadCNBVLista
+AyudaVista=LocalidadCNBV
+AyudaCampo=LocalidadCNBV.LocalidadCNBV
+ValidacionUsaTabla=S
+ValidacionTablas=LocalidadCNBV
+
+[Personal.tbl/Relaciones.Localidad]
+TipoRelacion=Opcional
+LlaveLocal=LocalidadCNBV
+Clave=Localidad
+TablaRemota=LocalidadCNBV
+LlaveRemota=LocalidadCNBV
+
+; ***** Se modifico el campo Poblacion para que no pueda ser editable pero que su valor siempre sea igual
+; ***** a Delegacion
+[Personal.tbl/Poblacion]
+ValorPorOmision=Delegacion
+CondicionEdicion=1=2
+ValorRefrescar=Delegacion
+
+
+;*** Desarrollo de Campañas 27/08/09, Modifico:Joel García (Mex), se agrego un campo adicional. 
+[Personal.tbl/Sembrado]
+Clave=Sembrado
+Nombre=Es Sembrado
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Si - No
+OpcionesRenglones=8

@@ -1,0 +1,18 @@
+;**** modificación:05-Ago-09
+;**** Modifico: Joel García Díaz (Mex)
+;**** Se modifico:Creación desarrollo de Campañas
+
+[CampanaUsuarioAsignar.frm/Lista]
+ListaEnCaptura.Cambios=Eliminar<TAB>ContactoSubTipo<BR>Insertar<TAB>CampanaD.Tipo<TAB>0
+IconosNombre=CampanaD:CampanaD.Nombre
+
+[CampanaUsuarioAsignar.frm/Lista.CampanaD.Tipo]
+Carpeta=Lista
+Clave=CampanaD.Tipo
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+ColorFuente=Negro

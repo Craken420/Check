@@ -1,0 +1,9 @@
+;**** Ultima modificación:27-Jun-08
+;**** Modifico:Elias
+;**** Se modifico:Creacion
+
+
+[CteA.vis/Vista]
+CamposBusquedaRapida=Cte.Cliente<BR>Cte.Nombre<BR>Cte.RFC
+
+

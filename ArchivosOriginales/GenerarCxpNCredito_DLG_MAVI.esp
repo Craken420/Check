@@ -1,0 +1,12 @@
+;**** Ultima modificación:09-Enero-09
+;**** Modifico:Leticia Quezada
+;**** Se modifico: Flujos
+
+
+[GenerarCxpNCredito.dlg/Acciones.Devolucion]
+Visible=N
+VisibleCondicion=Info.Mov <> (<T>Acuerdo Proveedor<T>)
+
+
+[GenerarCxpNCredito.dlg/Acciones.Endoso]
+VisibleCondicion=(Afectar.Mov<>ConfigMov.CxpEndosoAFavor) y (Info.Mov <> <T>Acuerdo Proveedor<T>)

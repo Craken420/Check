@@ -1,0 +1,10 @@
+;Ultima modificacion: 09-Jul-2008
+;Responsable: Arly Rubio  
+;Modifico: Modificacion Carpeta Abrir.
+
+
+
+;***** Modificacion Mexico *****
+[Vale.frm/(Carpeta Abrir)]
+FiltroAutoCampo=Vale.Moneda
+FiltroAutoValidar=Vale.Moneda

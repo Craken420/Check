@@ -1,0 +1,246 @@
+
+;**** Ultima modificación:11-Jul-08
+;**** Modifico:Arly Rubio Camacho
+;**** Se modifico:Integracion desarrollo mexico
+
+
+; ***** JR 03-Dic-09. Se cambio lineas: Expresiones al mostrar, al cerrar y ListaAcciones para CteExpress. cambios por Arturo Guizer. ****
+[CteCtoDireccion.frm/Forma]
+VentanaSinIconosMarco=S
+Icono=67
+Comentarios=Lista(<T>Cliente: <T> + Info.Cliente, <T> Contacto: <T> + Info.Nombre)
+PosicionInicialIzquierda=267
+PosicionInicialArriba=189
+PosicionInicialAncho=746
+VentanaEstadoInicial=Normal
+;ExpresionesAlMostrar=Asigna(Info.Copiar, Falso)<BR>Asigna(temp.Numerico1,0)<BR>Asigna(temp.Numerico2,0)<BR>Asigna(temp.Numerico3,0)<BR>Asigna(temp.Numerico4,0)<BR>Asigna(Info.Actualizar,nulo)<BR><BR>EjecutarSQL(<T>SP_InsertaConyugeMavi :ta,:tb,:tc,:td,:te,:tf,:tg,:th,:ti,:tj,:tk,:tl<T>,Info.Tipo,Info.cliente,Info.ID,Info.Observaciones,Info.Clase3,Info.clase1,Info.Clase3,Info.Clase4,Info.Clase2,Info.Articulo,Info.ArticuloA,Info.Clase)
+;ExpresionesAlCerrar=Asigna(Info.Tipo,nulo)<BR>Asigna(temp.Numerico1,0)<BR>Asigna(temp.Numerico2,0)<BR>Asigna(temp.Numerico3,0)<BR>Asigna(temp.Numerico4,0)<BR>Asigna(Info.Actualizar,nulo)
+; JR 03-Dic-09 ExpresionesAlCerrar=Asigna(Info.Tipo,nulo)<BR>Asigna(temp.Numerico1,0)<BR>Asigna(temp.Numerico2,0)<BR>Asigna(temp.Numerico3,0)<BR>Asigna(temp.Numerico4,0)<BR>Asigna(Info.Actualizar,nulo)<BR>Si(SQL(<T>xpRequiereDireccionAntMAVI :nIDCto, :nEnviarA, :tCte<T>, Info.ID, Info.IDMAVI, Info.Cliente)=1, Si(Precaucion(<T>Se requiere capturar una direccion Anterior para el contacto<T>,BotonAceptar)=BotonAceptar, AbortarOperacion, AbortarOperacion))
+VentanaExclusiva=S
+;ListaAcciones=Aceptar<BR>Historico
+ExpresionesAlMostrar=Asigna(Info.Copiar, Falso)<BR>Asigna(temp.Numerico1,0)<BR>Asigna(temp.Numerico2,0)<BR>Asigna(temp.Numerico3,0)<BR>Asigna(temp.Numerico4,0)<BR>Asigna(Info.Actualizar,nulo)<BR><BR><BR>  <CONTINUA>
+ExpresionesAlMostrar002=<CONTINUA><BR><BR>si Info.Respuesta2=<T>T<T><BR>ENTONCES<BR>    EjecutarSQL(<T>SP_InsertaEDireccionMavi :ta,:tb,:tc<T>,Info.Tipo,Info.cliente,Info.ID)<BR>fin
+ExpresionesAlCerrar=Asigna(Info.Tipo,nulo)<BR>Asigna(temp.Numerico1,0)<BR>Asigna(temp.Numerico2,0)<BR>Asigna(temp.Numerico3,0)<BR>Asigna(temp.Numerico4,0)<BR>Asigna(Info.Actualizar,nulo)
+;ListaAcciones=Aceptar<BR>Cerrar
+ListaAcciones=Aceptar<BR>Cerrar<BR>GoogleMaps
+
+;[CteCtoDireccion.frm/Lista]
+;ListaEnCaptura.Cambios=Insertar<TAB>CteCtoDireccion.TipoCalle<TAB>1<BR>Insertar<TAB>CteCtoDireccion.MaviNumero<TAB>3<BR>Insertar<TAB>CteCtoDireccion.MaviNumeroInterno<TAB>4
+
+;***** Integracion cambio mexico *****
+;***** Se agregaron nuevos campos: desarrollomexico(CteCtoDireccion.MaviNumero, CteCtoDireccion.MaviNumeroInterno)*****
+;***** Se agregaron nuevos campos ARC 10-Jun-09: AntiguedadMesesMAVI y  AntiguedadAniosMAVI ****
+;***** JR 03-Dic-09. Se agrego lineas: hojaajustarcolumnas y permiteeditar para CteExpress. Cambios por Arturo Guizer. *****
+[CteCtoDireccion.frm/Lista]
+;ListaEnCaptura=CteCtoDireccion.Tipo<BR>CteCtoDireccion.AntiguedadAniosMAVI<BR>CteCtoDireccion.AntiguedadMesesMAVI<BR>CteCtoDireccion.TipoCalle<BR>CteCtoDireccion.Direccion<BR>CteCtoDireccion.MaviNumero<BR>CteCtoDireccion.MaviNumeroInterno<BR>CteCtoDireccion.Colonia<BR>CteCtoDireccion.Delegacion<BR>CteCtoDireccion.Poblacion<BR>CteCtoDireccion.CodigoPostal<BR>CteCtoDireccion.Estado<BR>CteCtoDireccion.Pais
+;HojaAjustarColumnas=S
+;PermiteEditar=S
+ListaEnCaptura=CteCtoDireccion.Tipo<BR>CteCtoDireccion.AntiguedadAniosMAVI<BR>CteCtoDireccion.AntiguedadMesesMAVI<BR>CteCtoDireccion.TipoCalle<BR>CteCtoDireccion.Direccion<BR>CteCtoDireccion.MaviNumero<BR>CteCtoDireccion.MaviNumeroInterno<BR>CteCtoDireccion.cruces<BR>CteCtoDireccion.Colonia<BR>CteCtoDireccion.Delegacion<BR>CteCtoDireccion.Poblacion<BR>CteCtoDireccion.CodigoPostal<BR>CteCtoDireccion.Estado<BR>CteCtoDireccion.Pais
+HojaAjustarColumnas=S
+PermiteEditar=S
+
+; ***** JR 03-Dic-09. Se comento y cambio ejecucioncondicion, se dejo linea ConCondicion y se integro lo demas para CteExpress. Cambios por Arturo Guizer. *****
+;***** Nueva subaccion ConyugeDelAval y reacomodo de subacciones por JAVT para desarrollo DM0138 Cliente Express dentro del paqete DM0138_02082011. JR 03-Ago-2011 *****
+[CteCtoDireccion.frm/Acciones.Aceptar]
+ConCondicion=S
+EnBarraHerramientas=S
+TipoAccion=Ventana
+ClaveAccion=Aceptar
+Activo=S
+Visible=S
+Boton=3
+NombreEnBoton=S
+NombreDesplegar=&Guardar
+GuardarAntes=S
+Multiple=S
+;ListaAccionesMultiples=Guarda<BR>Inf
+ListaAccionesMultiples=ConyugeDelAval<BR>Guarda<BR>Inf
+;EjecucionCondicion=SQL(<T>SP_ValidaCteCtoDirMavi :ta,:tb,:tc,:td,:te,:tf,:tg,:th<T>,<T>Direcciones<T>,CteCtoDireccion:CteCtoDireccion.Delegacion,CteCtoDireccion:CteCtoDireccion.CodigoPostal,CteCtoDireccion:CteCtoDireccion.Colonia,CteCtoDireccion:CteCtoDireccion.Estado,CteCtoDireccion:CteCtoDireccion.Direccion,CteCtoDireccion:CteCtoDireccion.MaviNumero,CteCtoDireccion:CteCtoDireccion.TipoCalle)<BR><BR>SI  SQL(<T>SP_ValidaCteCtoDirMavi :ta,:tb,:tc,:td,:te,:tf,:tg,:th<T>,<T>Direcciones<T>,CteCtoDireccion:CteCtoDireccion.Delegacion,CteCtoDireccion:CteCtoDireccion.CodigoPostal,CteCtoDireccion:CteCtoDireccion.Colonia,CteCtoDireccion:CteCtoDireccion.Estado,CteCtoDireccion:CteCtoDireccion.Direccion,CteCtoDireccion:CteCtoDireccion.MaviNumero,CteCtoDireccion:CteCtoDireccion.TipoCalle) <> verdadero<BR> Entonces<BR> Asigna(Info.Dialogo,SQL(<T>SELECT Mensaje FROM MensajeErrorMavi<T>))<BR> ERROR(Info.Dialogo)<BR><BR>Fin
+EjecucionCondicion=SQL(<T>SP_ValidaCteCtoDirMavi :ta,:tb,:tc,:td,:te,:tf,:tg,:th<T>,<T>Direcciones<T>,CteCtoDireccion:CteCtoDireccion.Delegacion,CteCtoDireccion:CteCtoDireccion.CodigoPostal,CteCtoDireccion:CteCtoDireccion.Colonia,CteCtoDireccion:CteCtoDireccion.Estado,CteCtoDireccion:CteCtoDireccion.Direccion,CteCtoDireccion:CteCtoDireccion.MaviNumero,CteCtoDireccion:CteCtoDireccion.TipoCalle)<BR>SI  SQL(<T>SP_ValidaCteCtoDirMavi :ta,:tb,:tc,:td,:te,:tf,:tg,:th<T>,<T>Direcciones<T>,CteCtoDireccion:CteCtoDireccion.Delegacion,CteCtoDireccion:CteCtoDireccion.CodigoPostal,CteCtoDireccion:CteCtoDireccion.Colonia,CteCtoDireccion:CteCtoDireccion.Estado,CteCtoDireccion:CteCtoDireccion.Direccion,CteCtoDireccion:CteCtoDireccion.MaviNumero,CteCtoDireccion:CteCtoDireccion.TipoCalle) <> verdadero<BR>Entonces<BR>     Asig<CONTINUA>
+EjecucionCondicion002=<CONTINUA>na(Info.Dialogo,SQL(<T>SELECT Mensaje FROM MensajeErrorMavi<T>))<BR>     ERROR(Info.Dialogo)<BR>Fin
+
+
+; ***** JR 03-Dic-09. Se integro nuevas acciones:Aceptar.Guarda, Aceptar.Inf, para aceptar para cte express. Cambios por Arturo Guizer. *****
+[CteCtoDireccion.frm/Acciones.Aceptar.Guarda]
+Nombre=Guarda
+Boton=0
+TipoAccion=Controles Captura
+ClaveAccion=Guardar Cambios
+Activo=S
+Visible=S
+
+[CteCtoDireccion.frm/Acciones.Aceptar.Inf]
+Nombre=Inf
+Boton=0
+TipoAccion=expresion
+Expresion=Informacion(<T>Datos Guardados<T>)
+Activo=S
+Visible=S
+
+; ***** JR 03-Dic-09. Se integro nueva accion para aceptar para cte express. Cambios por Arturo Guizer. *****
+[CteCtoDireccion.frm/Acciones.Cerrar]
+Nombre=Cerrar
+Boton=36
+NombreEnBoton=S
+NombreDesplegar=&Cerrar
+EnBarraHerramientas=S
+TipoAccion=Ventana
+ClaveAccion=Aceptar
+Activo=S
+Visible=S
+ConCondicion=S
+;EjecucionCondicion=(Sql(<T>SELECT  count(*) FROM    dbo.CteCtoDireccion where cliente=:tc and id=:tid<T>,CteCtoDireccion:CteCtoDireccion.Cliente,CteCtoDireccion:CteCtoDireccion.ID))=2 o<BR>(Sql(<T>SELECT  count(*) FROM    dbo.CteCtoDireccion where cliente=:tc and id=:tid and AntiguedadAniosMavi>=:nan<T>,CteCtoDireccion:CteCtoDireccion.Cliente,CteCtoDireccion:CteCtoDireccion.ID,1))>=1
+;EjecucionCondicion=Si Info.Tipo=<T>AVAL<T> Entonces <BR>(Sql(<T>SELECT  count(*) FROM    dbo.CteCtoDireccion where cliente=:tc and id=:tid<T>,CteCtoDireccion:CteCtoDireccion.Cliente,CteCtoDireccion:CteCtoDireccion.ID)=2) o<BR>(Sql(<T>SELECT  count(*) FROM    dbo.CteCtoDireccion where cliente=:tc and id=:tid and AntiguedadAniosMavi>=:nan<T>,CteCtoDireccion:CteCtoDireccion.Cliente,CteCtoDireccion:CteCtoDireccion.ID,1)>=1)<BR>Sino<BR>(Sql(<T>SELECT  count(*) FROM    dbo.CteCtoDireccion where cliente=:tc and id=:tid<T>,CteCtoDireccion:CteCtoDireccion.Cliente,CteCtoDireccion:CteCtoDireccion.ID))>=1<BR>Fin
+;EjecucionCondicion=Si Info.Tipo=<T>AVAL<T> Entonces<BR>(Sql(<T>SELECT  count(*) FROM    dbo.CteCtoDireccion where cliente=:tc and id=:tid<T>,CteCtoDireccion:CteCtoDireccion.Cliente,CteCtoDireccion:CteCtoDireccion.ID)=2) o<BR>(Sql(<T>SELECT  count(*) FROM    dbo.CteCtoDireccion where cliente=:tc and id=:tid and AntiguedadAniosMavi>=:nan<T>,CteCtoDireccion:CteCtoDireccion.Cliente,CteCtoDireccion:CteCtoDireccion.ID,1)>=1)<BR>y<BR>(SQL(<T>SP_ValidaCteCtoDirMavi :ta,:tb,:tc,:td,:te,:tf,:tg,:th<T>,<T>Direcciones<T>,<BR>CteCtoDireccion:CteCtoDireccion.Delegacion,CteCtoDireccion:CteCtoDireccion.CodigoPostal<BR>,CteCtoDireccion:CteCtoDireccion.Colonia,CteCtoDireccion:CteCtoDireccion.Estado,CteCtoDireccion:CteCtoDireccion.Direccion<BR>,CteCtoDireccion:CteCtoDireccion.MaviNumero,CteCtoDireccion:CteCtoDireccion.TipoCall<CONTINUA>
+;EjecucionCondicion002=<CONTINUA>e) <> verdadero)<BR><BR>Sino<BR>((Sql(<T>SELECT  count(*) FROM    dbo.CteCtoDireccion where cliente=:tc and id=:tid<T>,CteCtoDireccion:CteCtoDireccion.Cliente,CteCtoDireccion:CteCtoDireccion.ID))>=1)<BR>y<BR>(SQL(<T>SP_ValidaCteCtoDirMavi :ta,:tb,:tc,:td,:te,:tf,:tg,:th<T>,<T>Direcciones<T>,<BR>CteCtoDireccion:CteCtoDireccion.Delegacion,CteCtoDireccion:CteCtoDireccion.CodigoPostal<BR>,CteCtoDireccion:CteCtoDireccion.Colonia,CteCtoDireccion:CteCtoDireccion.Estado,CteCtoDireccion:CteCtoDireccion.Direccion<BR>,CteCtoDireccion:CteCtoDireccion.MaviNumero,CteCtoDireccion:CteCtoDireccion.TipoCalle) = verdadero)<BR>Fin
+;EjecucionMensaje=<T>Favor de Ingresar otra Dirección<T>
+;AGR CAMBIOS 20100601 AGREGA VALIDACION PARA QUE SE EJECUTE EL CERRAR SOLO CUANDO SE TENGAN LOS DATOS COMPLETOS
+EjecucionCondicion=Si Info.Tipo=<T>AVAL<T> Entonces<BR>(Sql(<T>SELECT  count(*) FROM    dbo.CteCtoDireccion where cliente=:tc and id=:tid<T>,CteCtoDireccion:CteCtoDireccion.Cliente,CteCtoDireccion:CteCtoDireccion.ID)=2) o<BR>(Sql(<T>SELECT  count(*) FROM    dbo.CteCtoDireccion where cliente=:tc and id=:tid and AntiguedadAniosMavi>=:nan<T>,CteCtoDireccion:CteCtoDireccion.Cliente,CteCtoDireccion:CteCtoDireccion.ID,1)>=1)<BR>y<BR>(SQL(<T>SP_ValidaCteCtoDirMavi :ta,:tb,:tc,:td,:te,:tf,:tg,:th<T>,<T>Direcciones<T>,<BR>CteCtoDireccion:CteCtoDireccion.Delegacion,CteCtoDireccion:CteCtoDireccion.CodigoPostal<BR>,CteCtoDireccion:CteCtoDireccion.Colonia,CteCtoDireccion:CteCtoDireccion.Estado,CteCtoDireccion:CteCtoDireccion.Direccion<BR>,CteCtoDireccion:CteCtoDireccion.MaviNumero,CteCtoDireccion:CteCtoDireccion.TipoCall<CONTINUA>
+EjecucionCondicion002=<CONTINUA>e) = verdadero)<BR><BR>Sino<BR>((Sql(<T>SELECT  count(*) FROM    dbo.CteCtoDireccion where cliente=:tc and id=:tid<T>,CteCtoDireccion:CteCtoDireccion.Cliente,CteCtoDireccion:CteCtoDireccion.ID))>=1)<BR>y<BR>(SQL(<T>SP_ValidaCteCtoDirMavi :ta,:tb,:tc,:td,:te,:tf,:tg,:th<T>,<T>Direcciones<T>,<BR>CteCtoDireccion:CteCtoDireccion.Delegacion,CteCtoDireccion:CteCtoDireccion.CodigoPostal<BR>,CteCtoDireccion:CteCtoDireccion.Colonia,CteCtoDireccion:CteCtoDireccion.Estado,CteCtoDireccion:CteCtoDireccion.Direccion<BR>,CteCtoDireccion:CteCtoDireccion.MaviNumero,CteCtoDireccion:CteCtoDireccion.TipoCalle) = verdadero)<BR>Fin
+EjecucionMensaje=<T>Favor de Ingresar otra Dirección o Capture la Colonia, Código Postal y Delegación<T>
+EjecucionConError=S
+
+
+;***** Nueva subaccion ConyugeDelAval por JAVT para desarrollo DM0138 Cliente Express dentro del paqete DM0138_02082011. JR 03-Ago-2011 *****
+[CteCtoDireccion.frm/Acciones.Aceptar.ConyugeDelAval]
+Nombre=ConyugeDelAval
+Boton=0
+TipoAccion=Expresion
+Activo=S
+Visible=S
+ConCondicion=S
+Expresion=Si confirmacion(<T>¿Desea guardar los datos del conyuge del aval?<T>,BotonSi,BotonNo)=BotonSi<BR>  entonces<BR>   EjecutarSQL(<T>Exec SP_MaviDM0138ConyugeDelAval :tcli,:nidava<T>,CteCtoDireccion:CteCtoDireccion.Cliente,CteCtoDireccion:CteCtoDireccion.ID)<BR>  Fin
+EjecucionCondicion=SQL(<T>Select Count(*) From CteCto Where ID = :nid And EstadoCivilMavi <> <T>+COMILLAS(<T>SOLTERO<T>)+<T> And Tipo = <T>+COMILLAS(<T>AVAL<T>)+<T> <T>,CteCtoDireccion:CteCtoDireccion.ID)=1
+
+; ***** JR 03-Dic-09. Se agrego linea tipo para cte express. cambio por Arturo Guizer. *****
+[CteCtoDireccion.frm/Lista.Columnas]
+Direccion=189
+MaviNumero=124
+MaviNumeroInterno=124
+TipoCalle=113
+ID=64
+Tipo=100
+
+[CteCtoDireccion.frm/Lista.CteCtoDireccion.Estado]
+Carpeta=Lista
+Clave=CteCtoDireccion.Estado
+Editar=N
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=30
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[CteCtoDireccion.frm/Lista.CteCtoDireccion.Poblacion]
+Editar=N
+ColorFondo=Plata
+
+[CteCtoDireccion.frm/Lista.CteCtoDireccion.MaviNumero]
+Carpeta=Lista
+Clave=CteCtoDireccion.MaviNumero
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[CteCtoDireccion.frm/Lista.CteCtoDireccion.MaviNumeroInterno]
+Carpeta=Lista
+Clave=CteCtoDireccion.MaviNumeroInterno
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFuente=Negro
+ColorFondo=Blanco
+
+[CteCtoDireccion.frm/Lista.CteCtoDireccion.TipoCalle]
+Carpeta=Lista
+Clave=CteCtoDireccion.TipoCalle
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=30
+ColorFondo=Blanco
+ColorFuente=Negro
+
+;*** Nuevo campo ****
+[CteCtoDireccion.frm/Lista.CteCtoDireccion.AntiguedadAniosMAVI]
+Carpeta=Lista
+Clave=CteCtoDireccion.AntiguedadAniosMAVI
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+;**** Nuevo campo ****
+[CteCtoDireccion.frm/Lista.CteCtoDireccion.AntiguedadMesesMAVI]
+Carpeta=Lista
+Clave=CteCtoDireccion.AntiguedadMesesMAVI
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+; ***** JR 03-Dic-09. Accion comentada, no necesaria para cte express. Cambio por Arturo Guizer.***** 
+;*** 17-Jun-09 ARC Nueva accion agregada *****
+;[CteCtoDireccion.frm/Acciones.Historico]
+;Nombre=Historico
+;Boton=53
+;NombreDesplegar=&Historico
+;GuardarAntes=S
+;EnBarraHerramientas=S
+;EspacioPrevio=S
+;TipoAccion=Formas
+;ClaveAccion=CteCtoDireccionHistMAVI
+;Activo=S
+;Visible=S
+
+[CteCtoDireccion.frm/Lista.CteCtoDireccion.Pais]
+Carpeta=Lista
+Clave=CteCtoDireccion.Pais
+Editar=N
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=30
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[CteCtoDireccion.frm/Lista.CteCtoDireccion.cruces]
+Carpeta=Lista
+Clave=CteCtoDireccion.cruces
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=255
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[CteCtoDireccion.frm/Acciones.GoogleMaps]
+Nombre=GoogleMaps
+Boton=106
+NombreEnBoton=S
+NombreDesplegar=&GoogleMaps
+EnBarraHerramientas=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+EspacioPrevio=S
+ConCondicion=S
+EjecucionConError=S
+Expresion=ejecutar(<T>PlugIns\MAPAS.exe <T>+<BR><T> <T>+ Info.Cliente+<BR><T> <T>+ CteCtoDireccion:CteCtoDireccion.Tipo+<BR><T> <T>+ Reemplaza( <T> <T>, <T>%20<T>, CteCtoDireccion:CteCtoDireccion.Direccion+ <T> <T> +CteCtoDireccion:CteCtoDireccion.MaviNumero)+<BR><T> <T>+ Reemplaza( <T> <T>, <T>%20<T>, CteCtoDireccion:CteCtoDireccion.Colonia)+<BR><T> <T>+ Reemplaza( <T> <T>, <T>%20<T>, CteCtoDireccion:CteCtoDireccion.Poblacion)+<BR><T> <T>+ Reemplaza( <T> <T>, <T>%20<T>, CteCtoDireccion:CteCtoDireccion.Estado)+<BR><T> <T>+ CteCtoDireccion:CteCtoDireccion.ID+<BR><T> <T>+ NumEnTexto(sql(<T>SELECT Uen FROM ventascanalmavi WHERE id=:nCan<T>,Info.CanalVentaMAVI)))
+EjecucionCondicion=condatos(CteCtoDireccion:CteCtoDireccion.Direccion) y condatos(CteCtoDireccion:CteCtoDireccion.Poblacion)<BR>y condatos(CteCtoDireccion:CteCtoDireccion.Estado) y condatos(CteCtoDireccion:CteCtoDireccion.Colonia)<BR>y condatos(CteCtoDireccion:CteCtoDireccion.MaviNumero)
+EjecucionMensaje=<T>Los campos Direccion, NumeroExterior,Colonia,Poblacion,Estado deben tener datos<T>

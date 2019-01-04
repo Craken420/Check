@@ -1,0 +1,40 @@
+
+;*** Nuevos campos calculados ****
+[VentaExplorar.vis/vista]
+ListaCalculados=Factor<BR>ImporteNeto<BR>ImpuestosNetos<BR>SubTotalNeto<BR>ImporteTotalNeto<BR>TotalNeto<BR>MovNombre<BR>ImporteNetoMAVI<BR>ImpuestosNetosMAVI<BR>ImporteTotalNetoMAVI
+
+
+
+;**** Nuevo campo calculado ARC 14-May-09 *****
+[VentaExplorar.vis/ImporteNetoMAVI]
+Clave=ImporteNetoMAVI
+TipoDatos=NumMonetario
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Importe MAVI
+Monetario=S
+Formula=Si(Venta.Mov en(<T>Credilana<T>, <T>Prestamo Personal<T>, <T>Cancela Credilana<T>, <T>Cancela Prestamo<T>),SQL(<T>SELECT dbo.fnImporteSinIVAFinanciamiento(:nID, :tEmpresa)<T>,Venta.ID, Empresa), Venta.Importe)
+
+;**** Nuevo campo calculado ARC 14-May-09 *****
+[VentaExplorar.vis/ImpuestosNetosMAVI]
+Clave=ImpuestosNetosMAVI
+TipoDatos=NumMonetario
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Impuestos
+Monetario=S
+Formula=Si(Venta.Mov en(<T>Credilana<T>, <T>Prestamo Personal<T>, <T>Cancela Credilana<T>, <T>Cancela Prestamo<T>),SQL(<T>SELECT dbo.fnIVAFinanciamiento(:nID, :tEmpresa)<T>,Venta.ID, Empresa), Venta.Impuestos)
+
+
+;**** Nuevo campo calculado ARC 14-May-09 *****
+[VentaExplorar.vis/ImporteTotalNetoMAVI]
+Clave=ImporteTotalNetoMAVI
+TipoDatos=NumMonetario
+TipoCampo=Calculado
+Monetario=S
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Importe Total MAVI
+Formula=Si(Venta.Mov en(<T>Credilana<T>, <T>Prestamo Personal<T>, <T>Cancela Credilana<T>, <T>Cancela Prestamo<T>),ImporteNetoMAVI+ImpuestosNetosMAVI, ImporteTotalNeto)

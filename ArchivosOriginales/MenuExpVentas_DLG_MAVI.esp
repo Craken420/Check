@@ -1,0 +1,13 @@
+[MenuExpVentas.dlg/Dialogo]
+ListaAcciones=ExplorarVenta<BR>ExplorarVentaD<BR>VentaGeneral<BR>VentaDGeneral<BR>VentaNeta<BR>ExplorarAcum<BR>ExplorarAcumD<BR>ExplorarPendientes<BR>ExplorarVentaPendienteAgente<BR>ExplorarPendienteD<BR>ExplorarPendienteCte<BR>ExplorarEmbarques<BR>DM0102
+
+[MenuExpVentas.dlg/Acciones.DM0102]
+Nombre=DM0102
+Boton=0
+NombreDesplegar=&DM0102 Asignación de Precios Especiales
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=DM0102AsignacionPreciosEspFrm
+Activo=S
+Visible=S

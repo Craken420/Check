@@ -1,0 +1,17 @@
+[MenuExpDinero.dlg/Dialogo]
+
+ListaAcciones=ExplorarSaldos<BR>Modulo<BR>LEB
+
+
+;Se Agrega el Reporte RM1098LEB al Menu Fernando Romero Robles ;01/07/2014
+
+[MenuExpDinero.dlg/Acciones.LEB]
+Nombre=LEB
+Boton=0
+NombreDesplegar=LEB
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RM1098LEBFrm
+Activo=S
+Visible=S

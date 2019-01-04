@@ -1,0 +1,25 @@
+;Modifico: ARC
+;Ultima Modificacion: 28-02-09
+
+
+
+;**** Nuevos campos agregados: ComisionChoferesMAVI ****
+[Departamento.tbl/Tabla]
+ListaCampos=Departamento<BR>Descripcion<BR>Localidad<BR>CtaDinero<BR>Sucursal<BR>ComisionChoferesMAVI
+SQL=SELECT<BR>  Departamento,<BR>  Localidad,<BR>  CtaDinero,<BR>  Descripcion,<BR>  Sucursal,<BR>  ComisionChoferesMAVI<BR><BR>FROM<BR>  Departamento
+
+
+
+
+;**** Nuevo campo agregado ARC 28-02-09 ****
+[Departamento.tbl/ComisionChoferesMAVI]
+Clave=ComisionChoferesMAVI
+Nombre=Comisión Choferes
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+
+
+
+

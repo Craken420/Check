@@ -1,0 +1,17 @@
+[CxcCampos.vis/Vista]
+ListaCampos=Cxc.ID<BR>Cxc.Empresa<BR>Cxc.Mov<BR>Cxc.MovID<BR>Cxc.FechaEmision<BR>Cxc.UltimoCambio<BR>Cxc.Concepto<BR>Cxc.Proyecto<BR>Cxc.Usuario<BR>Cxc.Referencia<BR>Cxc.Observaciones<BR>Cxc.Estatus<BR>Cxc.Cliente<BR>Cxc.Condicion<BR>Cxc.Vencimiento<BR>Cxc.Agente<BR>Cxc.Sucursal<BR>Cxc.SucursalOrigen<BR>Cxc.UEN<BR>Cxc.FechaOriginal<BR>Cxc.FechaRevision<BR>AgenteValida.Agente<BR>AgenteValida.Nombre<BR>UEN.UEN<BR>UEN.Nombre
+SQL=SELECT<BR>  Cxc.ID,<BR>  Cxc.Empresa,<BR>  Cxc.Mov,<BR>  Cxc.MovID,<BR>  Cxc.FechaEmision,<BR>  Cxc.UltimoCambio,<BR>  Cxc.Concepto,<BR>  Cxc.Proyecto,<BR>  Cxc.Usuario,<BR>  Cxc.Referencia,<BR>  Cxc.Observaciones,<BR>  Cxc.Estatus,<BR>  Cxc.Cliente,<BR>  Cxc.Condicion,<BR>  Cxc.Vencimiento,<BR>  Cxc.Agente,<BR>  Cxc.Sucursal,<BR>  Cxc.SucursalOrigen,<BR>  Cxc.UEN,<BR>  Cxc.FechaOriginal,<BR>  Cxc.FechaRevision,<BR>  AgenteValida.Agente,<BR>  AgenteValida.Nombre,<BR>  UEN.UEN,<BR>  UEN.Nombre<BR><BR>FROM<BR>  Cxc<BR>  LEFT OUTER JOIN UEN ON Cxc.UEN=UEN.UEN<BR>  LEFT OUTER JOIN Agente AgenteValida ON Cxc.Agente=AgenteValida.Agente
+
+[CxcCampos.vis/Cxc.FechaOriginal]
+Clave=Cxc.FechaOriginal
+Nombre=Fecha Original
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+LigaTabla=Cxc
+LigaCampo=FechaOriginal
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=FechaOriginal

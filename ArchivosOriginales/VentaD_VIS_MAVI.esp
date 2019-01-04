@@ -1,0 +1,303 @@
+;**** Ultima modificación:30-Jul-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:Integracion del desarrollo de mexico
+
+
+;****Nuevas tablas: PropreListaDFinal 26-Ago-08(Arly)****
+;****Nuevas relaciones: VentaD.Lista****
+;****Nuevos campos: Financiamiento, VentaD.PropreListaID, PropreListaDFinal.ID, PropreListaDFinal.Lista, PropreListaDFinal.Sucursal, PropreListaDFinal.UEN, PropreListaDFinal.CatCte, PropreListaDFinal.Articulo, PropreListaDFinal.Precio, PropreListaDFinal.Condicion, PropreListaDFinal.Vigente, PropreListaDFinal.Anexo, PropreListaDFinal.AnexoAnterior, PropreListaDFinal.Factor01, PropreListaDFinal.Factor02, PropreListaDFinal.Factor03, PropreListaDFinal.Factor04****
+;****Nuevos campos calculados: MovDevMAVI *****
+[VentaD.vis/Vista]
+ListaTablas=VentaD<BR>AlmPos<BR>CB<BR>Art<BR>Prov<BR>AgenteDetalle<BR>AlmDetalle<BR>CentroCostos<BR>AutoLocalidad<BR>UEN<BR>Espacio<BR>PropreListaDFinal
+ListaCampos=VentaD.ID<BR>VentaD.Renglon<BR>VentaD.RenglonSub<BR>VentaD.RenglonID<BR>VentaD.RenglonTipo<BR>VentaD.EnviarA<BR>VentaD.Almacen<BR>VentaD.Codigo<BR>VentaD.Articulo<BR>VentaD.SubCuenta<BR>VentaD.Cantidad<BR>VentaD.Precio<BR>VentaD.PrecioSugerido<BR>VentaD.DescuentoTipo<BR>VentaD.DescuentoLinea<BR>VentaD.DescuentoImporte<BR>VentaD.Impuesto1<BR>VentaD.Impuesto2<BR>VentaD.Impuesto3<BR>VentaD.DescripcionExtra<BR>VentaD.Costo<BR>VentaD.Paquete<BR>VentaD.ContUso<BR>VentaD.Comision<BR>VentaD.Aplica<BR>VentaD.AplicaID<BR>VentaD.CantidadReservada<BR>VentaD.CantidadOrdenada<BR>VentaD.CantidadPendiente<BR>VentaD.CantidadCancelada<BR>VentaD.CantidadEmbarcada<BR>VentaD.CantidadA<BR>VentaD.Factor<BR>VentaD.SustitutoArticulo<BR>VentaD.SustitutoSubCuenta<BR>VentaD.Unidad<BR>VentaD.FechaRequerida<BR>VentaD.I<CONTINUA>
+ListaCampos002=<CONTINUA>nstruccion<BR>VentaD.CantidadInventario<BR>VentaD.Agente<BR>VentaD.Departamento<BR>VentaD.Sucursal<BR>VentaD.PoliticaPrecios<BR>VentaD.SucursalOrigen<BR>VentaD.AutoLocalidad<BR>VentaD.UEN<BR>VentaD.Espacio<BR>VentaD.HoraRequerida<BR>VentaD.CantidadAlterna<BR>VentaD.PrecioMoneda<BR>VentaD.PrecioTipoCambio<BR>VentaD.Estado<BR>VentaD.ServicioNumero<BR>VentaD.AgentesAsignados<BR>VentaD.AFArticulo<BR>VentaD.AFSerie<BR>VentaD.ExcluirPlaneacion<BR>VentaD.ExcluirISAN<BR>VentaD.Posicion<BR>VentaD.PresupuestoEsp<BR>VentaD.CantidadObsequio<BR>VentaD.ProveedorRef<BR>VentaD.TransferirA<BR>VentaD.Financiamiento<BR>VentaD.PropreListaID<BR>VentaD.IDCopiaMAVI<BR>AlmPos.Tipo<BR>CB.Codigo<BR>CB.TipoCuenta<BR>CB.Cuenta<BR>CB.SubCuenta<BR>Art.Articulo<BR>Art.Rama<BR>Art.Descripcion1<BR>Art.Grupo<CONTINUA>
+ListaCampos003=<CONTINUA><BR>Art.Categoria<BR>Art.Familia<BR>Art.Fabricante<BR>Art.Linea<BR>Art.Impuesto1<BR>Art.Impuesto2<BR>Art.Impuesto3<BR>Art.Unidad<BR>Art.Tipo<BR>Art.TipoOpcion<BR>Art.MonedaPrecio<BR>Art.PrecioMinimo<BR>Art.PrecioLista<BR>Art.FactorAlterno<BR>Art.Comision<BR>Art.ABC<BR>Art.Sustitutos<BR>Art.Mensaje<BR>Art.Precio2<BR>Art.Precio3<BR>Art.Precio4<BR>Art.Precio5<BR>Art.Precio6<BR>Art.Precio7<BR>Art.Precio8<BR>Art.Precio9<BR>Art.Precio10<BR>Art.Situacion<BR>Art.AlmacenEspecificoVenta<BR>Art.AlmacenEspecificoVentaMov<BR>Art.SolicitarPrecios<BR>Art.AutoRecaudacion<BR>Art.Espacios<BR>Art.Horas<BR>Art.ISAN<BR>Prov.Nombre<BR>AgenteDetalle.Agente<BR>AgenteDetalle.Nombre<BR>AgenteDetalle.Estatus<BR>AlmDetalle.Almacen<BR>AlmDetalle.Estatus<BR>AlmDetalle.Tipo<BR>AlmDetalle.Sucursal<BR><CONTINUA>
+ListaCampos004=<CONTINUA>CentroCostos.CentroCostos<BR>AutoLocalidad.Localidad<BR>AutoLocalidad.Nombre<BR>UEN.UEN<BR>UEN.Nombre<BR>Espacio.Espacio<BR>Espacio.Nombre<BR>PropreListaDFinal.ID<BR>PropreListaDFinal.Lista<BR>PropreListaDFinal.Sucursal<BR>PropreListaDFinal.UEN<BR>PropreListaDFinal.Articulo<BR>PropreListaDFinal.Precio<BR>PropreListaDFinal.Condicion<BR>PropreListaDFinal.Vigente<BR>PropreListaDFinal.Anexo<BR>PropreListaDFinal.AnexoAnterior<BR>PropreListaDFinal.Factor01
+ListaRelaciones=VentaD.CB<BR>VentaD.Art<BR>VentaD.CentroCostos<BR>VentaD.AgenteDetalle<BR>VentaD.AlmDetalle<BR>VentaD.AutoLocalidad<BR>VentaD.UEN<BR>VentaD.Espacio<BR>VentaD.AlmPos<BR>VentaD.Prov<BR>VentaD.Lista<BR>AlmPos.Art<BR>Art.Prov
+
+SQL=SELECT<BR>  VentaD.ID,<BR>  VentaD.Renglon,<BR>  VentaD.RenglonSub,<BR>  VentaD.RenglonID,<BR>  VentaD.RenglonTipo,<BR>  VentaD.EnviarA,<BR>  VentaD.Almacen,<BR>  VentaD.Codigo,<BR>  VentaD.Articulo,<BR>  VentaD.SubCuenta,<BR>  VentaD.Cantidad,<BR>  VentaD.Precio,<BR>  VentaD.PrecioSugerido,<BR>  VentaD.DescuentoTipo,<BR>  VentaD.DescuentoLinea,<BR>  VentaD.DescuentoImporte,<BR>  VentaD.Impuesto1,<BR>  VentaD.Impuesto2,<BR>  VentaD.Impuesto3,<BR>  VentaD.DescripcionExtra,<BR>  VentaD.Costo,<BR>  VentaD.Paquete,<BR>  VentaD.ContUso,<BR>  VentaD.Comision,<BR>  VentaD.Aplica,<BR>  VentaD.AplicaID,<BR>  VentaD.CantidadReservada,<BR>  VentaD.CantidadOrdenada,<BR>  VentaD.CantidadPendiente,<BR>  VentaD.CantidadCancelada,<BR>  VentaD.CantidadEmbarcada,<BR>  VentaD.CantidadA,<BR>  VentaD.Factor,<B<CONTINUA>
+SQL002=<CONTINUA>R>  VentaD.SustitutoArticulo,<BR>  VentaD.SustitutoSubCuenta,<BR>  VentaD.Unidad,<BR>  VentaD.FechaRequerida,<BR>  VentaD.Instruccion,<BR>  VentaD.CantidadInventario,<BR>  VentaD.Agente,<BR>  VentaD.Departamento,<BR>  VentaD.Sucursal,<BR>  VentaD.PoliticaPrecios,<BR>  VentaD.SucursalOrigen,<BR>  VentaD.AutoLocalidad,<BR>  VentaD.UEN,<BR>  VentaD.Espacio,<BR>  VentaD.HoraRequerida,<BR>  VentaD.CantidadAlterna,<BR>  VentaD.PrecioMoneda,<BR>  VentaD.PrecioTipoCambio,<BR>  VentaD.Estado,<BR>  VentaD.ServicioNumero,<BR>  VentaD.AgentesAsignados,<BR>  VentaD.AFArticulo,<BR>  VentaD.AFSerie,<BR>  VentaD.ExcluirPlaneacion,<BR>  VentaD.ExcluirISAN,<BR>  VentaD.Posicion,<BR>  VentaD.PresupuestoEsp,<BR>  VentaD.CantidadObsequio,<BR>  VentaD.ProveedorRef,<BR>  VentaD.TransferirA,<BR>  VentaD.Financiam<CONTINUA>
+SQL003=<CONTINUA>iento,<BR>  VentaD.PropreListaID,<BR>  VentaD.IDCopiaMAVI,<BR>  AlmPos.Tipo,<BR>  CB.Codigo,<BR>  CB.TipoCuenta,<BR>  CB.Cuenta,<BR>  CB.SubCuenta,<BR>  Art.Articulo,<BR>  Art.Rama,<BR>  Art.Descripcion1,<BR>  Art.Grupo,<BR>  Art.Categoria,<BR>  Art.Familia,<BR>  Art.Fabricante,<BR>  Art.Linea,<BR>  Art.Impuesto1,<BR>  Art.Impuesto2,<BR>  Art.Impuesto3,<BR>  Art.Unidad,<BR>  Art.Tipo,<BR>  Art.TipoOpcion,<BR>  Art.MonedaPrecio,<BR>  Art.PrecioMinimo,<BR>  Art.PrecioLista,<BR>  Art.FactorAlterno,<BR>  Art.Comision,<BR>  Art.ABC,<BR>  Art.Sustitutos,<BR>  Art.Mensaje,<BR>  Art.Precio2,<BR>  Art.Precio3,<BR>  Art.Precio4,<BR>  Art.Precio5,<BR>  Art.Precio6,<BR>  Art.Precio7,<BR>  Art.Precio8,<BR>  Art.Precio9,<BR>  Art.Precio10,<BR>  Art.Situacion,<BR>  Art.AlmacenEspecificoVenta,<BR><CONTINUA>
+SQL004=<CONTINUA>  Art.AlmacenEspecificoVentaMov,<BR>  Art.SolicitarPrecios,<BR>  Art.AutoRecaudacion,<BR>  Art.Espacios,<BR>  Art.Horas,<BR>  Art.ISAN,<BR>  Prov.Nombre,<BR>  AgenteDetalle.Agente,<BR>  AgenteDetalle.Nombre,<BR>  AgenteDetalle.Estatus,<BR>  AlmDetalle.Almacen,<BR>  AlmDetalle.Estatus,<BR>  AlmDetalle.Tipo,<BR>  AlmDetalle.Sucursal,<BR>  CentroCostos.CentroCostos,<BR>  AutoLocalidad.Localidad,<BR>  AutoLocalidad.Nombre,<BR>  UEN.UEN,<BR>  UEN.Nombre,<BR>  Espacio.Espacio,<BR>  Espacio.Nombre,<BR>  PropreListaDFinal.ID,<BR>  PropreListaDFinal.Lista,<BR>  PropreListaDFinal.Sucursal,<BR>  PropreListaDFinal.UEN,<BR>  PropreListaDFinal.Articulo,<BR>  PropreListaDFinal.Precio,<BR>  PropreListaDFinal.Condicion,<BR>  PropreListaDFinal.Vigente,<BR>  PropreLista<CONTINUA>
+SQL005=<CONTINUA>DFinal.Anexo,<BR>  PropreListaDFinal.AnexoAnterior,<BR>  PropreListaDFinal.Factor01<BR><BR>FROM<BR>  VentaD<BR>  LEFT OUTER JOIN<CONTINUA>
+SQL006=<CONTINUA> CB ON VentaD.Codigo=CB.Codigo AND {Comillas(<T>Articulos<T>)}=CB.TipoCuenta<BR>  JOIN Art ON VentaD.Articulo=Art.Articulo<BR>  LEFT OUTER JOIN CentroCostos ON VentaD.ContUso=CentroCostos.CentroCostos<BR>  LEFT OUTER JOIN Agente AgenteDetalle ON VentaD.Agente=AgenteDetalle.Agente<BR>  LEFT OUTER JOIN Alm AlmDetalle ON VentaD.Almacen=AlmDetalle.Almacen<BR>  LEFT OUTER JOIN AutoLocalidad ON VentaD.AutoLocalidad=AutoLocalidad.Localidad<BR>  LEFT OUTER JOIN UEN ON VentaD.UEN=UEN.UEN<BR>  LEFT OUTER JOIN Espacio ON VentaD.Espacio=Espacio.Espacio<BR>  LEFT OUTER JOIN AlmPos ON VentaD.Almacen=AlmPos.Almacen AND VentaD.Posicion=AlmPos.Posicion<BR>  LEFT OUTER JOIN Prov ON VentaD.ProveedorRef=Prov.Proveedor<BR>  LEFT OUTER JOIN PropreListaDFinal ON VentaD.PropreListaID=PropreListaDFinal.ID
+
+ListaCalculados=CantidadNeta<BR>CantidadNetaObsequio<BR>CantidadInvNeta<BR>PrecioMov<BR>PrecioConDescuentos<BR>PrecioNeto<BR>PrecioTotal<BR>DescLinea<BR>Importe<BR>ImporteSinDescNegativo<BR>DescGlobal<BR>ImporteSobrePrecio<BR>SubTotal<BR>PrecioNetoGlobal<BR>SubImpuesto2<BR>SubImpuesto3<BR>SubImpuesto1<BR>Impuesto<BR>ImporteTotal<BR>CostoTotal<BR>AplicaNombre<BR>OpcionDesc<BR>ClaveIdioma<BR>DescripcionIdioma<BR>MovDevMAVI
+
+
+;****Nuevo campo agregado*****
+[VentaD.vis/VentaD.Financiamiento]
+Clave=VentaD.Financiamiento
+Nombre=Financiamiento
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Monetario=S
+CondicionDespliege=((Venta:Venta.Estatus=EstatusConcluido) y (Venta:Venta.Mov en(<T>Crdedilana<T>,<T>Prestamo Personal<T>)))
+ValorRefrescar=VentaD.Precio-(SQL(<T>Select isnull(Capital,0.0) from Art where Articulo =:tArt<T>,VentaD.Articulo))
+LigaTabla=VentaD
+LigaCampo=Financiamiento
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Financiamiento
+
+
+;**** Nuevo campo agregado 26-Ago-08(Arly)***
+[VentaD.vis/VentaD.PropreListaID]
+Clave=VentaD.PropreListaID
+LigaTabla=VentaD
+LigaCampo=PropreListaID
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Numérico
+ClaveBDE=PropreListaID
+
+
+;**** Nuevo campo agregado 26-Ago-08(Arly)***
+[VentaD.vis/PropreListaDFinal.ID]
+Clave=PropreListaDFinal.ID
+LigaTabla=PropreListaDFinal
+LigaCampo=ID
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=AutoInc
+ClaveBDE=ID_1
+
+
+
+;**** Nuevo campo agregado 26-Ago-08(Arly)***
+[VentaD.vis/PropreListaDFinal.Lista]
+Clave=PropreListaDFinal.Lista
+LigaTabla=PropreListaDFinal
+LigaCampo=Lista
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=Lista
+
+
+;**** Nuevo campo agregado 26-Ago-08(Arly)***
+[VentaD.vis/PropreListaDFinal.Sucursal]
+Clave=PropreListaDFinal.Sucursal
+LigaTabla=PropreListaDFinal
+LigaCampo=Sucursal
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Numérico
+ClaveBDE=Sucursal_2
+
+
+
+;**** Nuevo campo agregado 26-Ago-08(Arly)***
+[VentaD.vis/PropreListaDFinal.UEN]
+Clave=PropreListaDFinal.UEN
+LigaTabla=PropreListaDFinal
+LigaCampo=UEN
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Numérico
+ClaveBDE=UEN_2
+
+
+
+;**** Nuevo campo agregado 26-Ago-08(Arly)***
+;[VentaD.vis/PropreListaDFinal.CatCte]
+;Clave=PropreListaDFinal.CatCte
+;LigaTabla=PropreListaDFinal
+;LigaCampo=CatCte
+;Ligado=S
+;TipoCampo=Tabla
+;TipoDatos=Texto
+;Tamano=50
+;ClaveBDE=CatCte
+
+
+
+;**** Nuevo campo agregado 26-Ago-08(Arly)***
+[VentaD.vis/PropreListaDFinal.Articulo]
+Clave=PropreListaDFinal.Articulo
+LigaTabla=PropreListaDFinal
+LigaCampo=Articulo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=Articulo_2
+
+
+
+;**** Nuevo campo agregado 26-Ago-08(Arly)***
+[VentaD.vis/PropreListaDFinal.Precio]
+Clave=PropreListaDFinal.Precio
+LigaTabla=PropreListaDFinal
+LigaCampo=Precio
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=NumFlotante
+ClaveBDE=Precio_1
+
+
+
+;**** Nuevo campo agregado 26-Ago-08(Arly)***
+[VentaD.vis/PropreListaDFinal.Condicion]
+Clave=PropreListaDFinal.Condicion
+LigaTabla=PropreListaDFinal
+LigaCampo=Condicion
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Condicion
+
+
+;**** Nuevo campo agregado 26-Ago-08(Arly)***
+[VentaD.vis/PropreListaDFinal.Vigente]
+Clave=PropreListaDFinal.Vigente
+LigaTabla=PropreListaDFinal
+LigaCampo=Vigente
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Lógico
+ClaveBDE=Vigente
+
+
+
+;**** Nuevo campo agregado 26-Ago-08(Arly)***
+[VentaD.vis/PropreListaDFinal.Anexo]
+Clave=PropreListaDFinal.Anexo
+LigaTabla=PropreListaDFinal
+LigaCampo=Anexo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Numérico
+ClaveBDE=Anexo
+
+
+;**** Nuevo campo agregado 26-Ago-08(Arly)***
+[VentaD.vis/PropreListaDFinal.AnexoAnterior]
+Clave=PropreListaDFinal.AnexoAnterior
+LigaTabla=PropreListaDFinal
+LigaCampo=AnexoAnterior
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Numérico
+ClaveBDE=AnexoAnterior
+
+
+
+;**** Nuevo campo agregado 17-Sep-08(Arly)***
+;[VentaD.vis/PropreListaDFinal.Factor01]
+;Clave=PropreListaDFinal.Factor01
+;Nombre=DifePre
+;Visible=S
+;TamanoValidacion=10
+;TipoDatos=NumFlotante
+;FormatoValidacion=#,.000
+;LigaTabla=PropreListaDFinal
+;LigaCampo=Factor01
+;Ligado=S
+;TipoCampo=Tabla
+;ClaveBDE=Factor01
+
+
+;**** Nuevo campo agregado 17-Sep-08(Arly)***
+;[VentaD.vis/PropreListaDFinal.Factor02]
+;Clave=PropreListaDFinal.Factor02
+;Nombre=Factor02
+;Visible=S
+;OpcionesColumnas=1
+;OpcionesRenglones=8
+;TamanoValidacion=10
+;TipoDatos=NumFlotante
+;LigaTabla=PropreListaDFinal
+;LigaCampo=Factor02
+;Ligado=S
+;TipoCampo=Tabla
+;ClaveBDE=Factor02
+
+
+;**** Nuevo campo agregado 17-Sep-08(Arly)***
+;[VentaD.vis/PropreListaDFinal.Factor03]
+;Clave=PropreListaDFinal.Factor03
+;Nombre=Factor03
+;Visible=S
+;OpcionesColumnas=1
+;OpcionesRenglones=8
+;TamanoValidacion=10
+;TipoDatos=NumFlotante
+;LigaTabla=PropreListaDFinal
+;LigaCampo=Factor03
+;Ligado=S
+;TipoCampo=Tabla
+;ClaveBDE=Factor03
+
+
+
+;**** Nuevo campo agregado 17-Sep-08(Arly)***
+;[VentaD.vis/PropreListaDFinal.Factor04]
+;Clave=PropreListaDFinal.Factor04
+;Nombre=Factor04
+;Visible=S
+;OpcionesColumnas=1
+;OpcionesRenglones=8
+;TamanoValidacion=10
+;TipoDatos=NumFlotante
+;LigaTabla=PropreListaDFinal
+;LigaCampo=Factor04
+;Ligado=S
+;TipoCampo=Tabla
+;ClaveBDE=Factor04
+
+
+[VentaD.vis/PropreListaDFinal.Factor01]
+Clave=PropreListaDFinal.Factor01
+LigaTabla=PropreListaDFinal
+LigaCampo=Factor01
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=NumFlotante
+ClaveBDE=Factor01
+
+
+
+;**** Nuevo campo calculado agregado 13-Nov-08 (ARC) ****
+[VentaD.vis/VentaD.IDCopiaMAVI]
+Clave=VentaD.IDCopiaMAVI
+Nombre=IDCopiaMAVI
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+LigaTabla=VentaD
+LigaCampo=IDCopiaMAVI
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=IDCopiaMAVI
+
+
+;**** Nuevo campo calculado agregado 13-Nov-08 (ARC) ****
+[VentaD.vis/MovDevMAVI]
+Clave=MovDevMAVI
+Tamano=41
+TipoCampo=Calculado
+TamanoValidacion=41
+Alineacion=por Omisión
+Nombre=Referencia Devolución
+CondicionDespliege=MovTipoEn(<T>VTAS<T>, Venta:Venta.Mov,(VTAS.SD, VTAS.D))
+Formula=SQL(<T>SELECT (Mov+ :tEspacio +MovID) FROM Venta WHERE ID=:nID<T>, <T> <T>,VentaD.IDCopiaMAVI)
+
+;*************************************************************************************RELACIONES************************************
+;***********************************************************************************************************************************
+
+;**** Nuevo relacion agregada 26-Ago-08(Arly)***
+[VentaD.vis/Relaciones.VentaD.Lista]
+Clave=VentaD.Lista
+TablaRemota=PropreListaDFinal
+LlaveLocal=VentaD.PropreListaID
+LlaveRemota=ID
+TipoRelacion=Opcional
+
+
+

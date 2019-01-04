@@ -1,0 +1,57 @@
+[MenuGenerarPolizas.dlg/Dialogo]
+ListaAcciones=GenerarPolizas<BR>MonitorContable<BR>PolizaCobro<BR>PolizaCobroInst<BR>CancelaCredyPP
+
+
+[MenuGenerarPolizas.dlg/Acciones.PolizaCobro]
+Nombre=PolizaCobro
+Boton=0
+NombreDesplegar=Poliza Co&bro
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=PolizaContaXDia
+Activo=S
+Visible=S
+Antes=S
+AntesExpresiones=Asigna(Info.Titulo, <T>Cobro<T>)
+
+[MenuGenerarPolizas.dlg/Acciones.PolizaCobroInst]
+Nombre=PolizaCobroInst
+Boton=0
+NombreDesplegar=Poliza Cobro &Instituciones
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=PolizaContaXDia
+Activo=S
+Visible=S
+Antes=S
+AntesExpresiones=Asigna(Info.Titulo, <T>Cobro Inst<T>)
+
+[MenuGenerarPolizas.dlg/Acciones.CancelaCredyPP]
+Nombre=CancelaCredyPP
+Boton=0
+NombreDesplegar=Poliza Cancela Cr&edilana y PP
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=PolizaContaXDia
+Activo=S
+Visible=S
+Antes=S
+AntesExpresiones=Asigna(Info.Titulo, <T>Cancela Credilana y PP<T>)
+
+[MenuGenerarPolizas.dlg/Acciones.GenerarPolizas]
+Nombre=GenerarPolizas
+Boton=0
+NombreDesplegar=&Generar Pólizas...
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Otros
+ClaveAccion=Generar Polizas
+Activo=S
+Visible=S
+ConCondicion=S
+Antes=S
+AntesExpresiones=asigna(MAVI.DM0268ValidaMensajeError,SQL(<T>SELECT dbo.FN_DM0281PermiteEjecutar(:tMov)<T>, <T>PolizasCont<T>))<BR>si  MAVI.DM0268ValidaMensajeError=<T>Permite<T><BR>entonces<BR>  verdadero<BR>sino<BR>  Informacion(MAVI.DM0268ValidaMensajeError)<BR>  AbortarOperacion<BR>fin
+

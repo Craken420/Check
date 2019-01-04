@@ -1,0 +1,22 @@
+[Fabricante.vis/Vista]
+ListaCampos=Fabricante.Fabricante<BR>Fabricante.Telefonos<BR>Fabricante.DirInternet<BR>Fabricante.Notas<BR>Fabricante.Grupo
+SQL=SELECT<BR>  Fabricante.Fabricante,<BR>  Fabricante.Telefonos,<BR>  Fabricante.DirInternet,<BR>  Fabricante.Notas,<BR>  Fabricante.Grupo<BR><BR>FROM<BR>  Fabricante
+CamposBusquedaRapida=Fabricante.Fabricante
+
+[Fabricante.vis/Fabricante.Grupo]
+Clave=Fabricante.Grupo
+Nombre=Grupo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+ListaOpciones=<BR>MARCAS<BR>MULTIMARCAS
+OpcionesPredefinidas=Ninguna
+LigaTabla=Fabricante
+LigaCampo=Grupo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=Grupo

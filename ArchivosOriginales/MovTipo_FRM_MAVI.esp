@@ -1,0 +1,199 @@
+;**** Ultima modificación:21-Jul-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:Se agrego la accion MAVIFolios
+
+;***** Modificacion: 18-jun-09
+;***** Modifico: Miguel Peña
+;***** Se modifico: Se agredaron por el desarrollo moratorios
+
+
+;**** Se agregaron nuevas acciones: MovFormaPago, MAVIFolios ****
+[MovTipo.frm/Forma]
+ListaAcciones=Cerrar<BR>Nuevo<BR>Eliminar<BR>Flujo<BR>Forma<BR>MovTipoTarea<BR>PlantillasOffice<BR>FormasAnexas<BR>Instrucciones<BR>Politica<BR>MovFormaPago<BR>CampoExtra<BR>CFDFolio<BR>MAVIFolios<BR>Navegador<BR>Ordenar<BR>Excepciones<BR>MovTipoNomAutoCalendarioEsp<BR>SeriesCFD
+
+
+
+;***** ARC 12-feb-09: Se agragron nuevos campos:   EliminarSaldosMenoresD, EliminarSaldosMenores, EliminarSaldosMenoresDDolar, EliminarSaldosMenoresA, EliminarSaldosMenoresADolar
+;***** MP 18-Jun-09: Se agragron nuevos campos:  MovTipo.CalculoMoratorioMAVI
+;*** Desarrollo de Campañas 27/08/09, Modifico:Joel García (Mex), se agrego un campo adicional. (MovTipo.IncluirEnCampania)
+[MovTipo.frm/Detalle]
+ListaEnCaptura=MovTipo.Mov<BR>MovTipo.Clave<BR>MovTipo.Factor<BR>MovTipo.AfectarFiscal<BR>MovTipo.TipoConsecutivo<BR>MovTipo.ConsecutivoGeneral<BR>MovTipo.ConsecutivoModulo<BR>MovTipo.ConsecutivoMov<BR>MovTipo.ConsecutivoPorEjercicio<BR>MovTipo.ConsecutivoPorEmpresa<BR>MovTipo.ConsecutivoPorPeriodo<BR>MovTipo.ConsecutivoSucursalEsp<BR>MovTipo.ConsecutivoControl<BR>MovTipo.CFD<BR><CONTINUA>
+ListaEnCaptura002=<CONTINUA>MovTipo.SucursalEsp<BR>Sucursal.Prefijo<BR>MovTipo.FormaAnexaOmision<BR>MovTipo.GenerarParalelo<BR>MovTipo.GenerarGasto<BR>MovTipo.eMailAuto<BR>MovTipo.ImpresionInmediata<BR>MovTipo.EditarDeptoDetallista<BR>MovTipo.CE<BR>MovTipo.CEAntesAfectar<BR>MovTipo.CEAfectarContacto<BR><CONTINUA>
+ListaEnCaptura003=<CONTINUA>MovTipo.IncluirEnCampania<BR>MovTipo.CalculoMoratorioMAVI<BR>MovTipo.ConsecutivoFiscal<BR>MovTipo.EliminarSaldosMenores<BR>MovTipo.EliminarSaldosMenoresD<BR>MovTipo.EliminarSaldosMenoresA<BR>MovTipo.EliminarSaldosMenoresDDolar<BR>MovTipo.EliminarSaldosMenoresADolar
+
+[MovTipo.frm/Detalle.MovTipo.ConsecutivoFiscal]
+Carpeta=Detalle
+Clave=MovTipo.ConsecutivoFiscal
+Editar=S
+LineaNueva=N
+3D=S
+Tamano=20
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+[MovTipo.frm/Detalle.MovTipo.TipoConsecutivo]
+Carpeta=Detalle
+Clave=MovTipo.TipoConsecutivo
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+EspacioPrevio=S
+
+[MovTipo.frm/Detalle.MovTipo.ConsecutivoGeneral]
+Carpeta=Detalle
+Clave=MovTipo.ConsecutivoGeneral
+Editar=S
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+
+;***** ARC 12-feb-09: Nuevo campo agregado *****
+[MovTipo.frm/Detalle.MovTipo.EliminarSaldosMenores]
+Carpeta=Detalle
+Clave=MovTipo.EliminarSaldosMenores
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+
+;***** ARC 12-feb-09: Nuevo campo agregado *****
+[MovTipo.frm/Detalle.MovTipo.EliminarSaldosMenoresD]
+Carpeta=Detalle
+Clave=MovTipo.EliminarSaldosMenoresD
+Editar=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+Pegado=S
+Tamano=8
+LineaNueva=S
+
+
+
+;***** ARC 12-feb-09: Nuevo campo agregado *****
+[MovTipo.frm/Detalle.MovTipo.EliminarSaldosMenoresDDolar]
+Carpeta=Detalle
+Clave=MovTipo.EliminarSaldosMenoresDDolar
+Editar=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+Pegado=S
+Tamano=8
+LineaNueva=S
+
+
+;***** ARC 12-feb-09: Nuevo campo agregado *****
+[MovTipo.frm/Detalle.MovTipo.EliminarSaldosMenoresA]
+Carpeta=Detalle
+Clave=MovTipo.EliminarSaldosMenoresA
+Editar=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+Tamano=8
+ValidaNombre=S
+Pegado=S
+LineaNueva=N
+
+
+;***** ARC 12-feb-09: Nuevo campo agregado *****
+[MovTipo.frm/Detalle.MovTipo.EliminarSaldosMenoresADolar]
+Carpeta=Detalle
+Clave=MovTipo.EliminarSaldosMenoresADolar
+Editar=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+Tamano=8
+ValidaNombre=S
+Pegado=S
+
+
+;***** MP 18-Jun-09: Nuevo campo agregado *****
+[MovTipo.frm/Detalle.MovTipo.CalculoMoratorioMAVI]
+Carpeta=Detalle
+Clave=MovTipo.CalculoMoratorioMAVI
+Editar=S
+LineaNueva=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+ColorFuente=Negro
+
+;*** Desarrollo de Campañas 27/08/09, Modifico:Joel García (Mex), se agrego un campo adicional.
+[MovTipo.frm/Detalle.MovTipo.IncluirEnCampania]
+Carpeta=Detalle
+Clave=MovTipo.IncluirEnCampania
+Editar=S
+LineaNueva=S
+EspacioPrevio=S
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+;*************************************************************** ACCIONES ********************************************************************************
+;*********************************************************************************************************************************************************
+
+;**** Nueva Accion Agregada ****
+[MovTipo.frm/Acciones.MovFormaPago]
+Nombre=MovFormaPago
+Boton=109
+NombreDesplegar=Formas de Pago
+GuardarAntes=S
+EnBarraHerramientas=S
+TipoAccion=Formas
+ClaveAccion=MovFormaPagoMAVI
+Visible=S
+Antes=S
+ConCondicion=S
+ActivoCondicion=Info.Modulo = <T>VTAS<T>
+EjecucionCondicion=ConDatos(MovTipo:MovTipo.Mov)
+AntesExpresiones=Si(ConDatos(MovTipo:MovTipo.Clave),<T> <T>,Si(Error(<T>Falta indicar la clave del movimiento<T>,BotonAceptar)=BotonAceptar, AbortarOperacion, AbortarOperacion))<BR>Asigna(Info.Clave, MovTipo:MovTipo.Mov)
+
+
+;**** Nueva Accion Agregada ****
+;[MovTipo.frm/Acciones.MAVIFolios]
+;Nombre=MAVIFolios
+;Boton=56
+;NombreEnBoton=S
+;NombreDesplegar=Prefijos
+;GuardarAntes=S
+;EnBarraHerramientas=S
+;EspacioPrevio=S
+;TipoAccion=Formas
+;ClaveAccion=MAVIFolios
+;Activo=S
+;Antes=S
+;AntesExpresiones=Asigna(Info.Mov, MovTipo:MovTipo.Mov)
+;Visible=S
+
+;*** Nueva accion para Folios CFD BVF 15082011
+[MovTipo.frm/Acciones.SeriesCFD]
+Nombre=SeriesCFD
+Boton=55
+NombreDesplegar=Serie CFD
+EnBarraHerramientas=S
+EspacioPrevio=S
+TipoAccion=Formas
+ClaveAccion=SerieCFDFolioMavi
+;Activo=S
+Visible=S
+Antes=S
+GuardarAntes=S
+ActivoCondicion=MovTipo:MovTipo.CFD
+AntesExpresiones=Asigna(Info.Mov, MovTipo:MovTipo.ConsecutivoMov)

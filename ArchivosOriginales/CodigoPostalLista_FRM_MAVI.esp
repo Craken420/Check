@@ -1,0 +1,25 @@
+;**** Ultima modificación:16-May-08
+;**** Modifico:Enrique Toral
+;**** Se modifico:Integracion en el objeto que le corresponde --Arly
+
+
+
+
+
+
+
+
+[CodigoPostalLista.frm/Lista]
+ListaEnCaptura.Cambios=Insertar<TAB>CodigoPostal.MaviRutaSupervision<TAB>6
+FiltroTodoFinal=S
+
+[CodigoPostalLista.frm/Lista.CodigoPostal.MaviRutaSupervision]
+Carpeta=Lista
+Clave=CodigoPostal.MaviRutaSupervision
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=50
+ColorFondo=Blanco
+ColorFuente=Negro

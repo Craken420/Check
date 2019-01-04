@@ -1,0 +1,36 @@
+;**** Modificacion: 18-Jun-09
+;**** Modifico: Miguel Peña
+;**** Se modifico: Moratorios
+
+[CxcA.vis/Vista]
+;SQL=SELECT<BR>  Cxc.ID,<BR>  Cxc.Empresa,<BR>  Cxc.Mov,<BR>  Cxc.MovID,<BR>  Cxc.FechaEmision,<BR>  Cxc.UltimoCambio,<BR>  Cxc.Concepto,<BR>  Cxc.Proyecto,<BR>  Cxc.Moneda,<BR>  Cxc.Usuario,<BR>  Cxc.Referencia,<BR>  Cxc.Observaciones,<BR>  Cxc.Estatus,<BR>  Cxc.Situacion,<BR>  Cxc.SituacionFecha,<BR>  Cxc.SituacionUsuario,<BR>  Cxc.SituacionNota,<BR>  Cxc.Cliente,<BR>  Cxc.ClienteEnviarA,<BR>  Cxc.ClienteMoneda,<BR>  Cxc.Cobrador,<BR>  Cxc.Condicion,<BR>  Isnull(Cxc.Vencimiento,Cxc.Fechaemision) as <T>Vencimiento<T>,Isnull(Cxc.Vencimiento,Cxc.Fechaemision) as <T>Cxc.Vencimiento<T>,<BR>  Cxc.FormaCobro,<BR>  Cxc.CtaDinero,<BR>  Cxc.Importe,<BR>  Cxc.Impuestos,<BR>  Cxc.Retencion,<BR>  Cxc.Saldo,<BR><CONTINUA>
+;SQL002=<CONTINUA>  Cxc.Poliza,<BR>  Cxc.PolizaID,<BR>  Cxc.GenerarPoliza,<BR>  Cxc.ContID,<BR>  Cxc.FechaRegistro,<BR>  Cxc.FechaConclusion,<BR>  Cxc.FechaCancelacion,<BR>  Cxc.Dinero,<BR>  Cxc.DineroID,<BR>  Cxc.DineroCtaDinero,<BR>  Cxc.ConTramites,<BR>  Cxc.VIN,<BR>  Cxc.Sucursal,<BR>  Cxc.SucursalDestino,<BR>  Cxc.SucursalOrigen,<BR>  Cxc.AnticipoSaldo,<BR>  Cxc.UEN,<BR>  Cxc.PersonalCobrador,<BR>  Cxc.FechaOriginal,<BR>  Cxc.TasaDiaria,<BR>  Cxc.LineaCredito,<BR>  Cxc.TipoAmortizacion,<BR>  Cxc.TipoTasa,<BR>  Cxc.Amortizaciones,<BR>  Cxc.InteresesOrdinarios,<BR>  Cxc.InteresesMoratorios,<BR>  Cxc.InteresesFijos,<BR>  Cxc.InteresesAnticipados,<BR><CONTINUA>
+;SQL003=<CONTINUA>  Cxc.CarteraVencidaCNBV,<BR>  Cxc.Comisiones,<BR>  Cxc.ComisionesIVA,<BR>  Cxc.FechaRevision,<BR>  Cxc.OperacionRelevante,<BR>  Cxc.ContUso,<BR>  Cxc.Codigo,<BR>  Cte.Cliente,<BR>  Cte.Nombre,<BR>  Cte.NombreCorto,<BR>  Cte.Numero,<BR>  Cte.Estatus,<BR>  Cte.Situacion,<BR>  Cte.SituacionFecha <BR><BR>FROM<BR>  Cxc<BR>  JOIN Cte ON Cxc.Cliente=Cte.Cliente
+ListaCalculados=ImporteTotal<BR>DiasEmision<BR>DiasRetraso<BR>EstatusContable<BR>TotalComisiones<BR>TasaAnual<BR>DiasVencidos<BR>FactorIM
+CamposBusquedaRapida=Cxc.Mov<BR>Cxc.MovID<BR>Cxc.Cliente<BR>Cxc.Codigo<BR>Cxc.Referencia<BR>Cxc.VIN
+
+[CxcA.vis/FactorIM]
+Clave=FactorIM
+TipoDatos=NumFlotante
+TipoCampo=Calculado
+TamanoValidacion=20
+Alineacion=por Omisión
+Nombre=Factor IM
+TipoCalculo=De la misma vista
+FormulaSQL=SELECT dbo.fnFactorIMMAVI(Cxc.ID)
+
+[CxcA.vis/DiasVencidos]
+Clave=DiasVencidos
+TipoDatos=NumFlotante
+TipoCampo=Calculado
+TamanoValidacion=20
+Alineacion=por Omisión
+Nombre=Dias Vencidos
+LigaTabla=Cxc
+TipoCalculo=De la misma vista
+FormulaSQL=SELECT dbo.fnDiasVencidosCXCMavi(Cxc.ID)
+
+
+; **** Integracion de campo ImporteTotal, modificacion de Formula, se restringe GruposTrabajo Especificos de la tabla CFG ACCESOS ESPECIALES, odcampos 30_Mar_2012, para desarrollo DM0180 Importe Control Acceso dentro del paquete DM0180_30032012. JR 30-Mar-2012. ****
+[CxcA.vis/ImporteTotal]
+Formula=SQL(<T>SELECT COUNT(U.GrupoTrabajo) FROM dbo.TablaStD T<BR>INNER JOIN dbo.Usuario U ON U.GrupoTrabajo=T.Nombre<BR>WHERE T.TablaSt=:tNom AND U.Usuario=:tUser<T>,<T>CFG ACCESOS ESPECIALES<T>,Usuario)=0<BR>y <BR>Caso  Usuario.GrupoTrabajo<BR>Es <T>CAJAS<T> Entonces<BR>Caso   MovTipo(<T>CxC<T>,Cxc.Mov)<BR>Es <T>CXC.AA<T> Entonces 0<BR>Es <T>CXC.C<T> Entonces 0<BR>Es <T>CXC.DE<T> Entonces 0<BR>Es <T>CXC.DC<T> Entonces 0<BR>Es <T>CXC.A<T> Entonces 0<BR>Es <T>CXC.DFA<T> Entonces 0<BR>Sino<BR>Cxc.Importe+Cxc.Impuestos-Cxc.Retencion<BR>Fin<BR>Es <T>VENTAS PISO<T> Entonces<BR>Caso   MovTipo(<T>CxC<T>,Cxc.Mov)<BR>Es <T>CXC.AA<T> Entonces 0<BR>Es <T>CXC.C<T> Entonces 0<BR>Es <T>CXC.DE<T> Entonces 0<BR>Es <T>CXC.DC<T> Entonces 0<BR>Es <T>CXC.A<T> Entonces 0<BR>Es <T>CXC.DFA<T> Entonces 0<BR>Sino<BR>Cxc.Importe+Cxc.Impuestos-Cxc.Retencion<BR>Fin<BR>Es <T>FACTURACION<T> Entonces<BR>Caso   MovTipo(<T>CxC<T>,Cxc.Mov)<BR>Es <T>CXC.AA<T> Entonces 0<BR>Es <T>CXC.C<T> Entonces 0<BR>Es <T>CXC.DE<T> Entonces 0<BR>Es <T>CXC.DC<T> Entonces 0<BR>Es <T>CXC.A<T> Entonces 0<BR>Es <T>CXC.DFA<T> Entonces 0<BR>Sino<BR>Cxc.Importe+Cxc.Impuestos-Cxc.Retencion<BR>Fin<BR>Sino<BR>Cxc.Importe+Cxc.Impuestos-Cxc.Retencion<BR>Fin

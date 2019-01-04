@@ -1,0 +1,155 @@
+;Ultima modificacion: 08-Jul-2008
+;Responsable: Arly Rubio  
+;Modifico: Creacion a partir del objeto MAVI3000.
+
+
+
+;***** Se agregaron nuevos campos: DesarrolloMexico(MovBitacora.Agente, MovBitacora.Clave, MAVIClaveSeguimiento.Clave, MAVIClaveSeguimiento.Modulo, MAVIClaveSeguimiento.Descripcion, Agente.Agente, Agente.Nombre)*****
+;***** Se agregaron nuevos campos calculados: DesarrolloMexico(FechaconHora)*****
+;***** Se agregaron nuevas relaciones: DesarrolloMexico(MovBitacora.MAVIClaveSeguimiento, MovBitacora.Agente) *****
+[MovBitacora.vis/Vista]
+ListaTablas=MovBitacora<BR>EventoTipo<BR>MAVIClaveSeguimiento<BR>Agente
+ListaCampos=MovBitacora.Agente<BR>MovBitacora.Clave<BR>MovBitacora.Modulo<BR>MovBitacora.ID<BR>MovBitacora.RID<BR>MovBitacora.Fecha<BR>MovBitacora.Evento<BR>MovBitacora.Sucursal<BR>MovBitacora.Usuario<BR>MovBitacora.Tipo<BR>MovBitacora.MovEstatus<BR>MovBitacora.MovSituacion<BR>MovBitacora.MovSituacionFecha<BR>MovBitacora.MovSituacionUsuario<BR>MovBitacora.MovSituacionNota<BR>MovBitacora.Duracion<BR>MovBitacora.DuracionUnidad<BR>EventoTipo.Tipo<BR>EventoTipo.Icono<BR>EventoTipo.Orden<BR>MAVIClaveSeguimiento.Clave<BR>MAVIClaveSeguimiento.Modulo<BR>MAVIClaveSeguimiento.Descripcion<BR>Agente.Agente<BR>Agente.Nombre
+ListaRelaciones=MovBitacora.EventoTipo<BR>MovBitacora.MAVIClaveSeguimiento<BR>MovBitacora.Agente
+SQL=SELECT<BR>  MovBitacora.Agente,<BR>  MovBitacora.Clave,<BR>  MovBitacora.Modulo,<BR>  MovBitacora.ID,<BR>  MovBitacora.RID,<BR>  MovBitacora.Fecha,<BR>  MovBitacora.Evento,<BR>  MovBitacora.Sucursal,<BR>  MovBitacora.Usuario,<BR>  MovBitacora.Tipo,<BR>  MovBitacora.MovEstatus,<BR>  MovBitacora.MovSituacion,<BR>  MovBitacora.MovSituacionFecha,<BR>  MovBitacora.MovSituacionUsuario,<BR>  MovBitacora.MovSituacionNota,<BR>  MovBitacora.Duracion,<BR>  MovBitacora.DuracionUnidad,<BR>  EventoTipo.Tipo,<BR>  EventoTipo.Icono,<BR>  EventoTipo.Orden,<BR>  MAVIClaveSeguimiento.Clave,<BR>  MAVIClaveSeguimiento.Modulo,<BR>  MAVIClaveSeguimiento.Descripcion,<BR>  Agente.Agente,<BR>  Agente.Nombre<BR><BR>FROM<BR>  MovBitacora<BR>  LEFT OUTER JOIN MAVIClaveSeguimiento ON MovBitacora.Clave=MAVIClaveSeguimiento.Clave AND MovBitacora.Modulo=MAVIClaveSeguimiento.Modulo<BR>  LEFT OUTER JOIN Agente ON MovBitacora.Agente=Agente.Agente<BR>  LEFT OUTER JOIN EventoTipo ON MovBitacora.Tipo=EventoTipo.Tipo
+ListaCalculados=HorasHabiles<BR>FechaconHora
+
+
+;**** Nuevo campo calculado agregado ******
+[MovBitacora.vis/FechaconHora]
+Clave=FechaconHora
+Tamano=100
+TipoCampo=Calculado
+TamanoValidacion=100
+Alineacion=por Omisión
+Nombre=Fecha Completa
+Formula=FechaEnTexto(MovBitacora.Fecha,<T>dd/mmm/aaaa hh:nn am/pm<T>)
+
+
+
+;***** Nuevo campo agregado *****
+[MovBitacora.vis/MovBitacora.Agente]
+Clave=MovBitacora.Agente
+Nombre=Agente
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Requerido=N
+AyudaForma=AgenteLista
+AyudaVista=AgenteA
+AyudaCampo=Agente.Agente
+ValidacionUsaTabla=S
+ValidacionTablas=Agente
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Agente
+AyudaMemRenglones=5
+AyudaMemOpc=Unicamente opciones listadas
+AyudaRefrescar=S
+LigaTabla=MovBitacora
+LigaCampo=Agente
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=Agente
+
+
+;**** Nuevo campo agregado*****
+[MovBitacora.vis/MovBitacora.Clave]
+Clave=MovBitacora.Clave
+LigaTabla=MovBitacora
+TamanoValidacion=10
+LigaCampo=Clave
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=10
+ClaveBDE=Clave
+
+
+
+;***** Nuevo campo agregado *****
+[MovBitacora.vis/MAVIClaveSeguimiento.Clave]
+Clave=MAVIClaveSeguimiento.Clave
+LigaTabla=MAVIClaveSeguimiento
+LigaCampo=Clave
+TamanoValidacion=10
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=4
+ClaveBDE=Clave_1
+
+
+;***** Nuevo campo agregado ******
+[MovBitacora.vis/MAVIClaveSeguimiento.Modulo]
+Clave=MAVIClaveSeguimiento.Modulo
+LigaTabla=MAVIClaveSeguimiento
+LigaCampo=Modulo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=5
+ClaveBDE=Modulo_1
+
+
+
+;**** Nuevo campo agregado *****
+[MovBitacora.vis/MAVIClaveSeguimiento.Descripcion]
+Clave=MAVIClaveSeguimiento.Descripcion
+LigaTabla=MAVIClaveSeguimiento
+LigaCampo=Descripcion
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=255
+ClaveBDE=Descripcion
+
+
+;***** Nuevo campo agregado *****
+[MovBitacora.vis/Agente.Agente]
+Clave=Agente.Agente
+Nombre=Clave
+Tamano=10
+TamanoValidacion=10
+Mayusculas=S
+CondicionEdicion=no TieneMovimientos
+TipoDatos=Texto
+LigaTabla=Agente
+LigaCampo=Agente
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Agente_1
+
+
+;**** Nuevo campo agregado *****
+[MovBitacora.vis/Agente.Nombre]
+Clave=Agente.Nombre
+Nombre=Nombre
+Tamano=100
+TamanoValidacion=50
+TipoDatos=Texto
+LigaTabla=Agente
+LigaCampo=Nombre
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Nombre
+
+;***** Nueva relacion agregada*****
+[MovBitacora.vis/Relaciones.MovBitacora.MAVIClaveSeguimiento]
+Clave=MovBitacora.MAVIClaveSeguimiento
+TablaRemota=MAVIClaveSeguimiento
+LlaveLocal=MovBitacora.Clave<BR>MovBitacora.Modulo
+LlaveRemota=Clave<BR>Modulo
+TipoRelacion=opcional
+
+
+;***** Nueva relacion agregada*****
+[MovBitacora.vis/Relaciones.MovBitacora.Agente]
+Clave=MovBitacora.Agente
+TablaRemota=Agente
+LlaveLocal=MovBitacora.Agente
+LlaveRemota=Agente
+TipoRelacion=Opcional
+
+
+

@@ -1,0 +1,15 @@
+[TablaSt.frm/Forma]
+VentanaTipoMarco=Normal
+PosicionInicialIzquierda=462
+PosicionInicialArriba=67
+PosicionInicialAltura=300
+PosicionInicialAncho=442
+PosicionInicialAlturaCliente=594
+VentanaAjustarZonas=S
+VentanaEstadoInicial=Normal
+
+[TablaSt.frm/Lista.TablaSt.TablaSt]
+Tamano=50
+
+[TablaSt.frm/Lista.Columnas]
+TablaSt=403

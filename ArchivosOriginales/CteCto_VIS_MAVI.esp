@@ -1,0 +1,215 @@
+;**** Ultima modificación:11-Jul-08
+;**** Modifico:Arly Rubio Camacho
+;**** Se modifico:Integracion desarrollo mexico
+
+
+
+;***** Integracion cambio mexico *****
+;***** Se agregaron nuevos campos: desarrollomexico(MaviEstatus, TieneMovimientos)
+;***** Se agregaron nuevos campos 16-Jun-09 ARC: ViveConMAVI, ViveEnCalidadDeMAVI
+
+; ***** Modifico: Judith Ramirez 03-Dic-09 *****
+; ***** Modificacion: Integracion de campos nuevos: EstadoCivilMavi, LadaMavi, para Cte Express por Arturo Guizer. *****
+
+; **** Integracion de nuevo campo IDPadreMavi para desarrollo Cliente Express Generación de Contactos Hijos en el paquete ClienteExpressYCtes_05042011. Cambio por AGR 20110322 SE AGREGA CAMPO DE IDPADREMAVI. Integracion por JR 6-Abr-2011.****
+
+; **** Integracion de nuevo campo TipoMavi para desarrollo Cliente Express y Clientes Generación de Contactos Hijos del paquete ClienteExpressYCtes_11042011. Cambio por AGR 20110322 SE AGREGA CAMPO DE TIPOMAVI. Integracion JR 11-Abr-2011. ****
+
+[CteCto.vis/Vista]
+ListaCampos=CteCto.Cliente<BR>CteCto.ID<BR>CteCto.Nombre<BR>CteCto.ApellidoPaterno<BR>CteCto.ApellidoMaterno<BR>CteCto.Cargo<BR>CteCto.Grupo<BR>CteCto.FechaNacimiento<BR>CteCto.Telefonos<BR>CteCto.Extencion<BR>CteCto.eMail<BR>CteCto.Fax<BR>CteCto.PedirTono<BR>CteCto.EnviarA<BR>CteCto.Tipo<BR>CteCto.Tratamiento<BR>CteCto.Sexo<BR>CteCto.Atencion<BR>CteCto.Usuario<BR>CteCto.MaviEstatus<BR>CteCto.TieneMovimientos<BR>CteEnviarA.Clave<BR>CteEnviarA.Nombre<BR>CteCto.CteEnviarAExpress<BR>CteCto.ViveConMAVI<BR>CteCto.ViveEnCalidadDeMAVI<BR>CteCto.EstadoCivilMavi<BR>CteCto.LadaMavi<BR>CteCto.IDPadreMavi<BR>CteCto.TipoMavi<BR>CteCto.RFC<BR>CteCto.NivelCobranzaEspecialContactoA<BR>CteCto.ContactoSelectAval
+SQL=SELECT<BR>  CteCto.Cliente,<BR>  CteCto.ID,<BR>  CteCto.Nombre,<BR>  CteCto.ApellidoPaterno,<BR>  CteCto.ApellidoMaterno,<BR>  CteCto.Cargo,<BR>  CteCto.Grupo,<BR>  CteCto.FechaNacimiento,<BR>  CteCto.Telefonos,<BR>  CteCto.Extencion,<BR>  CteCto.eMail,<BR>  CteCto.Fax,<BR>  CteCto.PedirTono,<BR>  CteCto.EnviarA,<BR>  CteCto.Tipo,<BR>  CteCto.Tratamiento,<BR>  CteCto.Sexo,<BR>  CteCto.Atencion,<BR>  CteCto.Usuario,<BR>  CteCto.MaviEstatus,<BR>  CteCto.TieneMovimientos,<BR>  CteEnviarA.Clave,<BR>  CteEnviarA.Nombre,<BR>  CteCto.CteEnviarAExpress,<BR>  CteCto.ViveConMAVI,<BR>  CteCto.ViveEnCalidadDeMAVI,<BR>  CteCto.EstadoCivilMavi,<BR>  CteCto.LadaMavi,<BR>  CteCto.IDPadreMavi,  <BR> CteCto.TipoMavi,<BR>  CteCto.RFC,<BR>CteCto<CONTINUA>
+SQL002=<CONTINUA>.NivelCobranzaEspecialContactoA,<BR>  CteCto.ContactoSelectAval<BR><BR>FROM<BR>  CteCto<BR>  LEFT OUTER JOIN CteEnviarA ON CteCto.Cliente=CteEnviarA.Cliente AND CteCto.EnviarA=CteEnviarA.ID
+
+
+
+
+
+
+
+
+
+
+
+
+
+;***** Integracion cambio mexico *****
+;***** Nuevo campo agreado desarrollo mexico ****
+[CteCto.vis/CteCto.MaviEstatus]
+Clave=CteCto.MaviEstatus
+LigaTabla=CteCto
+LigaCampo=MaviEstatus
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=30
+ClaveBDE=MaviEstatus
+
+
+;***** Integracion cambio mexico *****
+;***** Nuevo campo agreado desarrollo mexico ****
+[CteCto.vis/CteCto.TieneMovimientos]
+Clave=CteCto.TieneMovimientos
+Nombre=Tiene Movimientos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+UnicamenteLectura=S
+LigaTabla=CteCto
+LigaCampo=TieneMovimientos
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=TieneMovimientos
+
+
+
+[CteCto.vis/CteCto.CteEnviarAExpress]
+Clave=CteCto.CteEnviarAExpress
+Nombre=Sucursal
+Visible=S
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Vista
+AyudaForma=CteEnviarAListaMavi
+AyudaVista=CteEnviarAExpress
+AyudaCampo=CteEnviarA.ID
+ConAyudaBusquedaRapida=S
+LigaTabla=CteCto
+LigaCampo=CteEnviarAExpress
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=CteEnviarAExpress
+
+
+
+[CteCto.vis/CteCto.ViveConMAVI]
+Clave=CteCto.ViveConMAVI
+Nombre=Vive Con
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Validar captura en la lista
+CondicionDespliege=CteCto.Tratamiento = <T>Huesped<T>
+Formula=SQLEnLista(<T>SELECT Parentesco FROM Parentesco<T>)
+LigaTabla=CteCto
+LigaCampo=ViveConMAVI
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=ViveConMAVI
+
+
+
+[CteCto.vis/CteCto.ViveEnCalidadDeMAVI]
+Clave=CteCto.ViveEnCalidadDeMAVI
+Nombre=Vive En Calidad De
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Validar captura en la lista
+Formula=SQLEnLista(<T>SELECT ViveEnCalidad FROM MaviCteCtoViveEnCalidad<T>)
+LigaTabla=CteCto
+LigaCampo=ViveEnCalidadDeMAVI
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=ViveEnCalidadDeMAVI
+
+
+; ***** Cambio JR 03-Dic-09. Se integro campo EstadoCivilMavi para CteExpress. Cambios por Arturo Guizer. *****
+[CteCto.vis/CteCto.EstadocivilMavi]
+Clave=CteCto.EstadocivilMavi
+LigaTabla=CteCto
+LigaCampo=EstadocivilMavi
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=EstadocivilMavi
+
+; ***** Cambio JR 03-Dic-09. Se integro campo LadaMavi para CteExpress. Cambios por Arturo Guizer. *****
+[CteCto.vis/CteCto.LadaMavi]
+Clave=CteCto.LadaMavi
+LigaTabla=CteCto
+LigaCampo=LadaMavi
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=LadaMavi
+
+
+; ***** Cambio JR 03-Dic-09. Se cambio campo para CteExpress. Cambios por Arturo Guizer. *****
+[CteCto.vis/CteCto.Telefonos]
+Clave=CteCto.Telefonos
+LigaTabla=CteCto
+LigaCampo=Telefonos
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=Telefonos
+
+
+; **** Integracion de nuevo campo para desarrollo Cliente Express Generación de Contactos Hijos en el paquete ClienteExpressYCtes_05042011. Cambio por AGR 20110322 SE AGREGA CAMPO DE IDPADREMAVI. Integracion por JR 6-Abr-2011.****
+[CteCto.vis/CteCto.IDPadreMavi]
+Clave=CteCto.IDPadreMavi
+Nombre=IDPadreMavi
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=Info.ID
+LigaTabla=CteCto
+LigaCampo=IDPadreMavi
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=IDPadreMavi
+
+
+; **** Integracion de nuevo campo para desarrollo Cliente Express y Clientes Generación de Contactos Hijos del paquete ClienteExpressYCtes_11042011. Cambio por AGR 20110322 SE AGREGA CAMPO DE TIPOMAVI. Integracion JR 11-Abr-2011. ****
+[CteCto.vis/CteCto.TipoMavi]
+Clave=CteCto.TipoMavi
+Nombre=TipoMavi
+Visible=S
+TamanoValidacion=15
+Tamano=15
+ValorPorOmision=<T>NORMAL<T>
+LigaTabla=CteCto
+LigaCampo=TipoMavi
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=TipoMavi
+
+[CteCto.vis/CteCto.RFC]
+Clave=CteCto.RFC
+LigaTabla=CteCto
+LigaCampo=RFC
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=15
+ClaveBDE=RFC
+
+[CteCto.vis/CteCto.NivelCobranzaEspecialContactoA]
+Clave=CteCto.NivelCobranzaEspecialContactoA
+LigaTabla=CteCto
+LigaCampo=NivelCobranzaEspecialContactoA
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=NivelCobranzaEspecialContactoA
+
+[CteCto.vis/CteCto.ContactoSelectAval]
+Clave=CteCto.ContactoSelectAval
+LigaTabla=CteCto
+LigaCampo=ContactoSelectAval
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Lógico
+ClaveBDE=ContactoSelectAval
+
+

@@ -1,0 +1,335 @@
+;**** Modificacion: 22-Abr-09
+;**** Modifico: Edgar Montelongo
+;**** Se modifico: Integracion Refinanciamiento
+
+;**** Ultima modificación:11-Nov-08
+;**** Modifico:Se ingreso el desarrollo de Cobranza Instituciones
+;**** Se modifico:Se agrego el campo Depositado
+
+;**** Modificación:12-Ago-08
+;**** Modifico:Arly Rubio Camacho
+;**** Se modifico:Se agrego el campo financiamiento
+
+;***** Modificacion: 09-Ene-09
+;***** Modifico: Judith Ramirez
+;***** Se modifico: Se agrego campo seenviaburocreditomavi para desarrollo buro credito
+
+;***** Modificacion: 13-Feb-09
+;***** Modifico: Edgar Montelongo
+;***** Se modifico: Se agregaron 3 campos para control de politica de enganche
+
+;***** Modificacion: 18-jun-09
+;***** Modifico: Miguel Peña
+;***** Se modifico: Se agrego 2 modificaciones del moratorios, Sujerido y AplicacionManual
+
+
+;***** Se agregaron nuevos campos: Financiamiento ******
+;*** Agrego Campo por desarrollo cobro fiscal/nofiscal BVF 02062012
+[Cxc.tbl/Tabla]
+; EWQ. Agosto 2009. Inicio
+ListaCampos=ID<BR>Empresa<BR>Mov<BR>MovID<BR>FechaEmision<BR>UltimoCambio<BR>Concepto<BR>Proyecto<BR>Moneda<BR>TipoCambio<BR>Usuario<BR>Autorizacion<BR>Referencia<BR>DocFuente<BR>Observaciones<BR>Estatus<BR>Situacion<BR>SituacionFecha<BR>SituacionUsuario<BR>SituacionNota<BR>Cliente<BR>ClienteEnviarA<BR>ClienteMoneda<BR>ClienteTipoCambio<BR>Cobrador<BR>Condicion<BR>Vencimiento<BR>FormaCobro<BR>CtaDinero<BR>Importe<BR>Impuestos<BR>Retencion<BR>AplicaManual<BR>ConDesglose<BR>FormaCobro1<BR>FormaCobro2<BR>FormaCobro3<BR>FormaCobro4<BR>FormaCobro5<BR>Referencia1<BR>Referencia2<BR>Referencia3<BR>Referencia4<BR>Referencia5<BR>Importe1<BR>Importe2<BR>Importe3<BR>Importe4<BR>Importe5<BR>Cambio<BR>DelEfectivo<BR>Agente<BR>ComisionTotal<BR>ComisionPendiente<BR>MovAplica<BR>MovAplicaID<BR>Saldo<BR>OrigenTipo<BR>O<CONTINUA>
+ListaCampos002=<CONTINUA>rigen<BR>OrigenID<BR>Poliza<BR>PolizaID<BR>GenerarPoliza<BR>ContID<BR>Ejercicio<BR>Periodo<BR>FechaRegistro<BR>FechaConclusion<BR>FechaCancelacion<BR>FechaProntoPago<BR>DescuentoProntoPago<BR>AutoAjuste<BR>Indirecto<BR>GenerarDinero<BR>Dinero<BR>DineroID<BR>DineroCtaDinero<BR>DineroConciliado<BR>DineroFechaConciliacion<BR>ConTramites<BR>VIN<BR>FechaEntrega<BR>EmbarqueEstado<BR>Sucursal<BR>SucursalDestino<BR>SucursalOrigen<BR>Cajero<BR>IVAFiscal<BR>IEPSFiscal<BR>DiferenciaCambiaria<BR>ComisionGenerada<BR>ComisionCorte<BR>EstaImpreso<BR>AnticipoAplicar<BR>AnticipoAplicaModulo<BR>AnticipoAplicaID<BR>AnticipoSaldo<BR>UEN<BR>PersonalCobrador<BR>FechaOriginal<BR>Nota<BR>Comentarios<BR>TasaDiaria<BR>Tasa<BR>RamaID<BR>LineaCredito<BR>TipoAmortizacion<BR>TipoTasa<BR>Amortizaciones<BR>InteresesOrdin<CONTINUA>
+ListaCampos003=<CONTINUA>arios<BR>Financiamiento<BR>InteresesMoratorios<BR>InteresesFijos<BR>InteresesAnticipados<BR>CarteraVencidaCNBV<BR>Comisiones<BR>ComisionesIVA<BR>FechaRevision<BR>OperacionRelevante<BR>ContUso<BR>TieneTasaEsp<BR>TasaEsp<BR>VencimientoOriginal<BR>FechaRevisionOriginal<BR>Codigo<BR>Depositado<BR>SeEnviaBuroCreditoMavi<BR>SaldoDevueltoMAVI<BR>SaldoAplicadoMAVI<BR>RefAnticipoMAVI<BR>CondRef<BR>CoincideMavi<BR>FacDesgloseIVA<BR>NoCtaPago		
+SQL=SELECT<BR>  ID,<BR>  Empresa,<BR>  Mov,<BR>  MovID,<BR>  FechaEmision,<BR>  UltimoCambio,<BR>  Concepto,<BR>  Proyecto,<BR>  UEN,<BR>  Moneda,<BR>  TipoCambio,<BR>  Usuario,<BR>  Autorizacion,<BR>  Referencia,<BR>  DocFuente,<BR>  Observaciones,<BR>  Estatus,<BR>  Situacion,<BR>  SituacionFecha,<BR>  Cliente,<BR>  ClienteEnviarA,<BR>  ClienteMoneda,<BR>  ClienteTipoCambio,<BR>  CtaDinero,<BR>  Cobrador,<BR>  Condicion,<BR> Vencimiento,<BR>  FormaCobro,<BR>  Importe,<BR>  Impuestos,<BR>  Retencion,<BR>  AplicaManual,<BR>  ConDesglose,<BR>  FormaCobro1,<BR>  FormaCobro2,<BR>  FormaCobro3,<BR>  FormaCobro4,<BR>  FormaCobro5,<BR>  Importe1,<BR>  Importe2,<BR>  Importe3,<BR>  Importe4,<BR>  Importe5,<BR>  Referencia1,<BR>  Referencia2,<BR>  Referencia3,<BR>  Referencia4,<BR>  Referencia5,<BR> <CONTINUA>
+SQL002=<CONTINUA> Cambio,<BR>  DelEfectivo,<BR>  Agente,<BR>  ComisionTotal,<BR>  ComisionPendiente,<BR>  ComisionGenerada,<BR>  ComisionCorte,<BR>  MovAplica,<BR>  MovAplicaID,<BR>  Saldo,<BR>  AutoAjuste,<BR>  OrigenTipo,<BR>  Origen,<BR>  OrigenID,<BR>  Poliza,<BR>  PolizaID,<BR>  GenerarPoliza,<BR>  ContID,<BR>  Ejercicio,<BR>  Periodo,<BR>  FechaRegistro,<BR>  FechaConclusion,<BR>  FechaCancelacion,<BR>  FechaProntoPago,<BR>  DescuentoProntoPago,<BR>  Indirecto,<BR>  GenerarDinero,<BR>  Dinero,<BR>  DineroID,<BR>  DineroCtaDinero,<BR>  DineroConciliado,<BR>  DineroFechaConciliacion,<BR>  VIN,<BR>  FechaEntrega,<BR>  EmbarqueEstado,<BR>  Sucursal,<BR>  ConTramites,<BR>  Cajero,<BR>  IVAFiscal,<BR>  IEPSFiscal,<BR>  DiferenciaCambiaria,<BR>  EstaImpreso,<BR>  AnticipoAplicar,<BR>  AnticipoAplicaModulo,<<CONTINUA>
+SQL003=<CONTINUA>BR>  AnticipoAplicaID,<BR>  AnticipoSaldo,<BR>  PersonalCobrador,<BR>  FechaOriginal,<BR>  Comentarios,<BR>  Nota,<BR>  RamaID,<BR>  Tasa,<BR>  TasaDiaria,<BR>  SucursalOrigen,<BR>  SucursalDestino,<BR>  LineaCredito,<BR>  TipoAmortizacion,<BR>  TipoTasa,<BR>  Amortizaciones,<BR>  InteresesOrdinarios,<BR> Financiamiento,<BR>  InteresesMoratorios,<BR>  InteresesFijos,<BR>  CarteraVencidaCNBV,<BR>  InteresesAnticipados,<BR>  Comisiones,<BR>  ComisionesIVA,<BR>  FechaRevision,<BR>  VencimientoOriginal,<BR>  FechaRevisionOriginal,<BR>  OperacionRelevante,<BR>  ContUso,<BR>  TieneTasaEsp,<BR>  TasaEsp,<BR>  SituacionUsuario,<BR>  SituacionNota,<BR>  Codigo,<BR>Depositado,<BR> SeEnviaBuroCreditoMavi,<BR>  SaldoDevueltoMAVI,<BR>  SaldoAplicadoMAVI,<BR>  RefAnticipoMAVI,<BR>  CondRef<BR>,<BR>  CoincideMavi,<BR>FacDesgloseIVA,<BR>delefectivo,<BR>NoCtaPago<BR><BR>FROM<BR>  Cxc
+ListaRelaciones=Mon<BR>MonSaldo<BR>UEN<BR>Cte<BR>CxcSaldo<BR>CtaDinero<BR>CxcPendiente<BR>CteEnviarA<BR>MovTipo<BR>Cajero<BR>AgenteValida<BR>Personal<BR>LC<BR>TipoAmortizacion<BR>TipoTasa<BR>Anticipo<BR>VIN<BR>CentroCostos<BR>Condicion
+ControlSugerido=S
+CampoSugerido=ID
+
+[Cxc.tbl/NoCtaPago]
+Clave=NoCtaPago
+Nombre=Cuenta Pago
+Visible=S
+Tamano=25
+TipoDatos=Texto
+ValorPorOmision=<T>No Identificado<T>
+ListaRefrescar=NoCtaPago
+ValorRefrescar=
+CondicionDespliege=Mov En(<T>Nota Cargo<T>,<T>Nota Cargo Mayoreo<T>,<T>Nota Cargo VIU<T>,<T>Nota Credito Mayoreo<T>,<T>Nota Credito VIU<T>,<T>Nota Credito<T>,<T>Cobro<T>,<T>Cobro Instituciones<T>)
+CondicionEdicion=Mov En(<T>Nota Cargo<T>,<T>Nota Cargo Mayoreo<T>,<T>Nota Cargo VIU<T>,<T>Cobro<T>,<T>Cobro Instituciones<T>)
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=NoCtaPago
+
+[Cxc.tbl/CoincideMavi]
+Clave=CoincideMavi
+Nombre=CoincideMavi
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+;**** 10-Enero-2011 BVF Aplicacion saldo no editable
+[Cxc.tbl/delefectivo]
+CondicionEdicion=Falso
+
+; EWQ. Agosto 2009. Fin
+
+;*** Modificacion: 19-Mar-09   ALQG: Integracion del desarrollo de Anticipos Folio 2600 ***
+;*** Se ingreso el desarrollo de Refinanciamiento - ALQG 270309 ***
+;**** ELIAS *****
+[Cxc.tbl/Cliente]
+AyudaVista=MaviCteA
+AlCambiar=Asigna(Info.ClienteAsigna,Cliente)<BR>SI(SQL(<T>Select dbo.fn_MaviDM0169CheckCobro(:tCte)<T>,Cxc:Cxc.Cliente) = 1,Error(SQL(<T>Select mensaje From MensajeAval<T>)),Falso)
+CondicionEdicion=((Mavi.BloqCposCxcAnticContApart<>051020) y (Condatos(Mov))) o ((Condatos(Mov)) y ((Mov<><T>Anticipo Contado<T>) y (Mov<><T>Apartado<T>) y (Mov<><T>Anticipo Mayoreo<T>) y (Mov<><T>Dev Anticipo Contado<T>) y (Mov<><T>Refinanciamiento<T>) y (Mov<><T>Devolucion Apartado<T>) y (Mov<><T>Enganche<T>) y (Mov<><T>Devolucion Enganche<T>)))
+ListaRefrescar=ClienteEnviarA<BR>Importe<BR>Impuestos<BR>Proyecto<BR>Condicion<BR>Vencimiento<BR>Moneda<BR>ClienteMoneda<BR>Agente<BR>Cobrador<BR>PersonalCobrador<BR>AplicaManual
+
+; **** Se modifico el campo para que tomara la uen de la sucursal por default y para que no fuera editable****
+; **** Integracion de lista a refrescar para desarrollo DM0156 VALIDACION UEN dentro del paquete DM0156_17102011. JR 17-Oct-2011 *****
+[Cxc.tbl/UEN]
+ValorPorOmision=Sucursal.wUEN
+CondicionEdicion=Falso
+ValorRefrescar=si Mov=<T>Sol Refinanciamiento<T> y vacio(Sucursal.wUEN)<BR>entonces<BR>1<BR>sino<BR>Sucursal.wUEN<BR>fin
+
+
+;*** Modificacion: 19-Mar-09   ALQG : Integracion del desarrollo de Anticipos Folio 2600 ***
+;**** Cambio Mexico *****
+;***** cambio buro credito ListaRefrescar=SeEnviaBuroCreditoMavi *****
+;*** Se ingreso el desarrollo de Refinanciamiento - ALQG 270309 ***
+; **** Integracion de wUEN en lista a refrescar para desarrollo DM0156 VALIDACION UEN dentro del paquete DM0156_17102011. JR 17-Oct-2011 *****
+[Cxc.tbl/Mov]
+AlCambiar=(Asigna(Info.Mov,Mov) y Asigna(Info.MovAsigna, Mov) )
+;ListaRefrescar=Concepto<BR>AplicaManual<BR>ConDesglose<BR>SeEnviaBuroCreditoMavi<BR>RefAnticipoMAVI<BR>Importe<BR>Impuestos<BR>FacDesgloseIva
+ListaRefrescar=Concepto<BR>AplicaManual<BR>ConDesglose<BR>SeEnviaBuroCreditoMavi<BR>RefAnticipoMAVI<BR>Importe<BR>Impuestos<BR>FacDesgloseIva<BR>UEN
+CondicionEdicion=(Estatus en (EstatusSinAfectar, EstatusPorConfirmar)) y Vacio(Filtro.Mov) y (Mov <> (<T>Refinanciamiento<T>))
+
+
+;**** Cambio Mexico *****
+;*** Se ingreso el desarrollo de Refinanciamiento - ALQG 270309 ***
+[Cxc.tbl/Concepto]
+ConRefrescar=S
+ListaRefrescar=Condicion<BR>Vencimiento
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=Condicion
+CondicionDespliege=(Mov <> <T>Sol Refinanciamiento<T>)
+
+;**** Cambio Mexico *****
+;**** 26-Dic-08 ALQG Se agrego la condicion para que solo muestre aquellas en las que tiene acceso ***
+; **** 18-Ago-09 JR Se agregon lineas de ayudarefrescar y se cambio linea de formula para que la condicion muestre solo las que tiene acceso el ususario
+[Cxc.tbl/Condicion]
+;Se modifica el concepto para la condicion de edicion y el valor a refrescar en el Campo de Condicion a "GTOS ADJUDICACION" Moises Garcia Mavi 18112009
+CondicionEdicion=(Caso Mov<BR>  Es <T>Nota Cargo<T> Entonces<BR>      Caso Mayusculas(Concepto)<BR>          Es <T>GTOS ADJUDICACION<T> Entonces Importe+Impuestos>=SQL(<T>SELECT MAX(MontoMax) FROM MAVIMontoAdjudicacion<T>)<BR>      Sino<BR>          no Usuario.BloquearCondiciones<BR>      Fin<BR>Es <T>Nota Cargo VIU<T> Entonces<BR>      Caso Mayusculas(Concepto)<BR>          Es <T>GTOS ADJUDICACION<T> Entonces Importe+Impuestos>=SQL(<T>SELECT MAX(MontoMax) FROM MAVIMontoAdjudicacion<T>)<BR>      Sino<BR>          no Usuario.BloquearCondiciones<BR>      Fin<BR>Sino<BR>   (no Usuario.BloquearCondiciones) y (Mov<><T>Refinanciamiento<T>)<BR>Fin)
+ValorRefrescar= Si(ConDatos(Cxc:Cxc.LineaCredito), SQL(<T>SELECT Condicion FROM LC WHERE LineaCredito=:tLC<T>, LineaCredito), Si(ConDatos(Cxc:Cte.Condicion), Cxc:Cte.Condicion, General.DefCondicion))<BR>Si ((Mayusculas(Concepto)=<T>GTOS ADJUDICACION<T>) y (Mov en (<T>Nota Cargo<T>,<T>Nota Cargo VIU<T>)))<BR>Entonces<BR>  Asigna(Info.Monto, (Vacio(Importe,0.0)+Vacio(Impuestos,0.0)))<BR>  SQL(<T>SELECT Condicion FROM MAVIMontoAdjudicacion WHERE :nMonto BETWEEN MontoMin AND MontoMax<T>,Info.Monto)<BR>Fin
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+;Se modifica la lista para poder visualizar solo aquellos a los que tenga acceso el usuario mientras el movimiento sea directo. ALQG 04Feb10
+Formula=SQLEnLista(<T>EXEC  spDesplegarCondicionesxUsuarioMAVI :tusuario, :tusuarioa<T>, Usuario, Usuario)
+
+
+;*** Modificacion: 19-Mar-09   ALQG: Integracion del desarrollo de Anticipos Folio 2600 ***
+;**** Cambio Mexico *****
+;*** ARC 08-May-09: Se modifico la condicion de edicion y el valor al refrescar para que no permita capturar datos si es aplicacion manual y las claves de afectacion son las mismas que las de la accion "Totalizar" ****
+
+[Cxc.tbl/Importe]
+ConRefrescar=S
+;ListaRefrescar=Condicion<BR>Vencimiento<BR>Impuestos
+ListaRefrescar=Vencimiento<BR>Impuestos<BR>Condicion
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=Condicion
+ValorRefrescar=Asigna(Info.MovTipo, MovTipo(<T>CXC<T>, Mov))<BR>Si<BR>  Info.MovTipo en (CXC.C, CXC.A, CXC.AR, CXC.AA, CXC.DE, CXC.CAP, CXC.RA)<BR>Entonces<BR>  Si<BR>    ConDesglose<BR>  Entonces<BR>    Asigna(Temp.Monetario, Importe1+Importe2+Importe3+Importe4+Importe5+DelEfectivo-Cambio)<BR>    Si <BR>      Info.MovTipo en (CXC.C, CXC.CAP)<BR>    Entonces <BR>      Temp.Monetario-Impuestos<BR>    Sino  <BR>      Asigna(Impuestos, Temp.Monetario-QuitarPorcentaje(Temp.Monetario, Def.CxImpuesto))<BR>      Temp.Monetario-Impuestos<BR>    Fin<BR>  Sino<BR>    nulo<BR>  Fin<BR>Sino<BR>  Caso MovTipo(<T>CXC<T>, Mov)<BR>    Es CXC.AE  Entonces SQL(<T>spVerEfectivoPorAplicar :tEmp, :tM, :tMon, :tCte, :tRef<T>, Empresa, <T>CXC<T>, ClienteMoneda, Cliente, Referencia)<BR>    Es CXC.DE  Entonces SQL(<T>spVerEfe<CONTINUA>
+ValorRefrescar002=<CONTINUA>ctivoSobrante :tEmp, :tM, :tMon, :tCte, :tRef<T>, Empresa, <T>CXC<T>, ClienteMoneda, Cliente, Referencia)/(1+(ImpuestoZona(Def.CxImpuesto, Cxc:Cte.ZonaImpuesto, ClienteEnviarA, Cxc:CteEnviarA.ZonaImpuesto)/100))<BR>    Es CXC.IM  Entonces QuitarPorcentaje(SQL(<T>spVerMoratorios :tEmp, :nT, :tMon, :tCte<T>, Empresa, Config.CxcMoratoriosTasa, ClienteMoneda, Cliente), ImpuestoZona(Def.CxImpuesto, Cxc:Cte.ZonaImpuesto, ClienteEnviarA, Cxc:CteEnviarA.ZonaImpuesto))<BR>    Es CXC.ANC Entonces Si(ConDatos(MovAplica), Cxc:CxcPendiente.Saldo)<BR>    Es CXC.ACA Entonces Si(ConDatos(MovAplica), Cxc:CxcPendiente.Saldo)<BR>    Es CXC.RA  Entonces Si(ConDatos(MovAplica), Cxc:CxcPendiente.Saldo)<BR>    Es CXC.FAC Entonces Importe<BR>    Es CXC.DAC Entonces Si(ConDatos(MovAplica), Cxc:CxcPendiente.Saldo)<<CONTINUA>
+ValorRefrescar003=<CONTINUA>BR>  Fin<BR>Fin
+CondicionEdicion= (no MovTipoEn(<T>CXC<T>, Mov, (CXC.A, CXC.AR, CXC.AA, CXC.DE, CXC.EST, CXC.F))) y ((Mavi.BloqCposCxcAnticContApart<>051020) y (Condatos(Mov)) y ((Mov<><T>Anticipo Contado<T>) y (Mov<><T>Apartado<T>) y (Mov<><T>Sol Refinanciamiento<T>) y (Mov<><T>Refinanciamiento<T>) y (Mov<><T>Anticipo Mayoreo<T>) y (Mov<><T>Dev Anticipo Contado<T>) y (Mov<><T>Devolucion Apartado<T>) y (Mov<><T>Enganche<T>) y (Mov<><T>Devolucion Enganche<T>)))) o ((Mov<><T>Anticipo Contado<T>) y (Mov<><T>Apartado<T>) y (Mov<><T>Anticipo Mayoreo<T>) y (Mov<><T>Dev Anticipo Contado<T>)  y (Mov<><T>Sol Refinanciamiento<T>)  y (Mov<><T>Refinanciamiento<T>) y (Mov<><T>Devolucion Apartado<T>) y (Mov<><T>Enganche<T>) y (Mov<><T>Devolucion Enganche<T>))
+
+;*** Modificacion: 19-Mar-09   ALQG: Integracion del desarrollo de Anticipos Folio 2600 ***
+;*** Se ingreso el desarrollo de Refinanciamiento - ALQG 270309 ***
+;*** ARC 08-May-09 Se modifico la condicion de edicion de impuestos y se comento el anterior ***
+
+[Cxc.tbl/Impuestos]
+ConRefrescar=S
+;Desarrollo MAVI
+ValorRefrescar=Si<BR>  MovTipoEn(<T>CXC<T>, Mov, (CXC.FAC, CXC.RA))<BR>Entonces<BR>  Impuestos<BR>Sino<BR>  Si<BR>    MovTipoEn(<T>CXC<T>, Mov, (CXC.F,CXC.FA,CXC.DFA,CXC.AF,CXC.NC,CXC.CA,CXC.IM,CXC.RM,CXC.A,CXC.AR,CXC.AA,CXC.DE,CXC.CAP,CXC.RA)) o<BR>    (MovTipoEn(<T>CXC<T>, Mov, (CXC.C, CXC.CD, CXC.D, CXC.DM)) y Config.CxcCobroImpuestos)<BR>  Entonces<BR>    Importe*(ImpuestoZona(Info.PorcentajeImpuesto, Cxc:Cte.ZonaImpuesto, ClienteEnviarA, Cxc:CteEnviarA.ZonaImpuesto)/100)<BR>  Sino<BR>    0.0<BR>  Fin<BR>Fin
+ListaRefrescar=Condicion<BR>Vencimiento
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=Condicion
+CondicionDespliege=MovTipoEn(<T>CXC<T>, Mov, (CXC.F,CXC.FA,CXC.FAC,CXC.DFA,CXC.AF,CXC.NC,CXC.CA,CXC.IM,CXC.RM,CXC.A,CXC.AR,CXC.AA,CXC.DE,CXC.CAP,CXC.RA)) o<BR>(MovTipoEn(<T>CXC<T>, Mov, (CXC.C, CXC.CD, CXC.D, CXC.DM)) y Config.CxcCobroImpuestos)
+;*** ALQG 16/10/09 Se abrio el campo para que el usuario pueda capturar la informacion a ciertos movimientos a peticion de Leonid Rosas.
+CondicionEdicion= (no MovTipoEn(<T>CXC<T>, Mov, (CXC.A, CXC.AR, CXC.AA, CXC.DE, CXC.EST, CXC.F))) y ((Mavi.BloqCposCxcAnticContApart<>051020) y (Condatos(Mov)) y ((Mov<><T>Anticipo Contado<T>) y (Mov<><T>Apartado<T>) y (Mov<><T>Sol Refinanciamiento<T>) y (Mov<><T>Refinanciamiento<T>) y (Mov<><T>Anticipo Mayoreo<T>) y (Mov<><T>Dev Anticipo Contado<T>) y (Mov<><T>Devolucion Apartado<T>) y (Mov<><T>Enganche<T>) y (Mov<><T>Devolucion Enganche<T>)))) o ((Mov<><T>Anticipo Contado<T>) y (Mov<><T>Apartado<T>) y (Mov<><T>Anticipo Mayoreo<T>) y (Mov<><T>Dev Anticipo Contado<T>)  y (Mov<><T>Sol Refinanciamiento<T>)  y (Mov<><T>Refinanciamiento<T>) y (Mov<><T>Devolucion Apartado<T>) y (Mov<><T>Enganche<T>) y (Mov<><T>Devolucion Enganche<T>))
+
+
+;*** Modificacion: 19-Mar-09   ALQG: Integracion del desarrollo de Anticipos Folio 2600 ***
+;**** Cambio para modificar el nombre a desplegar *****
+[Cxc.tbl/ClienteEnviarA]
+Nombre=Canal Venta
+CondicionEdicion=((Mavi.BloqCposCxcAnticContApart<>051020) y (Condatos(Mov))) o ((Condatos(Mov)) y ((Mov<><T>Anticipo Contado<T>) y (Mov<><T>Apartado<T>) y (Mov<><T>Anticipo Mayoreo<T>) y (Mov<><T>Dev Anticipo Contado<T>) y (Mov<><T>Devolucion Apartado<T>) y (Mov<><T>Enganche<T>) y (Mov<><T>Devolucion Enganche<T>)))
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+;**** Cambio para el nombre a desplegar y se agrego una condicion de despliegue*****
+;[Cxc.tbl/InteresesOrdinarios]
+;Nombre=Financiamiento
+;CondicionDespliege=Origen en(<T>Credilana<T>,<T>Prestamo Personal<T>)
+
+;***** Nuevo campo agregado ****
+[Cxc.tbl/Financiamiento]
+Clave=Financiamiento
+Nombre=Financiamiento
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+UnicamenteLectura=N
+CondicionDespliege=Origen en(<T>Credilana<T>,<T>Prestamo Personal<T>,<T>Refinanciamiento<T>) o ((Mov=<T>Refinanciamiento<T>) o (Mov=<T>Sol Refinanciamiento<T>))
+ValorRefrescar=Asigna(Info.ConteoR,SQL(<T>SELECT ISNULL(LeasingMAVI,0) FROM Condicion WHERE Condicion=:tCondicion<T>,CondRef))<BR>  Si<BR>  Mov=<T>Sol Refinanciamiento<T><BR>Entonces  ((Importe)*(Info.ConteoR/100))<BR>Fin
+
+
+
+;Nuevo campo agregado Desarrollo de Cobranza Instituciones ALQG
+[CXC.tbl/Depositado]
+Clave=Depositado
+Nombre=Depositado
+Visible=S
+TipoDatos=Texto
+TamanoValidacion=10
+Tamano=10
+
+
+;***** Campo Desarrollo buro de credito *****
+; ***** Modificacion de condicion edicion para parfil, JR 21-May-2012. *****
+; **** Se quita ValorPorOmision para que no active envio a buro, Jesus del Toro 27-Nov-2012. JR 28-Nov-2012. ****
+[Cxc.tbl/SeEnviaBuroCreditoMavi]
+Clave=SeEnviaBuroCreditoMavi
+Nombre=Se Envia a Buro
+Visible=S
+TamanoValidacion=20
+TipoDatos=Lógico
+;ValorPorOmision=si(Mov En(<T>Cta Incobrable F<T>, <T>Cta Incobrable NV<T>), Verdadero, Falso)
+CondicionDespliege=Mov En(<T>Factura<T>, <T>Factura VIU<T>, <T>Factura Mayoreo<T>, <T>Credilana<T>, <T>Prestamo Personal<T>, <T>Endoso<T>, <T>Cta Incobrable F<T>, <T>Cta Incobrable NV<T>)
+;CondicionEdicion=usuario.usuario = <T>BUROC00001<T>
+CondicionEdicion=(usuario en sql(<T>select usuario from usuario where acceso=:tperfil<T>, <T>BUROC_GERA<T>)) o (usuario=<T>BUROC_GERA<T>)
+
+
+;*** Modificacion: 19-Mar-09   ALQG:  Integracion del desarrollo de Anticipos Folio 2600 ***
+;***** Campos Para control Politica de Enganche
+;***** EM 13-Feb-09
+;*** Se ingreso el desarrollo de Refinanciamiento - ALQG 270309 ***
+;*** Se integro modificacion Anticipos MAVI Moises Garcia 26/03/2009 MAVI0001
+[Cxc.tbl/Referencia]
+CondicionEdicion=(((Estatus en (EstatusSinAfectar,EstatusPorConfirmar)) o ((Estatus en (EstatusPendiente,EstatusPorAutorizar)) y Usuario.ModificarReferencias ) o Usuario.ModificarReferenciasSiempre)) y ((Mavi.BloqCposCxcAnticContApart<>051020) y (Condatos(Mov))) o ((Condatos(Mov)) y ((Mov<><T>Anticipo Contado<T>) y (Mov<><T>Apartado<T>) y (Mov<><T>Anticipo Mayoreo<T>) y (Mov<><T>Dev Anticipo Contado<T>) y (Mov<><T>Devolucion Apartado<T>))))
+CondicionDespliege=Mov <> <T>Sol Refinanciamiento<T>
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+[Cxc.tbl/SaldoDevueltoMAVI]
+Clave=SaldoDevueltoMAVI
+Nombre=SaldoDevueltoMAVI
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+
+[Cxc.tbl/SaldoAplicadoMAVI]
+Clave=SaldoAplicadoMAVI
+Nombre=SaldoAplicadoMAVI
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+
+[Cxc.tbl/RefAnticipoMAVI]
+Clave=RefAnticipoMAVI
+Nombre=Ap. Saldo
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Vista
+AyudaForma=CxcRefSaldoMavi
+AyudaVista=CxcRefSaldoMAVI
+AyudaCampo=Referencia
+AyudaRefrescar=S
+CondicionDespliege=MovTipoEn(<T>CXC<T>,Mov,(Cxc.DE))
+CondicionEdicion=Mov en (<T>Dev Anticipo Contado<T>,<T>Devolucion Apartado<T>,<T>Dev Anticipo Mayoreo<T>,<T>Devolucion Saldo<T>,<T>Devolucion Enganche<T>) y (Estatus en (EstatusSinAfectar,EstatusPorConfirmar)) o ((Estatus en (EstatusPendiente,EstatusPorAutorizar)) y Usuario.ModificarReferencias) o Usuario.ModificarReferenciasSiempre
+;CondicionEdicion=MovTipoEn (<T>CXC<T>,Mov,(CXC.DE)) y (Estatus en (EstatusSinAfectar,EstatusPorConfirmar)) o ((Estatus en (EstatusPendiente,EstatusPorAutorizar)) y Usuario.ModificarReferencias) o Usuario.ModificarReferenciasSiempre
+ListaRefrescar=Observaciones
+
+
+;*** Se ingreso el desarrollo de Refinanciamiento - ALQG 270309 ***
+;*** ARC 08-May-09 Se agrego una lista a refrescar para complementar la accion de totalizar ****
+;*** ALQG 16-Oct-09 Se quito la funcionalidad de refrescar los campos por solicitud de Leonid Rosas.
+[Cxc.tbl/AplicaManual]
+CondicionDespliege=MovTipoEn(<T>CXC<T>, Mov, (CXC.C,CXC.NC,CXC.NCD,CXC.NCF,CXC.CA,CXC.CAD,CXC.CAP,CXC.DV,CXC.D,CXC.DM,CXC.DA,CXC.DP,CXC.AE,CXC.ANC,CXC.ACA,CXC.DC,CXC.AJM,CXC.AJA,CXC.NET,CXC.RE,CXC.EST))<BR>y (Mov <> (<T>Sol Refinanciamiento<T>)) 
+CondicionEdicion=Usuario.AplicacionManualCxcMavi=Verdadero
+;ConRefrescar=S
+;ListaRefrescar=Importe<BR>Impuestos
+
+
+;**** Refinanciamiento
+[Cxc.tbl/Vencimiento]
+;CondicionDespliege=MovTipoEn(<T>CXC<T>, Mov, (CXC.F,CXC.FA,CXC.AF,CXC.CA,CXC.CAD,CXC.CAP,CXC.VV,CXC.CD,CXC.D,CXC.DM,CXC.DA,CXC.DP,CXC.NCP))<BR>o ((MovTipo(<T>CXC<T>,Mov) en (CXC.EST)) y (Mov=<T>Sol Refinanciamiento<T>))<BR>o ((MovTipo(<T>CXC<T>, Mov) en (CXC.FAC, CXC.DAC)) y (Estatus noen (EstatusSinAfectar, EstatusPorConfirmar)))
+CondicionEdicion=((Condicion=<T>(Fecha)<T>) y (Estatus en (EstatusSinAfectar, EstatusPorConfirmar))) o ((Estatus=EstatusPendiente) y Usuario.ModificarVencimientos)
+ListaRefrescar=FechaOriginal
+ConRefrescar=S
+
+;*** Relacion - Valida nivel de acceso ***
+[Cxc.tbl/Relaciones.Condicion]
+TipoRelacion=Opcional
+LlaveLocal=Condicion
+Clave=Condicion
+TablaRemota=Condicion
+LlaveRemota=Condicion
+
+
+;*** 22-May-09 Nuevo campo agregado - desarrollo Refinanaciamiento ****
+[Cxc.tbl/CondRef]
+Clave=CondRef
+Nombre=Condición Pago
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=Mov=<T>Sol Refinanciamiento<T>
+CondicionEdicion=((Usuario.ModifCondicionSolRefin) y (Mov=<T>Sol Refinanciamiento<T>) y  (Estatus en(EstatusPendiente)))
+ConRefrescar=S
+ListaRefrescar=Financiamiento
+AyudaEnCaptura=Expresion
+Formula=SQLEnLista(<T>spDesplegarCondicionesxUsuarioMAVI :tUsuario, :tUsuacioCfg<T> , Usuario, Usuario.Configuracion)
+AyudaMemOpc=Validar captura en la lista
+
+;Modificacion para acomodar el Nivel de Acceso ALQG - 15/06/2010
+[Cxc.tbl/Agente]
+ValidacionUsaTabla=N
+ValidacionTablas=
+CondicionDespliege=MovTipoEn(<T>CXC<T>, Mov, (CXC.A, CXC.AA, CXC.C, CXC.AR, CXC.F, CXC.FA, CXC.AF, CXC.CA, CXC.CAD, CXC.NC, CXC.NCD, CXC.NCF, CXC.CD, CXC.D, CXC.DM, CXC.EST))
+
+
+[Cxc.tbl/TipoCambio]
+CondicionEdicion=(no Usuario.BloquearMoneda)
+
+;*** Agrego Campo para Facturacion Electronica
+[Cxc.tbl/FacDesgloseIva]
+Clave=FacDesgloseIva
+Nombre=Desglosar IVA   
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Lógico
+ValorPorOmision=si(Mov En(<T>Nota Cargo Mayoreo<T>,<T>Nota Credito Mayoreo<T>),Verdadero,Falso)
+ListaRefrescar=FacDesgloseIva
+ValorRefrescar=si(Mov En(<T>Nota Cargo Mayoreo<T>,<T>Nota Credito Mayoreo<T>),Verdadero,Falso)
+CondicionDespliege=Mov En(<T>Nota Cargo<T>,<T>Nota Cargo Mayoreo<T>,<T>Nota Cargo VIU<T>,<T>Nota Credito Mayoreo<T>,<T>Nota Credito VIU<T>,<T>Nota Credito<T>)
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=FacDesgloseIva
+
+;Modificacion para acomodar el Nivel de Acceso ALQG - 15/06/2010
+[Cxc.tbl/Cajero]
+ValidacionUsaTabla=N
+ValidacionTablas=
+
+[Cxc.tbl/FechaOriginal]
+ValorRefrescar=Vencimiento
+
+[Cxc.tbl/FormaCobro]
+CondicionDespliege=MovTipoEn(<T>CXC<T>, Mov, (CXC.C, CXC.DP, CXC.DFA, CXC.NCP, CXC.A, CXC.AR, CXC.AA, CXC.DE, CXC.DI, CXC.DC, CXC.CAP, CXC.CA)) y (no ConDesglose)
+
+[Cxc.tbl/ConTramites]
+Clave=ConTramites
+Nombre=Pagó Aval
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+CondicionEdicion=SQL(<T>Select dbo.fn_MaviDM0169CheckCobro(:tCte)<T>,Cxc:Cxc.Cliente) = 1
+

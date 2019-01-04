@@ -1,0 +1,71 @@
+[Dinero.frm/Forma]
+ListaAcciones=Nuevo<BR>MovCopiar<BR>Abrir<BR>Localizar<BR>Guardar<BR>MovPersonal<BR>Evaluaciones<BR>Propiedades<BR>Imprimir<BR>RepPantalla<BR>PlantillasOffice<BR>FormasAnexas<BR>Excel<BR>Verificar<BR>Situacion<BR>Sucursal<BR>Afectar<BR>Autorizar<BR>Eliminar<BR>Cancelar<BR>Sugerir<BR>CorteCaja<BR>ReasignarUsuario<BR>Campos<BR>CamposExtras<BR>Totalizar<BR>Tareas<BR>Anexos<BR>ImporteConImpuestos<BR>CxcExpress<BR>CxpExpress<BR>Anterior<BR>Siguiente<BR>Info<BR>InfoDestino<BR>ProyInfo<BR>Tiempo<BR>Politica<BR>PoliticaConcepto<BR>MovPos<BR>Navegador<BR>Cerrar<BR>Otros1<BR>Otros2<BR>Otros3<BR>Otros4<BR>Otros5<BR>Otros6<BR>Otros7<BR>Otros8<BR>Otros9<BR>Impresion
+
+ExpresionesAlMostrar=Asigna(Info.Importe,Nulo)<BR>SI(SQL(<T>Select Acceso From Usuario Where Usuario=:tUsr<T>, Usuario) en (<T>VENTP_GERA<T>,<T>VENTP_USRA<T>,<T>VENTP_USRB<T>),Asigna(Filtro.Usuario, Usuario),<T> <T>)<BR><BR>Asigna(Info.Respuesta1, <T>No<T>)
+
+
+[Dinero.frm/(Carpeta Abrir)]
+ListaEnCaptura=CtaAnterior<BR>Dinero.CtaDinero<BR>Dinero.CtaDineroDestino<BR>Dinero.Referencia<BR>Dinero.BeneficiarioNombre<BR>Dinero.FechaEmision<BR>ImporteTotal<BR>Dinero.Saldo<BR>Dinero.Moneda
+FiltroAutoCampo=Dinero.Moneda
+FiltroAutoValidar=Dinero.Moneda
+
+FiltroGeneral={Si(ConDatos(Filtro.Usuario), <T>  Dinero.Usuario=Case When Dinero.Mov in(<T>+Comillas(<T>Apertura Caja<T>) + <T>, <T>+Comillas(<T>Corte Caja<T>) +<T>) Then <T>+ Comillas(Filtro.Usuario)+<T> Else Dinero.Usuario End<T>, <T> 1=1 <T>)}
+
+[Dinero.frm/(Carpeta Abrir).CtaAnterior]
+Carpeta=(Carpeta Abrir)
+Clave=CtaAnterior
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[Dinero.frm/Acciones.CorteCaja]
+ActivoCondicion=MovTipoEn(<T>DIN<T>, Dinero:Dinero.Mov, (DIN.C, DIN.CP)) y (Dinero:Dinero.Estatus=EstatusConcluido) y  (SQL(<T>SELECT COUNT(U.Usuario) FROM dbo.Usuario U INNER JOIN TablaStD T ON T.TablaSt=<T>+Comillas(<T>PERFILES TABULAR DE RECIBOS<T>)+<T> AND T.Nombre=Acceso WHERE U.Usuario=:tUsr<T>,Usuario)>0)
+
+
+[Dinero.frm/Acciones.Sugerir]
+ActivoCondicion=MovTipoEn(<T>DIN<T>, Dinero:Dinero.Mov, (DIN.C, DIN.CP, DIN.TC)) y (Dinero:Dinero.Estatus en (EstatusSinAfectar, EstatusPorConfirmar)) y (Usuario.GrupoTrabajo En(<T>ADMINISTRADORES<T>,<T>ADMINISTRADORES CD<T>,<T>AUDITORIA<T>,<T>DIRECCION<T>,<T>INSTRUCTORES<T>,<T>TESORERIA<T>))
+
+
+[Dinero.frm/Acciones.CamposExtras]
+Antes=S
+DespuesGuardar=S
+AntesExpresiones=Asigna(Info.IDMAVI, Dinero:Dinero.ID)
+
+
+[Dinero.frm/Acciones.Afectar]
+ConCondicion=S
+GuardarAntes=S
+Expresion=GuardarCambios<BR><BR>Si<BR>  (Dinero:Dinero.Estatus=EstatusPendiente) y MovTipoEn(<T>DIN<T>, Dinero:Dinero.Mov, (DIN.I, DIN.E, DIN.F, DIN.SD, DIN.SCH, DIN.INV, DIN.TI)))<BR>Entonces<BR>  Asigna(Info.Modulo, <T>DIN<T>)<BR>  Asigna(Info.Mov, Dinero:Dinero.Mov)<BR>  Asigna(Info.MovID, Dinero:Dinero.MovID)<BR>  Asigna(Afectar.Modulo, <T>DIN<T>)<BR>  Asigna(Afectar.ID, Dinero:Dinero.ID)<BR>  Asigna(Afectar.Mov, Dinero:Dinero.Mov)<BR>  Asigna(Afectar.MovID, Dinero:Dinero.MovID)<BR>  Asigna(Afectar.FormaCaptura, <T>Dinero<T>)<BR>  Asigna(Info.TituloDialogo, Afectar.Mov+<T> <T>+Afectar.MovID)<BR>  Si<BR>    ConfigModulo(Info.Modulo, <T>FlujoAbierto<T>) = <T>Si<T><BR>  Entonces<BR>    Si<BR>      Forma(<T>GenerarMovFlujo<T>)<BR>    Entonces<BR>      Asigna(Afectar.GenerarMov, Info.MovGenerar)<BR> <CONTINUA>
+Expresion002=<CONTINUA>     Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, Afectar.GenerarMov, Afectar.FormaCaptura)<BR>    Fin<BR>  Sino<BR>    Caso MovTipo(<T>DIN<T>,Dinero:Dinero.Mov)<BR>      Es DIN.I   Entonces Dialogo(<T>GenerarDineroIngreso<T>)<BR>      Es DIN.SD  Entonces Dialogo(<T>GenerarDineroIngreso<T>)<BR>      Es DIN.E   Entonces Dialogo(<T>GenerarDineroEgreso<T>)<BR>      Es DIN.SCH Entonces Dialogo(<T>GenerarDineroEgreso<T>)<BR>      Es DIN.INV Entonces Dialogo(<T>GenerarDineroInversion<T>)<BR>      Es DIN.TI  Entonces Dialogo(<T>GenerarDineroTraspaso<T>)<BR>    Fin<BR>  Fin<BR>Sino<BR>  Afectar(<T>DIN<T>, Dinero:Dinero.ID, Dinero:Dinero.Mov, Dinero:Dinero.MovID, <T>Todo<T>, <T><T>, <T>Dinero<T>)<BR>  Si<BR>    Dinero:CtaDinero.Tipo=<T>Caja<T><BR>  Entonces<BR>    Asi<CONTINUA>
+Expresion003=<CONTINUA>gna(Temp.Texto, SQL(<T>spAlertaCtaDinero :tEmp, :tCta<T>, Empresa, Dinero:Dinero.CtaDinero))<BR>    Si(ConDatos(Temp.Texto), Precaucion(Temp.Texto))<BR>    Si<BR>      ConDatos(Dinero:Dinero.CtaDineroDestino)<BR>    Entonces<BR>      Asigna(Temp.Texto, SQL(<T>spAlertaCtaDinero :tEmp, :tCta<T>, Empresa, Dinero:Dinero.CtaDineroDestino))<BR>      Si(ConDatos(Temp.Texto), Precaucion(Temp.Texto))<BR>    Fin<BR>  Fin<BR>Fin<BR><BR>SI (SQL(<T>SELECT CASE WHEN :nDinero < (Select ISNULL(CAST(SUM(ImpIng) AS MONEY),0) From V_MaviConcentradoCortesCaja<BR>    WHERE CorCor=:nID AND Mov= <T>+Comillas(<T>Ingreso<T>)+<T>) AND <T>+Comillas(<T>Corte Caja<T>)+<T>=:tMov THEN 1 ELSE 0 END<T>,Dinero:Dinero.Importe,Dinero:Dinero.ID,Dinero:Dinero.Mov))=1<BR>ENTONCES<BR>        informacion(<T>Tiene Faltantes,Favor <CONTINUA>
+Expresion004=<CONTINUA>de Revisar para Concluir tu Movimiento.<T>)<BR>SINO<BR>    1=0<BR>FIN<BR>//SI Dinero:Dinero.Estatus=<T>concluido<T> entonces<BR>EjecutarSQL(<T>EXEC SP_MaviDM0268CapturaCheques :tID<T>,Dinero:Dinero.ID)<BR><BR>Caso  Dinero:Dinero.Mov<BR>  Es <T>Envio Dinero<T> Entonces<BR>    EjecutarSQL(<T>EXEC dbo.SP_MaviDM0260ValidacionAirPackActualiza :tMov, :tRef, :nID, :nAfec<T>,<T>Envio<T>,Dinero:Dinero.Referencia,Dinero:Dinero.ID,1)<BR>  Es <T>Pago Dinero<T> Entonces<BR>    EjecutarSQL(<T>EXEC dbo.SP_MaviDM0260ValidacionAirPackActualiza :tMov, :tRef , :nID, :nAfec<T>,<T>Pago<T>,Dinero:Dinero.Referencia,Dinero:Dinero.ID,1)<BR>Fin
+EjecucionCondicion=Caso  Dinero:Dinero.Mov<BR>  Es <T>Envio Dinero<T> Entonces<BR>    si SQL(<T>EXEC dbo.SP_MaviDM0260ValidacionAirPack :tMov, :tRef, :nImp ,:tFormaP<T>,<T>Envio<T>,Dinero:Dinero.Referencia,Dinero:Dinero.Importe, Dinero:Dinero.FormaPago)=0) Entonces<BR>        informacion(<T>los datos del envio son incorrectos<T>)<BR>        falso<BR>    sino<BR>        verdadero<BR>    Fin<BR>  Es <T>Pago Dinero<T> Entonces<BR>    si SQL(<T>EXEC dbo.SP_MaviDM0260ValidacionAirPack :tMov, :tRef , :nImp, :tFormaP<T>,<T>Pago<T>,Dinero:Dinero.Referencia,Dinero:Dinero.Importe, Dinero:Dinero.FormaPago)=0) Entonces<BR>        informacion(<T>los datos del Pago son incorrectos<T>)<BR>        Falso<BR>    sino<BR>        verdadero<BR>    Fin<BR>sino<BR>   verdadero<BR>FIN
+AntesExpresiones=Asigna(Info.IDMAVI, Dinero:Dinero.ID)<BR>Si(General.AdvertirProyectosExpirados, Si(SQL(<T>SELECT COUNT(*) FROM Proy WHERE (Estatus = :tBaja OR FechaFin+1<GETDATE()) AND Proyecto=:tProy<T>, EstatusBaja, Dinero:Dinero.Proyecto) > 0, Si(Precaucion(<T>Proyecto Expirado<T>, BotonAceptar, BotonCancelar)=BotonCancelar, AbortarOperacion)))<BR>Si<BR>  ConDatos(Dinero:Dinero.CtaDinero) y (MovTipo(<T>DIN<T>, Dinero:Dinero.Mov) = DIN.D) y (Dinero:Dinero.Moneda<>Dinero:CtaDinero.Moneda)<BR>Entonces<BR>  Si<BR>    Confirmacion(<T>La Moneda del <T>+Dinero:Dinero.Mov+<BR>                 <T> Difiere con la Moneda de la Cuenta.<T>+             <BR>                  NuevaLinea+<BR>                 <T>El Importe se Va a Convertir a la Moneda de la Cuenta.<T>+<BR>                  NuevaLinea+NuevaLinea+<BR>  <CONTINUA>
+AntesExpresiones002=<CONTINUA>               <T>¿ Desea Continuar ?<T>, BotonSi, BotonNo) = BotonNo<BR>  Entonces<BR>    AbortarOperacion                   <BR>  Fin                        <BR>Fin<BR>Si<BR>  General.CamposExtras=<T>Campos Extras<T> y (Dinero:Dinero.Estatus en (EstatusSinAfectar, EstatusPorConfirmar, EstatusBorrador)) y SQL(<T>SELECT CEAntesAfectar FROM MovTipo WHERE Modulo=:tModulo AND Mov=:tMov AND CE=1<T>, <T>DIN<T>, Dinero:Dinero.Mov)<BR>Entonces<BR>  Si(no CamposExtrasMovimiento(<T>DIN<T>, Dinero:Dinero.Mov, Dinero:Dinero.ID, Verdadero, Dinero:Dinero.Estatus noen (EstatusSinAfectar, EstatusPorConfirmar, EstatusBorrador)), AbortarOperacion)<BR>FIn<BR>Si ((Dinero:Dinero.Mov=<T>Cargo Bancario<T>)y(Dinero:Dinero.Estatus en (EstatusSinAfectar))y(Vacio(Dinero:Dinero.Concepto)))<BR>Entonces               <CONTINUA>
+AntesExpresiones003=<CONTINUA>                             <BR>    Si(Precaucion(<T>Capture un Concepto Valido...<T>, BotonAceptar)=BotonAceptar, AbortarOperacion,AbortarOperacion)<BR>SiNo<BR>    Verdadero<BR>Fin<BR>SI<BR>   SQL(<T>Select dbo.fn_MaviDM0169validaMovDinero(:nID)<T>,Dinero:Dinero.ID) = 1<BR> Entonces<BR>     SI(ConDatos(Dinero:Dinero.Referencia),Verdadero,Error(<T>Favor de poner en el campo referencia el MTCN<T>) AbortarOperacion)<BR>  Sino<BR>    Verdadero    <BR>FIN<BR><BR>Si<BR>  (Dinero:Dinero.Mov = <T>Corte Caja<T>) y (Info.Respuesta1 = <T>No<T>)<BR>Entonces<BR>    Si SQL(<T>Select COUNT(*) from  dbo.FN_DM0255ValidaUEN (:tusuario)<T>,  Usuario) = 1<BR>    Entonces<BR>        Si Precaucion(SQL(<T>Select * from  dbo.FN_DM0255ValidaUEN (:tusuario)<T>,  Usuario),  BotonSi ) =  BotonSi<BR>           Enton<CONTINUA>
+AntesExpresiones004=<CONTINUA>ces<BR>               Forma(<T>DM0255ValidaCorteFrm<T>)<BR>               Asigna(Info.Ano, Dinero:Dinero.ID )                                               <BR>               AbortarOperacion<BR>           SiNo<BR>               AbortarOperacion<BR>        Fin<BR>     SiNo                                                                            <BR><BR>         Asigna(Info.Respuesta1, <T>Si<T>)<BR>    Fin<BR>Fin<BR> Asigna(Info.Respuesta1, <T>No<T>)<BR><BR>Asigna(MAVI.DM0268ValidaMensajeError,SQL(<T>exec SP_MaviDM0268ValidaTipoContacto :nId<T>,Info.IDMAVI))<BR>SI MAVI.DM0268ValidaMensajeError<><T>Permite<T><BR>Entonces<BR>  informacion(MAVI.DM0268ValidaMensajeError)<BR>  AbortarOperacion<BR>Fin
+
+
+[Dinero.frm/Acciones.Impresion]
+Nombre=Impresion
+Boton=96
+NombreEnBoton=S
+NombreDesplegar=ImpresionCheque
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Asigna(Info.ID,Dinero:Dinero.ID)<BR><BR>SI<BR>  SQL(<T>SELECT B.Banco FROM Dinero D<BR>         INNER JOIN CtaDinero CA ON CA.CtaDinero = D.CtaDinero<BR>         INNER JOIN BancoSucursal B ON CA.BancoSucursal = B.BancoSucursal<BR>         WHERE id =:nNum<T>,Info.ID)  = <T>HSBC<T><BR>Entonces<BR>    ReportePantalla(<T>RM01005ChequesHSBCMAVIMP<T>)<BR><BR>Sino<BR>  Si<BR>    SQL(<T>SELECT B.Banco FROM Dinero D<BR>         INNER JOIN CtaDinero CA ON CA.CtaDinero = D.CtaDinero<BR>         INNER JOIN BancoSucursal B ON CA.BancoSucursal = B.BancoSucursal<BR>         WHERE id =:nNum<T>,Info.ID) = <T>BANCO DEL BAJIO<T><BR>  Entonces<BR>     ReportePantalla(<T>RM1005ChequesBajioMAVIMP<T>)
+
+[Dinero.frm/Acciones.Cancelar]
+Expresion=Si<BR>  Dinero:Dinero.Mov en (<T>Pago Dinero<T>,<T>Envio Dinero<T>)<BR>Entonces<BR>    Si<BR>      sql(<T>Select dbo.FN_DM0209ComprobarCancelado (:tMov,:tMovID)<T>,Dinero:Dinero.Mov,Dinero:Dinero.MovID)= 0<BR>    Entonces<BR>       Forma(<T>DM0209CXCValidarCancelacion<T>)<BR>    Sino<BR>        Cancelar(<T>DIN<T>, Dinero:Dinero.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, <T><T>, <T>Dinero<T>)<BR>   fin<BR>Sino<BR>  Cancelar(<T>DIN<T>, Dinero:Dinero.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, <T><T>, <T>Dinero<T>)<BR>Fin<BR>Caso  Dinero:Dinero.Mov<BR>  Es <T>Envio Dinero<T> Entonces<BR>    EjecutarSQL(<T>EXEC dbo.SP_MaviDM0260ValidacionAirPackActualiza :tMov, :tRef, :nID, :nAfec<T>,<T>Envio<T>,Dinero:Dinero.Referencia,Dinero:Dinero.ID,0)<BR>  Es <T>Pago Dinero<T> Ent<CONTINUA>
+Expresion002=<CONTINUA>onces<BR>    EjecutarSQL(<T>EXEC dbo.SP_MaviDM0260ValidacionAirPackActualiza :tMov, :tRef , :nID, :nAfec<T>,<T>Pago<T>,Dinero:Dinero.Referencia,Dinero:Dinero.ID,0)<BR>Fin
+
+
+
+[Dinero.frm/Ficha.Dinero.TipoCambio]
+Editar=N

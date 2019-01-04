@@ -1,0 +1,42 @@
+[CtaDinero.tbl/CLABE]
+TamanoValidacion=18
+ConRefrescar=S
+AlCambiar=si (longitud(CLABE)=18)  y (Categoria=<T>PROVEEDORES<T>) entonces<BR>    asigna(Mavi.DM0169BanderaContabilidad,1)<BR>Fin
+ListaRefrescar=NumeroCta<BR>Institucion<BR>BancoSucursal
+MascaraEdicion=
+ValorMaximo=999999999999999999
+ValidacionConCondiciones=S
+ValidacionCondicion=si longitud(CLABE)=Longitud(Recorta(CLABE)) y longitud(CLABE)<18 y (Categoria=<T>PROVEEDORES<T>) entonces<BR>        falso<BR>    sino<BR>     verdadero<BR>    fin
+
+
+[CtaDinero.tbl/Institucion]
+CondicionEdicion=si Mavi.DM0169BanderaContabilidad=1 entonces<BR>     verdadero<BR>sino<BR>     falso<BR>fin
+AlCambiar=si condatos(CtaDinero.Institucion) entonces<BR>    asigna(Mavi.DM0169BanderaSucBanco,1)<BR>sino<BR>    asigna(Mavi.DM0169BanderaSucBanco,0)<BR>fin
+ValorRefrescar=si (longitud(CLABE)=18)  y (Categoria=<T>PROVEEDORES<T>) entonces<BR>    SQL(<T>SELECT Nombre FROM CFDINominaSATInstitucionFin WHERE clave=:tDat<T>, medio(CLABE,1,3))<BR>Fin
+ConRefrescar=S
+ListaRefrescar=BancoSucursal
+
+[CtaDinero.tbl/Categoria]
+AlCambiar=si categoria=<T>PROVEEDORES<T> entonces<BR>     asigna(Mavi.DM0169BanderaContabilidad,0)<BR>     asigna(Mavi.DM0169BanderaSucBanco,0)<BR>sino<BR>    asigna(Mavi.DM0169BanderaContabilidad,1)<BR>    asigna(Mavi.DM0169BanderaSucBanco,1)<BR>fin
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=NumeroCta<BR>Institucion<BR>BancoSucursal<BR>Estatus<BR>Acreedor<BR>Uso
+
+[CtaDinero.tbl/NumeroCta]
+ValorRefrescar=si Longitud(CLABE)=18 entonces<BR>    Medio( CLABE, 7, 17)<BR>Fin
+CondicionEdicion=si Mavi.DM0169BanderaContabilidad=1 entonces<BR>     verdadero<BR>sino<BR>     falso<BR>fin
+
+[CtaDinero.tbl/BancoSucursal]
+CondicionEdicion=si Mavi.DM0169BanderaContabilidad=1 entonces<BR>     verdadero<BR>sino<BR>     falso<BR>fin
+ValorRefrescar=si condatos(Institucion) entonces<BR>    SQL(<T>SELECT TOP 1 BancoSucursal FROM bancoSucursal WHERE Banco= :tdato ORDER BY alta DESC<T>,Institucion)<BR>fin
+
+[CtaDinero.tbl/Estatus]
+ValorPorOmision=<T>BAJA<T>
+CondicionEdicion=si Mavi.DM0169BanderaContabilidad=1 entonces<BR>     verdadero<BR>sino<BR>     falso<BR>fin
+
+[CtaDinero.tbl/Acreedor]
+RequeridoActivo=S
+CondicionEdicion=si Mavi.DM0169BanderaContabilidad=1 entonces<BR>   Falso<BR>sino<BR>     Verdadero<BR>fin
+
+[CtaDinero.tbl/Uso]
+ValorPorOmision=<T>Terceros<T>
+ValorRefrescar=si (Categoria=<T>PROVEEDORES<T>) entonces<BR>   <T>Terceros<T><BR>Fin

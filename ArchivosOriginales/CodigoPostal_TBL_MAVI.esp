@@ -1,0 +1,40 @@
+;**** Ultima modificación:16-May-08
+;**** Modifico:Enrique Toral
+;**** Se modifico:Integracion en el objeto que le corresponde --Arly
+
+
+
+
+
+
+[CodigoPostal.tbl/Tabla]
+;ListaCampos.Cambios=Insertar<TAB>MaviRutaSupervision<TAB>7
+;SQL.Cambios=Eliminar<TAB>  LocalidadCNBV<BR>Insertar<TAB>  LocalidadCNBV,<TAB>7<BR>Insertar<TAB>  MaviRutaSupervision<TAB>8
+ListaCampos=ID<BR>CodigoPostal<BR>Colonia<BR>Delegacion<BR>Estado<BR>Ruta<BR>LocalidadCNBV<BR>MaviRutaSupervision<BR>Cobranza
+SQL=SELECT<BR>  ID,<BR>  CodigoPostal,<BR>  Colonia,<BR>  Delegacion,<BR>  Estado,<BR>  Ruta,<BR>  LocalidadCNBV,<BR>  MaviRutaSupervision,<BR>  Cobranza<BR><BR>FROM<BR>  CodigoPostal
+
+
+[CodigoPostal.tbl/MaviRutaSupervision]
+Clave=MaviRutaSupervision
+Nombre=Ruta de Supervisión
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+Formula=SQLEnLista(<T>SELECT Ruta FROM MaviRutaSupervision<T>)
+
+
+;*** ARC Nuevo campo agregado desarrollo cobranza menudeo ***
+[CodigoPostal.tbl/Cobranza]
+Clave=Cobranza
+Nombre=Cobranza
+Visible=S
+TamanoValidacion=100
+Tamano=100
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Ruta
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S

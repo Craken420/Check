@@ -1,0 +1,25 @@
+;Modifico: ARC
+;Ultima Modificacion: 28-Feb-09
+
+
+
+
+;**** Nuevos campos agregados: ARC COmisionChoferesMAVI ****
+[Departamento.vis/Vista]
+ListaCampos=Departamento.Departamento<BR>Departamento.Descripcion<BR>Departamento.Localidad<BR>Departamento.CtaDinero<BR>Departamento.Sucursal<BR>Departamento.ComisionChoferesMAVI<BR>CtaDinero.CtaDinero<BR>CtaDinero.Descripcion<BR>CtaDinero.Estatus<BR>Sucursal.Sucursal<BR>Sucursal.Nombre
+SQL=SELECT<BR>  Departamento.Departamento,<BR>  Departamento.Descripcion,<BR>  Departamento.Localidad,<BR>  Departamento.CtaDinero,<BR>  Departamento.Sucursal,<BR>  Departamento.ComisionChoferesMAVI,<BR>  CtaDinero.CtaDinero,<BR>  CtaDinero.Descripcion,<BR>  CtaDinero.Estatus,<BR>  Sucursal.Sucursal,<BR>  Sucursal.Nombre<BR><BR>FROM<BR>  Departamento<BR>  LEFT OUTER JOIN CtaDinero ON Departamento.CtaDinero=CtaDinero.CtaDinero<BR>  LEFT OUTER JOIN Sucursal ON Departamento.Sucursal=Sucursal.Sucursal
+
+
+
+;**** Nuevo campo agregado ****
+[Departamento.vis/Departamento.ComisionChoferesMAVI]
+Clave=Departamento.ComisionChoferesMAVI
+Nombre=Comisión Choferes
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+LigaTabla=Departamento
+LigaCampo=ComisionChoferesMAVI
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=ComisionChoferesMAVI

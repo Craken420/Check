@@ -1,0 +1,52 @@
+[ArtAlm.frm/Acciones.Eliminar]
+Activo=S
+
+[ArtAlm.frm/Forma]
+PosicionInicialIzquierda=225
+PosicionInicialArriba=134
+PosicionInicialAncho=909
+VentanaTipoMarco=Normal
+ListaAcciones.Cambios=Insertar<TAB>Refrescar<TAB>4
+PosicionInicialAlturaCliente=465
+VentanaEstadoInicial=Normal
+
+[ArtAlm.frm/Hoja]
+FiltroRespetar=
+ListaOrden=
+FiltroGeneral=ArtAlm.Empresa= <T>{Empresa}<T> And ArtAlm.Articulo=<T>{Info.Articulo}<T>
+HojaIndicador=S
+RefrescarAlEntrar=S
+
+[ArtAlm.frm/Acciones.Nuevo]
+Multiple=S
+ListaAccionesMultiples=Nue<BR>Valores
+
+[ArtAlm.frm/Acciones.Nuevo.Nue]
+Nombre=Nue
+Boton=0
+Carpeta=(Carpeta principal)
+TipoAccion=controles Captura
+ClaveAccion=Registro Agregar
+Activo=S
+Visible=S
+
+[ArtAlm.frm/Acciones.Nuevo.Valores]
+Nombre=Valores
+Boton=0
+TipoAccion=expresion
+Activo=S
+Visible=S
+Expresion={Asigna(ArtAlm:ArtAlm.Minimo, <T>1<T>)<BR>Asigna(ArtAlm:ArtAlm.Maximo, <T>1<T>)<BR>}
+
+[ArtAlm.frm/Acciones.Refrescar]
+Nombre=Refrescar
+Boton=82
+NombreEnBoton=S
+NombreDesplegar=&Refresh
+EnBarraHerramientas=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=ActualizarForma
+
+

@@ -1,0 +1,44 @@
+;**** Ultima modificación:16-May-08
+;**** Modifico:Enrique Toral
+;**** Se modifico:Integracion en el objeto que le corresponde --Arly
+
+
+
+
+[CodigoPostal.vis/Vista]
+;ListaCampos.Cambios=Insertar<TAB>CodigoPostal.MaviRutaSupervision<TAB>7
+;SQL.Cambios=Insertar<TAB>  CodigoPostal.MaviRutaSupervision,<TAB>8
+ListaCampos=CodigoPostal.ID<BR>CodigoPostal.CodigoPostal<BR>CodigoPostal.Colonia<BR>CodigoPostal.Delegacion<BR>CodigoPostal.Estado<BR>CodigoPostal.Ruta<BR>CodigoPostal.LocalidadCNBV<BR>LocalidadCNBV.Nombre<BR>CodigoPostal.MaviRutaSupervision<BR>CodigoPostal.Cobranza
+SQL=SELECT<BR>  CodigoPostal.ID,<BR>  CodigoPostal.CodigoPostal,<BR>  CodigoPostal.Colonia,<BR>  CodigoPostal.Delegacion,<BR>  CodigoPostal.Estado,<BR>  CodigoPostal.Ruta,<BR>  CodigoPostal.LocalidadCNBV,<BR>  LocalidadCNBV.Nombre,<BR>  CodigoPostal.MaviRutaSupervision,<BR>  CodigoPostal.Cobranza<BR><BR>FROM<BR>  CodigoPostal<BR>  LEFT OUTER JOIN LocalidadCNBV ON CodigoPostal.LocalidadCNBV=LocalidadCNBV.LocalidadCNBV <BR>ORDER bY<BR>  CodigoPostal.Estado,<BR>  CodigoPostal.Delegacion,<BR>  CodigoPostal.Colonia
+
+
+
+[CodigoPostal.vis/CodigoPostal.MaviRutaSupervision]
+Clave=CodigoPostal.MaviRutaSupervision
+Nombre=MaviRutaSupervision
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+Formula=SQLEnLista(<T>SELECT Ruta FROM MaviRutaSupervision<T>)
+LigaTabla=CodigoPostal
+LigaCampo=MaviRutaSupervision
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=MaviRutaSupervision
+
+
+;***ARC 19-May-09 Nuevo campo agregado desarrollo cobranza menudeo***
+[CodigoPostal.vis/CodigoPostal.Cobranza]
+Clave=CodigoPostal.Cobranza
+LigaTabla=CodigoPostal
+LigaCampo=Cobranza
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=Cobranza

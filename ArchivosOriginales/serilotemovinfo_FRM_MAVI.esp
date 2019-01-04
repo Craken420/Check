@@ -1,0 +1,3 @@
+;SE QUITA DEL FILTRO GENERAL QUE BUSQUE POR EL CAMPO SUBCUENTA FERNANDO ROMERO ROBLES 03/10/17 
+[SerieLoteMovinfo.frm/Lista]
+FiltroGeneral=SerieLoteMov.Empresa   = <T>{Empresa}<T>       AND<BR>SerieLoteMov.Modulo    = <T>{Info.Modulo}<T>   AND<BR>SerieLoteMov.ID        = {Info.ID}         AND<BR>SerieLoteMov.RenglonID = {Info.RenglonID}  AND<BR>SerieLoteMov.Articulo  = <T>{Info.Articulo}<T>

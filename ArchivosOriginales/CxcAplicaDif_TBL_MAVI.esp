@@ -1,0 +1,16 @@
+[CxcAplicaDif.tbl/Concepto]
+;AyudaEnCaptura=Expresion
+;AyudaMemRenglones=12
+;AyudaMemOpc=Validar captura en la lista
+;AyudaMemEnBlanco=S
+;AyudaRefrescar=S
+;ValorRefrescar=ConceptoOmision(<T>CXC<T>, Mov)
+ValorPorOmision=<T>COBRO DE MAS<T>
+CondicionEdicion=1=0
+ValorRefrescar=<T>COBRO DE MAS<T>
+
+[CxcAplicaDif.tbl/Mov]
+Formula=SQLEnLista(<T>SELECT Mov FROM dbo.MovTipo WHERE Mov NOT IN (<T>+Comillas(<T>Aplicacion Nomina<T>)+<T>,<T>+Comillas(<T>Cancelacion Nomina<T>)+<T>,<T>+Comillas(<T>Conversion Credito<T>)+<T>,<T>+Comillas(<T>Gasto<T>)+<T>) AND Clave=:tClave<T>,<T>CXC.NC<T>)//SQLEnLista(<T>spVerAplicaDifMov :tModulo, :nSaldo<T>, <T>CXC<T>, Info.Saldo)
+
+[CxcAplicaDif.tbl/ClienteEnviarA]
+Requerido=S

@@ -1,0 +1,244 @@
+;**** Ultima modificación:27-Feb-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:Se agrego nueva accion "Entrega Publicidad"
+
+
+; *** Se agregaron nuevas acciones: EntradaDiversa,EntregaPapeleria,AsignaActivoFijo,EnvioCompra,EntregaPublicidad ***
+[GenerarSolicitud.dlg/Dialogo]
+Clave=GenerarSolicitud
+Nombre=Solicitud
+Icono=17
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+PosicionInicialIzquierda=502
+PosicionInicialArriba=350
+PosicionInicialAltura=261
+PosicionInicialAncho=276
+ListaAcciones=SalidaDiversa<BR>Prestamo<BR>Transferencia<BR>Traspaso<BR>SolicitudCancelada<BR>Reservar<BR>DesReservar<BR>Asignar<BR>DesAsignar<BR>EntradaDiversa<BR>EntregaPapeleria<BR>AsignaActivoFijo<BR>EnvioCompra<BR>EntregaPublicidad<BR>EntregaMantto
+VentanaSiempreAlFrente=S
+VentanaConIcono=S
+PosicionInicialAlturaCliente=66
+
+; *** Se modifico para que esta acción no sea visible ***
+[GenerarSolicitud.dlg/Acciones.Reservar]
+Nombre=Reservar
+Boton=0
+NombreDesplegar=Reser&var
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=Reservar
+ActivoCondicion=Usuario.Reservar
+Visible=N
+
+
+; *** Se modifico para que esta acción no sea visible ***
+[GenerarSolicitud.dlg/Acciones.DesReservar]
+Nombre=DesReservar
+Boton=0
+NombreDesplegar=De&s-Reservar
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=DesReservar
+ActivoCondicion=Usuario.DesReservar
+Visible=N
+
+
+; *** Se modifico para que esta acción no sea visible ***
+[GenerarSolicitud.dlg/Acciones.Asignar]
+Nombre=Asignar
+Boton=0
+NombreDesplegar=As&ignar
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=Asignar
+ActivoCondicion=Usuario.Asignar y Config.BackOrders
+Visible=N
+
+
+; *** Se modifico para que esta acción no sea visible ***
+[GenerarSolicitud.dlg/Acciones.DesAsignar]
+Nombre=DesAsignar
+Boton=0
+NombreDesplegar=Des-Asig&nar
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=DesAsignar
+Visible=N
+ActivoCondicion=Usuario.DesAsignar y Config.BackOrders
+
+; *** Se modifico para que esta acción sea visible solo si el movimiento es: "Solicitud Salida"***
+[GenerarSolicitud.dlg/Acciones.SalidaDiversa]
+Nombre=SalidaDiversa
+Boton=0
+NombreDesplegar=Generar &Salida Diversa
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Visible=N
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.InvSalidaDiversa)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.Mov en (<T>Solicitud Salida<T>)
+
+*** Esta acción aun no es visible en ningun movimiento ***
+[GenerarSolicitud.dlg/Acciones.Prestamo]
+Nombre=Prestamo
+Boton=0
+NombreDesplegar=Generar &Prestamo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Visible=N
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.InvPrestamo)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+
+
+
+*** Esta acción aun no es visible en ningun movimiento ***
+[GenerarSolicitud.dlg/Acciones.Transferencia]
+Nombre=Transferencia
+Boton=0
+NombreDesplegar=Generar &Transferencia
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Visible=N
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.InvTransferencia)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+
+
+; *** Se modifico para que esta acción sea visible solo si el movimiento es: "Solicitud"***
+[GenerarSolicitud.dlg/Acciones.Traspaso]
+Nombre=Traspaso
+Boton=0
+NombreDesplegar=Generar &Orden Traspaso
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Visible=N
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.InvOrdenTraspaso)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.Mov = <T>Solicitud<T>
+
+
+; *** Se modifico para que esta acción sea visible solo si el movimiento es: "Solicitud"***
+[GenerarSolicitud.dlg/Acciones.SolicitudCancelada]
+Nombre=SolicitudCancelada
+Boton=0
+NombreDesplegar=&Generar Solicitud &Cancelada
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Visible=N
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.InvSolicitudCancelada)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.Mov = <T>Solicitud<T>
+
+; **** Nueva Accion Agregada, solo es visible si el movimiento es: "Solicitud Entrada" ****
+[GenerarSolicitud.dlg/Acciones.EntradaDiversa]
+Nombre=EntradaDiversa
+Boton=0
+NombreDesplegar=Generar Entrada &Diversa
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, <T>Entrada Diversa<T>)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=info.Mov = <T>Solicitud Entrada<T>
+
+
+; **** Nueva Accion Agregada, solo es visible si el movimiento es: "Solicitud Papeleria" ****
+[GenerarSolicitud.dlg/Acciones.EntregaPapeleria]
+Nombre=EntregaPapeleria
+Boton=0
+NombreDesplegar=Generar Entrega P&apeleria
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, <T>Entrega Papeleria<T>)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.Mov = <T>Solicitud Papeleria<T>
+
+
+; **** Nueva Accion Agregada, solo es visible si el movimiento es: "Solicitud Sistemas" ****
+[GenerarSolicitud.dlg/Acciones.AsignaActivoFijo]
+Nombre=AsignaActivoFijo
+Boton=0
+NombreDesplegar=Generar Asignación Activo &Fijo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, <T>Asignar ActivoFijo<T>)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.Mov = <T>Solicitud Sistemas<T>
+
+
+; **** Nueva Accion Agregada, solo es visible si el movimiento es: "Solicitud Sistemas" ****
+[GenerarSolicitud.dlg/Acciones.EnvioCompra]
+Nombre=EnvioCompra
+Boton=0
+NombreDesplegar=Generar &Envio Compras
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, <T>Envio Compras<T>)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.Mov = <T>Solicitud Sistemas<T>
+
+
+; **** Nueva Accion Agregada, solo es visible si el movimiento es: "Sol Art Publicidad" ****
+[GenerarSolicitud.dlg/Acciones.EntregaPublicidad]
+Nombre=EntregaPublicidad
+Boton=0
+NombreDesplegar=Generar Entrega Publicidad
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, <T>Entrega Publicidad<T>)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.Mov = <T>Sol Art Publicidad<T>
+
+; **** Nueva Accion Agregada, solo es visible si el movimiento es: "Sol Mantto" ****
+[GenerarSolicitud.dlg/Acciones.EntregaMantto]
+Nombre=EntregaMantto
+Boton=0
+NombreDesplegar=Generar Entrega &Mantto
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, <T>Ent Mantto<T>)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.Mov = <T>Sol Mantto<T>

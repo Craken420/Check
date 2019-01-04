@@ -1,0 +1,35 @@
+;Ultima modificacion: 23-Jul-2008
+;Responsable: Arly Rubio  
+;Modifico: Creacion.
+
+
+;**** Nuevo campo agregado en la lista en captura:FechaElaboro ****
+[EvaluacionCalificacion.frm/Lista]
+ListaEnCaptura=Evaluacion.Descripcion<BR>Evaluacion.Tipo<BR>Evaluacion.Duracion<BR>FechaElaboro<BR>EvaluacionCalificacion.Calificacion
+
+
+
+
+;**** Nuevo campo agregado *****
+[EvaluacionCalificacion.frm/Lista.FechaElaboro]
+Carpeta=Lista
+Clave=FechaElaboro
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+;**** Se cambio la variable Info.Fecha por la Info.FechaEvaluacionMAVI ******
+[EvaluacionCalificacion.frm/Acciones.EvaluacionCto]
+AntesExpresiones=Asigna(Info.Evaluacion, EvaluacionCalificacion:Evaluacion.Evaluacion)<BR>Asigna(Info.FechaEvaluacionMAVI, EvaluacionCalificacion:EvaluacionCalificacion.Fecha)<BR>Forma(<T>EvaluacionCto<T>)
+
+
+
+
+;**** Se cambio la variable Info.Fecha por la Info.FechaEvaluacionMAVI ******
+[EvaluacionCalificacion.frm/Acciones.Agregar]
+AntesExpresiones=Asigna(Info.FechaEvaluacionMAVI, Ahora)<BR>Asigna(Info.Evaluacion, Nulo)<BR>Si<BR>  Forma(<T>EvaluacionNueva<T>)<BR>Entonces<BR>  Si <BR>    ConDatos(Info.Evaluacion) y ConDatos(Info.FechaEvaluacionMAVI)<BR>  Entonces<BR>    Forma(<T>EvaluacionCto<T>)<BR>  Fin<BR>Fin
+
+

@@ -1,0 +1,233 @@
+;**** Ultima modificación:15-Jul-08
+;**** Modifico:Arly Rubio
+;**** Se modifico: Campos Articulo requerdio
+
+
+
+;***** Se agregaron nuevos campos a la tabla: SoporteSucursal *****
+[Soporte.tbl/Tabla]
+ListaCampos=ID<BR>Empresa<BR>Mov<BR>MovID<BR>FechaEmision<BR>UltimoCambio<BR>Concepto<BR>Proyecto<BR>Usuario<BR>Autorizacion<BR>Referencia<BR>DocFuente<BR>Observaciones<BR>Estatus<BR>Situacion<BR>SituacionFecha<BR>SituacionUsuario<BR>SituacionNota<BR>FechaInicio<BR>FechaTermino<BR>Vencimiento<BR>TieneContrato<BR>Cliente<BR>EnviarA<BR>Proveedor<BR>Personal<BR>Contacto<BR>Telefono<BR>Extencion<BR>Fax<BR>eMail<BR>Agente<BR>Estado<BR>PuedeDevolver<BR>Prioridad<BR>Titulo<BR>Problema<BR>Solucion<BR>Comentarios<BR>TiempoTrabajado<BR>Importe<BR>CondicionPago<BR>CondicionEntrega<BR>UsuarioResponsable<BR>Clase<BR>Subclase<BR>OrigenTipo<BR>Origen<BR>OrigenID<BR>Poliza<BR>PolizaID<BR>GenerarPoliza<BR>ContID<BR>Ejercicio<BR>Periodo<BR>FechaRegistro<BR>FechaConclusion<BR>FechaCancelacion<BR>Version<BR>Sucursal<BR>S<CONTINUA>
+ListaCampos002=<CONTINUA>ucursalDestino<BR>SucursalOrigen<BR>Tiempo<BR>TiempoUnidad<BR>ReferenciaInicial<BR>Destino<BR>SubModulo<BR>Espacio<BR>UEN<BR>ProyectoFolio<BR>Fuente<BR>Medio<BR>Elemento<BR>VIN<BR>ServicioTipo<BR>FechaRequerida<BR>FechaRevision<BR>FechaAprobacion<BR>FechaInicioEst<BR>FechaFinEst<BR>Direccion<BR>DireccionNumero<BR>EntreCalles<BR>Plano<BR>Delegacion<BR>Colonia<BR>CodigoPostal<BR>Poblacion<BR>PaisEstado<BR>Pais<BR>Zona<BR>Orden<BR>Calificacion<BR>Reporte<BR>LineaCredito<BR>Articulo<BR>SerieLote<BR>Causa<BR>Clase1<BR>Clase2<BR>Clase3<BR>Clase4<BR>Clase5<BR>Avance<BR>SoporteSucursal
+SQL=SELECT<BR>  ID,<BR>  Empresa,<BR>  Mov,<BR>  MovID,<BR>  FechaEmision,<BR>  UltimoCambio,<BR>  Concepto,<BR>  Proyecto,<BR>  UEN,<BR>  Usuario,<BR>  Autorizacion,<BR>  Referencia,<BR>  DocFuente,<BR>  Observaciones,<BR>  Estatus,<BR>  Situacion,<BR>  SituacionFecha,<BR>  SituacionUsuario,<BR>  SituacionNota,<BR>  Cliente,<BR>  EnviarA,<BR>  Proveedor,<BR>  Personal,<BR>  Agente,<BR>  Estado,<BR>  Contacto,<BR>  Telefono,<BR>  Extencion,<BR>  Fax,<BR>  eMail,<BR>  UsuarioResponsable,<BR>  FechaInicio,<BR>  Vencimiento,<BR>  TieneContrato,<BR>  PuedeDevolver,<BR>  Prioridad,<BR>  Clase,<BR>  Subclase,<BR>  Titulo,<BR>  Problema,<BR>  Solucion,<BR>  Comentarios,<BR>  TiempoTrabajado,<BR>  Importe,<BR>  CondicionPago,<BR>  CondicionEntrega,<BR>  OrigenTipo,<BR>  Origen,<BR>  OrigenID,<BR>  Pol<CONTINUA>
+SQL002=<CONTINUA>iza,<BR>  PolizaID,<BR>  GenerarPoliza,<BR>  ContID,<BR>  Ejercicio,<BR>  Periodo,<BR>  FechaRegistro,<BR>  FechaConclusion,<BR>  FechaCancelacion,<BR>  Version,<BR>  Sucursal,<BR>  Tiempo,<BR>  TiempoUnidad,<BR>  ReferenciaInicial,<BR>  Destino,<BR>  SubModulo,<BR>  Espacio,<BR>  FechaTermino,<BR>  ProyectoFolio,<BR>  Fuente,<BR>  Medio,<BR>  Elemento,<BR>  VIN,<BR>  ServicioTipo,<BR>  FechaRequerida,<BR>  FechaRevision,<BR>  FechaAprobacion,<BR>  FechaInicioEst,<BR>  FechaFinEst,<BR>  Direccion,<BR>  DireccionNumero,<BR>  EntreCalles,<BR>  Plano,<BR>  Delegacion,<BR>  Colonia,<BR>  Poblacion,<BR>  PaisEstado,<BR>  Pais,<BR>  Zona,<BR>  CodigoPostal,<BR>  Orden,<BR>  Calificacion,<BR>  Reporte,<BR>  LineaCredito,<BR>  Articulo,<BR>  SerieLote,<BR>  SucursalOrigen,<BR>  SucursalDestino,<BR<CONTINUA>
+SQL003=<CONTINUA>>  Causa,<BR>  Clase1,<BR>  Clase2,<BR>  Clase3,<BR>  Clase4,<BR>  Clase5,<BR>  Avance,<BR>  SoporteSucursal<BR><BR>FROM<BR>  Soporte
+
+;**** Nuevo Campo Agregado*****
+
+[Soporte.tbl/SoporteSucursal]
+Clave=SoporteSucursal
+Nombre=Sucursal
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=
+AyudaEnCaptura=Vista
+AyudaForma=SucursalLista
+AyudaVista=Sucursal
+AyudaCampo=Sucursal.Sucursal
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Seleccione una sucursal correcta<T>
+Alineacion=por Omisión
+CondicionDespliege=Mov en(<T>Queja Servicio<T>,<T>Reporte Servicio<T>)
+ValidacionCondicion=SQL(<T>Select count(Sucursal) from Sucursal where Sucursal =:nSuc<T>,SoporteSucursal)>0
+
+[Soporte.tbl/Mov]
+ListaRefrescar=Concepto<BR>FechaInicio<BR>Vencimiento
+
+;**** ELIAS *****
+
+[Soporte.tbl/Articulo]
+AyudaVista=MaviArtA
+ValidacionUsaTabla=S
+ValidacionTablas=Art
+ConRefrescar=S
+ListaRefrescar=Titulo
+
+; **** Correccion de error, no se refrescaba el campo "EnviarA"
+[Soporte.tbl/Cliente]
+AyudaVista=MaviCteA
+ListaRefrescar=Contacto<BR>Telefono<BR>Extencion<BR>Fax<BR>eMail<BR>Agente<BR>UEN<BR>Proyecto<BR>EnviarA
+
+
+
+;***** Se modifico para que no tuviera ayuda en captura y que no validara ****
+;***** Se modifico para que no tuviera ayuda en captura y que no validara ****
+[Soporte.tbl/SerieLote]
+AyudaEnCaptura=
+AyudaForma=
+AyudaVista=
+AyudaCampo=
+AyudaBusquedaRapida=
+ConAyudaBusquedaRapida=N
+AyudaRefrescar=N
+ValidacionUsaTabla=N
+ValidacionTablas=
+
+CondicionEdicion=Si (sql(<T>select Acceso from usuario where usuario =:tUsr<T>,Usuario) en(<T>SERVI_GERA<T>,<T>GEROP_GERA<T>) )<BR>Entonces<BR>Soporte:Soporte.Estatus en(<T>SINAFECTAR<T>,<T>PENDIENTE<T>)<BR>Sino<BR>Soporte:Soporte.Estatus en(<T>SINAFECTAR<T>)<BR>Fin
+
+
+
+
+
+; **** Correccion de error, no se refrescaba el campo "EnviarA"
+;***** Se cambio nombre a desplegar  de Sucursal cliente a canal venta
+[Soporte.tbl/EnviarA]
+Nombre=Canal Venta
+ValorRefrescar=SQL(<T>SELECT EnviarA FROM Cte WHERE Cliente=:tCliente<T>, Cliente)
+AyudaRefrescar=S
+
+[Soporte.tbl/Problema]
+ValorPorOmision=nulo
+
+
+
+; ********************************
+; ******** Desarrollo I04 ********
+
+[Soporte.tbl/Destino]
+Nombre=Salida Servicio
+
+
+
+[Soporte.tbl/CondicionEntrega]
+Nombre=Entrada Servicio
+AyudaEnCaptura=No
+
+
+
+[Soporte.tbl/Proveedor]
+CondicionDespliege=(Info.SubModuloST En(<T>STPRO<T>, <T>PROY<T>, <T>SI<T>)) o (Mov En (<T>Reporte Servicio<T>,<T>Queja Servicio<T>))
+CondicionEdicion=(Vacio(Filtro.Proveedor)) y (Si(Info.SubModuloST = <T>ST<T>,(Mov En(<T>Reporte Servicio<T>,<T>Queja Servicio<T>)) y (Estatus En(<T>PENDIENTE<T>,<T>SINAFECTAR<T>)),(Estatus En(<T>SINAFECTAR<T>))))
+
+[Soporte.tbl/Tiempo]
+Clave=Tiempo
+Nombre=Tiempo
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+CondicionEdicion=Si (sql(<T>select Acceso from usuario where usuario =:tUsr<T>,Usuario) en(<T>SERVI_GERA<T>,<T>GEROP_GERA<T>) )<BR>Entonces<BR>Soporte:Soporte.Estatus en(<T>SINAFECTAR<T>,<T>PENDIENTE<T>)<BR>Sino<BR>Soporte:Soporte.Estatus en(<T>SINAFECTAR<T>)<BR>Fin
+FormatoValidacion=#.##
+
+
+[Soporte.tbl/Importe]
+Clave=Importe
+Nombre=Importe
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+AyudaEnCaptura=Calculadora
+; OK CondicionEdicion=(sql(<T>select Acceso from usuario where usuario =:tUsr<T>,Usuario) =<T>SERVI_GERA<T>  )
+CondicionEdicion=Si (sql(<T>select Acceso from usuario where usuario =:tUsr<T>,Usuario) en(<T>SERVI_GERA<T>,<T>GEROP_GERA<T>) )<BR>Entonces<BR>Soporte:Soporte.Estatus en(<T>SINAFECTAR<T>,<T>PENDIENTE<T>)<BR>Sino<BR>Soporte:Soporte.Estatus en(<T>SINAFECTAR<T>)<BR>Fin
+
+[Soporte.tbl/fechaInicioest]
+Clave=FechaInicioEst
+Nombre=Fecha Inicio Estimada
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+CondicionEdicion=Si (sql(<T>select Acceso from usuario where usuario =:tUsr<T>,Usuario) en(<T>SERVI_GERA<T>,<T>GEROP_GERA<T>) )<BR>Entonces<BR>Soporte:Soporte.Estatus en(<T>SINAFECTAR<T>,<T>PENDIENTE<T>)<BR>Sino<BR>Soporte:Soporte.Estatus en(<T>SINAFECTAR<T>)<BR>Fin
+
+[Soporte.tbl/fechaFinest]
+Clave=FechaFinEst
+Nombre=Fecha Fin Estimada
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+CondicionEdicion=Si (sql(<T>select Acceso from usuario where usuario =:tUsr<T>,Usuario) en(<T>SERVI_GERA<T>,<T>GEROP_GERA<T>) )<BR>Entonces<BR>Soporte:Soporte.Estatus en(<T>SINAFECTAR<T>,<T>PENDIENTE<T>)<BR>Sino<BR>Soporte:Soporte.Estatus en(<T>SINAFECTAR<T>)<BR>Fin
+
+[Soporte.tbl/FechaAprobacion]
+Clave=FechaAprobacion
+Nombre=Fecha Aprobación
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+CondicionEdicion=Si (sql(<T>select Acceso from usuario where usuario =:tUsr<T>,Usuario) en(<T>SERVI_GERA<T>,<T>GEROP_GERA<T>) )<BR>Entonces<BR>Soporte:Soporte.Estatus en(<T>SINAFECTAR<T>,<T>PENDIENTE<T>)<BR>Sino<BR>Soporte:Soporte.Estatus en(<T>SINAFECTAR<T>)<BR>Fin
+
+
+[Soporte.tbl/FechaRevision]
+Clave=FechaRevision
+Nombre=Fecha Revisión
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+AyudaEnCaptura=Calendario sin Hora
+FormatoValidacion=dd/mmm/aaaa
+CondicionEdicion=Si (sql(<T>select Acceso from usuario where usuario =:tUsr<T>,Usuario) en(<T>SERVI_GERA<T>,<T>GEROP_GERA<T>) )<BR>Entonces<BR>Soporte:Soporte.Estatus en(<T>SINAFECTAR<T>,<T>PENDIENTE<T>)<BR>Sino<BR>Soporte:Soporte.Estatus en(<T>SINAFECTAR<T>)<BR>Fin
+
+
+[Soporte.tbl/TiempoUnidad]
+Clave=TiempoUnidad
+Nombre=Unidad
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+AyudaMemTabla=Unidad
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+CondicionEdicion=Si (sql(<T>select Acceso from usuario where usuario =:tUsr<T>,Usuario) en(<T>SERVI_GERA<T>,<T>GEROP_GERA<T>) )<BR>Entonces<BR>Soporte:Soporte.Estatus en(<T>SINAFECTAR<T>,<T>PENDIENTE<T>)<BR>Sino<BR>Soporte:Soporte.Estatus en(<T>SINAFECTAR<T>)<BR>Fin
+ListaOpciones=minutos<BR>horas<BR>dias<BR>semanas<BR>meses<BR>años
+
+;Modificacion para acomodar el Nivel de Acceso ALQG - 15/06/2010
+[Soporte.tbl/Agente]
+Clave=Agente
+Nombre=Orden Taller
+AyudaEnCaptura=
+Tamano=10
+TamanoValidacion=10
+AyudaForma=
+AyudaVista=
+AyudaCampo=
+Mayusculas=N
+RefrescarTodoCondiciones=
+AyudaIgnoraChequeos=N
+CondicionEdicion=Si (sql(<T>select Acceso from usuario where usuario =:tUsr<T>,Usuario) en(<T>SERVI_GERA<T>,<T>GEROP_GERA<T>) )<BR>Entonces<BR>Soporte:Soporte.Estatus en(<T>SINAFECTAR<T>,<T>PENDIENTE<T>)<BR>Sino<BR>Soporte:Soporte.Estatus en(<T>SINAFECTAR<T>)<BR>Fin
+ValidacionUsaTabla=N
+ValidacionTablas=
+
+;**** Ultima modificación:17-Jul-13
+;**** Modifico:Fernando Rodriguez
+;**** Se modifico: con el movimiento 'reporte servicio' estatus = concluido,pendiente el control concepto se encuentra inabilitado
+
+[Soporte.tbl/Concepto]
+CondicionEdicion=SQL(<T>SELECT dbo.FN_Soporte(:nid)<T>,ID)=<T>1<T>
+
+;se agrego submodulo ST para visualisar el campo Personal EFMARTINEZ 30-JUL-2013
+[Soporte.tbl/Personal]
+CondicionDespliege=Info.SubModuloST en (<T>STPER<T>, <T>PROY<T>, <T>SI<T>,<T>ST<T>)
+
+[Soporte.tbl/FechaInicio]
+ValorRefrescar=Si<BR>  (Mov=<T>Reporte Servicio<T>) y (Estatus=<T>SINAFECTAR<T>)<BR>  Entonces<BR>    SQL(<T>SELECT GETDATE()<T>)<BR>Fin
+CondicionEdicion=SI(Soporte:Soporte.Mov=<T>Reporte Servicio<T>,Falso,((Soporte:Soporte.Estatus noen (EstatusConcluido, EstatusCancelado)) y (PuedeModificar(Soporte:Soporte.Usuario))))
+ValorPorOmision=Si<BR>  (Mov=<T>Reporte Servicio<T>) y (Estatus=<T>SINAFECTAR<T>)<BR>  Entonces<BR>    SQL(<T>SELECT GETDATE()<T>)<BR>Fin
+ConRefrescar=S
+ListaRefrescar=Vencimiento
+
+
+
+[Soporte.tbl/Vencimiento]
+ValorRefrescar=Si<BR>  (Mov=<T>Reporte Servicio<T>) y (Estatus=<T>SINAFECTAR<T>)<BR>  Entonces<BR>    SQL(<T>SELECT GETDATE()<T>) + 29<BR>Fin
+
+
+[Soporte.tbl/Estado]
+ConRefrescar=N
+
+
+[Soporte.tbl/Titulo]
+Nombre=&Código / Titulo
+ValorRefrescar=SQL(<T>SELECT Articulo + <T>+<T><T>+ <T>+Descripcion1 FROM Art WHERE Articulo=:tART<T>,Articulo)
+
+[Soporte.tbl/Solucion]
+CondicionEdicion=Soporte:Soporte.Estatus noen (EstatusConcluido, EstatusCancelado) y PuedeModificar(Soporte:Soporte.Usuario)<BR> y SQL(<T>SELECT dbo.FN_MAVIDM0273ValidacionSoporte(<T>+comillas(Usuario)+<T>)<T>)=1
+

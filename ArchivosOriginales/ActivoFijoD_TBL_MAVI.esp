@@ -1,0 +1,69 @@
+[ActivoFijoD.tbl/Tabla]
+ListaCampos=ID<BR>Renglon<BR>RenglonSub<BR>Articulo<BR>Serie<BR>Importe<BR>Impuestos<BR>Horas<BR>NuevoValor<BR>Depreciacion<BR>DepreciacionPorcentaje<BR>MesesDepreciados<BR>Inflacion<BR>ActualizacionCapital<BR>ActualizacionGastos<BR>ActualizacionDepreciacion<BR>Observaciones<BR>ValorAnterior<BR>DepreciacionAnterior<BR>RevaluacionAnterior<BR>ReparacionAnterior<BR>MantenimientoAnterior<BR>MantenimientoSiguienteAnterior<BR>PolizaMantenimientoAnterior<BR>PolizaSeguroAnterior<BR>Sucursal<BR>SucursalOrigen<BR>UltimoKmServicio<BR>UltimoTipoServicio<BR>AumentoKmServicio<BR>UnidadKm<BR>AnteriorTipoServicio
+SQL=SELECT<BR>  ID,<BR>  Renglon,<BR>  RenglonSub,<BR>  Articulo,<BR>  Serie,<BR>  Importe,<BR>  Impuestos,<BR>  Horas,<BR>  MesesDepreciados,<BR>  Depreciacion,<BR>  DepreciacionPorcentaje,<BR>  NuevoValor,<BR>  Inflacion,<BR>  ActualizacionCapital,<BR>  ActualizacionGastos,<BR>  ActualizacionDepreciacion,<BR>  Observaciones,<BR>  ValorAnterior,<BR>  DepreciacionAnterior,<BR>  RevaluacionAnterior,<BR>  ReparacionAnterior,<BR>  MantenimientoAnterior,<BR>  MantenimientoSiguienteAnterior,<BR>  PolizaMantenimientoAnterior,<BR>  PolizaSeguroAnterior,<BR>  Sucursal,<BR>  SucursalOrigen,<BR>  UltimoKmServicio,<BR>  UltimoTipoServicio,<BR>  AumentoKmServicio,<BR>  UnidadKm,<BR>  AnteriorTipoServicio<BR><BR>FROM<BR>  ActivoFijoD
+
+
+
+[ActivoFijoD.tbl/Serie]
+ConRefrescar=S
+ListaRefrescar=UltimoTipoServicio<BR>AumentoKmServicio<BR>UltimoKmServicio<BR>UnidadKm<BR>AnteriorTipoServicio
+RequeridoActivo=S
+
+
+
+[ActivoFijoD.tbl/UltimoKmServicio]
+Clave=UltimoKmServicio
+Nombre=Hrs/Km Servicio
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+FormatoValidacion=#,.##
+CondicionDespliege=ActivoFijo:ActivoFijo.Mov en(<T>Mantenimiento Ligero<T>,<T>Mantenimiento Severo<T>,<T>Mannto Maquinaria<T>)
+ValorRefrescar=Si ActivoFijo:ActivoFijo.Mov en(<T>Mantenimiento Ligero<T>,<T>Mantenimiento Severo<T>,<T>Mannto Maquinaria<T>)<BR>  Entonces<BR>      (SQL(<T>SELECT ISNULL(UltimoKmServicio,0.0) FROM ActivoF WHERE Empresa=:tEmp AND Articulo=:tArt AND Serie=:tSerie<T>,<T>MAVI<T>,Articulo,Serie)+Vacio(AumentoKmServicio,0.0))<BR>  Fin
+
+
+
+[ActivoFijoD.tbl/UltimoTipoServicio]
+Clave=UltimoTipoServicio
+Nombre=Tipo Servicio
+Visible=S
+TamanoValidacion=10
+Tamano=10
+CondicionDespliege=ActivoFijo:ActivoFijo.Mov en(<T>Mantenimiento Ligero<T>,<T>Mantenimiento Severo<T>)
+ValorRefrescar=Si ActivoFijo:ActivoFijo.Mov en(<T>Mantenimiento Ligero<T>,<T>Mantenimiento Severo<T>,<T>Mannto Maquinaria<T>)<BR>  Entonces<BR>    Si ActivoFijo:ActivoFijo.Concepto en(<T>OMITIR MANNTO<T>)<BR>      Entonces<BR>        Caso  (SQL(<T>SELECT UltimoTipoServicio FROM ActivoF WHERE Empresa=:tEmp AND Articulo=:tArt AND Serie=:tSerie<T>,<T>MAVI<T>,Articulo,Serie))<BR>          Es <T>Severo<T> Entonces <T>Ligero*<T><BR>          Es <T>Severo*<T> Entonces <T>Ligero*<T><BR>          Es <T>Ligero<T> Entonces <T>Severo*<T> <BR>          Es <T>Ligero*<T> Entonces <T>Severo*<T><BR>          Sino <T>Ligero<T><BR>        Fin<BR>      Sino<BR>        Caso  (SQL(<T>SELECT UltimoTipoServicio FROM ActivoF WHERE Empresa=:tEmp AND Articulo=:tArt AND Serie=:tSerie<T>,<T>MAVI<T>,Articulo,Serie))<BR>          Es <<CONTINUA>
+ValorRefrescar002=<CONTINUA>T>Severo<T> Entonces <T>Ligero<T><BR>          Es <T>Severo*<T> Entonces <T>Ligero<T><BR>          Es <T>Ligero*<T> Entonces <T>Severo<T><BR>          Es <T>Ligero<T> Entonces <T>Severo<T><BR>          Sino <T>Ligero<T><BR>        Fin<BR>      Fin<BR>  Fin
+
+
+[ActivoFijoD.tbl/AumentoKmServicio]
+Clave=AumentoKmServicio
+Nombre=AumentoKmServicio
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorRefrescar=Si ActivoFijo:ActivoFijo.Mov en(<T>Mantenimiento Ligero<T>,<T>Mantenimiento Severo<T>,<T>Mannto Maquinaria<T>)<BR>  Entonces<BR>    Caso  UltimoTipoServicio<BR>      Es <T>Severo<T> Entonces  SQL(<T>SELECT ISNULL(SeveroCada,0.0) FROM ActivoF WHERE Empresa=:tEmp AND Articulo=:tArt AND Serie=:tSerie<T>,<T>MAVI<T>,Articulo,Serie)<BR>      Es <T>Severo*<T> Entonces SQL(<T>SELECT ISNULL(SeveroCada,0.0) FROM ActivoF WHERE Empresa=:tEmp AND Articulo=:tArt AND Serie=:tSerie<T>,<T>MAVI<T>,Articulo,Serie)<BR>      Es <T>Ligero*<T> Entonces SQL(<T>SELECT ISNULL(LigeroCada,0.0) FROM ActivoF WHERE Empresa=:tEmp AND Articulo=:tArt AND Serie=:tSerie<T>,<T>MAVI<T>,Articulo,Serie)<BR>      Es <T>Ligero<T> Entonces  SQL(<T>SELECT ISNULL(LigeroCada,0.0) FROM ActivoF WHERE Empresa=:tEmp AND Articulo=:tArt AND<CONTINUA>
+ValorRefrescar002=<CONTINUA> Serie=:tSerie<T>,<T>MAVI<T>,Articulo,Serie)<BR>      Sino 0<BR>    Fin<BR>  Fin
+
+
+
+
+[ActivoFijoD.tbl/UnidadKm]
+Clave=UnidadKm
+Nombre=km/hr Unidad 
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+FormatoValidacion=#,.##
+AyudaEnCaptura=Calculadora
+CondicionDespliege=ActivoFijo:ActivoFijo.Mov en(<T>Mantenimiento Ligero<T>,<T>Mantenimiento Severo<T>,<T>Mannto Maquinaria<T>)
+RequeridoActivo=S
+
+
+[ActivoFijoD.tbl/AnteriorTipoServicio]
+Clave=AnteriorTipoServicio
+Nombre=Tipo Servicio Anterior
+Visible=S
+TamanoValidacion=10
+Tamano=10
+CondicionDespliege=ActivoFijo:ActivoFijo.Mov en(<T>Mantenimiento Ligero<T>,<T>Mantenimiento Severo<T>)
+ValorRefrescar=Si ActivoFijo:ActivoFijo.Mov en(<T>Mantenimiento Ligero<T>,<T>Mantenimiento Severo<T>,<T>Mannto Maquinaria<T>)<BR>  Entonces<BR>      SQL(<T>SELECT UltimoTipoServicio FROM ActivoF WHERE Empresa=:tEmp AND Articulo=:tArt AND Serie=:tSerie<T>,<T>MAVI<T>,Articulo,Serie)<BR>  Fin
+

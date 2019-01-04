@@ -1,0 +1,171 @@
+;**** Responsable: ARC 
+;**** Fecha Modificacion: 12-Feb-09
+;**** Se modifico: Se agregaron Rangos para eliminacion de saldos menores
+
+;**** Responsable: MP
+;**** Fecha Modificacion: 18-Jun-09
+;**** Se modifico: Integracion Moratorios
+
+
+
+
+;***** ARC 12-feb-09: Se agragron nuevos campos:   EliminarSaldosMenoresD, EliminarSaldosMenores, EliminarSaldosMenoresDDolar, EliminarSaldosMenoresA, EliminarSaldosMenoresADolar
+;***** MP 18-Jun-09: Se agragron nuevos campos:  MovTipo.CalculoMoratorioMAVI
+;*** Desarrollo de Campañas 27/08/09 YR, se agrego un campo adicional a los movimientos: IncluirEnCampania.
+[MovTipo.vis/Vista]
+ListaCampos=MovTipo.Modulo<BR>MovTipo.Mov<BR>MovTipo.Orden<BR>MovTipo.Clave<BR>MovTipo.SubClave<BR>MovTipo.Icono<BR>MovTipo.Grupo<BR>MovTipo.EstatusContabilizar<BR>MovTipo.ConsecutivoModulo<BR>MovTipo.ConsecutivoMov<BR>MovTipo.ConsecutivoPorPeriodo<BR>MovTipo.ConsecutivoPorEjercicio<BR>MovTipo.ConsecutivoPorEmpresa<BR>MovTipo.Factor<BR>MovTipo.Almacen<BR>MovTipo.DiasVencimiento<BR>MovTipo.NomProcesarIncidencias<BR>MovTipo.NomGenerarBaja<BR>MovTipo.NomDividirCantidades<BR>MovTipo.GenerarParalelo<BR>MovTipo.PV<BR>MovTipo.ConsecutivoSucursalEsp<BR>MovTipo.SucursalEsp<BR>MovTipo.GenerarGasto<BR>MovTipo.GastoMov<BR>MovTipo.GastoClase<BR>MovTipo.GastoSubClase<BR>MovTipo.GastoConcepto<BR>MovTipo.GastoAcreedor<BR>MovTipo.eMailAuto<BR>MovTipo.ConsecutivoControl<BR>MovTipo.TipoPago<BR>MovTipo.GastoFactor<BR>Mov<CONTINUA>
+ListaCampos002=<CONTINUA>Tipo.CE<BR>MovTipo.CEAntesAfectar<BR>MovTipo.CEAfectarContacto<BR>MovTipo.NomAuto<BR>MovTipo.NomAutoTipo<BR>MovTipo.NomAutoCalcSDI<BR>MovTipo.NomAutoCxc<BR>MovTipo.NomAutoCalendarioEsp<BR>MovTipo.ImpresionInmediata<BR>MovTipo.ConsecutivoFEA<BR>MovTipo.EditarDeptoDetallista<BR>MovTipo.AfectarPresupuesto<BR>MovTipo.CFD<BR>MovTipo.CFD_tipoDeComprobante<BR>MovTipo.CFD_Reporte<BR>MovTipo.ProyectoContactoTipo<BR>MovTipo.PlantillaProyecto<BR>MovTipo.PlantillaProyectoFija<BR>MovTipo.FormaTipo<BR>MovTipo.FormaFija<BR>MovTipo.AplicarOfertas<BR>MovTipo.FormaAnexaOmision<BR>MovTipo.ProyectoSugerir<BR>MovTipo.TraspasoExpress<BR>MovTipo.ModuloCentral<BR>MovTipo.AfectarFiscal<BR>MovTipo.EliminarSaldosMenores<BR>MovTipo.EliminarSaldosMenoresD<BR>MovTipo.EliminarSaldosMenoresA<BR>MovTipo.EliminarSaldosMeno<CONTINUA>
+ListaCampos003=<CONTINUA>resDDolar<BR>MovTipo.EliminarSaldosMenoresADolar<BR>MovSubClave.Modulo<BR>MovSubClave.Clave<BR>MovSubClave.NombreOmision<BR>MovSubClave.Descripcion<BR>MovClave.Clave<BR>MovClave.Modulo<BR>MovClave.NombreOmision<BR>MovClave.Descripcion<BR>Sucursal.Sucursal<BR>Sucursal.Nombre<BR>Sucursal.Prefijo<BR>Acreedor.Proveedor<BR>Acreedor.Nombre<BR>FormaTipoFormas.FormaTipo<BR>FormaTipoFormas.NombreCorto<BR>MovTipo.CalculoMoratorioMAVI<BR>MovTipo.ConsecutivoFiscal<BR>MovTipo.IncluirEnCampania<BR>MovTipo.TipoConsecutivo<BR>MovTipo.ConsecutivoGeneral
+SQL=SELECT<BR>  MovTipo.Modulo,<BR>  MovTipo.Mov,<BR>  MovTipo.Orden,<BR>  MovTipo.Clave,<BR>  MovTipo.SubClave,<BR>  MovTipo.Icono,<BR>  MovTipo.Grupo,<BR>  MovTipo.EstatusContabilizar,<BR>  MovTipo.ConsecutivoModulo,<BR>  MovTipo.ConsecutivoMov,<BR>  MovTipo.ConsecutivoPorPeriodo,<BR>  MovTipo.ConsecutivoPorEjercicio,<BR>  MovTipo.ConsecutivoPorEmpresa,<BR>  MovTipo.Factor,<BR>  MovTipo.Almacen,<BR>  MovTipo.DiasVencimiento,<BR>  MovTipo.NomProcesarIncidencias,<BR>  MovTipo.NomGenerarBaja,<BR>  MovTipo.NomDividirCantidades,<BR>  MovTipo.GenerarParalelo,<BR>  MovTipo.PV,<BR>  MovTipo.ConsecutivoSucursalEsp,<BR>  MovTipo.SucursalEsp,<BR>  MovTipo.GenerarGasto,<BR>  MovTipo.GastoMov,<BR>  MovTipo.GastoClase,<BR>  MovTipo.GastoSubClase,<BR>  MovTipo.GastoConcepto,<BR>  MovTipo.GastoAcreedor,<BR><CONTINUA>
+SQL002=<CONTINUA>  MovTipo.eMailAuto,<BR>  MovTipo.ConsecutivoControl,<BR>  MovTipo.TipoPago,<BR>  MovTipo.GastoFactor,<BR>  MovTipo.CE,<BR>  MovTipo.CEAntesAfectar,<BR>  MovTipo.CEAfectarContacto,<BR>  MovTipo.NomAuto,<BR>  MovTipo.NomAutoTipo,<BR>  MovTipo.NomAutoCalcSDI,<BR>  MovTipo.NomAutoCxc,<BR>  MovTipo.NomAutoCalendarioEsp,<BR>  MovTipo.ImpresionInmediata,<BR>  MovTipo.ConsecutivoFEA,<BR>  MovTipo.EditarDeptoDetallista,<BR>  MovTipo.AfectarPresupuesto,<BR>  MovTipo.CFD,<BR>  MovTipo.CFD_tipoDeComprobante,<BR>  MovTipo.CFD_Reporte,<BR>  MovTipo.ProyectoContactoTipo,<BR>  MovTipo.PlantillaProyecto,<BR>  MovTipo.PlantillaProyectoFija,<BR>  MovTipo.FormaTipo,<BR>  MovTipo.FormaFija,<BR>  MovTipo.AplicarOfertas,<BR>  MovTipo.FormaAnexaOmision,<BR>  MovTipo.ProyectoSugerir,<BR>  MovTipo.TraspasoExpress,<CONTINUA>
+SQL003=<CONTINUA><BR>  MovTipo.ModuloCentral,<BR>  MovTipo.AfectarFiscal,<BR>  MovTipo.EliminarSaldosMenores,<BR>  MovTipo.EliminarSaldosMenoresD,<BR>  MovTipo.EliminarSaldosMenoresA,<BR>  MovTipo.EliminarSaldosMenoresDDolar,<BR>  MovTipo.EliminarSaldosMenoresADolar,<BR>  MovSubClave.Modulo,<BR>  MovSubClave.Clave,<BR>  MovSubClave.NombreOmision,<BR>  MovSubClave.Descripcion,<BR>  MovClave.Clave,<BR>  MovClave.Modulo,<BR>  MovClave.NombreOmision,<BR>  MovClave.Descripcion,<BR>  Sucursal.Sucursal,<BR>  Sucursal.Nombre,<BR>  Sucursal.Prefijo,<BR>  Acreedor.Proveedor,<BR>  Acreedor.Nombre,<BR>  FormaTipoFormas.FormaTipo,<BR>  FormaTipoFormas.NombreCorto,<BR>  MovTipo.CalculoMoratorioMAVI,<BR>MovTipo.ConsecutivoFiscal,<BR>  MovTipo.IncluirEnCampania,<BR>MovTipo.TipoConsecutivo,<BR>MovTipo.ConsecutivoGeneral<BR><BR>FROM<BR>  MovTipo<BR>  LEFT OUTER JOIN MovClave <CONTINUA>
+SQL004=<CONTINUA>ON MovTipo.Modulo=MovClave.Modulo AND MovTipo.Clave=MovClave.Clave<BR>  LEFT OUTER JOIN MovClave MovSubClave ON MovTipo.Modulo=MovSubClave.Modulo AND MovTipo.SubClave=MovSubClave.Clave<BR>  LEFT OUTER JOIN Sucursal ON MovTipo.SucursalEsp=Sucursal.Sucursal<BR>  LEFT OUTER JOIN Prov Acreedor ON MovTipo.GastoAcreedor=Acreedor.Proveedor<BR>  LEFT OUTER JOIN FormaTipoFormas ON MovTipo.FormaTipo=FormaTipoFormas.FormaTipo
+
+[MovTipo.vis/MovTipo.ConsecutivoFiscal]
+Clave=MovTipo.ConsecutivoFiscal
+Nombre=Consecutivo Fiscal
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=(MovTipo.ConsecutivoModulo = <T>CXC<T>) o (MovTipo.ConsecutivoModulo = <T>Cxc<T>)
+LigaTabla=MovTipo
+LigaCampo=ConsecutivoFiscal
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=ConsecutivoFiscal
+
+[MovTipo.vis/MovTipo.TipoConsecutivo]
+Clave=MovTipo.TipoConsecutivo
+Nombre=Tipo Consecutivo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ValorPorOmision=<T>Modulo<T>
+ListaOpciones=Modulo<BR>General
+LigaTabla=MovTipo
+LigaCampo=TipoConsecutivo
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=TipoConsecutivo
+
+[MovTipo.vis/MovTipo.ConsecutivoGeneral]
+Clave=MovTipo.ConsecutivoGeneral
+Nombre=Consecutivo General
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+CondicionDespliege=MovTipo.TipoConsecutivo=<T>General<T>
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Consecutivo
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+LigaTabla=MovTipo
+LigaCampo=ConsecutivoGeneral
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=ConsecutivoGeneral
+
+;**** ARC 12-Feb-09 Nuevo campo agregado *****
+[MovTipo.vis/MovTipo.EliminarSaldosMenores]
+Clave=MovTipo.EliminarSaldosMenores
+LigaTabla=MovTipo
+LigaCampo=EliminarSaldosMenores
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Lógico
+ClaveBDE=EliminarSaldosMenores
+
+
+
+;**** ARC 12-Feb-09 Nuevo campo agregado *****[MovTipo.vis/MovTipo.EliminarSaldosMenoresD]
+[MovTipo.vis/MovTipo.EliminarSaldosMenoresD]
+Clave=MovTipo.EliminarSaldosMenoresD
+LigaTabla=MovTipo
+LigaCampo=EliminarSaldosMenoresD
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=NumMonetario
+ClaveBDE=EliminarSaldosMenoresD
+
+
+
+;**** ARC 12-Feb-09 Nuevo campo agregado *****
+[MovTipo.vis/MovTipo.EliminarSaldosMenoresA]
+Clave=MovTipo.EliminarSaldosMenoresA
+Nombre=A
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+CondicionDespliege=MovTipo.EliminarSaldosMenores y (MovTipo.Clave en(<T>CXC.F<T>, <T>CXC.FAC<T>, <T>CXC.CA<T>, <T>CXC.CAD<T>, <T>CXC.D<T>, <T>CXC.DM<T>, <T>CXC.DA<T>,<T>CXC.NC<T>,<T>CXC.NCD<T>,<T>CXC.NCF<T>,<T>CXC.DV<T>,<T>CXC.NCP<T>,<T>CXC.DC<T>,<T>CXP.F<T>, <T>CXP.FAC<T>, <T>CXP.CA<T>, <T>CXP.CAD<T>, <T>CXP.D<T>, <T>CXP.DM<T>, <T>CXP.A<T>,<T>CXP.NC<T>,<T>CXP.NCD<T>,<T>CXP.NCP<T>,<T>CXP.NCF<T>,<T>CXP.DC<T>)) y (MovTipo.Modulo en(<T>CXC<T>,<T>CXP<T>))
+AyudaEnCaptura=Calculadora
+LigaTabla=MovTipo
+LigaCampo=EliminarSaldosMenoresA
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=EliminarSaldosMenoresA
+
+
+
+;**** ARC 12-Feb-09 Nuevo campo agregado *****
+[MovTipo.vis/MovTipo.EliminarSaldosMenoresDDolar]
+Clave=MovTipo.EliminarSaldosMenoresDDolar
+LigaTabla=MovTipo
+LigaCampo=EliminarSaldosMenoresDDolar
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=NumMonetario
+ClaveBDE=EliminarSaldosMenoresDDolar
+
+
+
+;**** ARC 12-Feb-09 Nuevo campo agregado *****
+[MovTipo.vis/MovTipo.EliminarSaldosMenoresADolar]
+Clave=MovTipo.EliminarSaldosMenoresADolar
+Nombre=A
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+CondicionDespliege=MovTipo.EliminarSaldosMenores y (MovTipo.Clave en(<T>CXC.F<T>, <T>CXC.FAC<T>, <T>CXC.CA<T>, <T>CXC.CAD<T>, <T>CXC.D<T>, <T>CXC.DM<T>, <T>CXC.DA<T>,<T>CXC.NC<T>,<T>CXC.NCD<T>,<T>CXC.NCF<T>,<T>CXC.DV<T>,<T>CXC.NCP<T>,<T>CXC.DC<T>,<T>CXP.F<T>, <T>CXP.FAC<T>, <T>CXP.CA<T>, <T>CXP.CAD<T>, <T>CXP.D<T>, <T>CXP.DM<T>, <T>CXP.A<T>,<T>CXP.NC<T>,<T>CXP.NCD<T>,<T>CXP.NCP<T>,<T>CXP.NCF<T>,<T>CXP.DC<T>)) y (MovTipo.Modulo en(<T>CXC<T>,<T>CXP<T>))
+AyudaEnCaptura=Calculadora
+LigaTabla=MovTipo
+LigaCampo=EliminarSaldosMenoresADolar
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=EliminarSaldosMenoresADolar
+
+
+
+;**** MP 18-Jun-09 Nuevo campo agregado *****
+[MovTipo.vis/MovTipo.CalculoMoratorioMAVI]
+Clave=MovTipo.CalculoMoratorioMAVI
+Nombre=Calculo Moratorios
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=(MovTipo.ConsecutivoModulo = <T>CXC<T>) o (MovTipo.ConsecutivoModulo = <T>Cxc<T>)
+LigaTabla=MovTipo
+LigaCampo=CalculoMoratorioMAVI
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=CalculoMoratorioMAVI
+
+;*** Desarrollo de Campañas 27/08/09, Joel García (Mex), se agrego un campo a la vista.
+[MovTipo.vis/MovTipo.IncluirEnCampania]
+Clave=MovTipo.IncluirEnCampania
+Nombre=Incluir En Campaña
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+LigaTabla=MovTipo
+LigaCampo=IncluirEnCampania
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=IncluirEnCampania

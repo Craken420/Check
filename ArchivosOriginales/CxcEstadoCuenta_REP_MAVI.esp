@@ -1,0 +1,8 @@
+;Jesus Del Toro Andrade
+;30-10-2012
+;Se agrega menu al rep para poderle asignar
+
+
+[CxcEstadoCuenta.rep/Reporte]
+Submenu=CXP Mavi
+SubmenuPreliminar=S

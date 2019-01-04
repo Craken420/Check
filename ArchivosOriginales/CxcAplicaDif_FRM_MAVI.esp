@@ -1,0 +1,3 @@
+[CxcAplicaDif.frm/Acciones.Afectar]
+Antes=S
+AntesExpresiones=Si<BR>    (SQL(<T>SELECT UPPER(Clave) FROM dbo.Cxc C WITH(NOLOCK) JOIN dbo.MovTipo M WITH(NOLOCK) ON M.Modulo=:tM AND C.Mov=M.Mov AND C.ID=:tI<T>,<T>CXC<T>,CxcAplicaDif:CxcAplicaDif.ID)=<T>CXC.NC<T>)<BR>Entonces<BR>    Si(Precaucion(<T>Movimiento no Compatible...<T>,BotonCancelar)=BotonCancelar,AbortarOperacion,AbortarOperacion)<BR>Fin

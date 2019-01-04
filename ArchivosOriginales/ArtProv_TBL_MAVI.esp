@@ -1,0 +1,4 @@
+; Se modifico la vista de la ayuda en captura para que sea mas agil.
+; Ultima modificacion ALQG 04-Dic-09
+[ArtProv.tbl/Articulo]
+AyudaVista=MaviArtA

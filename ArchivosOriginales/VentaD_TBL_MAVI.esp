@@ -1,0 +1,99 @@
+;**** Ultima modificación:30-Jul-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:Creacion
+
+
+
+;**** Nuevos campos agregados: Financiamiento, PropreListaID, IDCopiaMAVI****
+;**** Neuvas relaciones: Lista****
+[VentaD.tbl/Tabla]
+ListaCampos=ID<BR>Renglon<BR>RenglonSub<BR>RenglonID<BR>RenglonTipo<BR>EnviarA<BR>Almacen<BR>Codigo<BR>Articulo<BR>SubCuenta<BR>Cantidad<BR>Precio<BR>PrecioSugerido<BR>DescuentoTipo<BR>DescuentoLinea<BR>DescuentoImporte<BR>Impuesto1<BR>Impuesto2<BR>Impuesto3<BR>DescripcionExtra<BR>Costo<BR>CostoActividad<BR>Paquete<BR>ContUso<BR>Comision<BR>Aplica<BR>AplicaID<BR>CantidadReservada<BR>CantidadOrdenada<BR>CantidadPendiente<BR>CantidadCancelada<BR>CantidadEmbarcada<BR>CantidadA<BR>Factor<BR>SustitutoArticulo<BR>SustitutoSubCuenta<BR>Unidad<BR>FechaRequerida<BR>Instruccion<BR>CantidadInventario<BR>UltimoReservadoCantidad<BR>UltimoReservadoFecha<BR>Agente<BR>Departamento<BR>Sucursal<BR>PoliticaPrecios<BR>SucursalOrigen<BR>AutoLocalidad<BR>UEN<BR>Espacio<BR>HoraRequerida<BR>CantidadAlterna<BR>PrecioMoneda<BR<CONTINUA>
+ListaCampos002=<CONTINUA>>PrecioTipoCambio<BR>Estado<BR>ServicioNumero<BR>AgentesAsignados<BR>AFArticulo<BR>AFSerie<BR>ExcluirPlaneacion<BR>Anexo<BR>ExcluirISAN<BR>CostoUEPS<BR>CostoPEPS<BR>UltimoCosto<BR>PrecioLista<BR>Posicion<BR>AjusteCosteo<BR>DepartamentoDetallista<BR>Puntos<BR>PresupuestoEsp<BR>CantidadObsequio<BR>OfertaID<BR>ProveedorRef<BR>TransferirA<BR>Financiamiento<BR>PropreListaID<BR>IDCopiaMAVI
+SQL=SELECT<BR>  ID,<BR>  Renglon,<BR>  RenglonSub,<BR>  RenglonID,<BR>  RenglonTipo,<BR>  Cantidad,<BR>  Almacen,<BR>  EnviarA,<BR>  Codigo,<BR>  Articulo,<BR>  SubCuenta,<BR>  Precio,<BR>  PrecioSugerido,<BR>  DescuentoTipo,<BR>  DescuentoLinea,<BR>  DescuentoImporte,<BR>  Impuesto1,<BR>  Impuesto2,<BR>  Impuesto3,<BR>  DescripcionExtra,<BR>  Costo,<BR>  CostoActividad,<BR>  Paquete,<BR>  ContUso,<BR>  Comision,<BR>  Aplica,<BR>  AplicaID,<BR>  CantidadPendiente,<BR>  CantidadReservada,<BR>  CantidadCancelada,<BR>  CantidadOrdenada,<BR>  CantidadEmbarcada,<BR>  CantidadA,<BR>  Unidad,<BR>  Factor,<BR>  CantidadInventario,<BR>  SustitutoArticulo,<BR>  SustitutoSubCuenta,<BR>  FechaRequerida,<BR>  HoraRequerida,<BR>  Instruccion,<BR>  Agente,<BR>  Departamento,<BR>  UltimoReservadoCantidad,<BR><CONTINUA>
+SQL002=<CONTINUA>  UltimoReservadoFecha,<BR>  Sucursal,<BR>  PoliticaPrecios,<BR>  SucursalOrigen,<BR>  AutoLocalidad,<BR>  UEN,<BR>  Espacio,<BR>  CantidadAlterna,<BR>  PrecioMoneda,<BR>  PrecioTipoCambio,<BR>  Estado,<BR>  ServicioNumero,<BR>  AgentesAsignados,<BR>  AFArticulo,<BR>  AFSerie,<BR>  ExcluirPlaneacion,<BR>  Anexo,<BR>  AjusteCosteo,<BR>  CostoUEPS,<BR>  CostoPEPS,<BR>  UltimoCosto,<BR>  PrecioLista,<BR>  DepartamentoDetallista,<BR>  PresupuestoEsp,<BR>  Posicion,<BR>  Puntos,<BR>  CantidadObsequio,<BR>  OfertaID,<BR>  ProveedorRef,<BR>  ExcluirISAN,<BR>  TransferirA,<BR>  Financiamiento,<BR>  PropreListaID,<BR>  IDCopiaMAVI<BR><BR>FROM<BR>  VentaD
+ListaRelaciones=CB<BR>Art<BR>CentroCostos<BR>VerPedidoPos<BR>ArtDisponible<BR>ArtSubDisponible<BR>AgenteDetalle<BR>AlmDetalle<BR>AutoLocalidad<BR>UEN<BR>Espacio<BR>AlmPos<BR>Prov<BR>AlmTranferencias<BR>Lista
+
+
+
+
+;**** Nuevo campo agregado en la lista a refrescar: PropreListaID 26-Ago-08(Arly)****
+[VentaD.tbl/Articulo]
+ListaRefrescar=PropreListaID<BR>Unidad<BR>Cantidad<BR>CantidadInventario<BR>Precio<BR>PrecioSugerido<BR>DescuentoImporte<BR>Impuesto1<BR>Impuesto2<BR>Impuesto3<BR>Costo<BR>ExcluirISAN
+
+
+;****Nuevo Campo Agregado****
+[VentaD.tbl/Financiamiento]
+Clave=Financiamiento
+Nombre=Financiamiento
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Monetario=S}
+CondicionDespliege=((Venta:Venta.Estatus noen(EstatusSinAfectar, EstatusPendiente)) y (Venta:Venta.Mov en(<T>Credilana<T>,<T>Prestamo Personal<T>,<T>Cancela Credilana<T>,<T>Cancela Prestamo<T>)))
+;ValorRefrescar=Vacio(Precio,0.0)-(SQL(<T>Select isnull(Capital,0.0) from Art where Articulo =:tArt<T>,Articulo))
+
+
+;**** Nuevo campo agregado 26-Ago-08 (Arly)****
+[VentaD.tbl/PropreListaID]
+Clave=PropreListaID
+Nombre=ListaID
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+;ValorRefrescar=SQL(<T>SELECT dbo.fnProprePrecioID(:nID, :tArt)<T>, ID, Articulo)
+ValorRefrescar=SQL(<T>SELECT dbo.fnProprePrecioID(:nID, :tArt, :lRedP)<T>, Venta:Venta.ID, Articulo, Venta:Venta.RedimePtos)
+ValidacionUsaTabla=S
+ValidacionTablas=PropreListaDFinal
+
+
+;Se agregaron mas campos a la lista a refrescar por el escaneo de zapatos Fernando Romero 17/03/2015
+[VentaD.tbl/Cantidad]
+ConRefrescar=S
+ListaRefrescar=Unidad<BR>CantidadInventario<BR>Precio<BR>PrecioSugerido<BR>DescuentoImporte<BR>Costo<BR>Impuesto1<BR>Impuesto2<BR>Impuesto3<BR>ExcluirISAN
+
+
+
+
+;**** Se modifico el valor a refrescar, integracion propre 26-Ago-08(Arly)****
+[VentaD.tbl/Precio]
+;ValorRefrescar=Asigna(Info.RefrescandoPrecio, Verdadero)<BR>Si<BR>  Info.Copiar<BR>Entonces<BR>  Asigna(VentaD:VentaD.PrecioSugerido, Info.Precio)<BR>  Info.Precio<BR>Sino<BR>  Asigna(Temp.Flotante,<BR>  Si<BR>    Config.VentaSolicitarPrecios y VentaD:Art.SolicitarPrecios <BR>  Entonces<BR>    Si(Vacio(Precio), Si(Forma(<T>ArtPreciosLista<T>), Info.Precio), Precio)<BR>  Sino<BR>    Si(Vacio(Aplica) o Config.VentaPPIndirectos, Si(Config.PrecioNivelUnidad, VentaD:PropreListaDFinal.Precio, PrecioUnidadAlterna(VentaD:Art.Unidad, Unidad, Cantidad, CantidadInventario, VentaD:PropreListaDFinal.Precio)), Precio)<BR>  Fin)<BR>  Asigna(VentaD:VentaD.PrecioSugerido, Vacio(Temp.Flotante, 99999.99))<BR>  Vacio(Temp.Flotante, 99999.99)                       <BR>Fin
+;ValorRefrescar=Asigna(Info.RefrescandoPrecio, Verdadero)<BR>Si<BR>  Info.Copiar<BR>Entonces<BR>  Asigna(VentaD:VentaD.PrecioSugerido, Info.Precio)<BR>  Info.Precio<BR>Sino<BR>  Asigna(Temp.Flotante,<BR>  Si<BR>    Config.VentaSolicitarPrecios y VentaD:Art.SolicitarPrecios <BR>  Entonces<BR>    Si(Vacio(Precio), Si(Forma(<T>ArtPreciosLista<T>), Info.Precio), Precio)<BR>  Sino<BR>    Si(Vacio(Aplica) o Config.VentaPPIndirectos, Si(Config.PrecioNivelUnidad, SQL(<T>SELECT dbo.fnProprePrecio(:nID, :tArt, :nRenglon )<T>, Venta:Venta.ID, Articulo) , PrecioUnidadAlterna(VentaD:Art.Unidad, Unidad, Cantidad, CantidadInventario, SQL(<T>SELECT dbo.fnProprePrecio(:nID, :tArt, :nRenglon)<T>, Venta:Venta.ID, Articulo) )), Precio)<BR>  Fin)<BR>  Asigna(VentaD:VentaD.PrecioSugerido, Temp.Flotante)<BR>  Temp.Flotante<BR>Fin
+ValorRefrescar=Asigna(Info.RefrescandoPrecio, Verdadero)<BR>Si<BR>  Info.Copiar<BR>Entonces<BR>  Asigna(VentaD:VentaD.PrecioSugerido, Info.Precio)<BR>  Info.Precio<BR>Sino<BR>  Asigna(Temp.Flotante,<BR>  Si<BR>    Config.VentaSolicitarPrecios y VentaD:Art.SolicitarPrecios <BR>  Entonces<BR>    Si(Vacio(Precio), Si(Forma(<T>ArtPreciosLista<T>), Info.Precio), Precio)<BR>  Sino<BR>    Si(Vacio(Aplica) o Config.VentaPPIndirectos, Si(Config.PrecioNivelUnidad, SQL(<T>SELECT dbo.fnProprePrecio(:nID, :tArt, :nRenglon, :lRedP)<T>, Venta:Venta.ID, Articulo, Renglon, Venta:Venta.RedimePtos) , PrecioUnidadAlterna(VentaD:Art.Unidad, Unidad, Cantidad, CantidadInventario, SQL(<T>SELECT dbo.fnProprePrecio(:nID, :tArt, :nRenglon, :lRedP)<T>, Venta:Venta.ID, Articulo, Renglon, Venta:Venta.RedimePtos) )), Precio)<BR>  Fin)<BR>  Asigna(VentaD:VentaD.PrecioSugerido, Temp.Flotante)<BR>  Temp.Flotante<BR>Fin
+
+
+;**** ARC 05-Feb-08 Se modifico la condicion de despliegue para que sea visible respetando las condiciones originales y si el movimiento es sol dev unicaja *****
+[VentaD.tbl/Costo]
+CondicionDespliege=Usuario.Costos y (no Usuario.BloquearCostos) y ((MovTipoEn(<T>VTAS<T>,Venta:Venta.Mov, (VTAS.D, VTAS.DF, VTAS.PR, VTAS.EST, VTAS.DFC, VTAS.FX)) o (Venta:Venta.Mov en(<T>Sol Dev Unicaja<T>))) o Config.VentaVerCosto)
+
+
+;**** Nuevo campo agregado 13-Nov-08 (ARC)****
+[VentaD.tbl/IDCopiaMAVI]
+Clave=IDCopiaMAVI
+Nombre=IDCopiaMAVI
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+
+
+[VentaD.tbl/CantidadA]
+CondicionDespliege=(Venta:Venta.Estatus = EstatusPendiente) y (Venta:Venta.EnviarA=11)
+
+
+
+
+;**************************************************************RELACIONES***********************************************************
+;***********************************************************************************************************************************
+
+
+
+
+;****Nueva relacion 26-Ago-08****
+[VentaD.tbl/Relaciones.Lista]
+TipoRelacion=Opcional
+LlaveLocal=PropreListaID
+Clave=Lista
+TablaRemota=PropreListaDFinal
+LlaveRemota=ID
+

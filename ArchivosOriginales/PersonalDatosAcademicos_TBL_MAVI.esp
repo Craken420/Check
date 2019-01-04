@@ -1,0 +1,32 @@
+;**** Ultima modificación:23-May-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:El campo Nivel
+
+
+;**** Se cambio el valor de la propiedad AyudaMemOpc de "Opciones unicamente listadas" a "Validar captura en la lista" para que el campo nos muestre el valor capturado ****
+[PersonalDatosAcademicos.tbl/Titulo]
+Clave=Titulo
+Nombre=Título
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Validar captura en la lista
+Formula=SQLEnLista(<T>SELECT Titulo FROM PersonalTitulo<T>)
+
+
+;**** Se cambio el valor de la propiedad "Ayuda en captura" de Opciones listadas a expresión para que el sistema muestre el nivelacademico de la tabla NivelAcademico ****
+;**** Se cambió el tamaño de 20 a 50 ****
+[PersonalDatosAcademicos.tbl/Nivel]
+Clave=Nivel
+Nombre=Nivel Académico
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Expresion
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+AyudaMemOpc=Validar captura en la lista
+Formula=SQLEnLista(<T>SELECT NivelAcademico FROM NivelAcademico<T>)

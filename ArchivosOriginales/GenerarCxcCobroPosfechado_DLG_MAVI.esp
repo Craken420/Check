@@ -1,0 +1,38 @@
+;**** Ultima modificación:24-Mar-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:Se hizo visible la accion "Cobro" cuando el movimiento es cobro posfechado.
+
+
+; **** Se agregaron nuevas acciones: CobroInstituciones y la posicion inicial izquiera para que el dialogo fuera mas grande****
+[GenerarCxcCobroPosfechado.dlg/Dialogo]
+PosicionInicialIzquierda=500
+PosicionInicialArriba=301
+PosicionInicialAltura=141
+PosicionInicialAncho=294
+ListaAcciones=Cobro<BR>CobroInstituciones
+
+; **** Se modifico esta accion para que no fuera visible ****
+[GenerarCxcCobroPosfechado.dlg/Acciones.Cobro]
+Nombre=Cobro
+Boton=0
+NombreDesplegar=Generar &Cobro
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=N
+Expresion=Generar(<T>CXC<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CxcCobro, Afectar.FormaCaptura)
+VisibleCondicion=Info.Mov en (<T>Cobro Posfechado<T>)
+
+
+; **** Accion nueva solo es visible si movimiento es: "Cobro Diferido" ****
+[GenerarCxcCobroPosfechado.dlg/Acciones.CobroInstituciones]
+Nombre=CobroInstituciones
+Boton=0
+NombreDesplegar=Generar Cobro Instituciones
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Expresion=Generar(<T>CXC<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, <T>Cobro Instituciones<T>, Afectar.FormaCaptura)
+VisibleCondicion=Info.Mov en (<T>Cobro Diferido<T>)

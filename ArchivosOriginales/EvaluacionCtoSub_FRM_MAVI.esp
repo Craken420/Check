@@ -1,0 +1,24 @@
+;Ultima modificacion: 23-Jul-2008
+;Responsable: Arly Rubio  
+;Modifico: Creacion.
+
+
+
+
+;**** Se cambio la variable Info.Fecha por la Info.FechaEvaluacionMAVI ******
+[EvaluacionCtoSub.frm/Forma]
+Nombre=<T>Evaluación - <T>+Info.SubEvaluacion+ <T> (<T>+FechaEnTexto(Info.FechaEvaluacionMAVI, <T>dd/mmm/aaaa hh:mm:ss<T>)+<T>)<T>
+ExpresionesAlMostrar=EjecutarSQL(<T>spEvaluacionCto :tEval, :fFecha, :tCto<T>, Info.SubEvaluacion, Info.FechaEvaluacionMAVI, Info.Clave)
+
+
+
+;**** Se cambio la variable Info.Fecha por la Info.FechaEvaluacionMAVI ******
+[EvaluacionCtoSub.frm/Lista]
+FiltroGeneral=EvaluacionCto.Contacto=<T>{Info.Clave}<T> AND<BR>EvaluacionCto.Fecha=<T>{FechaEnTexto(Info.FechaEvaluacionMAVI,<T>aaaa/mm/dd hh:mm:ss<T>)}<T> AND<BR>EvaluacionCto.Evaluacion=<T>{Info.SubEvaluacion}<T>
+
+
+;**** Se cambio la variable Info.Fecha por la Info.FechaEvaluacionMAVI ******
+[EvaluacionCtoSub.frm/Acciones.Aceptar]
+AntesExpresiones=EjecutarSQL(<T>spEvaluacionReferencia :tReferencia, :tContacto, :fFecha<T>, Info.SubEvaluacion, Info.Clave, Info.FechaEvaluacionMAVI)
+
+

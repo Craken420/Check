@@ -1,0 +1,36 @@
+;Se Agrego El Campo SucursalAsignada para ligar los almacenes con las sucursales de instituciones
+
+[Alm.tbl/Tabla]
+
+ListaCampos=Almacen<BR>Rama<BR>Nombre<BR>Direccion<BR>EntreCalles<BR>Plano<BR>Observaciones<BR>Colonia<BR>Poblacion<BR>CodigoPostal<BR>Estado<BR>Pais<BR>Grupo<BR>Delegacion<BR>Encargado<BR>Telefonos<BR>Exclusivo<BR>Orden<BR>Tipo<BR>Estatus<BR>Sucursal<BR>UltimoCambio<BR>Alta<BR>Zona<BR>Categoria<BR>FacturasPendientes<BR>wMostrar<BR>wUnicamenteDisponibles<BR>TieneMovimientos<BR>Ruta<BR>NivelAcceso<BR>Idioma<BR>ExcluirPlaneacion<BR>CBDir<BR>Cuenta<BR>Segundas<BR>Compartido<BR>SucursalRef<BR>WMS<BR>SucursalAsignada
+
+
+SQL=SELECT<BR>  Almacen,<BR>  Rama,<BR>  Nombre,<BR>  Direccion,<BR>  EntreCalles,<BR>  Plano,<BR>  Observaciones,<BR>  Colonia,<BR>  Delegacion,<BR>  Poblacion,<BR>  Estado,<BR>  Pais,<BR>  CodigoPostal,<BR>  Encargado,<BR>  Telefonos,<BR>  Grupo,<BR>  Categoria,<BR>  Zona,<BR>  Ruta,<BR>  Tipo,<BR>  Sucursal,<BR>  Exclusivo,<BR>  Orden,<BR>  Estatus,<BR>  UltimoCambio,<BR>  Alta,<BR>  FacturasPendientes,<BR>  wMostrar,<BR>  wUnicamenteDisponibles,<BR>  TieneMovimientos,<BR>  NivelAcceso,<BR>  Idioma,<BR>  ExcluirPlaneacion,<BR>  CBDir,<BR>  Cuenta,<BR>  Segundas,<BR>  Compartido,<BR>  SucursalRef,<BR>  WMS,<BR>  SucursalAsignada<BR><BR>FROM<BR>  Alm
+
+
+
+
+[Alm.tbl/Categoria]
+AyudaEnCaptura=Vista
+AyudaForma=AlmCategoriasInstitucionesfrm
+AyudaVista=AlmCategoriasInstitucionesvis
+AyudaCampo=Categoria
+AyudaRefrescar=S
+AyudaMemOpc=Consulta opcional
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Categoria no permitida favor de corregir.<T>
+ValidacionCondicion=SQL(<T>SELECT COUNT(*) FROM TABLASTD WHERE TABLAST = <T> + COMILLAS(<T>CATEGORIAS ALMACENES<T>) + <T> AND NOMBRE=:tCAT<T>,CATEGORIA)>=1
+
+
+
+[Alm.tbl/SucursalAsignada]
+Clave=SucursalAsignada
+Nombre=Sucursal Asignada
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+AyudaEnCaptura=Vista
+AyudaForma=SucursalLista
+AyudaVista=Sucursal
+AyudaCampo=Sucursal.Sucursal
+AyudaRefrescar=S

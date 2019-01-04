@@ -1,0 +1,19 @@
+[EmpresaConcepto.Tbl/Tabla]
+
+ListaCampos=Empresa<BR>Modulo<BR>Mov<BR>Concepto<BR>Requerido<BR>UtilizarEste<BR>TipoCfdi
+SQL=SELECT<BR>  Empresa,<BR>  Modulo,<BR>  Mov,<BR>  Concepto,<BR>  Requerido,<BR>  UtilizarEste,<BR>  TipoCfdi<BR><BR>FROM<BR>  EmpresaConcepto
+
+[EmpresaConcepto.Tbl/TipoCfdi]
+Clave=TipoCfdi
+Nombre=TipoCfdi
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=1
+TipoDatos=Texto
+Tamano=1
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+AlCambiar=Si  Vacio(TipoCfdi) o  (TipoCfdi en (<T>E<T>,<T>I<T>,<T> <T>))<BR>Entonces<BR>  Ejecutarsql(<T>EXEC SpIDM0306_EmpConcepto :tTipoCf, :tEmpre, :tModulo, :tMov<T>,TipoCfdi,Empresa,Modulo,Mov)<BR>  VERDADERO<BR>Sino                                               <BR>  ERROR(<T>EL VALOR NO CORRESPONDE A LA LISTA<T>)<BR>  AbortarOperacion<BR>Fin
+Mayusculas=S
+ListaOpciones=I<BR>E

@@ -1,0 +1,15 @@
+[Fabricante.tbl/Tabla]
+ListaCampos=Fabricante<BR>Telefonos<BR>DirInternet<BR>Notas<BR>Grupo
+SQL=SELECT<BR>  Fabricante,<BR>  Telefonos,<BR>  DirInternet,<BR>  Notas,<BR>  Grupo<BR><BR>FROM<BR>  Fabricante
+
+[Fabricante.tbl/Grupo]
+Clave=Grupo
+Nombre=Grupo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+ListaOpciones=<BR>MARCAS<BR>MULTIMARCAS

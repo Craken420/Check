@@ -1,0 +1,47 @@
+;**** Ultima modificación:30-Sep-08
+;**** Modifico:Arly Rubio
+;**** Se modifico: Se agrego el campo CostoDeHoyMAVI
+
+;**** Modificacion: 20-Feb-09
+;**** Modifico: Edgar Montelongo
+;**** Se modifico: Cambio de Nombre a campo CostoDeHoyMAVI - RespuestaMAVI
+
+
+
+;**** Se agregaron nuevos campos: RespuestaMAVI *****
+[EvaluacionCto.tbl/Tabla]
+ListaCampos=Evaluacion<BR>Fecha<BR>Punto<BR>Contacto<BR>Respuesta<BR>Calificacion<BR>RespuestaMAVI
+SQL=SELECT<BR>  Evaluacion,<BR>  Punto,<BR>  Contacto,<BR>  Calificacion,<BR>  Respuesta,<BR>  Fecha,<BR>  RespuestaMAVI<BR><BR>FROM<BR>  EvaluacionCto
+
+
+;***** Nuevo campo agregado (30-Sep-08) Arly Rubio Camacho ****
+[EvaluacionCto.tbl/RespuestaMAVI]
+Clave=RespuestaMAVI
+Nombre=Respuesta
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+;CondicionDespliege=Info.Evaluacion = <T>COSTO DE HOY<T>
+CondicionEdicion=Vacio(EvaluacionCto:EvaluacionFormato.Referencia)
+ConRefrescar=S
+ListaRefrescar=Calificacion
+
+
+; **** Se modifico para que el campo no sólo aceptara las opciones listadas ****
+; **** Se agrego una condicion de despliegue Arly Rubio Camacho (30-Sep-08)
+[EvaluacionCto.tbl/Respuesta]
+AyudaMemOpc=Consulta opcional
+;AyudaMemOpc=Validar captura en la lista
+;CondicionDespliege=Info.Evaluacion <> <T>COSTO DE HOY<T>
+CondicionEdicion=Vacio(EvaluacionCto:EvaluacionFormato.Referencia)
+
+
+; **** Valor a refrescar dependiendo si viene del campo Respuesta o RespuestaMAVI
+[EvaluacionCto.tbl/Calificacion]
+ValorRefrescar=Vacio(SQL(<T>SELECT Valor FROM TablaEvaluacionD WHERE TablaEvaluacion=:tTabla AND Nombre=:tRespuesta<T>,  EvaluacionCto:EvaluacionFormato.Respuesta, Respuesta),0)+Vacio(RespuestaMAVI,0)
+
+
+
+
+
+

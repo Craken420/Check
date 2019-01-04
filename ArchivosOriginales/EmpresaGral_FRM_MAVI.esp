@@ -1,0 +1,17 @@
+;*** Desarrollo de Campañas 27/08/09, Joel García Díaz (Mex), se agregaron campos adicionales a la conf. global.
+
+[EmpresaGral.frm/Desarrollo]
+ListaEnCaptura=EmpresaGral.DirectorioCodigo<BR>EmpresaGral.BasePersonalMAVI
+
+
+[EmpresaGral.frm/Desarrollo.EmpresaGral.BasePersonalMAVI]
+Carpeta=Desarrollo
+Clave=EmpresaGral.BasePersonalMAVI
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+EspacioPrevio=S
+Tamano=50
+ColorFondo=Blanco
+ColorFuente=Negro

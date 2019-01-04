@@ -1,0 +1,25 @@
+
+; **** Integracion de ExpresionesAlMostrar para desarrollo DM0159 PROCESAR EN LOTE dentro del paquete DM0159_30112011. JR 30-Nov-2011. ****
+[EspecificarMovFactura.frm/Forma]
+PosicionInicialIzquierda=505
+PosicionInicialArriba=437
+PosicionInicialAncho=269
+PosicionInicialAlturaCliente=111
+ExpresionesAlMostrar=Asigna(Mavi.DM0159MovFactura, ConfigMov.VentaFactura)<BR>Asigna(Info.FacturarLote, <T>Movimiento<T>)
+
+
+; **** Integracion de variable Mavi.DM0159MovFactura y omision de Info.MovFactura. TOMAS ECHEVERRIA. Para desarrollo DM0159 PROCESAR EN LOTE dentro del paquete DM0159_30112011. JR 30-Nov-2011. ****
+[EspecificarMovFactura.frm/(Variables)]
+ListaEnCaptura=Info.FacturarLote<BR>Mavi.DM0159MovFactura
+
+; **** Integracion de variable Mavi.DM0159MovFactura. TOMAS ECHEVERRIA. Para desarrollo DM0159 PROCESAR EN LOTE dentro del paquete DM0159_30112011. JR 30-Nov-2011. ****
+[EspecificarMovFactura.frm/(Variables).Mavi.DM0159MovFactura]
+Carpeta=(Variables)
+Clave=Mavi.DM0159MovFactura
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+ColorFuente=Negro

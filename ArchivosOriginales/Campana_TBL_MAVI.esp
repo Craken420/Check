@@ -1,0 +1,93 @@
+;**** modificación:03-Ago-09
+;**** Modifico: Joel García Díaz (Mex)
+;**** Se modifico:Creación desarrollo de Campañas
+
+[Campana.tbl/Tabla]
+ListaCampos.Cambios=Insertar<TAB>Sembrado<TAB>36<BR>Insertar<TAB>Contacto<TAB>37<BR>Insertar<TAB>TipoContacto<TAB>38<BR>Insertar<TAB>SaldoCero<TAB>39<BR>Insertar<TAB>SaldoCeroTipo<TAB>40<BR>Insertar<TAB>FechaED<TAB>41<BR>Insertar<TAB>FechaEA<TAB>42<BR>Insertar<TAB>FechaUCD<TAB>43<BR>Insertar<TAB>FechaUCA<TAB>44
+SQL.Cambios=Eliminar<TAB>  SaldoCeroTipo<BR>Insertar<TAB>  SaldoCeroTipo,<TAB>41<BR>Insertar<TAB>  FechaED,<TAB>42<BR>Insertar<TAB>  FechaEA<TAB>43  <BR>Insertar<TAB>  FechaUCD,<TAB>44<BR>Insertar<TAB>  FechaUCA<TAB>45
+
+[Campana.tbl/Sembrado]
+Clave=Sembrado
+Nombre=Incluye Sembrado
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[Campana.tbl/Contacto]
+Clave=Contacto
+Nombre=Incluye Contactos
+Visible=S
+TamanoValidacion=20
+TipoDatos=Lógico
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=TipoContacto
+
+[Campana.tbl/SaldoCero]
+Clave=SaldoCero
+Nombre=SaldoCero
+Visible=S
+TamanoValidacion=20
+Tamano=0
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=SaldoCeroTipo
+TipoDatos=Lógico
+
+[Campana.tbl/SaldoCeroTipo]
+Clave=SaldoCeroTipo
+Nombre=SaldoCeroTipo
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionEdicion=SaldoCero = Verdadero
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ListaOpciones=Saldo<BR>Sin Saldo
+TipoDatos=Texto
+
+[Campana.tbl/TipoContacto]
+Clave=TipoContacto
+Nombre=TipoContacto
+Visible=S
+TamanoValidacion=20
+Tamano=20
+CondicionEdicion=Contacto = Verdadero
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ListaOpciones=Aval<BR>Personal<BR>Ambos
+TipoDatos=Texto
+
+[Campana.tbl/FechaED]
+Clave=FechaED
+Nombre=Fecha Emisión de Ventas
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+AyudaEnCaptura=Calendario sin Hora
+
+[Campana.tbl/FechaEA]
+Clave=FechaEA
+Nombre=Hasta:
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+AyudaEnCaptura=Calendario sin Hora
+
+[Campana.tbl/FechaUCD]
+Clave=FechaUCD
+Nombre=Fecha Ultimo Cobro
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+AyudaEnCaptura=Calendario sin Hora
+
+[Campana.tbl/FechaUCA]
+Clave=FechaUCA
+Nombre=Hasta:
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+AyudaEnCaptura=Calendario sin Hora

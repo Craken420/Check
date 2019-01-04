@@ -1,0 +1,427 @@
+;**** Ultima modificación:11-Jul-08
+;**** Modifico:Arly Rubio Camacho
+;**** Se modifico:Integracion desarrollo mexico
+
+
+
+;***** Integracion cambio mexico *****
+;***** Se agregaron nuevos campos: desarrollomexico(MaviEstatus, TieneMovimientos)
+;***** Se agregaron nuevos campos 16-Jun-09 ARC: ViveConMAVI, ViveEnCalidadDeMAVI
+
+
+; ***** Modifico: Judith Ramirez 03-Dic-09 *****
+; ***** Modificacion: Integracion de campos nuevos: EstadoCivilMavi, LadaMavi, para Cte Express por Arturo Guizer. *****
+
+
+
+; ***** Modifico: JR 03-Dic-09. Agrego linea ListaRelaciones para añadir a la lista CteCtoDirecciones para CteExpress hecho por
+;		Arturo Guizer.	
+; **** Integracion de nuevo campo IDPadreMavi para desarrollo Cliente Express Generación de Contactos Hijos en el paquete ClienteExpressYCtes_05042011. Cambio por AGR 20110322 SE AGREGA CAMPO DE IDPADREMAVI. Integracion por JR 6-Abr-2011.****
+; **** Integracion de nuevo campo TipoMavi para desarrollo Cliente Express y Clientes Generación de Contactos Hijos del paquete ClienteExpressYCtes_11042011. Cambio por AGR 20110322 SE AGREGA CAMPO DE TIPOMAVI. Integracion JR 11-Abr-2011. ****
+[CteCto.tbl/Tabla]
+ListaCampos=Cliente<BR>ID<BR>Nombre<BR>ApellidoPaterno<BR>ApellidoMaterno<BR>Cargo<BR>Grupo<BR>FechaNacimiento<BR>Telefonos<BR>Extencion<BR>eMail<BR>Fax<BR>PedirTono<BR>EnviarA<BR>Tipo<BR>Tratamiento<BR>Sexo<BR>Atencion<BR>Usuario<BR>MaviEstatus<BR>TieneMovimientos<BR>CteEnviarAExpress<BR>ViveConMAVI<BR>ViveEnCalidadDeMAVI<BR>EstadoCivilMavi<BR>LadaMavi<BR>IDPadreMavi<BR>TipoMavi<BR>RFC<BR>NivelCobranzaEspecialContactoA<BR>ContactoSelectAval
+SQL=SELECT<BR>  Cliente,<BR>  ID,<BR>  Nombre,<BR>  ApellidoPaterno,<BR>  ApellidoMaterno,<BR>  Atencion,<BR>  Tratamiento,<BR>  Cargo,<BR>  Grupo,<BR>  FechaNacimiento,<BR>  Telefonos,<BR>  Extencion,<BR>  eMail,<BR>  Fax,<BR>  PedirTono,<BR>  EnviarA,<BR>  Tipo,<BR>  Sexo,<BR>  Usuario,<BR>  MaviEstatus,<BR>  TieneMovimientos,<BR>  CteEnviarAExpress,<BR>  ViveConMAVI,<BR>  ViveEnCalidadDeMAVI,<BR>  EstadoCivilMavi,<BR>  LadaMavi, <BR>  IDPadreMavi, <BR>TipoMavi,<BR>RFC,<BR>ContactoSelectAval,<BR>NivelCobranzaEspecialContactoA<BR><BR>FROM<BR>  CteCto
+ListaRelaciones=CteEnviarA<BR>CteCtoDireccion
+
+;***** Integracion cambio mexico *****
+;***** Cambio mexico: Se agrego una contidicion de edicion para el campo *****
+; ***** Cambio JR 03-Dic-09. Se agrego cambio en nombre, y se comento CondicionEdicion para CteExpress. Cambios por Arturo Guizer. *****
+[CteCto.tbl/Nombre]
+Nombre=* Nombre
+Requerido=S
+Mayusculas=S
+Visible=S
+TamanoValidacion=30
+Tamano=100
+ConRefrescar=S
+ListaRefrescar=RFC
+
+
+; ***** Cambio JR 03-Dic-09. Se agrego cambio en la estructura del campo para CteExpress. Cambios por Arturo Guizer. *****
+[CteCto.tbl/Sexo]
+Clave=Sexo
+Nombre=* Sexo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=12
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+AlCambiar=
+ListaOpciones=Masculino<BR>Femenino
+TipoDatos=Texto
+ListaRefrescar=EstadoCivilCte
+ListaRefrescarCondiciones=EstadoCivilCte
+ConRefrescar=S
+ConRefrescarCondiciones=S
+CondicionDespliege=(Tipo noen(<T>BANCARIA<T>,<T>BANCARIAS<T>,<T>COMERCIAL<T>,<T>REFERENCIA COMERCIAL<T>))
+;CondicionDespliege=(Tipo noen(<T>Bancaria<T>,<T>BANCARIA<T>))
+
+;*** Integracion paquete DM0138_PaqueteClienteExpress_28062011 BVF 28062011
+; ***** Cambio JR 03-Dic-09. Se agrego cambio en la estructura del campo para CteExpress. Cambios por Arturo Guizer. *****
+[CteCto.tbl/FechaNacimiento]
+TipoDatos=FechaHora
+Nombre=Fecha de Nacimiento (dd/mm/aaaa)
+FormatoValidacion=dd/mmm/aaaa
+ValorMaximo=hoy
+CondicionDespliege=(Tipo noen(<T>BANCARIA<T>,<T>BANCARIAS<T>,<T>COMERCIAL<T>,<T>REFERENCIA COMERCIAL<T>))
+AyudaEnCaptura=Vista
+AyudaForma=clientecontactoMaviSelectorFecha
+AyudaVista=(Variables)
+AyudaCampo=Mavi.ClienteContactoFecha
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+AyudaEnCaptura=Calendario sin Hora
+FormatoValidacion=dd/mmm/aaaa
+ConRefrescar=S
+ListaRefrescar=RFC
+
+
+
+
+;***** Integracion cambio mexico *****
+;***** Cambio mexico: cambio el nombre a desplegar y se agrego una ayuda de captura *****
+; ***** Cambio JR 03-Dic-09. Se modifico nombre y se agrego CondicionDespliegue para CteExpress. Cambios por Arturo Guizer. *****
+[CteCto.tbl/Atencion]
+Nombre=* Parentesco
+AyudaMemOpc=Validar captura en la lista
+Formula=SQLEnLista(<T>SELECT Parentesco FROM Parentesco<T>)
+CondicionDespliege=(Tipo noen(<T>BANCARIA<T>,<T>BANCARIAS<T>,<T>COMERCIAL<T>,<T>REFERENCIA COMERCIAL<T>))
+;Nombre=Parentesco
+
+;***** Integracion cambio mexico *****
+;***** Cambio mexico: cambio el nombre a desplegar y se agrego una ayuda de captura *****
+;[CteCto.tbl/Tratamiento]
+;Nombre=Vive en Calidad
+;OpcionesColumnas=
+;OpcionesRenglones=
+;AyudaEnCaptura=Expresion
+;OpcionesPredefinidas=
+;ListaOpciones=
+;AyudaMemRenglones=12
+;AyudaMemOpc=Validar captura en la lista
+;Formula=SQLEnLista(<T>SELECT ViveEnCalidad FROM MaviCteCtoViveEnCalidad<T>)
+;[CteCto.tbl/Tratamiento]
+;Nombre=Vive en Calidad
+;Visible=S
+;AyudaEnCaptura=Expresion
+;AyudaMemRenglones=20
+;AyudaMemOpc=Consulta opcional
+;CondicionDespliege=(Tipo noen(<T>Bancaria<T>,<T>BANCARIA<T>))
+;Formula=Lista(SQLEnLista(<T>select ViveEnCalidad from MaviCtectoViveEnCalidad<T>))
+;ConRefrescarCondiciones=S
+;ListaRefrescarCondiciones=ViveConMAVI<BR>ViveEnCalidadDeMAVI
+
+
+; ***** Cambio JR 03-Dic-09. Se agrego cambio en la estructura del campo para CteExpress. Cambios por Arturo Guizer. *****
+[CteCto.tbl/Tratamiento]
+Nombre=* Vive en Calidad
+Visible=S
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=20
+AyudaMemOpc=Validar captura en la lista
+CondicionDespliege=(Tipo noen(<T>BANCARIA<T>,<T>BANCARIAS<T>,<T>COMERCIAL<T>,<T>REFERENCIA COMERCIAL<T>))
+Formula=Lista(SQLEnLista(<T>select ViveEnCalidad from MaviCtectoViveEnCalidad<T>))
+TamanoValidacion=50
+Tamano=50
+AyudaMemOpc=Unicamente opciones listadas
+ConRefrescarCondiciones=S
+Mayusculas=S
+ListaRefrescarCondiciones=ViveConMAVI<BR>ViveEnCalidadDeMAVI
+
+
+
+;***** Integracion cambio mexico *****
+;***** Cambio mexico: Se agrego una contidicion de edicion para el campo *****
+; ***** Cambio JR 03-Dic-09. Se agrego nombre y se modifico CondicionDespliegue para CteExpress. Cambios por Arturo Guizer. *****
+[CteCto.tbl/ApellidoPaterno]
+Nombre=* Apellido Paterno
+Mayusculas=S
+CondicionDespliege=(Tipo noen(<T>BANCARIA<T>,<T>BANCARIAS<T>,<T>COMERCIAL<T>,<T>REFERENCIA COMERCIAL<T>))
+Visible=S
+TamanoValidacion=30
+Tamano=30
+CondicionDespliege=General.CteCtoApellidos
+ConRefrescar=S
+ListaRefrescar=RFC
+
+;***** Integracion cambio mexico *****
+;***** Cambio mexico: Se agrego una contidicion de edicion para el campo *****
+; ***** Cambio JR 03-Dic-09. Se agrego nombre y se modifico CondicionDespliegue para CteExpress. Cambios por Arturo Guizer. *****
+[CteCto.tbl/ApellidoMaterno]
+Nombre=* Apellido Materno
+Mayusculas=S
+CondicionDespliege=(Tipo noen(<T>BANCARIA<T>,<T>BANCARIAS<T>,<T>COMERCIAL<T>,<T>REFERENCIA COMERCIAL<T>))
+Visible=S
+TamanoValidacion=30
+Tamano=30
+CondicionDespliege=General.CteCtoApellidos
+ConRefrescar=S
+ListaRefrescar=RFC
+
+;***** Integracion cambio mexico *****
+;***** Cambio mexico: Se agrego una nueva ayuda en captura *****
+; ***** Cambio JR 03-Dic-09. Se agrego cambio en la estructura del campo para CteExpress. Cambios por Arturo Guizer. *****
+;[CteCto.tbl/Tipo]
+;OpcionesColumnas=
+;OpcionesRenglones=
+;AyudaEnCaptura=Expresion
+;OpcionesUnicamente=
+;ListaOpciones=
+;OpcionesPredefinidas=
+;AyudaMemRenglones=12
+;AyudaMemOpc=Validar captura en la lista
+;ConRefrescarCondiciones=S
+;RefrescarTodoCondiciones=S
+;Formula=SQLEnLista(<T>SELECT Tipo FROM MaviCteCtoTipo WHERE TipoCliente = 1 ORDER BY Tipo<T>)
+;[CteCto.tbl/Tipo]
+;AyudaEnCaptura=Expresion
+;AyudaMemRenglones=20
+;AyudaMemOpc=Consulta opcional
+;AlCambiar=SI(info.CategoriaMavi <> nulo ,ejecutarSQL(<T>SP_ContactoAlcambiarMavi :ta,:nb<T>,Tipo,ID))
+;ConRefrescarCondiciones=S
+;RefrescarTodoCondiciones=S
+;Formula=Lista (SQLEnLista(<T>select Tipo from MaviCtectotipo<T>))
+
+;CQ 23/12/2011 Se le quito el conrefrescar paquete DM0138_10012012 BVF 10012012
+;*** Integracion paquete DM0138_27072011_2 BVF 28072011, JAVT 25/07/2011 Se le quito el conrefrescar
+[CteCto.tbl/Tipo]
+Nombre=* Tipo
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=20
+TamanoValidacion=50
+Tamano=50
+;AyudaMemOpc=Consulta opciona
+AyudaMemOpc=Validar captura en la lista
+AlCambiar=SI(info.CategoriaMavi <> nulo ,ejecutarSQL(<T>SP_ContactoAlcambiarMavi :ta,:nb<T>,Tipo,ID))
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+AyudaRefrescar=S
+Formula=Lista (SQLEnLista(<T>select Tipo from MaviCtectotipo<T>))
+ConRefrescar=N
+ListaRefrescar=Nombre<BR>ApellidoPaterno<BR>ApellidoMaterno<BR>FechaNacimiento<BR>Telefonos<BR>Tratamiento<BR>Sexo<BR>ViveConMAVI<BR>ViveEnCalidadDeMAVI<BR>EstadocivilMavi<BR>LadaMavi<BR>Atencion
+
+
+
+
+
+;***** Integracion cambio mexico *****
+;***** Nuevo campo agregado Cambio mexico: Nuevo campo agregaro*****
+; ***** Cambio JR 03-Dic-09. Se modifico nombre para CteExpress. Cambios por Arturo Guizer. *****
+;[CteCto.tbl/MaviEstatus]
+;Clave=MaviEstatus
+;Nombre=Estatus
+;Visible=S
+;OpcionesColumnas=1
+;OpcionesRenglones=8
+;TamanoValidacion=30
+;Tamano=30
+;AyudaEnCaptura=Lista de Opciones
+;OpcionesUnicamente=S
+;OpcionesPredefinidas=Ninguna
+;OpcionesValidar=S
+;ValorPorOmision=<T>Nuevo<T>
+;ListaOpciones=Nuevo<BR>En supervision<BR>Supervisado<BR>Resupervision<BR>Rechazado<BR>Baja
+;TipoDatos=Texto
+[CteCto.tbl/MaviEstatus]
+Clave=MaviEstatus
+Nombre=Estatus
+Visible=S
+TamanoValidacion=30
+Tamano=30
+ValorPorOmision=<T>Nuevo<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ListaOpciones=Nuevo<BR>En Supervision<BR>Supervisado<BR>Resupervision<BR>Rechazado<BR>Baja
+;Nombre=MaviEstatus
+
+
+;***** Integracion cambio mexico *****
+;***** Nuevo campo agregado Cambio mexico: Nuevo campo agregaro*****
+[CteCto.tbl/TieneMovimientos]
+Clave=TieneMovimientos
+Nombre=Tiene Movimientos
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+
+
+; ***** Cambio JR 03-Dic-09. Se agrego ValorPorOmision, ValorRefrescar para CteExpress. Cambios por Arturo Guizer. *****
+[CteCto.tbl/CteEnviarAExpress]
+Clave=CteEnviarAExpress
+Nombre=Canal Venta
+Visible=S
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Vista
+AyudaForma=CteEnviarAListaMavi
+AyudaVista=CteEnviarAExpress
+AyudaCampo=CteEnviarA.ID
+ConAyudaBusquedaRapida=S
+ValorPorOmision=Info.CanalVentaMAVI
+ValorRefrescar=Info.CanalVentaMAVI
+
+
+[CteCto.tbl/EnviarA]
+Nombre=Canal Venta
+
+
+; ***** Cambio JR 03-Dic-09. Se agrego cambio en la estructura del campo para CteExpress. Cambios por Arturo Guizer. *****
+;[CteCto.tbl/ViveConMAVI]
+;Clave=ViveConMAVI
+;Nombre=Vive Con
+;Visible=S
+;TamanoValidacion=50
+;Tamano=50
+;AyudaEnCaptura=Expresion
+;AyudaMemOpc=Validar captura en la lista
+;CondicionDespliege=Tratamiento = <T>Huesped<T>
+;Formula=SQLEnLista(<T>SELECT Parentesco FROM Parentesco<T>)
+
+[CteCto.tbl/ViveConMAVI]
+Clave=ViveConMAVI
+Nombre=* Vive Con
+Visible=S
+TamanoValidacion=30
+Tamano=30
+;AGR 17112009 QUE ADEMAS DE SER HUESPED NO SEA DE MAYOREO
+;CondicionDespliege=(MAYUSCULAS(Tratamiento)=<T>HUESPED<T>) y (Info.CategoriaMavi<><T>MAYOREO<T>)
+CondicionDespliege=(MAYUSCULAS(Tratamiento)=<T>HUESPED<T>) y (Info.CategoriaMavi<><T>MAYOREO<T>) y (MAYUSCULAS(Tipo)=<T>AVAL<T>)
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=15
+AyudaMemOpc=Validar captura en la lista
+Formula=Lista( SQLEnLista(<T>SELECT Parentesco FROM Parentesco<T>))
+
+
+; ***** Cambio JR 03-Dic-09. Se agrego cambio en la estructura del campo para CteExpress. Cambios por Arturo Guizer. *****
+;[CteCto.tbl/ViveEnCalidadDeMAVI]
+;Clave=ViveEnCalidadDeMAVI
+;Nombre=Vive En Calidad De
+;Visible=S
+;TamanoValidacion=20
+;Tamano=20
+;AyudaEnCaptura=Expresion
+;AyudaMemOpc=Validar captura en la lista
+;CondicionDespliege=Tratamiento = <T>Huesped<T>
+;Formula=SQLEnLista(<T>SELECT ViveEnCalidad FROM MaviCteCtoViveEnCalidad<T>)
+
+[CteCto.tbl/ViveEnCalidadDeMAVI]
+Clave=ViveEnCalidadDeMAVI
+Nombre=* Que vive en calidad de
+Visible=S
+TamanoValidacion=30
+Tamano=30
+;CondicionDespliege=MAYUSCULAS(Tratamiento) = <T>HUESPED<T>
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=30
+AyudaMemOpc=Validar captura en la lista
+Formula=SQLEnLista(<T>SELECT ViveEnCalidad FROM MaviCteCtoViveEnCalidad<T>)
+;CondicionDespliege=(MAYUSCULAS(Tratamiento)=<T>HUESPED<T>) y (Info.CategoriaMavi<><T>MAYOREO<T>)
+CondicionDespliege=(MAYUSCULAS(Tratamiento)=<T>HUESPED<T>) y (Info.CategoriaMavi<><T>MAYOREO<T>) y (MAYUSCULAS(Tipo)=<T>AVAL<T>)
+
+; ***** Cambio JR 03-Dic-09. Se integro campo EstadoCivilMavi para CteExpress. Cambios por Arturo Guizer. *****
+[CteCto.tbl/EstadoCivilMavi]
+Clave=EstadocivilMavi
+Nombre=* Estado Civil
+Visible=S
+TamanoValidacion=25
+Tamano=25
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=10
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+CondicionDespliege=(Tipo noen(<T>BANCARIA<T>,<T>BANCARIAS<T>,<T>COMERCIAL<T>,<T>REFERENCIA COMERCIAL<T>,<T>CONYUGE<T>)) 
+Formula=Si(CteCto:CteCto.Sexo=<T>Femenino<T>, Lista(<T>Soltera<T>, <T>Casada<T>, <T>Divorciada<T>, <T>Viuda<T>, <T>Union Libre<T>),Lista(<T>Soltero<T>, <T>Casado<T>, <T>Divorciado<T>, <T>Viudo<T>, <T>Union Libre<T>))
+
+; ***** Cambio JR 03-Dic-09. Se integro campo LadaMavi para CteExpress. Cambios por Arturo Guizer. *****
+[CteCto.tbl/LadaMavi]
+Clave=LadaMavi
+Nombre=Lada
+Visible=S
+TamanoValidacion=30
+Tamano=30
+AyudaEnCaptura=N
+CondicionDespliege=(Tipo noen(<T>BANCARIA<T>,<T>BANCARIAS<T>,<T>COMERCIAL<T>,<T>REFERENCIA COMERCIAL<T>))
+MascaraEdicion=999
+ 
+
+; ***** Cambio JR 03-Dic-09. Se cambio estructura del campo para CteExpress. Cambios por Arturo Guizer. *****
+[CteCto.tbl/Telefonos]
+Clave=Telefonos
+Nombre=Teléfono
+Visible=S
+TamanoValidacion=30
+Tamano=30
+AyudaEnCaptura=N
+CondicionDespliege=(Tipo noen(<T>BANCARIA<T>,<T>BANCARIAS<T>,<T>COMERCIAL<T>,<T>REFERENCIA COMERCIAL<T>))
+MascaraEdicion=999999999999
+
+; ***** Cambio JR 03-Dic-09. Se cambio el campo para CteExpress. Cambios por Arturo Guizer. *****
+[CteCto.tbl/Extencion]
+MascaraEdicion=9999
+
+
+; **** Integracion de nuevo campo para desarrollo Cliente Express Generación de Contactos Hijos en el paquete ClienteExpressYCtes_05042011. Cambio por AGR 20110322 SE AGREGA CAMPO DE IDPADREMAVI. Integracion por JR 6-Abr-2011.****
+[CteCto.tbl/IDPadreMavi]
+Clave=IDPadreMavi
+Nombre=IDPadreMavi
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=Info.ID
+
+
+; **** Integracion de nuevo campo para desarrollo Cliente Express y Clientes Generación de Contactos Hijos del paquete ClienteExpressYCtes_11042011. Cambio por AGR 20110322 SE AGREGA CAMPO DE TIPOMAVI. Integracion JR 11-Abr-2011. ****
+[CteCto.tbl/TipoMavi]
+Clave=TipoMavi
+Nombre=TipoMavi
+Visible=S
+TamanoValidacion=15
+Tamano=15
+ValorPorOmision=<T>NORMAL<T>
+
+[CteCto.tbl/RFC]
+Clave=RFC
+Nombre=RFC
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+TipoDatos=Texto
+Tamano=15
+ValorRefrescar= SQL(<T>SELECT dbo.fnCalculaRFC(:tNombre, :tPaterno, :tMaterno, :fNacimiento, :tRegimen)<T>,CteCto:CteCto.Nombre,CteCto:CteCto.ApellidoPaterno, CteCto:CteCto.ApellidoMaterno,CteCto:CteCto.FechaNacimiento, <T>Persona Fisica<T>)
+AlCambiar=SQL(<T>SELECT dbo.fnCalculaRFC(:tNombre, :tPaterno, :tMaterno, :fNacimiento, :tRegimen)<T>,CteCto:CteCto.Nombre,CteCto:CteCto.ApellidoPaterno, CteCto:CteCto.ApellidoMaterno,CteCto:CteCto.FechaNacimiento, <T>Persona Fisica<T>)
+
+[CteCto.tbl/NivelCobranzaEspecialContactoA]
+Clave=NivelCobranzaEspecialContactoA
+Nombre=NivelCobranzaEspecialContactoA
+Visible=S
+TamanoValidacion=150
+Tamano=150
+CondicionDespliege=Tipo=<T>AVAL<T>
+AyudaEnCaptura=Vista
+AyudaForma=DM0123ANivelCobranzaVisFrm
+AyudaVista=DM0123ANivelCobranzaVis
+AyudaCampo=Nombre
+
+
+[CteCto.tbl/ContactoSelectAval]
+Clave=ContactoSelectAval
+Nombre=ContactoSelectAval
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=Tipo=<T>AVAL<T><BR>//Info.Cliente  
+;CondicionEdicion=SQL(<T>select SUM(CAST(COBRAAVAL as Int))  from cteenviara CA<BR>INNER JOIN  ctecto C ON CA.CLIENTE=C.CLIENTE<BR>where  C.TIPO=<T>+COMILLAS(<T>AVAL<T>)+<T>AND C.CLIENTE=<T>+COMILLAS(info.cliente))=0 
+
+
+

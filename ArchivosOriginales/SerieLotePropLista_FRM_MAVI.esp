@@ -1,0 +1,325 @@
+;**** Ultima modificación:05-Dic-08
+;**** Modifico:Arly Rubio Camacho
+;**** Se modifico:Modificacion en el orden de captura
+
+
+
+
+
+
+;***** Se modificaron las dimensiones de la forma ARC 05-Dic-08 ****
+;***** Se agrego una forma en las expresiones Al Mostrar y la inicializacion de variables *****
+;***** Nuevas acciones agregadas: VerTodo, EditarPedimento, EditarColor, EditarFechaAduanal, EditarModelo, EditarAduana, EditarRequeridos *****
+;***** Se agrego un menu: Edición ARC 08-Dic-08 ****
+[SerieLotePropLista.frm/Forma]
+PosicionInicialIzquierda=218
+PosicionInicialArriba=182
+PosicionInicialAltura=500
+PosicionInicialAncho=843
+PosicionInicialAlturaCliente=500
+PosicionCol1=245
+VentanaTipoMarco=Normal
+ListaAcciones=Seleccionar<BR>Nuevo<BR>Eliminar<BR>VerTodo<BR>Anexo<BR>EditarPedimento<BR>EditarColor<BR>EditarFechaAduanal<BR>EditarModelo<BR>EditarAduana<BR>Navegador<BR>EditarRequeridos
+ExpresionesAlMostrar=Asigna(Valida.Cuadro, nulo)<BR>Asigna(Valida.Color, nulo)<BR>Asigna(Valida.Aduana, nulo)<BR>Asigna(Valida.FechaAduanal, nulo)<BR>Asigna(Valida.Pedimento, nulo)<BR>Asigna(Valida.Modelo, nulo)<BR>//Asigna(Temp.Texto, Vacio(SQL(<T>Select Articulo FROM Art JOIN ArtLinea ON Art.Linea = ArtLinea.Linea WHERE Art.Articulo =:tArt AND ArtLinea.ValidarPropEnSerie = 1<T>, Info.Articulo), nulo))<BR>//Si((ConDatos(Temp.Texto)),Si(Forma(<T>SolicitarDatosRequeridosMAVI<T>), 1, AbortarOperacion))
+;ExpresionesAlMostrar=Asigna(Valida.Cuadro, nulo)<BR>Asigna(Valida.Color, nulo)<BR>Asigna(Valida.Aduana, nulo)<BR>Asigna(Valida.FechaAduanal, nulo)<BR>Asigna(Valida.Pedimento, nulo)<BR>Asigna(Valida.Modelo, nulo)<BR>Asigna(Temp.Texto, Vacio(SQL(<T>Select Articulo FROM Art JOIN ArtLinea ON Art.Linea = ArtLinea.Linea WHERE Art.Articulo =:tArt AND ArtLinea.ValidarPropEnSerie = 1<T>, Info.Articulo), nulo))<BR>Si((ConDatos(Temp.Texto)),Si(Forma(<T>SolicitarDatosRequeridosMAVI<T>), 1, AbortarOperacion))
+Menus=S
+MenuPrincipal=Edición
+
+
+;***** Se agrego un filtro ARC 08-Dic-08*****
+[SerieLotePropLista.frm/Lista]
+Filtros=S
+FiltroPredefinido=S
+FiltroNullNombre=(sin clasificar)
+FiltroEnOrden=S
+FiltroTodoNombre=(Todo)
+FiltroAncho=20
+FiltroRespetar=S
+FiltroTipo=General
+FiltroGeneral=1 = 1{Si(ConDatos(Valida.Cuadro),<T> AND SerieLoteProp.Propiedades=<T>+Comillas(Valida.Cuadro),<T><T>)}
+
+
+
+;**** Se modifico el orden la lista en captura ARC 05-Dic-08****
+; **** Integracion de nuevo campo SerieLoteProp.Nomotor para desarrollo DM0185 Detalle de Motor Motocicletas dentro del paquete DM0185_02062012. JR 05-Jun-2012. **** 
+; **** Eliminacion de campo NoMotor dentro del paquete DM0185_14062012. JR 16-Jun-2012. ****
+[SerieLotePropLista.frm/Detalles]
+ListaEnCaptura=SerieLoteProp.Propiedades<BR>SerieLoteProp.Extra1<BR>SerieLoteProp.Extra2<BR>SerieLoteProp.Fecha2<BR>SerieLoteProp.Extra3<BR>SerieLoteProp.Aduana<BR>Aduana.Seccion<BR>Aduana.Denominacion<BR>SerieLoteProp.Fecha1<BR>SerieLoteProp.Fecha3<BR>SerieLoteProp.Factor1<BR>SerieLoteProp.Factor2<BR>SerieLoteProp.Factor3
+
+;**** Se hizo no editable ARC 05-Dic-08 ***
+[SerieLotePropLista.frm/Detalles.SerieLoteProp.Extra1]
+Editar=N
+
+
+
+;**** Se hizo no editable ARC 05-Dic-08 ***
+[SerieLotePropLista.frm/Detalles.SerieLoteProp.Extra2]
+Editar=N
+
+
+;**** Se hizo no editable ARC 05-Dic-08 ***
+[SerieLotePropLista.frm/Detalles.SerieLoteProp.Extra3]
+Editar=N
+
+
+
+
+;**** Se hizo como linea nueva, no editable  y se modifico la dimension del campo ARC 05-Dic-08 ****
+[SerieLotePropLista.frm/Detalles.SerieLoteProp.Fecha2]
+Editar=N
+LineaNueva=S
+Tamano=50
+
+
+
+
+
+;**** Se quito de la carpeta "Pedimento", se hizo no editable y se agrego en la carpeta "Detalle" ARC 05-Dic-08 ****
+[SerieLotePropLista.frm/Detalles.SerieLoteProp.Aduana]
+Carpeta=Detalles
+Clave=SerieLoteProp.Aduana
+Editar=N
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=17
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+;**** Se quito de la carpeta "Pedimento" y se agrego en la carpeta "Detalle" ARC 05-Dic-08 ****
+[SerieLotePropLista.frm/Detalles.Aduana.Seccion]
+Carpeta=Detalles
+Clave=Aduana.Seccion
+Editar=S
+ValidaNombre=S
+3D=S
+Tamano=17
+ColorFondo=Plata
+ColorFuente=Negro
+
+
+;**** Se quito de la carpeta "Pedimento" y se agrego en la carpeta "Detalle" ARC 05-Dic-08 ****
+[SerieLotePropLista.frm/Detalles.Aduana.Denominacion]
+Carpeta=Detalles
+Clave=Aduana.Denominacion
+Editar=S
+ValidaNombre=S
+3D=S
+Tamano=17
+ColorFondo=Plata
+ColorFuente=Negro
+
+
+
+; **** Integracion de campo SerieLoteProp.Nomotor del paquete DM0185_02062012. JR 05-Jun-2012. ***
+; **** Eliminacion de campo NoMotor dentro del paquete DM0185_14062012. JR 16-Jun-2012. ****
+;[SerieLotePropLista.frm/Detalles.SerieLoteProp.Nomotor]
+;Carpeta=Detalles
+;Clave=SerieLoteProp.Nomotor
+;Editar=S
+;ValidaNombre=S
+;3D=S
+;ColorFondo=Blanco
+;ColorFuente=Negro
+;Tamano=20
+
+
+
+
+;**** Se quito de la lista en captura el campo SerieLoteProp.Aduana, Aduana.Seccion y Aduana.Denominacion ARC 05-Dic-08****
+[SerieLotePropLista.frm/Pedimento]
+ListaEnCaptura=SerieLoteProp.PedimentoClave<BR>SerieLoteProp.PedimentoRegimen<BR>SerieLoteProp.PedimentoTipo<BR>SerieLoteProp.Vencimiento<BR>SerieLoteProp.ValorDolares<BR>SerieLoteProp.ValorAduana<BR>SerieLoteProp.ValorComercial<BR>SerieLoteProp.AgenteAduanal<BR>Prov.Nombre<BR>SerieLoteProp.DTA<BR>SerieLoteProp.IVA<BR>SerieLoteProp.IGI<BR>Total<BR>SerieLoteProp.TieneRectificacion
+
+
+
+
+;************************************************************** ACCIONES *********************************************************************************
+;*********************************************************************************************************************************************************
+
+;***** Se agrego una expresion antes de ejecutrar para mantener el valor en las variables ARC 08-Dic-08*****
+[SerieLotePropLista.frm/Acciones.Nuevo]
+Antes=S
+AntesExpresiones=Si ConDatos(Valida.Pedimento)<BR>Entonces<BR>  Si Confirmacion(<T>¿Desea utilizar los datos en memoria?<T>, BotonAceptar)=BotonAceptar<BR>  Entonces<BR>    Asigna(Valida.Modelo, nulo)<BR>    Asigna(Valida.Color, nulo)<BR>  Sino<BR>    Asigna(Valida.Pedimento, nulo)<BR>    Asigna(Valida.Color, nulo)<BR>    Asigna(Valida.FechaAduanal, nulo)<BR>    Asigna(Valida.Modelo, nulo)<BR>    Asigna(valida.Aduana, nulo)<BR>  Fin<BR>Fin
+
+
+
+
+;***** Se modifico la accion para hacerla multiple ARC (05-Dic-08)****
+[SerieLotePropLista.frm/Acciones.Seleccionar]
+Nombre=Seleccionar
+Boton=23
+NombreEnBoton=S
+NombreDesplegar=&Seleccionar
+GuardarAntes=S
+EnBarraHerramientas=S
+EnBarraAcciones=S
+Activo=S
+Visible=S
+Multiple=S
+ListaAccionesMultiples=Validar<BR>Seleccionar
+
+
+;**** Nueva Sub Accion agregada ARC (05-Dic-08)****
+[SerieLotePropLista.frm/Acciones.Seleccionar.Validar]
+Nombre=Validar
+Boton=0
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Asigna(Temp.Texto, nulo)<BR>Asigna(Temp.Texto, SQL(<T>EXEC spValidarDatosRequeridosPropMAVI :tProp, :tArt<T>, SerieLoteProp:SerieLoteProp.Propiedades, Info.Articulo))<BR>Si(Info.EsEntrada, Si(Temp.Texto<><T>B<T>, Si(Error(Temp.Texto, BotonAceptar)=BotonAceptar, AbortarOperacion, AbortarOperacion)),Verdadero)
+
+
+
+;**** Nueva Sub Accion agregada ARC (05-Dic-08)****
+[SerieLotePropLista.frm/Acciones.Seleccionar.Seleccionar]
+Nombre=Seleccionar
+Boton=0
+TipoAccion=Ventana
+ClaveAccion=Seleccionar
+Activo=S
+Visible=S
+ConCondicion=S
+EjecucionCondicion=Temp.Texto=<T>B<T>
+
+;**** Nueva Accion agregada ARC (08-Dic-08)****
+[SerieLotePropLista.frm/Acciones.EditarPedimento]
+Nombre=EditarPedimento
+Boton=59
+NombreDesplegar=Editar Pedimento
+EnMenu=N
+TipoAccion=Expresion
+Activo=S
+ConCondicion=S
+Visible=S
+Antes=S
+NombreEnBoton=S
+EnBarraHerramientas=S
+EspacioPrevio=S
+GuardarAntes=S
+DespuesGuardar=S
+Expresion=si (Forma(<T>EditarPedimentoMAVI<T>))<BR>Entonces<BR>  Si(ConDatos(Valida.Pedimento), Valida.Pedimento, Si(Error(<T>No se puede dejar vacio el pedimento<T>, BotonAceptar)= BotonAceptar, AbortarOperacion, AbortarOperacion))<BR>  EjecutarSQL(<T>spActualizaDatosPropiedadMAVI 1, :tProp, :tExtra1, NULL, NULL, NULL, NULL<T>, Valida.Cuadro, Valida.Pedimento)<BR>  ActualizarForma<BR>Fin
+EjecucionCondicion=ConDatos(SerieLoteProp:SerieLoteProp.Propiedades)
+AntesExpresiones=Asigna(Valida.Cuadro, SerieLoteProp:SerieLoteProp.Propiedades )<BR>Asigna(Valida.Pedimento, SerieLoteProp:SerieLoteProp.Extra1)
+
+
+;**** Nueva Accion agregada ARC (08-Dic-08)****
+[SerieLotePropLista.frm/Acciones.EditarColor]
+Nombre=EditarColor
+Boton=8
+NombreEnBoton=S
+NombreDesplegar=Editar Color 
+EnBarraHerramientas=S
+EnMenu=N
+TipoAccion=Expresion
+Activo=S
+ConCondicion=S
+Antes=S
+Visible=S
+GuardarAntes=S
+DespuesGuardar=S
+Expresion=si (Forma(<T>EditarColorMAVI<T>))<BR>Entonces<BR>  Si(ConDatos(Valida.Color), Valida.Color, Si(Error(<T>No se puede dejar vacio el color<T>, BotonAceptar)= BotonAceptar, AbortarOperacion, AbortarOperacion))<BR>  EjecutarSQL(<T>spActualizaDatosPropiedadMAVI 2, :tProp, NULL, :tExtra2, NULL, NULL, NULL<T>, Valida.Cuadro, Valida.Color)<BR>  ActualizarForma<BR>Fin
+EjecucionCondicion=ConDatos(SerieLoteProp:SerieLoteProp.Propiedades)
+AntesExpresiones=Asigna(Valida.Cuadro, SerieLoteProp:SerieLoteProp.Propiedades)<BR>Asigna(Valida.Color, SerieLoteProp:SerieLoteProp.Extra2)
+
+
+;**** Nueva Accion agregada ARC (08-Dic-08)****
+[SerieLotePropLista.frm/Acciones.EditarFechaAduanal]
+Nombre=EditarFechaAduanal
+Boton=9
+NombreDesplegar=Editar Fecha Aduanal
+EnBarraHerramientas=S
+EnMenu=N
+TipoAccion=Expresion
+Activo=S
+ConCondicion=S
+Antes=S
+Visible=S
+GuardarAntes=S
+DespuesGuardar=S
+NombreEnBoton=S
+Expresion=si (Forma(<T>EditarFechaAduanalMAVI<T>))<BR>Entonces<BR>  Si(ConDatos(Valida.FechaAduanal), Valida.FechaAduanal, Si(Error(<T>No se puede dejar vacia la fecha aduanal<T>, BotonAceptar)= BotonAceptar, AbortarOperacion, AbortarOperacion))<BR>  EjecutarSQL(<T>spActualizaDatosPropiedadMAVI 3, :tProp, NULL, NULL, NULL, :fFechaAduanal, NULL<T>, Valida.Cuadro, Valida.FechaAduanal)<BR>  ActualizarForma<BR>Fin
+EjecucionCondicion=ConDatos(SerieLoteProp:SerieLoteProp.Propiedades)
+AntesExpresiones=Asigna(Valida.Cuadro, SerieLoteProp:SerieLoteProp.Propiedades)<BR>Asigna(Valida.FechaAduanal, SerieLoteProp:SerieLoteProp.Fecha2)
+
+
+;**** Nueva Accion agregada ARC (08-Dic-08)****
+[SerieLotePropLista.frm/Acciones.EditarModelo]
+Nombre=EditarModelo
+Boton=104
+NombreEnBoton=S
+NombreDesplegar=Editar Modelo
+EnBarraHerramientas=S
+EnMenu=N
+TipoAccion=Expresion
+Activo=S
+ConCondicion=S
+Antes=S
+Visible=S
+GuardarAntes=S
+DespuesGuardar=S
+Expresion=si (Forma(<T>EditarModeloMAVI<T>))<BR>Entonces<BR>  Si(ConDatos(Valida.Modelo), Valida.Modelo, Si(Error(<T>No se puede dejar vacio el modelo<T>, BotonAceptar)= BotonAceptar, AbortarOperacion, AbortarOperacion))<BR>  EjecutarSQL(<T>spActualizaDatosPropiedadMAVI 4, :tProp, NULL, NULL, :tExtra3, NULL, NULL<T>, Valida.Cuadro, Valida.Modelo)<BR>  ActualizarForma<BR>Fin
+EjecucionCondicion=ConDatos(SerieLoteProp:SerieLoteProp.Propiedades)
+AntesExpresiones=Asigna(Valida.Cuadro, SerieLoteProp:SerieLoteProp.Propiedades)<BR>Asigna(Valida.Modelo, SerieLoteProp:SerieLoteProp.Extra3)
+
+
+
+;**** Nueva Accion agregada ARC (08-Dic-08)****
+[SerieLotePropLista.frm/Acciones.EditarAduana]
+Nombre=EditarAduana
+Boton=54
+NombreEnBoton=S
+NombreDesplegar=Editar Aduana
+EnBarraHerramientas=S
+EnMenu=N
+TipoAccion=Expresion
+Activo=S
+ConCondicion=S
+Antes=S
+Visible=S
+GuardarAntes=S
+DespuesGuardar=S
+Expresion=si (Forma(<T>EditarAduanaMAVI<T>))<BR>Entonces<BR>  Si(ConDatos(Valida.Aduana), Valida.Aduana, Si(Error(<T>No se puede dejar vacia la aduana<T>, BotonAceptar)= BotonAceptar, AbortarOperacion, AbortarOperacion))<BR>  EjecutarSQL(<T>spActualizaDatosPropiedadMAVI 5, :tProp, NULL, NULL, NULL, NULL, :tAduana<T>, Valida.Cuadro, Valida.Aduana)<BR>  ActualizarForma<BR>Fin
+EjecucionCondicion=ConDatos(SerieLoteProp:SerieLoteProp.Propiedades)
+AntesExpresiones=Asigna(Valida.Cuadro, SerieLoteProp:SerieLoteProp.Propiedades)<BR>Asigna(Valida.Aduana, SerieLoteProp:SerieLoteProp.Aduana)
+
+
+;**** Nueva Accion agregada ARC (08-Dic-08)****
+[SerieLotePropLista.frm/Acciones.EditarRequeridos]
+Nombre=EditarRequeridos
+Boton=0
+NombreDesplegar=Editar Datos Requeridos
+EnBarraHerramientas=S
+EnMenu=S
+Activo=S
+Visible=S
+Menu=Edición
+GuardarAntes=S
+TipoAccion=Expresion
+ConCondicion=S
+Antes=S
+DespuesGuardar=S
+Expresion=si (Forma(<T>SolicitarDatosRequeridosMAVI2<T>))<BR>Entonces<BR>  Si(((ConDatos(Valida.Aduana)) y (ConDatos(Valida.Pedimento)) y (ConDatos(Valida.Color)) y (ConDatos(Valida.FechaAduanal)) y (ConDatos(valida.Modelo))), Valida.Aduana, Si(Error(<T>Todos los datos son requeridos<T>, BotonAceptar)= BotonAceptar, AbortarOperacion, AbortarOperacion))<BR>  EjecutarSQL(<T>spActualizaDatosPropiedadMAVI 0, :tProp, :tExtra1, :tExtra2, :tExtra3, :fFecha, :tAduana<T>, Valida.Cuadro, Valida.Pedimento, Valida.Color, Valida.Modelo, valida.FechaAduanal, Valida.Aduana)<BR>  ActualizarForma<BR>  Informacion(<T>Los datos de la propiedad <T>+Valida.Cuadro+<T> han sido ingresados correctamente<T>)<BR>Fin
+EjecucionCondicion=ConDatos(SerieLoteProp:SerieLoteProp.Propiedades)
+AntesExpresiones=Asigna(Valida.Cuadro, SerieLoteProp:SerieLoteProp.Propiedades)<BR>Asigna(Valida.Pedimento, SerieLoteProp:SerieLoteProp.Extra1)<BR>Asigna(Valida.Color, SerieLoteProp:SerieLoteProp.Extra2)<BR>Asigna(Valida.FechaAduanal, SerieLoteProp:SerieLoteProp.Fecha2)<BR>Asigna(Valida.Modelo, SerieLoteProp:SerieLoteProp.Extra3)<BR>Asigna(Valida.Aduana, SerieLoteProp:SerieLoteProp.Aduana)
+
+
+
+;**** Nueva Accion agregada ARC (08-Dic-08)****
+[SerieLotePropLista.frm/Acciones.VerTodo]
+Nombre=VerTodo
+Boton=55
+NombreEnBoton=S
+NombreDesplegar=Ver Todas
+GuardarAntes=S
+EnBarraHerramientas=S
+EnMenu=N
+TipoAccion=Expresion
+Activo=S
+Visible=S
+EspacioPrevio=S
+Expresion=Asigna(Valida.Cuadro, nulo)<BR>ActualizarForma
+
+
+
+

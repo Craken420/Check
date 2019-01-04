@@ -1,0 +1,139 @@
+;**¨* Integracion paquete DM0155_23122011 BVF 23122011
+;22/12/2011 Victor Enrique Murillo Torres
+;Se elimina la opcion para el explorador del planeador ya que se cambiara de lugar.
+
+[MenuHerramientaCompras.dlg/Dialogo]
+ListaAcciones=ParametrosPlaneadorMAVI<BR>PlaneadorMacroMAVI<BR>ProcesarCompra<BR>Distlotes<BR>EtiqJoyeria<BR>etiquetaCalzado<BR>EtiqDecoracion<BR>EtiqCelulares<BR>EtiqPerfumeria<BR>FactorPorcentajeSellIn
+
+
+;[MenuHerramientaCompras.dlg/Acciones.DM0103ComsExpMacroMavifrm]
+;Nombre=DM0103ComsExpMacroMavifrm
+;Boton=0
+;NombreDesplegar=Explorador Planeador MAVI
+;EnMenu=S
+;EnBarraAcciones=S
+;TipoAccion=Formas
+;ClaveAccion=DM0103ComsExpMacroMavifrm
+;Activo=S
+;Visible=S
+
+[MenuHerramientaCompras.dlg/Acciones.PlaneadorMacroMAVI]
+Nombre=PlaneadorMacroMAVI
+Boton=0
+NombreDesplegar=Planeador MAVI
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=PlaneadorMacroMAVI
+Activo=S
+Visible=S
+
+[MenuHerramientaCompras.dlg/Acciones.DM0103ComsExpMacroMavifrm]
+Nombre=DM0103ComsExpMacroMavifrm
+Boton=0
+NombreDesplegar=Explorador Planeador MAVI
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=DM0103ComsExpMacroMavifrm
+Activo=S
+Visible=S
+
+; **** Integracion de cueerpo de accion por recuperacion de lineas eliminadas, 05/01/2012 Victor Enrique Murillo Torres, para desarrollo DM0155 SEGMENTACION DE MENUS dentro del paquete DM0155_05012012_A. JR 05-Ene-2012. **** 
+[MenuHerramientaCompras.dlg/Acciones.ParametrosPlaneadorMAVI]
+Nombre=ParametrosPlaneadorMAVI
+Boton=0
+NombreDesplegar=Parametros Planeador
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ParametrosPlaneadorMAVI
+Activo=S
+Visible=S
+
+;** Integracion Herramienta DM0224 Distribucion por lotes Fernando Romero 19/02/2014
+[MenuHerramientaCompras.dlg/Acciones.Distlotes]
+Nombre=Distlotes
+Boton=0
+NombreDesplegar=Distribucion en lotes
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=DM0224DistribuccionenloteFrm
+Activo=S
+Visible=S
+
+;** Integracion Herramienta EtiquetasJoyeria.exe - impresion etiquetas joyeria 20/11/2016
+[MenuHerramientaCompras.dlg/Acciones.EtiqJoyeria]
+Nombre=EtiqJoyeria
+Boton=0
+NombreDesplegar=Impresion Etiquetas Joyeria
+EnMenu=S
+EnBarraAcciones=S
+Activo=S
+Visible=S
+TipoAccion=Expresion
+Expresion=Ejecutar(<T>PlugIns\EtiquetasJoyeria.exe <T>+Comillas(usuario))
+
+
+[MenuHerramientaCompras.dlg/Acciones.etiquetaCalzado]
+Nombre=etiquetajoyeruia
+Boton=0
+NombreDesplegar=Impresion Etiquetas Calzado
+EnMenu=S
+EnBarraAcciones=S
+EspacioPrevio=S
+TipoAccion=Expresion
+Expresion=Ejecutar(<T>PlugIns\EtiquetaCalzado\EtiquetasCalzado.exe <T>+<T>Hola<T>+<T> <T>+1)
+Activo=S
+Visible=S
+
+
+[MenuHerramientaCompras.dlg/Acciones.EtiqDecoracion]
+Nombre=EtiqDecoracion
+Boton=0
+NombreDesplegar=Impresion Etiquetas Decoracion
+EnMenu=S
+EnBarraAcciones=S
+EspacioPrevio=S
+TipoAccion=Expresion
+Expresion=Ejecutar(<T>PlugIns\EtiquetasDecoracion.exe <T>+Comillas(usuario))
+Activo=S
+Visible=S
+
+[MenuHerramientaCompras.dlg/Acciones.EtiqCelulares]
+Nombre=EtiqCelulares
+Boton=0
+NombreDesplegar=Impresion Etiquetas Celulares
+EnMenu=S
+EnBarraAcciones=S
+EspacioPrevio=S
+TipoAccion=Expresion
+Expresion=Ejecutar(<T>PlugIns\EtiquetasCelulares.exe <T>+Comillas(usuario))
+Activo=S
+Visible=S
+
+[MenuHerramientaCompras.dlg/Acciones.EtiqPerfumeria]
+Nombre=EtiqPerfumeria
+Boton=0
+NombreDesplegar=Impresion Etiquetas Perfumeria
+EnMenu=S
+EnBarraAcciones=S
+EspacioPrevio=S
+TipoAccion=Expresion
+Expresion=Ejecutar(<T>PlugIns\EtiquetasPerfumeria.exe<T>)
+Activo=S
+Visible=S
+
+[MenuHerramientaCompras.dlg/Acciones.FactorPorcentajeSellIn]
+Nombre=FactorPorcentajeSellIn
+Boton=0
+NombreDesplegar=RM1181 Factor Porcentaje Sell In
+EnMenu=S
+EnBarraAcciones=S
+EspacioPrevio=S
+TipoAccion=Formas
+ClaveAccion=RM1181COMSFactorPorcentajeSellInFrm
+Activo=S
+Visible=S
+

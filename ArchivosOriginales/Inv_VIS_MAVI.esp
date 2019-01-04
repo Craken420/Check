@@ -1,0 +1,41 @@
+
+
+;**** Ultima modificación:23-Jun-08
+;**** Modifico:Arly Rubio
+;**** Se modifico: Se agrego un nuevo campo a la vista: ContUsoMAVI
+
+
+
+;***** Se agregaron nuevos campos: ContUsoMAVI *****
+[Inv.vis/Vista]
+ListaCampos=Inv.ID<BR>Inv.Empresa<BR>Inv.Mov<BR>Inv.MovID<BR>Inv.FechaEmision<BR>Inv.Proyecto<BR>Inv.Moneda<BR>Inv.TipoCambio<BR>Inv.Concepto<BR>Inv.Referencia<BR>Inv.DocFuente<BR>Inv.Observaciones<BR>Inv.Estatus<BR>Inv.Situacion<BR>Inv.SituacionFecha<BR>Inv.SituacionUsuario<BR>Inv.SituacionNota<BR>Inv.Directo<BR>Inv.RenglonID<BR>Inv.Almacen<BR>Inv.AlmacenDestino<BR>Inv.AlmacenTransito<BR>Inv.Largo<BR>Inv.Condicion<BR>Inv.Vencimiento<BR>Inv.FormaEnvio<BR>Inv.Autorizacion<BR>Inv.Usuario<BR>Inv.UltimoCambio<BR>Inv.OrigenTipo<BR>Inv.Origen<BR>Inv.OrigenID<BR>Inv.Poliza<BR>Inv.PolizaID<BR>Inv.FechaConclusion<BR>Inv.FechaCancelacion<BR>Inv.FechaOrigen<BR>Inv.FechaRequerida<BR>Inv.Peso<BR>Inv.Volumen<BR>Inv.Sucursal<BR>Inv.SucursalDestino<BR>Inv.SucursalOrigen<BR>Inv.VerLote<BR>Inv.UEN<BR>Inv.VerDestino<BR><CONTINUA>
+ListaCampos002=<CONTINUA>Inv.Personal<BR>Inv.Conteo<BR>Inv.Agente<BR>Inv.ACRetencion<BR>Inv.SubModulo<BR>Inv.Actividad<BR>Inv.ContUsoMAVI<BR>Mon.Moneda<BR>Mon.TipoCambio<BR>Mon.TipoCambioVenta<BR>Mon.TipoCambioCompra<BR>Alm.Almacen<BR>Alm.Nombre<BR>Alm.Tipo<BR>Alm.Idioma<BR>Alm.CBDir<BR>AlmDestino.Almacen<BR>AlmDestino.Nombre<BR>AlmDestino.Tipo<BR>AlmDestino.Idioma<BR>AlmDestino.CBDir<BR>UEN.UEN<BR>UEN.Nombre<BR>Personal.Personal<BR>Personal.ApellidoPaterno<BR>Personal.ApellidoMaterno<BR>Personal.Nombre<BR>Agente.Agente<BR>Agente.Nombre<BR>ProyectoDEnFirme.Asunto
+SQL=SELECT<BR>  Inv.ID,<BR>  Inv.Empresa,<BR>  Inv.Mov,<BR>  Inv.MovID,<BR>  Inv.FechaEmision,<BR>  Inv.Proyecto,<BR>  Inv.Moneda,<BR>  Inv.TipoCambio,<BR>  Inv.Concepto,<BR>  Inv.Referencia,<BR>  Inv.DocFuente,<BR>  Inv.Observaciones,<BR>  Inv.Estatus,<BR>  Inv.Situacion,<BR>  Inv.SituacionFecha,<BR>  Inv.SituacionUsuario,<BR>  Inv.SituacionNota,<BR>  Inv.Directo,<BR>  Inv.RenglonID,<BR>  Inv.Almacen,<BR>  Inv.AlmacenDestino,<BR>  Inv.AlmacenTransito,<BR>  Inv.Largo,<BR>  Inv.Condicion,<BR>  Inv.Vencimiento,<BR>  Inv.FormaEnvio,<BR>  Inv.Autorizacion,<BR>  Inv.Usuario,<BR>  Inv.UltimoCambio,<BR>  Inv.OrigenTipo,<BR>  Inv.Origen,<BR>  Inv.OrigenID,<BR>  Inv.Poliza,<BR>  Inv.PolizaID,<BR>  Inv.FechaConclusion,<BR>  Inv.FechaCancelacion,<BR>  Inv.FechaOrigen,<BR>  Inv.FechaRequerida,<BR>  Inv.Pe<CONTINUA>
+SQL002=<CONTINUA>so,<BR>  Inv.Volumen,<BR>  Inv.Sucursal,<BR>  Inv.SucursalDestino,<BR>  Inv.SucursalOrigen,<BR>  Inv.VerLote,<BR>  Inv.UEN,<BR>  Inv.VerDestino,<BR>  Inv.Personal,<BR>  Inv.Conteo,<BR>  Inv.Agente,<BR>  Inv.ACRetencion,<BR>  Inv.SubModulo,<BR>  Inv.Actividad,<BR>  Inv.ContUsoMAVI,<BR>  Mon.Moneda,<BR>  Mon.TipoCambio,<BR>  Mon.TipoCambioVenta,<BR>  Mon.TipoCambioCompra,<BR>  Alm.Almacen,<BR>  Alm.Nombre,<BR>  Alm.Tipo,<BR>  Alm.Idioma,<BR>  Alm.CBDir,<BR>  AlmDestino.Almacen,<BR>  AlmDestino.Nombre,<BR>  AlmDestino.Tipo,<BR>  AlmDestino.Idioma,<BR>  AlmDestino.CBDir,<BR>  UEN.UEN,<BR>  UEN.Nombre,<BR>  Personal.Personal,<BR>  Personal.ApellidoPaterno,<BR>  Personal.ApellidoMaterno,<BR>  Personal.Nombre,<BR>  Agente.Agente,<BR>  Agente.Nombre,<BR>  ProyectoDEnFirme.Asunto<BR><BR>FROM<BR>  Inv<BR>  JOIN Mon ON In<CONTINUA>
+SQL003=<CONTINUA>v.Moneda=Mon.Moneda<BR>  LEFT OUTER JOIN Agente ON Inv.Agente=Agente.Agente<BR>  LEFT OUTER JOIN Alm ON Inv.Almacen=Alm.Almacen<BR>  LEFT OUTER JOIN Alm AlmDestino ON Inv.AlmacenDestino=AlmDestino.Almacen<BR>  LEFT OUTER JOIN UEN ON Inv.UEN=UEN.UEN<BR>  LEFT OUTER JOIN Personal ON Inv.Personal=Personal.Personal<BR>  LEFT OUTER JOIN ProyectoDEnFirme ON Inv.Proyecto=ProyectoDEnFirme.Proyecto AND Inv.Actividad=ProyectoDEnFirme.Actividad
+
+
+
+
+
+;**** Nuevo Campo Agregado *****
+[Inv.vis/Inv.ContUsoMAVI]
+Clave=Inv.ContUsoMAVI
+Nombre=Centro de Costos
+Visible=S
+TamanoValidacion=20
+Tamano=20
+AyudaEnCaptura=Vista
+AyudaForma=CentroCostosLista
+AyudaVista=CentroCostosLista
+AyudaCampo=CentroCostosLista.CentroCostos
+ValidacionConCondiciones=S
+ValidacionCondicion=SQL(<T>Select Count(CentroCostos) From CentroCostos where CentroCostos=:tCC<T>,Inv.ContUsoMAVI)
+ValidacionMensajeError=<T>Seleccione un Centro de Costos correcto<T>
+LigaTabla=Inv
+LigaCampo=ContUsoMAVI
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=ContUsoMAVI
+

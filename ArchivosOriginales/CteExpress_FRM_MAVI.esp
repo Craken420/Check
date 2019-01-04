@@ -1,0 +1,175 @@
+;**** Ultima modificación:07-Ago-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:Lista de variables en captura
+
+
+
+;**** Se modifico la forma para cambiarla de tamaño e inicializar nula la variable CteX.ClaveCanal,Info.ClaveDeCanal,Info.CadenaCanal,Info.categoriaCanal****
+[CteExpress.frm/Forma]
+PosicionInicialIzquierda=331
+PosicionInicialArriba=240
+PosicionInicialAltura=393
+PosicionInicialAncho=617
+PosicionInicialAlturaCliente=286
+ExpresionesAlMostrar=Asigna(Info.Cliente, Nulo)<BR>Asigna(CteX.Clave, General.CteExpressDef)<BR>Asigna(CteX.Delegacion, nulo)<BR>Asigna(CteX.Colonia, nulo)<BR>Asigna(CteX.CP, nulo)<BR>Asigna(CteX.Direccion, nulo)<BR>Asigna(CteX.Estado, nulo)<BR>Asigna(CteX.Nombre, nulo)<BR>Asigna(CteX.Pais, nulo)<BR>Asigna(CteX.Poblacion, nulo)<BR>Asigna(CteX.RFC, nulo)<BR>Asigna(CteX.Telefonos, nulo)<BR>Asigna(CteX.Contacto, nulo)<BR>Asigna(CteX.eMail, nulo)<BR>Asigna(CteX.Categoria, General.CteExpressCategoria)<BR>Asigna(CteX.Grupo, nulo)<BR>Asigna(CteX.Familia, nulo)<BR>Asigna(CteX.Ruta, nulo)<BR>Asigna(CteX.Agente, Usuario.DefAgente)<BR>Asigna(CteX.Comentarios, nulo)<BR>Asigna(CteX.Cuenta, nulo)<BR>Asigna(CteX.PersonalNombres, nulo)<BR>Asigna(CteX.PersonalApellidoPaterno, nulo)<BR>Asigna(CteX.PersonalApellidoMaterno, nulo)<CONTINUA>
+ExpresionesAlMostrar002=<CONTINUA><BR>Asigna(CteX.ClaveCanal, Nulo)<BR>Asigna(Info.ClaveDeCanal, nulo)<BR>Asigna(Info.CadenaCanal, nulo)<BR>Asigna(Info.CategoriaCanal, nulo)<BR>Asigna(CteX.DireccionNumero, nulo)<BR>Asigna(CteX.DireccionNumeroInt, nulo)<BR>Asigna(CteX.TipoCalle, nulo)<BR>Asigna(CteX.TelefonosCelulares, nulo)<BR>Asigna(Afectar.ID, Nulo)
+
+
+
+;**** Se agregaron las nuevas variables en captura:"CteX.ClaveCanal" ****
+;**** Se quitaron las variables: CteX.Ruta y CteX.Cuenta ****
+[CteExpress.frm/(Variables)]
+ListaEnCaptura=CteX.PersonalNombres<BR>CteX.PersonalApellidoPaterno<BR>CteX.PersonalApellidoMaterno<BR>CteX.RFC<BR>CteX.TipoCalle<BR>CteX.Direccion<BR>CteX.DireccionNumero<BR>CteX.DireccionNumeroInt<BR>CteX.CP<BR>CteX.Delegacion<BR>CteX.Colonia<BR>CteX.Poblacion<BR>CteX.Estado<BR>CteX.Pais<BR>CteX.Telefonos<BR>CteX.TelefonosCelulares<BR>CteX.Contacto<BR>CteX.eMail<BR>CteX.ClaveCanal<BR>CteX.Clave
+
+
+
+
+;**** Se modifico el tamaño del campo para que no fuera visible ****
+[CteExpress.frm/(Variables).CteX.Clave]
+Carpeta=(Variables)
+Clave=CteX.Clave
+Editar=S
+LineaNueva=N
+ValidaNombre=N
+3D=S
+Tamano=0
+EspacioPrevio=N
+IgnoraFlujo=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+[CteExpress.frm/(Variables).CteX.RFC]
+LineaNueva=N
+
+[CteExpress.frm/(Variables).CteX.Direccion]
+LineaNueva=N
+Tamano=41
+
+
+
+[CteExpress.frm/(Variables).CteX.Contacto]
+LineaNueva=S
+
+
+[CteExpress.frm/(Variables).CteX.Telefonos]
+LineaNueva=S
+
+[CteExpress.frm/(Variables).CteX.Contacto]
+LineaNueva=N
+
+
+[CteExpress.frm/(Variables).CteX.eMail]
+LineaNueva=N
+
+
+;**** Nueva variable para especificar el canal de venta al que petenecera el cte prospecto ****
+[CteExpress.frm/(Variables).CteX.ClaveCanal]
+Carpeta=(Variables)
+Clave=CteX.ClaveCanal
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+ColorFuente=Negro
+EspacioPrevio=S
+
+;**** Nueva Variable  Arly Rubio 07-Ago-08******
+[CteExpress.frm/(Variables).CteX.DireccionNumero]
+Carpeta=(Variables)
+Clave=CteX.DireccionNumero
+Editar=S
+3D=S
+Tamano=10
+ColorFondo=Blanco
+ColorFuente=Negro
+ValidaNombre=S
+
+;**** Nueva Variable  Arly Rubio 07-Ago-08******
+[CteExpress.frm/(Variables).CteX.DireccionNumeroInt]
+Carpeta=(Variables)
+Clave=CteX.DireccionNumeroInt
+Editar=S
+3D=S
+Tamano=10
+ColorFondo=Blanco
+ColorFuente=Negro
+ValidaNombre=S
+
+;**** Nueva Variable  Arly Rubio 07-Ago-08******
+[CteExpress.frm/(Variables).CteX.TipoCalle]
+Carpeta=(Variables)
+Clave=CteX.TipoCalle
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+;**** Nueva Variable  Arly Rubio 07-Ago-08******
+[CteExpress.frm/(Variables).CteX.TelefonosCelulares]
+Carpeta=(Variables)
+Clave=CteX.TelefonosCelulares
+Editar=S
+LineaNueva=N
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+
+
+;************************************************** ACCIONES *******************************************************************
+;*******************************************************************************************************************************
+
+
+
+;*** Se agrego una nueva accion en las acciones multiples: AsignarNombre *******
+[CteExpress.frm/Acciones.Guardar]
+ListaAccionesMultiples=Variables Asignar<BR>AsignarNombre<BR>SQL<BR>Cerrar
+
+
+
+
+;***** Nueva SubAccion ******
+[CteExpress.frm/Acciones.Guardar.AsignarNombre]
+Nombre=AsignarNombre
+Boton=0
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Asigna(CteX.Nombre, CteX.PersonalApellidoPaterno+<T> <T>+CteX.PersonalApellidoMaterno+<T> <T>+CteX.PersonalNombres)
+ConCondicion=S
+EjecucionCondicion=ConDatos(CteX.PersonalNombres)
+
+
+
+
+
+**** Se modifico la acción para que validara antes de gurdar si el canal de venta es correcto y para insertar una sucursal del cliente de acuerdo al canal de venta****
+[CteExpress.frm/Acciones.Guardar.SQL]
+;Expresion=Si(SQL(<T>Select count(*) from VentasCanalMAVI where ID=:n<T>,CteX.ClaveCanal)<=0,Si(Precaucion(<T>Seleccione un canal de venta correcto<T>, BotonCancelar)=BotonCancelar, AbortarOperacion))<BR>Asigna(Info.Cliente, Nulo)<BR>Si<BR>  SQL(<T>SELECT COUNT(*) FROM ListaNegraColonia WHERE Colonia=:tColonia<T>, CteX.Colonia)>0<BR>Entonces<BR>  Si(Precaucion(<T>No Es posible Entregar en esa Colonia.<T>+NuevaLinea+<T>Favor de Revisar la Lista Negra.<T>+NuevaLinea+NuevaLinea+NuevaLinea+<T>¿ Desea Agregar el Cliente ?<T>, BotonNo, BotonSi)<>BotonSi, AbortarOperacion)<BR>Fin<BR><BR>Asigna(Info.Cliente, <BR>SQL(<T>spAgregarClienteExpress :tClave, :tNom, :tDir, :tDel, :tCol, :tRuta, :tPob, :tEstado, :tPais, :tCP, :tRFC, :tTel, :tContacto, :teMail, :tCat, :tGrupo, :tFam, :tAgente, :tTipo, :tComenta, :tMon<CONTINUA>
+;Expresion002=<CONTINUA>, :tPre, :tLike, :nDig, :tCond, :tCredito, :nCPID, :tEmp, :tCta, :tNombres, :tPaterno, :tMaterno, @Sucursal=:nSucursal<T>, <BR>CteX.Clave, CteX.Nombre, CteX.Direccion, CteX.Delegacion, CteX.Colonia, CteX.Ruta, CteX.Poblacion, CteX.Estado, CteX.Pais, CteX.CP, <BR>CteX.RFC, CteX.Telefonos, CteX.Contacto, CteX.eMail, CteX.Categoria, CteX.Grupo, CteX.Familia, CteX.Agente, Info.Tipo, CteX.Comentarios, Config.ContMoneda, <BR>General.CteExpressPrefijo, General.CteExpressPrefijo+<T>[0-9]%<T>, General.CteExpressDigitos, General.DefCondicion, General.DefCredito, Afectar.ID, Empresa, CteX.Cuenta, CteX.PersonalNombres, CteX.PersonalApellidoPaterno, CteX.PersonalApellidoMaterno, Sucursal))<BR><BR>Si<BR>  ConDatos(Info.Cliente)<BR>Entonces<BR>  EjecutarSQLLocal(<T>spAgregarClienteExpress :tClave, :tNom,<CONTINUA>
+;Expresion003=<CONTINUA> :tDir, :tDel, :tCol, :tRuta, :tPob, :tEstado, :tPais, :tCP, :tRFC, :tTel, :tContacto, :teMail, :tCat, :tGrupo, :tFam, :tAgente, :tTipo, :tComenta, :tMon, :tPre, :tLike, :nDig, :tCond, :tCredito, :nCPID, :tEmp, :tCta, :tNombres, :tPaterno, :tMaterno, @Sucursal=:nSucursal<T>, <BR>  Info.Cliente, CteX.Nombre, CteX.Direccion, CteX.Delegacion, CteX.Colonia, CteX.Ruta, CteX.Poblacion, CteX.Estado, CteX.Pais, CteX.CP, <BR>  CteX.RFC, CteX.Telefonos, CteX.Contacto, CteX.eMail, CteX.Categoria, CteX.Grupo, CteX.Familia, CteX.Agente, Info.Tipo, CteX.Comentarios, Config.ContMoneda, <BR>  General.CteExpressPrefijo, General.CteExpressPrefijo+<T>[0-9]%<T>, General.CteExpressDigitos, General.DefCondicion, General.DefCredito, Afectar.ID, Empresa, CteX.Cuenta, CteX.PersonalNombres, CteX.PersonalApellidoPat<CONTINUA>
+;Expresion004=<CONTINUA>erno, CteX.PersonalApellidoMaterno, Sucursal)<BR>Asigna(Info.ClaveDeCanal,SQL(<T>Select Clave from VentasCanalMAVI where ID=:nID<T>,Ctex.ClaveCanal))<BR>  Asigna(Info.CadenaCanal,SQL(<T>Select Cadena from VentasCanalMAVI where ID=:nID<T>,Ctex.ClaveCanal))<BR>  Vacio(Info.CadenaCanal,<T><T>)<BR>  Asigna(Info.CategoriaCanal,SQL(<T>Select Categoria from VentasCanalMAVI where ID=:nID<T>,Ctex.ClaveCanal))<BR>  Vacio(Info.CategoriaCanal,<T><T>)<BR>  EjecutarSQL(<T>spInsertarSucursal_MAVI :tcte, :nCanal, :tNom, :tDir, :tcol, :tCP, :tclave, :tcadena, :tcat<T>,Info.Cliente,CteX.ClaveCanal,CteX.Nombre,CteX.Direccion,CteX.Colonia,CteX.CP,Info.ClaveDeCanal,Info.CadenaCanal,Info.CategoriaCanal)<BR>Fin
+;Se modifico la expresion, se agregaron nuevas validaciones Arly Rubio 07-08-08
+Expresion=Si(EsNumerico(CteX.ClaveCanal),<T><T>,Si(Error(<T>El canal de venta debe de ser un dato numerico<T>,BotonAceptar)=BotonAceptar, AbortarOperacion,AbortarOperacion))<BR>Si(SQL(<T>Select count(*) from VentasCanalMAVI where ID=:n<T>,CteX.ClaveCanal)<=0,Si(Precaucion(<T>Seleccione un canal de venta correcto<T>, BotonCancelar)=BotonCancelar, AbortarOperacion))<BR>Asigna(Info.Cliente, Nulo)<BR>Si<BR>  SQL(<T>SELECT COUNT(*) FROM ListaNegraColonia WHERE Colonia=:tColonia<T>, CteX.Colonia)>0<BR>Entonces<BR>  Si(Precaucion(<T>No Es posible Entregar en esa Colonia.<T>+NuevaLinea+<T>Favor de Revisar la Lista Negra.<T>+NuevaLinea+NuevaLinea+NuevaLinea+<T>¿ Desea Agregar el Cliente ?<T>, BotonNo, BotonSi)<>BotonSi, AbortarOperacion)<BR>Fin<BR><BR>Asigna(Info.Cliente,<BR>SQL(<T>spAgregarClienteExpress :t<CONTINUA>
+Expresion002=<CONTINUA>TC, :tNum, :tNumInt, :tCel, :tFR, :tClave, :tNom, :tDir, :tDel, :tCol, :tRuta, :tPob, :tEstado, :tPais, :tCP, :tRFC, :tTel, :tContacto, :teMail, :tCat, :tGrupo, :tFam, :tAgente, :tTipo, :tComenta, :tMon, :tPre, :tLike, :nDig, :tCond, :tCredito, :nCPID, :tEmp, :tCta, :tNombres, :tPaterno, :tMaterno, @Sucursal=:nSucursal<T>,<BR>CteX.TipoCalle, CteX.DireccionNumero, CteX.DireccionNumeroInt, CteX.TelefonosCelulares, Info.TipoCteExpress, CteX.Clave, CteX.Nombre, CteX.Direccion, CteX.Delegacion, CteX.Colonia, CteX.Ruta, CteX.Poblacion, CteX.Estado, CteX.Pais, CteX.CP,<BR>CteX.RFC, CteX.Telefonos, CteX.Contacto, CteX.eMail, CteX.Categoria, CteX.Grupo, CteX.Familia, CteX.Agente, Info.Tipo, CteX.Comentarios, Config.ContMoneda,<BR>General.CteExpressPrefijo, General.CteExpressPrefijo+<T>[0-9]%<T>, Ge<CONTINUA>
+Expresion003=<CONTINUA>neral.CteExpressDigitos, General.DefCondicion, General.DefCredito, Afectar.ID, Empresa, CteX.Cuenta, CteX.PersonalNombres, CteX.PersonalApellidoPaterno, CteX.PersonalApellidoMaterno, Sucursal))<BR><BR>Si<BR>  ConDatos(Info.Cliente)<BR>Entonces<BR>  EjecutarSQLLocal(<T>spAgregarClienteExpress :tTC, :tNum, :tNumInt, :tCel, :tFR, :tClave, :tNom, :tDir, :tDel, :tCol, :tRuta, :tPob, :tEstado, :tPais, :tCP, :tRFC, :tTel, :tContacto, :teMail, :tCat, :tGrupo, :tFam, :tAgente, :tTipo, :tComenta, :tMon, :tPre, :tLike, :nDig, :tCond, :tCredito, :nCPID, :tEmp, :tCta, :tNombres, :tPaterno, :tMaterno, @Sucursal=:nSucursal<T>,<BR>  CteX.TipoCalle, CteX.DireccionNumero, CteX.DireccionNumeroInt, CteX.TelefonosCelulares, Info.TipoCteExpress, Info.Cliente, CteX.Nombre, CteX.Direccion, CteX.Delegacion, CteX.C<CONTINUA>
+Expresion004=<CONTINUA>olonia, CteX.Ruta, CteX.Poblacion, CteX.Estado, CteX.Pais, CteX.CP,<BR>  CteX.RFC, CteX.Telefonos, CteX.Contacto, CteX.eMail, CteX.Categoria, CteX.Grupo, CteX.Familia, CteX.Agente, Info.Tipo, CteX.Comentarios, Config.ContMoneda,<BR>  General.CteExpressPrefijo, General.CteExpressPrefijo+<T>[0-9]%<T>, General.CteExpressDigitos, General.DefCondicion, General.DefCredito, Afectar.ID, Empresa, CteX.Cuenta, CteX.PersonalNombres, CteX.PersonalApellidoPaterno, CteX.PersonalApellidoMaterno, Sucursal)<BR>  Asigna(Info.ClaveDeCanal,SQL(<T>Select Clave from VentasCanalMAVI where ID=:nID<T>,Ctex.ClaveCanal))<BR>  Asigna(Info.CadenaCanal,SQL(<T>Select Cadena from VentasCanalMAVI where ID=:nID<T>,Ctex.ClaveCanal))<BR>  Vacio(Info.CadenaCanal,<T><T>)<BR>  Asigna(Info.CategoriaCanal,SQL(<T>Select Categoria <CONTINUA>
+Expresion005=<CONTINUA>from VentasCanalMAVI where ID=:nID<T>,Ctex.ClaveCanal))<BR>  Vacio(Info.CategoriaCanal,<T><T>)<BR>  EjecutarSQL(<T>spInsertarSucursal_MAVI :tcte, :nCanal, :tNom, :tDir, :tcol, :tCP, :tclave, :tcadena, :tcat<T>,Info.Cliente,CteX.ClaveCanal,CteX.Nombre,CteX.Direccion,CteX.Colonia,CteX.CP,Info.ClaveDeCanal,Info.CadenaCanal,Info.CategoriaCanal)<BR>Fin
+
+
+;***** Se cambio la clave de accion de "cerrar" a "aceptar"
+[CteExpress.frm/Acciones.Guardar.Cerrar]
+ClaveAccion=Aceptar
+
+
+

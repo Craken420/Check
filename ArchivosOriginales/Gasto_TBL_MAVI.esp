@@ -1,0 +1,51 @@
+;**** Ultima modificación:29-Abr-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:
+
+
+
+
+; **** Se modifico el campo para que tomara la uen de la sucursal por default y para que no fuera editable****
+[Gasto.tbl/UEN]
+ValorPorOmision=Sucursal.wUEN
+CondicionEdicion=Falso
+
+
+;*** 20-Oct-08 LQG Presenta condiciones solo por nivel de acceso***
+; **** 18-08-09 GRB: se agrego lineas de ayuda y se modifico formula. ***
+[Gasto.tbl/Condicion]
+AyudaEnCaptura=Expresion
+;Formula=SQLEnLista(<T>SELECT Condicion FROM Condicion WHERE NivelAcceso is NULL UNION SELECT Condicion FROM CondicionAccesoMAVI WHERE Usuario =:tusuario<T> , Usuario.Usuario)
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+Formula=Si<BR>   Vacio(Origen) <BR>Entonces<BR>    Si Estatus = (<T>SINAFECTAR<T>)<BR>    Entonces<BR>        SQLEnLista(<T>EXEC spCondicionNivelAcceso :tusuario<T>, Usuario)<BR>    Fin<BR>Sino<BR>    SQLEnLista(<T>SELECT Condicion FROM Condicion<T>)<BR>Fin   
+
+
+;***** Integracion Desarrollo Cuatro Ceros Manuel Velasco 11-07-09 *****
+
+[Gasto.tbl/Importe]
+FormatoValidacion=$ #,.0000
+
+[Gasto.tbl/Impuestos]
+FormatoValidacion=$ #,.0000
+
+[Gasto.tbl/Retencion]
+FormatoValidacion=$ #,.0000
+
+
+;*** 12-Ago-09 LQG Se elimina la opcion Quincenal de la Periodicidad***
+[Gasto.tbl/Periodicidad]
+ListaOpciones=Semanal<BR>Mensual<BR>Bimestral<BR>Trimestral<BR>Semestral<BR>Anual<BR><dias>
+
+
+[Gasto.tbl/TipoCambio]
+CondicionEdicion=Vacio(AnexoID) y (no Usuario.BloquearMoneda)
+
+[Gasto.tbl/CtaDinero]
+CondicionDespliege=MovTipoEn(<T>GAS<T>, Mov, (GAS.A, GAS.DA, GAS.ASC, GAS.C, GAS.CCH, GAS.DC, GAS.CB, GAS.AB, GAS.OI, GAS.EST))
+
+;Se modifica la ayuda en captura para que tome solo las clases que no tengan cero 
+;Fernando Romero Robles 05/08/2015
+
+[Gasto.tbl/Clase]
+Formula=SQLEnLista(<T>SELECT Clase FROM Clase WHERE Modulo = :tModulo and isnull(Numero,1) <> 0 ORDER BY Orden<T>,<T>GAS<T>)

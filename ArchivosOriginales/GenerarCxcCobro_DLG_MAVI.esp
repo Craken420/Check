@@ -1,0 +1,213 @@
+;**** Modificación: 22-Abr-09
+;**** Modifico: Edgar Montelongo
+;**** Se modifico: Se agrego Refinanciamiento
+
+;**** Ultima modificación:18-Mar-09
+;**** Modifico:Leticia Quezada
+;**** Se modifico: Accion "Cobro" sea visible tambien para el mov "Cheque Posfechado"
+
+;**** Modificación:07-May-08
+;**** Modifico:Arly Rubio
+;**** Se modifico: Accion "Cobro" sea visible tambien para el mov "Cuentas Incobrables"
+
+
+
+; **** Se agregaron nuevas acciones: ContraReciboInst,CobroDiferido,CobroInstituciones,CuentasIncobrables,DiversosDeudores,CobroDivDeudores****
+
+[GenerarCxcCobro.dlg/Dialogo]
+ListaAcciones=Cobro<BR>ChequePos<BR>IntentoCobro<BR>ContraRecibo<BR>Documento<BR>NCredito<BR>Endoso<BR>FacturaSeguro<BR>FacturaFord<BR>AplicacionNCargo<BR>Otros1<BR>Otros2<BR>Otros3<BR>Otros4<BR>Otros5<BR>Otros6<BR>Otros7<BR>Otros8<BR>Otros9<BR>ContraReciboInst<BR>CobroDiferido<BR>CobroInstituciones<BR>CuentasIncobrables<BR>DiversosDeudores<BR>CobroDivDeudores
+
+
+; **** Se modificó esta acción para que solo sea visible si el movimiento es: "Factura Mayoreo","Nota Cargo Mayoreo","Endoso","Seguro Vida","Seguro Auto","Cheque Devuelto","Credilana","Factura",Factura VIU","Nota Cargo","Nota Cargo VIU","Prestamo Personal","Documento","Prestamo","Cuentas Incobrables" ****
+[GenerarCxcCobro.dlg/Acciones.Cobro]
+Nombre=Cobro
+Boton=0
+NombreDesplegar=Generar &Cobro
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=N
+Expresion=Generar(<T>CXC<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CxcCobro, Afectar.FormaCaptura)
+VisibleCondicion=Info.Mov en (<T>Factura Mayoreo<T>,<T>Nota Cargo Mayoreo<T>,<T>Endoso<T>,<T>Seguro Vida<T>,<T>Seguro Auto<T>,<T>Cheque Devuelto<T>,<T>Credilana<T>,<T>Factura<T>,<T>Factura VIU<T>,<T>Nota Cargo<T>,<T>Nota Cargo VIU<T>,<T>Prestamo Personal<T>,<T>Documento<T>,<T>Prestamo<T>,<T>Cta Incobrable NV<T>,<T>Cta Incobrable F<T>,<T>Cheque Posfechado<T>,<T>Refinanciamiento<T>)
+
+; **** Se modificó esta acción para que no fuera visible ****
+[GenerarCxcCobro.dlg/Acciones.NCredito]
+Nombre=NCredito
+Boton=0
+NombreDesplegar=Generar &Nota Crédito
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=N
+Expresion=Generar(<T>CXC<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CxcNCredito, Afectar.FormaCaptura)
+
+
+; **** Se elimino este movimiento del flujo normal ****
+[GenerarCxcCobro.dlg/Acciones.Posfechado]
+Activo=N
+
+
+
+; **** Se modificó esta acción para que solo fuera visible en los movimiento: Factura, Factura VIU (05-Ago-08)****
+[GenerarCxcCobro.dlg/Acciones.ContraRecibo]
+Nombre=ContraRecibo
+Boton=0
+NombreDesplegar=Generar Contra &Recibo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=N
+Expresion=Generar(<T>CXC<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CxcContraRecibo, Afectar.FormaCaptura)
+VisibleCondicion=Info.Mov en (<T>Factura<T>,<T>Factura VIU<T>)
+
+; **** Se modificó esta acción para que no fuera visible ****
+[GenerarCxcCobro.dlg/Acciones.Documento]
+Nombre=Documento
+Boton=0
+NombreDesplegar=Generar &Documento
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Visible=N
+Expresion=Generar(<T>CXC<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CxcDocumento, Afectar.FormaCaptura)
+ActivoCondicion=Info.MovTipo noen (CXC.D, CXC.DM)
+
+
+; **** Se modificó esta acción para que no fuera visible ****
+[GenerarCxcCobro.dlg/Acciones.FacturaSeguro]
+Nombre=FacturaSeguro
+Boton=0
+NombreDesplegar=Generar Factura &Seguro
+EnMenu=S
+Visible=N
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Generar(<T>CXC<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CxcFacturaSeguro, Afectar.FormaCaptura)
+ActivoCondicion=General.CteDatosAseguradora
+
+
+; **** Se modificó esta acción para que solo sea visible si el movimiento es: "Factura Mayoreo","Nota Cargo Mayoreo","Endoso","Seguro Vida","Seguro Auto","Cheque Devuelto","Credilana","Factura",Factura VIU","Nota Cargo","Nota Cargo VIU","Prestamo Personal","Documento","Prestamo" ****
+[GenerarCxcCobro.dlg/Acciones.Endoso]
+Nombre=Endoso
+Boton=0
+NombreDesplegar=Generar &Endoso
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=N
+Expresion=Generar(<T>CXC<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CxcEndoso, Afectar.FormaCaptura)
+VisibleCondicion=Info.Mov en (<T>Factura Mayoreo<T>,<T>Nota Cargo Mayoreo<T>,<T>Endoso<T>,<T>Seguro Vida<T>,<T>Seguro Auto<T>,<T>Cheque Devuelto<T>,<T>Credilana<T>,<T>Factura<T>,<T>Factura VIU<T>,<T>Nota Cargo<T>,<T>Nota Cargo VIU<T>,<T>Prestamo Personal<T>,<T>Documento<T>,<T>Prestamo<T>,<T>Refinanciamiento<T>)
+
+
+
+; **** Se modificó esta acción para que no fuera visible ****
+[GenerarCxcCobro.dlg/Acciones.IntentoCobro]
+Nombre=IntentoCobro
+Boton=0
+NombreDesplegar=Generar &Intento Cobro
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Visible=N
+Expresion=Generar(<T>CXC<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CxcIntentoCobro, Afectar.FormaCaptura)
+
+
+; **** Se modificó esta acción para que no fuera visible ****
+[GenerarCxcCobro.dlg/Acciones.AplicacionNCargo]
+Nombre=AplicacionNCargo
+Boton=0
+NombreDesplegar=Ap&licación N/Cargp
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=N
+Expresion=Generar(<T>CXC<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, ConfigMov.CxcAplicacionNCargo, Afectar.FormaCaptura)
+
+
+
+; **** Nuava Accion solo es visible si el movimiento es: Credilana, Seguro Auto, Seguro Vida, Factura****
+[GenerarCxcCobro.dlg/Acciones.ContraReciboInst]
+Nombre=ContraReciboInst
+Boton=0
+NombreDesplegar=Generar Contra Recibo Inst
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Generar(<T>CXC<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, <T>Contra Recibo Inst<T>, Afectar.FormaCaptura)
+Activo=S
+Visible=N
+;VisibleCondicion=Info.Mov en (<T>Factura<T>) *** Se cambio la condicion de visibilidad Arly 05-Ago-08
+VisibleCondicion=Info.Mov en (<T>Credilana<T>,<T>Seguro Auto<T>,<T>Seguro Vida<T>,<T>Factura<T>,<T>Refinanciamiento<T>)
+
+; **** Nuava Accion solo es visible si el movimiento es: Contra Recibo Inst ****
+[GenerarCxcCobro.dlg/Acciones.CobroDiferido]
+Nombre=CobroDiferido
+Boton=0
+NombreDesplegar=Generar Cobro Diferido
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Expresion=Generar(<T>CXC<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, <T>Cobro Diferido<T>, Afectar.FormaCaptura)
+VisibleCondicion=Info.Mov en (<T>Contra Recibo Inst<T>)
+
+
+; **** Nuava Accion solo es visible si el movimiento es: Contra Recibo Inst, COntra Recibo ****
+[GenerarCxcCobro.dlg/Acciones.CobroInstituciones]
+Nombre=CobroInstituciones
+Boton=0
+NombreDesplegar=Generar Cobro Instituciones
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Expresion=Generar(<T>CXC<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, <T>Cobro Instituciones<T>, Afectar.FormaCaptura)
+VisibleCondicion=Info.Mov en (<T>Contra Recibo Inst<T>,<T>Contra Recibo<T>)
+;**** Se agrego a la condicion de visibilidad el movimiento: Contra Recibo 05-Ago-08
+
+
+
+; **** Nueva Accion solo es visible si el movimiento es: Factura, Factura Mayoreo, Factura VIU, Credilana, Seguro Auto, Seguro Vida, Cheque Devuelto, Prestamo, Endoso, Nota Cargo, Nota Cargo VIU, Nota Cargo Mayoreo ****
+[GenerarCxcCobro.dlg/Acciones.CuentasIncobrables]
+Nombre=CuentasIncobrables
+Boton=0
+NombreDesplegar=Generar Cuentas Incobrables
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Generar(<T>CXC<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, <T>Cuentas Incobrables<T>, Afectar.FormaCaptura)
+Activo=S
+VisibleCondicion=Info.Mov en (<T>Factura<T>,<T>Factura VIU<T>,<T>Factura Mayoreo<T>,<T>Credilana<T>,<T>Seguro Auto<T>,<T>Seguro Vida<T>,<T>Prestamo Personal<T>,<T>Cheque Devuelto<T>,<T>Prestamo<T>,<T>Endoso<T>,<T>Nota Cargo<T>,<T>Nota Cargo VIU<T>,<T>Nota Cargo Mayoreo<T>,<T>Refinanciamiento<T>)
+;***** Se agregaron en la condicion de visibilidad los movimientos: Credilana, Seguro Auto, Seguro Vida, Prestamo Personal, Cheque Devuelto, Prestamo, Endoso, Nota Cargo, Nota Cargo VIU, Nota Cargo Mayoreo ****
+
+; *** Nueva Accion
+[GenerarCxcCobro.dlg/Acciones.CobroDivDeudores]
+Nombre=CobroDivDeudores
+Boton=0
+NombreDesplegar=Generar &Cobro Div Deudores
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Expresion=Generar(<T>CXC<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, <T>Cobro Div Deudores<T>, Afectar.FormaCaptura)
+VisibleCondicion=Info.Mov en (<T>Diversos Deudores<T>)
+
+;*** Nueva Accion ***   ALQG 180309
+[GenerarCxcCobro.dlg/Acciones.ChequePos]
+Nombre=ChequePos
+Boton=0
+NombreDesplegar=Cheque Posfechado
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Expresion=Generar(<T>CXC<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, <T>Cheque Posfechado<T>, Afectar.FormaCaptura)
+Antes=S
+AntesExpresiones=Asigna(Info.Origen, SQL(<T>Select Origen FROM Cxc WHERE ID =:nId<T>,Info.ID )  )
+Visible=N
+VisibleCondicion=(Asigna( Info.Origen, SQL(<T>Select Origen from CXC where id =:nid<T>,Afectar.ID) )<BR>Info.Origen = <T>Factura Mayoreo<T> ) o (Info.Mov en(<T>Factura Mayoreo<T>,<T>Nota Cargo Mayoreo<T>))

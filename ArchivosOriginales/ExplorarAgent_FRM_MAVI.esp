@@ -1,0 +1,13 @@
+;**** Ultima modificación:23-Jun-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:Se cambió el nombre a la forma
+
+
+
+
+
+
+
+;***** Se cambio el nombre de la forma de "Comisiones y Destajos" a "Resultados Caja"
+[ExplorarAgent.frm/Forma]
+Nombre=Explorando - Resultados Caja

@@ -1,0 +1,7 @@
+;**** Ultima modificación: 29-06-2013
+;**** Modifico:Fernando Rodriguez
+;**** Se modifico: Se agrego la Clave INV.EST y se acondiciono para que al seleccionar el movimiento estatdistica se active
+;**** el campo Costo Total
+
+[invd.vis/Importe]
+CondicionDespliege=Usuario.Costos y<BR>((MovTipoEn(<T>INV<T>,Inv:Inv.Mov,(INV.E,INV.EI,INV.A,INV.TIS, INV.EST)) o (Inv:Inv.Estatus=EstatusConcluido)) y <BR>(no MovTipoEn(<T>INV<T>,Inv:Inv.Mov,(INV.T, INV.TG, INV.P, INV.R, INV.IF, INV.SOL, INV.OT, INV.OI, INV.TI, INV.DTI, INV.SM))) y<BR>(Inv:Alm.Tipo<><T>Garantias<T>))

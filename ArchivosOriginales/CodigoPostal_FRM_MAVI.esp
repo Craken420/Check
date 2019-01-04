@@ -1,0 +1,44 @@
+;**** Ultima modificación:16-May-08
+;**** Modifico:Enrique Toral
+;**** Se modifico:Integracion en el objeto que le corresponde --Arly
+
+
+[CodigoPostal.frm/Forma]
+PosicionInicialIzquierda=182
+PosicionInicialArriba=179
+PosicionInicialAncho=915
+
+
+
+[CodigoPostal.frm/Lista]
+ListaEnCaptura=CodigoPostal.Estado<BR>CodigoPostal.Delegacion<BR>CodigoPostal.Colonia<BR>CodigoPostal.CodigoPostal<BR>CodigoPostal.Ruta<BR>CodigoPostal.MaviRutaSupervision<BR>CodigoPostal.Cobranza<BR>CodigoPostal.LocalidadCNBV
+;ListaEnCaptura.Cambios=Insertar<TAB>CodigoPostal.MaviRutaSupervision<TAB>6
+FiltroTodoFinal=S
+
+[CodigoPostal.frm/Lista.Columnas]
+MaviRutaSupervision=304
+Cobranza=95
+
+[CodigoPostal.frm/Lista.CodigoPostal.MaviRutaSupervision]
+Carpeta=Lista
+Clave=CodigoPostal.MaviRutaSupervision
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=50
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+;*** ARC 19-May-09 Nuevo campo agregado desarrollo cobranza menudeo ***
+[CodigoPostal.frm/Lista.CodigoPostal.Cobranza]
+Carpeta=Lista
+Clave=CodigoPostal.Cobranza
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=100
+ColorFondo=Blanco
+ColorFuente=Negro

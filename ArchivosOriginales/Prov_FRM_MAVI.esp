@@ -1,0 +1,117 @@
+;**** Ultima modificación: 26-Ago-08
+;**** Modifico: Leticia Quezada
+;**** Se modifico: Se agregaron a la forma los 2 campos de TipoOperacion y TipoTercero, asi como una validacion en la captura de la informacion
+
+;**** Modificación:28-May-08
+;**** Modifico:Arly Rubio
+;**** Se modifico: 
+
+
+;**** Se agregaron nuevas acciones: TabuladoresFletes *****
+[Prov.frm/Forma]
+ListaAcciones=Nuevo<BR>Abrir<BR>Guardar<BR>Situacion<BR>PlantillasOffice<BR>Eliminar<BR>MovProv<BR>CamposExtras<BR>ProvSucursal<BR>ProvRelacion<BR>ProvAutoCargos<BR>Credito<BR>Conciliar<BR>Articulos<BR>ProvCuota<BR>Tareas<BR>Propiedades<BR>Evaluaciones<BR>Anexos<BR>Doc<BR>Politica<BR>RefCta<BR>AgregarEvento<BR>ProvAcceso<BR>Bitacora<BR>PropietarioSocio<BR>Informacion<BR>Cubos<BR>Mensajes<BR>Mapa<BR>ListaNegra<BR>TabuladoresFletes<BR>Navegador<BR>Cerrar<BR>ProvCat<BR>ProvFam<BR>Otros1<BR>Otros2<BR>Otros3<BR>Otros4<BR>Otros5<BR>Otros6<BR>Otros7<BR>Otros8<BR>Otros9
+ExpresionesAlMostrar=Asigna(Info.Copiar, Falso)
+
+[Prov.frm/Ficha.Prov.Estado]
+Editar=N
+
+[Prov.frm/Ficha.Prov.Pais]
+Editar=N
+
+;****Nueva acción agregada ****
+[Prov.frm/Acciones.TabuladoresFletes]
+Nombre=TabuladoresFletes
+Boton=96
+Menu=&Edición
+NombreDesplegar=Tabuladores de Fletes
+GuardarAntes=S
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Formas
+ClaveAccion=ProvTabuladorFleteMAVI
+ConCondicion=S
+Antes=S
+Visible=S
+EspacioPrevio=S
+ActivoCondicion=Prov:Prov.Familia = <T>TRANSPORTES<T>
+EjecucionCondicion=ConDatos(Prov:Prov.Proveedor)
+AntesExpresiones=Asigna(Info.Proveedor, Prov:Prov.Proveedor)
+
+;****Nuevos Campos TipoTercero y TipoOperacion ****
+[Prov.frm/Otros]
+ListaEnCaptura=Prov.Proveedor<BR>Prov.Nombre<BR>Prov.DirInternet<BR>Prov.Mensaje<BR>Prov.LeyendaCheque<BR>Prov.Comision<BR>Prov.Importe1<BR>Prov.Importe2<BR>Prov.Cuenta<BR>Cta.Descripcion<BR>Prov.CuentaRetencion<BR>CtaRetencion.Descripcion<BR>Prov.TipoTercero<BR>TipoTerceroDesc<BR>Prov.TipoOperacion<BR>TipoOperacionDesc<BR>Prov.NivelAcceso<BR>Prov.Idioma<BR>Prov.Contrasena<BR>Prov.Intercompania<BR>Prov.wGastoSolicitud<BR>Prov.NotasPlaneador
+
+
+[Prov.frm/Otros.Prov.TipoTercero]
+Carpeta=Otros
+Clave=Prov.TipoTercero
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[Prov.frm/Otros.TipoTerceroDesc]
+Carpeta=Otros
+Clave=TipoTerceroDesc
+3D=S
+Tamano=40
+ColorFondo=Plata
+ColorFuente=Negro
+
+[Prov.frm/Otros.Prov.TipoOperacion]
+Carpeta=Otros
+Clave=Prov.TipoOperacion
+Editar=S
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+ColorFuente=Negro
+LineaNueva=S
+
+[Prov.frm/Otros.TipoOperacionDesc]
+Carpeta=Otros
+Clave=TipoOperacionDesc
+3D=S
+Tamano=40
+ColorFondo=Plata
+ColorFuente=Negro
+
+
+
+[Prov.frm/Otros.Prov.NotasPlaneador]
+Carpeta=Otros
+Clave=Prov.NotasPlaneador
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=60
+ColorFondo=Plata
+ColorFuente=Negro
+
+
+;**** Validacion en la captura del Tipo de Operacion y Tipo de Tercero del Proveedor, modificacion Arly Rubio (23-Sep-08) Se cambio la expresion de validacion antes de guardar****
+[Prov.frm/Acciones.Guardar]
+;ConCondicion=S
+;EjecucionCondicion=( Si<BR>  Prov:Prov.TipoOperacion = <T>06<T><BR>Entonces<BR>    ( Si<BR>        Prov:Prov.TipoTercero = <T>05<T><BR>      Entonces<BR>        Error(<T>Registro Incorrecto de Tipo Tercero del Proveedor<T>,1)<BR>      Fin )<BR>Fin )<BR>y<BR>(Si<BR>  Vacio(Prov:Prov.CuentaRetencion,<T>Nada<T>) = <T>Nada<T><BR>Entonces<BR>    ( Si<BR>        Prov:Prov.TipoOperacion <> <T>85<T><BR>      Entonces<BR>        Error(<T>Registro Incorrecto de la Operacion del Proveedor<T>,1)<BR>      Fin )<BR>Fin)
+Antes=S
+AntesExpresiones=Si (ConDatos(Prov:Prov.CuentaRetencion))<BR> Entonces<BR>   Si Prov:Prov.TipoOperacion = <T>06<T><BR>      Entonces<BR>        Si(Prov:Prov.TipoTercero = <T>05<T>,Si(Error(<T>Registro Incorrecto de Tipo Tercero del Proveedor<T>,BotonAceptar)=BotonAceptar,AbortarOperacion,AbortarOperacion))<BR>      Fin<BR>   Si Prov:Prov.TipoOperacion = <T>85<T><BR>     Entonces<BR>       Si(Error(<T>Registro Incorrecto de la Operacion del Proveedor<T>,BotonAceptar)=BotonAceptar,AbortarOperacion,AbortarOperacion)<BR>     Fin<BR>  Sino<BR>    Si(Prov:Prov.TipoOperacion <> <T>85<T>,Si(Error(<T>Registro Incorrecto de la Operacion del Proveedor<T>,BotonAceptar)=BotonAceptar,AbortarOperacion,AbortarOperacion))<BR>  Fin
+
+;*** Validacion para mostrar la informacion de acreedores desde la configuracion del usuario BVF 20122011
+[Prov.frm/Acciones.Informacion]
+ConCondicion=S
+ActivoCondicion=SQL(<T>select VerInfoAcreedores from usuario where usuario = :tus<T>,Usuario) = Verdadero
+
+
+; **** Integracion de acciones modificada ProvCat, ProvFam por accesos por perfiles, 26/dic/2011 Victor Enrique Murillo Torres, para desarrollo DM0169 Modificaciones Especiales dentro del paquete DM0169_27122011. JR 27-Dic-2011. ****
+[Prov.frm/Acciones.ProvCat]
+Activo=
+ActivoCondicion=SQL(<T>select case when (select Acceso From Usuario Where Usuario=<T>+comillas(usuario)+<T>)<BR>In (Select Nombre From TablaStD Where TablaSt = <T>+comillas(<T>PERFILES MAESTROS ART/AGTE<T>)+<T>)<BR>then 1 else 0 End<T>)=1
+
+[Prov.frm/Acciones.ProvFam]
+Activo=
+ActivoCondicion=SQL(<T>select case when (select Acceso From Usuario Where Usuario=<T>+comillas(usuario)+<T>)<BR>In (Select Nombre From TablaStD Where TablaSt = <T>+comillas(<T>PERFILES MAESTROS ART/AGTE<T>)+<T>)<BR>then 1 else 0 End<T>)=1

@@ -1,0 +1,7 @@
+[TablaStD.tbl/Nombre]
+TamanoValidacion=100
+Tamano=250
+
+[TablaStD.tbl/Valor]
+Tamano=250
+TamanoValidacion=250

@@ -1,0 +1,17 @@
+[GenerarAgentCobro.dlg/Dialogo]
+ListaAcciones=Cobro<BR>CancelaCobro
+
+[GenerarAgentCobro.dlg/Acciones.CancelaCobro]
+Nombre=CancelaCobro
+Boton=0
+NombreDesplegar=Cancelacion Faltante
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Generar(<T>AGENT<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, <T>Canc Dif Caja<T>, Afectar.FormaCaptura)
+Activo=S
+Visible=S
+
+[GenerarAgentCobro.dlg/Acciones.Cobro]
+NombreDesplegar=Generar Cobro Dif Caja
+Expresion=Generar(<T>AGENT<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, <T>Cobro Dif Caja<T>, Afectar.FormaCaptura)

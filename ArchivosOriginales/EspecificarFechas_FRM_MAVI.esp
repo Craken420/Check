@@ -1,0 +1,7 @@
+
+;**** ARC Cambio de PROPRE 06-May-09****
+[EspecificarFechas.frm/Forma]
+PosicionInicialIzquierda=517
+PosicionInicialArriba=314
+ExpresionesAlMostrar=Asigna(Info.FechaD,nulo)<BR>Asigna(Info.FechaA,nulo)
+VentanaEstadoInicial=Normal

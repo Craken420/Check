@@ -1,0 +1,41 @@
+;Modificacion el dia 26/Dic/2011, Por: Javier Quiñones(validacion para consultar costos)
+
+[COMS.rep/Linea8]
+Visible=((sql(<T>select count(usuario) from(SELECT Usuario FROM USUARIO WHERE acceso in (select Nombre from tablastd where tablast=:tUsu1))x where usuario=:tusu<T>,<T>CFG PERFIL COSTOS VTAS<T>,usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)=<T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)=<T>MERCANCIA DE LINEA<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)<><T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)<><T>MERCANCIA DE LINEA<T>))
+
+;Jesus Del Toro Andrade
+;30-12-2011
+;Se modifican campos para mostrarse en ceros deacuerdo a los permisos del usuario, paquete DM0135_09022012 BVF 09022012
+
+; **** Modificacion de Visible, se cambia el campo Configurcion por el campo Acceso Para los filtros de los usuarios, J del Toro 11-02-2012, para desarrollo DM0135 Informacion Del Articulo dentro del paquete DM0135_13022012. JR 13-Feb-2012. ****
+[COMS.rep/Linea13]
+;Visible=(((sql(<T>SELECT COUNT(Configuracion) FROM dbo.TablaStD St INNER JOIN dbo.Usuario U ON U.Configuracion=St.Nombre WHERE TablaSt=:tPer AND U.Usuario=:tUs<T>,<T>CFG PERFIL COSTOS VTAS<T>,Usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(SQL(<T>SELECT COUNT(Nombre) FROM dbo.TablaStD WHERE TablaSt=:tPer AND Nombre=:tNom<T>,<T>CONTROL COSTOS MOVIMIENTOS<T>,Compra.Mov)=0) ))
+Visible=(((sql(<T>SELECT COUNT(Acceso) FROM dbo.TablaStD St INNER JOIN dbo.Usuario U ON U.Acceso=St.Nombre WHERE TablaSt=:tPer AND U.Usuario=:tUs<T>,<T>CFG PERFIL COSTOS VTAS<T>,Usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(SQL(<T>SELECT COUNT(Nombre) FROM dbo.TablaStD WHERE TablaSt=:tPer AND Nombre=:tNom<T>,<T>CONTROL COSTOS MOVIMIENTOS<T>,Compra.Mov)=0) ))
+
+
+; **** Modificacion de Visible, se cambia el campo Configurcion por el campo Acceso Para los filtros de los usuarios, J del Toro 11-02-2012, para desarrollo DM0135 Informacion Del Articulo dentro del paquete DM0135_13022012. JR 13-Feb-2012. ****
+[COMS.rep/Linea14]
+;Visible=(Usuario.Costos y (Suma(DescGlobal)<>0.0))<BR>y<BR>(((sql(<T>SELECT COUNT(Configuracion) FROM dbo.TablaStD St INNER JOIN dbo.Usuario U ON U.Configuracion=St.Nombre WHERE TablaSt=:tPer AND U.Usuario=:tUs<T>,<T>CFG PERFIL COSTOS VTAS<T>,Usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(SQL(<T>SELECT COUNT(Nombre) FROM dbo.TablaStD WHERE TablaSt=:tPer AND Nombre=:tNom<T>,<T>CONTROL COSTOS MOVIMIENTOS<T>,Compra.Mov)=0) ))
+;Visible002=<CONTINUA>))
+Visible=(Usuario.Costos y (Suma(DescGlobal)<>0.0))<BR>y<BR>(((sql(<T>SELECT COUNT(Acceso) FROM dbo.TablaStD St INNER JOIN dbo.Usuario U ON U.Acceso=St.Nombre WHERE TablaSt=:tPer AND U.Usuario=:tUs<T>,<T>CFG PERFIL COSTOS VTAS<T>,Usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(SQL(<T>SELECT COUNT(Nombre) FROM dbo.TablaStD WHERE TablaSt=:tPer AND Nombre=:tNom<T>,<T>CONTROL COSTOS MOVIMIENTOS<T>,Compra.Mov)=0) ))
+Visible002=<CONTINUA>))
+
+
+; **** Modificacion de Visible, se cambia el campo Configurcion por el campo Acceso Para los filtros de los usuarios, J del Toro 11-02-2012, para desarrollo DM0135 Informacion Del Articulo dentro del paquete DM0135_13022012. JR 13-Feb-2012. ****
+[COMS.rep/Linea15]
+;Visible=(((sql(<T>SELECT COUNT(Configuracion) FROM dbo.TablaStD St INNER JOIN dbo.Usuario U ON U.Configuracion=St.Nombre WHERE TablaSt=:tPer AND U.Usuario=:tUs<T>,<T>CFG PERFIL COSTOS VTAS<T>,Usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(SQL(<T>SELECT COUNT(Nombre) FROM dbo.TablaStD WHERE TablaSt=:tPer AND Nombre=:tNom<T>,<T>CONTROL COSTOS MOVIMIENTOS<T>,Compra.Mov)=0) ))
+Visible=(((sql(<T>SELECT COUNT(Acceso) FROM dbo.TablaStD St INNER JOIN dbo.Usuario U ON U.Acceso=St.Nombre WHERE TablaSt=:tPer AND U.Usuario=:tUs<T>,<T>CFG PERFIL COSTOS VTAS<T>,Usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(SQL(<T>SELECT COUNT(Nombre) FROM dbo.TablaStD WHERE TablaSt=:tPer AND Nombre=:tNom<T>,<T>CONTROL COSTOS MOVIMIENTOS<T>,Compra.Mov)=0) ))
+
+
+; **** Modificacion de Expresion, se cambia el campo Configurcion por el campo Acceso Para los filtros de los usuarios, J del Toro 11-02-2012, para desarrollo DM0135 Informacion Del Articulo dentro del paquete DM0135_13022012. JR 13-Feb-2012. ****
+[COMS.rep/G8]
+;Expresion=SI<BR>(((sql(<T>SELECT COUNT(Configuracion) FROM dbo.TablaStD St INNER JOIN<BR>dbo.Usuario U ON U.Configuracion=St.Nombre WHERE TablaSt=:tPer AND<BR>U.Usuario=:tUs<T>,<T>CFG PERFIL COSTOS VTAS<T>,Usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(SQL(<T>SELECT COUNT(Nombre) FROM dbo.TablaStD WHERE TablaSt=:tPer<BR>AND Nombre=:tNom<T>,<T>CONTROL COSTOS MOVIMIENTOS<T>,Compra.Mov)=0) ))<BR>ENTONCES<BR>    Si(Usuario.Costos, CompraD.Costo)<BR>SINO<BR>    <T>0.00<T><BR>FIN
+Expresion=SI<BR>(((sql(<T>SELECT COUNT(Acceso) FROM dbo.TablaStD St INNER JOIN<BR>dbo.Usuario U ON U.Acceso=St.Nombre WHERE TablaSt=:tPer AND<BR>U.Usuario=:tUs<T>,<T>CFG PERFIL COSTOS VTAS<T>,Usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(SQL(<T>SELECT COUNT(Nombre) FROM dbo.TablaStD WHERE TablaSt=:tPer<BR>AND Nombre=:tNom<T>,<T>CONTROL COSTOS MOVIMIENTOS<T>,Compra.Mov)=0) ))<BR>ENTONCES<BR>    Si(Usuario.Costos, CompraD.Costo)<BR>SINO<BR>    <T>0.00<T><BR>FIN
+
+
+; **** Modificacion de Expresion, se cambia el campo Configurcion por el campo Acceso Para los filtros de los usuarios, J del Toro 11-02-2012, para desarrollo DM0135 Informacion Del Articulo dentro del paquete DM0135_13022012. JR 13-Feb-2012. ****
+[COMS.rep/I8]
+;Expresion=SI<BR>(((sql(<T>SELECT COUNT(Configuracion) FROM dbo.TablaStD St INNER JOIN<BR>dbo.Usuario U ON U.Configuracion=St.Nombre WHERE TablaSt=:tPer AND<BR>U.Usuario=:tUs<T>,<T>CFG PERFIL COSTOS VTAS<T>,Usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(SQL(<T>SELECT COUNT(Nombre) FROM dbo.TablaStD WHERE TablaSt=:tPer<BR>AND Nombre=:tNom<T>,<T>CONTROL COSTOS MOVIMIENTOS<T>,Compra.Mov)=0) ))<BR>ENTONCES<BR>    Si(Usuario.Costos, ImporteLinea)<BR>SINO<BR>    <T>0.00<T><BR>FIN
+Expresion=SI<BR>(((sql(<T>SELECT COUNT(Acceso) FROM dbo.TablaStD St INNER JOIN<BR>dbo.Usuario U ON U.Acceso=St.Nombre WHERE TablaSt=:tPer AND<BR>U.Usuario=:tUs<T>,<T>CFG PERFIL COSTOS VTAS<T>,Usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(SQL(<T>SELECT COUNT(Nombre) FROM dbo.TablaStD WHERE TablaSt=:tPer<BR>AND Nombre=:tNom<T>,<T>CONTROL COSTOS MOVIMIENTOS<T>,Compra.Mov)=0) ))<BR>ENTONCES<BR>    Si(Usuario.Costos, ImporteLinea)<BR>SINO<BR>    <T>0.00<T><BR>FIN
+
+

@@ -1,0 +1,51 @@
+;**** Ultima modificación:14-Jul-08
+;**** Modifico: Benjamin Valentin
+;**** Se modifico:Fecha de Poliza
+
+
+
+;[CxpT.vis/FechaPoliza]
+;FormulaSQL={Si(General.ContXCancelarMismoMes, 'CASE WHEN Cxp.GenerarDinero = 0 AND Cxp.Dinero IS NOT NULL AND Cxp.DineroID IS NOT NULL AND Cxp.DineroCtaDinero IS NOT NULL THEN (SELECT Dinero.FechaConciliacion FROM Dinero WHERE Dinero.MovID = Cxp.DineroID AND Dinero.Mov = Cxp.Dinero AND Dinero.Empresa = Cxp.Empresa AND Dinero.CtaDinero = Cxp.DineroCtaDinero AND (CASE WHEN Dinero.Estatus = '+Comillas(EstatusPendiente)+' THEN '+Comillas(EstatusConcluido)+' ELSE Dinero.Estatus END) = (CASE WHEN Cxp.Estatus = '+Comillas(EstatusPendiente)+' THEN '+Comillas(EstatusConcluido)+' ELSE Cxp.Estatus END)) ELSE Cxp.FechaEmision END', 'CASE WHEN Cxp.Estatus = '+Comillas(EstatusCancelado)+' THEN CASE WHEN Cxp.GenerarDinero = 0 AND Cxp.Dinero IS NOT NULL AND Cxp.DineroID IS NOT NULL AND Cxp.DineroCtaDinero IS NOT NULL THEN (SELECT Dinero.FechaCancelacion FROM Dinero WHERE Dinero.MovID = Cxp.DineroID AND Dinero.Mov = Cxp.Dinero AND Dinero.Empresa = Cxp.Empresa AND Dinero.CtaDinero = Cxp.DineroCtaDinero AND Dinero.Estatus = Cx;p.Estatus) ELSE Cxp.FechaCancelacion END ELSE CASE WHEN Cxp.GenerarDinero = 0 AND Cxp.Dinero IS NOT NULL AND Cxp.DineroID IS NOT NULL AND Cxp.DineroCtaDinero IS NOT NULL THEN (SELECT Dinero.FechaEmision FROM Dinero WHERE Dinero.MovID = Cxp.DineroID AND Dinero.Mov = Cxp.Dinero AND Dinero.Empresa = Cxp.Empresa AND Dinero.CtaDinero = Cxp.DineroCtaDinero AND (CASE WHEN Dinero.Estatus = '+Comillas(EstatusPendiente)+' THEN '+Comillas(EstatusConcluido)+' ELSE Dinero.Estatus END) = (CASE WHEN Cxp.Estatus = '+Comillas(EstatusPendiente)+' THEN '+Comillas(EstatusConcluido)+' ELSE Cxp.Estatus END)) ELSE Cxp.FechaEmision END END')}
+
+
+;Fernando Romero 30/07/2014 Sea agrega el campo tipoTercero y Tipo a la Vista
+
+[CxpT.vis/Vista]
+ListaCampos=CxpD.ID<BR>CxpD.Renglon<BR>CxpD.RenglonSub<BR>CxpD.Aplica<BR>CxpD.AplicaID<BR>CxpD.Importe<BR>CxpD.Fecha<BR>CxpD.FechaAnterior<BR>CxpD.Ligado<BR>CxpD.Sucursal<BR>CxpD.SucursalOrigen<BR>CxpD.DescuentoRecargos<BR>Cxp.ID<BR>Cxp.Empresa<BR>Cxp.Mov<BR>Cxp.MovID<BR>Cxp.FechaEmision<BR>Cxp.UltimoCambio<BR>Cxp.Concepto<BR>Cxp.Proyecto<BR>Cxp.Moneda<BR>Cxp.TipoCambio<BR>Cxp.Usuario<BR>Cxp.Autorizacion<BR>Cxp.Referencia<BR>Cxp.DocFuente<BR>Cxp.Observaciones<BR>Cxp.Estatus<BR>Cxp.Situacion<BR>Cxp.SituacionFecha<BR>Cxp.SituacionUsuario<BR>Cxp.CtaDinero<BR>Cxp.Proveedor<BR>Cxp.ProveedorMoneda<BR>Cxp.ProveedorTipoCambio<BR>Cxp.Condicion<BR>Cxp.Vencimiento<BR>Cxp.Importe<BR>Cxp.Impuestos<BR>Cxp.AplicaManual<BR>Cxp.MovAplica<BR>Cxp.MovAplicaID<BR>Cxp.Saldo<BR>Cxp.FormaPago<BR>Cxp.OrigenTipo<BR>Cxp.Origen<<CONTINUA>
+ListaCampos002=<CONTINUA>BR>Cxp.OrigenID<BR>Cxp.Poliza<BR>Cxp.PolizaID<BR>Cxp.GenerarPoliza<BR>Cxp.ContID<BR>Cxp.Ejercicio<BR>Cxp.Periodo<BR>Cxp.FechaRegistro<BR>Cxp.FechaConclusion<BR>Cxp.FechaCancelacion<BR>Cxp.AutoAjuste<BR>Cxp.DescuentoProntoPago<BR>Cxp.FechaProntoPago<BR>Cxp.Beneficiario<BR>Cxp.Indirecto<BR>Cxp.Conciliado<BR>Cxp.GenerarDinero<BR>Cxp.Dinero<BR>Cxp.DineroID<BR>Cxp.DineroCtaDinero<BR>Cxp.DineroConciliado<BR>Cxp.DineroFechaConciliacion<BR>Cxp.Sucursal<BR>Cxp.SucursalDestino<BR>Cxp.SucursalOrigen<BR>Cxp.Mensaje<BR>Cxp.Cajero<BR>Cxp.Aforo<BR>Cxp.IVAFiscal<BR>Cxp.IEPSFiscal<BR>Cxp.DiferenciaCambiaria<BR>Cxp.UEN<BR>Cxp.EstaImpreso<BR>Cxp.Retencion<BR>Cxp.Retencion2<BR>Cxp.Retencion3<BR>Cxp.ProveedorAutoEndoso<BR>Cxp.FechaProgramada<BR>Cxp.TasaDiaria<BR>Cxp.Tasa<BR>Cxp.RamaID<BR>Cxp.LineaCredito<BR>Cx<CONTINUA>
+ListaCampos003=<CONTINUA>p.TipoAmortizacion<BR>Cxp.TipoTasa<BR>Cxp.Amortizaciones<BR>Cxp.InteresesOrdinarios<BR>Cxp.InteresesMoratorios<BR>Cxp.InteresesFijos<BR>Cxp.InteresesAnticipados<BR>Cxp.Comisiones<BR>Cxp.ComisionesIVA<BR>Cxp.ContUso<BR>Prov.Proveedor<BR>Prov.Nombre<BR>Prov.Tipo<BR>Prov.Direccion<BR>Prov.EntreCalles<BR>Prov.Plano<BR>Prov.Observaciones<BR>Prov.Delegacion<BR>Prov.Colonia<BR>Prov.CodigoPostal<BR>Prov.Poblacion<BR>Prov.Estado<BR>Prov.Zona<BR>Prov.Pais<BR>Prov.RFC<BR>Prov.Categoria<BR>Prov.Familia<BR>Prov.ZonaImpuesto<BR>Prov.Estatus<BR>Prov.ProntoPago<BR>Prov.Situacion<BR>Prov.SituacionFecha<BR>Prov.Cuenta<BR>Prov.Intercompania<BR>Prov.TipoTercero
+
+SQL=SELECT<BR>  CxpD.ID,<BR>  CxpD.Renglon,<BR>  CxpD.RenglonSub,<BR>  CxpD.Aplica,<BR>  CxpD.AplicaID,<BR>  CxpD.Importe,<BR>  CxpD.Fecha,<BR>  CxpD.FechaAnterior,<BR>  CxpD.Ligado,<BR>  CxpD.Sucursal,<BR>  CxpD.SucursalOrigen,<BR>  CxpD.DescuentoRecargos,<BR>  Cxp.ID,<BR>  Cxp.Empresa,<BR>  Cxp.Mov,<BR>  Cxp.MovID,<BR>  Cxp.FechaEmision,<BR>  Cxp.UltimoCambio,<BR>  Cxp.Concepto,<BR>  Cxp.Proyecto,<BR>  Cxp.Moneda,<BR>  Cxp.TipoCambio,<BR>  Cxp.Usuario,<BR>  Cxp.Autorizacion,<BR>  Cxp.Referencia,<BR>  Cxp.DocFuente,<BR>  Cxp.Observaciones,<BR>  Cxp.Estatus,<BR>  Cxp.Situacion,<BR>  Cxp.SituacionFecha,<BR>  Cxp.SituacionUsuario,<BR>  Cxp.CtaDinero,<BR>  Cxp.Proveedor,<BR>  Cxp.ProveedorMoneda,<BR>  Cxp.ProveedorTipoCambio,<BR>  Cxp.Condicion,<BR>  Cxp.Vencimiento,<BR>  Cxp.Importe,<BR>  Cxp.Im<CONTINUA>
+SQL002=<CONTINUA>puestos,<BR>  Cxp.AplicaManual,<BR>  Cxp.MovAplica,<BR>  Cxp.MovAplicaID,<BR>  Cxp.Saldo,<BR>  Cxp.FormaPago,<BR>  Cxp.OrigenTipo,<BR>  Cxp.Origen,<BR>  Cxp.OrigenID,<BR>  Cxp.Poliza,<BR>  Cxp.PolizaID,<BR>  Cxp.GenerarPoliza,<BR>  Cxp.ContID,<BR>  Cxp.Ejercicio,<BR>  Cxp.Periodo,<BR>  Cxp.FechaRegistro,<BR>  Cxp.FechaConclusion,<BR>  Cxp.FechaCancelacion,<BR>  Cxp.AutoAjuste,<BR>  Cxp.DescuentoProntoPago,<BR>  Cxp.FechaProntoPago,<BR>  Cxp.Beneficiario,<BR>  Cxp.Indirecto,<BR>  Cxp.Conciliado,<BR>  Cxp.GenerarDinero,<BR>  Cxp.Dinero,<BR>  Cxp.DineroID,<BR>  Cxp.DineroCtaDinero,<BR>  Cxp.DineroConciliado,<BR>  Cxp.DineroFechaConciliacion,<BR>  Cxp.Sucursal,<BR>  Cxp.SucursalDestino,<BR>  Cxp.SucursalOrigen,<BR>  Cxp.Mensaje,<BR>  Cxp.Cajero,<BR>  Cxp.Aforo,<BR>  Cxp.IVAFiscal,<BR>  Cxp.IEP<CONTINUA>
+SQL003=<CONTINUA>SFiscal,<BR>  Cxp.DiferenciaCambiaria,<BR>  Cxp.UEN,<BR>  Cxp.EstaImpreso,<BR>  Cxp.Retencion,<BR>  Cxp.Retencion2,<BR>  Cxp.Retencion3,<BR>  Cxp.ProveedorAutoEndoso,<BR>  Cxp.FechaProgramada,<BR>  Cxp.TasaDiaria,<BR>  Cxp.Tasa,<BR>  Cxp.RamaID,<BR>  Cxp.LineaCredito,<BR>  Cxp.TipoAmortizacion,<BR>  Cxp.TipoTasa,<BR>  Cxp.Amortizaciones,<BR>  Cxp.InteresesOrdinarios,<BR>  Cxp.InteresesMoratorios,<BR>  Cxp.InteresesFijos,<BR>  Cxp.InteresesAnticipados,<BR>  Cxp.Comisiones,<BR>  Cxp.ComisionesIVA,<BR>  Cxp.ContUso,<BR>  Prov.Proveedor,<BR>  Prov.Nombre,<BR>  Prov.Tipo,<BR>  Prov.Direccion,<BR>  Prov.EntreCalles,<BR>  Prov.Plano,<BR>  Prov.Observaciones,<BR>  Prov.Delegacion,<BR>  Prov.Colonia,<BR>  Prov.CodigoPostal,<BR>  Prov.Poblacion,<BR>  Prov.Estado,<BR>  Prov.Zona,<BR>  Prov.Pais,<BR> <CONTINUA>
+SQL004=<CONTINUA> Prov.RFC,<BR>  Prov.Categoria,<BR>  Prov.Familia,<BR>  Prov.ZonaImpuesto,<BR>  Prov.Estatus,<BR>  Prov.ProntoPago,<BR>  Prov.Situacion,<BR>  Prov.SituacionFecha,<BR>  Prov.Cuenta,<BR>  Prov.Intercompania,<BR>  Prov.TipoTercero<BR><BR>FROM<BR>  CxpD<BR>  RIGHT OUTER JOIN Cxp ON CxpD.ID=Cxp.ID<BR>  JOIN Prov ON Cxp.Proveedor=Prov.Proveedor
+
+
+[CxpT.vis/Prov.TipoTercero]
+Clave=Prov.TipoTercero
+Nombre=TipoTercero
+Visible=S
+TamanoValidacion=5
+Tamano=5
+LigaTabla=Prov
+LigaCampo=TipoTercero
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=TipoTercero
+
+
+[CxpT.vis/Prov.Tipo]
+Clave=Prov.Tipo
+LigaTabla=Prov
+LigaCampo=Tipo
+Ligado=S
+ClaveBDE=Tipo
+
+[CxpT.vis/Prov.Cuenta]
+Clave=Prov.Cuenta
+Visible=S
+LigaTabla=Prov
+LigaCampo=Cuenta
+Ligado=S
+ClaveBDE=Cuenta

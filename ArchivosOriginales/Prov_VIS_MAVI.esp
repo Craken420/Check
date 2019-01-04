@@ -1,0 +1,111 @@
+;**** Modificacion: 03-Feb-09
+;**** Modifico: Edgar Montelongo
+
+;**** Modificación:26-Ago-08
+;**** Modifico:Leticia Quezada
+;**** Se modifico: Se agregaron los campos de TipoOperacion, TipoTercero,TipoTerceroDesc y TipoOperacionDesc
+
+
+[Prov.vis/Vista]
+ListaTablas=Prov<BR>CtaDinero<BR>Agente<BR>ProvRef<BR>Cta<BR>CtaRetencion<BR>LocalidadCNBV
+ListaCampos=Prov.Proveedor<BR>Prov.Rama<BR>Prov.Nombre<BR>Prov.NombreCorto<BR>Prov.Tipo<BR>Prov.Direccion<BR>Prov.DireccionNumero<BR>Prov.DireccionNumeroInt<BR>Prov.EntreCalles<BR>Prov.Plano<BR>Prov.Observaciones<BR>Prov.Delegacion<BR>Prov.Colonia<BR>Prov.CodigoPostal<BR>Prov.Poblacion<BR>Prov.Estado<BR>Prov.Zona<BR>Prov.Pais<BR>Prov.Telefonos<BR>Prov.Fax<BR>Prov.PedirTono<BR>Prov.Contacto1<BR>Prov.Contacto2<BR>Prov.eMail1<BR>Prov.eMail2<BR>Prov.RFC<BR>Prov.Categoria<BR>Prov.Familia<BR>Prov.Descuento<BR>Prov.ZonaImpuesto<BR>Prov.FormaEnvio<BR>Prov.Comprador<BR>Prov.Proyecto<BR>Prov.Condicion<BR>Prov.CtaDinero<BR>Prov.Almacen<BR>Prov.Estatus<BR>Prov.UltimoCambio<BR>Prov.Alta<BR>Prov.TipoTercero<BR>Prov.TipoOperacion<BR>Prov.Conciliar<BR>Prov.Extencion1<BR>Prov.Extencion2<BR>Prov.DiaRevision1<BR>Prov.Di<CONTINUA>
+ListaCampos002=<CONTINUA>aRevision2<BR>Prov.HorarioRevision<BR>Prov.DiaPago1<BR>Prov.DiaPago2<BR>Prov.HorarioPago<BR>Prov.BeneficiarioNombre<BR>Prov.LeyendaCheque<BR>Prov.DirInternet<BR>Prov.DefMoneda<BR>Prov.Agente<BR>Prov.Mensaje<BR>Prov.ProntoPago<BR>Prov.ProvCuenta<BR>Prov.ProvBancoSucursal<BR>Prov.Situacion<BR>Prov.SituacionFecha<BR>Prov.SituacionUsuario<BR>Prov.SituacionNota<BR>Prov.TieneMovimientos<BR>Prov.Ruta<BR>Prov.DescuentoRecargos<BR>Prov.CURP<BR>Prov.CompraAutoCargosTipo<BR>Prov.CompraAutoCargos<BR>Prov.Pagares<BR>Prov.Aforo<BR>Prov.NivelAcceso<BR>Prov.Idioma<BR>Prov.MaximoAplicacionPagos<BR>Prov.ListaPreciosEsp<BR>Prov.Contrasena<BR>Prov.AutoEndoso<BR>Prov.Cuenta<BR>Prov.CuentaRetencion<BR>Prov.FormaPago<BR>Prov.wGastoSolicitud<BR>Prov.ConLimiteAnticipos<BR>Prov.LimiteAnticiposMN<BR>Prov.ChecarLimit<CONTINUA>
+ListaCampos003=<CONTINUA>e<BR>Prov.eMailAuto<BR>Prov.FiscalRegimen<BR>Prov.Intercompania<BR>Prov.GarantiaCostos<BR>Prov.GarantiaCostosPlazo<BR>Prov.ImportadorRegimen<BR>Prov.ImportadorRegistro<BR>Prov.Comision<BR>Prov.Importe1<BR>Prov.Importe2<BR>Prov.LocalidadCNBV<BR>CtaDinero.CtaDinero<BR>CtaDinero.Descripcion<BR>CtaDinero.Estatus<BR>Agente.Agente<BR>Agente.Nombre<BR>Agente.Estatus<BR>Agente.Mensaje<BR>ProvRef.Proveedor<BR>ProvRef.Nombre<BR>Cta.Cuenta<BR>Cta.Descripcion<BR>CtaRetencion.Cuenta<BR>CtaRetencion.Descripcion<BR>Prov.NotasPlaneador<BR>LocalidadCNBV.LocalidadCNBV
+ListaRelaciones=Prov.CtaDinero<BR>Prov.Agente<BR>Prov.ProvRef<BR>Prov.Cta<BR>Prov.CtaRetencion<BR>Prov.LocalidadCNBV<BR>CtaDinero.Cta
+ListaCalculados=EstatusNombre<BR>TipoTerceroDesc<BR>TipoOperacionDesc
+SQL=SELECT<BR>  Prov.Proveedor,<BR>  Prov.Rama,<BR>  Prov.Nombre,<BR>  Prov.NombreCorto,<BR>  Prov.Tipo,<BR>  Prov.Direccion,<BR>  Prov.DireccionNumero,<BR>  Prov.DireccionNumeroInt,<BR>  Prov.EntreCalles,<BR>  Prov.Plano,<BR>  Prov.Observaciones,<BR>  Prov.Delegacion,<BR>  Prov.Colonia,<BR>  Prov.CodigoPostal,<BR>  Prov.Poblacion,<BR>  Prov.Estado,<BR>  Prov.Zona,<BR>  Prov.Pais,<BR>  Prov.Telefonos,<BR>  Prov.Fax,<BR>  Prov.PedirTono,<BR>  Prov.Contacto1,<BR>  Prov.Contacto2,<BR>  Prov.eMail1,<BR>  Prov.eMail2,<BR>  Prov.RFC,<BR>  Prov.Categoria,<BR>  Prov.Familia,<BR>  Prov.Descuento,<BR>  Prov.ZonaImpuesto,<BR>  Prov.FormaEnvio,<BR>  Prov.Comprador,<BR>  Prov.Proyecto,<BR>  Prov.Condicion,<BR>  Prov.CtaDinero,<BR>  Prov.Almacen,<BR>  Prov.Estatus,<BR>  Prov.UltimoCambio,<BR>  Prov.Alta,<BR<CONTINUA>
+SQL002=<CONTINUA>>  Prov.TipoTercero,<BR>  Prov.TipoOperacion,<BR>  Prov.Conciliar,<BR>  Prov.Extencion1,<BR>  Prov.Extencion2,<BR>  Prov.DiaRevision1,<BR>  Prov.DiaRevision2,<BR>  Prov.HorarioRevision,<BR>  Prov.DiaPago1,<BR>  Prov.DiaPago2,<BR>  Prov.HorarioPago,<BR>  Prov.BeneficiarioNombre,<BR>  Prov.LeyendaCheque,<BR>  Prov.DirInternet,<BR>  Prov.DefMoneda,<BR>  Prov.Agente,<BR>  Prov.Mensaje,<BR>  Prov.ProntoPago,<BR>  Prov.ProvCuenta,<BR>  Prov.ProvBancoSucursal,<BR>  Prov.Situacion,<BR>  Prov.SituacionFecha,<BR>  Prov.SituacionUsuario,<BR>  Prov.SituacionNota,<BR>  Prov.TieneMovimientos,<BR>  Prov.Ruta,<BR>  Prov.DescuentoRecargos,<BR>  Prov.CURP,<BR>  Prov.CompraAutoCargosTipo,<BR>  Prov.CompraAutoCargos,<BR>  Prov.Pagares,<BR>  Prov.Aforo,<BR>  Prov.NivelAcceso,<BR>  Prov.Idioma,<BR>  Prov.Maximo<CONTINUA>
+SQL003=<CONTINUA>AplicacionPagos,<BR>  Prov.ListaPreciosEsp,<BR>  Prov.Contrasena,<BR>  Prov.AutoEndoso,<BR>  Prov.Cuenta,<BR>  Prov.CuentaRetencion,<BR>  Prov.FormaPago,<BR>  Prov.wGastoSolicitud,<BR>  Prov.ConLimiteAnticipos,<BR>  Prov.LimiteAnticiposMN,<BR>  Prov.ChecarLimite,<BR>  Prov.eMailAuto,<BR>  Prov.FiscalRegimen,<BR>  Prov.Intercompania,<BR>  Prov.GarantiaCostos,<BR>  Prov.GarantiaCostosPlazo,<BR>  Prov.ImportadorRegimen,<BR>  Prov.ImportadorRegistro,<BR>  Prov.Comision,<BR>  Prov.Importe1,<BR>  Prov.Importe2,<BR>  Prov.TipoTercero,<BR>  Prov.TipoOperacion,<BR> Prov.LocalidadCNBV,<BR>  CtaDinero.CtaDinero,<BR>  CtaDinero.Descripcion,<BR>  CtaDinero.Estatus,<BR>  Agente.Agente,<BR>  Agente.Nombre,<BR>  Agente.Estatus,<BR>  Agente.Mensaje,<BR>  ProvRef.Proveedor,<BR>  ProvRef.Nombre,<BR>  Cta.Cuenta,<BR>  Cta.Descripcio<CONTINUA>
+SQL004=<CONTINUA>n,<BR>  CtaRetencion.Cuenta,<BR>  CtaRetencion.Descripcion,<BR> LocalidadCNBV.LocalidadCNBV,<BR> Prov.NotasPlaneador <BR><BR>FROM<BR>  Prov<BR>  LEFT OUTER JOIN CtaDinero ON Prov.CtaDinero=CtaDinero.CtaDinero<BR>  LEFT OUTER JOIN Agente ON Prov.Agente=Agente.Agente<BR>  LEFT OUTER JOIN Prov ProvRef ON Prov.AutoEndoso=ProvRef.Proveedor<BR>  LEFT OUTER JOIN Cta ON Prov.Cuenta=Cta.Cuenta<BR>  LEFT OUTER JOIN Cta CtaRetencion ON Prov.CuentaRetencion=CtaRetencion.Cuenta LEFT OUTER JOIN LocalidadCNBV ON Prov.LocalidadCNBV=LocalidadCNBV.LocalidadCNBV
+
+[Prov.vis/Prov.TipoTercero]
+Clave=Prov.TipoTercero
+LigaTabla=Prov
+LigaCampo=TipoTercero
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=5
+ClaveBDE=TipoTercero
+
+[Prov.vis/TipoTerceroDesc]
+Clave=TipoTerceroDesc
+Tamano=15
+TipoCampo=Calculado
+TamanoValidacion=15
+Alineacion=por Omisión
+Nombre=Descripcion Tipo Tercero
+Formula=Caso  Prov.TipoTercero<BR>  Es <T>04<T> Entonces <T>Nacional<T><BR>  Es <T>05<T> Entonces <T>Internacional<T><BR>  Es <T>85<T> Entonces <T>Global<T><BR>Sino<BR>  <T> <T>             <BR>Fin
+
+[Prov.vis/Prov.TipoOperacion]
+Clave=Prov.TipoOperacion
+LigaTabla=Prov
+LigaCampo=TipoOperacion
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=5
+ClaveBDE=TipoOperacion
+
+[Prov.vis/TipoOperacionDesc]
+Clave=TipoOperacionDesc
+Tamano=50
+TipoCampo=Calculado
+TamanoValidacion=50
+Nombre=Descripcion Operacion
+Formula=Caso  Prov.TipoOperacion<BR>  Es <T>03<T> Entonces <T>Prestacion Servicios Profesionales<T><BR>  Es <T>06<T> Entonces <T>Arrendamiento de Inmuebles<T><BR>  Es <T>85<T> Entonces <T>Otros<T><BR>Sino<BR>  <T> <T><BR>Fin
+
+
+[Prov.vis/Prov.NotasPlaneador]
+Clave=Prov.NotasPlaneador
+Nombre=Notas
+Visible=S
+TamanoValidacion=255
+Tamano=255
+LigaTabla=Prov
+LigaCampo=NotasPlaneador
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=NotasPlaneador
+
+[Prov.vis/Prov.LocalidadCNBV]
+Clave=Prov.LocalidadCNBV
+Nombre=LocalidadCNBV
+Visible=S
+TamanoValidacion=10
+Tamano=10
+ValorRefrescar=Si(Info.Copiar,Info.Localidad,<T>X<T>)
+AyudaEnCaptura=Vista
+AyudaForma=LocalidadCNBVLista
+AyudaVista=LocalidadCNBV
+AyudaCampo=LocalidadCNBV.LocalidadCNBV
+ValidacionUsaTabla=S
+ValidacionTablas=LocalidadCNBV
+LigaTabla=Prov
+LigaCampo=LocalidadCNBV
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=LocalidadCNBV
+
+[Prov.vis/LocalidadCNBV.LocalidadCNBV]
+Clave=LocalidadCNBV.LocalidadCNBV
+Nombre=LocalidadCNBV
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+LigaTabla=LocalidadCNBV
+LigaCampo=LocalidadCNBV
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=LocalidadCNBV_1
+
+[Prov.vis/Relaciones.Prov.LocalidadCNBV]
+Clave=Prov.LocalidadCNBV
+TablaRemota=LocalidadCNBV
+LlaveLocal=Prov.LocalidadCNBV
+LlaveRemota=LocalidadCNBV
+TipoRelacion=Forzosa

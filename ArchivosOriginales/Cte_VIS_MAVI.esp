@@ -1,0 +1,387 @@
+;**** Ultima modificación:22-Oct-08
+;**** Modifico: Leticia Quezada
+;**** Se modifico:Incluyo desarrollo de Buro de Credito
+
+
+;**** Modificación:18-Sep-08
+;**** Modifico: Leticia Quezada
+;**** Se modifico: Se agrego el campo MaviRecomendadoPor y se genero el campo calculado MaviRecomendadoPorNombre
+
+
+; **** Se agregó el nuevo campo: "TipoCalle", MaviEstatus que proviene de la tabla "Cte"****
+;**** Se modifico:Incluyo desarrollo de Buro de Credito
+;*** Desarrollo de Campañas 27/08/09, se agregaron campos nuevos a la vista. (FechaUltimoCobro,MovimientoUltimoCobro,PublicidadMAVI,MotivoMAVIPublicidad)
+
+
+; ***** Modifico: Judith Ramirez 03-Dic-09 *****
+; ***** Modificacion: Integracion de campos nuevos: ParentescoRecomiendaMavi, DireccionRecomiendaMavi, 
+; 		para Cte Express por Arturo Guizer. *****
+
+
+
+[Cte.vis/Vista]
+ListaCampos=Cte.Cliente<BR>Cte.Rama<BR>Cte.Nombre<BR>Cte.NombreCorto<BR>Cte.Numero<BR>Cte.Tipo<BR>Cte.Direccion<BR>Cte.DireccionNumero<BR>Cte.DireccionNumeroInt<BR>Cte.EntreCalles<BR>Cte.Plano<BR>Cte.Observaciones<BR>Cte.Delegacion<BR>Cte.Colonia<BR>Cte.CodigoPostal<BR>Cte.Poblacion<BR>Cte.Estado<BR>Cte.Pais<BR>Cte.Zona<BR>Cte.RFC<BR>Cte.Telefonos<BR>Cte.TelefonosLada<BR>Cte.Fax<BR>Cte.PedirTono<BR>Cte.Contacto1<BR>Cte.Contacto2<BR>Cte.eMail1<BR>Cte.eMail2<BR>Cte.DirInternet<BR>Cte.Categoria<BR>Cte.Familia<BR>Cte.Credito<BR>Cte.Grupo<BR>Cte.DiaRevision1<BR>Cte.DiaRevision2<BR>Cte.HorarioRevision<BR>Cte.DiaPago1<BR>Cte.DiaPago2<BR>Cte.HorarioPago<BR>Cte.ZonaImpuesto<BR>Cte.PedidosParciales<BR>Cte.Clase<BR>Cte.Estatus<BR>Cte.UltimoCambio<BR>Cte.Alta<BR>Cte.Conciliar<BR>Cte.Descuento<BR>Cte.Proyecto<BR>C<CONTINUA>
+ListaCampos002=<CONTINUA>te.Agente<BR>Cte.AgenteServicio<BR>Cte.EnviarA<BR>Cte.FormaEnvio<BR>Cte.Condicion<BR>Cte.Ruta<BR>Cte.ListaPreciosEsp<BR>Cte.DefMoneda<BR>Cte.VtasConsignacion<BR>Cte.AlmacenVtasConsignacion<BR>Cte.Mensaje<BR>Cte.Extencion1<BR>Cte.Extencion2<BR>Cte.CreditoEspecial<BR>Cte.CreditoConLimite<BR>Cte.CreditoLimite<BR>Cte.CreditoConLimitePedidos<BR>Cte.CreditoLimitePedidos<BR>Cte.CreditoMoneda<BR>Cte.CreditoConDias<BR>Cte.CreditoDias<BR>Cte.CreditoConCondiciones<BR>Cte.CreditoCondiciones<BR>Cte.Contrasena<BR>Cte.Contrasena2<BR>Cte.wVerDisponible<BR>Cte.ChecarCredito<BR>Cte.BloquearMorosos<BR>Cte.ModificarVencimiento<BR>Cte.Situacion<BR>Cte.SituacionFecha<BR>Cte.SituacionUsuario<BR>Cte.SituacionNota<BR>Cte.TieneMovimientos<BR>Cte.Cobrador<BR>Cte.DescuentoRecargos<BR>Cte.CURP<BR>Cte.RecorrerVencimien<CONTINUA>
+ListaCampos003=<CONTINUA>to<BR>Cte.SucursalEmpresa<BR>Cte.NivelAcceso<BR>Cte.Idioma<BR>Cte.BonificacionTipo<BR>Cte.Bonificacion<BR>Cte.VigenciaDesde<BR>Cte.VigenciaHasta<BR>Cte.Descripcion1<BR>Cte.Descripcion2<BR>Cte.Descripcion3<BR>Cte.Descripcion4<BR>Cte.Descripcion5<BR>Cte.Descripcion6<BR>Cte.Descripcion7<BR>Cte.Descripcion8<BR>Cte.Descripcion9<BR>Cte.Descripcion10<BR>Cte.FormasPagoRestringidas<BR>Cte.AlmacenDef<BR>Cte.Descripcion11<BR>Cte.Descripcion12<BR>Cte.Descripcion13<BR>Cte.Descripcion14<BR>Cte.Descripcion15<BR>Cte.Descripcion16<BR>Cte.Descripcion17<BR>Cte.Descripcion18<BR>Cte.Descripcion19<BR>Cte.Descripcion20<BR>Cte.CBDir<BR>Cte.PersonalNombres<BR>Cte.PersonalApellidoPaterno<BR>Cte.PersonalApellidoMaterno<BR>Cte.PersonalDireccion<BR>Cte.PersonalEntreCalles<BR>Cte.PersonalPlano<BR>Cte.PersonalDelegacion<CONTINUA>
+ListaCampos004=<CONTINUA><BR>Cte.PersonalColonia<BR>Cte.PersonalPoblacion<BR>Cte.PersonalEstado<BR>Cte.PersonalPais<BR>Cte.PersonalZona<BR>Cte.PersonalCodigoPostal<BR>Cte.PersonalTelefonos<BR>Cte.PersonalTelefonosLada<BR>Cte.PersonalTelefonoMovil<BR>Cte.FechaNacimiento<BR>Cte.FechaMatrimonio<BR>Cte.Conyuge<BR>Cte.Sexo<BR>Cte.Fuma<BR>Cte.Profesion<BR>Cte.Puesto<BR>Cte.NumeroHijos<BR>Cte.Aseguradora<BR>Cte.PolizaTipo<BR>Cte.PolizaNumero<BR>Cte.PolizaReferencia<BR>Cte.PolizaImporte<BR>Cte.Deducible<BR>Cte.DeducibleMoneda<BR>Cte.Coaseguro<BR>Cte.Espacio<BR>Cte.Alergias<BR>Cte.Religion<BR>Cte.Responsable<BR>Cte.Parentesco<BR>Cte.NombreAsegurado<BR>Cte.Titulo<BR>Cte.EstadoCivil<BR>Cte.FacturarCte<BR>Cte.FacturarCteEnviarA<BR>Cte.OtrosCargos<BR>Cte.PersonalCobrador<BR>Cte.wVerArtListaPreciosEsp<BR>Cte.CRMImporte<BR>Cte.C<CONTINUA>
+ListaCampos005=<CONTINUA>RMCantidad<BR>Cte.CRMEtapa<BR>Cte.CRMCierreProbabilidad<BR>Cte.CRMCierreFechaAprox<BR>Cte.CRMPresupuestoAsignado<BR>Cte.CRMCompetencia<BR>Cte.CRMInfluencia<BR>Cte.CRMFuente<BR>Cte.Flotilla<BR>Cte.FordDistribuidor<BR>Cte.ExcentoISAN<BR>Cte.Fecha1<BR>Cte.Fecha2<BR>Cte.Fecha3<BR>Cte.Fecha4<BR>Cte.Fecha5<BR>Cte.EsProveedor<BR>Cte.EsPersonal<BR>Cte.EsAgente<BR>Cte.EsAlmacen<BR>Cte.EsEspacio<BR>Cte.EsCentroCostos<BR>Cte.EsProyecto<BR>Cte.EsCentroTrabajo<BR>Cte.EsEstacionTrabajo<BR>Cte.Usuario<BR>Cte.Licencias<BR>Cte.LicenciasTipo<BR>Cte.LicenciasLlave<BR>Cte.Cuenta<BR>Cte.CuentaRetencion<BR>Cte.PreciosInferioresMinimo<BR>Cte.FiscalRegimen<BR>Cte.FordZona<BR>Cte.PedidoDef<BR>Cte.eMailAuto<BR>Cte.IEPS<BR>Cte.PITEX<BR>Cte.wMovVentas<BR>Cte.Intercompania<BR>Cte.Agente3<BR>Cte.Agente4<BR>Cte.Publico<<CONTINUA>
+ListaCampos006=<CONTINUA>BR>Cte.Extranjero<BR>Cte.DocumentacionCompleta<BR>Cte.OperacionLimite<BR>Cte.CRMovVenta<BR>Cte.ImportadorRegimen<BR>Cte.ImportadorRegistro<BR>Cte.LocalidadCNBV<BR>Cte.ActividadEconomicaCNBV<BR>Cte.Grado<BR>Cte.GLN<BR>Cte.PersonalSMS<BR>Cte.RPU<BR>Cte.SIRAC<BR>Cte.IFE<BR>Cte.Pasaporte<BR>Cte.GrupoSanguineo<BR>Cte.GrupoSanguineoRH<BR>Cte.Peso<BR>Cte.Estatura<BR>Cte.Comentarios<BR>Cte.PolizaFechaEmision<BR>Cte.PolizaVencimiento<BR>Cte.NotificarA<BR>Cte.NoriticarATelefonos<BR>Cte.ExpedienteFamiliar<BR>Cte.TipoCalle<BR>Cte.MaviEstatus<BR>Agente.Agente<BR>Agente.Nombre<BR>AgenteServicio.Agente<BR>AgenteServicio.Nombre<BR>Agente3.Agente<BR>Agente3.Nombre<BR>Agente4.Agente<BR>Agente4.Nombre<BR>CteEnviarA.ID<BR>CteEnviarA.Nombre<BR>Sucursal.Sucursal<BR>Sucursal.Nombre<BR>Sucursal.Estatus<BR>Espacio.Espacio<BR>Espacio<CONTINUA>
+ListaCampos007=<CONTINUA>.Nombre<BR>ExpedienteFamiliar.Nombre<BR>CteAseguradora.Cliente<BR>CteAseguradora.Nombre<BR>CteFacturarA.Cliente<BR>CteFacturarA.Nombre<BR>CteFacturarA.Estatus<BR>CteEnviarAFacturarA.Cliente<BR>CteEnviarAFacturarA.ID<BR>CteEnviarAFacturarA.Nombre<BR>Personal.Personal<BR>Personal.ApellidoPaterno<BR>Personal.ApellidoMaterno<BR>Personal.Nombre<BR>Personal.Tipo<BR>Cta.Cuenta<BR>Cta.Descripcion<BR>CtaRetencion.Cuenta<BR>CtaRetencion.Descripcion<BR>LocalidadCNBV.Nombre<BR>ActividadEconomicaCNBV.Nombre<BR>Cte.MaviRecomendadoPor<BR>Cte.SeEnviaBuroCreditoMAVI<BR>Cte.NivelCobranzaEspecialMAVI<BR>Cte.ImporteRentaMavi<BR>Cte.ViveEnCalidad<BR>Cte.AntiguedadNegocioMavi<BR>Cte.EnviarCobTelMavi<BR>Cte.MotivoMavi<BR>Cte.FechaUltimoCobro<BR>Cte.MovimientoUltimoCobro<BR>Cte.PublicidadMAVI<BR>Cte.MotivoMAVIPublicidad<CONTINUA>
+ListaCampos008=<CONTINUA><BR>Cte.ParentescoRecomiendaMavi<BR>Cte.DireccionRecomiendaMavi<BR>Cte.CFD_Enviar<BR>Cte.NivelespecialContacto<BR>Cte.LCAXSI<BR>Cte.TipoCredito<BR>Cte.esAutCredEspecial<BR>Cte.esDimaElite<BR>Cte.LimiteCredDimaElite<BR>Cte.siPorcFactDima<BR>Cte.SinBonifDIMA<BR>Cte.TipoDIMA
+
+ListaCalculados=EstatusNombre<BR>Edad<BR>PersonalNombre<BR>MaviRecomendadoPorNombre<BR>TipoCreditoNombre
+
+SQL=SELECT<BR>  Cte.Cliente,<BR>  Cte.Rama,<BR>  Cte.Nombre,<BR>  Cte.NombreCorto,<BR>  Cte.Numero,<BR>  Cte.Tipo,<BR>  Cte.Direccion,<BR>  Cte.DireccionNumero,<BR>  Cte.DireccionNumeroInt,<BR>  Cte.EntreCalles,<BR>  Cte.Plano,<BR>  Cte.Observaciones,<BR>  Cte.Delegacion,<BR>  Cte.Colonia,<BR>  Cte.CodigoPostal,<BR>  Cte.Poblacion,<BR>  Cte.Estado,<BR>  Cte.Pais,<BR>  Cte.Zona,<BR>  Cte.RFC,<BR>  Cte.Telefonos,<BR>  Cte.TelefonosLada,<BR>  Cte.Fax,<BR>  Cte.PedirTono,<BR>  Cte.Contacto1,<BR>  Cte.Contacto2,<BR>  Cte.eMail1,<BR>  Cte.eMail2,<BR>  Cte.DirInternet,<BR>  Cte.Categoria,<BR>  Cte.Familia,<BR>  Cte.Credito,<BR>  Cte.Grupo,<BR>  Cte.DiaRevision1,<BR>  Cte.DiaRevision2,<BR>  Cte.HorarioRevision,<BR>  Cte.DiaPago1,<BR>  Cte.DiaPago2,<BR>  Cte.HorarioPago,<BR>  Cte.ZonaImpuesto,<BR>  Cte.EnviarCobTelMavi,<BR>  Cte.MotivoMavi,<BR>  Cte<CONTINUA>
+SQL002=<CONTINUA>.PedidosParciales,<BR>  Cte.Clase,<BR>  Cte.Estatus,<BR>  Cte.UltimoCambio,<BR>  Cte.Alta,<BR>  Cte.Conciliar,<BR>  Cte.Descuento,<BR>  Cte.Proyecto,<BR>  Cte.Agente,<BR>  Cte.AgenteServicio,<BR>  Cte.EnviarA,<BR>  Cte.FormaEnvio,<BR>  Cte.Condicion,<BR>  Cte.Ruta,<BR>  Cte.ListaPreciosEsp,<BR>  Cte.DefMoneda,<BR>  Cte.VtasConsignacion,<BR>  Cte.AlmacenVtasConsignacion,<BR>  Cte.Mensaje,<BR>  Cte.Extencion1,<BR>  Cte.Extencion2,<BR>  Cte.CreditoEspecial,<BR>  Cte.CreditoConLimite,<BR>  Cte.CreditoLimite,<BR>  Cte.CreditoConLimitePedidos,<BR>  Cte.CreditoLimitePedidos,<BR>  Cte.CreditoMoneda,<BR>  Cte.CreditoConDias,<BR>  Cte.CreditoDias,<BR>  Cte.CreditoConCondiciones,<BR>  Cte.CreditoCondiciones,<BR>  Cte.Contrasena,<BR>  Cte.Contrasena2,<BR>  Cte.wVerDisponible,<BR>  Cte.ChecarCredito,<B<CONTINUA>
+SQL003=<CONTINUA>R>  Cte.BloquearMorosos,<BR>  Cte.ModificarVencimiento,<BR>  Cte.Situacion,<BR>  Cte.SituacionFecha,<BR>  Cte.SituacionUsuario,<BR>  Cte.SituacionNota,<BR>  Cte.TieneMovimientos,<BR>  Cte.Cobrador,<BR>  Cte.DescuentoRecargos,<BR>  Cte.CURP,<BR>  Cte.RecorrerVencimiento,<BR>  Cte.SucursalEmpresa,<BR>  Cte.NivelAcceso,<BR>  Cte.Idioma,<BR>  Cte.BonificacionTipo,<BR>  Cte.Bonificacion,<BR>  Cte.VigenciaDesde,<BR>  Cte.VigenciaHasta,<BR>  Cte.Descripcion1,<BR>  Cte.Descripcion2,<BR>  Cte.Descripcion3,<BR>  Cte.Descripcion4,<BR>  Cte.Descripcion5,<BR>  Cte.Descripcion6,<BR>  Cte.Descripcion7,<BR>  Cte.Descripcion8,<BR>  Cte.Descripcion9,<BR>  Cte.Descripcion10,<BR>  Cte.FormasPagoRestringidas,<BR>  Cte.AlmacenDef,<BR>  Cte.Descripcion11,<BR>  Cte.Descripcion12,<BR>  Cte.Descripcion13,<BR>  Cte.<CONTINUA>
+SQL004=<CONTINUA>Descripcion14,<BR>  Cte.Descripcion15,<BR>  Cte.Descripcion16,<BR>  Cte.Descripcion17,<BR>  Cte.Descripcion18,<BR>  Cte.Descripcion19,<BR>  Cte.Descripcion20,<BR>  Cte.CBDir,<BR>  Cte.PersonalNombres,<BR>  Cte.PersonalApellidoPaterno,<BR>  Cte.PersonalApellidoMaterno,<BR>  Cte.PersonalDireccion,<BR>  Cte.PersonalEntreCalles,<BR>  Cte.PersonalPlano,<BR>  Cte.PersonalDelegacion,<BR>  Cte.PersonalColonia,<BR>  Cte.PersonalPoblacion,<BR>  Cte.PersonalEstado,<BR>  Cte.PersonalPais,<BR>  Cte.PersonalZona,<BR>  Cte.PersonalCodigoPostal,<BR>  Cte.PersonalTelefonos,<BR>  Cte.PersonalTelefonosLada,<BR>  Cte.PersonalTelefonoMovil,<BR>  Cte.FechaNacimiento,<BR>  Cte.FechaMatrimonio,<BR>  Cte.Conyuge,<BR>  Cte.Sexo,<BR>  Cte.Fuma,<BR>  Cte.Profesion,<BR>  Cte.Puesto,<BR>  Cte.NumeroHijos,<BR>  Cte.Aseg<CONTINUA>
+SQL005=<CONTINUA>uradora,<BR>  Cte.PolizaTipo,<BR>  Cte.PolizaNumero,<BR>  Cte.PolizaReferencia,<BR>  Cte.PolizaImporte,<BR>  Cte.Deducible,<BR>  Cte.DeducibleMoneda,<BR>  Cte.Coaseguro,<BR>  Cte.Espacio,<BR>  Cte.Alergias,<BR>  Cte.Religion,<BR>  Cte.Responsable,<BR>  Cte.Parentesco,<BR>  Cte.NombreAsegurado,<BR>  Cte.Titulo,<BR>  Cte.EstadoCivil,<BR>  Cte.FacturarCte,<BR>  Cte.FacturarCteEnviarA,<BR>  Cte.OtrosCargos,<BR>  Cte.PersonalCobrador,<BR>  Cte.wVerArtListaPreciosEsp,<BR>  Cte.CRMImporte,<BR>  Cte.CRMCantidad,<BR>  Cte.CRMEtapa,<BR>  Cte.CRMCierreProbabilidad,<BR>  Cte.CRMCierreFechaAprox,<BR>  Cte.CRMPresupuestoAsignado,<BR>  Cte.CRMCompetencia,<BR>  Cte.CRMInfluencia,<BR>  Cte.CRMFuente,<BR>  Cte.Flotilla,<BR>  Cte.FordDistribuidor,<BR>  Cte.ExcentoISAN,<BR>  Cte.Fecha1,<BR>  Cte.Fecha2,<BR>  Cte.ViveEnCalidad,<BR>  Cte.ImporteRentaMavi,<BR>  <CONTINUA>
+SQL006=<CONTINUA>Cte.Fecha3,<BR>  Cte.Fecha4,<BR>  Cte.Fecha5,<BR>  Cte.EsProveedor,<BR>  Cte.EsPersonal,<BR>  Cte.EsAgente,<BR>  Cte.EsAlmacen,<BR>  Cte.EsEspacio,<BR>  Cte.EsCentroCostos,<BR>  Cte.EsProyecto,<BR>  Cte.EsCentroTrabajo,<BR>  Cte.EsEstacionTrabajo,<BR>  Cte.Usuario,<BR>  Cte.Licencias,<BR>  Cte.LicenciasTipo,<BR>  Cte.LicenciasLlave,<BR>  Cte.Cuenta,<BR>  Cte.CuentaRetencion,<BR>  Cte.PreciosInferioresMinimo,<BR>  Cte.FiscalRegimen,<BR>  Cte.FordZona,<BR>  Cte.PedidoDef,<BR>  Cte.eMailAuto,<BR>  Cte.IEPS,<BR>  Cte.PITEX,<BR>  Cte.wMovVentas,<BR>  Cte.Intercompania,<BR>  Cte.Agente3,<BR>  Cte.Agente4,<BR>  Cte.Publico,<BR>  Cte.Extranjero,<BR>  Cte.DocumentacionCompleta,<BR>  Cte.OperacionLimite,<BR>  Cte.CRMovVenta,<BR>  Cte.ImportadorRegimen,<BR>  Cte.AntiguedadNegocioMavi,<BR>  Cte.ImportadorRegistro,<BR>  Cte.Localidad<CONTINUA>
+SQL007=<CONTINUA>CNBV,<BR>  Cte.ActividadEconomicaCNBV,<BR>  Cte.Grado,<BR>  Cte.GLN,<BR>  Cte.PersonalSMS,<BR>  Cte.RPU,<BR>  Cte.SIRAC,<BR>  Cte.IFE,<BR>  Cte.Pasaporte,<BR>  Cte.GrupoSanguineo,<BR>  Cte.GrupoSanguineoRH,<BR>  Cte.Peso,<BR>  Cte.Estatura,<BR>  Cte.Comentarios,<BR>  Cte.PolizaFechaEmision,<BR>  Cte.PolizaVencimiento,<BR>  Cte.NotificarA,<BR>  Cte.NoriticarATelefonos,<BR>  Cte.ExpedienteFamiliar,<BR>  Cte.TipoCalle,<BR>  Cte.MaviEstatus,<BR>  Cte.NivelCobranzaEspecialMAVI,<BR>   Cte.LCAXSI, <BR> Cte.esAutCredEspecial,<BR>Cte.esDimaElite,<BR>Cte.LimiteCredDimaElite,<BR>Cte.siPorcFactDima, <BR> Agente.Agente,<BR>  Agente.Nombre,<BR>  AgenteServicio.Agente,<BR>  AgenteServicio.Nombre,<BR>  Agente3.Agente,<BR>  Agente3.Nombre,<BR>  Agente4.Agente,<BR>  Agente4.Nombre,<BR>  CteEnviarA.ID,<BR>  CteEnviarA.Nombre,<BR>  Sucursal.Sucursal,<BR>  Sucursal.Nombre,<BR>  Sucursal.Estatus,<BR>  Espacio.Espacio,<BR>  Espacio.Nombre,<BR>  ExpedienteFamiliar.Nombre,<BR>  CteAseg<CONTINUA>
+SQL008=<CONTINUA>uradora.Cliente,<BR>  CteAseguradora.Nombre,<BR>  CteFacturarA.Cliente,<BR>  CteFacturarA.Nombre,<BR>  CteFacturarA.Estatus,<BR>  CteEnviarAFacturarA.Cliente,<BR>  CteEnviarAFacturarA.ID,<BR>  CteEnviarAFacturarA.Nombre,<BR>  Personal.Personal,<BR>  Personal.ApellidoPaterno,<BR>  Personal.ApellidoMaterno,<BR>  Personal.Nombre,<BR>  Personal.Tipo,<BR>  Cta.Cuenta,<BR>  Cta.Descripcion,<BR>  CtaRetencion.Cuenta,<BR>  CtaRetencion.Descripcion,<BR>  LocalidadCNBV.Nombre,<BR>  ActividadEconomicaCNBV.Nombre,<BR>  Cte.MaviRecomendadoPor, <BR> Cte.SeEnviaBuroCreditoMAVI,<BR> Cte.FechaUltimoCobro,<BR> Cte.MovimientoUltimoCobro,<BR> Cte.PublicidadMAVI,<BR> Cte.MotivoMAVIPublicidad,<BR>  Cte.ParentescoRecomiendaMavi,<BR>  Cte.DireccionRecomiendaMavi,<BR>  Cte.CFD_Enviar,<BR>  Cte.NivelespecialContacto,<BR> Cte.TipoCredito,<BR>Cte.SinBonifDIMA,<BR>Cte.TipoDIMA<BR><BR>FROM<BR>  Cte<BR>  LEFT OUTER JOIN Agente ON Cte.Agente=Agente.Agente<BR>  LEFT OUTER JOIN <CONTINUA>
+SQL009=<CONTINUA>Agente AgenteServicio ON Cte.AgenteServicio=AgenteServicio.Agente<BR>  LEFT OUTER JOIN CteEnviarA ON Cte.Cliente=CteEnviarA.Cliente AND Cte.EnviarA=CteEnviarA.ID<BR>  LEFT OUTER JOIN Sucursal ON Cte.SucursalEmpresa=Sucursal.Sucursal<BR>  LEFT OUTER JOIN Espacio ON Cte.Espacio=Espacio.Espacio<BR>  LEFT OUTER JOIN Cte CteAseguradora ON Cte.Aseguradora=CteAseguradora.Cliente<BR>  LEFT OUTER JOIN Cte CteFacturarA ON Cte.FacturarCte=CteFacturarA.Cliente<BR>  LEFT OUTER JOIN CteEnviarA CteEnviarAFacturarA ON Cte.FacturarCte=CteEnviarAFacturarA.Cliente AND Cte.FacturarCteEnviarA=CteEnviarAFacturarA.ID<BR>  LEFT OUTER JOIN Personal ON Cte.PersonalCobrador=Personal.Personal<BR>  LEFT OUTER JOIN Cta ON Cte.Cuenta=Cta.Cuenta<BR>  LEFT OUTER JOIN Cta CtaRetencion ON Cte.CuentaRetencion=CtaRetencion.Cuenta<BR>  LEFT OUTER JOIN <CONTINUA>
+SQL010=<CONTINUA>Agente Agente3 ON Cte.Agente3=Agente3.Agente<BR>  LEFT OUTER JOIN Agente Agente4 ON Cte.Agente4=Agente4.Agente<BR>  LEFT OUTER JOIN LocalidadCNBV ON Cte.LocalidadCNBV=LocalidadCNBV.LocalidadCNBV<BR>  LEFT OUTER JOIN ActividadEconomicaCNBV ON Cte.ActividadEconomicaCNBV=ActividadEconomicaCNBV.ActividadEconomicaCNBV<BR>  LEFT OUTER JOIN ExpedienteFamiliar ON Cte.ExpedienteFamiliar=ExpedienteFamiliar.ExpedienteFamiliar
+
+
+;***** Integracion cfdfLEX *****
+[Cte.vis/Cte.CFD_Enviar]
+Clave=Cte.CFD_Enviar
+Nombre=Enviar CFD
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+LigaTabla=Cte
+LigaCampo=CFD_Enviar
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Lógico
+ClaveBDE=CFD_Enviar
+
+; **** Nuevo Campo: "TipoCalle", tiene una lista de opciones para que se especifique el tipo de calle del cliente: avenida, boulevard, callejón, etc. ****
+[Cte.vis/Cte.TipoCalle]
+Clave=Cte.TipoCalle
+Nombre=Tipo de Calle
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=25
+Tamano=25
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ValorPorOmision=<T>Calle<T>
+ListaOpciones=Andador<BR>Autopista<BR>Avenida<BR>Boulevard<BR>Calle<BR>Callejón<BR>Calzada<BR>Camino<BR>Carretera<BR>Cerrada o Privada<BR>Pasaje
+LigaTabla=Cte
+LigaCampo=TipoCalle
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=TipoCalle
+
+
+
+;***** Nuevo campo agreado****
+[Cte.vis/Cte.MaviEstatus]
+Clave=Cte.MaviEstatus
+LigaTabla=Cte
+LigaCampo=MaviEstatus
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=30
+ClaveBDE=MaviEstatus
+
+
+;*** Nuevo campo MaviRecomendadoPor ***
+[Cte.vis/Cte.MaviRecomendadoPor]
+Clave=Cte.MaviRecomendadoPor
+LigaTabla=Cte
+LigaCampo=MaviRecomendadoPor
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=10
+ClaveBDE=MaviRecomendadoPor
+
+;*** Nuevo campo calculado MaviRecomendadoPorNombre ***
+[Cte.vis/MaviRecomendadoPorNombre]
+Clave=MaviRecomendadoPorNombre
+Tamano=100
+TipoCampo=Calculado
+TamanoValidacion=100
+Alineacion=por Omisión
+Nombre=Nombre
+Formula=SQL(<T>SELECT Nombre FROM Cte WHERE Cliente = :tCte<T>,Cte.MaviRecomendadoPor)
+
+
+;****Modificacion 22-Oct-08 por Leticia Quezada
+;**** Se modifico:Incluyo desarrollo de Buro de Credito
+[Cte.vis/Cte.SeEnviaBuroCreditoMAVI]
+Clave=Cte.SeEnviaBuroCreditoMAVI
+Nombre=Se Envia a Buró de Crédito
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Si - No
+LigaTabla=Cte
+LigaCampo=SeEnviaBuroCreditoMAVI
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=SeEnviaBuroCreditoMAVI
+
+
+;***ARC 19-May-09 Nuevo campo agregado desarrollo cobranza menudeo ***
+[Cte.vis/Cte.NivelCobranzaEspecialMAVI]
+Clave=Cte.NivelCobranzaEspecialMAVI
+Nombre=Nivel Cobranza Especial
+Visible=S
+TamanoValidacion=100
+Tamano=100
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Unicamente opciones listadas
+Formula=SQLEnLista(<T>SELECT Nombre FROM NivelesEspecialesCobranzaMAVI<T>)
+LigaTabla=Cte
+LigaCampo=NivelCobranzaEspecialMAVI
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=NivelCobranzaEspecialMAVI
+
+
+
+[Cte.vis/Cte.ImporteRentaMavi]
+Clave=Cte.ImporteRentaMavi
+LigaTabla=Cte
+LigaCampo=ImporteRentaMavi
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=NumMonetario
+ClaveBDE=ImporteRentaMavi
+
+[Cte.vis/Cte.ViveEnCalidad]
+Clave=Cte.ViveEnCalidad
+LigaTabla=Cte
+LigaCampo=ViveEnCalidad
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=30
+ClaveBDE=ViveEnCalidad
+
+[Cte.vis/Cte.AntiguedadNegocioMavi]
+Clave=Cte.AntiguedadNegocioMavi
+LigaTabla=Cte
+LigaCampo=AntiguedadNegocioMavi
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Numérico
+ClaveBDE=AntiguedadNegocioMavi
+
+
+
+[Cte.vis/Cte.EnviarCobTelMavi]
+Clave=Cte.EnviarCobTelMavi
+LigaTabla=Cte
+LigaCampo=EnviarCobTelMavi
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Logico
+ClaveBDE=EnviarCobTelMavi
+
+[Cte.vis/Cte.MotivoMavi]
+Clave=Cte.MotivoMAvi
+LigaTabla=Cte
+LigaCampo=MotivoMavi
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=30
+ClaveBDE=MotivoMavi
+
+; *** Desarrollo de Campañas 27/08/09, Joel García Díaz (Mex), se agregaron campos a la vista. 
+
+
+[Cte.vis/Cte.PublicidadMAVI]
+Clave=Cte.PublicidadMAVI
+LigaTabla=Cte
+LigaCampo=PublicidadMAVI
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Lógico
+ClaveBDE=PublicidadMAVI
+
+[Cte.vis/Cte.MotivoMAVIPublicidad]
+Clave=Cte.MotivoMAVIPublicidad
+LigaTabla=Cte
+LigaCampo=MotivoMAVIPublicidad
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=MotivoMAVIPublicidad
+
+[Cte.vis/Cte.FechaUltimoCobro]
+Clave=Cte.FechaUltimoCobro
+Nombre=FechaUltimoCobro
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+TipoDatos=FechaHora
+LigaTabla=Cte
+LigaCampo=FechaUltimoCobro
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=FechaUltimoCobro
+
+[Cte.vis/Cte.MovimientoUltimoCobro]
+Clave=Cte.MovimientoUltimoCobro
+Nombre=MovimientoUltimoCobro
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+LigaTabla=Cte
+LigaCampo=MovimientoUltimoCobro
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=MovimientoUltimoCobro
+
+; **** Fin Campos para Campañas
+
+
+; ***** Integracion de campos nuevo: ParentescoRecomiendaMavi, DireccionRecomiendaMavi 
+; 		para Cte Express por Arturo Guizer. JR 03-Dic-09 *****
+[Cte.vis/Cte.ParentescoRecomiendaMavi]
+Clave=Cte.ParentescoRecomiendaMavi
+LigaTabla=Cte
+LigaCampo=ParentescoRecomiendaMavi
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=ParentescoRecomiendaMavi
+
+
+
+[Cte.vis/Cte.DireccionRecomiendaMavi]
+Clave=Cte.DireccionRecomiendaMavi
+LigaTabla=Cte
+LigaCampo=DireccionRecomiendaMavi
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=60
+ClaveBDE=DireccionRecomiendaMavi
+
+
+[Cte.vis/Cte.NivelespecialContacto]
+Clave=Cte.NivelespecialContacto
+LigaTabla=Cte
+LigaCampo=NivelespecialContacto
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=10
+ClaveBDE=NivelespecialContacto
+
+
+[Cte.vis/Cte.LCAXSI]
+Clave=Cte.LCAXSI
+LigaTabla=Cte
+LigaCampo=LCAXSI
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=NumMonetario
+ClaveBDE=LCAXSI
+
+[Cte.vis/Cte.TipoCredito]
+Clave=Cte.TipoCredito
+LigaTabla=Cte
+LigaCampo=TipoCredito
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=10
+ClaveBDE=TipoCredito 
+
+
+[Cte.vis/TipoCreditoNombre]
+Clave=TipoCreditoNombre
+TipoCampo=Calculado
+TamanoValidacion=45
+Alineacion=por Omisión
+Tamano=45
+Nombre=Nombre:
+Formula=SQL(<T>Select TipoCredito FROM DM0299Tipodecliente WHERE ID=<T>+Comillas(Cte.TipoCredito))
+
+[Cte.vis/Cte.esAutCredEspecial]
+Clave=Cte.esAutCredEspecial
+LigaTabla=Cte
+LigaCampo=esAutCredEspecial
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Logico
+ClaveBDE=esAutCredEspecial
+
+[Cte.vis/Cte.esDimaElite]
+Clave=Cte.esDimaElite
+LigaTabla=Cte
+LigaCampo=esDimaElite
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Logico
+ClaveBDE=esDimaElite
+
+[Cte.vis/Cte.LimiteCredDimaElite]
+Clave=Cte.LimiteCredDimaElite
+LigaTabla=Cte
+LigaCampo=LimiteCredDimaElite
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=NumMonetario
+ClaveBDE=LimiteCredDimaElite
+
+[Cte.vis/Cte.siPorcFactDima]
+Clave=Cte.siPorcFactDima
+LigaTabla=Cte
+LigaCampo=siPorcFactDima
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Logico
+ClaveBDE=siPorcFactDima
+
+[Cte.vis/Cte.SinBonifDIMA]
+Clave=Cte.SinBonifDIMA
+Nombre=SinBonifDIMA
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+LigaTabla=Cte
+LigaCampo=SinBonifDIMA
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=SinBonifDIMA
+
+[Cte.vis/Cte.TipoDIMA]
+Clave=Cte.TipoDIMA
+Nombre=TipoDIMA
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+LigaTabla=Cte
+LigaCampo=TipoDIMA
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=TipoDIMA

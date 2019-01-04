@@ -1,0 +1,14 @@
+;**** Arturo Corona 10-Nov-15 se agrego accion en el menu configurar*****
+
+[MenuCfgUsuarios.dlg/Dialogo]
+ListaAcciones=Usuarios<BR>Accesos<BR>AccesosMov<BR>CambioSuc
+[MenuCfgUsuarios.dlg/Acciones.CambioSuc]
+Nombre=CambioSuc
+Boton=0
+NombreDesplegar=&Cambios de Sucursal
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=DM0254AutomatizacionCajerosyGerentesRotativosFRM
+Activo=S
+Visible=S

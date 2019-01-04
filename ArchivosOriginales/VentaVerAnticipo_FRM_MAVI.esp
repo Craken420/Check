@@ -1,0 +1,14 @@
+;***** Modificación: 16-Feb-09
+;***** Modifico: Edgar Montelongo
+;***** Se modifico: Se comento el tipo de movimiento por default que se le pasa a CxcExpress
+
+[VentaVerAnticipo.frm/Acciones.Cobrar]
+AntesExpresiones=Asigna(Def.Cliente, Info.Cuenta)<BR>Asigna(Def.EnviarA, Info.EnviarA)<BR>Asigna(Def.Agente, Info.Agente)<BR>//Asigna(Def.Mov, Si(Config.VentaAnticipoCredito, ConfigMov.CxcAnticipoFactura, ConfigMov.CxcAnticipoSaldo))<BR>Asigna(Def.Referencia, AnticipoPendiente:AnticipoPendiente.Referencia)<BR>Asigna(Def.Importe, AnticipoPendiente:AnticipoPendiente.Saldo/(1+(Info.PorcentajeImpuesto/100)))<BR>Asigna(Def.Impuestos, AnticipoPendiente:AnticipoPendiente.Saldo - Def.Importe)<BR>Asigna(Def.CxImpuesto, Redondea(Info.PorcentajeImpuesto, 8))<BR>Asigna(Def.Concepto, Info.Concepto)<BR>Asigna(Def.Proyecto, Info.Proyecto)<BR>Asigna(Def.Moneda, Info.Moneda)<BR>Forma(<T>CxcExpress<T>)
+
+;*** Modificacion: 19-Mar-09   ALQG ***
+;*** Integracion del desarrollo de Anticipos Folio 2600 ***
+[VentaVerAnticipo.frm/Forma]
+ExpresionesAlCerrar=Asigna(Mavi.BloqCposCxcAnticContApart,nulo)
+
+[VentaVerAnticipo.frm/Pendiente]
+CondicionVisible=SQL(<T>SELECT ControlAnticipos FROM Condicion  WHERE Condicion =:tcon<T>, Info.Condicion) en (<T>Abierto<T>, <T>Plazos<T>, <T>Fecha Requerida<T>)

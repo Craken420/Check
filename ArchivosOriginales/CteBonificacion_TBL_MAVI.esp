@@ -1,0 +1,8 @@
+;**** Ultima modificación: 06-Ene-09
+;**** Modifico: Leticia Quezada
+;**** Se modifico:Se cambio la llave de la tabla
+
+
+;**** 06-Ene-09: Se cambio la llave de la tabla****
+[CteBonificacion.tbl/CteBonificacion]
+LlavePrimaria=Cliente<BR>Concepto<BR>FechaD<BR>FechaA

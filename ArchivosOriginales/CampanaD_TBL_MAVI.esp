@@ -1,0 +1,51 @@
+;**** modificación:03-Ago-09
+;**** Modifico: Joel García Díaz (Mex)
+;**** Se modifico:Creación desarrollo de Campañas
+
+[CampanaD.tbl/Tabla]
+ListaCampos.Cambios=Insertar<TAB>Nombre<TAB>11<BR>Insertar<TAB>Tipo<TAB>12<BR>Insertar<TAB>Icono<TAB>13
+SQL.Cambios=Eliminar<TAB>  SucursalOrigen<BR>Insertar<TAB>  SucursalOrigen,<TAB>11<BR>Insertar<TAB>  Nombre,<TAB>12<BR>Insertar<TAB>  Tipo,<TAB>13<BR>Insertar<TAB>  Icono<TAB>14
+
+[CampanaD.tbl/RID]
+TipoDatos=AutoInc
+
+[CampanaD.tbl/ContactoTipo]
+TipoDatos=Texto
+
+[CampanaD.tbl/Situacion]
+TipoDatos=Texto
+
+[CampanaD.tbl/Observaciones]
+TipoDatos=Texto
+
+[CampanaD.tbl/Usuario]
+TipoDatos=Texto
+
+[CampanaD.tbl/Nombre]
+Clave=Nombre
+Nombre=Nombre
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+
+[CampanaD.tbl/Tipo]
+Clave=Tipo
+Nombre=Tipo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+
+[CampanaD.tbl/Icono]
+Clave=Icono
+Nombre=Icono
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico

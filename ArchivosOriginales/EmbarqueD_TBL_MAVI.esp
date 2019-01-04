@@ -1,0 +1,29 @@
+
+
+
+
+;**** Nuevos campos agregados: ParaComisionChoferMAVI ****
+[EmbarqueD.tbl/Tabla]
+ListaCampos=ID<BR>Orden<BR>EmbarqueMov<BR>Paquetes<BR>Observaciones<BR>Estado<BR>FechaHora<BR>Persona<BR>PersonaID<BR>Forma<BR>Importe<BR>Referencia<BR>Sucursal<BR>SucursalOrigen<BR>Causa<BR>MovPorcentaje<BR>DesembarqueParcial<BR>ParaComisionChoferMAVI
+SQL=SELECT<BR>  ID,<BR>  Orden,<BR>  EmbarqueMov,<BR>  Paquetes,<BR>  Estado,<BR>  FechaHora,<BR>  Persona,<BR>  PersonaID,<BR>  Forma,<BR>  Importe,<BR>  Referencia,<BR>  Observaciones,<BR>  Causa,<BR>  Sucursal,<BR>  MovPorcentaje,<BR>  SucursalOrigen,<BR>  DesembarqueParcial,<BR>  ParaComisionChoferMAVI<BR><BR>FROM<BR>  EmbarqueD
+
+
+
+
+
+;**** ARC 28-Feb-09 Nuevo campo agregado ****
+[EmbarqueD.tbl/ParaComisionChoferMAVI]
+Clave=ParaComisionChoferMAVI
+Nombre=Para Comisión
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionEdicion=(Embarque:Embarque.Estatus en(EstatusConcluido)) y (Usuario.ModifComisnsChoferesMAVI)
+CondicionDespliege=(Embarque:Embarque.Mov en(<T>Embarque<T>)) y (Embarque:Embarque.Estatus en(EstatusConcluido))
+ValorPorOmision=0
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Si - No
+OpcionesRenglones=8
+OpcionesValidar=S

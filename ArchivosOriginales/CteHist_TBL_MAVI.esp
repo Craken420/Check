@@ -1,0 +1,47 @@
+
+
+;*** 17-Jun-09 ARC: Se agregaron los campos: DireccionNumero<BR>DireccionNumeroInt<BR>EntreCalles<BR>TipoCalle
+[CteHist.tbl/Tabla]
+ListaCampos=Cliente<BR>Fecha<BR>ID<BR>Nombre<BR>NombreCorto<BR>Tipo<BR>Direccion<BR>Delegacion<BR>Colonia<BR>CodigoPostal<BR>Poblacion<BR>Estado<BR>Pais<BR>Zona<BR>RFC<BR>Credito<BR>ZonaImpuesto<BR>Estatus<BR>Descuento<BR>Proyecto<BR>Agente<BR>AgenteServicio<BR>EnviarA<BR>FormaEnvio<BR>Condicion<BR>Ruta<BR>ListaPrecios<BR>ListaPreciosEsp<BR>DefMoneda<BR>Situacion<BR>CURP<BR>IEPS<BR>NivelAcceso<BR>Usuario<BR>DireccionNumero<BR>DireccionNumeroInt<BR>EntreCalles<BR>TipoCalle
+SQL=SELECT<BR>  Cliente,<BR>  Fecha,<BR>  ID,<BR>  Nombre,<BR>  NombreCorto,<BR>  Direccion,<BR>  Delegacion,<BR>  Colonia,<BR>  Poblacion,<BR>  Estado,<BR>  Pais,<BR>  Zona,<BR>  CodigoPostal,<BR>  RFC,<BR>  CURP,<BR>  Tipo,<BR>  Situacion,<BR>  Credito,<BR>  ZonaImpuesto,<BR>  Descuento,<BR>  Agente,<BR>  AgenteServicio,<BR>  EnviarA,<BR>  Proyecto,<BR>  FormaEnvio,<BR>  Condicion,<BR>  Ruta,<BR>  ListaPrecios,<BR>  ListaPreciosEsp,<BR>  DefMoneda,<BR>  NivelAcceso,<BR>  Estatus,<BR>  Usuario,<BR>  IEPS, <BR>  DireccionNumero, <BR>  DireccionNumeroInt, <BR>  EntreCalles, <BR>  TipoCalle<BR><BR>FROM<BR>  CteHist
+
+
+
+
+[CteHist.tbl/DireccionNumero]
+Clave=DireccionNumero
+Nombre=Número
+Visible=S
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+
+
+[CteHist.tbl/DireccionNumeroInt]
+Clave=DireccionNumeroInt
+Nombre=Número Int.
+Visible=S
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+
+
+
+[CteHist.tbl/EntreCalles]
+Clave=EntreCalles
+Nombre=Entre Calles
+Visible=S
+TamanoValidacion=100
+Tamano=100
+TipoDatos=Texto
+
+
+
+
+[CteHist.tbl/TipoCalle]
+Clave=TipoCalle
+Nombre=Tipo Calle
+Visible=S
+TamanoValidacion=25
+Tamano=25
+TipoDatos=Texto

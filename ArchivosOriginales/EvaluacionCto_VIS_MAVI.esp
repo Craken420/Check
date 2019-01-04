@@ -1,0 +1,30 @@
+;**** Ultima modificación:30-Sep-08
+;**** Modifico:Arly Rubio
+;**** Se modifico: Se agrego el campo CostoDeHoyMAVI
+
+;**** Modificación: 20-Feb-09
+;**** Modifico: Edgar Montelongo
+;**** Se modifico: Cambio de nombre al campo CostoDeHoyMAVI - RespuestaMAVI
+
+
+
+
+;**** Nuevo campo agregados: CostoDeHoyMAVI *****
+[EvaluacionCto.vis/Vista]
+ListaCampos=EvaluacionCto.Evaluacion<BR>EvaluacionCto.Fecha<BR>EvaluacionCto.Punto<BR>EvaluacionCto.Contacto<BR>EvaluacionCto.Respuesta<BR>EvaluacionCto.Calificacion<BR>EvaluacionCto.RespuestaMAVI<BR>EvaluacionFormato.Evaluacion<BR>EvaluacionFormato.Punto<BR>EvaluacionFormato.Descripcion<BR>EvaluacionFormato.Seccion<BR>EvaluacionFormato.Peso<BR>EvaluacionFormato.Orden<BR>EvaluacionFormato.Respuesta<BR>EvaluacionFormato.Referencia
+SQL=SELECT<BR>  EvaluacionCto.Evaluacion,<BR>  EvaluacionCto.Fecha,<BR>  EvaluacionCto.Punto,<BR>  EvaluacionCto.Contacto,<BR>  EvaluacionCto.Respuesta,<BR>  EvaluacionCto.Calificacion,<BR>  EvaluacionCto.RespuestaMAVI,<BR>  EvaluacionFormato.Evaluacion,<BR>  EvaluacionFormato.Punto,<BR>  EvaluacionFormato.Descripcion,<BR>  EvaluacionFormato.Seccion,<BR>  EvaluacionFormato.Peso,<BR>  EvaluacionFormato.Orden,<BR>  EvaluacionFormato.Respuesta,<BR>  EvaluacionFormato.Referencia<BR><BR>FROM<BR>  EvaluacionCto<BR>  JOIN EvaluacionFormato ON EvaluacionCto.Evaluacion=EvaluacionFormato.Evaluacion AND EvaluacionCto.Punto=EvaluacionFormato.Punto
+
+
+
+;**** Nuevo campo agregado 30-Sep-08 Arly Rubio Camacho ****
+[EvaluacionCto.vis/EvaluacionCto.RespuestaMAVI]
+Clave=EvaluacionCto.RespuestaMAVI
+Nombre=RespuestaMAVI
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+LigaTabla=EvaluacionCto
+LigaCampo=RespuestaMAVI
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=RespuestaMAVI

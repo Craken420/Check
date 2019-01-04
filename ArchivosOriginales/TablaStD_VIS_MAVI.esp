@@ -1,0 +1,8 @@
+
+; **** Integracion de modificacion de tamaño de campo, de 50 a 100. JR 24-Sep-2012. ****
+[TablaStD.vis/TablaStD.Valor]
+Tamano=100
+
+; **** Integracion de modificacion de tamaño de campo, de 50 a 100. JR 28-Oct-2013. ****
+[TablaStD.vis/TablaStD.Nombre]
+Tamano=100

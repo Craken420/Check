@@ -1,0 +1,68 @@
+;*** ARC 19-May-09 integracion desarrollo cte Express (Mexico)
+
+; ***** Modifico: Judith Ramirez 04-Dic-09. *****
+; ***** Modificacion: Cambio campo Lada, Telefono para cte express. Cambio por Arturo Guizer. ****
+
+
+[CteTel.tbl/Tabla]
+LlavePrimaria=Cliente<BR>Tipo<BR>Telefono
+ListaCampos=Cliente<BR>Telefono<BR>Tipo<BR>Extencion<BR>Lada<BR>PedirTono<BR>DePreferencia<BR>Fecha
+
+; ***** JR 04-Dic-04. Modificacion en campo Telefono para cte express. Cambio por Arturo Guizer. ****
+;[CteTel.tbl/Telefono]
+;ValidacionConCondiciones=S
+;ValidacionMensajeError=<T>Telefono Incorrecto<T>
+;ConRefrescar=S
+;ListaRefrescar=Lada
+;ConRefrescarCondiciones=S
+;ListaRefrescarCondiciones=Lada
+;ValidacionCondicion=Si<BR>  SQL(<T>Select dbo.fn_ValidaTelefonosMavi(<T>&comillas(Telefono)&<T>)<T>)=1<BR>Entonces<BR>  SQL(<T>Select dbo.fn_ValidaTelefonosMavi(<T>&comillas(Telefono)&<T>)<T>)<BR>Sino<BR>  1=1<BR>Fin
+
+[CteTel.tbl/Telefono]
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Telefono Incorrecto<T>
+CondicionEdicion=CONDATOS(Lada)
+ValidacionCondicion=Si<BR>  SQL(<T>Select dbo.fn_ValidaTelefonosMavi(<T>&comillas(Lada)&<T>,<T>&comillas(Telefono)&<T>)<T>)=1<BR>Entonces<BR>  SQL(<T>Select dbo.fn_ValidaTelefonosMavi(<T>&comillas(Lada)&<T>,<T>&comillas(Telefono)&<T>)<T>)<BR>Sino<BR>  1=1<BR>Fin
+
+
+
+[CteTel.tbl/Extencion]
+CondicionDespliege=Info.CategoriaMavi = nulo
+
+; ***** JR 04-Dic-04. Modificacion en campo Lada para cte express. Cambio por Arturo Guizer. ****
+;[CteTel.tbl/Lada]
+;ValidacionConCondiciones=S
+;ValidacionMensajeError=<T>Lada Incorrecta<T>
+;CondicionEdicion=CONDATOS(Telefono)
+;ValidacionCondicion=SQL(<T>Sp_ValidadCamposMavi :tTipo,:tLada,:tTel<T>,<T>Lada<T>,Lada,Telefono)
+
+[CteTel.tbl/Lada]
+ConRefrescar=S
+ListaRefrescar=Telefono
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=Telefono
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Lada Incorrecta<T>
+ValidacionCondicion=Si<BR>  SQL(<T>Select dbo.fn_ValidaLadaMavi(<T>&comillas(Lada)&<T>)<T>)=1<BR>Entonces<BR>  SQL(<T>Select dbo.fn_ValidaLadaMavi(<T>&comillas(Lada)&<T>)<T>)<BR>Sino<BR>  1=1<BR>Fin
+
+
+
+[CteTel.tbl/PedirTono]
+CondicionDespliege=Info.CategoriaMavi = nulo
+
+[CteTel.tbl/DePreferencia]
+CondicionDespliege=Info.CategoriaMavi = nulo
+
+
+; **** integracion de campo Tipo: JAVT Se le activo lo de listadas unicamente. Para desarrollo DM0138 Cliente Express dentro del paquete DM0138_27072011. JR 27-Jul-2011. ****
+[CteTel.tbl/Tipo]
+OpcionesUnicamente=S
+ListaOpciones=Trabajo<BR>Movil<BR>Particular<BR>Otro
+
+[CteTel.tbl/Fecha]
+Clave=Fecha
+Nombre=Fecha
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+ValorPorOmision=SQL(<T>Select GETDATE()<T>)

@@ -1,0 +1,53 @@
+;**** Ultima modificación:23-Jun-08
+;**** Modifico: Benjamin Valentin
+;**** Se modifico: Se agrego el campo institucion a la vista.
+
+
+[DineroT.vis/SELECT]
+CtaDinero.Institucion
+
+[DineroT.vis/Vista]
+
+ListaCampos=Dinero.ID<BR>Dinero.Empresa<BR>Dinero.Mov<BR>Dinero.MovID<BR>Dinero.FechaEmision<BR>Dinero.UltimoCambio<BR>Dinero.Concepto<BR>Dinero.Proyecto<BR>Dinero.Moneda<BR>Dinero.TipoCambio<BR>Dinero.Referencia<BR>Dinero.DocFuente<BR>Dinero.Observaciones<BR>Dinero.Usuario<BR>Dinero.Autorizacion<BR>Dinero.Estatus<BR>Dinero.Situacion<BR>Dinero.SituacionFecha<BR>Dinero.SituacionUsuario<BR>Dinero.Directo<BR>Dinero.BeneficiarioNombre<BR>Dinero.LeyendaCheque<BR>Dinero.Beneficiario<BR>Dinero.CtaDinero<BR>Dinero.CtaDineroDestino<BR>Dinero.ConDesglose<BR>Dinero.Importe<BR>Dinero.Impuestos<BR>Dinero.Comisiones<BR>Dinero.Saldo<BR>Dinero.FormaPago<BR>Dinero.FechaProgramada<BR>Dinero.Poliza<BR>Dinero.PolizaID<BR>Dinero.GenerarPoliza<BR>Dinero.ContID<BR>Dinero.OrigenTipo<BR>Dinero.Origen<BR>Dinero.OrigenID<BR>Din<CONTINUA>
+ListaRelaciones=Dinero.CtaDinero<BR>Dinero.CtaDineroDestino<BR>Dinero.Prov<BR>Dinero.DineroD<BR>Dinero.Provt<BR>Prov.CtaDinero<BR>Prov.Dinero
+ListaCampos002=<CONTINUA>ero.Ejercicio<BR>Dinero.Periodo<BR>Dinero.FechaRegistro<BR>Dinero.FechaConclusion<BR>Dinero.FechaCancelacion<BR>Dinero.Corte<BR>Dinero.CorteDestino<BR>Dinero.FechaEntrega<BR>Dinero.EmbarqueEstado<BR>Dinero.InstitucionMensaje<BR>Dinero.InstitucionSucursal<BR>Dinero.InstitucionReferencia1<BR>Dinero.InstitucionReferencia2<BR>Dinero.AutoConciliar<BR>Dinero.Sucursal<BR>Dinero.SucursalDestino<BR>Dinero.SucursalOrigen<BR>Dinero.Cajero<BR>Dinero.Mensaje<BR>Dinero.Liberar<BR>Dinero.IVAFiscal<BR>Dinero.IEPSFiscal<BR>Dinero.UEN<BR>Dinero.EstaImpreso<BR>Dinero.Contacto<BR>Dinero.ContactoTipo<BR>Dinero.TipoCambioDestino<BR>Dinero.Conciliado<BR>Dinero.FechaConciliacion<BR>Dinero.ProveedorAutoEndoso<BR>Dinero.CargoBancario<BR>Dinero.CargoBancarioIVA<BR>Dinero.Prioridad<BR>Dinero.Nota<BR>Dinero.Comentario<CONTINUA>
+ListaCampos003=<CONTINUA>s<BR>Dinero.FechaOrigen<BR>Dinero.Vencimiento<BR>Dinero.Tasa<BR>Dinero.TasaDias<BR>Dinero.TasaRetencion<BR>Dinero.ContUso<BR>DineroD.ID<BR>DineroD.Renglon<BR>DineroD.RenglonSub<BR>DineroD.Importe<BR>DineroD.FormaPago<BR>DineroD.Referencia<BR>DineroD.Aplica<BR>DineroD.AplicaID<BR>DineroD.Sucursal<BR>DineroD.SucursalOrigen<BR>DineroD.ContUso<BR>CtaDinero.CtaDinero<BR>CtaDinero.Descripcion<BR>CtaDinero.Tipo<BR>CtaDinero.NumeroCta<BR>CtaDinero.CuentaHabiente<BR>CtaDinero.Moneda<BR>CtaDinero.Estatus<BR>CtaDinero.Mensaje<BR>CtaDinero.Sucursal<BR>CtaDinero.FondoFijo<BR>CtaDinero.FondoFijoFormaPago<BR>CtaDineroDestino.CtaDinero<BR>CtaDineroDestino.Descripcion<BR>CtaDineroDestino.Tipo<BR>CtaDineroDestino.NumeroCta<BR>CtaDineroDestino.BancoSucursal<BR>CtaDineroDestino.CuentaHabiente<BR>CtaDineroDest<CONTINUA>
+ListaCampos004=<CONTINUA>ino.Sucursal<BR>CtaDineroDestino.FondoFijo<BR>CtaDineroDestino.FondoFijoFormaPago<BR>Prov.Tipo<BR>Prov.TipoTercero
+
+
+SQL=SELECT<BR>  Dinero.ID,<BR>  Dinero.Empresa,<BR>  Dinero.Mov,<BR>  Dinero.MovID,<BR>  Dinero.FechaEmision,<BR>  Dinero.UltimoCambio,<BR>  Dinero.Concepto,<BR>  Dinero.Proyecto,<BR>  Dinero.Moneda,<BR>  Dinero.TipoCambio,<BR>  Dinero.Referencia,<BR>  Dinero.DocFuente,<BR>  Dinero.Observaciones,<BR>  Dinero.Usuario,<BR>  Dinero.Autorizacion,<BR>  Dinero.Estatus,<BR>  Dinero.Situacion,<BR>  Dinero.SituacionFecha,<BR>  Dinero.SituacionUsuario,<BR>  Dinero.Directo,<BR>  Dinero.BeneficiarioNombre,<BR>  Dinero.LeyendaCheque,<BR>  Dinero.Beneficiario,<BR>  Dinero.CtaDinero,<BR>  Dinero.CtaDineroDestino,<BR>  Dinero.ConDesglose,<BR>  Dinero.Importe,<BR>  Dinero.Impuestos,<BR>  Dinero.Comisiones,<BR>  Dinero.Saldo,<BR>  Dinero.FormaPago,<BR>  Dinero.FechaProgramada,<BR>  Dinero.Poliza,<BR>  Dinero.Po<CONTINUA>
+SQL002=<CONTINUA>lizaID,<BR>  Dinero.GenerarPoliza,<BR>  Dinero.ContID,<BR>  Dinero.OrigenTipo,<BR>  Dinero.Origen,<BR>  Dinero.OrigenID,<BR>  Dinero.Ejercicio,<BR>  Dinero.Periodo,<BR>  Dinero.FechaRegistro,<BR>  Dinero.FechaConclusion,<BR>  Dinero.FechaCancelacion,<BR>  Dinero.Corte,<BR>  Dinero.CorteDestino,<BR>  Dinero.FechaEntrega,<BR>  Dinero.EmbarqueEstado,<BR>  Dinero.InstitucionMensaje,<BR>  Dinero.InstitucionSucursal,<BR>  Dinero.InstitucionReferencia1,<BR>  Dinero.InstitucionReferencia2,<BR>  Dinero.AutoConciliar,<BR>  Dinero.Sucursal,<BR>  Dinero.SucursalDestino,<BR>  Dinero.SucursalOrigen,<BR>  Dinero.Cajero,<BR>  Dinero.Mensaje,<BR>  Dinero.Liberar,<BR>  Dinero.IVAFiscal,<BR>  Dinero.IEPSFiscal,<BR>  Dinero.UEN,<BR>  Dinero.EstaImpreso,<BR>  Dinero.Contacto,<BR>  Dinero.ContactoTipo,<BR>  Din<CONTINUA>
+SQL003=<CONTINUA>ero.TipoCambioDestino,<BR>  Dinero.Conciliado,<BR>  Dinero.FechaConciliacion,<BR>  Dinero.ProveedorAutoEndoso,<BR>  Dinero.CargoBancario,<BR>  Dinero.CargoBancarioIVA,<BR>  Dinero.Prioridad,<BR>  Dinero.Nota,<BR>  Dinero.Comentarios,<BR>  Dinero.FechaOrigen,<BR>  Dinero.Vencimiento,<BR>  Dinero.Tasa,<BR>  Dinero.TasaDias,<BR>  Dinero.TasaRetencion,<BR>  Dinero.ContUso,<BR>  DineroD.ID,<BR>  DineroD.Renglon,<BR>  DineroD.RenglonSub,<BR>  DineroD.Importe,<BR>  DineroD.FormaPago,<BR>  DineroD.Referencia,<BR>  DineroD.Aplica,<BR>  DineroD.AplicaID,<BR>  DineroD.Sucursal,<BR>  DineroD.SucursalOrigen,<BR>  DineroD.ContUso,<BR>  CtaDinero.CtaDinero,<BR>  CtaDinero.Descripcion,<BR>  CtaDinero.Tipo,<BR>  CtaDinero.NumeroCta,<BR>  CtaDinero.CuentaHabiente,<BR>  CtaDinero.Moneda,<BR>  CtaDinero.Estat<CONTINUA>
+SQL004=<CONTINUA>us,<BR>  CtaDinero.Mensaje,<BR>  CtaDinero.Sucursal,<BR>  CtaDinero.FondoFijo,<BR>  CtaDinero.FondoFijoFormaPago,<BR>  CtaDineroDestino.CtaDinero,<BR>  CtaDineroDestino.Descripcion,<BR>  CtaDineroDestino.Tipo,<BR>  CtaDineroDestino.NumeroCta,<BR>  CtaDineroDestino.BancoSucursal,<BR>  CtaDineroDestino.CuentaHabiente,<BR>  CtaDineroDestino.Sucursal,<BR>  CtaDineroDestino.FondoFijo,<BR>  CtaDineroDestino.FondoFijoFormaPago,<BR>  Prov.Tipo,<BR>  Prov.TipoTercero<BR><BR>FROM<BR>  Dinero<BR>  LEFT OUTER JOIN CtaDinero ON Dinero.CtaDinero=CtaDinero.CtaDinero<BR>  LEFT OUTER JOIN CtaDinero CtaDineroDestino ON Dinero.CtaDineroDestino=CtaDineroDestino.CtaDinero<BR>  LEFT OUTER JOIN DineroD ON Dinero.ID=DineroD.ID<BR>  LEFT OUTER JOIN Prov ON Dinero.Contacto=Prov.Proveedor
+
+
+
+
+[DineroT.vis/Prov.Tipo]
+Clave=Prov.Tipo
+LigaTabla=Prov
+LigaCampo=Tipo
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=15
+ClaveBDE=Tipo_2
+
+[DineroT.vis/Prov.TipoTercero]
+Clave=Prov.TipoTercero
+LigaTabla=Prov
+LigaCampo=TipoTercero
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=5
+ClaveBDE=TipoTercero
+
+
+[DineroT.vis/Relaciones.Dinero.Provt]
+Clave=Dinero.Provt
+TablaRemota=Prov
+LlaveLocal=Dinero.Contacto
+LlaveRemota=Proveedor
+TipoRelacion=opcional
+

@@ -1,0 +1,226 @@
+;**** Ultima modificación:01-Feb-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:
+
+
+
+; **** Se modifico el dialogo para agregar nuevas acciones: "Remision","CompraPublicidad","CompraPapeleria","CompraTaller","CompraSistemas","CompraAdmva","CompraActivoFijo"  se eliminaron las acciones: "CompraImportacion","OrdenCompra","ControlCalidad","GenerarCompraRechazada"
+[GenerarOrdenCompra.dlg/Dialogo]
+ListaAcciones=Compra<BR>CompraGastos<BR>CompraConsignación<BR>Remision<BR>GenerarCompraPerdida<BR>CompraPublicidad<BR>CompraPapeleria<BR>CompraTaller<BR>CompraSistemas<BR>CompraAdmva<BR>CompraActivoFijo<BR>CompraMantto
+
+
+
+
+
+; **** Accion Original modificada para que sólo sea visible cuando el movimiento es: "Orden Compra", "Licitacion" ****
+[GenerarOrdenCompra.dlg/Acciones.CompraConsignación]
+Nombre=CompraConsignación
+Boton=0
+NombreDesplegar=Generar &Compra a Consignación
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+Activo=S
+Visible=N
+ClaveAccion=GenerarCompraPendiente
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.CompraConsignacion)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.Mov en (<T>Orden Compra<T>,<T>Licitacion<T>)
+
+
+
+; **** Accion Original modificada para que sólo sea visible cuando el movimiento es: "Orden Compra", "Licitacion" ****
+[GenerarOrdenCompra.dlg/Acciones.Compra]
+Nombre=Compra
+Boton=0
+NombreDesplegar=Generar &Entrada Compra
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarCompraPendiente
+Activo=S
+Visible=N
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.CompraEntrada)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.Mov en (<T>Orden Compra<T>,<T>Licitacion<T>)
+
+
+
+; **** Accion Original modificada para que sólo sea visible cuando el movimiento es: "Orden Compra", "Licitacion" ****
+[GenerarOrdenCompra.dlg/Acciones.CompraGastos]
+Nombre=CompraGastos
+Boton=0
+NombreDesplegar=Generar Entrada Compra (con &Gastos)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarCompraPendiente
+Activo=S
+Visible=N
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.CompraEntradaGastos)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.Mov en (<T>Orden Compra<T>,<T>Licitacion<T>)
+
+
+
+; **** Accion Original modificada para que sólo sea visible cuando el movimiento es: "Orden Compra", "Licitacion" ****
+[GenerarOrdenCompra.dlg/Acciones.GenerarCompraPerdida]
+Nombre=GenerarCompraPerdida
+Boton=0
+NombreDesplegar=Generar Compra &Perdida
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarCompraPendiente
+Activo=S
+Visible=N
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.CompraPerdida)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.Mov en (<T>Orden Compra<T>,<T>Licitacion<T>)
+
+
+
+
+
+
+
+
+
+
+
+
+
+; **** Accion Nueva sólo es visible cuando el movimiento es: "Orden Compra", "Licitacion" ****
+[GenerarOrdenCompra.dlg/Acciones.Remision]
+Nombre=Remision
+Boton=0
+NombreDesplegar=Generar &Remision
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarCompraPendiente
+Activo=S
+Visible=N
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, <T>Remision<T>)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.Mov en (<T>Orden Compra<T>,<T>Licitacion<T>)
+
+
+; **** Accion Nueva sólo es visible cuando el movimiento es: "OC Publicidad" ****
+[GenerarOrdenCompra.dlg/Acciones.CompraPublicidad]
+Nombre=CompraPublicidad
+Boton=0
+NombreDesplegar=Generar Compra &Publicidad
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarCompraPendiente
+Activo=S
+Visible=N
+Antes=S
+AntesExpresiones=Asigna( Afectar.GenerarMov, <T>Compra Publicidad<T> )<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.Mov en (<T>OC Publicidad<T>)
+
+
+
+; **** Accion Nueva sólo es visible cuando el movimiento es: "OC Papeleria" ****
+[GenerarOrdenCompra.dlg/Acciones.CompraPapeleria]
+Nombre=CompraPapeleria
+Boton=0
+NombreDesplegar=Generar Compra P&apeleria
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarCompraPendiente
+Activo=S
+Visible=N
+Antes=S
+AntesExpresiones=Asigna( Afectar.GenerarMov, <T>Compra Papeleria<T> )<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.Mov = <T>OC Papeleria<T>
+
+
+
+
+; **** Accion Nueva sólo es visible cuando el movimiento es: "OC Taller" ****
+[GenerarOrdenCompra.dlg/Acciones.CompraTaller]
+Nombre=CompraTaller
+Boton=0
+NombreDesplegar=Generar Compra &Taller
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarCompraPendiente
+Activo=S
+Visible=N
+Antes=S
+AntesExpresiones=Asigna( Afectar.GenerarMov, <T>Compra Taller<T> )<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.Mov = <T>OC Taller<T>
+
+
+
+
+; **** Accion Nueva sólo es visible cuando el movimiento es: "OC Sistemas" ****
+[GenerarOrdenCompra.dlg/Acciones.CompraSistemas]
+Nombre=CompraSistemas
+Boton=0
+NombreDesplegar=Generar Compra &Sistemas
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarCompraPendiente
+Activo=S
+Visible=N
+Antes=S
+AntesExpresiones=Asigna( Afectar.GenerarMov, <T>Compra Sistemas<T> )<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.Mov = <T>OC Sistemas<T>
+
+
+
+
+; **** Accion Nueva sólo es visible cuando el movimiento es: "OC Admva" ****
+[GenerarOrdenCompra.dlg/Acciones.CompraAdmva]
+Nombre=CompraAdmva
+Boton=0
+NombreDesplegar=Generar Compra &Admva
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarCompraPendiente
+Activo=S
+Visible=N
+Antes=S
+AntesExpresiones=Asigna( Afectar.GenerarMov, <T>Compra Admva<T> )<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.Mov = <T>OC Admva<T>
+
+
+
+; **** Accion Nueva sólo es visible cuando el movimiento es: "OC ActivoFijo" ****
+[GenerarOrdenCompra.dlg/Acciones.CompraActivoFijo]
+Nombre=CompraActivoFijo
+Boton=0
+NombreDesplegar=Generar Compra Activo &Fijo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarCompraPendiente
+Activo=S
+Visible=N
+Antes=S
+AntesExpresiones=Asigna( Afectar.GenerarMov, <T>Compra ActivoFijo<T> )<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.Mov = <T>OC ActivoFijo<T>
+
+
+; **** Accion Nueva sólo es visible cuando el movimiento es: "OC Mantto" ****
+[GenerarOrdenCompra.dlg/Acciones.CompraMantto]
+Nombre=CompraMantto
+Boton=0
+NombreDesplegar=Generar Compra &Mantto
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarCompraPendiente
+Activo=S
+Visible=N
+Antes=S
+AntesExpresiones=Asigna( Afectar.GenerarMov, <T>Compra Mantto<T> )<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.Mov = <T>OC Mantto<T>

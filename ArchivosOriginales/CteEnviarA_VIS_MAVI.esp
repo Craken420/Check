@@ -1,0 +1,363 @@
+;**** Ultima modificación:18-Dic-08
+;**** Modifico: Leticia Quezada
+;**** Se modifico: Se agregaron los nuevos campos para la cobranza de Instituciones.
+
+;**** Modificación:04-Jul-08
+;**** Modifico:Arly Rubio
+;**** Se modifico: Integracion del desarrollo de mexico.
+
+;***** Modificacion: 09-Ene-09
+;***** Modifico: Judith Ramirez
+;***** Se modifico: Se agrego campo seenviaburocreditomavi para desarrollo buro credito
+
+
+
+
+;****** Nuevas tablas agregadas: DesarrolloMexico(MAVINivelCobranza,Ruta,UEN)*****
+;****** Nuevas relaciones agregadas: DesarrolloMexico(CteEnviarA.UEN, CteEnviarA.MAVINivelCobranza, CteEnviarA.Ruta, Personal.UEN)
+;****** Se agregaron nuevos campos: DesarrolloMexico(CteEnviarA.UENMAVI, CteEnviarA.SeccionCobranzaMAVI, CteEnviarA.NivelCobranzaMAVI, CteEnviarA.RutaCobranzaMAVI, MAVINivelCobranza.Clave, MAVINivelCobranza.Nombre, Ruta.Ruta,UEN.UEN, UEN.Nombre)*****
+[CteEnviarA.vis/Vista]
+ListaTablas=CteEnviarA<BR>Cte<BR>AgenteEnviarA<BR>Sucursal<BR>Personal<BR>MAVINivelCobranza<BR>Ruta<BR>UEN
+ListaRelaciones=CteEnviarA.Cte<BR>CteEnviarA.AgenteEnviarA<BR>CteEnviarA.Sucursal<BR>CteEnviarA.Personal<BR>CteEnviarA.UEN<BR>CteEnviarA.MAVINivelCobranza<BR>CteEnviarA.Ruta<BR>Cte.CteEnviarA<BR>Cte.Sucursal<BR>Cte.Personal<BR>Sucursal.Cte<BR>Personal.Sucursal<BR>Personal.Cte<BR>Personal.UEN
+ListaCampos=CteEnviarA.Cliente<BR>CteEnviarA.ID<BR>CteEnviarA.Clave<BR>CteEnviarA.Nombre<BR>CteEnviarA.Direccion<BR>CteEnviarA.DireccionNumero<BR>CteEnviarA.DireccionNumeroInt<BR>CteEnviarA.EntreCalles<BR>CteEnviarA.Plano<BR>CteEnviarA.Observaciones<BR>CteEnviarA.Delegacion<BR>CteEnviarA.Colonia<BR>CteEnviarA.CodigoPostal<BR>CteEnviarA.Poblacion<BR>CteEnviarA.Estado<BR>CteEnviarA.Pais<BR>CteEnviarA.Zona<BR>CteEnviarA.Telefonos<BR>CteEnviarA.Fax<BR>CteEnviarA.PedirTono<BR>CteEnviarA.Contacto1<BR>CteEnviarA.Contacto2<BR>CteEnviarA.eMail1<BR>CteEnviarA.eMail2<BR>CteEnviarA.FormaEnvio<BR>CteEnviarA.ZonaImpuesto<BR>CteEnviarA.Estatus<BR>CteEnviarA.UltimoCambio<BR>CteEnviarA.Alta<BR>CteEnviarA.Mensaje<BR>CteEnviarA.Extencion1<BR>CteEnviarA.Extencion2<BR>CteEnviarA.Agente<BR>CteEnviarA.ListaPreciosEsp<BR>Cte<CONTINUA>
+ListaCampos002=<CONTINUA>EnviarA.Proyecto<BR>CteEnviarA.Condicion<BR>CteEnviarA.Descuento<BR>CteEnviarA.ModificarVencimiento<BR>CteEnviarA.Categoria<BR>CteEnviarA.Grupo<BR>CteEnviarA.Familia<BR>CteEnviarA.TieneMovimientos<BR>CteEnviarA.Ruta<BR>CteEnviarA.Contrasena<BR>CteEnviarA.SucursalEmpresa<BR>CteEnviarA.PersonalCobrador<BR>CteEnviarA.Almacen<BR>CteEnviarA.AlmacenVtasConsignacion<BR>CteEnviarA.eMailAuto<BR>CteEnviarA.wMovVentas<BR>CteEnviarA.TipoEmpaque<BR>CteEnviarA.Unidad<BR>CteEnviarA.Cadena<BR>CteEnviarA.Encargado<BR>CteEnviarA.GLN<BR>CteEnviarA.UENMAVI<BR>CteEnviarA.SeccionCobranzaMAVI<BR>CteEnviarA.NivelCobranzaMAVI<BR>CteEnviarA.RutaCobranzaMAVI<BR>CteEnviarA.SeEnviaBuroCreditoMavi<BR>Cte.Cliente<BR>Cte.VtasConsignacion<BR>Cte.AlmacenVtasConsignacion<BR>AgenteEnviarA.Agente<BR>AgenteEnviarA.Nombre<BR>AgenteEnviarA.Estatus<BR><CONTINUA>
+ListaCampos003=<CONTINUA>Sucursal.Sucursal<BR>Sucursal.Nombre<BR>Sucursal.Estatus<BR>Personal.Personal<BR>Personal.ApellidoPaterno<BR>Personal.ApellidoMaterno<BR>Personal.Nombre<BR>MAVINivelCobranza.Clave<BR>MAVINivelCobranza.Nombre<BR>Ruta.Ruta<BR>UEN.UEN<BR>UEN.Nombre<BR>CteEnviarA.Cargo<BR>CteEnviarA.ClaveInst<BR>CteEnviarA.Municipio<BR>CteEnviarA.Nomina<BR>CteEnviarA.Puesto<BR>CteEnviarA.RFCInstitucion<BR>CteEnviarA.CobraAval<BR>CteEnviarA.AvalResponsable<BR>CteEnviarA.UsuarioModif
+ListaCalculados=PersonalNombre<BR>ContactoNombre
+SQL=SELECT<BR>  CteEnviarA.Cliente,<BR>  CteEnviarA.ID,<BR>  CteEnviarA.Clave,<BR>  CteEnviarA.Nombre,<BR>  CteEnviarA.Direccion,<BR>  CteEnviarA.DireccionNumero,<BR>  CteEnviarA.DireccionNumeroInt,<BR>  CteEnviarA.EntreCalles,<BR>  CteEnviarA.Plano,<BR>  CteEnviarA.Observaciones,<BR>  CteEnviarA.Delegacion,<BR>  CteEnviarA.Colonia,<BR>  CteEnviarA.CodigoPostal,<BR>  CteEnviarA.Poblacion,<BR>  CteEnviarA.Estado,<BR>  CteEnviarA.Pais,<BR>  CteEnviarA.Zona,<BR>  CteEnviarA.Telefonos,<BR>  CteEnviarA.Fax,<BR>  CteEnviarA.PedirTono,<BR>  CteEnviarA.Contacto1,<BR>  CteEnviarA.Contacto2,<BR>  CteEnviarA.eMail1,<BR>  CteEnviarA.eMail2,<BR>  CteEnviarA.FormaEnvio,<BR>  CteEnviarA.ZonaImpuesto,<BR>  CteEnviarA.Estatus,<BR>  CteEnviarA.UltimoCambio,<BR>  CteEnviarA.Alta,<BR>  CteEnviarA.Mensaje,<BR>  Ct<CONTINUA>
+SQL002=<CONTINUA>eEnviarA.Extencion1,<BR>  CteEnviarA.Extencion2,<BR>  CteEnviarA.Agente,<BR>  CteEnviarA.ListaPreciosEsp,<BR>  CteEnviarA.Proyecto,<BR>  CteEnviarA.Condicion,<BR>  CteEnviarA.Descuento,<BR>  CteEnviarA.ModificarVencimiento,<BR>  CteEnviarA.Categoria,<BR>  CteEnviarA.Grupo,<BR>  CteEnviarA.Familia,<BR>  CteEnviarA.TieneMovimientos,<BR>  CteEnviarA.Ruta,<BR>  CteEnviarA.Contrasena,<BR>  CteEnviarA.SucursalEmpresa,<BR>  CteEnviarA.PersonalCobrador,<BR>  CteEnviarA.Almacen,<BR>  CteEnviarA.AlmacenVtasConsignacion,<BR>  CteEnviarA.eMailAuto,<BR>  CteEnviarA.wMovVentas,<BR>  CteEnviarA.TipoEmpaque,<BR>  CteEnviarA.Unidad,<BR>  CteEnviarA.Cadena,<BR>  CteEnviarA.Encargado,<BR>  CteEnviarA.GLN,<BR>  CteEnviarA.UENMAVI,<BR>  CteEnviarA.SeccionCobranzaMAVI,<BR>  CteEnviarA.NivelCobranzaMAVI,<CONTINUA>
+SQL003=<CONTINUA><BR>  CteEnviarA.RutaCobranzaMAVI,<BR>  CteEnviarA.SeEnviaBuroCreditoMavi,<BR>  CteEnviarA.CobraAval,<BR>  CteEnviarA.AvalResponsable,<BR>  Cte.Cliente,<BR>  Cte.VtasConsignacion,<BR>  Cte.AlmacenVtasConsignacion,<BR>  AgenteEnviarA.Agente,<BR>  AgenteEnviarA.Nombre,<BR>  AgenteEnviarA.Estatus,<BR>  Sucursal.Sucursal,<BR>  Sucursal.Nombre,<BR>  Sucursal.Estatus,<BR>  Personal.Personal,<BR>  Personal.ApellidoPaterno,<BR>  Personal.ApellidoMaterno,<BR>  Personal.Nombre,<BR>  MAVINivelCobranza.Clave,<BR>  MAVINivelCobranza.Nombre,<BR>  Ruta.Ruta,<BR> UEN.UEN,<BR> UEN.Nombre,<BR> CteEnviarA.Cargo,<BR> CteEnviarA.ClaveInst,<BR> CteEnviarA.Municipio,<BR> CteEnviarA.Nomina,<BR> CteEnviarA.Puesto,<BR> CteEnviarA.RFCInstitucion,<BR>CteEnviarA.UsuarioModif<BR><BR>FROM<BR>  CteEnviarA<BR>  JOIN Cte ON CteEnviarA.Cliente=Cte.Cliente<BR>  LEFT OUTER JOIN Agente<CONTINUA>
+SQL004=<CONTINUA> AgenteEnviarA ON CteEnviarA.Agente=AgenteEnviarA.Agente<BR>  LEFT OUTER JOIN Sucursal ON CteEnviarA.SucursalEmpresa=Sucursal.Sucursal<BR>  LEFT OUTER JOIN Personal ON CteEnviarA.PersonalCobrador=Personal.Personal<BR>  LEFT OUTER JOIN UEN ON CteEnviarA.UENMAVI=UEN.UEN<BR>  LEFT OUTER JOIN MAVINivelCobranza ON CteEnviarA.NivelCobranzaMAVI=MAVINivelCobranza.Clave<BR>  LEFT OUTER JOIN Ruta ON CteEnviarA.RutaCobranzaMAVI=Ruta.Ruta
+
+
+;************************************************CAMPOS***********************************************************************
+;*****************************************************************************************************************************
+
+;******Nuevo campo agregado *****************
+[CteEnviarA.vis/CteEnviarA.UENMAVI]
+Clave=CteEnviarA.UENMAVI
+LigaTabla=CteEnviarA
+LigaCampo=UENMAVI
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Numérico
+ClaveBDE=UENMAVI
+
+
+;******Nuevo campo agregado *****************
+;[CteEnviarA.vis/CteEnviarA.SeccionCobranzaMAVI]
+;Clave=CteEnviarA.SeccionCobranzaMAVI
+;LigaTabla=CteEnviarA
+;LigaCampo=SeccionCobranzaMAVI
+;Ligado=S
+;TipoCampo=Tabla
+;TipoDatos=Texto
+;Tamano=50
+;ClaveBDE=SeccionCobranzaMAVI
+[CteEnviarA.vis/CteEnviarA.SeccionCobranzaMAVI]
+Clave=CteEnviarA.SeccionCobranzaMAVI
+Tamano=50
+TipoDatos=Texto
+LigaTabla=CteEnviarA
+LigaCampo=SeccionCobranzaMAVI
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=SeccionCobranzaMAVI
+
+
+;******Nuevo campo agregado *****************
+;[CteEnviarA.vis/CteEnviarA.NivelCobranzaMAVI]
+;Clave=CteEnviarA.NivelCobranzaMAVI
+;LigaTabla=CteEnviarA
+;LigaCampo=NivelCobranzaMAVI
+;Ligado=S
+;TipoCampo=Tabla
+;TipoDatos=Texto
+;Tamano=1
+;ClaveBDE=NivelCobranzaMAVI
+
+[CteEnviarA.vis/CteEnviarA.NivelCobranzaMAVI]
+Clave=CteEnviarA.NivelCobranzaMAVI
+Tamano=100
+TipoDatos=Texto
+LigaTabla=CteEnviarA
+LigaCampo=NivelCobranzaMAVI
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=NivelCobranzaMAVI
+
+
+;******Nuevo campo agregado *****************
+;[CteEnviarA.vis/CteEnviarA.RutaCobranzaMAVI]
+;Clave=CteEnviarA.RutaCobranzaMAVI
+;LigaTabla=CteEnviarA
+;LigaCampo=RutaCobranzaMAVI
+;Ligado=S
+;TipoCampo=Tabla
+;TipoDatos=Texto
+;Tamano=50
+;ClaveBDE=RutaCobranzaMAVI
+
+[CteEnviarA.vis/CteEnviarA.RutaCobranzaMAVI]
+Clave=CteEnviarA.RutaCobranzaMAVI
+Tamano=100
+TipoDatos=Texto
+LigaTabla=CteEnviarA
+LigaCampo=RutaCobranzaMAVI
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=RutaCobranzaMAVI
+
+;******Nuevo campo agregado *****************
+[CteEnviarA.vis/MAVINivelCobranza.Clave]
+Clave=MAVINivelCobranza.Clave
+LigaTabla=MAVINivelCobranza
+LigaCampo=Clave
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=1
+ClaveBDE=Clave_1
+
+
+;******Nuevo campo agregado *****************
+[CteEnviarA.vis/MAVINivelCobranza.Nombre]
+Clave=MAVINivelCobranza.Nombre
+LigaTabla=MAVINivelCobranza
+LigaCampo=Nombre
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Nombre_4
+
+
+;******Nuevo campo agregado *****************
+[CteEnviarA.vis/Ruta.Ruta]
+Clave=Ruta.Ruta
+LigaTabla=Ruta
+LigaCampo=Ruta
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Ruta_1
+
+
+;******Nuevo campo agregado *****************
+[CteEnviarA.vis/UEN.UEN]
+Clave=UEN.UEN
+LigaTabla=UEN
+LigaCampo=UEN
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Numérico
+ClaveBDE=UEN
+
+
+;******Nuevo campo agregado *****************
+[CteEnviarA.vis/UEN.Nombre]
+Clave=UEN.Nombre
+LigaTabla=UEN
+LigaCampo=Nombre
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=Nombre_5
+
+
+;****** Inicia campos de Cobranza Instituciones *****************
+[CteEnviarA.vis/CteEnviarA.Cargo]
+Clave=CteEnviarA.Cargo
+Nombre=Cargo
+Visible=S
+TamanoValidacion=15
+Tamano=15
+TipoDatos=Texto
+LigaTabla=CteEnviarA
+LigaCampo=Cargo
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Cargo
+
+[CteEnviarA.vis/CteEnviarA.ClaveInst]
+Clave=CteEnviarA.ClaveInst
+Nombre=ClaveInst
+Visible=S
+TamanoValidacion=5
+Tamano=5
+LigaTabla=CteEnviarA
+LigaCampo=ClaveInst
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=ClaveInst
+
+[CteEnviarA.vis/CteEnviarA.Municipio]
+Clave=CteEnviarA.Municipio
+Nombre=Municipio
+Visible=S
+TamanoValidacion=5
+Tamano=5
+LigaTabla=CteEnviarA
+LigaCampo=Municipio
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=Municipio
+
+[CteEnviarA.vis/CteEnviarA.Nomina]
+Clave=CteEnviarA.Nomina
+Nombre=Nomina
+Visible=S
+TamanoValidacion=15
+Tamano=15
+LigaTabla=CteEnviarA
+LigaCampo=Nomina
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=Nomina
+
+[CteEnviarA.vis/CteEnviarA.Puesto]
+Clave=CteEnviarA.Puesto
+Nombre=Puesto
+Visible=S
+TamanoValidacion=50
+Tamano=50
+LigaTabla=CteEnviarA
+LigaCampo=Puesto
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=Puesto
+
+[CteEnviarA.vis/CteEnviarA.RFCInstitucion]
+Clave=CteEnviarA.RFCInstitucion
+Nombre=RFCInstitucion
+Visible=S
+TamanoValidacion=15
+Tamano=15
+LigaTabla=CteEnviarA
+LigaCampo=RFCInstitucion
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=RFCInstitucion
+
+;****** Termina campos de Cobranza Instituciones *****************
+
+
+;***** nuevo campo para buro de credito 30/12/2008 *****
+[CteEnviarA.vis/CteEnviarA.SeEnviaBuroCreditoMavi]
+Clave=CteEnviarA.SeEnviaBuroCreditoMavi
+Nombre=SeEnviaBuroCreditoMavi
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+LigaTabla=CteEnviarA
+LigaCampo=SeEnviaBuroCreditoMavi
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=SeEnviaBuroCreditoMavi
+
+;***ARC Nuevo campo agregado Desarrollo Cobranza Menudeo ***
+[CteEnviarA.vis/CteEnviarA.CobraAval]
+Clave=CteEnviarA.CobraAval
+Nombre=Cobra al Aval
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+LigaTabla=CteEnviarA
+LigaCampo=CobraAval
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=CobraAval
+
+;***ARC Nuevo campo agregado Desarrollo Cobranza Menudeo ***
+[CteEnviarA.vis/CteEnviarA.AvalResponsable]
+Clave=CteEnviarA.AvalResponsable
+Nombre=Aval Responsable
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+LigaTabla=CteEnviarA
+LigaCampo=AvalResponsable
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=AvalResponsable
+
+
+;***ARC Nuevo campo agregado Desarrollo Cobranza Menudeo ***
+[CteEnviarA.vis/ContactoNombre]
+Clave=ContactoNombre
+Tamano=150
+TipoCampo=Calculado
+TamanoValidacion=150
+Alineacion=por Omisión
+Nombre=Nombre Aval
+CondicionDespliege=CteEnviarA.CobraAval
+Formula=SQL(<T>SELECT Nombre FROM CteCto WHERE Cliente=:tcte AND ID=:nID<T>, CteEnviarA.Cliente, CteEnviarA.AvalResponsable)+' '+SQL(<T>SELECT ApellidoPaterno FROM CteCto WHERE Cliente=:tcte AND ID=:nID<T>, CteEnviarA.Cliente, CteEnviarA.AvalResponsable)+' '+SQL(<T>SELECT ApellidoMaterno FROM CteCto WHERE Cliente=:tcte AND ID=:nID<T>, CteEnviarA.Cliente, CteEnviarA.AvalResponsable)
+
+
+
+
+
+;************************************************RELACIONES*******************************************************************
+;*****************************************************************************************************************************
+
+
+;*****Nueva relacion agregada ******
+[CteEnviarA.vis/Relaciones.CteEnviarA.UEN]
+Clave=CteEnviarA.UEN
+TablaRemota=UEN
+LlaveLocal=CteEnviarA.UENMAVI
+LlaveRemota=UEN
+TipoRelacion=Opcional
+
+
+;*****Nueva relacion agregada ******
+[CteEnviarA.vis/Relaciones.CteEnviarA.MAVINivelCobranza]
+Clave=CteEnviarA.MAVINivelCobranza
+TablaRemota=MAVINivelCobranza
+LlaveLocal=CteEnviarA.NivelCobranzaMAVI
+LlaveRemota=Clave
+TipoRelacion=Opcional
+
+
+;*****Nueva relacion agregada ******
+[CteEnviarA.vis/Relaciones.CteEnviarA.Ruta]
+Clave=CteEnviarA.Ruta
+TablaRemota=Ruta
+LlaveLocal=CteEnviarA.RutaCobranzaMAVI
+LlaveRemota=Ruta
+TipoRelacion=Opcional
+
+
+;*****Nueva relacion agregada ******
+[CteEnviarA.vis/Relaciones.Personal.UEN]
+Clave=Personal.UEN
+TablaRemota=UEN
+LlaveLocal=Personal.UEN
+LlaveRemota=UEN
+TipoRelacion=Opcional
+
+
+;**** Se agrega un nuevo campo UsuarioModif FLR 30-Ago-2010
+[CteEnviarA.vis/CteEnviarA.UsuarioModif]
+Clave=CteEnviarA.UsuarioModif
+Nombre=UsuarioModif
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10
+LigaTabla=CteEnviarA
+LigaCampo=UsuarioModif
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=UsuarioModif

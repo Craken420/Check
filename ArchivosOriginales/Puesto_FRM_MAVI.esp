@@ -1,0 +1,25 @@
+
+
+
+
+[Puesto.frm/Forma]
+PosicionInicialAlturaCliente=631
+
+
+;**** Nuevo campos agregados: ComisionChoferesMAVI ****
+[Puesto.frm/General]
+ListaEnCaptura=Puesto.Puesto<BR>Puesto.Descripcion<BR>Puesto.SueldoDef<BR>Puesto.PuestoReporta<BR>Puesto.PuestoSustituye<BR>Puesto.Area<BR>Puesto.Departamento<BR>Puesto.Objetivo<BR>Puesto.Alcance<BR>Puesto.ComisionChoferesMAVI
+
+
+
+
+;**** Nuevo campo agregado 28-Dic-09 ARC **** 
+[Puesto.frm/General.Puesto.ComisionChoferesMAVI]
+Carpeta=General
+Clave=Puesto.ComisionChoferesMAVI
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro

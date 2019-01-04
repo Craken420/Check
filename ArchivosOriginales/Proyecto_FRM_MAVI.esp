@@ -1,0 +1,24 @@
+
+;**** Ultima modificación:25-Mar-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:(Creación)
+
+;**** Se modifico el orden de las acciones: se puso la accion "actualizar despues de la de afectar*****
+[Proyecto.frm/Forma]
+ListaAcciones=Nuevo<BR>MovCopiar<BR>Abrir<BR>Localizar<BR>Guardar<BR>MovPersonal<BR>Evaluaciones<BR>Propiedades<BR>Imprimir<BR>RepPantalla<BR>PlantillasOffice<BR>FormasAnexas<BR>Verificar<BR>Situacion<BR>Sucursal<BR>Afectar<BR>Actualizar<BR>Eliminar<BR>Cancelar<BR>Consecutivo<BR>ReasignarUsuario<BR>CamposExtras<BR>Anexos<BR>AnexosDetalle<BR>FormaAnexa<BR>Plantilla<BR>Recursos<BR>Contactos<BR>ProyectoDias<BR>Anterior<BR>Siguiente<BR>Gantt<BR>Resultados<BR>Info<BR>Tiempo<BR>Politica<BR>PoliticaConcepto<BR>MovPos<BR>Navegador<BR>Cerrar<BR>Otros1<BR>Otros2<BR>Otros3<BR>Otros4<BR>Otros5<BR>Otros6<BR>Otros7<BR>Otros8<BR>Otros9
+
+
+;**** Se modifico para que no estuviera activo y visible si esta en estatus "Pendiente" ****
+[Proyecto.frm/Acciones.Afectar]
+Visible=N
+ActivoCondicion=PuedeAfectar(Usuario.Afectar, Usuario.AfectarOtrosMovs, Proyecto:Proyecto.Usuario) y<BR>(Proyecto:Proyecto.Estatus en (EstatusSinAfectar, EstatusPorConfirmar, EstatusBorrador)) y<BR>PuedeAvanzarEstatus(<T>PROY<T>, Proyecto:Proyecto.Mov, Proyecto:Proyecto.Estatus, FormaSituacion)
+VisibleCondicion=Proyecto:Proyecto.Estatus<>EstatusPendiente
+
+
+; **** Se modifico para que apareciera en la barra de herramientas como botón y que fuera visible solo si el estatus del movimiento es "Pendiente" ****
+[Proyecto.frm/Acciones.Actualizar]
+Visible=N
+VisibleCondicion=Proyecto:Proyecto.Estatus en (EstatusPendiente)
+Boton=7
+EnBarraHerramientas=S
+

@@ -1,0 +1,65 @@
+;**** Ultima modificación:05-Sep-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:
+
+
+
+
+
+;**** Se agrego un WHERE en la sentencia SQL (Arly Rubio 05-Sep-08)********
+;**** Nuevos campos calculado ****
+[VentaA.vis/Vista]
+SQL=SELECT<BR>  Venta.ID,<BR>  Venta.Empresa,<BR>  Venta.Mov,<BR>  Venta.MovID,<BR>  Venta.FechaEmision,<BR>  Venta.UltimoCambio,<BR>  Venta.Concepto,<BR>  Venta.Proyecto,<BR>  Venta.Moneda,<BR>  Venta.Usuario,<BR>  Venta.Referencia,<BR>  Venta.Observaciones,<BR>  Venta.Estatus,<BR>  Venta.Situacion,<BR>  Venta.SituacionFecha,<BR>  Venta.SituacionUsuario,<BR>  Venta.SituacionNota,<BR>  Venta.Prioridad,<BR>  Venta.Cliente,<BR>  Venta.EnviarA,<BR>  Venta.Almacen,<BR>  Venta.Agente,<BR>  Venta.FormaEnvio,<BR>  Venta.Descuento,<BR>  Venta.FechaRequerida,<BR>  Venta.HoraRequerida,<BR>  Venta.FechaOrdenCompra,<BR>  Venta.FechaOriginal,<BR>  Venta.OrdenCompra,<BR>  Venta.Condicion,<BR>  Venta.Vencimiento,<BR>  Venta.DescuentoGlobal,<BR>  Venta.Saldo,<BR>  Venta.Importe,<BR>  Venta.Impuestos,<BR>  Ven<CONTINUA>
+SQL002=<CONTINUA>ta.AnticiposFacturados,<BR>  Venta.Retencion,<BR>  Venta.Origen,<BR>  Venta.OrigenID,<BR>  Venta.Poliza,<BR>  Venta.PolizaID,<BR>  Venta.GenerarPoliza,<BR>  Venta.ContID,<BR>  Venta.FechaRegistro,<BR>  Venta.FechaConclusion,<BR>  Venta.FechaCancelacion,<BR>  Venta.ServicioTipo,<BR>  Venta.ServicioArticulo,<BR>  Venta.ServicioSerie,<BR>  Venta.ServicioFecha,<BR>  Venta.ServicioIdentificador,<BR>  Venta.ServicioPlacas,<BR>  Venta.ServicioSiniestro,<BR>  Venta.Peso,<BR>  Venta.Volumen,<BR>  Venta.Paquetes,<BR>  Venta.Causa,<BR>  Venta.Atencion,<BR>  Venta.AtencionTelefono,<BR>  Venta.Extra,<BR>  Venta.ListaPreciosEsp,<BR>  Venta.ZonaImpuesto,<BR>  Venta.Mensaje,<BR>  Venta.EmbarqueEstado,<BR>  Venta.EmbarqueGastos,<BR>  Venta.FechaEntrega,<BR>  Venta.Sucursal,<BR>  Venta.SucursalDestino,<BR> <CONTINUA>
+SQL003=<CONTINUA> Venta.GenerarOP,<BR>  Venta.ConVigencia,<BR>  Venta.VigenciaDesde,<BR>  Venta.VigenciaHasta,<BR>  Venta.DesglosarImpuestos,<BR>  Venta.ExcluirPlaneacion,<BR>  Venta.Enganche,<BR>  Venta.ContUso,<BR>  Venta.AutoBoleto,<BR>  Venta.SubModulo,<BR>  Venta.Periodicidad,<BR>  Venta.Espacio,<BR>  Venta.UEN,<BR>  Venta.Clase,<BR>  Venta.Subclase,<BR>  Venta.AutoCorrida,<BR>  Venta.AnexoID,<BR>  Venta.LineaCredito,<BR>  Venta.TipoAmortizacion,<BR>  Venta.TipoTasa,<BR>  Venta.Comisiones,<BR>  Venta.ComisionesIVA,<BR>  Venta.OperacionRelevante,<BR>  Venta.Codigo,<BR>  Cte.Cliente,<BR>  Cte.Nombre,<BR>  Cte.NombreCorto,<BR>  MensajeLista.Mensaje,<BR>  MensajeLista.Descripcion,<BR>  MensajeLista.Tipo<BR><BR>FROM<BR>  Venta<BR>  JOIN Cte ON Venta.Cliente=Cte.Cliente<BR>  LEFT OUTER JOIN MensajeLista ON <CONTINUA>
+SQL004=<CONTINUA>Venta.Mensaje=MensajeLista.Mensaje WHERE Venta.Moneda = <T>Pesos<T><BR>{Si(Mavi.ServicasaMovNvo=1020,<T>And 1=2<T>,<T><T>)}
+ListaCalculados=Dias<BR>Suritdo<BR>ImporteTotal<BR>TotalNeto<BR>Throughput<BR>EstatusContable<BR>TotalComisiones<BR>ImporteMAVI<BR>ImpuestosMAVI<BR>ImporteTotalMAVI<BR>TotalNetoMAVI
+
+
+
+;Nuevo campo calculado ARC 14-May-09 *****
+[VentaA.vis/ImporteMAVI]
+Clave=ImporteMAVI
+TipoDatos=NumMonetario
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Importe MAVI
+Monetario=S
+Formula=Si(Venta.Mov en(<T>Credilana<T>, <T>Prestamo Personal<T>, <T>Cancela Credilana<T>, <T>Cancela Prestamo<T>),SQL(<T>SELECT dbo.fnImporteSinIVAFinanciamiento(:nID, :tEmpresa)<T>,Venta.ID, Empresa), Venta.Importe)
+
+
+
+;Nuevo campo calculado ARC 14-May-09 *****
+[VentaA.vis/ImpuestosMAVI]
+Clave=ImpuestosMAVI
+TipoDatos=NumMonetario
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Impuestos MAVI
+Monetario=S
+Formula=Si(Venta.Mov en(<T>Credilana<T>, <T>Prestamo Personal<T>, <T>Cancela Credilana<T>, <T>Cancela Prestamo<T>),SQL(<T>SELECT dbo.fnIVAFinanciamiento(:nID, :tEmpresa)<T>,Venta.ID, Empresa), Venta.Impuestos)
+
+;Nuevo campo calculado ARC 14-May-09 *****
+[VentaA.vis/ImporteTotalMAVI]
+Clave=ImporteTotalMAVI
+TipoDatos=NumMonetario
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Importe Total MAVI
+Monetario=S
+Formula=Si(Venta.Mov en(<T>Credilana<T>, <T>Prestamo Personal<T>, <T>Cancela Credilana<T>, <T>Cancela Prestamo<T>),ImporteMAVI+ImpuestosMAVI, ImporteTotal)
+
+;Nuevo campo calculado ARC 14-May-09 *****
+[VentaA.vis/TotalNetoMAVI]
+Clave=TotalNetoMAVI
+TipoDatos=NumMonetario
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Total Neto MAVI
+Monetario=S
+Formula=Si(Venta.Mov en(<T>Credilana<T>, <T>Prestamo Personal<T>, <T>Cancela Credilana<T>, <T>Cancela Prestamo<T>),ImporteTotalMAVI, TotalNeto)
+

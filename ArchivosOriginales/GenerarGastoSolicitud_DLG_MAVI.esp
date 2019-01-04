@@ -1,0 +1,38 @@
+;**** Ultima modificación:27-Feb-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:
+
+
+
+; **** Se modifico esta acción para que no fuera visible ****
+[GenerarGastoSolicitud.dlg/Acciones.Comprobante]
+Visible=N
+
+
+
+
+; **** Se modifico esta acción para que no fuera visible ****
+[GenerarGastoSolicitud.dlg/Acciones.CajaChica]
+Visible=N
+
+
+
+; **** Se modifico esta acción para que no fuera visible ****
+[GenerarGastoSolicitud.dlg/Acciones.GastoTCredito]
+Visible=N
+
+
+
+;24-Jun-09 ARC 
+; **** Se modifico esta acción para que no fuera visible ****
+[GenerarGastoSolicitud.dlg/Acciones.Anticipo]
+Visible=N
+VisibleCondicion=Info.Situacion <> <T>Denegado<T>
+
+
+
+;24-Jun-09 ARC 
+; **** Se modifico esta acción para que no fuera visible ****
+[GenerarGastoSolicitud.dlg/Acciones.Gasto]
+Visible=N
+VisibleCondicion=Info.Situacion <> <T>Denegado<T>

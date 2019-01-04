@@ -1,0 +1,16 @@
+Modifico: ARC
+Ultima Fecha: 30-Dic-08
+
+
+
+
+;*** Se modifico la condicion de edicion de la carpeta para que no sea editable si la lista es "MAP" ARC 30-Dic-08 *****
+[ListaPreciosD.frm/Lista]
+CondicionEdicion=(no General.PC) y (ListaPreciosD:ListaPreciosD.Lista <> <T>MAP<T>)
+
+
+
+;*** Se modifico para que no este activa si la lista de precios es "MAP" ARC 30-Dic-08 ****
+[ListaPreciosD.frm/Acciones.Asistente]
+Activo=N
+ActivoCondicion=Info.Lista <> <T>MAP<T>

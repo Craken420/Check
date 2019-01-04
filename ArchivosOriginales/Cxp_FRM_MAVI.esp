@@ -1,0 +1,122 @@
+;**** Ultima modificación:09-Julio-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:Integracion de la modificacion de mexico a la (Carpeta Abrir)
+
+
+
+
+;***** Modificacion Mexico *****
+[Cxp.frm/(Carpeta Abrir)]
+FiltroAutoCampo=Cxp.Moneda
+FiltroAutoValidar=Cxp.Moneda
+
+
+
+
+;************************************************* ACCIONES *********************************************************
+;********************************************************************************************************************
+
+
+;**** Se asigno la variable Info.IDMAVI ARC 18-Feb-09****
+[Cxp.frm/Acciones.Afectar]
+;EjecucionCondicion=Si Cxp:Cxp.Mov=<T>Acuerdo Proveedor<T><BR>Entonces<BR>     Si ConDatos(Cxp:Cxp.Importe)<BR>     Entonces<BR>        Verdadero<BR>     Sino<BR>         Error(<T>El campo Importe no debe estar vacio<T>)<BR>         AbortarOperacion<BR>     Fin<BR>Fin
+Expresion=Asigna(Afectar.Modulo, <T>CXP<T>)<BR>Asigna(Afectar.ID, Cxp:Cxp.ID)<BR>Asigna(Afectar.Mov, Cxp:Cxp.Mov)<BR>Asigna(Afectar.MovID, Cxp:Cxp.MovID)<BR>Asigna(Info.MovTipo, MovTipo(<T>CXP<T>, Cxp:Cxp.Mov))<BR>Asigna(Info.Referencia, Cxp:Cxp.Referencia)<BR>Asigna(Info.Saldo, Suma(CxpD:ImporteNeto)-Si(Version.Peru y (Info.MovTipo=CXP.P), Cxp:SubTotal, Cxp:ImporteTotal))<BR><BR><BR>Si<BR>  Cxp:Cxp.Estatus en (EstatusSinAfectar, EstatusPorConfirmar) <BR>Entonces<BR>  Si<BR>    (Info.MovTipo en (CXP.P, CXP.D, CXP.DM, CXP.PAG, CXP.NC, CXP.NCD, CXP.NCF, CXP.ANC, CXP.ACA, CXP.AE)) y Cxp:Cxp.AplicaManual y (ABS(Info.Saldo) > Config.CxpAutoAjuste)<BR>  Entonces<BR>    Si(no Forma(<T>CxpAplicaDif<T>), AbortarOperacion)<BR>  Fin<BR>  Afectar(<T>CXP<T>, Cxp:Cxp.ID, Cxp:Cxp.Mov, Cxp:Cxp.MovID, <T>Todo<T>, <T<CONTINUA>
+Expresion002=<CONTINUA>><T>, <T>Cxp<T>)<BR>Sino<BR>  Asigna(Info.Modulo, <T>CXP<T>)<BR>  Asigna(Info.Mov, Cxp:Cxp.Mov)<BR>  Asigna(Info.MovID, Cxp:Cxp.MovID)<BR>  Asigna(Afectar.Modulo, <T>CXP<T>)<BR>  Asigna(Afectar.ID, Cxp:Cxp.ID)<BR>  Asigna(Afectar.Mov, Cxp:Cxp.Mov)<BR>  Asigna(Afectar.MovID, Cxp:Cxp.MovID)<BR>  Asigna(Afectar.FormaCaptura, <T>Cxp<T>)<BR>  Asigna(Info.TituloDialogo, Afectar.Mov+<T> <T>+Afectar.MovID)<BR>  Asigna(Info.Pagares, Cxp:Prov.Pagares)<BR>  Si<BR>    ConfigModulo(Info.Modulo, <T>FlujoAbierto<T>) = <T>Si<T><BR>  Entonces<BR>    Si <BR>      Forma(<T>GenerarMovFlujo<T>)<BR>    Entonces<BR>      Asigna(Afectar.GenerarMov, Info.MovGenerar)<BR>      Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, Afectar.GenerarMov, Afectar.FormaCaptura)<BR>    Fin<BR>  Sino<BR<CONTINUA>
+Expresion003=<CONTINUA>>    Caso Info.MovTipo<BR>      Es CXP.A   Entonces Dialogo(<T>GenerarCxpAnticipo<T>)<BR>      Es CXP.DA  Entonces Dialogo(<T>GenerarCxpDocumentoAnticipo<T>)<BR>      Es CXP.NC  Entonces Dialogo(<T>GenerarCxpNCredito<T>)<BR>      Es CXP.NCD Entonces Dialogo(<T>GenerarCxpNCredito<T>)<BR>      Es CXP.DAC Entonces Dialogo(<T>GenerarCxpNCredito<T>)<BR>      Es CXP.NCF Entonces Dialogo(<T>GenerarCxpNCredito<T>)<BR>      Es CXP.NCP Entonces Asigna(Afectar.GenerarMov, ConfigMov.CxpAplicacionPago) Dialogo(<T>GenerarAplicacionCredito<T>)<BR>      Es CXP.DP  Entonces Dialogo(<T>GenerarCxpPagoPosfechado<T>)<BR>      Sino Dialogo(<T>GenerarCxpPago<T>)<BR>    Fin<BR>  Fin<BR>Fin<BR>Si<BR> Cxp:Cxp.Mov=<T>Sol Acuerdo Prov<T><BR>Entonces<BR>    EjecutarSQL( <T>EXEC SP_DM0310AcuerdoProveedores :nControl, :<CONTINUA>
+Expresion004=<CONTINUA>nID<T>, 1, Cxp:Cxp.ID )<BR>    Asigna(Mavi.DM0310Bandera,<T>Listo<T>)<BR>Fin
+;AntesExpresiones=GuardarCambios<BR>Asigna(Info.IDMAVI, Cxp:Cxp.ID)<BR>Si<BR>    Cxp:Cxp.Mov <> <T>Ajuste<T><BR>Entonces<BR>    Si<BR>       ( ((ConDatos(Cxp:Cxp.Importe))y(Cxp:Cxp.Importe>0)) o ( Cxp:Cxp.Mov = <T>Sol Acuerdo Prov<T>))<BR>    Entonces<BR>        Verdadero<BR>    SiNo<BR>        Si(Precaucion(<T>El Importe debe ser Mayor a 0...<T>, BotonAceptar)=BotonAceptar, AbortarOperacion,AbortarOperacion)<BR>    Fin<BR>Fin<BR>Si<BR>    Cxp:Cxp.Mov=<T>Prestamo<T><BR>Entonces<BR>   Si Vacio(Cxp:Cxp.CtaDinero)<BR>   Entonces<BR>        Si(Precaucion(<T>Falta capturar una Cuenta de Banco...<T>, BotonAceptar)=BotonAceptar, AbortarOperacion,AbortarOperacion)<BR>   Fin<BR>Fin<BR>Si<BR>    Cxp:Cxp.Mov=<T>Factoraje<T><BR>Entonces<BR>    Si<BR>        (SQL(<T>SELECT dbo.FN_ValidaFactoraje(:nI)<T>,Cxp:Cxp.ID))=0<B<CONTINUA>
+;AntesExpresiones002=<CONTINUA>R>    Entonces<BR>        Si(Precaucion(<T>El Movimiento a Aplicar no es Valido...<T>, BotonAceptar)=BotonAceptar, AbortarOperacion,AbortarOperacion)<BR>    Fin<BR>Fin<BR>Si<BR>    Cxp:Cxp.Mov <> <T>Acuerdo Proveedor<T><BR>Entonces<BR>    Si<BR>      General.CamposExtras=<T>Campos Extras<T> y (Cxp:Cxp.Estatus en (EstatusSinAfectar, EstatusPorConfirmar, EstatusBorrador)) y SQL(<T>SELECT CEAntesAfectar FROM MovTipo WHERE Modulo=:tModulo AND Mov=:tMov AND CE=1<T>, <T>CXP<T>, Cxp:Cxp.Mov)<BR>    Entonces<BR>      Si(no CamposExtrasMovimiento(<T>CXP<T>, Cxp:Cxp.Mov, Cxp:Cxp.ID, Verdadero, Cxp:Cxp.Estatus noen (EstatusSinAfectar, EstatusPorConfirmar, EstatusBorrador)), AbortarOperacion)<BR>    FIn<BR>Fin<BR>Si Cxp:Cxp.Mov = <T>Sol Acuerdo Prov<T><BR>Entonces<BR>    Si ConDatos(Cxp:Cxp.Vencimient<CONTINUA>
+;AntesExpresiones003=<CONTINUA>oProveedor)<BR>    Entonces<BR>        Si ConDatos(Cxp:Cxp.Concepto)<BR>        Entonces<BR>            Si ConDatos(Cxp:Cxp.Observaciones)<BR>            Entonces<BR>                Verdadero<BR>            Sino<BR>                Si(Error(<T>El campo Observaciones debe contener datos<T>, BotonAceptar)=BotonAceptar, AbortarOperacion,AbortarOperacion)<BR>            Fin<BR>        Sino<BR>            Si(Error(<T>El campo Concepto debe contener datos<T>, BotonAceptar)=BotonAceptar, AbortarOperacion,AbortarOperacion)<BR>        Fin<BR>    Sino<BR>         Si(Error(<T>La fecha de Vencimiento no debe estar vacia<T>, BotonAceptar)=BotonAceptar, AbortarOperacion,AbortarOperacion)<BR>    Fin<BR>Sino<BR>    Verdadero<BR>Fin
+EjecucionCondicion=Si Cxp:Cxp.Mov=<T>Acuerdo Proveedor<T><BR>Entonces<BR>     Si ConDatos(Cxp:Cxp.Importe)<BR>     Entonces<BR>        Verdadero<BR>     Sino<BR>         Error(<T>El campo Importe no debe estar vacio<T>)<BR>         AbortarOperacion<BR>     Fin<BR>Fin<BR>Si Cxp:Cxp.Mov = <T>Sol Acuerdo Prov<T><BR>Entonces<BR>    Si ConDatos(Cxp:Cxp.VencimientoProveedor)<BR>    Entonces<BR>        Si ConDatos(Cxp:Cxp.Concepto)<BR>        Entonces<BR>            Si ConDatos(Cxp:Cxp.Observaciones)<BR>            Entonces<BR>                Verdadero<BR>            Sino<BR>                Si(Precaucion(<T>El campo Observaciones debe contener datos<T>, BotonAceptar)=BotonAceptar, AbortarOperacion,AbortarOperacion)<BR>            Fin<BR>        Sino<BR>            Si(Precaucion(<T>El campo Concepto debe contener datos<T>, BotonAceptar)=BotonAceptar, AbortarOperacion,AbortarOperacion)<BR>        Fin<BR>    Sino<BR>         Si(Precaucion(<T>La fecha de Vencimiento no debe estar vacia<T>, BotonAceptar)=BotonAceptar, AbortarOperacion,AbortarOperacion)<BR>    Fin<BR>Sino<BR>    Verdadero<BR>Fin<BR><BR>Asigna(Info.Dialogo,<T><T>)<BR>Asigna(Info.Dialogo,SQL(<T>SP_RM1100ValidaCompraPagos :nID, :tMov, :nOpc<T>,Cxp:Cxp.ID,Cxp:Cxp.Mov,1))<BR>Si<BR>  Info.Dialogo = <T>OK<T><BR>Entonces<BR>  Verdadero<BR>Sino<BR>  Informacion(Info.Dialogo)<BR>  Forma(<T>RM1100CascaronPagosFrm<T>)<BR>  AbortarOperacion<BR>Fin
+EjecucionMensaje=Si(Vacio(Cxp:Cxp.Importe), <T>Falta Especificar el Importe<T>))
+AntesExpresiones=GuardarCambios<BR>Asigna(Info.IDMAVI, Cxp:Cxp.ID)<BR>Si<BR>    Cxp:Cxp.Mov <> <T>Ajuste<T><BR>Entonces<BR>    Si<BR>       ( ((ConDatos(Cxp:Cxp.Importe))y(Cxp:Cxp.Importe>0)) o ( Cxp:Cxp.Mov = <T>Sol Acuerdo Prov<T>))<BR>    Entonces<BR>        Verdadero<BR>    SiNo<BR>        Si(Precaucion(<T>El Importe debe ser Mayor a 0...<T>, BotonAceptar)=BotonAceptar, AbortarOperacion,AbortarOperacion)<BR>    Fin<BR>Fin<BR>Si<BR>    Cxp:Cxp.Mov=<T>Prestamo<T><BR>Entonces<BR>   Si Vacio(Cxp:Cxp.CtaDinero)<BR>   Entonces<BR>        Si(Precaucion(<T>Falta capturar una Cuenta de Banco...<T>, BotonAceptar)=BotonAceptar, AbortarOperacion,AbortarOperacion)<BR>   Fin<BR>Fin<BR>Si<BR>    Cxp:Cxp.Mov=<T>Factoraje<T><BR>Entonces<BR>    Si<BR>        (SQL(<T>SELECT dbo.FN_ValidaFactoraje(:nI)<T>,Cxp:Cxp.ID))=0<B<CONTINUA>
+AntesExpresiones002=<CONTINUA>R>    Entonces<BR>        Si(Precaucion(<T>El Movimiento a Aplicar no es Valido...<T>, BotonAceptar)=BotonAceptar, AbortarOperacion,AbortarOperacion)<BR>    Fin<BR>Fin<BR>Si<BR>    Cxp:Cxp.Mov <> <T>Acuerdo Proveedor<T><BR>Entonces<BR>    Si<BR>      General.CamposExtras=<T>Campos Extras<T> y (Cxp:Cxp.Estatus en (EstatusSinAfectar, EstatusPorConfirmar, EstatusBorrador)) y SQL(<T>SELECT CEAntesAfectar FROM MovTipo WHERE Modulo=:tModulo AND Mov=:tMov AND CE=1<T>, <T>CXP<T>, Cxp:Cxp.Mov)<BR>    Entonces<BR>      Si(no CamposExtrasMovimiento(<T>CXP<T>, Cxp:Cxp.Mov, Cxp:Cxp.ID, Verdadero, Cxp:Cxp.Estatus noen (EstatusSinAfectar, EstatusPorConfirmar, EstatusBorrador)), AbortarOperacion)<BR>    FIn<BR>Fin
+
+
+
+;***** Se configuro para que se ejecutaran acciones "antes de ejecutar" (ARC 11-Dic-08) ****
+[Cxp.frm/Acciones.CamposExtras]
+Antes=S
+DespuesGuardar=S
+AntesExpresiones=Asigna(Info.IDMAVI, Cxp:Cxp.ID)
+
+
+;*** Requerimiento de To Be para Acuerdos Proveedor
+[Cxp.frm/Acciones.Eliminar]
+ActivoCondicion=Vacio(Cxp:Cxp.MovID) y (Cxp:Cxp.Estatus en (EstatusSinAfectar, EstatusPorConfirmar)) y PuedeAfectar(Verdadero, Usuario.ModificarOtrosMovs, Cxp:Cxp.Usuario) y  Vacio( Cxp:Cxp.Situacion)
+
+
+; ***** Se agregó validacion para evitar cancelar el mov que provenga de otro modulo u otro movimiento. JR 15-Sep-2011. ***** 
+[Cxp.frm/Acciones.Cancelar]
+ConCondicion=S
+AntesExpresiones=Asigna( Afectar.Mov, Cxp:Cxp.Mov ) <BR> Asigna( Afectar.MovID, Cxp:Cxp.MovID )<BR>Si(ConDatos(Cxp:Cxp.OrigenTipo), Si(Cxp:Cxp.OrigenTipo <> <T>CXP<T>,  Si(Precaucion(<T>El movimiento que se esta intentando cancelar proviene de otro modulo<T>, BotonAceptar)=BotonAceptar, AbortarOperacion, AbortarOperacion)))<BR>Si(Cxp:Cxp.Mov = <T>Documento<T>, Si(ConDatos(Cxp:Cxp.OrigenID),Si(Precaucion(<T>No se pueden cancelar documentos que provienen de un movimiento de otro movimiento<T>,BotonAceptar)= BotonAceptar,AbortarOperacion, AbortarOperacion)))
+EjecucionCondicion=Asigna( Afectar.Mov, Cxp:Cxp.Mov )<BR>Asigna( Afectar.MovID, Cxp:Cxp.MovID )<BR>Si<BR>    Cxp:Cxp.Mov=<T>Sol Acuerdo Prov<T><BR>Entonces<BR>    Si<BR>        SQL(<T>SELECT COUNT(*) FROM Cxp WHERE Origen=:tSol and OrigenID=:tSolMov and Estatus IN(:tPen, :tCon)<T>, Cxp:Cxp.Mov,Cxp:Cxp.MovID,<T>Pendiente<T>,<T>Concluido<T>)>0<BR>    Entonces<BR>        Error(<T>No se puede cancelar una Solicitud si el Acuerdo esta en Pendiente o Concluido<T>) AbortarOperacion<BR>    Sino<BR>        verdadero<BR>    Fin<BR>Fin
+
+
+[Cxp.frm/Acciones.Imprimir]
+Expresion=Si (Cxp:Cxp.Mov=<T>Acuerdo Proveedor<T>) y ((Cxp:Cxp.Estatus= <T>CONCLUIDO<T>) o (Cxp:Cxp.Estatus=<T>PENDIENTE<T>))<BR>Entonces<BR>    Asigna(Mavi.RM0218ProveedorD,Cxp:Cxp.Proveedor)<BR>    Asigna(Mavi.RM0218AcuerdosProv, Cxp:Cxp.MovID)<BR>    ReportePantalla(<T>RM0218AcuerdoProvRep<T>)<BR>Sino<BR>    ReporteImpresora(ReporteMovImpresora(<T>CXP<T>, Cxp:Cxp.Mov, Cxp:Cxp.Estatus), Cxp:Cxp.ID)<BR>Fin
+
+[Cxp.frm/Forma]
+ListaAcciones=Nuevo<BR>MovCopiar<BR>CopiarMeses<BR>Abrir<BR>Localizar<BR>Guardar<BR>MovPersonal<BR>Evaluaciones<BR>Propiedades<BR>Imprimir<BR>RepPantalla<BR>PlantillasOffice<BR>FormasAnexas<BR>Excel<BR>Verificar<BR>Situacion<BR>Sucursal<BR>Afectar<BR>Autorizar<BR>Consecutivo<BR>Eliminar<BR>Cancelar<BR>Sugerir<BR>ReasignarUsuario<BR>Campos<BR>CamposExtras<BR>Totalizar<BR>MovExpress<BR>Tareas<BR>Anexos<BR>ImporteConImpuestos<BR>Asistente Aplicacion<BR>AutoAplica<BR>Anticipos<BR>Anterior<BR>Siguiente<BR>Infomacion<BR>TablaAmortizacion<BR>InfoCtaDinero<BR>ProyInfo<BR>GastoDiverso<BR>Tiempo<BR>Politica<BR>PoliticaConcepto<BR>MovPos<BR>Navegador<BR>Cerrar<BR>Otros1<BR>Otros2<BR>Otros3<BR>Otros4<BR>Otros5<BR>Otros6<BR>Otros7<BR>Otros8<BR>Otros9<BR>AcuerdoProveedor
+ExpresionesAlMostrar=Asigna(Info.Mov, Nulo)<BR>Asigna(Info.MovID, Nulo)<BR>Asigna(Info.Importe, 0.0)<BR>Asigna(Def.CxImpuesto, General.DefImpuesto)<BR>Asigna(Mavi.DM0310Bandera,<T> <T>)
+
+
+[Cxp.frm/Acciones.AcuerdoProveedor]
+Nombre=AcuerdoProveedor
+Boton=-1
+NombreEnBoton=S
+NombreDesplegar=Generar Acuerdo
+EnBarraHerramientas=S
+TipoAccion=Expresion
+ActivoCondicion=(Cxp:Cxp.Mov=<T>Sol Acuerdo Prov<T>) y (SQL(<T>Select Count(*) From Cxp with(Nolock) where Origen=:tM and Origenid=:tMi and Estatus <> :tEst <T>,Cxp:Cxp.Mov,Cxp:Cxp.MovID,<T>CANCELADO<T>) = 0) 
+Antes=S
+Multiple=S
+ListaAccionesMultiples=AgregaAcuerdo<BR>AbrirOtraVentana
+AntesExpresiones=Si<BR>    (Cxp:Cxp.Situacion=<T>Por Generar Acuerdo<T>) y (SQL(<T>Select Count(*) From Cxp with(Nolock) where Origen=:tM and Origenid=:tMi and Estatus <> :tEst <T>,Cxp:Cxp.Mov,Cxp:Cxp.MovID,<T>CANCELADO<T>) = 0) <BR>Entonces<BR>    verdadero<BR>Sino<BR>    Informacion(<T>Solo se puede generar un Acuerdo<T>)    AbortarOperacion <BR>Fin
+Visible=S
+[Cxp.frm/Acciones.AcuerdoProveedor.AgregaAcuerdo]
+Nombre=AgregaAcuerdo
+Boton=0
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Asigna(Info.Dialogo, SQL( <T>EXEC SP_DM0310AcuerdoProveedores :nControl, :nID<T>, 2, Cxp:Cxp.ID ))<BR>Si<BR>    ConDatos(Info.Dialogo)<BR>Entonces<BR>    Informacion( <T>Acuerdo Proveedor Generado<T>)<BR>    Asigna(Mavi.DM0310Bandera,<T><T>)<BR>Sino<BR>    Error(<T>Fallo al generar Acuerdo<T>) abortarOperacion <BR>Fin
+[Cxp.frm/Acciones.AcuerdoProveedor.AbrirOtraVentana]
+Activo=S
+Visible=S
+Expresion=Forma(<T>DM0310Abrircxp<T>)<BR>Forma.Accion( <T>Cerrar<T>)
+Nombre=AbrirOtraVentana
+Boton=0
+TipoAccion=Expresion
+
+
+
+[Cxp.frm/Aplica]
+ListaEnCaptura=Cxp.Proveedor<BR>Prov.Nombre<BR>Cxp.MovAplica<BR>Cxp.MovAplicaID<BR>CxpPendiente.Referencia<BR>CxpPendiente.FechaEmision<BR>CxpPendiente.Vencimiento
+
+[Cxp.frm/Ficha]
+ListaEnCaptura=Cxp.Mov<BR>Cxp.MovID<BR>Cxp.Proyecto<BR>Cxp.UEN<BR>Cxp.Moneda<BR>Cxp.TipoCambio<BR>Cxp.FechaEmision<BR>Cxp.VencimientoProveedor<BR>Cxp.Vencimiento<BR>Cxp.CtaDinero<BR>Cxp.Cajero<BR>Cxp.Proveedor<BR>Prov.Nombre<BR>Cxp.ProveedorSucursal<BR>Cxp.Importe<BR>Cxp.Impuestos<BR>ImporteTotal<BR>Cxp.Concepto<BR>Cxp.FormaPago<BR>Retenciones<BR>Cxp.Referencia<BR>Cxp.Condicion<BR>Cxp.Observaciones<BR>Cxp.Saldo<BR>Cxp.AplicaManual<BR>Cxp.ProveedorMoneda<BR>Cxp.ProveedorTipoCambio<BR>CxpSaldo.Saldo
+
+
+[Cxp.frm/Ficha.Cxp.Vencimiento]
+Carpeta=Ficha
+Clave=Cxp.Vencimiento
+Editar=S
+3D=S
+Tamano=18
+EditarConBloqueo=N
+ColorFondo=Blanco
+ColorFuente=Negro
+ValidaNombre=S
+LineaNueva=S
+
+[Cxp.frm/Ficha.Cxp.VencimientoProveedor]
+Carpeta=Ficha
+Clave=Cxp.VencimientoProveedor
+Editar=S
+;LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=18
+ColorFondo=Blanco
+ColorFuente=Negro

@@ -1,0 +1,113 @@
+;**** Se agrega una nueva accion RM936DocsPendEnvCobInst FLR 30-Ago-2010
+[MenuExpCxc.dlg/Dialogo]
+ListaAcciones=ExplorarCxc<BR>ExplorarSaldos<BR>ExplorarMovimientos<BR>ExplorarCobranza<BR>ExplorarAplicacion<BR>ExplorarEfectivo<BR>FordReclamos<BR>FordPagos<BR>FactsConDiasVenc<BR>FactsConDiasVenc<BR>RM0935CtesInstituciones<BR>RM936DocsPendEnvCobInst<BR>RM0948Coincide<BR>RM0949CtrlEnv<BR>MaviExpPrelCob<BR>RM0755B<BR>RM0956<BR>ExplorarInfEdoCtas
+
+[MenuExpCxc.dlg/Acciones.RM0935CtesInstituciones]
+Nombre=RM0935CtesInstituciones
+Boton=0
+NombreDesplegar=RM0935 Clientes de Instituciones
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RM0935CtesCatInstFrm
+Activo=S
+Visible=S
+
+
+;**** Accion agregada FLR 30-Abr-2010
+[MenuExpCxc.dlg/Acciones.RM936DocsPendEnvCobInst]
+Nombre=RM936DocsPendEnvCobInst
+Boton=0
+NombreDesplegar=RM0936 Documentos Pendientes de Envio a Cobro Instituciones
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RM0936DoctosPendEnvioCobroInstitucionesFrm
+Activo=S
+Visible=S
+
+
+;**** Nueva Accion Agregada FLR 03-Sep-2010
+[MenuExpCxc.dlg/Acciones.RM0948Coincide]
+Nombre=RM0948Coincide
+Boton=0
+NombreDesplegar=RM0948 Análisis de Enteros de Instituciones
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RM0948CxcAnEntInstFrm
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Info.Conteo,1)
+
+;**** Nueva Accion Agregada FLR 03-Sep-2010 para el Explorador de Envíos de Cobros
+[MenuExpCxc.dlg/Acciones.RM0949CtrlEnv]
+Nombre=RM0949CtrlEnv
+Boton=0
+NombreDesplegar=RM0949 Control de Envíos a Cobros Instituciones
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RM0949CxcCtrlEnvCobInstFrm
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Info.Bloqueado,Verdadero)
+
+;**** Nueva Accion Agregada VDL 07-Sep-2010 para el RM0906 Preliminar de Cobros
+;**** Cambia la llamada al Plugin VCS 10-Dic-2011 
+; **** Modificacion de Expresion para desarrollo RM0906 Plugin Preeliminar de Cobros dentro del paquete RM0906_02012012. JR 02-Ene-2012. ****
+[MenuExpCxc.dlg/Acciones.MaviExpPrelCob]
+Nombre=MaviExpPrelCob
+Boton=0
+NombreDesplegar=Preliminar De Cobro
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+;Expresion=Ejecutar(<T>PlugIns\PreliminarCobro.exe <T>+Comillas(usuario))
+Activo=S
+Visible=S
+Expresion=Ejecutar(<T>PlugIns\PreliminarCobro.exe <T>+Comillas(usuario)+<T> <T>+Comillas(basedatos))
+
+
+[MenuExpCxc.dlg/Acciones.RM0755B]
+Nombre=RM0755B
+Boton=0
+NombreDesplegar=RM0755B Auxiliar Saldos de Clientes Instituciones
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RM0755BCxcForAnaCarteraFrm
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Info.Conteo,1)
+
+;***** Se agrega Acción para Explorador Envio de Información a Cobro (FIDE, FONACOT) -- AGR 20101116
+[MenuExpCxc.dlg/Acciones.RM0956]
+Nombre=RM0956
+Boton=0
+NombreEnBoton=S
+NombreDesplegar=&RM0956 Envio de Información a Cobro (FIDE, FONACOT)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RM0956CxcForEnvInfCobroFrm
+Activo=S
+Visible=S
+Antes=S
+AntesExpresiones=Asigna(Info.Conteo,1)
+
+
+; **** accion agregada el 1 de Dic 2010
+[MenuExpCxc.dlg/Acciones.ExplorarInfEdoCtas]
+Nombre=ExplorarInfEdoCtas
+Boton=0
+NombreDesplegar=RM0946 &Informe Estado de Cuentas
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RM0946CxcInfEdoCtasVisFrm
+Activo=S
+Visible=S

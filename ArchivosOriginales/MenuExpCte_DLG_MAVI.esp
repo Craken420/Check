@@ -1,0 +1,38 @@
+;**** Modificacion Reciente: 28-Nov-08
+;**** Modifico: Edgar Montelongo
+;**** Se modifico: Opciones de Busqueda de Coincidencias
+;**** Nota: Los comentarios de las modificaciones del
+;****       28 de Nov se marcaran como (EM)
+
+
+; **** (EM)Se agrego nueva accion: Coincidencias ****
+[MenuExpCte.dlg/Dialogo]
+ListaAcciones=Clientes<BR>Tareas<BR>Coincidencias<BR>RutasSuper
+
+[MenuExpCte.dlg/Acciones.Coincidencias]
+Nombre=Coincidencias
+Boton=0
+NombreDesplegar=C&oincidencias
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=Si<BR>  Forma(<T>EspecificarClienteMAVI<T>)<BR>Entonces<BR>  Si(SQL(<T>SELECT COUNT(Cliente) FROM Cte WHERE Cliente=:t<T>,Info.ClienteD)>0,Info.ClienteD,AbortarOperacion)<BR>  Forma(<T>CteRelacionMAVI<T>)<BR>Fin
+[Acciones.Coincidencias.ECliente]
+Nombre=ECliente
+Boton=0
+TipoAccion=Formas
+ClaveAccion=EspecificarCliente
+Activo=S
+Visible=S
+
+[MenuExpCte.dlg/Acciones.RutasSuper]
+Nombre=RutasSuper
+Boton=-1
+NombreDesplegar=&Rutas de Supervisión
+EnMenu=S
+TipoAccion=Formas
+ClaveAccion=RM0422DExploraRutasSuperFrm
+Activo=S
+Visible=S

@@ -1,0 +1,69 @@
+;**** Ultima modificación: 25-Ago-08
+;**** Modifico: Leticia Quezada
+;**** Se modifico: Agregaron campos adicionales EsAcreedora y EstatusConcepto.
+;**** Ultima modificación: 24-Jul-09
+;**** Modifico: Joel García (Mex)
+;**** Se modifico: Agrego el campo adicional ConceptoBonificacion
+
+[Concepto.tbl/Tabla]
+ListaCampos=Modulo<BR>Concepto<BR>EsDeducible<BR>PorcentajeDeducible<BR>LimiteDeducible<BR>ConSueldo<BR>Orden<BR>Bloqueo<BR>Cuenta<BR>CuentaPresupuesto<BR>Impuestos<BR>Retencion<BR>Retencion2<BR>Retencion3<BR>Clase<BR>SubClase<BR>ValidarPresupuesto<BR>Tipo<BR>AcreedorDef<BR>Indirecto<BR>NivelAcceso<BR>TipoProrrateo<BR>EstimuloFiscal<BR>CR<BR>UEN<BR>Politica<BR>ConceptoCxp<BR>Provisionable<BR>ProvisionImporte<BR>CalcularPresupuesto<BR>InflacionPresupuesto<BR>DepartamentoDetallista<BR>Impuesto1Excento<BR>Proyecto<BR>Actividad<BR>TipoOperacion<BR>Numero<BR>Descripcion<BR>CostoEstandar<BR>UltimoCosto<BR>UltimoGasto<BR>MonedaCosto<BR>Excento2<BR>Excento3<BR>EsAcreedora<BR>Estatus<BR>ConceptoBonificacion<BR>NoPedirCfdiMavi
+SQL=SELECT<BR>  Modulo,<BR>  Concepto,<BR>  EsDeducible,<BR>  Indirecto,<BR>  ConSueldo,<BR>  Cuenta,<BR>  Impuestos,<BR>  Retencion,<BR>  Retencion2,<BR>  Retencion3,<BR>  Clase,<BR>  SubClase,<BR>  Bloqueo,<BR>  Orden,<BR>  ValidarPresupuesto,<BR>  Tipo,<BR>  Proyecto,<BR>  Actividad,<BR>  PorcentajeDeducible,<BR>  LimiteDeducible,<BR>  AcreedorDef,<BR>  NivelAcceso,<BR>  TipoProrrateo,<BR>  EstimuloFiscal,<BR>  CR,<BR>  UEN,<BR>  Politica,<BR>  ConceptoCxp,<BR>  Provisionable,<BR>  ProvisionImporte,<BR>  CuentaPresupuesto,<BR>  CalcularPresupuesto,<BR>  InflacionPresupuesto,<BR>  DepartamentoDetallista,<BR>  Impuesto1Excento,<BR>  TipoOperacion,<BR>  Numero,<BR>  Descripcion,<BR>  CostoEstandar,<BR>  UltimoCosto,<BR>  MonedaCosto,<BR>  UltimoGasto,<BR>  Excento2,<BR>  Excento3,<BR>  EsAcree<CONTINUA>
+SQL002=<CONTINUA>dora,<BR>  EstatusConcepto,<BR> ConceptoBonificacion,<BR>  NoPedirCfdiMavi<BR><BR>FROM<BR>  Concepto
+
+[Concepto.tbl/EsAcreedora]
+Clave=EsAcreedora
+Nombre=Es Acreedora
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Si - No
+
+[Concepto.tbl/EstatusConcepto]
+Clave=EstatusConcepto
+Nombre=Estatus
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=5
+Tamano=5
+Requerido=S
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=Alta<BR>Baja
+OpcionesPredefinidas=Ninguna
+
+[Concepto.tbl/ConceptoBonificacion]
+Clave=ConceptoBonificacion
+Nombre=Concepto Bonificacion
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Verdadero
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Si - No
+OpcionesRenglones=8
+CondicionDespliege=Info.Modulo=<T>CXC<T>
+
+[Concepto.tbl/Clase]
+CondicionDespliege=
+
+
+[Concepto.tbl/NoPedirCfdiMavi]
+Clave=NoPedirCfdiMavi
+Nombre=No Pedir CFDI MAVI
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=Info.Modulo=<T>GAS<T>
+ValorPorOmision=Falso
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+
+

@@ -1,0 +1,11 @@
+[CteTel.vis/Vista]
+ListaCampos=CteTel.Cliente<BR>CteTel.Telefono<BR>CteTel.Tipo<BR>CteTel.Extencion<BR>CteTel.Lada<BR>CteTel.PedirTono<BR>CteTel.DePreferencia<BR>CteTel.id_tel<BR>CteTel.Fecha
+SQL=SELECT<BR>  CteTel.Cliente,<BR>  CteTel.Telefono,<BR>  CteTel.Tipo,<BR>  CteTel.Extencion,<BR>  CteTel.Lada,<BR>  CteTel.PedirTono,<BR>  CteTel.DePreferencia,<BR>  CteTel.Fecha<BR><BR>FROM<BR>  CteTel
+
+[CteTel.vis/CteTel.Fecha]
+Clave=CteTel.Fecha
+Visible=S
+LigaTabla=CteTel
+LigaCampo=Fecha
+Ligado=S
+ClaveBDE=Fecha

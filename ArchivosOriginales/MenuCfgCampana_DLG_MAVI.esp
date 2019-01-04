@@ -1,0 +1,30 @@
+;*** Desarrollo de Campañas 27/08/09, Joel García Díaz , modificacion del menu de campañas se agregan acciones.
+
+[MenuCfgCampana.dlg/Dialogo]
+ListaAcciones=CargaCta<BR>CampanaTipo<BR>TablaEvaluacion<BR>Coberturas<BR>Reporte
+PosicionInicialIzquierda=516
+PosicionInicialArriba=302
+PosicionInicialAlturaCliente=162
+
+[MenuCfgCampana.dlg/Acciones.Coberturas]
+Nombre=Coberturas
+Boton=0
+NombreDesplegar=C&onfigurar Coberturas
+EnMenu=S
+EnBarraAcciones=S
+Activo=S
+Visible=S
+TipoAccion=Formas
+ClaveAccion=TiposCoberturaMAVI
+
+[MenuCfgCampana.dlg/Acciones.Reporte]
+Nombre=Reporte
+Boton=0
+NombreDesplegar=&Reporte Campañas
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=Camapana
+Activo=S
+Visible=S
+

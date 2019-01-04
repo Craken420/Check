@@ -1,0 +1,33 @@
+;**** Ultima modificación:17-Abr-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:
+
+
+; *** Se modificó la acción para que estuviera activa aun cuando estuviera  encendido el check de proyectos en la configuración general de la empresa ****
+[TareaEditar.frm/Ficha]
+CondicionEdicion=Info.PuedeEditar
+
+
+
+; *** Se modificó la acción para que estuviera activa aun cuando estuviera  encendido el check de proyectos en la configuración general de la empresa ****
+[TareaEditar.frm/Comentarios]
+CondicionEdicion=Info.PuedeEditar
+
+
+
+; *** Se modificó la acción para que estuviera activa aun cuando estuviera  encendido el check de proyectos en la configuración general de la empresa ****
+[TareaEditar.frm/Acciones.Eliminar]
+ActivoCondicion=Info.PuedeEditar
+
+
+
+; *** Se modificó la acción para que estuviera activa aun cuando estuviera  encendido el check de proyectos en la configuración general de la empresa ****
+[TareaEditar.frm/Acciones.Evento]
+Activo=S
+ActivoCondicion=
+
+
+; *** Se modificó la acción para que estuviera activa aun cuando estuviera  encendido el check de proyectos en la configuración general de la empresa ****
+[TareaEditar.frm/Acciones.Anexos]
+Activo=S
+ActivoCondicion=

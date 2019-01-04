@@ -1,0 +1,147 @@
+;**** Ultima modificación:12-Mar-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:La accion "Acciones.Comprobantes"
+
+
+
+
+; **** Se agregaron nuevas acciones:"ReposicionAprobada","ReposicionRechazada","DevGastoCaja","ComprobanteInst","SinComprobanteInst","DevAnticipoInst" ****
+[GenerarGastoAnticipo.dlg/Dialogo]
+ListaAcciones=Comprobante<BR>CajaChica<BR>SinComprobante<BR>Devolucion<BR>SinComprobar<BR>Otros1<BR>Otros2<BR>Otros3<BR>Otros4<BR>Otros5<BR>Otros6<BR>Otros7<BR>Otros8<BR>Otros9<BR>ReposicionAprobada<BR>ReposicionRechazada<BR>DevGastoCaja<BR>ComprobanteInst<BR>SinComprobanteInst<BR>DevAnticipoInst
+
+
+; **** Se modifico esta acciion para que solo fuera visible si el movimiento es:"Anticipo" ****
+[GenerarGastoAnticipo.dlg/Acciones.Devolucion]
+Visible=N
+VisibleCondicion=(Info.Mov en (<T>Anticipo<T>))
+
+
+
+; **** Se modifico esta acciion para que solo fuera visible si el movimiento es:"Anticipo", ademas se modifico para que se generara el comprobante directo sin abrir un dialogo más (el tipo de accion se cambio de dialogo a expresion) ****
+[GenerarGastoAnticipo.dlg/Acciones.Comprobante]
+TipoAccion=Expresion
+ClaveAccion=
+Expresion=Generar(<T>GAS<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, <T>Comprobante<T>, Afectar.FormaCaptura)
+Visible=N
+VisibleCondicion=(Info.Mov en (<T>Anticipo<T>))
+
+
+
+; **** Se modifico esta acciion para que solo fuera visible si el movimiento es:"Anticipo" ****
+[GenerarGastoAnticipo.dlg/Acciones.SinComprobante]
+Visible=N
+VisibleCondicion=(Info.Mov en (<T>Anticipo<T>))
+
+
+
+; **** Se modifico esta accion para que NO fuera visible ****
+[GenerarGastoAnticipo.dlg/Acciones.CajaChica]
+Visible=N
+
+
+
+
+; **** Se modifico esta accion para que NO fuera visible ****
+[GenerarGastoAnticipo.dlg/Acciones.SinComprobar]
+Visible=N
+
+
+
+; **** Nueva Accion agragada, solo es visible si el movimiento es:"Gasto Caja" ****
+[GenerarGastoAnticipo.dlg/Acciones.ReposicionAprobada]
+Nombre=ReposicionAprobada
+Boton=0
+NombreDesplegar=Generar Reposicion Aprobada
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=N
+ClaveAccion=
+Expresion=Generar(<T>GAS<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, <T>Reposicion Aprobada<T>, Afectar.FormaCaptura)
+VisibleCondicion=(Info.Mov en (<T>Gasto Caja<T>))
+
+
+
+
+; **** Nueva Accion agragada, solo es visible si el movimiento es:"Gasto Caja" ****
+[GenerarGastoAnticipo.dlg/Acciones.ReposicionRechazada]
+Nombre=ReposicionRechazada
+Boton=0
+NombreDesplegar=Generar Reposicion Rechazada
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=N
+Expresion=Generar(<T>GAS<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, <T>Reposicion Rechazada<T>, Afectar.FormaCaptura)
+VisibleCondicion=(Info.Mov en (<T>Gasto Caja<T>))
+
+
+
+
+; **** Nueva Accion agragada, solo es visible si el movimiento es:"Gasto Caja" ****
+[GenerarGastoAnticipo.dlg/Acciones.DevGastoCaja]
+Nombre=DevGastoCaja
+Boton=0
+NombreDesplegar=Generar &Devolución Gasto Caja
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=N
+Expresion=Generar(<T>GAS<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, <T>Dev Gasto Caja<T>, Afectar.FormaCaptura)
+VisibleCondicion=(Info.Mov en (<T>Gasto Caja<T>))
+
+
+
+
+
+
+; **** Nueva Accion agragada, solo es visible si el movimiento es:"Anticipo Inst" ****
+[GenerarGastoAnticipo.dlg/Acciones.ComprobanteInst]
+Nombre=ComprobanteInst
+Boton=0
+NombreDesplegar=Generar Comprobante Inst
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=N
+ClaveAccion=
+Expresion=Generar(<T>GAS<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, <T>Comprobante Inst<T>, Afectar.FormaCaptura)
+VisibleCondicion=(Info.Mov en (<T>Anticipo Inst<T>))
+
+
+
+
+; **** Nueva Accion agragada, solo es visible si el movimiento es:"Anticipo Inst" ****
+[GenerarGastoAnticipo.dlg/Acciones.SinComprobanteInst]
+Nombre=SinComprobanteInst
+Boton=0
+NombreDesplegar=Generar Sin Comprobante Inst
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=N
+Expresion=Generar(<T>GAS<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, <T>Sin Comprobante Inst<T>, Afectar.FormaCaptura)
+VisibleCondicion=(Info.Mov en (<T>Anticipo Inst<T>))
+
+
+
+; **** Nueva Accion agragada, solo es visible si el movimiento es:"Anticipo Inst" ****
+[GenerarGastoAnticipo.dlg/Acciones.DevAnticipoInst]
+Nombre=DevAnticipoInst
+Boton=0
+NombreDesplegar=Generar &Devolución Anticipo Inst
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=N
+Expresion=Generar(<T>GAS<T>, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Todo<T>, <T>Dev Anticipo Inst<T>, Afectar.FormaCaptura)
+VisibleCondicion=(Info.Mov en (<T>Anticipo Inst<T>))
+
+
+

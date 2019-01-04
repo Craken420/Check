@@ -1,0 +1,519 @@
+;**** Ultima modificación:11-Jul-08
+;**** Modifico:Arly Rubio Camacho
+;**** Se modifico:Integracion desarrollo mexico
+
+; ***** Modifico: Judith Ramirez 03-Dic-09 *****
+; ***** Modificacion: Integracion de campos nuevos: EstadoCivilMavi, LadaMavi, para Cte Express por Arturo Guizer. *****
+
+
+
+;***** Integracion cambios mexico ******
+;***** Se cambiaron las acciones de posicion****
+;***** Nueva accion Actualizar y reacomodo de acciones por JAVT para desarrollo DM0138 Cliente Express dentro del paqete DM0138_02082011. JR 03-Ago-2011 *****
+[CteCto.frm/Forma]
+;ListaAcciones=Aceptar<BR>Nuevo<BR>Eliminar<BR>Direcciones<BR>Comites<BR>Comercial<BR>Actividades<BR>Eventos<BR>Anexos<BR>Mensajes<BR>Cargo<BR>Historico<BR>Grupos<BR>Navegador
+ListaAcciones=Aceptar<BR>Nuevo<BR>Eliminar<BR>Actualizar<BR>Direcciones<BR>Comites<BR>Comercial<BR>Actividades<BR>Eventos<BR>Anexos<BR>Mensajes<BR>Cargo<BR>Historico<BR>Grupos<BR>Navegador
+VentanaExclusiva=S
+PosicionInicialIzquierda=219
+PosicionInicialArriba=93
+PosicionInicialAlturaCliente=650
+PosicionInicialAncho=950
+AutoGuardar=S
+
+
+
+;**** Modificacion para que la lista se ordene por el campo CteCto.ID de forma decendente ****
+; **** Integracion de filtro del desarrollo Cliente Express Generación de Contactos Hijos en el paquete ClienteExpressYCtes_05042011.Cambio por AGR 20110319 SE AGREGA FILTRO GENERAL. Inegrado por JR 6-Abr-2011. ****
+; **** Integracion de HojaPermiteInsertar y HojaPermiteEliminar para desarrollo DM0138 Cliente Express dentro del paquete DM0138_19122011. JR 20-Dic-2011. ****
+
+
+[CteCto.frm/Lista]
+ListaOrden=CteCto.ID<TAB>(Decendente)
+Filtros=S
+FiltroGeneral=CteCto.Cliente=<T>{Info.Cliente}<T>
+HojaPermiteInsertar=N
+HojaPermiteEliminar=N
+
+
+
+;***** Integracion cambios mexico ******
+;***** Se agregaron nuevos campos en la lista en captura: DesarrolloMexico(CteCto.MaviEstatus)****
+;***** 16-Jun-09 ARC Se agrego la opcion de gusrada por registro para poder validar el "vivecon"
+; ***** Modifico: JR 03-Dic-09. Agrego linea RefrescarAlEntrar para CteExpress y campos CteCto.EstadocivilMavi, CteCto.LadaMavi. Cambios por
+;		Arturo Guizer.	
+; **** Integracion de filtro del desarrollo Cliente Express Generación de Contactos Hijos en el paquete ClienteExpressYCtes_05042011.Cambio por AGR 20110319 SE AGREGA FILTRO GENERAL. Inegrado por JR 6-Abr-2011. ****
+
+[CteCto.frm/Ficha]
+ListaEnCaptura=CteCto.Nombre<BR>CteCto.ApellidoPaterno<BR>CteCto.ApellidoMaterno<BR>CteCto.eMail<BR>CteCto.Cargo<BR>CteCto.Grupo<BR>CteCto.LadaMavi<BR>CteCto.Telefonos<BR>CteCto.Extencion<BR>CteCto.Fax<BR>CteCto.PedirTono<BR>CteCto.EnviarA<BR>CteEnviarA.Nombre<BR>CteCto.FechaNacimiento<BR>CteCto.RFC<BR>CteCto.Sexo<BR>CteCto.EstadocivilMavi<BR>CteCto.Tipo<BR>CteCto.MaviEstatus<BR>CteCto.Atencion<BR>CteCto.Tratamiento<BR>CteCto.ViveConMAVI<BR>CteCto.ViveEnCalidadDeMAVI
+GuardarPorRegistro=S
+RefrescarAlEntrar=S
+Filtros=S
+FiltroPredefinido=S
+FiltroNullNombre=(sin clasificar)
+FiltroEnOrden=S
+FiltroTodoNombre=(Todo)
+FiltroAncho=20
+FiltroRespetar=S
+FiltroTipo=General
+FiltroGeneral=(CteCto:CteCto.Cliente=<T>{Info.Cliente}<T>) y (CteCto:CteCto.Tipo=<T>AVAL<T>)
+
+
+
+;***** Nuevo campo agregado ******
+[CteCto.frm/Ficha.CteCto.MaviEstatus]
+Carpeta=Ficha
+Clave=CteCto.MaviEstatus
+Editar=S
+ValidaNombre=S
+3D=S
+Tamano=25
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+
+[CteCto.frm/Ficha.CteCto.ViveConMAVI]
+Carpeta=Ficha
+Clave=CteCto.ViveConMAVI
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=25
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+[CteCto.frm/Ficha.CteCto.ViveEnCalidadDeMAVI]
+Carpeta=Ficha
+Clave=CteCto.ViveEnCalidadDeMAVI
+Editar=S
+ValidaNombre=S
+3D=S
+Tamano=25
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+[CteCto.frm/Ficha.CteCto.NivelCobranzaEspecialContactoA]
+Carpeta=Ficha
+Clave=CteCto.NivelCobranzaEspecialContactoA
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=25
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[CteCto.frm/Ficha.CteCto.ContactoSelectAval]
+Carpeta=Ficha
+Clave=CteCto.ContactoSelectAval
+Editar=N
+LineaNueva=N
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+EspacioPrevio=S
+
+
+; ***** Cambio JR 03-Dic-09. Se integro campo EstadoCivilMavi para CteExpress. Cambios por Arturo Guizer. *****
+[CteCto.frm/Ficha.CteCto.EstadocivilMavi]
+Carpeta=Ficha
+Clave=CteCto.EstadocivilMavi
+Editar=S
+LineaNueva=N
+ValidaNombre=S
+3D=S
+Tamano=15
+ColorFondo=Blanco
+ColorFuente=Negro
+
+; ***** Cambio JR 03-Dic-09. Se integro campo LadaMavi para CteExpress. Cambios por Arturo Guizer. *****
+[CteCto.frm/Ficha.CteCto.LadaMavi]
+Carpeta=Ficha
+Clave=CteCto.LadaMavi
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=15
+ColorFondo=Blanco
+ColorFuente=Negro
+
+; ***** Cambio JR 03-Dic-09. Se agrego campo para CteExpress. Cambios por Arturo Guizer. *****
+[CteCto.frm/Ficha.CteCto.Telefonos]
+Carpeta=Ficha
+Clave=CteCto.Telefonos
+Editar=S
+LineaNueva=N
+ValidaNombre=S
+3D=S
+Tamano=23
+ColorFondo=Blanco
+ColorFuente=Negro
+
+; ***** Cambio JR 03-Dic-09. Se modifico tamaño del campo para CteExpress. Cambios por Arturo Guizer. *****
+[CteCto.frm/Ficha.CteCto.Extencion]
+Carpeta=Ficha
+Clave=CteCto.Extencion
+Editar=S
+LineaNueva=N
+ValidaNombre=S
+3D=S
+Tamano=10
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+[CteCto.frm/Ficha.CteCto.RFC]
+Carpeta=Ficha
+Clave=CteCto.RFC
+Editar=S
+ValidaNombre=S
+3D=S
+Tamano=15
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+
+; ***** Cambio JR 03-Dic-09. Se modifico tamaño del campo para CteExpress. Cambios por Arturo Guizer. *****
+[CteCto.frm/Ficha.CteCto.Sexo]
+Tamano=14
+
+
+;*********************************************************ACCIONES***********************************************************************************
+;****************************************************************************************************************************************************
+
+;***** Modificacion a la accion para que fuera multiple y cambiara el nombre a desplegar****
+
+; ***** Cambio JR 03-Dic-09. Se agrego lineas: ConCondicion, EjecucionCondicion para CteExpress. Cambios por Arturo Guizer. *****
+
+[CteCto.frm/Acciones.Aceptar]
+NombreDesplegar=&Guardar Cambios
+Multiple=S
+ListaAccionesMultiples=Refrescar
+ConCondicion=S
+EjecucionCondicion=SI (CteCto:CteCto.Atencion)=<T>Conyuge<T> Y VACIO(CteCto:CteCto.FechaNacimiento)<BR>ENTONCES<BR> Error(<T>Favor de capturar la Fécha de Nacimiento del Conyuge<T> )<BR> fin
+
+;**** Nueva sub accion de "Aceptar"
+[CteCto.frm/Acciones.Aceptar.Refrescar]
+Nombre=Refresacar
+Boton=0
+TipoAccion=Expresion
+Expresion=ActualizarForma
+Activo=S
+Visible=S
+
+
+
+
+;***** Integracion cambios mexico ******
+;***** Cambio mexico: la accion solo esta activa si el cliente no tienen movimientos **************
+; **** Modificacion en accion Eliminar haciendola multiple para desarrollo DM0138 Cliente Express dentro del paquete DM0138_19122011. JR 20-Dic-2011. ****
+[CteCto.frm/Acciones.Eliminar]
+Activo=
+ActivoCondicion=no CteCto:CteCto.TieneMovimientos
+Multiple=S
+ListaAccionesMultiples=Exp<BR>Act
+
+[CteCto.frm/Acciones.Eliminar.Exp]
+Nombre=Exp
+Boton=0
+TipoAccion=Expresion
+Expresion=EjecutarSQL(<T>SP_MAVIDM0138BorrarDatosCteCto :tIdCteCto, :tIdCte<T>, CteCto:CteCto.ID, CteCto:CteCto.Cliente)
+Activo=S
+Visible=S
+
+[CteCto.frm/Acciones.Eliminar.Act]
+Nombre=Act
+Boton=0
+TipoAccion=Controles Captura
+ClaveAccion=Actualizar Forma
+Activo=S
+Visible=S
+
+
+
+;***** Integracion cambios mexico ******
+;***** Camcio mexico: Se cambio el nombre a desplegar, tanto la forma y el parametro antesexpresiones ***********
+;***** Se agregaron acciones multiples --Arly *****
+; ***** Cambio JR 03-Dic-09. Se agrego linea boton y cambio icono del boton para CteExpress. Cambios por Arturo Guizer. *****
+[CteCto.frm/Acciones.Comites]
+NombreDesplegar=&Empleo
+TipoAccion=
+ClaveAccion=
+GuardarAntes=S
+Multiple=S
+Antes=N
+DespuesGuardar=N
+ConCondicion=N
+EjecucionCondicion=
+AntesExpresiones=
+EspacioPrevio=
+ListaAccionesMultiples=Asigna<BR>Forma
+Boton=128
+Activo=
+ActivoCondicion=(MAYUSCULAS(CteCto:CteCto.Tipo)<><T>CTEDOMANT<T>)
+
+
+;**** Nueva sub accion de "Comites"
+; ***** Cambio JR 03-Dic-09. Se modifico la expresion para CteExpress. Cambios por Arturo Guizer. *****
+; ***** Integracion de validacion en Expresion para desarrollo Cliente Express Generación de Contactos Hijos en el paquete ClienteExpressYCtes_05042011.Cambio por AGR SE ASIGNA VALOR A VARIABLE INFO.ACREEDOR. Inegrado por JR 6-Abr-2011. **** 
+[CteCto.frm/Acciones.Comites.Asigna]
+Nombre=Asigna
+Boton=0
+TipoAccion=Expresion
+;Expresion=Asigna(Info.Cliente, CteCto:CteCto.Cliente)<BR>Asigna(Info.ID, CteCto:CteCto.ID)<BR>Asigna(Info.Nombre, CteCto:CteCto.Nombre + <T> <T> + CteCto:CteCto.ApellidoPaterno + <T> <T> + CteCto:CteCto.ApellidoMaterno)<BR>Asigna(Info.Tipo, CteCto:CteCto.Tipo)
+;Expresion=Asigna(Info.Cliente, CteCto:CteCto.Cliente)<BR>Asigna(Info.ID, CteCto:CteCto.ID)<BR>Asigna(Info.Nombre, CteCto:CteCto.Nombre + <T> <T> + CteCto:CteCto.ApellidoPaterno + <T> <T> + CteCto:CteCto.ApellidoMaterno)
+Expresion=Asigna(Info.Cliente, CteCto:CteCto.Cliente)<BR>Asigna(Info.ID, CteCto:CteCto.ID)<BR>Asigna(Info.Nombre, CteCto:CteCto.Nombre + <T> <T> + CteCto:CteCto.ApellidoPaterno + <T> <T> + CteCto:CteCto.ApellidoMaterno)<BR>Asigna(Info.Tipo, CteCto:CteCto.Tipo)<BR>Asigna(Info.Acreedor,<T>Clientes<T>)
+Activo=S
+ConCondicion=S
+EjecucionCondicion=COnDatos(CteCto:CteCto.ID)
+Visible=S
+
+
+;**** Nueva sub accion de "Comites"
+; ***** Cambio JR 03-Dic-09. Se comentaron lineas TipoAccion y ClaveAccion para CteExpress. Cambios por Arturo Guizer. *****
+[CteCto.frm/Acciones.Comites.Forma]
+Nombre=Forma
+Boton=0
+;TipoAccion=Formas
+;ClaveAccion=MaviCteCtoEmpleo
+Activo=S
+ConCondicion=S
+TipoAccion=expresion
+EjecucionCondicion=ConDatos(CteCto:CteCto.ID)
+Visible=S
+Expresion=Si ((Info.Tipo=<T>Cliente<T>) o (Info.Tipo=<T>CLIENTE<T>)) entonces forma(<T>MaviCteCtoEmpleoP<T>)<BR>Sino<BR>forma(<T>MaviCteCtoEmpleo<T>)<BR>fIN
+
+
+;***** Integracion cambios mexico ******
+;***** Camcio mexico: Se cambio el parametro antesexpresiones y se agrego un espacio previo (modificado por Arly: se agregaron acciones multiples)***********
+; ***** Cambio JR 03-Dic-09. Se agrega linea boton y se cambia icono de boton, se agrega linea AntesExpresiones para CteExpress. Cambios por Arturo Guizer. *****
+; **** Cambio en Activo para desarrollo Cliente Express Generación de Contactos Hijos en el paquete ClienteExpressYCtes_05042011.Cambio por AGR 20110314 SE HACE QUE SIEMPRE ESTE ACTIVO. Inegrado por JR 6-Abr-2011. ****
+[CteCto.frm/Acciones.Direcciones]
+TipoAccion=
+ClaveAccion=
+GuardarAntes=S
+Multiple=S
+Antes=N
+DespuesGuardar=N
+ConCondicion=N
+EjecucionCondicion=
+AntesExpresiones=
+ListaAccionesMultiples=Asigna<BR>Forma
+EspacioPrevio=S
+;AntesExpresiones=Asigna(Info.Cliente, CteCto:CteCto.Cliente)<BR>Asigna(Info.ID, CteCto:CteCto.ID)<BR>Asigna(Info.Nombre, CteCto:CteCto.Nombre + <T> <T> + CteCto:CteCto.ApellidoPaterno + <T> <T> + CteCto:CteCto.ApellidoMaterno)
+Boton=35
+AntesExpresiones=Asigna(Info.Cliente, CteCto:CteCto.Cliente)<BR>Asigna(Info.ID, CteCto:CteCto.ID)<BR>Asigna(Info.Nombre, CteCto:CteCto.Nombre)<BR>Asigna(Info.Tipo, CteCto:CteCto.Tipo)
+Activo=S
+;ActivoCondicion=(MAYUSCULAS(CteCto:CteCto.Tipo)<><T>LABORAL<T>)
+
+
+;**** Nueva sub accion de "Direcciones"
+; ***** Integracion de validacion en Expresion para desarrollo Cliente Express Generación de Contactos Hijos en el paquete ClienteExpressYCtes_05042011.Cambio por AGR 20110326 SE AGREGA EL QUE SE ASIGNE EL VALOR A LA VARIABLE INFO.ACREEDOR E INFO.TIPO. Inegrado por JR 6-Abr-2011. **** 
+[CteCto.frm/Acciones.Direcciones.Asigna]
+Nombre=Asigna
+Boton=0
+TipoAccion=Expresion
+;Expresion=Asigna(Info.Cliente, CteCto:CteCto.Cliente)<BR>Asigna(Info.IDMAVI, CteCto:CteCto.EnviarA)<BR>Asigna(Info.ID, CteCto:CteCto.ID)<BR>Asigna(Info.Nombre, CteCto:CteCto.Nombre + <T> <T> + CteCto:CteCto.ApellidoPaterno + <T> <T> + CteCto:CteCto.ApellidoMaterno)
+Expresion=Asigna(Info.Cliente, CteCto:CteCto.Cliente)<BR>Asigna(Info.IDMAVI, CteCto:CteCto.EnviarA)<BR>Asigna(Info.ID, CteCto:CteCto.ID)<BR>Asigna(Info.Nombre, CteCto:CteCto.Nombre + <T> <T> + CteCto:CteCto.ApellidoPaterno + <T> <T> + CteCto:CteCto.ApellidoMaterno)<BR>Asigna(Info.Tipo, CteCto:CteCto.Tipo)<BR>Asigna(Info.Acreedor,<T>Clientes<T>)
+Activo=S
+ConCondicion=S
+EjecucionCondicion=COnDatos(CteCto:CteCto.ID)
+Visible=S
+
+
+;**** Nueva sub accion de "Direcciones"
+[CteCto.frm/Acciones.Direcciones.Forma]
+Nombre=Forma
+Boton=0
+TipoAccion=Formas
+ClaveAccion=CteCtoDireccion
+Activo=S
+ConCondicion=S
+EjecucionCondicion=ConDatos(CteCto:CteCto.ID)
+Visible=S
+
+
+
+
+;***** Integracion cambios mexico ******
+;***** Camcio mexico: Se cambio el nombre a desplegar, tanto la forma y el parametro antesexpresiones ***********
+[CteCto.frm/Acciones.Actividades]
+NombreDesplegar=&Adicional
+TipoAccion=
+ClaveAccion=
+GuardarAntes=S
+Multiple=S
+Antes=N
+DespuesGuardar=N
+ConCondicion=N
+EjecucionCondicion=
+AntesExpresiones=
+EspacioPrevio=
+ListaAccionesMultiples=Asigna<BR>Forma
+AntesExpresiones=
+
+
+;**** Nueva sub accion de "Actividades"
+[CteCto.frm/Acciones.Actividades.Asigna]
+Nombre=Asigna
+Boton=0
+TipoAccion=Expresion
+Expresion=Asigna(Info.Cliente, CteCto:CteCto.Cliente)<BR>Asigna(Info.ID, CteCto:CteCto.ID)<BR>Asigna(Info.Nombre, CteCto:CteCto.Nombre + <T> <T> + CteCto:CteCto.ApellidoPaterno + <T> <T> + CteCto:CteCto.ApellidoMaterno)
+Activo=S
+ConCondicion=S
+EjecucionCondicion=COnDatos(CteCto:CteCto.ID)
+Visible=S
+
+
+;**** Nueva sub accion de "Actividades"
+[CteCto.frm/Acciones.Actividades.Forma]
+Nombre=Forma
+Boton=0
+TipoAccion=Formas
+ClaveAccion=MaviCteCtoAdicional
+Activo=S
+ConCondicion=S
+EjecucionCondicion=ConDatos(CteCto:CteCto.ID)
+Visible=S
+
+
+
+;***** Integracion cambios mexico ******
+;***** Camcio mexico: Se cambio el nombre a desplegar, tanto la forma y el parametro antesexpresiones ***********
+; ***** JR 07-Dic-09. Se cambio linea ActivoCondicion para cte express. Cambios por Arturo Guizer. *****
+[CteCto.frm/Acciones.Eventos]
+NombreDesplegar=&Bancos
+TipoAccion=
+ClaveAccion=
+GuardarAntes=S
+Multiple=S
+Antes=N
+DespuesGuardar=N
+ConCondicion=N
+EjecucionCondicion=
+AntesExpresiones=
+EspacioPrevio=
+ListaAccionesMultiples=Asigna<BR>Forma
+AntesExpresiones=
+Activo=
+AntesExpresiones=
+;ActivoCondicion=CteCto:CteCto.Tipo = <T>Bancaria<T>
+ActivoCondicion=(MAYUSCULAS(CteCto:CteCto.Tipo)=<T>BANCARIA<T>) 
+
+
+
+;**** Nueva sub accion de "Eventos"
+[CteCto.frm/Acciones.Eventos.Asigna]
+Nombre=Asigna
+Boton=0
+TipoAccion=Expresion
+Expresion=Asigna(Info.Cliente, CteCto:CteCto.Cliente)<BR>Asigna(Info.ID, CteCto:CteCto.ID)<BR>Asigna(Info.Nombre, CteCto:CteCto.Nombre + <T> <T> + CteCto:CteCto.ApellidoPaterno + <T> <T> + CteCto:CteCto.ApellidoMaterno)
+Activo=S
+ConCondicion=S
+EjecucionCondicion=COnDatos(CteCto:CteCto.ID)
+Visible=S
+
+
+;**** Nueva sub accion de "Eventos"
+[CteCto.frm/Acciones.Eventos.Forma]
+Nombre=Forma
+Boton=0
+TipoAccion=Formas
+ClaveAccion=MaviCteCtoBanco
+Activo=S
+ConCondicion=S
+EjecucionCondicion=ConDatos(CteCto:CteCto.ID)
+Visible=S
+
+
+;**** cambio para correccion de error -- se pierden los registros capturados *****
+[CteCto.frm/Acciones.Anexos]
+Nombre=Anexos
+TipoAccion=
+ClaveAccion=
+GuardarAntes=S
+Multiple=S
+Antes=N
+DespuesGuardar=N
+ConCondicion=N
+EjecucionCondicion=
+AntesExpresiones=
+EspacioPrevio=S
+ListaAccionesMultiples=Asigna<BR>Forma
+AntesExpresiones=
+
+
+;**** Nueva sub accion de "Anexos"
+[CteCto.frm/Acciones.Anexos.Asigna]
+Nombre=Asigna
+Boton=0
+TipoAccion=Expresion
+Expresion=Asigna(Info.Rama, <T>CTO<T>)<BR>Asigna(Info.AnexoCfg, Verdadero)<BR>Asigna(Info.Cuenta, CteCto:CteCto.ID)<BR>Asigna(Info.Descripcion, CteCto:CteCto.Nombre + <T> <T> + CteCto:CteCto.ApellidoPaterno + <T> <T> + CteCto:CteCto.ApellidoMaterno)
+Activo=S
+ConCondicion=S
+EjecucionCondicion=COnDatos(CteCto:CteCto.ID)
+Visible=S
+
+
+;**** Nueva sub accion de "Anexos"
+[CteCto.frm/Acciones.Anexos.Forma]
+Nombre=Forma
+Boton=0
+TipoAccion=Formas
+ClaveAccion=AnexoCta
+Activo=S
+ConCondicion=S
+EjecucionCondicion=ConDatos(CteCto:CteCto.ID)
+Visible=S
+
+
+;*** ARC 19-May-09 Accion para el desarrollo de cte express (mexico) ***
+[CteCto.frm/Acciones.Comercial]
+Nombre=Comercial
+Boton=47
+NombreEnBoton=S
+NombreDesplegar=&Comercial
+EnBarraHerramientas=S
+TipoAccion=Formas
+ClaveAccion=MaviCteCtoComercial
+Antes=S
+GuardarAntes=S
+DespuesGuardar=S
+ActivoCondicion=(MAYUSCULAS(CteCto:CteCto.Tipo)=<T>COMERCIAL<T>)
+AntesExpresiones=Asigna(Info.Cliente, CteCto:CteCto.Cliente)<BR>Asigna(Info.ID, CteCto:CteCto.ID)<BR>Asigna(Info.Nombre, CteCto:CteCto.Nombre)
+Visible=S
+
+; ***** Cambio JR 03-Dic-09. Se modifico accion para CteExpress. Cambios por Arturo Guizer. *****
+[CteCto.frm/Acciones.Nuevo]
+Nombre=Nuevo
+Boton=1
+NombreEnBoton=S
+NombreDesplegar=&Nuevo
+EnBarraHerramientas=S
+Carpeta=(Carpeta principal)
+TipoAccion=Controles Captura
+ClaveAccion=Registro Agregar
+Activo=S
+Visible=S
+EspacioPrevio=S
+
+
+;***** Nueva accion Actualizar por JAVT para desarrollo DM0138 Cliente Express dentro del paqete DM0138_02082011. JR 03-Ago-2011 *****
+[CteCto.frm/Acciones.Actualizar]
+Nombre=Actualizar
+Boton=125
+NombreDesplegar=&Actualizar
+EnBarraHerramientas=S
+TipoAccion=Controles Captura
+ClaveAccion=Actualizar Forma
+Activo=S
+Visible=S
+
+
+

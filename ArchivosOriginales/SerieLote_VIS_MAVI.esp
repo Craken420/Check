@@ -1,0 +1,34 @@
+;**** Ultima modificación:10-May-2017
+;**** Modifico:Pedro Aguayo Hernández
+;**** Se modifico: Se agrega el campo Art.Linea para crear un campo calculado (Modelo2) en el cual se obtiene el modelo del artículo siempre y cuando su línea sea 'MOTOCICLETAS'
+;*****
+
+
+[SerieLote.vis/Vista]
+
+ListaCampos=SerieLote.Sucursal<BR>SerieLote.Empresa<BR>SerieLote.Articulo<BR>SerieLote.SubCuenta<BR>SerieLote.SerieLote<BR>SerieLote.Almacen<BR>SerieLote.Propiedades<BR>SerieLote.Existencia<BR>SerieLote.ExistenciaAlterna<BR>SerieLote.ExistenciaActivoFijo<BR>SerieLote.UltimaEntrada<BR>SerieLote.UltimaSalida<BR>SerieLote.Cliente<BR>SerieLote.Localizacion<BR>SerieLote.CostoPromedio<BR>Art.Articulo<BR>Art.Descripcion1<BR>Art.Linea<BR>Art.Tipo<BR>SerieLoteProp.Propiedades<BR>SerieLoteProp.Extra1<BR>SerieLoteProp.Extra2<BR>SerieLoteProp.Extra3<BR>SerieLoteProp.Fecha1<BR>SerieLoteProp.Fecha2<BR>SerieLoteProp.Fecha3<BR>SerieLoteProp.Factor1<BR>SerieLoteProp.Factor2<BR>SerieLoteProp.Factor3<BR>SerieLoteProp.PedimentoClave<BR>SerieLoteProp.PedimentoRegimen<BR>SerieLoteProp.ValorDolares<BR>SerieLoteProp.ValorAdu<CONTINUA>
+ListaCampos002=<CONTINUA>ana<BR>SerieLoteProp.ValorComercial<BR>SerieLoteProp.AgenteAduanal<BR>SerieLoteProp.Aduana<BR>SerieLoteProp.DTA<BR>SerieLoteProp.IVA<BR>SerieLoteProp.IGI
+
+ListaCalculados=VerAlmacen<BR>Total<BR>CostoPromedioTotal<BR>Modelo2
+
+SQL=SELECT<BR>  SerieLote.Sucursal,<BR>  SerieLote.Empresa,<BR>  SerieLote.Articulo,<BR>  SerieLote.SubCuenta,<BR>  SerieLote.SerieLote,<BR>  SerieLote.Almacen,<BR>  SerieLote.Propiedades,<BR>  SerieLote.Existencia,<BR>  SerieLote.ExistenciaAlterna,<BR>  SerieLote.ExistenciaActivoFijo,<BR>  SerieLote.UltimaEntrada,<BR>  SerieLote.UltimaSalida,<BR>  SerieLote.Cliente,<BR>  SerieLote.Localizacion,<BR>  SerieLote.CostoPromedio,<BR>  Art.Articulo,<BR>  Art.Descripcion1,<BR>  Art.Linea,<BR>  Art.Tipo,<BR>  SerieLoteProp.Propiedades,<BR>  SerieLoteProp.Extra1,<BR>  SerieLoteProp.Extra2,<BR>  SerieLoteProp.Extra3,<BR>  SerieLoteProp.Fecha1,<BR>  SerieLoteProp.Fecha2,<BR>  SerieLoteProp.Fecha3,<BR>  SerieLoteProp.Factor1,<BR>  SerieLoteProp.Factor2,<BR>  SerieLoteProp.Factor3,<BR>  SerieLoteProp.Pedim<CONTINUA>
+SQL002=<CONTINUA>entoClave,<BR>  SerieLoteProp.PedimentoRegimen,<BR>  SerieLoteProp.ValorDolares,<BR>  SerieLoteProp.ValorAduana,<BR>  SerieLoteProp.ValorComercial,<BR>  SerieLoteProp.AgenteAduanal,<BR>  SerieLoteProp.Aduana,<BR>  SerieLoteProp.DTA,<BR>  SerieLoteProp.IVA,<BR>  SerieLoteProp.IGI<BR><BR>FROM<BR>  SerieLote<BR>  JOIN Art ON SerieLote.Articulo=Art.Articulo<BR>  LEFT OUTER JOIN SerieLoteProp ON SerieLote.Propiedades=SerieLoteProp.Propiedades
+
+[SerieLote.vis/Modelo2]
+Clave=Modelo2
+Tamano=10
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Modelo
+Formula=Si(Art.Linea='MOTOCICLETAS',SerieLoteProp.Extra3,'N/A')  
+
+[SerieLote.vis/Art.Linea]
+Clave=Art.Linea
+LigaTabla=Art
+LigaCampo=Linea
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=Linea

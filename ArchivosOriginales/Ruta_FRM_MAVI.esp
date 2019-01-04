@@ -1,0 +1,115 @@
+;**** Ultima modificación:29-May-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:
+
+
+
+
+
+
+
+
+
+
+;**** Se agregaron nuevas acciones: Destinos ****
+;**** Se modificaron las dimensiones de la forma ****
+[Ruta.frm/Forma]
+ListaAcciones=Aceptar<BR>CteRutaOrdenar<BR>CodigoPostal<BR>Destinos<BR>Excel
+PosicionInicialIzquierda=197
+PosicionInicialArriba=153
+PosicionInicialAltura=350
+PosicionInicialAncho=885
+PosicionInicialAlturaCliente=459
+
+
+
+
+
+;**** Se modifico el nombre a desplegar de "Guardar y salir" a unicamente "Guardar"*****
+;**** tambien se modifico el tipo de accion para que solo guardara cambios y no cerrara la ventana ****
+[Ruta.frm/Acciones.Aceptar]
+NombreDesplegar=&Guardar
+TipoAccion=Controles Captura
+ClaveAccion=Guardar Cambios
+
+
+
+
+
+;**** Nueva accion agregada ****
+[Ruta.frm/Acciones.Destinos]
+Nombre=Destinos
+Boton=106
+NombreEnBoton=S
+NombreDesplegar=Destinos Ruta
+EnBarraHerramientas=S
+Visible=S
+Antes=S
+ConCondicion=S
+Activo=S
+Multiple=S
+ListaAccionesMultiples=Destinos<BR>Guardar
+EjecucionCondicion=ConDatos(Ruta:Ruta.Ruta)
+AntesExpresiones=Asigna(Temp.Texto,Ruta:Ruta.Ruta)
+
+
+
+;**** Nueva subAccion Agregada ****
+[Ruta.frm/Acciones.Destinos.Destinos]
+Nombre=Destinos
+Boton=0
+TipoAccion=Formas
+ClaveAccion=RutaDestinosMAVI
+Activo=S
+Visible=S
+ConCondicion=S
+EjecucionCondicion=ConDatos(Ruta:Ruta.Ruta)
+EjecucionMensaje=<T>Seleccione una ruta<T>
+EjecucionConError=S
+
+
+
+;**** Nueva subAccion Agregada ****
+[Ruta.frm/Acciones.Destinos.Guardar]
+Nombre=Guardar
+Boton=0
+TipoAccion=Controles Captura
+ClaveAccion=Guardar Cambios
+Activo=S
+Visible=S
+
+
+
+
+;**** Se quito de la lista en captura los campos: Ruta.Costo y se agregaron los campos: ****
+;**** Se modifico el orden en el que se muestra la informacion de la forma, ordenada por la columna Ruta.Kms ****
+;**** Se agrego el campo para realizar busquedas ****
+[Ruta.frm/Lista]
+ListaEnCaptura=Ruta.Ruta<BR>Ruta.Kms<BR>Ruta.Zona<BR>Ruta.TiempoEntrega<BR>Ruta.TiempoEntregaUnidad
+ListaOrden=Ruta.Kms<TAB>(Acendente)
+BusquedaRapidaControles=S
+HojaConfirmarEliminar=S
+FiltroModificarEstatus=S
+FiltroCambiarPeriodo=S
+FiltroBuscarEn=S
+FiltroFechasCambiar=S
+FiltroFechasNormal=S
+FiltroFechasNombre=&Fecha
+BusquedaRapida=S
+BusquedaInicializar=S
+BusquedaRespetarControles=S
+BusquedaAncho=20
+BusquedaEnLinea=S
+
+
+
+
+
+
+
+
+
+
+
+
+

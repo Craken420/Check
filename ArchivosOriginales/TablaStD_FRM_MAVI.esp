@@ -1,0 +1,17 @@
+[TablaStD.frm/Forma]
+VentanaTipoMarco=Normal
+VentanaPosicionInicial=Centrado
+PosicionInicialIzquierda=291
+PosicionInicialArriba=30
+PosicionInicialAltura=291
+PosicionInicialAncho=782
+PosicionInicialAlturaCliente=645
+VentanaAjustarZonas=S
+VentanaEstadoInicial=Normal
+
+[TablaStD.frm/Lista.Columnas]
+Periodo=43
+PeriodoNombre=87
+Importe=117
+Nombre=338
+Valor=404

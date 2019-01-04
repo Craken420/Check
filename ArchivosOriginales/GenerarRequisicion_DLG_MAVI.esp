@@ -1,0 +1,148 @@
+;**** Ultima modificación:01-Feb-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:
+
+
+
+; **** Se modificó el dialogo para agregar nuevas acciones: "OCPublicidad","OCPapeleria","OCTaller","OCSistemas",OCAdmva","OCActivoFijo"  -- Se eliminaron las acciones: "Cotizacion", "Licitacion"****
+[GenerarRequisicion.dlg/Dialogo]
+ListaAcciones=Orden<BR>OCPublicidad<BR>OCPapeleria<BR>OCTaller<BR>OCSistemas<BR>OCAdmva<BR>OCActivoFijo<BR>OCMantto
+
+
+
+
+; **** Acción Original fue modificada para que sólo sea visible si moviento es: "Solicitud Compra","Licitacion" ****
+[GenerarRequisicion.dlg/Acciones.Orden]
+Nombre=Orden
+Boton=0
+NombreDesplegar=Generar &Orden Compra
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+Activo=S
+Visible=N
+Antes=S
+ClaveAccion=GenerarPendiente
+AntesExpresiones=Asigna( Afectar.GenerarMov, ConfigMov.CompraOrden )<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.Mov en ( <T>Solicitud Compra<T>, <T>Licitacion<T> )
+
+
+
+
+
+
+
+; *** Acción Nueva, sólo es visible si el movimiento es:"CotizacionPublicidad" ****
+[GenerarRequisicion.dlg/Acciones.OCPublicidad]
+Nombre=OCPublicidad
+Boton=0
+NombreDesplegar=Generar OC &Publicidad
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPendiente
+Activo=S
+Antes=S
+AntesExpresiones=Asigna( Afectar.GenerarMov, <T>OC Publicidad<T> )<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.Mov = <T>CotizacionPublicidad<T>
+
+
+
+
+; *** Acción Nueva, sólo es visible si el movimiento es:"Cotizacion Papeleria" ****
+[GenerarRequisicion.dlg/Acciones.OCPapeleria]
+Nombre=OCPapeleria
+Boton=0
+NombreDesplegar=Generar OC P&apeleria
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPendiente
+Activo=S
+Antes=S
+AntesExpresiones=Asigna( Afectar.GenerarMov, <T>OC Papeleria<T> )<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.Mov = <T>Cotizacion Papeleria<T>
+
+
+
+
+; *** Acción Nueva, sólo es visible si el movimiento es:"Cotizacion Taller" ****
+[GenerarRequisicion.dlg/Acciones.OCTaller]
+Nombre=OCTaller
+Boton=0
+NombreDesplegar=Generar OC &Taller
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPendiente
+Activo=S
+Antes=S
+AntesExpresiones=Asigna( Afectar.GenerarMov,<T>OC Taller<T> )<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.Mov = <T>Cotizacion Taller<T>
+
+
+
+
+
+; *** Acción Nueva, sólo es visible si el movimiento es:"Cotizacion Sistemas" ****
+[GenerarRequisicion.dlg/Acciones.OCSistemas]
+Nombre=OCSistemas
+Boton=0
+NombreDesplegar=Generar OC &Sistemas
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPendiente
+Activo=S
+Antes=S
+AntesExpresiones=Asigna( Afectar.GenerarMov, <T>OC Sistemas<T> )<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.Mov = <T>Cotizacion Sistemas<T>
+
+
+
+
+; *** Acción Nueva, sólo es visible si el movimiento es:"Cotizacion Admva" ****
+[GenerarRequisicion.dlg/Acciones.OCAdmva]
+Nombre=OCAdmva
+Boton=0
+NombreDesplegar=Generar OC &Admva
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=dialogos
+ClaveAccion=GenerarPendiente
+Activo=S
+Antes=S
+AntesExpresiones=Asigna( Afectar.GenerarMov, <T>OC Admva<T> )<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.Mov = <T>Cotizacion Admva<T>
+
+
+
+
+; *** Acción Nueva, sólo es visible si el movimiento es:"CotizacionActivoFijo" ****
+[GenerarRequisicion.dlg/Acciones.OCActivoFijo]
+Nombre=OCActivoFijo
+Boton=0
+NombreDesplegar=Generar OC Activo&Fijo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPendiente
+Activo=S
+Antes=S
+AntesExpresiones=Asigna( Afectar.GenerarMov, <T>OC ActivoFijo<T> )<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.Mov = <T>CotizacionActivoFijo<T>
+
+
+; *** Acción Nueva, sólo es visible si el movimiento es:"Cotizacion Mantto" ****
+[GenerarRequisicion.dlg/Acciones.OCMantto]
+Nombre=OCMantto
+Boton=0
+NombreDesplegar=Generar OC &Mantto
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPendiente
+Activo=S
+Antes=S
+AntesExpresiones=Asigna( Afectar.GenerarMov, <T>OC Mantto<T> )<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.Mov = <T>Cotizacion Mantto<T>

@@ -1,0 +1,95 @@
+
+
+;***** JRD 13-Agosto-10 Modfico el tamaño de la forma *****
+[Usuario.frm/Forma]
+PosicionInicialIzquierda=338
+PosicionInicialArriba=206
+PosicionInicialAltura=405
+PosicionInicialAncho=603
+ListaAcciones=Nuevo<BR>Abrir<BR>Guardar<BR>Eliminar<BR>Configuracion<BR>Empresas<BR>AccesoMenuVista<BR>Impresoras<BR>Anexos<BR>Propiedades<BR>Mensajes<BR>Navegador<BR>Cerrar<BR>GrupoTrabajo<BR>Otros1<BR>Otros2<BR>Otros3<BR>Otros4<BR>Otros5<BR>Otros6<BR>Otros7<BR>Otros8<BR>Otros9<BR>AltaUsuario<BR>BajaUsuario
+AccionesTamanoBoton=15x5
+PosicionInicialAlturaCliente=628
+BarraAcciones=S
+AccionesCentro=S
+
+
+;**** Se agregaron nuevos campos: Usuario.Tipo_Descuento *****
+[Usuario.frm/Detalle]
+ListaEnCaptura=Usuario.Usuario<BR>Usuario.Nombre<BR>Usuario.Sucursal<BR>Sucursal.Nombre<BR>Usuario.Estatus<BR>Usuario.Contrasena<BR>Usuario.ContrasenaConfirmacion<BR>Usuario.GrupoTrabajo<BR>Usuario.Departamento<BR>Usuario.eMail<BR>Usuario.Oficina<BR>Usuario.Telefono<BR>Usuario.Extencion<BR>Usuario.Idioma<BR>Usuario.Observaciones<BR>Usuario.Configuracion<BR>UsuarioCopia.Nombre<BR>UsuarioCopia.GrupoTrabajo<BR>Usuario.Acceso<BR>UsuarioDestino.Nombre<BR>UsuarioDestino.GrupoTrabajo<BR>Usuario.Menu<BR>Usuario.MenuAccesoTotal<BR>Usuario.Tipo_Descuento<BR>Usuario.PorcDescuento<BR>Usuario.ContrasenaPocket
+
+
+;**** ARC 13-Ene-09: Nuevo campo agregado PROPRE ****
+[Usuario.frm/Detalle.Usuario.Tipo_Descuento]
+Carpeta=Detalle
+Clave=Usuario.Tipo_Descuento
+Editar=S
+LineaNueva=N
+ValidaNombre=S
+3D=S
+Tamano=22
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+;**** ARC 14-Ene-09: Nuevo campo agregado PROPRE ****
+[Usuario.frm/Detalle.Usuario.PorcDescuento]
+Carpeta=Detalle
+Clave=Usuario.PorcDescuento
+Editar=S
+LineaNueva=N
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+Pegado=N
+OcultaNombre=N
+
+;***** JRD 13-Agosto-10 Nuevo campo para Pocket *****
+[Usuario.frm/Detalle.Usuario.ContrasenaPocket]
+Carpeta=Detalle
+Clave=Usuario.ContrasenaPocket
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[Usuario.frm/Acciones.AltaUsuario]
+Nombre=AltaUsuario
+Boton=62
+NombreEnBoton=S
+NombreDesplegar=Alta Usuario
+Multiple=S
+EnBarraAcciones=S
+ListaAccionesMultiples=ValidarDatos
+Activo=S
+Visible=S
+
+[Usuario.frm/Acciones.AltaUsuario.ValidarDatos]
+Nombre=ValidarDatos
+Boton=0
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=SI (CONDATOS(Usuario:Usuario.Acceso)) y (LONGITUD(Usuario:Usuario.Acceso)>0)<BR>     entonces<BR>     informacion(SQL(<T>exec SP_MaviDM0266AddMovSituacionesUsuarios :tUsuario, :tAcceso<T>,Usuario:Usuario.Usuario,Usuario:Usuario.Acceso))<BR>SINO<BR>    Precaucion(<T>El campo Acceso no puede estar Vacio<T>) abortaroperacion<BR>FIN
+
+[Usuario.frm/Acciones.BajaUsuario]
+Nombre=BajaUsuario
+Boton=63
+NombreEnBoton=S
+NombreDesplegar=Baja Usuario
+Multiple=S
+EnBarraAcciones=S
+ListaAccionesMultiples=ValidarBaja
+Activo=S
+Visible=S
+
+[Usuario.frm/Acciones.BajaUsuario.ValidarBaja]
+Nombre=ValidarBaja
+Boton=0
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=SI (CONDATOS(Usuario:Usuario.Acceso)) y (LONGITUD(Usuario:Usuario.Acceso)>0)<BR>     ENTONCES<BR>         informacion(SQL(<T>exec SP_MaviDM0266RemoveMovSituacionesUsuarios :tUsuario<T>,Usuario:Usuario.Usuario))<BR>SINO<BR>    PRECAUCION(<T>Seleccione el Acceso donde desea dar de baja<T>) ABORTAROPERACION<BR>FIN

@@ -1,0 +1,58 @@
+;**** Ultima modificación:04-jul-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:Se agrego el desarrollo de mexico
+
+
+; SE QUITO DE LA LISTA DE ACCIONES LA ACCION <BR>RangosAsignacion VICTOR DE LOS SANTOS LOPEZ 25/02/2011. Modificacion JR 07-Marzo-2011.
+;*** Se agragaron nuevas acciones: CosteoFleteMAVI, DesarrolloMexico(RutasMAVI,RangosAsignacion)****
+;*** Debido a la modificacion del desarrollo de Cobranza Menudeo se elimino del menu la opcion RutasMAVI ya que no es requerido. ALQG  27/10/09
+[MenuCfgEmbarque.dlg/Dialogo]
+ListaAcciones=Vehiculo<BR>FormaEnvio<BR>Zona<BR>Ruta<BR>Tarifas<BR>CosteoFleteMAVI<BR>Acciones<BR>EmbarqueEstado<BR>Causas
+
+
+;***** Nueva accion agregada ******
+[MenuCfgEmbarque.dlg/Acciones.CosteoFleteMAVI]
+Nombre=CosteoFleteMAVI
+Boton=0
+NombreDesplegar=Costeo de Flete
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=MenuCfgCosteoFlete
+Activo=S
+Visible=S
+
+
+;*** Debido a la modificacion del desarrollo de Cobranza Menudeo se elimino del menu la opcion RutasMAVI ya que no es requerido. ALQG  27/10/09
+;***** Nueva accion agregada ******
+;[MenuCfgEmbarque.dlg/Acciones.RutasMAVI]
+;Nombre=RutasMAVI
+;Boton=0
+;NombreDesplegar=Rutas MAVI
+;EnMenu=S
+;EnBarraAcciones=S
+;TipoAccion=Formas
+;ClaveAccion=RutasMAVI
+;Activo=S
+;Visible=S
+
+
+
+;SE PIDIO LA ELIMINACION  DE ESTA ACCION VICTOR DE LOS SANTOS LOPEZ 25/02/2011. Modificacion JR 07-Marzo-2011.
+;***** Nueva accion agregada ******
+;[MenuCfgEmbarque.dlg/Acciones.RangosAsignacion]
+;Nombre=RangosAsignacion
+;Boton=0
+;NombreDesplegar=Rangos Asignación
+;EnMenu=S
+;EnBarraAcciones=S
+;TipoAccion=Formas
+;ClaveAccion=RangosAsignacionMAVI
+;Activo=S
+;Visible=S
+
+
+
+
+
+

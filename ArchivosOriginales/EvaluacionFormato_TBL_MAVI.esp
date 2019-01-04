@@ -1,0 +1,21 @@
+;***** Modificacion: 20-Feb-09
+;***** Modifico: Edgar Montelongo
+;***** Descripción:  Se agrega campo ValorNumerico
+
+
+
+
+[EvaluacionFormato.tbl/Tabla]
+ListaCampos=Evaluacion<BR>Punto<BR>Descripcion<BR>Seccion<BR>Peso<BR>Orden<BR>Respuesta<BR>Referencia<BR>ID<BR>ValorNumerico
+SQL=SELECT<BR>  Evaluacion,<BR>  Punto,<BR>  Descripcion,<BR>  Seccion,<BR>  Respuesta,<BR>  Peso,<BR>  Orden,<BR>  Referencia,<BR>  ID,<BR>  ValorNumerico<BR><BR>FROM<BR>  EvaluacionFormato
+
+[EvaluacionFormato.tbl/ValorNumerico]
+Clave=ValorNumerico
+Nombre=ValorNumerico
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Si - No

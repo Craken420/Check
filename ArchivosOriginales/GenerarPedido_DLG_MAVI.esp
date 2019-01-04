@@ -1,0 +1,407 @@
+;**** Ultima modificación:01-Feb-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:
+
+
+; **** Modificacion para agregar nuevas acciones: "AnalisisCredito","Pedido","AnalisisMayoreo","PedidoMayoreo","FacturaMayoreo","Credilana","SeguroVida","SeguroAuto","FacturaVIU","PrestamoPersonal" ****
+[GenerarPedido.dlg/Dialogo]
+ListaAcciones=Ingreso<BR>Factura<BR>FacturacionRapida<BR>FacturacionRapidaAgrupada<BR>Remision<BR>Nota<BR>NotaConsumo<BR>Contrato<BR>VentaConsignación<BR>OrdenSurtido<BR>Otros1<BR>Otros2<BR>Otros3<BR>Otros4<BR>Otros5<BR>Otros6<BR>Otros7<BR>Otros8<BR>Otros9<BR>VentaPerdida<BR>GenerarOT<BR>Reservar<BR>DesReservar<BR>Asignar<BR>DesAsignar<BR>AnalisisCredito<BR>Pedido<BR>AnalisisMayoreo<BR>PedidoMayoreo<BR>FacturaMayoreo<BR>Credilana<BR>SeguroVida<BR>SeguroAuto<BR>FacturaVIU<BR>PrestamoPersonal
+
+
+; **** Se modifico la accion para que solo sea visible si movimiento es: "Pedido" y la UEN es: 1 (America)****
+[GenerarPedido.dlg/Acciones.Factura]
+Nombre=Factura
+Boton=0
+NombreDesplegar=Generar &Factura
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Si<BR> ((SQL(<T>Select EnviarA from Venta With(NoLock) Where ID=:nId<T>,Afectar.ID) = 11) y (Afectar.Modulo=<T>VTAS<T>)) o (Afectar.Modulo <> <T>VTAS<T>)<BR> Entonces<BR>   Dialogo(<T>GenerarPedidoPendidente<T>)<BR> Sino<BR>  Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Pendiente<T>, Afectar.GenerarMov,Afectar.FormaCaptura)<BR>Fin
+Activo=S
+Antes=S
+Visible=N
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.VentaFactura)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=(Info.Mov en (<T>Pedido<T>)) y (Info.UEN=<T>1<T>)
+
+
+; **** Se modifico esta accion para que NO fuera visible ****
+[GenerarPedido.dlg/Acciones.VentaConsignación]
+Nombre=VentaConsignación
+Boton=0
+NombreDesplegar=Generar Venta a &Consignación
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+Activo=S
+Visible=N
+ClaveAccion=GenerarPedidoPendiente
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.VentaConsignacion)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+
+
+; **** Se modifico esta accion para que NO fuera visible ****
+[GenerarPedido.dlg/Acciones.Reservar]
+Nombre=Reservar
+Boton=0
+NombreDesplegar=Reser&var
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=Reservar
+Visible=N
+ActivoCondicion=Usuario.Reservar
+
+
+; **** Se modifico esta accion para que NO fuera visible ****
+[GenerarPedido.dlg/Acciones.DesReservar]
+Nombre=DesReservar
+Boton=0
+NombreDesplegar=De&s-Reservar
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=DesReservar
+Visible=N
+ActivoCondicion=Usuario.DesReservar
+
+
+; **** Se modifico esta accion para que NO fuera visible ****
+[GenerarPedido.dlg/Acciones.Remision]
+Nombre=Remision
+Boton=0
+NombreDesplegar=Generar &Remisión
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Visible=N
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.VentaRemision)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+
+
+; **** Se modifico esta accion para que NO fuera visible ****
+[GenerarPedido.dlg/Acciones.Asignar]
+Nombre=Asignar
+Boton=0
+NombreDesplegar=As&ignar
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=Asignar
+Visible=N
+ActivoCondicion=Usuario.Asignar y Config.BackOrders y (Config.BackOrdersNivel=<T>Movimiento<T>)
+
+
+; **** Se modifico esta accion para que NO fuera visible ****
+[GenerarPedido.dlg/Acciones.DesAsignar]
+Nombre=DesAsignar
+Boton=0
+NombreDesplegar=Des-Asig&nar
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=DesAsignar
+Visible=N
+ActivoCondicion=Usuario.DesAsignar y Config.BackOrders y (Config.BackOrdersNivel=<T>Movimiento<T>)
+
+
+; **** Se modifico esta accion para que NO fuera visible ****
+[GenerarPedido.dlg/Acciones.VentaPerdida]
+Nombre=VentaPerdida
+Boton=0
+NombreDesplegar=Generar Venta P&erdida
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Visible=N
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.VentaPerdida)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+
+
+; **** Se modifico esta accion para que NO fuera visible ****
+[GenerarPedido.dlg/Acciones.Nota]
+Nombre=Nota
+Boton=0
+NombreDesplegar=Generar &Nota (Venta Mostrador)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Visible=N
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.VentaNota)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+
+
+; **** Se modifico esta accion para que NO fuera visible ****
+[GenerarPedido.dlg/Acciones.OrdenSurtido]
+Nombre=OrdenSurtido
+Boton=0
+NombreDesplegar=Generar &Orden Surtido
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Visible=N
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.VentaOrdenSurtido)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=
+;Afectar.Mov<>ConfigMov.VentaOrdenSurtido
+
+
+
+; **** Se modifico esta accion para que NO fuera visible ****
+[GenerarPedido.dlg/Acciones.FacturacionRapida]
+Nombre=FacturacionRapida
+Boton=0
+NombreDesplegar=Fac&turación Rápida
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=N
+Expresion=ProcesarSQL(<T>spFacturacionRapida :nID, :tUsuario, :tEmpresa<T>, Afectar.ID, Usuario, Empresa)
+VisibleCondicion=
+;Config.VentaLimiteRenFacturas>0
+
+
+; **** Se modifico esta accion para que NO fuera visible ****
+[GenerarPedido.dlg/Acciones.NotaConsumo]
+Nombre=NotaConsumo
+Boton=0
+NombreDesplegar=Generar No&ta Consumo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Antes=S
+Visible=N
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.VentaNotaConsumo)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+
+
+; **** Se modifico esta accion para que NO fuera visible ****
+[GenerarPedido.dlg/Acciones.GenerarOT]
+Nombre=GenerarOT
+Boton=0
+NombreDesplegar=Generar Or&den Transferencia...
+EnMenu=S
+EnBarraAcciones=S
+ConfirmarAntes=S
+DialogoMensaje=EstaSeguro
+TipoAccion=Expresion
+Activo=S
+Visible=N
+Expresion=Si<BR>  Usuario.PedidoGenerarOT<BR>Entonces<BR>  FormaPos(<T>Inv<T>, SQLEnLista(<T>spPedidoGenerarOT :tEmpresa, :nID, :nSucursal, :tUsuario, :tMov, @VerID = 1<T>, Empresa, Afectar.ID, Sucursal, Usuario, ConfigMov.InvOrdenTransferencia))<BR>Sino<BR>  ProcesarSQL(<T>spPedidoGenerarOT :tEmpresa, :nID, :nSucursal, :tUsuario, :tMov<T>, Empresa, Afectar.ID, Sucursal, Usuario, ConfigMov.InvOrdenTransferencia)<BR>Fin
+VisibleCondicion=
+;Usuario.PedidoGenerarOT y Config.BackOrders y (Config.BackOrdersNivel=<T>Movimiento<T>)
+
+
+; **** Se modifico esta accion para que NO fuera visible ****
+[GenerarPedido.dlg/Acciones.Ingreso]
+Nombre=Ingreso
+Boton=0
+NombreDesplegar=Generar &Ingreso (Reasignación)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Visible=N
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.VentaIngreso)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=
+;Afectar.Mov=ConfigMov.VentaIngreso
+
+
+
+; **** Se modifico esta accion para que NO fuera visible ****
+[GenerarPedido.dlg/Acciones.Contrato]
+Nombre=Contrato
+Boton=0
+NombreDesplegar=Generar Contr&ato
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Visible=N
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.VentaContrato)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+
+
+
+; **** Se modifico esta accion para que NO fuera visible ****
+[GenerarPedido.dlg/Acciones.FacturacionRapidaAgrupada]
+Nombre=FacturacionRapidaAgrupada
+Boton=0
+NombreDesplegar=Fact&uración Rápida Agrupada 
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Visible=N
+Expresion=ProcesarSQL(<T>spFacturacionRapida :nID, :tUsuario, :tEmpresa, 1<T>, Afectar.ID, Usuario, Empresa)
+VisibleCondicion=
+;Config.VentaLimiteRenFacturas>0
+
+; **** Nueva Accion solo es visible si movimiento es: "Solicitud Credito" ****
+[GenerarPedido.dlg/Acciones.AnalisisCredito]
+Nombre=AnalisisCredito
+Boton=0
+NombreDesplegar=Generar Analisis Credito
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Si<BR> ((SQL(<T>Select EnviarA from Venta With(NoLock) Where ID=:nId<T>,Afectar.ID) = 11) y (Afectar.Modulo=<T>VTAS<T>)) o (Afectar.Modulo <> <T>VTAS<T>)<BR> Entonces<BR>   Dialogo(<T>GenerarPedidoPendidente<T>)<BR> Sino<BR>  Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Pendiente<T>, Afectar.GenerarMov,Afectar.FormaCaptura)<BR>Fin
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, <T>Analisis Credito<T>)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.Mov en (<T>Solicitud Credito<T>)
+
+
+; **** Nueva Accion solo es visible si movimiento es: "Analisis Credito" ****
+[GenerarPedido.dlg/Acciones.Pedido]
+Nombre=Pedido
+Boton=0
+NombreDesplegar=Generar Pedido
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Si<BR> ((SQL(<T>Select EnviarA from Venta With(NoLock) Where ID=:nId<T>,Afectar.ID) = 11) y (Afectar.Modulo=<T>VTAS<T>)) o (Afectar.Modulo <> <T>VTAS<T>)<BR> Entonces<BR>   Dialogo(<T>GenerarPedidoPendidente<T>)<BR> Sino<BR>  Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Pendiente<T>, Afectar.GenerarMov,Afectar.FormaCaptura)<BR>Fin
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, <T>Pedido<T>)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.Mov en (<T>Analisis Credito<T>)
+
+
+; **** Nueva Accion solo es visible si movimiento es: "Solicitud Mayoreo" ****
+[GenerarPedido.dlg/Acciones.AnalisisMayoreo]
+Nombre=AnalisisMayoreo
+Boton=0
+NombreDesplegar=Generar Analisis Mayoreo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, <T>Analisis Mayoreo<T>)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.Mov en (<T>Solicitud Mayoreo<T>)
+
+
+; **** Nueva Accion solo es visible si movimiento es: "Analisis Mayoreo" ****
+[GenerarPedido.dlg/Acciones.PedidoMayoreo]
+Nombre=PedidoMayoreo
+Boton=0
+NombreDesplegar=Generar Pedido Mayoreo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, <T>Pedido Mayoreo<T>)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.Mov en (<T>Analisis Mayoreo<T>)
+
+
+
+; **** Nueva Accion solo es visible si movimiento es: "Pedido Mayoreo" ****
+[GenerarPedido.dlg/Acciones.FacturaMayoreo]
+Nombre=FacturaMayoreo
+Boton=0
+NombreDesplegar=Generar Factura Mayoreo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, <T>Factura Mayoreo<T>)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.Mov en (<T>Pedido Mayoreo<T>)
+
+
+
+; **** Nueva Accion solo es visible si movimiento es: "Pedido" y la UEN es: 1 (America)****
+[GenerarPedido.dlg/Acciones.Credilana]
+Nombre=Credilana
+Boton=0
+NombreDesplegar=Generar Credilana
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Si<BR> ((SQL(<T>Select EnviarA from Venta With(NoLock) Where ID=:nId<T>,Afectar.ID) = 11) y (Afectar.Modulo=<T>VTAS<T>)) o (Afectar.Modulo <> <T>VTAS<T>)<BR> Entonces<BR>   Dialogo(<T>GenerarPedidoPendidente<T>)<BR> Sino<BR>  Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Pendiente<T>, Afectar.GenerarMov,Afectar.FormaCaptura)<BR>Fin
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, <T>Credilana<T>)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=(Info.Mov en (<T>Pedido<T>)) y (Info.UEN=<T>1<T>)
+
+
+
+; **** Nueva Accion solo es visible si movimiento es: "Pedido"****
+[GenerarPedido.dlg/Acciones.SeguroVida]
+Nombre=SeguroVida
+Boton=0
+NombreDesplegar=Generar Seguro de Vida
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Si<BR> ((SQL(<T>Select EnviarA from Venta With(NoLock) Where ID=:nId<T>,Afectar.ID) = 11) y (Afectar.Modulo=<T>VTAS<T>)) o (Afectar.Modulo <> <T>VTAS<T>)<BR> Entonces<BR>   Dialogo(<T>GenerarPedidoPendidente<T>)<BR> Sino<BR>  Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Pendiente<T>, Afectar.GenerarMov,Afectar.FormaCaptura)<BR>Fin
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, <T>Seguro Vida<T>)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.Mov en (<T>Pedido<T>)
+
+
+; **** Nueva Accion solo es visible si movimiento es: "Pedido"****
+[GenerarPedido.dlg/Acciones.SeguroAuto]
+Nombre=SeguroAuto
+Boton=0
+NombreDesplegar=Generar Seguro de Auto
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, <T>Seguro Auto<T>)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.Mov en (<T>Pedido<T>)
+
+
+
+; **** Nueva Accion solo es visible si movimiento es: "Pedido" y la UEN es: 2****
+[GenerarPedido.dlg/Acciones.FacturaVIU]
+Nombre=FacturaVIU
+Boton=0
+NombreDesplegar=Generar Factura VIU
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Si<BR> ((SQL(<T>Select EnviarA from Venta With(NoLock) Where ID=:nId<T>,Afectar.ID) = 11) y (Afectar.Modulo=<T>VTAS<T>)) o (Afectar.Modulo <> <T>VTAS<T>)<BR> Entonces<BR>   Dialogo(<T>GenerarPedidoPendidente<T>)<BR> Sino<BR>  Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Pendiente<T>, Afectar.GenerarMov,Afectar.FormaCaptura)<BR>Fin
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, <T>Factura VIU<T>)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=(Info.Mov en (<T>Pedido<T>)) y (Info.UEN=<T>2<T>)
+
+
+
+; **** Nueva Accion solo es visible si movimiento es: "Pedido" y la UEN es: 2****
+[GenerarPedido.dlg/Acciones.PrestamoPersonal]
+Nombre=PrestamoPersonal
+Boton=0
+NombreDesplegar=Generar Prestamo Personal
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Expresion=Si<BR> ((SQL(<T>Select EnviarA from Venta With(NoLock) Where ID=:nId<T>,Afectar.ID) = 11) y (Afectar.Modulo=<T>VTAS<T>)) o (Afectar.Modulo <> <T>VTAS<T>)<BR> Entonces<BR>   Dialogo(<T>GenerarPedidoPendidente<T>)<BR> Sino<BR>  Generar(Afectar.Modulo, Afectar.ID, Afectar.Mov, Afectar.MovID, <T>Pendiente<T>, Afectar.GenerarMov,Afectar.FormaCaptura)<BR>Fin
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, <T>Prestamo Personal<T>)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=(Info.Mov en (<T>Pedido<T>)) y (Info.UEN=<T>2<T>)
+
+
+

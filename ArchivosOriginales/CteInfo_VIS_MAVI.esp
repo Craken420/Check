@@ -1,0 +1,77 @@
+
+; ***** Integracion de listaCalculados para desarrollo DM0152 I (Informacion de Cliente) dentro del paquete DM0152_19122011. JR 20-Dic-2011. *****
+[CteInfo.vis/Vista]
+
+ListaCampos=Cte.Cliente<BR>Cte.Nombre<BR>Cte.NombreCorto<BR>Cte.Numero<BR>Cte.Tipo<BR>Cte.Direccion<BR>Cte.DireccionNumero<BR>Cte.DireccionNumeroInt<BR>Cte.EntreCalles<BR>Cte.Colonia<BR>Cte.CodigoPostal<BR>Cte.Poblacion<BR>Cte.Estado<BR>Cte.Pais<BR><CONTINUA>
+ListaCampos002=<CONTINUA>Cte.Zona<BR>Cte.RFC<BR>Cte.Telefonos<BR>Cte.Fax<BR>Cte.PedirTono<BR>Cte.Contacto1<BR>Cte.Contacto2<BR>Cte.eMail1<BR>Cte.eMail2<BR>Cte.DirInternet<BR>Cte.Categoria<BR>Cte.Familia<BR>Cte.Credito<BR>Cte.Grupo<BR>Cte.DiaRevision1<BR>Cte.DiaRevision2<BR><CONTINUA>
+ListaCampos003=<CONTINUA>Cte.HorarioRevision<BR>Cte.DiaPago1<BR>Cte.DiaPago2<BR>Cte.HorarioPago<BR>Cte.ZonaImpuesto<BR>Cte.PedidosParciales<BR>Cte.Clase<BR>Cte.Estatus<BR>Cte.UltimoCambio<BR>Cte.Alta<BR>Cte.Conciliar<BR>Cte.Descuento<BR>Cte.Proyecto<BR>Cte.Agente<BR>Cte.AgenteServicio<BR>Cte.EnviarA<BR><CONTINUA>
+ListaCampos004=<CONTINUA>Cte.FormaEnvio<BR>Cte.Condicion<BR>Cte.Ruta<BR>Cte.ListaPrecios<BR>Cte.DefMneda<BR>Cte.VtasConsignacion<BR>Cte.AlmacenVtasConsignacion<BR>Cte.Mensaje<BR>Cte.Extencion1<BR>Cte.Extencion2<BR>Cte.CreditoEspecial<BR>Cte.CreditoConLimite<BR>Cte.CreditoLimite<BR>Cte.CreditoMoneda<BR>Cte.CreditoConDias<BR><CONTINUA>
+ListaCampos005=<CONTINUA>Cte.CreditoDias<BR>Cte.CreditoConCondiciones<BR>Cte.CreditoCondiciones<BR>Cte.Descripcion1<BR>Cte.Descripcion2<BR>Cte.Descripcion3<BR>Cte.Descripcion4<BR>Cte.Descripcion5<BR>Cte.Descripcion6<BR>Cte.Descripcion7<BR>Cte.Descripcion8<BR>Cte.Descripcion9<BR>Cte.Descripcion10<BR>Cte.Descripcion11<BR><CONTINUA>
+ListaCampos006=<CONTINUA>Cte.Descripcion12<BR>Cte.Descripcion13<BR>Cte.Descripcion14<BR>Cte.Descripcion15<BR>Cte.Descripcion16<BR>Cte.Descripcion17<BR>Cte.Descripcion18<BR>Cte.Descripcion19<BR>Cte.Descripcion20<BR>Cte.Aseguradora<BR>Cte.PolizaTipo<BR>Cte.PolizaNumero<BR>Cte.PolizaReferencia<BR>Cte.Deducible<BR>Cte.DeducibleMoneda<BR><CONTINUA>
+ListaCampos007=<CONTINUA>Cte.Coaseguro<BR>Cte.NombreAsegurado<BR>Agente.Agente<BR>Agente.Nombre<BR>CteCredito.Empresa<BR>CteCredito.Credito<BR>CteCredito.ConCredito<BR>CteCredito.ConLimiteCredito<BR>CteCredito.LimiteCredito<BR>CteCredito.MonedaCredito<BR>CteCredito.ConDias<BR>CteCredito.Dias<BR>CteCredito.ConCondiciones<BR>CteCredito.Condiciones<BR><CONTINUA>
+ListaCampos008=<CONTINUA>CteAseguradora.Cliente<BR>CteAseguradora.Nombre
+
+SQL=SELECT<BR>  Cte.Cliente,<BR>  Cte.Nombre,<BR>  Cte.NombreCorto,<BR>  Cte.Numero,<BR>  Cte.Tipo,<BR>  Cte.Direccion,<BR>  Cte.DireccionNumero,<BR>  Cte.DireccionNumeroInt,<BR>  Cte.EntreCalles,<BR>  Cte.Colonia,<BR>  Cte.CodigoPostal,<BR>  Cte.Poblacion,<BR>  Cte.Estado,<BR>  Cte.Pais,<BR>  Cte.Zona,<BR>  Cte.RFC,<BR>  Cte.Telefonos,<BR>  Cte.Fax,<BR>  Cte.PedirTono,<BR>  Cte.Contacto1,<BR>  Cte.Contacto2,<BR>  Cte.eMail1,<BR>  Cte.eMail2,<BR>  Cte.DirInternet,<BR>  Cte.Categoria,<BR>  Cte.Familia,<BR>  Cte.Credito,<BR>  Cte.Grupo,<BR>  Cte.DiaRevision1,<BR>  Cte.DiaRevision2,<BR>  Cte.HorarioRevision,<BR>  Cte.DiaPago1,<BR>  Cte.DiaPago2,<BR>  Cte.HorarioPago,<BR>  Cte.ZonaImpuesto,<BR>  Cte.PedidosParciales,<BR>  Cte.Clase,<BR>  Cte.Estatus,<BR>  Cte.UltimoCambio,<BR>  Cte.Alta,<BR>  Cte.<CONTINUA>
+SQL002=<CONTINUA>Conciliar,<BR>  Cte.Descuento,<BR>  Cte.Proyecto,<BR>  Cte.Agente,<BR>  Cte.AgenteServicio,<BR>  Cte.EnviarA,<BR>  Cte.FormaEnvio,<BR>  Cte.Condicion,<BR>  Cte.Ruta,<BR>  Cte.ListaPrecios,<BR>  Cte.DefMoneda,<BR>  Cte.VtasConsignacion,<BR>  Cte.AlmacenVtasConsignacion,<BR>  Cte.Mensaje,<BR>  Cte.Extencion1,<BR>  Cte.Extencion2,<BR>  Cte.CreditoEspecial,<BR>  Cte.CreditoConLimite,<BR>  Cte.CreditoLimite,<BR>  Cte.CreditoMoneda,<BR>  Cte.CreditoConDias,<BR>  Cte.CreditoDias,<BR>  Cte.CreditoConCondiciones,<BR>  Cte.CreditoCondiciones,<BR>  Cte.Descripcion1,<BR>  Cte.Descripcion2,<BR>  Cte.Descripcion3,<BR>  Cte.Descripcion4,<BR>  Cte.Descripcion5,<BR>  Cte.Descripcion6,<BR>  Cte.Descripcion7,<BR>  Cte.Descripcion8,<BR>  Cte.Descripcion9,<BR>  Cte.Descripcion10,<BR>  Cte.Descripcion11,<BR>  C<CONTINUA>
+SQL003=<CONTINUA>te.Descripcion12,<BR>  Cte.Descripcion13,<BR>  Cte.Descripcion14,<BR>  Cte.Descripcion15,<BR>  Cte.Descripcion16,<BR>  Cte.Descripcion17,<BR>  Cte.Descripcion18,<BR>  Cte.Descripcion19,<BR>  Cte.Descripcion20,<BR>  Cte.Aseguradora,<BR>  Cte.PolizaTipo,<BR>  Cte.PolizaNumero,<BR>  Cte.PolizaReferencia,<BR>  Cte.Deducible,<BR>  Cte.DeducibleMoneda,<BR>  Cte.Coaseguro,<BR>  Cte.NombreAsegurado,<BR>  Agente.Agente,<BR>  Agente.Nombre,<BR>  CteCredito.Empresa,<BR>  CteCredito.Credito,<BR>  CteCredito.ConCredito,<BR>  CteCredito.ConLimiteCredito,<BR>  CteCredito.LimiteCredito,<BR>  CteCredito.MonedaCredito,<BR>  CteCredito.ConDias,<BR>  CteCredito.Dias,<BR>  CteCredito.ConCondiciones,<BR>  CteCredito.Condiciones,<BR>  CteAseguradora.Cliente,<BR>  CteAseguradora.Nombre<BR><BR>FROM<BR>  Cte<BR>  L<CONTINUA>
+SQL004=<CONTINUA>EFT OUTER JOIN Agente ON Cte.Agente=Agente.Agente<BR>  LEFT OUTER JOIN CteCredito ON {Comillas(Empresa)}=CteCredito.Empresa AND Cte.Credito=CteCredito.Credito<BR>  LEFT OUTER JOIN Cte CteAseguradora ON Cte.Aseguradora=CteAseguradora.Cliente
+
+ListaCalculados=EstatusNombre<BR>SaldoMN<BR>LimiteCreditoMN<BR>DisponibleMN<BR>TelParticular<BR>TelMovil<BR>TelTrabajo<BR>TelOtros
+
+
+[CteInfo.vis/Cte.DireccionNumero]
+Clave=Cte.DireccionNumero
+LigaTabla=Cte
+LigaCampo=DireccionNumero
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Numérico
+ClaveBDE=DireccionNumero
+
+[CteInfo.vis/Cte.DireccionNumeroInt]
+Clave=Cte.DireccionNumeroInt
+LigaTabla=Cte
+LigaCampo=DireccionNumeroInt
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Numérico
+ClaveBDE=DireccionNumeroInt
+
+; ***** Integracion de nuevos campos calculados para desarrollo DM0152 I (Informacion de Cliente) dentro del paquete DM0152_19122011. JR 20-Dic-2011. *****
+[CteInfo.vis/TelParticular]
+Clave=TelParticular
+Tamano=25
+TipoCampo=Calculado
+TamanoValidacion=25
+Alineacion=por Omisión
+Nombre=Tel. Particular
+Formula=Sql(<T>Select Lada+Telefono From CteTel Where Tipo=:tTipo and Cliente=:tCte<T>,<T>Particular<T>,Info.Cliente)
+
+[CteInfo.vis/TelMovil]
+Clave=TelMovil
+Tamano=25
+TipoCampo=Calculado
+TamanoValidacion=25
+Alineacion=por Omisión
+Nombre=Tel. Movil
+Formula=Sql(<T>Select Lada+Telefono From CteTel Where Tipo=:tTipo and Cliente=:tCte<T>,<T>Movil<T>,Info.Cliente)
+
+[CteInfo.vis/TelTrabajo]
+Clave=TelTrabajo
+Tamano=25
+TipoCampo=Calculado
+TamanoValidacion=25
+Alineacion=por Omisión
+Nombre=Tel. Trabajo
+Formula=Sql(<T>Select Lada+Telefono From CteTel Where Tipo=:tTipo and Cliente=:tCte<T>,<T>Trabajo<T>,Info.Cliente)
+
+[CteInfo.vis/TelOtros]
+Clave=TelOtros
+Tamano=25
+TipoCampo=Calculado
+TamanoValidacion=25
+Alineacion=por Omisión
+Nombre=Tel. Otros
+Formula=Sql(<T>Select top 1 Lada+Telefono From CteTel Where Tipo not in (<T>+comillas(<T>Particular<T>)+<T>,<T>+comillas(<T>Movil<T>)+<T>,<T>+comillas(<T>Trabajo<T>)+<T>) and Cliente=:tCte<T>,Info.Cliente)
+; ***** Termina integracion de nuevos campos calculados. ******
+

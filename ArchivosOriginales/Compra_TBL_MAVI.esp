@@ -1,0 +1,43 @@
+;**** Ultima modificación:29-Abr-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:
+
+
+;**** Se modifico para que el campo fuera visible en la clave de afectacion COMS.R ****
+;*** 20-Oct-08 LQG Presenta condiciones solo por nivel de acceso***
+; **** 18-08-09 GRB: se modifico formula. ***
+[Compra.tbl/Condicion]
+CondicionDespliege=MovTipo(<T>COMS<T>,Mov) noen (COMS.D, COMS.OG, COMS.OD, COMS.IG, COMS.DG, COMS.B, COMS.DC)
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Validar captura en la lista
+;Formula=SQLEnLista(<T>SELECT Condicion FROM Condicion WHERE NivelAcceso is NULL UNION SELECT Condicion FROM CondicionAccesoMAVI WHERE Usuario =:tusuario<T> , Usuario.Usuario)
+AyudaRefrescar=S
+Formula=Si<BR>  Directo=Verdadero <BR>Entonces<BR>    Si Estatus = (<T>SINAFECTAR<T>)<BR>    Entonces<BR>        SQLEnLista(<T>EXEC spCondicionNivelAcceso :tusuario<T>, Usuario)<BR>    Fin<BR>Sino<BR>    SQLEnLista(<T>SELECT Condicion FROM Condicion<T>)<BR>Fin    
+
+
+;**** Se modifico para que el campo fuera visible en la clave de afectacion COMS.R ****
+[Compra.tbl/Vencimiento]
+CondicionDespliege=MovTipo(<T>COMS<T>,Mov) noen (COMS.D, COMS.OG, COMS.OD, COMS.IG, COMS.DG, COMS.B, COMS.DC))
+
+
+[Compra.tbl/TipoCambio]
+CondicionEdicion=(no Usuario.BloquearMoneda)
+
+;Modificacion para acomodar el Nivel de Acceso ALQG - 15/06/2010
+[Compra.tbl/Agente]
+ValidacionUsaTabla=N
+ValidacionTablas=
+
+;Modificacion para el Reporte RM1100 Fernando Romero Robles 05/07/2014
+
+[Compra.tbl/Referencia]
+Clave=Referencia
+Nombre=Referencia
+TamanoValidacion=50
+Tamano=50
+CondicionEdicion=(Estatus en (EstatusSinAfectar,EstatusPorConfirmar)) o ((Estatus en (EstatusPendiente,EstatusPorAutorizar)) y Usuario.ModificarReferencias) o Usuario.ModificarReferenciasSiempre
+AyudaEnCaptura=Vista
+AyudaForma=RM1100XmlFrm
+AyudaVista=RM1100XmlVis
+AyudaCampo=FolioFiscal
+AlCambiar=Asigna(Info.Referencia,Referencia)

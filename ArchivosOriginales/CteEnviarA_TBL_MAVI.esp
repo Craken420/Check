@@ -1,0 +1,318 @@
+;**** Ultima modificación:17-Dic-08
+;**** Modifico:Leticia Quezada
+;**** Se modifico: Se agregaron los campos para las instituciones.
+
+;**** Modificación:24-Jul-08
+;**** Modifico:Arly Rubio
+;**** Se modifico: Se agregaron valores al refrescar en los campos: UENMAVI y SeccionCobranzaMAVI.
+
+;***** Modificacion: 09-Ene-09
+;***** Modifico: Judith Ramirez
+;***** Se modifico: Se agrego campo seenviaburocreditomavi para desarrollo buro credito
+
+
+
+;***** Se agregaron nuevos campos: DesarrolloMexico(UENMAVI, SeccionCobranzaMAVI, NivelCobranzaMAVI, RutaCobranzaMAVI)*******
+;***** Se agregaron nuevas relaciones: DesarrolloMexico(UEN, MAVINivelCobranza, Ruta)********
+[CteEnviarA.tbl/Tabla]
+ListaCampos=Cliente<BR>ID<BR>Clave<BR>Nombre<BR>Direccion<BR>DireccionNumero<BR>DireccionNumeroInt<BR>EntreCalles<BR>Plano<BR>Observaciones<BR>Delegacion<BR>Colonia<BR>CodigoPostal<BR>Poblacion<BR>Estado<BR>Pais<BR>Zona<BR>Telefonos<BR>Fax<BR>PedirTono<BR>Contacto1<BR>Contacto2<BR>eMail1<BR>eMail2<BR>FormaEnvio<BR>ZonaImpuesto<BR>Estatus<BR>UltimoCambio<BR>Alta<BR>Mensaje<BR>Extencion1<BR>Extencion2<BR>Agente<BR>Clase<BR>ListaPreciosEsp<BR>Proyecto<BR>Condicion<BR>Descuento<BR>ModificarVencimiento<BR>Categoria<BR>Grupo<BR>Familia<BR>TieneMovimientos<BR>Ruta<BR>Contrasena<BR>SucursalEmpresa<BR>PersonalCobrador<BR>Almacen<BR>AlmacenVtasConsignacion<BR>eMailAuto<BR>wMovVentas<BR>TipoEmpaque<BR>Unidad<BR>Cadena<BR>Encargado<BR>GLN<BR>UENMAVI<BR>SeccionCobranzaMAVI<BR>NivelCobranzaMAVI<BR>RutaCobranzaMAVI<CONTINUA>
+ListaCampos002=<CONTINUA><BR>Cargo<BR>ClaveInst<BR>Municipio<BR>Nomina<BR>Vale<BR>Puesto<BR>RFCInstitucion<BR>SeEnviaBuroCreditoMavi<BR>CobraAval<BR>AvalResponsable<BR>CobraAval<BR>AvalResponsable<BR>UsuarioModif
+ListaRelaciones=Cte<BR>AgenteEnviarA<BR>Sucursal<BR>Personal<BR>UEN<BR>MAVINivelCobranza<BR>Ruta
+SQL=SELECT<BR>  Cliente,<BR>  ID,<BR>  Nombre,<BR>  Direccion,<BR>  EntreCalles,<BR>  Plano,<BR>  Observaciones,<BR>  Colonia,<BR>  Delegacion,<BR>  Poblacion,<BR>  Estado,<BR>  Pais,<BR>  Zona,<BR>  Ruta,<BR>  CodigoPostal,<BR>  Telefonos,<BR>  Fax,<BR>  PedirTono,<BR>  Contacto1,<BR>  Contacto2,<BR>  Extencion1,<BR>  Extencion2,<BR>  eMail1,<BR>  eMail2,<BR>  eMailAuto,<BR>  ZonaImpuesto,<BR>  Agente,<BR>  Clase,<BR>  Estatus,<BR>  UltimoCambio,<BR>  Alta,<BR>  Mensaje,<BR>  FormaEnvio,<BR>  ListaPreciosEsp,<BR>  Proyecto,<BR>  Condicion,<BR>  Descuento,<BR>  ModificarVencimiento,<BR>  Categoria,<BR>  Grupo,<BR>  Familia,<BR>  TieneMovimientos,<BR>  Contrasena,<BR>  Clave,<BR>  SucursalEmpresa,<BR>  PersonalCobrador,<BR>  Almacen,<BR>  AlmacenVtasConsignacion,<BR>  wMovVentas,<BR>  TipoEmpaq<CONTINUA>
+SQL002=<CONTINUA>ue,<BR>  Unidad,<BR>  Cadena,<BR>  Encargado,<BR>  DireccionNumero,<BR>  GLN,<BR>  DireccionNumeroInt,<BR>  UENMAVI,<BR>  SeccionCobranzaMAVI,<BR>  NivelCobranzaMAVI,<BR>  RutaCobranzaMAVI,<BR> Cargo,<BR>  ClaveInst,<BR>  Municipio,<BR>  Nomina,<BR>  Vale,<BR>  Puesto,<BR>  RFCInstitucion,<BR>  SeEnviaBuroCreditoMavi,<BR>  CobraAval,<BR>  AvalResponsable,<BR>  UsuarioModif<BR><BR><BR>FROM<BR>  CteEnviarA
+CampoUsuarioCambio=UsuarioModif
+ControlUsuarioCambio=S
+
+
+;***ARC 19-May-09 Se cambio el nombre a desplegar del campo, desarrollo CobranzaMenudeo ****
+[CteEnviarA.tbl/Agente]
+Nombre=Cobrador
+
+
+;***** Nuevo campo agregado ******
+[CteEnviarA.tbl/UENMAVI]
+Clave=UENMAVI
+Nombre=UEN
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+AyudaEnCaptura=Vista
+AyudaForma=UENLista
+AyudaVista=UEN
+AyudaCampo=UEN.UEN
+ValidacionUsaTabla=S
+ValidacionTablas=UEN
+ValorRefrescar=SQL(<T>Select UEN from VentasCanalMAVI where ID=:nClave<T>,ID)
+
+
+;***** Nuevo campo agregado ******
+[CteEnviarA.tbl/SeccionCobranzaMAVI]
+Clave=SeccionCobranzaMAVI
+Nombre=Sección Cobranza
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+AyudaEnCaptura=Vista
+AyudaForma=CteCatLista
+AyudaVista=CteCat
+AyudaCampo=CteCat.Categoria
+ValorRefrescar=SQL(<T>Select Categoria from VentasCanalMAVI where ID=:nClave<T>,ID)
+
+;[CteEnviarA.tbl/SeccionCobranzaMAVI]
+;Clave=SeccionCobranzaMAVI
+;Nombre=Sección Cobranza
+;Visible=S
+;TamanoValidacion=50
+;Tamano=50
+;AyudaEnCaptura=Vista
+;AyudaForma=CteCatLista
+;AyudaVista=CteCat
+;AyudaCampo=CteCat.Categoria
+;ValorRefrescar=SQL(<T>Select Categoria from VentasCanalMAVI where ID=:nClave<T>,ID)
+
+
+
+;***** Nuevo campo agregado ******
+[CteEnviarA.tbl/NivelCobranzaMAVI]
+Clave=NivelCobranzaMAVI
+Nombre=Nivel Cobranza
+Visible=S
+TamanoValidacion=100
+Tamano=100
+TipoDatos=Texto
+AyudaEnCaptura=Vista
+AyudaForma=NivelCobListaMavi
+AyudaVista=NivelCobranzaMavi
+;ValidacionUsaTabla=S
+;ValidacionTablas=NivelCobranzaMAVI
+AyudaCampo=NivelCobranzaMavi.Nombre
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>No Existe el Nivel de Cobranza...<T>
+ValidacionCondicion=(SQL(<T>SELECT COUNT(0) FROM NivelCobranzaMavi WHERE Nombre =:tNivel <T>,NivelCobranzaMAVI) > 0) o (SQL(<T>SELECT COUNT(0) FROM NivelesEspecialesCobranzaMavi WHERE Nombre =:tNivel <T>,NivelCobranzaMAVI) > 0)
+
+;[CteEnviarA.tbl/NivelCobranzaMAVI]
+;Clave=NivelCobranzaMAVI
+;Nombre=Nivel Cobranza
+;Visible=S
+;TamanoValidacion=1
+;Tamano=1
+;AyudaEnCaptura=Vista
+;AyudaForma=NivelCobMAVILista
+;AyudaVista=MAVINivelCobranza
+;ValidacionUsaTabla=S
+;ValidacionTablas=MAVINivelCobranza
+;AyudaCampo=MAVINivelCobranza.Clave
+
+
+;***** Nuevo campo agregado ******
+[CteEnviarA.tbl/RutaCobranzaMAVI]
+Clave=RutaCobranzaMAVI
+Nombre=Ruta Cobranza
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Vista
+AyudaForma=RutaLista
+AyudaVista=Ruta
+AyudaCampo=Ruta.Ruta
+
+
+;****Se modifico el campo para que no tuviera valor por omisión y para que tuviera un asistente de captura, se le cambio el nombre a desplegar ****
+;****y para que refrescara los valores de los campos:Clave,Categoria,Cadena
+[CteEnviarA.tbl/ID]
+Nombre=Canal Venta
+ValorPorOmision=
+AyudaEnCaptura=Vista
+AyudaForma=VentasCanalListaMAVI
+AyudaVista=VentasCanalMAVI
+AyudaCampo=VentasCanalMAVI.ID
+ConRefrescar=S
+ListaRefrescar=Clave<BR>Categoria<BR>Cadena<BR>SeccionCobranzaMAVI<BR>UENMAVI
+
+
+;****Se modifico el campo para que tuviera por omision el nombre del cliente****
+[CteEnviarA.tbl/Nombre]
+ValorPorOmision=SQL(<T>Select Nombre from Cte where Cliente=:tcte<T>,Info.Cliente)
+
+
+;****Se modifico el campo para que tuviera por omision la dirección del cliente****
+[CteEnviarA.tbl/Direccion]
+ValorPorOmision=SQL(<T>Select Direccion from Cte where Cliente=:tcte<T>,Info.Cliente)
+
+
+;****Se modifico el campo para que tuviera por omision la colonia del cliente****
+[CteEnviarA.tbl/Colonia]
+ValorPorOmision=SQL(<T>Select Colonia from Cte where Cliente=:tcte<T>,Info.Cliente)
+
+
+;****Se modifico el campo para que tuviera por omision el CP del cliente****
+[CteEnviarA.tbl/CodigoPostal]
+ValorPorOmision=SQL(<T>Select CodigoPostal from Cte where Cliente=:tcte<T>,Info.Cliente)
+
+
+;****Se modifico el campo para que tuviera por omision el numero de direccion del cliente****
+[CteEnviarA.tbl/DireccionNumero]
+ValorPorOmision=SQL(<T>Select DireccionNumero from Cte where Cliente=:tcte<T>,Info.Cliente)
+
+
+;****Se modifico el campo para que tuviera por omision el numero interior de dirección del cliente****
+[CteEnviarA.tbl/DireccionNumeroInt]
+ValorPorOmision=SQL(<T>Select DireccionNumeroInt from Cte where Cliente=:tcte<T>,Info.Cliente)
+
+
+;****Se modifico el campo para que se refrescara su valor de acuerdo al canal de venta que seleccionen***
+;****Se modificó para que el campo sea siempre requerido
+[CteEnviarA.tbl/Clave]
+ValorRefrescar=SQL(<T>Select Clave from VentasCanalMAVI where ID=:nClave<T>,ID)
+Requerido=S
+
+
+;****Se modifico el campo para que se refrescara su valor de acuerdo al canal de venta que seleccionen***
+[CteEnviarA.tbl/Cadena]
+ValorRefrescar=SQL(<T>Select Cadena from VentasCanalMAVI where ID=:nClave<T>,ID)
+
+
+;****Se modifico el campo para que se refrescara su valor de acuerdo al canal de venta que seleccionen***
+;****Se modifico para que no tuviera ayuda en captura ****
+[CteEnviarA.tbl/Categoria]
+ValorRefrescar=SQL(<T>Select Categoria from VentasCanalMAVI where ID=:nClave<T>,ID)
+AyudaEnCaptura=
+
+
+;*** Inicia nuevos campos para datos de las Instituciones ***
+;*** Se hizo el cambio de tamaño en el campo de Cargo ***, paquete DM0146_17082011 BVF 17082011
+
+[CteEnviarA.tbl/Cargo]
+Clave=Cargo
+Nombre=Cargo
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[CteEnviarA.tbl/ClaveInst]
+Clave=ClaveInst
+Nombre=Clave Institucion
+Visible=S
+TamanoValidacion=5
+Tamano=5
+
+[CteEnviarA.tbl/Municipio]
+Clave=Municipio
+Nombre=Municipio
+Visible=S
+TamanoValidacion=5
+Tamano=5
+
+[CteEnviarA.tbl/Nomina]
+Clave=Nomina
+Nombre=Nomina
+Visible=S
+TamanoValidacion=15
+Tamano=15
+
+[CteEnviarA.tbl/Puesto]
+Clave=Puesto
+Nombre=Puesto
+Visible=S
+TamanoValidacion=50
+Tamano=50
+
+[CteEnviarA.tbl/RFCInstitucion]
+Clave=RFCInstitucion
+Nombre=RFC  Institucion
+Visible=S
+TamanoValidacion=15
+Tamano=15
+
+;***Fin nuevos campos para datos de las Instituciones ***
+
+
+
+
+;***** Campo para buro de credito *****
+; ***** Modificacion de condicion edicion para parfil, JR 21-May-2012. *****s
+[CteEnviarA.tbl/SeEnviaBuroCreditoMavi]
+Clave=SeEnviaBuroCreditoMavi
+Nombre=Se Envia a Buro Credito
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+;CondicionEdicion=usuario.usuario = <T>BUROC00001<T>
+CondicionEdicion=(usuario en sql(<T>select usuario from usuario where acceso=:tperfil<T>, <T>BUROC_GERA<T>)) o (usuario=<T>BUROC_GERA<T>)
+
+
+;*** ARC Nuevo campo agregado Desarrollo cobranza menudeo ***
+[CteEnviarA.tbl/CobraAval]
+Clave=CobraAval
+Nombre=Cobra al Aval
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=0
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+
+
+;*** ARC Nuevo campo agregado Desarrollo cobranza menudeo ***
+[CteEnviarA.tbl/AvalResponsable]
+Clave=AvalResponsable
+Nombre=Aval Responsable
+Visible=S
+TamanoValidacion=5
+TipoDatos=Numérico
+AyudaEnCaptura=Vista
+AyudaForma=CteCtoListaMAVI
+AyudaVista=CteCto
+AyudaCampo=CteCto.ID
+CondicionDespliege=CobraAval
+
+
+
+;******************************RELACIONES*******************************************************
+;***********************************************************************************************
+
+;****Nueva relacion agregada *******
+[CteEnviarA.tbl/Relaciones.UEN]
+TipoRelacion=Opcional
+LlaveLocal=UENMAVI
+Clave=UEN
+TablaRemota=UEN
+LlaveRemota=UEN
+
+
+
+
+;****Nueva relacion agregada *******
+[CteEnviarA.tbl/Relaciones.MAVINivelCobranza]
+TipoRelacion=Opcional
+LlaveLocal=NivelCobranzaMAVI
+Clave=MAVINivelCobranza
+TablaRemota=MAVINivelCobranza
+LlaveRemota=Clave
+
+
+
+
+;****Nueva relacion agregada *******
+[CteEnviarA.tbl/Relaciones.Ruta]
+TipoRelacion=Opcional
+LlaveLocal=RutaCobranzaMAVI
+Clave=Ruta
+TablaRemota=Ruta
+LlaveRemota=Ruta
+
+
+
+;*** Nuevo Campo Agregado FLR	***
+[CteEnviarA.tbl/UsuarioModif]
+Clave=UsuarioModif
+Nombre=UsuarioModif
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Texto
+Tamano=10

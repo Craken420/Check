@@ -1,0 +1,21 @@
+;**** Ultima modificación:04-Mar-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:
+
+;**** Se modifico el dialogo (Menu->Configurar->Ventas) para que tuviera la nueva opcion: VentasCanalMAVI
+[MenuCfgVentas.dlg/Dialogo]
+ListaAcciones=Descuento<BR>OtrosCargos<BR>Causa<BR>Instruccion<BR>Clase<BR>ContratoTipo<BR>Comentario<BR>CfgAnexarMov<BR>VentaRestringida<BR>VentasCanalMAVI
+
+
+
+;**** Nueva acción que muestra la pantalla donde se capturan los canales de venta ****
+[MenuCfgVentas.dlg/Acciones.VentasCanalMAVI]
+Nombre=VentasCanalMAVI
+Boton=0
+NombreDesplegar=Canales de Venta
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=VentasCanalMAVI
+Activo=S
+Visible=S

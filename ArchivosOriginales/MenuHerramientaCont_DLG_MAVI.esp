@@ -1,0 +1,45 @@
+[MenuHerramientaCont.dlg/Dialogo]
+ListaAcciones=ContTraspasar<BR>Participacion<BR>PolizaCierre<BR>ContCuadre<BR>MovCuadre<BR>Opcion1<BR>MenuHerramientaContReg<BR>ContElectronica<BR>CFDValido<BR>NotaEspejo
+PosicionInicialIzquierda=521
+PosicionInicialArriba=259
+
+[MenuHerramientaCont.dlg/Dialogo.ListaAcciones]
+MenuHerramientaContReg=ContElectronica
+ContElectronica=CFDValido
+CFDValido=MonitorXML
+MonitorXML=(Fin)
+
+[MenuHerramientaCont.dlg/Acciones.CFDValido]
+Nombre=CFDValido
+Boton=0
+NombreDesplegar=&Administrador de &Documentos
+EnMenu=S
+EnBarraAcciones=S
+Activo=S
+Visible=S
+TipoAccion=Formas
+ClaveAccion=CFDValido
+
+[MenuHerramientaCont.dlg/Acciones.ContElectronica]
+Nombre=ContElectronica
+Boton=0
+NombreDesplegar=&Contabilidad Electrónica
+EnMenu=S
+EnBarraAcciones=S
+Activo=S
+Visible=S
+TipoAccion=Formas
+ClaveAccion=ContabilidadElectronica
+
+
+
+[MenuHerramientaCont.dlg/Acciones.NotaEspejo]
+Nombre=NotaEspejo
+Boton=0
+NombreDesplegar=DM0224 Configuración Notas Crédito Espejo
+EnMenu=S
+EnBarraAcciones=S
+Activo=S
+Visible=S
+TipoAccion=Formas
+ClaveAccion=DM0224ConfiguracionNotasCreditoEspejoFrm

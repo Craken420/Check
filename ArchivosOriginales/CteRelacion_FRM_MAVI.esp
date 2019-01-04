@@ -1,0 +1,341 @@
+;**** Modificacion Anterior:01-Ago-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:Integracion del desarrollo de mexico
+;**** Modificacion Reciente: 28-Nov-08
+;**** Modifico: Edgar Montelongo
+;**** Se modifico: Opciones de Busqueda de Coincidencias
+;**** Nota: Los comentarios de las modificaciones del
+;****       28 de Nov se marcaran como (EM)
+
+
+
+; **** Se agregaron nuevas acciones: Expresion *****
+; **** (EM)Se agrego nueva accion: Historial ****
+[CteRelacion.frm/Forma]
+Nombre=Relación entre Clientes
+Icono=0
+Modulos=(Todos)
+ListaCarpetas=Lista
+CarpetaPrincipal=Lista
+BarraHerramientas=S
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+ListaAcciones=Aceptar<BR>Buscar<BR>Historial<BR>Actualizar<BR>Excel
+PosicionInicialAltura=445
+PosicionInicialAncho=1062
+VentanaTipoMarco=Normal
+VentanaPosicionInicial=Centrado
+PosicionInicialIzquierda=109
+PosicionInicialArriba=179
+Comentarios=Info.ClienteD
+PosicionInicialAlturaCliente=406
+VentanaEstadoInicial=Normal
+VentanaAjustarZonas=S
+VentanaExclusiva=S
+Totalizadores=S
+PosicionSec1=345
+PosicionSec2=174
+PosicionCol1=581
+ExpresionesAlMostrar=Asigna(Temp.Texto,<T>N<T>)<BR>Asigna(Info.ValidaRel,Nulo)<BR>Asigna(Info.Observaciones2,Nulo)
+AutoGuardar=S
+
+
+;******* Nuevos campos agregados: CteRelacion.TipoRelacionMAVI, CteRelacion.CoincidenciaMAVI*****
+;******* (EM) Nuevos campos agregados CteRelacion.FechaBusqueda, CteRelacion.UsuarioBusqueda, CteRelacion.FechaValidacion ****
+;******* CteRelacion.UsuarioValidacion, CteRelacion.Observaciones, CteRelacion.UltimoCambioB, CteRelacion.UsuarioUltimoCambioB ****
+;******* CteRelacion.UltimoCambioV, CteRelacion.UsuarioUltimoCambioV, CteRelacion.Situacion *****
+;******* Se modifico el filtro general para que no trajera doble al cliente al mostrar las coincidencias *******
+[CteRelacion.frm/Lista]
+Estilo=Hoja
+Clave=Lista
+AlineacionAutomatica=S
+AcomodarTexto=S
+MostrarConteoRegistros=S
+Zona=A1
+Vista=CteRelacion
+Fuente={MS Sans Serif, 8, Negro, []}
+HojaTitulos=S
+HojaMostrarColumnas=S
+HojaMostrarRenglones=S
+HojaColoresPorEstatus=S
+HojaVistaOmision=Automática
+CampoColorLetras=Negro
+CampoColorFondo=Blanco
+ListaEnCaptura=CteRelacion.Cliente<BR>Cte.Nombre<BR>CteRelacion.Relacion<BR>CteDestino.Nombre<BR>CteRelacion.TipoRelacionMAVI<BR>CteRelacion.CoincidenciaMAVI<BR>CteRelacion.FechaBusqueda<BR>CteRelacion.UsuarioBusqueda<BR>CteRelacion.FechaValidacion<BR>CteRelacion.UsuarioValidacion<BR>CteRelacion.Observaciones<BR>CteRelacion.UltimoCambioB<BR>CteRelacion.UsuarioUltimoCambioB<BR>CteRelacion.UltimoCambioV<BR>CteRelacion.UsuarioUltimoCambioV<BR>CteRelacion.Situacion
+CarpetaVisible=S
+Filtros=S
+FiltroPredefinido=S
+FiltroNullNombre=(sin clasificar)
+FiltroEnOrden=S
+FiltroTodoNombre=Todo
+FiltroAncho=20
+FiltroRespetar=S
+FiltroTipo=General
+OtroOrden=S
+ListaOrden=CteRelacion.CoincidenciaMAVI<TAB>(Acendente)
+HojaIndicador=S
+MenuLocal=S
+ListaAcciones=InfoCliente
+GuardarPorRegistro=S
+PermiteEditar=S
+FiltroGeneral={Si(ConDatos(Info.Cliente), <T>CteRelacion.Cliente=<T>+Comillas(Info.Cliente),<T><T>)}
+
+
+
+[CteRelacion.frm/Lista.Columnas]
+Relacion=71
+Nombre=178
+Cliente=76
+Nombre_1=184
+TipoRelacionMAVI=300
+CoincidenciaMAVI=250
+
+[CteRelacion.frm/Lista.CteDestino.Nombre]
+ColorFondo=Plata
+
+;****** Nuevo campo agregado *********
+[CteRelacion.frm/Lista.CteRelacion.Relacion]
+Carpeta=Lista
+Clave=CteRelacion.Relacion
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=10
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[CteRelacion.frm/Lista.Cte.Nombre]
+Carpeta=Lista
+Clave=Cte.Nombre
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=100
+ColorFondo=Blanco
+ColorFuente=Gris
+
+[CteRelacion.frm/Lista.CteRelacion.Cliente]
+Carpeta=Lista
+Clave=CteRelacion.Cliente
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=10
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[CteRelacion.frm/Lista.CteDestino.Nombre]
+Carpeta=Lista
+Clave=CteDestino.Nombre
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=100
+ColorFondo=Blanco
+ColorFuente=Gris
+
+[CteRelacion.frm/Lista.CteRelacion.TipoRelacionMAVI]
+Carpeta=Lista
+Clave=CteRelacion.TipoRelacionMAVI
+Editar=N
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=50
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[CteRelacion.frm/Lista.CteRelacion.CoincidenciaMAVI]
+Carpeta=Lista
+Clave=CteRelacion.CoincidenciaMAVI
+Editar=N
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=100
+ColorFondo=Blanco
+ColorFuente=Negro
+
+;******* (EM) Nuevos Campos Agregados ******
+[CteRelacion.frm/Lista.CteRelacion.FechaBusqueda]
+Carpeta=Lista
+Clave=CteRelacion.FechaBusqueda
+Editar=N
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[CteRelacion.frm/Lista.CteRelacion.UsuarioBusqueda]
+Carpeta=Lista
+Clave=CteRelacion.UsuarioBusqueda
+Editar=N
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=10
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[CteRelacion.frm/Lista.CteRelacion.FechaValidacion]
+Carpeta=Lista
+Clave=CteRelacion.FechaValidacion
+Editar=N
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[CteRelacion.frm/Lista.CteRelacion.UsuarioValidacion]
+Carpeta=Lista
+Clave=CteRelacion.UsuarioValidacion
+Editar=N
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=10
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[CteRelacion.frm/Lista.CteRelacion.Observaciones]
+Carpeta=Lista
+Clave=CteRelacion.Observaciones
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[CteRelacion.frm/Lista.CteRelacion.UltimoCambioB]
+Carpeta=Lista
+Clave=CteRelacion.UltimoCambioB
+Editar=N
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[CteRelacion.frm/Lista.CteRelacion.UsuarioUltimoCambioB]
+Carpeta=Lista
+Clave=CteRelacion.UsuarioUltimoCambioB
+Editar=N
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=10
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[CteRelacion.frm/Lista.CteRelacion.UltimoCambioV]
+Carpeta=Lista
+Clave=CteRelacion.UltimoCambioV
+Editar=N
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[CteRelacion.frm/Lista.CteRelacion.UsuarioUltimoCambioV]
+Carpeta=Lista
+Clave=CteRelacion.UsuarioUltimoCambioV
+Editar=N
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=10
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[CteRelacion.frm/Lista.CteRelacion.Situacion]
+Carpeta=Lista
+Clave=CteRelacion.Situacion
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[CteRelacion.frm/(Carpeta Totalizadores)]
+Clave=(Carpeta Totalizadores)
+AlineacionAutomatica=S
+AcomodarTexto=S
+MostrarConteoRegistros=S
+Zona=B1
+Fuente={Tahoma, 8, Negro, []}
+FichaEspacioEntreLineas=6
+FichaEspacioNombres=100
+FichaEspacioNombresAuto=S
+FichaNombres=Izquierda
+FichaAlineacion=Izquierda
+FichaColorFondo=Plata
+Totalizadores1=Total Coincidencias
+Totalizadores2=Suma(1)
+Totalizadores3=0,
+Totalizadores=S
+CampoColorLetras=Negro
+CampoColorFondo=Plata
+CarpetaVisible=S
+ListaEnCaptura=Total Coincidencias
+TotCarpetaRenglones=Lista
+[CteRelacion.frm/(Carpeta Totalizadores).Total Coincidencias]
+Carpeta=(Carpeta Totalizadores)
+Clave=Total Coincidencias
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=5
+ColorFondo=Plata
+ColorFuente=Negro
+Efectos=[Negritas]
+
+
+
+;********************************************************************* ACCIONES ************************************************
+;*******************************************************************************************************************************
+
+;**** Nueva accion agregada ******
+;[CteRelacion.frm/Acciones.Expresion]
+;Nombre=Expresion
+;Boton=51
+;NombreEnBoton=S
+;NombreDesplegar=Buscar Coincidencias
+;EnBarraHerramientas=S
+;TipoAccion=Expresion
+;Activo=S
+;Visible=S
+;Expresion=ProcesarSQL(<T>SpCoincidenciasMAVI :tCte, :tUser, :tCond, :tCampo<T>,Info.Cliente, Usuario, '', '')
+;EspacioPrevio=S
+
+
+[CteRelacion.frm/Acciones.Aceptar]
+Nombre=Aceptar
+Boton=36
+NombreEnBoton=S
+NombreDesplegar=&Cerrar
+EnBarraHerramientas=S
+TipoAccion=Ventana
+ClaveAccion=Cerrar
+Activo=S
+Visible=S
+
+[CteRelacion.frm/Acciones.Excel]
+Nombre=Excel
+Boton=115
+NombreEnBoton=S
+NombreDesplegar=&Excel
+EnBarraHerramientas=S
+EspacioPrevio=S
+Carpeta=Lista
+TipoAccion=controles Captura
+ClaveAccion=Enviar a Excel
+Activo=S
+Visible=S

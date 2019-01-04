@@ -1,0 +1,11 @@
+;Ultima modificacion: 08-Dic-2008
+;Responsable: Arly Rubio  
+;Modifico: Vista de ayuda
+
+
+
+
+
+;**** Se cambiaro la vista de ayuda por la elaborada por Elias (ARC 08-Dic-08)*****
+[Neteo.tbl/Cliente]
+AyudaVista=MaviCteA

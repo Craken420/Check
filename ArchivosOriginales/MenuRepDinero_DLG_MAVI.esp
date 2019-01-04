@@ -1,0 +1,19 @@
+;**** Ultima modificación:13-Febrero-09
+;**** Modifico:Miguel Peña
+;**** Se modifico:Cheque en Lote
+
+; **** Eliminacion de accion Cheque en Lote por Jesus Del Toro Andrade para el desarrollo DM0121 MODIFICACIÓN AL DLG MENÚ PRINCIPAL dentro del paquete DM0121_15112011. JR 16-Nov-2011 ****
+[MenuRepDinero.dlg/Dialogo]
+;ListaAcciones=Conciliar<BR>Acum<BR>Aux<BR>Mov<BR>General<BR>Diario<BR>Cheque en Lote
+ListaAcciones=Conciliar<BR>Acum<BR>Aux<BR>Mov<BR>General<BR>Diario
+
+[MenuRepDinero.dlg/Acciones.Cheque en Lote]
+Nombre=Cheque en Lote
+Boton=0
+NombreDesplegar=&Cheque en Lote
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=ChequeLoteCuentaMAVI
+Activo=S
+Visible=S

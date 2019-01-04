@@ -1,0 +1,209 @@
+[ArtInfo.frm/ArtDisponible]
+ListaEnCaptura.Cambios=Eliminar<TAB>ArtDisponible.Disponible<BR>Insertar<TAB>Disponible<TAB>0<BR>Insertar<TAB>Transito<TAB>1<BR>Insertar<TAB>Total<TAB>2
+FiltroAplicaEn1=GrupoAlmacen
+IconosNombre=Almacen
+FiltroGeneral=Empresa={Comillas(Empresa)} AND<BR>Articulo={Comillas(Info.Articulo)} AND <BR>Total<>0.0
+
+[ArtInfo.frm/ArtDisponible.ArtDisponible.Disponible]
+Carpeta=
+Clave=
+Editar=
+Totalizador=
+LineaNueva=
+ValidaNombre=
+3D=
+Tamano=
+ColorFondo=
+ColorFuente=
+
+[ArtInfo.frm/ArtDisponible.Disponible]
+Carpeta=ArtDisponible
+Clave=Disponible
+Editar=S
+Totalizador=1
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[ArtInfo.frm/ArtDisponible.Transito]
+Carpeta=ArtDisponible
+Clave=Transito
+Editar=S
+Totalizador=1
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[ArtInfo.frm/ArtDisponible.Total]
+Carpeta=ArtDisponible
+Clave=Total
+Editar=S
+Totalizador=1
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+[ArtInfo.frm/Costos]
+CondicionVisible=((sql(<T>select count(usuario) from(SELECT Usuario FROM USUARIO WHERE acceso in (select Nombre from tablastd where tablast=:tUsu1))x where usuario=:tusu<T>,<T>CFG PERFIL COSTOS VTAS<T>,usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)=<T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)=<T>MERCANCIA DE LINEA<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)<><T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)<><T>MERCANCIA DE LINEA<T>))
+
+
+[ArtInfo.frm/ArtCosto]
+CondicionVisible=((sql(<T>select count(usuario) from(SELECT Usuario FROM USUARIO WHERE acceso in (select Nombre from tablastd where tablast=:tUsu1))x where usuario=:tusu<T>,<T>CFG PERFIL COSTOS VTAS<T>,usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)=<T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)=<T>MERCANCIA DE LINEA<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)<><T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)<><T>MERCANCIA DE LINEA<T>))
+
+
+
+[ArtInfo.frm/Acciones.Reservados]
+Activo=N
+ActivoCondicion=(((sql(<T>select count(usuario) from(SELECT Usuario FROM USUARIO WHERE acceso in (select Nombre from tablastd where tablast=:tUsu1))x where usuario=:tusu<T>,<T>CFG PERFIL COSTOS VTAS<T>,usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)=<T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)=<T>MERCANCIA DE LINEA<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)<><T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)<><T>MERCANCIA DE LINEA<T>)))
+Visible=S
+VisibleCondicion=
+
+[ArtInfo.frm/Acciones.Propiedades]
+Activo=N
+ActivoCondicion=(((sql(<T>select count(usuario) from(SELECT Usuario FROM USUARIO WHERE acceso in (select Nombre from tablastd where tablast=:tUsu1))x where usuario=:tusu<T>,<T>CFG PERFIL COSTOS VTAS<T>,usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)=<T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)=<T>MERCANCIA DE LINEA<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)<><T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)<><T>MERCANCIA DE LINEA<T>)))
+Visible=S
+VisibleCondicion=
+
+[ArtInfo.frm/Acciones.ExplorarInv]
+Activo=N
+ActivoCondicion=(((sql(<T>select count(usuario) from(SELECT Usuario FROM USUARIO WHERE acceso in (select Nombre from tablastd where tablast=:tUsu1))x where usuario=:tusu<T>,<T>CFG PERFIL COSTOS VTAS<T>,usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)=<T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)=<T>MERCANCIA DE LINEA<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)<><T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)<><T>MERCANCIA DE LINEA<T>)))
+Visible=S
+VisibleCondicion=
+
+[ArtInfo.frm/Acciones.CompraPendiente]
+ActivoCondicion=(Usuario.ConsultarCompraPendiente)<BR>y<BR>(((sql(<T>select count(usuario) from(SELECT Usuario FROM USUARIO WHERE acceso in (select Nombre from tablastd where tablast=:tUsu1))x where usuario=:tusu<T>,<T>CFG PERFIL COSTOS VTAS<T>,usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)=<T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)=<T>MERCANCIA DE LINEA<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)<><T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)<><T>MERCANCIA DE LINEA<T>)))
+Visible=S
+VisibleCondicion=
+Activo=S
+
+
+[ArtInfo.frm/Acciones.VentaPendiente]
+ActivoCondicion=(((sql(<T>select count(usuario) from(SELECT Usuario FROM USUARIO WHERE acceso in (select Nombre from tablastd where tablast=:tUsu1))x where usuario=:tusu<T>,<T>CFG PERFIL COSTOS VTAS<T>,usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)=<T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)=<T>MERCANCIA DE LINEA<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)<><T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)<><T>MERCANCIA DE LINEA<T>)))
+Visible=S
+VisibleCondicion=
+Activo=S
+
+
+
+[ArtInfo.frm/Acciones.PorProcesar]
+Activo=N
+ActivoCondicion=(((sql(<T>select count(usuario) from(SELECT Usuario FROM USUARIO WHERE acceso in (select Nombre from tablastd where tablast=:tUsu1))x where usuario=:tusu<T>,<T>CFG PERFIL COSTOS VTAS<T>,usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)=<T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)=<T>MERCANCIA DE LINEA<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)<><T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)<><T>MERCANCIA DE LINEA<T>)))
+Visible=S
+VisibleCondicion=
+
+[ArtInfo.frm/Acciones.SolicitudPendiente]
+Activo=N
+ActivoCondicion=(((sql(<T>select count(usuario) from(SELECT Usuario FROM USUARIO WHERE acceso in (select Nombre from tablastd where tablast=:tUsu1))x where usuario=:tusu<T>,<T>CFG PERFIL COSTOS VTAS<T>,usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)=<T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)=<T>MERCANCIA DE LINEA<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)<><T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)<><T>MERCANCIA DE LINEA<T>)))
+Visible=S
+VisibleCondicion=
+
+
+[ArtInfo.frm/Acciones.Anexos]
+Activo=N
+ActivoCondicion=(((sql(<T>select count(usuario) from(SELECT Usuario FROM USUARIO WHERE acceso in (select Nombre from tablastd where tablast=:tUsu1))x where usuario=:tusu<T>,<T>CFG PERFIL COSTOS VTAS<T>,usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)=<T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)=<T>MERCANCIA DE LINEA<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)<><T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)<><T>MERCANCIA DE LINEA<T>)))
+Visible=S
+VisibleCondicion=
+
+
+[ArtInfo.frm/Acciones.ArtProvInfo]
+Activo=N
+ActivoCondicion=(Usuario.Costos)<BR>y<BR>(((sql(<T>select count(usuario) from(SELECT Usuario FROM USUARIO WHERE acceso in (select Nombre from tablastd where tablast=:tUsu1))x where usuario=:tusu<T>,<T>CFG PERFIL COSTOS VTAS<T>,usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)=<T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)=<T>MERCANCIA DE LINEA<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)<><T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)<><T>MERCANCIA DE LINEA<T>)))
+Visible=S
+VisibleCondicion=
+
+[ArtInfo.frm/Acciones.ArtAlmInfo]
+Visible=S
+VisibleCondicion=
+Activo=S
+ActivoCondicion=
+
+
+[ArtInfo.frm/Acciones.PrecioHist]
+Activo=N
+ActivoCondicion=(((sql(<T>select count(usuario) from(SELECT Usuario FROM USUARIO WHERE acceso in (select Nombre from tablastd where tablast=:tUsu1))x where usuario=:tusu<T>,<T>CFG PERFIL COSTOS VTAS<T>,usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)=<T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)=<T>MERCANCIA DE LINEA<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)<><T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)<><T>MERCANCIA DE LINEA<T>)))
+VisibleCondicion=Usuario.Costos
+
+
+[ArtInfo.frm/Acciones.ArtCostoHist]
+Activo=N
+ActivoCondicion=(((sql(<T>select count(usuario) from(SELECT Usuario FROM USUARIO WHERE acceso in (select Nombre from tablastd where tablast=:tUsu1))x where usuario=:tusu<T>,<T>CFG PERFIL COSTOS VTAS<T>,usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)=<T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)=<T>MERCANCIA DE LINEA<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)<><T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)<><T>MERCANCIA DE LINEA<T>)))
+Visible=S
+VisibleCondicion=
+
+
+[ArtInfo.frm/Acciones.Plan]
+Activo=N
+ActivoCondicion=(Art:Art.Espacios o ((no Art:Art.EsFormula) y Usuario.ConsultarCompraPendiente))<BR>y<BR>(((sql(<T>select count(usuario) from(SELECT Usuario FROM USUARIO WHERE acceso in (select Nombre from tablastd where tablast=:tUsu1))x where usuario=:tusu<T>,<T>CFG PERFIL COSTOS VTAS<T>,usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)=<T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)=<T>MERCANCIA DE LINEA<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)<><T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,I<CONTINUA>
+ActivoCondicion002=<CONTINUA>nfo.Articulo)<><T>MERCANCIA DE LINEA<T>)))
+Visible=S
+VisibleCondicion=
+
+
+[ArtInfo.frm/Acciones.Doc]
+Activo=N
+ActivoCondicion=(((sql(<T>select count(usuario) from(SELECT Usuario FROM USUARIO WHERE acceso in (select Nombre from tablastd where tablast=:tUsu1))x where usuario=:tusu<T>,<T>CFG PERFIL COSTOS VTAS<T>,usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)=<T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)=<T>MERCANCIA DE LINEA<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)<><T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)<><T>MERCANCIA DE LINEA<T>)))
+Visible=S
+VisibleCondicion=
+
+
+[ArtInfo.frm/Acciones.VentasAcum]
+Activo=N
+ActivoCondicion=(((sql(<T>select count(usuario) from(SELECT Usuario FROM USUARIO WHERE acceso in (select Nombre from tablastd where tablast=:tUsu1))x where usuario=:tusu<T>,<T>CFG PERFIL COSTOS VTAS<T>,usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)=<T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)=<T>MERCANCIA DE LINEA<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)<><T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)<><T>MERCANCIA DE LINEA<T>)))
+Visible=S
+VisibleCondicion=
+
+
+[ArtInfo.frm/Acciones.ComprasAcum]
+Activo=N
+ActivoCondicion=(((sql(<T>select count(usuario) from(SELECT Usuario FROM USUARIO WHERE acceso in (select Nombre from tablastd where tablast=:tUsu1))x where usuario=:tusu<T>,<T>CFG PERFIL COSTOS VTAS<T>,usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)=<T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)=<T>MERCANCIA DE LINEA<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)<><T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)<><T>MERCANCIA DE LINEA<T>)))
+Visible=S
+VisibleCondicion=
+
+
+[ArtInfo.frm/Acciones.ExplorarVentaD]
+Activo=N
+ActivoCondicion=(((sql(<T>select count(usuario) from(SELECT Usuario FROM USUARIO WHERE acceso in (select Nombre from tablastd where tablast=:tUsu1))x where usuario=:tusu<T>,<T>CFG PERFIL COSTOS VTAS<T>,usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)=<T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)=<T>MERCANCIA DE LINEA<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)<><T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)<><T>MERCANCIA DE LINEA<T>)))
+Visible=S
+VisibleCondicion=
+
+[ArtInfo.frm/Acciones.Cubos]
+Activo=N
+ActivoCondicion=(((sql(<T>select count(usuario) from(SELECT Usuario FROM USUARIO WHERE acceso in (select Nombre from tablastd where tablast=:tUsu1))x where usuario=:tusu<T>,<T>CFG PERFIL COSTOS VTAS<T>,usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)=<T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)=<T>MERCANCIA DE LINEA<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)<><T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)<><T>MERCANCIA DE LINEA<T>)))
+Visible=S
+VisibleCondicion=
+
+
+[ArtInfo.frm/Acciones.Evaluaciones]
+Activo=N
+ActivoCondicion=(((sql(<T>select count(usuario) from(SELECT Usuario FROM USUARIO WHERE acceso in (select Nombre from tablastd where tablast=:tUsu1))x where usuario=:tusu<T>,<T>CFG PERFIL COSTOS VTAS<T>,usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)=<T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)=<T>MERCANCIA DE LINEA<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)<><T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)<><T>MERCANCIA DE LINEA<T>)))
+Visible=S
+VisibleCondicion=
+
+[ArtInfo.frm/Acciones.Politica]
+Activo=N
+ActivoCondicion=(((sql(<T>select count(usuario) from(SELECT Usuario FROM USUARIO WHERE acceso in (select Nombre from tablastd where tablast=:tUsu1))x where usuario=:tusu<T>,<T>CFG PERFIL COSTOS VTAS<T>,usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)=<T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)=<T>MERCANCIA DE LINEA<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)<><T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)<><T>MERCANCIA DE LINEA<T>)))
+Visible=S
+VisibleCondicion=
+
+[ArtInfo.frm/Acciones.CapasUEPS]
+Activo=N
+ActivoCondicion=(((sql(<T>select count(usuario) from(SELECT Usuario FROM USUARIO WHERE acceso in (select Nombre from tablastd where tablast=:tUsu1))x where usuario=:tusu<T>,<T>CFG PERFIL COSTOS VTAS<T>,usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)=<T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)=<T>MERCANCIA DE LINEA<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)<><T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)<><T>MERCANCIA DE LINEA<T>)))
+VisibleCondicion=(Usuario.Costos)
+
+[ArtInfo.frm/Acciones.CapasPEPS]
+Activo=N
+ActivoCondicion=(((sql(<T>select count(usuario) from(SELECT Usuario FROM USUARIO WHERE acceso in (select Nombre from tablastd where tablast=:tUsu1))x where usuario=:tusu<T>,<T>CFG PERFIL COSTOS VTAS<T>,usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)=<T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)=<T>MERCANCIA DE LINEA<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)<><T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)<><T>MERCANCIA DE LINEA<T>)))
+VisibleCondicion=(Usuario.Costos) 
+
+
+[ArtInfo.frm/Acciones.SerieLoteCosto]
+ActivoCondicion=(Usuario.Costos)<BR>y<BR>((sql(<T>select count(usuario) from(SELECT Usuario FROM USUARIO WHERE acceso in (select Nombre from tablastd where tablast=:tUsu1))x where usuario=:tusu<T>,<T>CFG PERFIL COSTOS VTAS<T>,usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)=<T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)=<T>MERCANCIA DE LINEA<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(sql(<T>select categoria from art where articulo=:tArt<T>,Info.Articulo)<><T>VENTA<T>) y<BR>(sql(<T>select grupo from art where articulo=:tArt<T>,Info.Articulo)<><T>MERCANCIA DE LINEA<T>)))
+
+

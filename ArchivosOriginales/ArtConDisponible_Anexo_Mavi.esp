@@ -1,0 +1,3 @@
+[ArtConDisponible.vis/WHERE]
+ISNULL(RTRIM(Art.NivelAcceso), '') IN ('', '(Todos)', 'INTPRUEBA1', '(MAVI)') OR (Art.NivelAcceso='(Especifico)' AND EXISTS(SELECT * FROM ArtAcceso WHERE ArtAcceso.Articulo=Art.Articulo AND ArtAcceso.Usuario='INTPRUEBA1'))
+

@@ -1,0 +1,92 @@
+;**** Ultima modificación:27-Jun-08
+;**** Modifico:Elias
+;**** Se modifico:Creacion
+
+[CteLista.frm/Forma]
+ListaAcciones=Seleccionar<BR>CteInfo<BR>Editar
+
+[CteLista.frm/Lista]
+Vista=MaviCteA
+FiltroTodo=
+FiltroListaEstatus=ALTA<BR>BLOQ_AVISO<BR>BLOQUEADO<BR>BAJA
+FiltroSituacionTodo=
+ListaEnCaptura=Cte.Cliente<BR>Cte.Nombre<BR>Cte.RFC<BR>Cte.Canal<BR>Domicilio
+FiltroGeneral=Cte.Tipo<><T>Estructura<T><BR>{Si(no Usuario.ConsultarClientesOtrosAgentes, <T> AND Cte.Agente=<T>+Comillas(Usuario.DefAgente), <T><T>)}<BR>{SI(Contiene(usuario,<T>VENTP<T>)  ,<T>AND CteEnviarA.id IN (1,2,5,6)<T>,<T><T>) }
+
+
+;*** Integracion paquete DM0138 Cliente Express BVF 20072011
+[CteLista.frm/Acciones.CteInfo]
+EjecucionCondicion=ConDatos(MaviCteA:Cte.Cliente) y ((MaviCteA:Cte.Tipo<><T>Deudor<T>) o Usuario.VerInfoDeudores)
+AntesExpresiones=Asigna(Info.Cliente, MaviCteA:Cte.Cliente)
+Visible=S
+
+[CteLista.frm/Acciones.Seleccionar]
+Nombre=Seleccionar
+Boton=23
+NombreDesplegar=&Seleccionar
+TipoAccion=Ventana
+ClaveAccion=Seleccionar
+Visible=S
+Activo=S
+NombreEnBoton=S
+EnBarraHerramientas=S
+Multiple=S
+ListaAccionesMultiples=Asigna<BR>Seleccionar
+
+
+[CteLista.frm/Lista.Columnas]
+ID=74
+Domicilio=260
+Canal=120
+
+[CteLista.frm/Lista.Domicilio]
+Carpeta=Lista
+Clave=Domicilio
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=30
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[CteLista.frm/Lista.Cte.Canal]
+Carpeta=Lista
+Clave=Cte.Canal
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=100
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[CteLista.frm/Acciones.Seleccionar.Seleccionar]
+Nombre=Seleccionar
+Boton=0
+TipoAccion=Ventana
+ClaveAccion=Seleccionar
+Activo=S
+Visible=S
+
+[CteLista.frm/Acciones.Seleccionar.Asigna]
+Nombre=Asigna
+Boton=0
+TipoAccion=Expresion
+Expresion=Asigna(Mavi.RM1131ClienteSeleccionado,MaviCteA:Cte.Cliente)
+Activo=S
+Visible=S
+
+[CteLista.frm/Acciones.Editar]
+Nombre=Editar
+Boton=95
+NombreEnBoton=S
+NombreDesplegar=Editar Cliente
+EnBarraHerramientas=S
+TipoAccion=Formas
+ClaveAccion=RM1131ActualizarClienteFRM
+Visible=S
+Antes=S
+ActivoCondicion=(ConDatos(MaviCteA:Cte.Cliente)) y (SQL(<T>select dbo.FN_MAVIRM1131VerificarCanalCliente(<T>+comillas(MaviCteA:Cte.Cliente)+<T>)<T>)=0)
+AntesExpresiones=Asigna(Mavi.RM1131ClienteSeleccionado,MaviCteA:Cte.Cliente)
+

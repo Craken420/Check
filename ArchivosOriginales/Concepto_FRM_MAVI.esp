@@ -1,0 +1,64 @@
+;**** Ultima modificación: 09-Sept-08   
+;**** Modifico: Leticia Quezada
+;**** Se modifico: Se agrego la categoria    ALQG002
+
+
+;**** Ultima modificación: 25-Ago-08
+;**** Modifico: Leticia Quezada
+;**** Se modifico: Se agregaron los campos de EsAcreedora y Estatus   ALQG001
+
+;**** Modifico: Joel García (Mex)
+;**** Fecha Modificación: 24Jul09
+;**** Se modifico: Se agrego el campo de ConceptoBonificacion
+
+;ALQG002
+[Concepto.frm/Forma]
+ListaAcciones=Guardar<BR>Politica<BR>ConceptoAcceso<BR>Clase<BR>Ordenar<BR>Excel
+
+[Concepto.frm/Acciones.Clase]
+Nombre=Clase
+Boton=91
+NombreEnBoton=S
+NombreDesplegar=Clasificacion
+EnBarraHerramientas=S
+TipoAccion=Formas
+ClaveAccion=Clase
+Activo=S
+Visible=S
+EspacioPrevio=S
+
+
+;ALQG001
+[Concepto.frm/Lista]
+ListaEnCaptura=Concepto.Concepto<BR>Concepto.CR<BR>Concepto.Bloqueo<BR>Concepto.Cuenta<BR>Concepto.CuentaPresupuesto<BR>Concepto.Impuestos<BR>Concepto.Retencion<BR>Concepto.Retencion2<BR>Concepto.Retencion3<BR>Concepto.NivelAcceso<BR>Concepto.UEN<BR>Concepto.Clase<BR>Concepto.SubClase<BR>Concepto.Numero<BR>Concepto.EsAcreedora<BR>Concepto.EstatusConcepto<BR>Concepto.ConceptoBonificacion
+
+[Concepto.frm/Lista.Concepto.EsAcreedora]
+Carpeta=Lista
+Clave=Concepto.EsAcreedora
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[Concepto.frm/Lista.Concepto.EstatusConcepto]
+Carpeta=Lista
+Clave=Concepto.EstatusConcepto
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=5
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[Concepto.frm/Lista.Concepto.ConceptoBonificacion]
+Carpeta=Lista
+Clave=Concepto.ConceptoBonificacion
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro

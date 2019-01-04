@@ -1,0 +1,81 @@
+;***** Modificacion: 03-Feb-09
+;***** Modifico: Edgar Montelongo
+;***** Se modifico: Adecuaciones para validar la direccion vs CP
+;*** Desarrollo de Campañas 27/08/09, Modifico:Joel García (Mex), se agrego un campo adicional. 
+[Personal.vis/Vista]
+ListaTablas=Personal<BR>Plaza<BR>Empresa<BR>ProyectoDEnFirme<BR>Prov<BR>PersonalLista<BR>CtaDineroDestino<BR>Sucursal<BR>CentroCostos<BR>MinimosProfesionales<BR>Vehiculo<BR>Puesto<BR>Departamento<BR>PersonalCat<BR>PersonalGrupo<BR>UEN<BR>PersonalDestino<BR>PersonalOrigen<BR>Cta<BR>CtaRetencion<BR>Cte<BR>CtaSituacion<BR>LocalidadCNBV
+ListaCampos=Personal.Personal<BR>Personal.ApellidoPaterno<BR>Personal.ApellidoMaterno<BR>Personal.Nombre<BR>Personal.Tipo<BR>Personal.Direccion<BR>Personal.DireccionNumero<BR>Personal.DireccionNumeroInt<BR>Personal.Colonia<BR>Personal.Delegacion<BR>Personal.Poblacion<BR>Personal.Estado<BR>Personal.Pais<BR>Personal.CodigoPostal<BR>Personal.Telefono<BR>Personal.eMail<BR>Personal.FormaPago<BR>Personal.CtaDinero<BR>Personal.PersonalCuenta<BR>Personal.PersonalSucursal<BR>Personal.Afore<BR>Personal.FechaNacimiento<BR>Personal.Hijos<BR>Personal.Dependientes<BR>Personal.Nacionalidad<BR>Personal.Permiso<BR>Personal.Pasaporte<BR>Personal.Cartilla<BR>Personal.NivelAcademico<BR>Personal.Sexo<BR>Personal.EstadoCivil<BR>Personal.Beneficiario<BR>Personal.Parentesco<BR>Personal.Valuacion<BR>Personal.ReportaA<BR>Perso<CONTINUA>
+ListaCampos002=<CONTINUA>nal.ZonaEconomica<BR>Personal.MinimoProfesional<BR>Personal.TipoSueldo<BR>Personal.SueldoDiario<BR>Personal.SueldoDiarioComplemento<BR>Personal.SDI<BR>Personal.SDIBimestral<BR>Personal.Departamento<BR>Personal.TipoContrato<BR>Personal.Grupo<BR>Personal.Puesto<BR>Personal.PeriodoTipo<BR>Personal.Jornada<BR>Personal.Categoria<BR>Personal.Moneda<BR>Personal.Registro<BR>Personal.Registro2<BR>Personal.Registro3<BR>Personal.Registro4<BR>Personal.FechaAlta<BR>Personal.FechaAntiguedad<BR>Personal.FechaBaja<BR>Personal.ConceptoBaja<BR>Personal.UltimaModificacion<BR>Personal.VencimientoContrato<BR>Personal.AspiraSueldo<BR>Personal.AspiraDepartamento<BR>Personal.AspiraGrupo<BR>Personal.AspiraPuesto<BR>Personal.AspiraCategoria<BR>Personal.AspiraFecha<BR>Personal.Estatus<BR>Personal.UltimoPago<BR>Perso<CONTINUA>
+ListaCampos003=<CONTINUA>nal.UltimoCambio<BR>Personal.Situacion<BR>Personal.SituacionFecha<BR>Personal.SituacionUsuario<BR>Personal.SituacionNota<BR>Personal.TieneMovimientos<BR>Personal.SucursalTrabajo<BR>Personal.LugarNacimiento<BR>Personal.NivelAcceso<BR>Personal.Padre<BR>Personal.Madre<BR>Personal.UnidadMedica<BR>Personal.CentroCostos<BR>Personal.Sindicato<BR>Personal.Vehiculo<BR>Personal.TablaCobranza<BR>Personal.TablaCobranzaBono<BR>Personal.TablaCobranzaCascada<BR>Personal.TablaCobranzaBonoCascada<BR>Personal.TablaVentaCascada<BR>Personal.Porcentaje<BR>Personal.Beneficiario2<BR>Personal.Parentesco2<BR>Personal.Porcentaje2<BR>Personal.Beneficiario3<BR>Personal.Parentesco3<BR>Personal.Porcentaje3<BR>Personal.Beneficiario4<BR>Personal.Parentesco4<BR>Personal.Porcentaje4<BR>Personal.Beneficiario5<BR>Personal.Pa<CONTINUA>
+ListaCampos004=<CONTINUA>rentesco5<BR>Personal.Porcentaje5<BR>Personal.Beneficiario6<BR>Personal.Parentesco6<BR>Personal.Porcentaje6<BR>Personal.Beneficiario7<BR>Personal.Parentesco7<BR>Personal.Porcentaje7<BR>Personal.Beneficiario8<BR>Personal.Parentesco8<BR>Personal.Porcentaje8<BR>Personal.UEN<BR>Personal.Area<BR>Personal.Fuente<BR>Personal.Reclutador<BR>Personal.RecomendadoPor<BR>Personal.Cuenta<BR>Personal.CuentaRetencion<BR>Personal.MovNomina<BR>Personal.BeneficiarioNacimiento<BR>Personal.Beneficiario2Nacimiento<BR>Personal.Beneficiario3Nacimiento<BR>Personal.Beneficiario4Nacimiento<BR>Personal.Beneficiario5Nacimiento<BR>Personal.Beneficiario6Nacimiento<BR>Personal.Beneficiario7Nacimiento<BR>Personal.Beneficiario8Nacimiento<BR>Personal.Referencia<BR>Personal.ReferenciaDireccion<BR>Personal.ReferenciaTelefono<<CONTINUA>
+ListaCampos005=<CONTINUA>BR>Personal.Referencia2<BR>Personal.Referencia2Direccion<BR>Personal.Referencia2Telefono<BR>Personal.Referencia3<BR>Personal.Referencia3Direccion<BR>Personal.Referencia3Telefono<BR>Personal.Licencia<BR>Personal.LicenciaVencimiento<BR>Personal.Cliente<BR>Personal.eMailAuto<BR>Personal.Incremento<BR>Personal.EsSocio<BR>Personal.DiasPeriodo<BR>Personal.IndemnizacionPct<BR>Personal.Proyecto<BR>Personal.Actividad<BR>Personal.Plaza<BR>Personal.Empresa<BR>Personal.LocalidadCNBV<BR>Plaza.Descripcion<BR>Empresa.Nombre<BR>ProyectoDEnFirme.Asunto<BR>Prov.Proveedor<BR>Prov.Nombre<BR>Prov.Estatus<BR>PersonalLista.Personal<BR>PersonalLista.ApellidoPaterno<BR>PersonalLista.ApellidoMaterno<BR>PersonalLista.Nombre<BR>CtaDineroDestino.CtaDinero<BR>CtaDineroDestino.Descripcion<BR>CtaDineroDestino.Tipo<BR>Cta<CONTINUA>
+ListaCampos006=<CONTINUA>DineroDestino.Estatus<BR>Sucursal.Sucursal<BR>Sucursal.Nombre<BR>Sucursal.Prefijo<BR>Sucursal.ZonaEconomica<BR>CentroCostos.CentroCostos<BR>CentroCostos.Descripcion<BR>CentroCostos.EsAcumulativo<BR>MinimosProfesionales.Numero<BR>MinimosProfesionales.Descripcion<BR>MinimosProfesionales.ZonaA<BR>MinimosProfesionales.ZonaB<BR>MinimosProfesionales.ZonaC<BR>Vehiculo.Vehiculo<BR>Vehiculo.Descripcion<BR>Vehiculo.Placas<BR>Puesto.Puesto<BR>Puesto.Descripcion<BR>Puesto.SueldoDef<BR>Departamento.Departamento<BR>Departamento.Descripcion<BR>PersonalCat.Categoria<BR>PersonalCat.Descripcion<BR>PersonalGrupo.Grupo<BR>PersonalGrupo.Descripcion<BR>UEN.UEN<BR>UEN.Nombre<BR>PersonalDestino.Personal<BR>PersonalDestino.ApellidoPaterno<BR>PersonalDestino.ApellidoMaterno<BR>PersonalDestino.Nombre<BR>PersonalOrig<CONTINUA>
+ListaCampos007=<CONTINUA>en.Personal<BR>PersonalOrigen.ApellidoPaterno<BR>PersonalOrigen.ApellidoMaterno<BR>PersonalOrigen.Nombre<BR>Cta.Cuenta<BR>Cta.Descripcion<BR>CtaRetencion.Cuenta<BR>CtaRetencion.Descripcion<BR>Cte.Cliente<BR>Cte.Nombre<BR>CtaSituacion.Rama<BR>CtaSituacion.Situacion<BR>CtaSituacion.Icono<BR>LocalidadCNBV.LocalidadCNBV<BR>Personal.Sembrado
+ListaRelaciones=Personal.CtaSituacion<BR>Personal.CtaDineroDestino<BR>Personal.Prov<BR>Personal.PersonalLista<BR>Personal.Sucursal<BR>Personal.CentroCostos<BR>Personal.MinimosProfesionales<BR>Personal.Vehiculo<BR>Personal.Departamento<BR>Personal.Puesto<BR>Personal.PersonalCat<BR>Personal.PersonalGrupo<BR>Personal.UEN<BR>Personal.PersonalDestino<BR>Personal.PersonalOrigen<BR>Personal.Cta<BR>Personal.CtaRetencion<BR>Personal.Cte<BR>Personal.Plaza<BR>Personal.ProyectoDEnFirme<BR>Personal.Empresa<BR>Personal.Localidad<BR>Plaza.Personal<BR>Plaza.Sucursal<BR>Plaza.CentroCostos<BR>Plaza.UEN<BR>Prov.Cta<BR>Prov.CtaRetencion<BR>Sucursal.CentroCostos<BR>Sucursal.Cte<BR>Sucursal.LocalidadCNBV<BR>Vehiculo.Prov<BR>Departamento.Sucursal<BR>Cte.Sucursal<BR>Cte.Personal<BR>Cte.Cta<BR>Cte.CtaRetencion<BR>Cte.LocalidadCNB<CONTINUA>
+ListaRelaciones002=<CONTINUA>V<BR>Cte.CtaSituacion
+SQL=SELECT<BR>  Personal.Personal,<BR>  Personal.ApellidoPaterno,<BR>  Personal.ApellidoMaterno,<BR>  Personal.Nombre,<BR>  Personal.Tipo,<BR>  Personal.Direccion,<BR>  Personal.DireccionNumero,<BR>  Personal.DireccionNumeroInt,<BR>  Personal.Colonia,<BR>  Personal.Delegacion,<BR>  Personal.Poblacion,<BR>  Personal.Estado,<BR>  Personal.Pais,<BR>  Personal.CodigoPostal,<BR>  Personal.Telefono,<BR>  Personal.eMail,<BR>  Personal.FormaPago,<BR>  Personal.CtaDinero,<BR>  Personal.PersonalCuenta,<BR>  Personal.PersonalSucursal,<BR>  Personal.Afore,<BR>  Personal.FechaNacimiento,<BR>  Personal.Hijos,<BR>  Personal.Dependientes,<BR>  Personal.Nacionalidad,<BR>  Personal.Permiso,<BR>  Personal.Pasaporte,<BR>  Personal.Cartilla,<BR>  Personal.NivelAcademico,<BR>  Personal.Sexo,<BR>  Personal.EstadoCiv<CONTINUA>
+SQL002=<CONTINUA>il,<BR>  Personal.Beneficiario,<BR>  Personal.Parentesco,<BR>  Personal.Valuacion,<BR>  Personal.ReportaA,<BR>  Personal.ZonaEconomica,<BR>  Personal.MinimoProfesional,<BR>  Personal.TipoSueldo,<BR>  Personal.SueldoDiario,<BR>  Personal.SueldoDiarioComplemento,<BR>  Personal.SDI,<BR>  Personal.SDIBimestral,<BR>  Personal.Departamento,<BR>  Personal.TipoContrato,<BR>  Personal.Grupo,<BR>  Personal.Puesto,<BR>  Personal.PeriodoTipo,<BR>  Personal.Jornada,<BR>  Personal.Categoria,<BR>  Personal.Moneda,<BR>  Personal.Registro,<BR>  Personal.Registro2,<BR>  Personal.Registro3,<BR>  Personal.Registro4,<BR>  Personal.FechaAlta,<BR>  Personal.FechaAntiguedad,<BR>  Personal.FechaBaja,<BR>  Personal.ConceptoBaja,<BR>  Personal.UltimaModificacion,<BR>  Personal.VencimientoContrato,<BR>  Personal.Aspi<CONTINUA>
+SQL003=<CONTINUA>raSueldo,<BR>  Personal.AspiraDepartamento,<BR>  Personal.AspiraGrupo,<BR>  Personal.AspiraPuesto,<BR>  Personal.AspiraCategoria,<BR>  Personal.AspiraFecha,<BR>  Personal.Estatus,<BR>  Personal.UltimoPago,<BR>  Personal.UltimoCambio,<BR>  Personal.Situacion,<BR>  Personal.SituacionFecha,<BR>  Personal.SituacionUsuario,<BR>  Personal.SituacionNota,<BR>  Personal.TieneMovimientos,<BR>  Personal.SucursalTrabajo,<BR>  Personal.LugarNacimiento,<BR>  Personal.NivelAcceso,<BR>  Personal.Padre,<BR>  Personal.Madre,<BR>  Personal.UnidadMedica,<BR>  Personal.CentroCostos,<BR>  Personal.Sindicato,<BR>  Personal.Vehiculo,<BR>  Personal.TablaCobranza,<BR>  Personal.TablaCobranzaBono,<BR>  Personal.TablaCobranzaCascada,<BR>  Personal.TablaCobranzaBonoCascada,<BR>  Personal.TablaVentaCascada,<BR>  Person<CONTINUA>
+SQL004=<CONTINUA>al.Porcentaje,<BR>  Personal.Beneficiario2,<BR>  Personal.Parentesco2,<BR>  Personal.Porcentaje2,<BR>  Personal.Beneficiario3,<BR>  Personal.Parentesco3,<BR>  Personal.Porcentaje3,<BR>  Personal.Beneficiario4,<BR>  Personal.Parentesco4,<BR>  Personal.Porcentaje4,<BR>  Personal.Beneficiario5,<BR>  Personal.Parentesco5,<BR>  Personal.Porcentaje5,<BR>  Personal.Beneficiario6,<BR>  Personal.Parentesco6,<BR>  Personal.Porcentaje6,<BR>  Personal.Beneficiario7,<BR>  Personal.Parentesco7,<BR>  Personal.Porcentaje7,<BR>  Personal.Beneficiario8,<BR>  Personal.Parentesco8,<BR>  Personal.Porcentaje8,<BR>  Personal.UEN,<BR>  Personal.Area,<BR>  Personal.Fuente,<BR>  Personal.Reclutador,<BR>  Personal.RecomendadoPor,<BR>  Personal.Cuenta,<BR>  Personal.CuentaRetencion,<BR>  Personal.MovNomina,<BR>  Pers<CONTINUA>
+SQL005=<CONTINUA>onal.BeneficiarioNacimiento,<BR>  Personal.Beneficiario2Nacimiento,<BR>  Personal.Beneficiario3Nacimiento,<BR>  Personal.Beneficiario4Nacimiento,<BR>  Personal.Beneficiario5Nacimiento,<BR>  Personal.Beneficiario6Nacimiento,<BR>  Personal.Beneficiario7Nacimiento,<BR>  Personal.Beneficiario8Nacimiento,<BR>  Personal.Referencia,<BR>  Personal.ReferenciaDireccion,<BR>  Personal.ReferenciaTelefono,<BR>  Personal.Referencia2,<BR>  Personal.Referencia2Direccion,<BR>  Personal.Referencia2Telefono,<BR>  Personal.Referencia3,<BR>  Personal.Referencia3Direccion,<BR>  Personal.Referencia3Telefono,<BR>  Personal.Licencia,<BR>  Personal.LicenciaVencimiento,<BR>  Personal.Cliente,<BR>  Personal.eMailAuto,<BR>  Personal.Incremento,<BR>  Personal.EsSocio,<BR>  Personal.DiasPeriodo,<BR>  Personal.Indemnizac<CONTINUA>
+SQL006=<CONTINUA>ionPct,<BR>  Personal.Proyecto,<BR>  Personal.Actividad,<BR>  Personal.Plaza,<BR>  Personal.Empresa,<BR>  Personal.LocalidadCNBV,<BR>  Plaza.Descripcion,<BR>  Empresa.Nombre,<BR>  ProyectoDEnFirme.Asunto,<BR>  Prov.Proveedor,<BR>  Prov.Nombre,<BR>  Prov.Estatus,<BR>  PersonalLista.Personal,<BR>  PersonalLista.ApellidoPaterno,<BR>  PersonalLista.ApellidoMaterno,<BR>  PersonalLista.Nombre,<BR>  CtaDineroDestino.CtaDinero,<BR>  CtaDineroDestino.Descripcion,<BR>  CtaDineroDestino.Tipo,<BR>  CtaDineroDestino.Estatus,<BR>  Sucursal.Sucursal,<BR>  Sucursal.Nombre,<BR>  Sucursal.Prefijo,<BR>  Sucursal.ZonaEconomica,<BR>  CentroCostos.CentroCostos,<BR>  CentroCostos.Descripcion,<BR>  CentroCostos.EsAcumulativo,<BR>  MinimosProfesionales.Numero,<BR>  MinimosProfesionales.Descripcion,<BR>  MinimosPro<CONTINUA>
+SQL007=<CONTINUA>fesionales.ZonaA,<BR>  MinimosProfesionales.ZonaB,<BR>  MinimosProfesionales.ZonaC,<BR>  Vehiculo.Vehiculo,<BR>  Vehiculo.Descripcion,<BR>  Vehiculo.Placas,<BR>  Puesto.Puesto,<BR>  Puesto.Descripcion,<BR>  Puesto.SueldoDef,<BR>  Departamento.Departamento,<BR>  Departamento.Descripcion,<BR>  PersonalCat.Categoria,<BR>  PersonalCat.Descripcion,<BR>  PersonalGrupo.Grupo,<BR>  PersonalGrupo.Descripcion,<BR>  UEN.UEN,<BR>  UEN.Nombre,<BR>  PersonalDestino.Personal,<BR>  PersonalDestino.ApellidoPaterno,<BR>  PersonalDestino.ApellidoMaterno,<BR>  PersonalDestino.Nombre,<BR>  PersonalOrigen.Personal,<BR>  PersonalOrigen.ApellidoPaterno,<BR>  PersonalOrigen.ApellidoMaterno,<BR>  PersonalOrigen.Nombre,<BR>  Cta.Cuenta,<BR>  Cta.Descripcion,<BR>  CtaRetencion.Cuenta,<BR>  CtaRetencion.Descripcion,<B<CONTINUA>
+SQL008=<CONTINUA>R>  Cte.Cliente,<BR>  Cte.Nombre,<BR>  CtaSituacion.Rama,<BR>  CtaSituacion.Situacion,<BR>  CtaSituacion.Icono,<BR>  LocalidadCNBV.LocalidadCNBV,<BR> Personal.Sembrado<BR><BR>FROM<BR>  Personal<BR>  LEFT OUTER JOIN CtaSituacion ON {Comillas(<T>RH<T>)}=CtaSituacion.Rama AND Personal.Situacion=CtaSituacion.Situacion<BR>  LEFT OUTER JOIN CtaDinero CtaDineroDestino ON Personal.CtaDinero=CtaDineroDestino.CtaDinero<BR>  LEFT OUTER JOIN Prov ON Personal.Afore=Prov.Proveedor<BR>  LEFT OUTER JOIN Personal PersonalLista ON Personal.ReportaA=PersonalLista.Personal<BR>  LEFT OUTER JOIN Sucursal ON Personal.SucursalTrabajo=Sucursal.Sucursal<BR>  LEFT OUTER JOIN CentroCostos ON Personal.CentroCostos=CentroCostos.CentroCostos<BR>  LEFT OUTER JOIN MinimosProfesionales ON Personal.MinimoProfesional=MinimosProfesionales.Numero<BR<CONTINUA>
+SQL009=<CONTINUA>>  LEFT OUTER JOIN Vehiculo ON Personal.Vehiculo=Vehiculo.Vehiculo<BR>  LEFT OUTER JOIN Departamento ON Personal.Departamento=Departamento.Departamento<BR>  LEFT OUTER JOIN Puesto ON Personal.Puesto=Puesto.Puesto<BR>  LEFT OUTER JOIN PersonalCat ON Personal.Categoria=PersonalCat.Categoria<BR>  LEFT OUTER JOIN PersonalGrupo ON Personal.Grupo=PersonalGrupo.Grupo<BR>  LEFT OUTER JOIN UEN ON Personal.UEN=UEN.UEN<BR>  LEFT OUTER JOIN Personal PersonalDestino ON Personal.Reclutador=PersonalDestino.Personal<BR>  LEFT OUTER JOIN Personal PersonalOrigen ON Personal.RecomendadoPor=PersonalOrigen.Personal<BR>  LEFT OUTER JOIN Cta ON Personal.Cuenta=Cta.Cuenta<BR>  LEFT OUTER JOIN Cta CtaRetencion ON Personal.CuentaRetencion=CtaRetencion.Cuenta<BR>  LEFT OUTER JOIN Cte ON Personal.Cliente=Cte.Cliente<<CONTINUA>
+SQL010=<CONTINUA>BR>  LEFT OUTER JOIN Plaza ON Personal.Plaza=Plaza.Plaza<BR>  LEFT OUTER JOIN ProyectoDEnFirme ON Personal.Proyecto=ProyectoDEnFirme.Proyecto AND Personal.Actividad=ProyectoDEnFirme.Actividad<BR>  LEFT OUTER JOIN Empresa ON Personal.Empresa=Empresa.Empresa<BR>  LEFT OUTER JOIN LocalidadCNBV ON Personal.LocalidadCNBV=LocalidadCNBV.LocalidadCNBV
+
+
+[Personal.vis/Personal.LocalidadCNBV]
+Clave=Personal.LocalidadCNBV
+LigaTabla=Personal
+LigaCampo=LocalidadCNBV
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=10
+ClaveBDE=LocalidadCNBV
+
+[Personal.vis/LocalidadCNBV.LocalidadCNBV]
+Clave=LocalidadCNBV.LocalidadCNBV
+Nombre=Localidad
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+LigaTabla=LocalidadCNBV
+LigaCampo=LocalidadCNBV
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=LocalidadCNBV_1
+
+[Personal.vis/Relaciones.Personal.Localidad]
+Clave=Personal.Localidad
+TablaRemota=LocalidadCNBV
+LlaveLocal=Personal.LocalidadCNBV
+LlaveRemota=LocalidadCNBV
+TipoRelacion=Forzosa
+
+[Personal.vis/Relaciones.Sucursal.LocalidadCNBV]
+Clave=Sucursal.LocalidadCNBV
+TablaRemota=LocalidadCNBV
+LlaveLocal=Sucursal.LocalidadCNBV
+LlaveRemota=LocalidadCNBV
+TipoRelacion=Opcional
+
+[Personal.vis/Relaciones.Cte.LocalidadCNBV]
+Clave=Cte.LocalidadCNBV
+TablaRemota=LocalidadCNBV
+LlaveLocal=Cte.LocalidadCNBV
+LlaveRemota=LocalidadCNBV
+TipoRelacion=Opcional
+
+
+;*** Desarrollo de Campañas 27/08/09, Modifico:Joel García (Mex), se agrego un campo adicional. 
+[Personal.vis/Personal.Sembrado]
+Clave=Personal.Sembrado
+Visible=S
+LigaTabla=Personal
+LigaCampo=Sembrado
+Ligado=S
+ClaveBDE=Sembrado

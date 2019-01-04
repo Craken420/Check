@@ -1,0 +1,118 @@
+;**** Ultima modificación:03-Sep-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:
+
+
+
+
+;***** Se agregaron nuevos campos: ModificarRangoskmServicioMAVI, ModifComisnsChoferesMAVI ****
+[UsuarioCfg2.tbl/Tabla]
+ListaCampos=Usuario<BR>CxcMovExpress<BR>CxpMovExpress<BR>ModificarClienteBackOrder<BR>AfectarLote<BR>CancelarLote<BR>ContabilizarLote<BR>BloquearMonedaArtPrecio<BR>BloquearMonedaArtCosto<BR>BloquearListaMateriales<BR>ModificarObservaciones<BR>ControlAlmacenes<BR>ControlAlmacenesEnAlm<BR>ControlListasPrecios<BR>ModificarAnexosMovConcluidos<BR>ModificarProdCostosAd<BR>AutorizarProdAvances<BR>Digitalizar<BR>VentaSugerirDisponible<BR>LimitarCompraLocal<BR>GastoModificarProrrateo<BR>InvFisicoAlmacen<BR>CompraSugerirDisponible<BR>PedidoGenerarOT<BR>PedidoGenerarOTAbrir<BR>BloquearMaestrosPersonal<BR>BloquearAltaExpressPersonal<BR>GastosPV<BR>CompraGenerarOrdenesAlProcesar<BR>GastosEditarDeducible<BR>PlanEditarOrdenes<BR>PlanOrdenCompra<BR>PlanOrdenProduccion<BR><CONTINUA>
+ListaCampos002=<CONTINUA>PlanOrdenTransferencia<BR>PlanOrdenTraspaso<BR>TraspasarMovimientos<BR>CancelarEmbarquesExplorador<BR>OcultarDineroCtaDineroSaldo<BR>RecibirDemasSinLimites<BR>ModificarFactorMovTipo<BR>VINTransferirComponentes<BR>TransferirEntradas<BR>LimitarDialogoAbrirGuardar<BR>ModificarRangoskmServicioMAVI<BR>ModifComisnsChoferesMAVI<BR>EliminarHuellaMAVI<BR>ModifCondicionSolRefin<BR>AutorizaCondMoratorioMAVI<BR>PorcentajeCondMoratorioMAVI<BR>AplicacionManualCxcMAVI<BR>ModificarSucursalVenta<BR>AfectaBonif
+SQL=SELECT<BR>  Usuario,<BR>  CxcMovExpress,<BR>  CxpMovExpress,<BR>  LimitarCompraLocal,<BR>  VentaSugerirDisponible,<BR>  Digitalizar,<BR>  AutorizarProdAvances,<BR>  ModificarProdCostosAd,<BR>  ModificarAnexosMovConcluidos,<BR>  ControlAlmacenes,<BR>  ControlAlmacenesEnAlm,<BR>  ControlListasPrecios,<BR>  ModificarObservaciones,<BR>  BloquearMonedaArtPrecio,<BR>  BloquearMonedaArtCosto,<BR>  AfectarLote,<BR>  CancelarLote,<BR>  ContabilizarLote,<BR>  ModificarClienteBackOrder,<BR>  GastoModificarProrrateo,<BR>  InvFisicoAlmacen,<BR>  CompraSugerirDisponible,<BR>  PedidoGenerarOT,<BR>  PedidoGenerarOTAbrir,<BR>  BloquearMaestrosPersonal,<BR>  BloquearAltaExpressPersonal,<BR>  GastosPV,<BR>  CompraGenerarOrdenesAlProcesar,<BR>  GastosEditarDeducible,<BR>  PlanEditarOrdenes,<BR>  PlanOrdenCompra,<BR> <CONTINUA>
+SQL002=<CONTINUA> PlanOrdenProduccion,<BR>  PlanOrdenTransferencia,<BR>  PlanOrdenTraspaso,<BR>  TraspasarMovimientos,<BR>  CancelarEmbarquesExplorador,<BR>  OcultarDineroCtaDineroSaldo,<BR>  RecibirDemasSinLimites,<BR>  ModificarFactorMovTipo,<BR>  BloquearListaMateriales,<BR>  VINTransferirComponentes,<BR>  TransferirEntradas,<BR>  LimitarDialogoAbrirGuardar,<BR>  ModificarRangoskmServicioMAVI,<BR>  ModifComisnsChoferesMAVI,<BR>  EliminarHuellaMAVI,<BR>  ModifCondicionSolRefin,<BR>  UsuarioCfg2.AutorizaCondMoratorioMAVI,<BR>  UsuarioCfg2.PorcentajeCondMoratorioMAVI,<BR> UsuarioCfg2.AplicacionManualCxcMAVI,<BR> ModificarSucursalVenta, <BR>AfectaBonif<BR><BR>FROM<BR>  UsuarioCfg2
+
+
+
+;*****Nuevo campo agregado 03-Sep-08 ****
+[UsuarioCfg2.tbl/ModificarRangoskmServicioMAVI]
+Clave=ModificarRangoskmServicioMAVI
+Nombre=Modificar Rangos Km Mannto
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+
+
+;*****Nuevo campo agregado ARC 28-02-08 ****
+[UsuarioCfg2.tbl/ModifComisnsChoferesMAVI]
+Clave=ModifComisnsChoferesMAVI
+Nombre=Modificar Comisiones Choferes
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=0
+
+
+
+;****20-May-09 Nuevo campo agregado para desarrollo de huella, para permitir eliminar registros de huella***
+[UsuarioCfg2.tbl/EliminarHuellaMAVI]
+Clave=EliminarHuellaMAVI
+Nombre=Eliminar Registro de Huellas
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=0
+
+
+
+;****20-May-09 Nuevo campo agregado para desarrollo de REFINANCIAMIENTO, para permitir editar la condicion en la solicitud***
+[UsuarioCfg2.tbl/ModifCondicionSolRefin]
+Clave=ModifCondicionSolRefin
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+Nombre=Modificar Condicion Sol. Refinanciamiento
+ValorPorOmision=0
+
+;****07-Jul-09 Nuevos Campos Moratorios MP***
+
+[UsuarioCfg2.tbl/AutorizaCondMoratorioMAVI]
+Clave=AutorizaCondMoratorioMAVI
+Nombre=Autoriza Condonacion Moratorios
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=PorcentajeCondMoratorioMAVI
+AyudaEnCaptura=Lista de Opciones
+OpcionesColumnas=1
+OpcionesPredefinidas=Si - No
+OpcionesRenglones=8
+
+;****07-Jul-09 Nuevos Campos Moratorios MP***
+
+[UsuarioCfg2.tbl/PorcentajeCondMoratorioMAVI]
+Clave=PorcentajeCondMoratorioMAVI
+Nombre=Porcentaje Màximo
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+CondicionEdicion=AutorizaCondMoratorioMAVI
+AyudaEnCaptura=Calculadora
+ValorMinimo=0
+ValorMaximo=100
+
+;****07-Jul-09 Nuevos Campos Moratorios MP***
+
+[UsuarioCfg2.tbl/AplicacionManualCxcMAVI]
+Clave=AplicacionManualCxcMAVI
+Nombre=Aplica Manual en Cxc
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+;**** 23-jul-09 MODIFICAR SUCURSALES MOISES MAVI 15/JUNIO/2009 Integrado por MP
+[UsuarioCfg2.tbl/ModificarSucursalVenta]
+Clave=ModificarSucursalVenta
+Nombre=Modificar la Sucursal de Venta
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+
+;*** 17-07-09 Bonificaciones  YRG ****
+;[UsuarioCfg2.tbl/Tabla]
+;ListaCampos.Cambios=Insertar<TAB>AfectaBonif<TAB>43
+;SQL.Cambios=Insertar<TAB>  
+;LimitarDialogoAbrirGuardar,<TAB>43<BR>Insertar<TAB>
+;AfectaBonif<TAB>44
+
+[UsuarioCfg2.tbl/AfectaBonif]
+Clave=AfectaBonif
+Nombre=Afecta Bonificación
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+

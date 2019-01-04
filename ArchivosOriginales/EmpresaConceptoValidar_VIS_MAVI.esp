@@ -1,0 +1,36 @@
+[EmpresaConceptoValidar.vis/Vista]
+ListaCampos=EmpresaConceptoValidar.Empresa<BR>EmpresaConceptoValidar.Modulo<BR>EmpresaConceptoValidar.Mov<BR>EmpresaConceptoValidar.Concepto<BR>EmpresaConceptoValidar.CR<BR>EmpresaConceptoValidar.TipoCfdi<BR>EmpresaConceptoValidar.PeriodoCfdi<BR>Concepto.Modulo<BR>Concepto.Concepto
+SQL=SELECT<BR>EmpresaConceptoValidar.Empresa,<BR>EmpresaConceptoValidar.Modulo,<BR>EmpresaConceptoValidar.Mov,<BR>EmpresaConceptoValidar.Concepto,<BR>EmpresaConceptoValidar.CR,<BR>EmpresaConceptoValidar.TipoCfdi,<BR>EmpresaConceptoValidar.PeriodoCfdi,<BR>Concepto.Modulo,<BR>Concepto.Concepto<BR>FROM EmpresaConceptoValidar<BR>JOIN Concepto ON EmpresaConceptoValidar.Modulo=Concepto.Modulo AND EmpresaConceptoValidar.Concepto=Concepto.Concepto
+
+[EmpresaConceptoValidar.vis/EmpresaConceptoValidar.TipoCfdi]
+Clave=EmpresaConceptoValidar.TipoCfdi
+Nombre=TipoCfdi
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=1
+TipoDatos=Texto
+Tamano=1
+LigaTabla=EmpresaConceptoValidar
+LigaCampo=TipoCfdi
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=TipoCfdi
+
+[EmpresaConceptoValidar.vis/EmpresaConceptoValidar.PeriodoCfdi]
+Clave=EmpresaConceptoValidar.PeriodoCfdi
+Nombre=PeriodoCfdi
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=3
+TipoDatos=Texto
+Tamano=3
+AyudaEnCaptura=Lista de Opciones
+ListaOpciones=MEN<BR>ANU<BR>OPE<BR>N/A
+OpcionesPredefinidas=Ninguna
+LigaTabla=EmpresaConceptoValidar
+LigaCampo=PeriodoCfdi
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=PeriodoCfdi

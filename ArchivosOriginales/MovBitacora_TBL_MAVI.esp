@@ -1,0 +1,80 @@
+[MovBitacora.tbl/Tabla]
+ListaCampos=Modulo<BR>ID<BR>RID<BR>Fecha<BR>Evento<BR>Sucursal<BR>Usuario<BR>Tipo<BR>MovEstatus<BR>MovSituacion<BR>MovSituacionFecha<BR>MovSituacionUsuario<BR>MovSituacionNota<BR>Duracion<BR>DuracionUnidad<BR>Agente<BR>Clave<BR>Importe
+ListaRelaciones=EventoTipo<BR>MAVIClaveSeguimiento<BR>Agente
+SQL=SELECT<BR>  Modulo,<BR>  ID,<BR>  RID,<BR>  Fecha,<BR>  Evento,<BR>  Tipo,<BR>  Sucursal,<BR>  Usuario,<BR>  MovEstatus,<BR>  MovSituacion,<BR>  MovSituacionFecha,<BR>  MovSituacionUsuario,<BR>  MovSituacionNota,<BR>  Duracion,<BR>  DuracionUnidad,<BR>  Agente,<BR> Clave,<BR>Importe,<BR>Envio<BR><BR>FROM<BR>  MovBitacora
+
+
+[MovBitacora.tbl/Agente]
+Clave=Agente
+Nombre=Agente
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Requerido=S
+AyudaForma=AgenteLista
+AyudaVista=AgenteA
+AyudaCampo=Agente.Agente
+ValidacionUsaTabla=S
+ValidacionTablas=Agente
+AyudaEnCaptura=Vista
+AyudaMemTabla=Agente
+AyudaMemRenglones=5
+AyudaMemOpc=Unicamente opciones listadas
+AyudaRefrescar=S
+;ValorPorOmision=SI sql(<T>select count(u.usuario) from usuario u where u.GrupoTrabajo like :tcred and u.usuario = :tvitor<T>,<T>%Credito%<T>,USUARIO) = 1<BR>    ENTONCES<BR>        <T>A000001<T><BR>FIN
+ValorPorOmision=SI sql(<T>select count(u.usuario) from usuario u where u.usuario like :tcred and u.usuario = :tvitor<T>,<T>%Credi%<T>,USUARIO) = 1<BR>  ENTONCES<BR>    <T>A000001<T><BR>  SINO<BR>    Info.AgenteA<BR>FIN
+
+
+[MovBitacora.tbl/Clave]
+Clave=Clave
+Nombre=Clave
+Visible=S
+TamanoValidacion=10
+AyudaEnCaptura=Vista
+AyudaMemRenglones=4
+AyudaMemOpc=Unicamente opciones listadas
+Tamano=10
+Requerido=S
+ValidacionUsaTabla=S
+ValidacionTablas=MAVIClaveSeguimiento
+AyudaRefrescar=S
+AyudaForma=MAVIClaveSeguimiento2
+AyudaVista=MAVIClaveSeguimiento2
+AyudaCampo=MAVIClaveSeguimiento.Clave
+RefrescarTodo=S
+ValidacionConCondiciones=S
+ValidacionCondicion=SQL(<T>SELECT COUNT(Clave) FROM dbo.fn_MaviDM0114VisualCalif(:tUsr) WHERE Clave = :tCve <T>,Usuario,MovBitacora:MovBitacora.Clave)>0
+ValidacionMensajeError=<T>La Clave no es válida o no tiene acceso a dicha Clave <T>
+
+
+[MovBitacora.tbl/Relaciones.MAVIClaveSeguimiento]
+TipoRelacion=Opcional
+LlaveLocal=Clave<BR>Modulo
+Clave=MAVIClaveSeguimiento
+TablaRemota=MAVIClaveSeguimiento
+LlaveRemota=Clave<BR>Modulo
+
+
+[MovBitacora.tbl/Relaciones.Agente]
+TipoRelacion=Opcional
+LlaveLocal=Agente
+Clave=Agente
+TablaRemota=Agente
+LlaveRemota=Agente
+
+
+[MovBitacora.tbl/Evento]
+Requerido=N
+
+[MovBitacora.tbl/Fecha]
+ValorPorOmision=SQL(<T>SELECT GETDATE()<T>)
+
+
+[MovBitacora.tbl/Importe]
+Clave=Importe
+Nombre=Importe
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+
+

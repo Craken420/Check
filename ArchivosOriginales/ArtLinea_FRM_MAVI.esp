@@ -1,0 +1,251 @@
+;**** Ultima modificación:26-Ago-08
+;**** Modifico:Arly Rubio
+;**** Se modifico: Integracion PROPRE
+
+
+; ***** Modifico: Judith Ramirez 14-Dic-09
+; ***** Modificacion: Modificacion de forma e integracion de campos nuevos: ArtTipoPequeMAVI, ArtTipoComputoMAVI para vendedores y jefes instituciones 
+
+
+;**** Se modificaron las dimensiones de la forma 26-Ago-08(Arly)****
+;*****Se agregaron expresiones al cerrar Entrega 29-Ene-08***** 
+; ***** JR 14-Dic-09. Modificacion de lineas de PosicionInicialIzquierda, PosicionInicialAncho para comisiones vend y jefes instituciones
+;**** Modificacion de PosicionInicialAncho por actualizacion RM292 Plazo Promedio por Plazo BVF 26042011
+[ArtLinea.frm/Forma]
+;PosicionInicialIzquierda=372
+PosicionInicialIzquierda=94
+PosicionInicialArriba=336
+;PosicionInicialAncho=809
+;PosicionInicialAncho=835
+PosicionInicialAncho=985
+PosicionInicialAlturaCliente=318
+ExpresionesAlCerrar=EJECUTARSQL(<T>spActualizaPropreArtFam<T>)
+ListaAcciones=Guardar<BR>Excel<BR>LineaXTipyCanVta
+VentanaPosicionInicial=Centrado
+
+
+
+;***** Se agregaron nuevos campos:ArtLinea.LineaMaestra,  ArtLinea.ValidarPropEnSerie***** 
+; ***** JR 14-Dic-09. Se integro 2 campos nuevos: ArtLinea.ArtTipoPequeMAVI, ArtLinea.ArtTipoComputoMAVI para vend y jefes instituciones *****
+;**** Se integro campo ArtTipoDecoracionMavi por actualizacion RM292 Plazo Promedio por Plazo BVF 26042011
+; **** Integracion de campo nuevo ArtTipoGarantiaMavi vdl 20072011 para desarrollo RM291-A  Relacion de Ventas Por Agente y Sucursal dentro del paquete RM0291A_09082011. JR 09-Ago-2011 **** 
+[ArtLinea.frm/Lista]
+ListaEnCaptura=ArtLinea.Linea<BR>ArtLinea.Familia<BR>ArtLinea.LineaMaestra<BR>ArtLinea.ValidarPropEnSerie<BR>ArtLinea.ArtTipoPequeMAVI<BR>ArtLinea.ArtTipoComputoMAVI<BR>ArtLinea.ArtTipoDecoracionMavi<BR>ArtLinea.ArtTipoGarantiaMavi<BR>ArtLinea.EnvioMavi<BR>ArtLinea.responsableEquipoCompras<BR>ArtLinea.CveProdSAT
+GuardarPorRegistro=S
+; ***** JR 14-Dic-09.  Integracion de nuevos campos para vend y jefes instituciones *****
+;*** Se integro campo ArtTipoDecoracionMavi por actualizacion RM292 Plazo Promedio por Plazo BVF 26042011
+; **** Integracion de campo nuevo ArtTipoGarantiaMavi vdl 20072011 para desarrollo RM291-A  Relacion de Ventas Por Agente y Sucursal dentro del paquete RM0291A_09082011. JR 09-Ago-2011 **** 
+[ArtLinea.frm/Lista.Columnas]
+LineaMaestra=304
+ArtTipoPequeMAVI=160
+ArtTipoComputoMAVI=172
+ArtTipoDecoracionMavi=114
+ArtTipoGarantiaMavi=115
+
+
+;****Nuevo campo agregado 26-Ago-08(Arly)*****
+[ArtLinea.frm/Lista.ArtLinea.LineaMaestra]
+Carpeta=Lista
+Clave=ArtLinea.LineaMaestra
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=50
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+;****Nuevo campo agregado 04-Dic-08(ARC)*****
+[ArtLinea.frm/Lista.ArtLinea.ValidarPropEnSerie]
+Carpeta=Lista
+Clave=ArtLinea.ValidarPropEnSerie
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+; ***** JR 14-Dic-09.  Integracion campo nuevo para vend y jefes instituciones *****
+[ArtLinea.frm/Lista.ArtLinea.ArtTipoPequeMAVI]
+Carpeta=Lista
+Clave=ArtLinea.ArtTipoPequeMAVI
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+; ***** JR 14-Dic-09.  Integracion campo nuevo para vend y jefes instituciones *****
+[ArtLinea.frm/Lista.ArtLinea.ArtTipoComputoMAVI]
+Carpeta=Lista
+Clave=ArtLinea.ArtTipoComputoMAVI
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+;*** Integracion campo nuevo, actualizacion RM292 Plazo Promedio por Plazo BVF 26042011
+; ***** RQM 26-Feb.11.  Integracion campo nuevo *****
+[ArtLinea.frm/Lista.ArtLinea.ArtTipoDecoracionMavi]
+Carpeta=Lista
+Clave=ArtLinea.ArtTipoDecoracionMavi
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+; **** Integracion de campo nuevo ArtTipoGarantiaMavi vdl 20072011 para desarrollo RM291-A  Relacion de Ventas Por Agente y Sucursal dentro del paquete RM0291A_09082011. JR 09-Ago-2011 **** 
+[ArtLinea.frm/Lista.ArtLinea.ArtTipoGarantiaMavi]
+Carpeta=Lista
+Clave=ArtLinea.ArtTipoGarantiaMavi
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[ArtLinea.frm/Lista.ArtLinea.EnvioMavi]
+Carpeta=Lista
+Clave=ArtLinea.EnvioMavi
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[ArtLinea.frm/Lista.ArtLinea.responsableEquipoCompras]
+Carpeta=Lista
+Clave=ArtLinea.responsableEquipoCompras
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=15
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[ArtLinea.frm/Lista.ArtLinea.Familia]
+Carpeta=Lista
+Clave=ArtLinea.Familia
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=250
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[ArtLinea.frm/Lista.ArtLinea.CveProdSAT]
+Carpeta=Lista
+Clave=ArtLinea.CveProdSAT
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=10
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[ArtLinea.frm/Acciones.LineaXTipyCanVta]
+Nombre=LineaXTipyCanVta
+Boton=0
+NombreEnBoton=S
+NombreDesplegar=Líneas X Tipo Y Canal Vta
+EnBarraHerramientas=S
+EspacioPrevio=S
+Activo=S
+Visible=S
+Multiple=S
+ListaAccionesMultiples=Selec<BR>Expresion<BR>AbrirForma
+
+[ArtLinea.frm/Acciones.LineaXTipyCanVta.Selec]
+Nombre=Selec
+Boton=0
+TipoAccion=Ventana
+ClaveAccion=Seleccionar
+Activo=S
+Visible=S
+
+[ArtLinea.frm/Acciones.LineaXTipyCanVta.AbrirForma]
+Nombre=AbrirForma
+Boton=0
+TipoAccion=Formas
+ClaveAccion=artLineaD
+Activo=S
+Visible=S
+
+[ArtLinea.frm/Acciones.LineaXTipyCanVta.Expresion]
+Nombre=Expresion
+Boton=0
+TipoAccion=Expresion
+Expresion=Asigna(Mavi.DM0175BP58ArtLineaID,ArtLinea:ArtLinea.ID)
+Activo=S
+Visible=S
+
+[ArtLinea.frm/Acciones.Guardar]
+Nombre=Guardar
+Boton=3
+NombreEnBoton=S
+NombreDesplegar=&Guardar y cerrar
+EnBarraHerramientas=S
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Ventana
+ClaveAccion=Aceptar
+Visible=S
+Activo=S
+GuardarAntes=S
+ConCondicion=S
+EjecucionCondicion=Si  Vacio(ArtLinea:ArtLinea.CveProdSAT)  <BR>    Entonces<BR>        Error(<T>La clave SAT no debe estar vacio<T>)<BR>        AbortarOperacion<BR>    Sino<BR>        Verdadero<BR>Fin
+
+[Acciones.eliminar]
+Nombre=eliminar
+Boton=36
+NombreDesplegar=Eliminar
+EnBarraHerramientas=S
+TipoAccion=Controles Captura
+Activo=S
+Visible=S
+NombreEnBoton=S
+EspacioPrevio=S
+Carpeta=Lista
+ClaveAccion=Registro Eliminar
+Multiple=S
+ListaAccionesMultiples=eliminar<BR>guardar<BR>actualizarvista
+
+[Acciones.eliminar.eliminar]
+Nombre=eliminar
+Boton=0
+Carpeta=(Carpeta principal)
+TipoAccion=Controles Captura
+ClaveAccion=Registro Eliminar
+Activo=S
+Visible=S
+ConCondicion=S
+EjecucionCondicion=Si SQL(<T>SELECT COUNT(Linea) FROM Art WITH(NOLOCK) WHERE Linea = :tLinea <T>,ArtLinea:ArtLinea.Linea)>0<BR>     Entonces<BR>     Error(<T>No se puede eliminar esta linea, ya se encuentra vinculada a un artículo<T>) <BR>     AbortarOperacion<BR>Sino<BR>    Informacion(<T>Linea eliminada correctamente<T>)   <BR>    Verdadero<BR>Fin
+
+[Acciones.eliminar.guardar]
+Nombre=guardar
+Boton=0
+TipoAccion=Controles Captura
+ClaveAccion=Guardar Cambios
+Activo=S
+Visible=S
+[Acciones.eliminar.actualizarvista]
+Nombre=actualizarvista
+Boton=0
+TipoAccion=Controles Captura
+ClaveAccion=Actualizar Vista
+Activo=S
+Visible=S

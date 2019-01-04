@@ -1,0 +1,160 @@
+;**** Ultima modificación:11-Jul-08
+;**** Modifico:Arly Rubio Camacho
+;**** Se modifico:Integracion desarrollo mexico
+
+
+
+;***** Integracion cambio mexico *****
+;***** Se agregaron nuevos campos: desarrollomexico(MaviNumero, MaviNumeroInterno)
+;***** Se agregaron nuevos campos ARC 10-Jun-09: AntiguedadMesesMAVI y  AntiguedadAniosMAVI ****
+[CteCtoDireccion.tbl/Tabla]
+;ListaCampos=Cliente<BR>ID<BR>Tipo<BR>Direccion<BR>Delegacion<BR>CodigoPostal<BR>Colonia<BR>Poblacion<BR>Estado<BR>Pais<BR>MaviNumero<BR>MaviNumeroInterno<BR>TipoCalle<BR>AntiguedadMesesMAVI<BR>AntiguedadAniosMAVI
+;SQL=SELECT<BR>  Cliente,<BR>  ID,<BR>  Tipo,<BR>  Direccion,<BR>  Delegacion,<BR>  Colonia,<BR>  Poblacion,<BR>  Estado,<BR>  Pais,<BR>  CodigoPostal,<BR>  MaviNumero,<BR>  MaviNumeroInterno,<BR>  TipoCalle,<BR>  AntiguedadMesesMAVI,<BR>  AntiguedadAniosMAVI<BR><BR>FROM<BR>  CteCtoDireccion
+ListaCampos=Cliente<BR>ID<BR>Tipo<BR>Direccion<BR>Delegacion<BR>CodigoPostal<BR>Colonia<BR>Poblacion<BR>Estado<BR>Pais<BR>MaviNumero<BR>MaviNumeroInterno<BR>TipoCalle<BR>AntiguedadMesesMAVI<BR>AntiguedadAniosMAVI<BR>Cruces
+SQL=SELECT<BR>  Cliente,<BR>  ID,<BR>  Tipo,<BR>  Direccion,<BR>  Delegacion,<BR>  Colonia,<BR>  Poblacion,<BR>  Estado,<BR>  Pais,<BR>  CodigoPostal,<BR>  MaviNumero,<BR>  MaviNumeroInterno,<BR>  TipoCalle,<BR>  AntiguedadMesesMAVI,<BR>  AntiguedadAniosMAVI,<BR> Cruces<BR><BR>FROM<BR>  CteCtoDireccion
+
+[CteCtoDireccion.tbl/Direccion]
+AyudaEnCaptura=N
+Mayusculas=S
+
+
+[CteCtoDireccion.tbl/Delegacion]
+ListaRefrescar=Colonia<BR>CodigoPostal<BR>Estado<BR>Pais<BR>Poblacion
+ValorRefrescar=Asigna(temp.Numerico1,0)<BR>Asigna(temp.Numerico2,0)<BR>Asigna(temp.Numerico3,1)<BR>Asigna(temp.Numerico4,0)<BR>Asigna(Info.Actualizar,<T>x<T>)<BR>Si(Info.Copiar,Info.Delegacion,Delegacion)
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Delegacion Incorrecta<T>
+Mayusculas=S
+AlCambiar=Asigna(temp.Numerico1,0)<BR>Asigna(temp.Numerico2,0)<BR>Asigna(temp.Numerico3,0)<BR>Asigna(temp.Numerico4,0)
+AyudaBusquedaRapida=Asigna(Info.Actualizar,<T>x<T>)<BR>Asigna(temp.Numerico1,1)<BR>Asigna(temp.Numerico2,1)<BR>Asigna(temp.Numerico3,1)<BR>Asigna(temp.Numerico4,1)
+ConAyudaBusquedaRapida=S
+ValidacionCondicion=info.Actualizar <> nulo y temp.Numerico3  <> 0
+
+[CteCtoDireccion.tbl/Colonia]
+ListaRefrescar=Delegacion<BR>CodigoPostal<BR>Estado<BR>Pais<BR>Poblacion
+ValorRefrescar=Asigna(temp.Numerico1,0)<BR>Asigna(temp.Numerico2,1)<BR>Asigna(temp.Numerico3,0)<BR>Asigna(temp.Numerico4,0)<BR>Asigna(Info.Actualizar,<T>x<T>)<BR>Si(Info.Copiar,Info.Colonia,Colonia)
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Colonia Incorrecta<T>
+Mayusculas=S
+AlCambiar=Asigna(temp.Numerico1,0)<BR>Asigna(temp.Numerico2,0)<BR>Asigna(temp.Numerico3,0)<BR>Asigna(temp.Numerico4,0)
+AyudaBusquedaRapida=Asigna(Info.Actualizar,<T>x<T>)<BR>Asigna(temp.Numerico1,1)<BR>Asigna(temp.Numerico2,1)<BR>Asigna(temp.Numerico3,1)<BR>Asigna(temp.Numerico4,1)
+ConAyudaBusquedaRapida=S
+ValidacionCondicion=Info.Actualizar <>nulo  y temp.Numerico2  <> 0
+
+[CteCtoDireccion.tbl/Poblacion]
+ValorRefrescar=Si(Info.Copiar, Info.Delegacion, Delegacion)
+Mayusculas=S
+
+[CteCtoDireccion.tbl/Estado]
+ValorRefrescar=Asigna(temp.Numerico1,0)<BR>Asigna(temp.Numerico2,0)<BR>Asigna(temp.Numerico3,0)<BR>Asigna(temp.Numerico4,1)<BR>Asigna(info.Actualizar,<T>x<T>)<BR>Si(Info.Copiar,Info.Estado,Estado)
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Estado Incorrecto<T>
+Mayusculas=S
+AlCambiar=Asigna(temp.Numerico1,0)<BR>Asigna(temp.Numerico2,0)<BR>Asigna(temp.Numerico3,0)<BR>Asigna(temp.Numerico4,0)
+ValidacionCondicion=info.Actualizar <> nulo y temp.Numerico4  <> 0
+
+[CteCtoDireccion.tbl/Pais]
+ValorPorOmision=<T>Mexico<T>
+Mayusculas=S
+
+[CteCtoDireccion.tbl/CodigoPostal]
+ListaRefrescar=Delegacion<BR>Colonia<BR>Estado<BR>Pais<BR>Poblacion<BR>CodigoPostal
+ValorRefrescar=Asigna(temp.Numerico1,1)<BR>Asigna(temp.Numerico2,0)<BR>Asigna(temp.Numerico3,0)<BR>Asigna(temp.Numerico4,0)<BR>Asigna(Info.Actualizar,<T>x<T>)<BR>Si(Info.Copiar,Info.CodigoPostal,CodigoPostal)
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Codigo Postal Incorrecto<T>
+Mayusculas=S
+AyudaBusquedaRapida=Asigna(Info.Actualizar,<T>x<T>)<BR>Asigna(temp.Numerico1,1)<BR>Asigna(temp.Numerico2,1)<BR>Asigna(temp.Numerico3,1)<BR>Asigna(temp.Numerico4,1)
+ConAyudaBusquedaRapida=S
+AlCambiar=Asigna(temp.Numerico1,0)<BR>Asigna(temp.Numerico2,0)<BR>Asigna(temp.Numerico3,0)                                                                        <BR>Asigna(temp.Numerico4,0)
+ValidacionCondicion=info.Actualizar <> nulo    y temp.Numerico1  <> 0
+
+
+;*** Nuevo campo ***
+[CteCtoDireccion.tbl/MaviNumero]
+Clave=MaviNumero
+Nombre=Número
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+
+
+
+;*** Nuevo campo ***
+[CteCtoDireccion.tbl/MaviNumeroInterno]
+Clave=MaviNumeroInterno
+Nombre=Número Interno
+Visible=S
+TamanoValidacion=20
+Tamano=20
+Mayusculas=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Numero Interior Incorrecto<T>
+ValidacionCondicion=Si<BR>  SQL(<T>Select dbo.fn_ValidaNumeroInt(<T>&comillas(MaviNumeroInterno)&<T>)<T>)=1<BR>Entonces<BR>  SQL(<T>Select dbo.fn_ValidaNumeroInt(<T>&comillas(MaviNumeroInterno)&<T>)<T>)<BR>Sino<BR>  1=1<BR>Fin
+
+
+
+;*** Nuevo campo ***
+; ***** JR 03-Dic-03. Se cambio lista de opciones para cliente express. Cambios por Arturo Guizer *****
+[CteCtoDireccion.tbl/TipoCalle]
+Clave=TipoCalle
+Nombre=Tipo Calle
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=30
+Tamano=30
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+Alineacion=Centrado
+Requerido=S
+;ListaOpciones=Callejón<BR>Carretera<BR>Camino<BR>Autopista<BR>Calle<BR>Calzada<BR>Boulevard<BR>Pasaje<BR>Andador<BR>Cerrada o Privada<BR>Avenida
+ListaOpciones=Andador<BR>Autopista<BR>Avenida<BR>Boulevard<BR>Calle<BR>Callejón<BR>Calzada<BR>Camino<BR>Carretera<BR>Cerrada o Privada<BR>Pasaje
+
+
+;*** Nuevo campo ***
+[CteCtoDireccion.tbl/AntiguedadMesesMAVI]
+Clave=AntiguedadMesesMAVI
+Nombre=Meses Antigüedad
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+AyudaEnCaptura=Calculadora
+ValorMinimo=0
+ValorMaximo=11
+ValorPorOmision=0
+
+
+;*** Nuevo campo ***
+[CteCtoDireccion.tbl/AntiguedadAniosMAVI]
+Clave=AntiguedadAniosMAVI
+Nombre=Años Antigüedad
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+AyudaEnCaptura=Calculadora
+ValorMinimo=0
+ValorPorOmision=0
+
+
+
+;****16-Jun-09 ARC  Se agrego en la lista de opciones el valor "Anterior" ****
+; ***** JR 03-Dic-09. Cambio linea de lista de opciones y se agrego tamanovalidacion y tamano para cliente express. Cambios por Arturo Guizer ****
+[CteCtoDireccion.tbl/Tipo]
+;ListaOpciones=Trabajo<BR>Particular<BR>Anterior<BR>Fiscal<BR>Otra
+ListaOpciones=Particular<BR>Par. Anterior 1<BR>Par. Anterior 2<BR>Trabajo<BR>Tra. Anterior 1<BR>Tra. Anterior 2<BR>Fiscal<BR>Fis. Anterior 1<BR>Fis. Anterior 2<BR>Otra
+TamanoValidacion=50
+Tamano=50
+
+;*** Nuevo campo ***
+[CteCtoDireccion.tbl/Cruces]
+Clave=Cruces
+Nombre=Cruces
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=200
+TipoDatos=Texto
+Tamano=200
+Mayusculas=S
+

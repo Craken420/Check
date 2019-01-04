@@ -1,0 +1,147 @@
+;**** Ultima modificación:17-Jul-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:
+
+
+
+; **** Se agrego nuevo campo FleteMagisterio GRB 18-Feb-2010
+; ****Se agregaron nuevas relaciones: Agente2, Ruta ****
+; ****Se agregaron nuevos campos: LicenciaAgente, Agente2, LicenciaAgente2 ****
+[Embarque.tbl/Tabla]
+ListaCampos=ID<BR>Empresa<BR>Mov<BR>MovID<BR>FechaEmision<BR>ProgramadoPara<BR>UltimoCambio<BR>Proyecto<BR>Usuario<BR>Autorizacion<BR>Concepto<BR>Referencia<BR>DocFuente<BR>Observaciones<BR>Estatus<BR>Situacion<BR>SituacionFecha<BR>SituacionUsuario<BR>SituacionNota<BR>Vehiculo<BR>Ruta<BR>Agente<BR>Peso<BR>Volumen<BR>Paquetes<BR>OrigenTipo<BR>Origen<BR>OrigenID<BR>Poliza<BR>PolizaID<BR>GenerarPoliza<BR>ContID<BR>Ejercicio<BR>Periodo<BR>FechaRegistro<BR>FechaConclusion<BR>FechaCancelacion<BR>FechaSalida<BR>FechaRetorno<BR>CtaDinero<BR>Proveedor<BR>Importe<BR>Impuestos<BR>Gastos<BR>Condicion<BR>Vencimiento<BR>CxpReferencia<BR>Moneda<BR>TipoCambio<BR>Sucursal<BR>SucursalDestino<BR>SucursalOrigen<BR>UEN<BR>PersonalCobrador<BR>DiaRetorno<BR>KmsSalida<BR>KmsRetorno<BR>TermoInicio<BR>TermoFin<BR>ImporteEmbarque<BR>LicenciaAgen<CONTINUA>
+ListaRelaciones=Agente<BR>Vehiculo<BR>Mon<BR>Prov<BR>UEN<BR>Personal<BR>CtaDinero<BR>EmbarqueD<BR>Agente2<BR>Ruta
+ListaCampos002=<CONTINUA>te<BR>Agente2<BR>LicenciaAgente2<BR>FleteMagisterio
+SQL=SELECT<BR>  ID,<BR>  Empresa,<BR>  Mov,<BR>  MovID,<BR>  Moneda,<BR>  TipoCambio,<BR>  FechaEmision,<BR> ProgramadoPara,<BR> UltimoCambio,<BR>  Proyecto,<BR>  UEN,<BR>  Usuario,<BR>  Autorizacion,<BR>  Concepto,<BR>  Referencia,<BR>  DocFuente,<BR>  Observaciones,<BR>  Estatus,<BR>  Situacion,<BR>  SituacionFecha,<BR>  Vehiculo,<BR>  Ruta,<BR>  Agente,<BR>  Gastos,<BR>  Proveedor,<BR>  Importe,<BR>  Impuestos,<BR>  Condicion,<BR>  Vencimiento,<BR>  CxpReferencia,<BR>  PersonalCobrador,<BR>  Volumen,<BR>  Peso,<BR>  Paquetes,<BR>  OrigenTipo,<BR>  Origen,<BR>  OrigenID,<BR>  CtaDinero,<BR>  Poliza,<BR>  PolizaID,<BR>  GenerarPoliza,<BR>  ContID,<BR>  Ejercicio,<BR>  Periodo,<BR>  FechaRegistro,<BR>  FechaConclusion,<BR>  FechaCancelacion,<BR>  FechaSalida,<BR>  FechaRetorno,<BR>  KmsSalida,<BR>  KmsRetorno,<B<CONTINUA>
+SQL002=<CONTINUA>R>  TermoInicio,<BR>  TermoFin,<BR>  DiaRetorno,<BR>  Sucursal,<BR>  ImporteEmbarque,<BR>  SucursalOrigen,<BR>  SucursalDestino,<BR>  SituacionUsuario,<BR>  SituacionNota, <BR>  LicenciaAgente,   <BR>  Agente2, <BR>  LicenciaAgente2,<BR> FleteMagisterio  <BR><BR>FROM<BR>  Embarque
+
+
+
+; ****Modificación Campo: Se agregó un nuevo campo en la listaRefrescar: Agente2 ****
+[Embarque.tbl/Vehiculo]
+ConRefrescar=S
+ListaRefrescar=Ruta<BR>Agente<BR>Proveedor<BR>LicenciaAgente
+ValorRefrescar=Si(Mov <> <T>Orden Cobro<T>,SQL(<T>SELECT Vehiculo FROM Personal WHERE Personal=:tPersonal<T>, PersonalCobrador), nulo)
+CondicionEdicion=Mov noen(<T>Orden Cobro<T>,<T>Orden Cobro Mayoreo<T>)
+
+;Modificacion para acomodar el Nivel de Acceso ALQG - 15/06/2010
+; ****Modificación campo: Se agregó listaRefrescar****
+; ****Se modifico el valor a refrescar por lo del desarrollo ordenes de cobro ****
+[Embarque.tbl/Agente]
+;ValorRefrescar=SQL(<T>SELECT Agente FROM Vehiculo WHERE Vehiculo=:tVehiculo<T>,Vehiculo)
+ValorRefrescar=Vacio( Agente, SQL(<T>SELECT Agente FROM Vehiculo WHERE Vehiculo=:tVehiculo<T>,Embarque:Vehiculo.Vehiculo))
+ConRefrescar=S
+ListaRefrescar=LicenciaAgente
+ValidacionUsaTabla=N
+ValidacionTablas=
+
+
+;**** Modificacion campo: Se modifico la ayuda en captura ****
+; ****Se modifico el valor a refrescar por lo del desarrollo ordenes de cobro ****
+[Embarque.tbl/Ruta]
+AyudaEnCaptura=Vista
+ValorRefrescar=Vacio( Ruta, Embarque:Vehiculo.Ruta )
+;ValorRefrescar=Embarque:Vehiculo.Ruta
+AyudaForma=RutaListaMAVI
+AyudaVista=RutaListaMAVI
+AyudaCampo=Ruta.Ruta
+ValidacionUsaTabla=S
+ValidacionTablas=Ruta
+RequeridoActivo=S
+
+
+;**** Modificacion campo: Se modifico para que refrescara los totalizadores ****
+; ***** Integracion de listaRefrescar para desarrollo DM0125 VALIDACIONES A INCORPORAR AL PROCESO DE EMBARQUES dentro del paquete DM0125_12052011. Al seleccionar un mov actualiza la situacion Victor De los Santos 12/05/2011. JR 12-May-2011. *****  
+[Embarque.tbl/Mov]
+RefrescarTotales=S
+ListaRefrescar=Concepto<BR>Situacion
+
+
+; **** Nuevo campo agregadó ****
+[Embarque.tbl/LicenciaAgente]
+Clave=LicenciaAgente
+Nombre=Licencia
+Visible=S
+TamanoValidacion=20
+Tamano=20
+ValorRefrescar=SQL(<T>SELECT Licencia FROM Agente WHERE Agente=:tAgente<T>,Agente)
+RequeridoActivo=S
+CondicionDespliege=Embarque:Embarque.Mov noen(<T>Orden Cobro<T>)
+
+
+;Modificacion para acomodar el Nivel de Acceso ALQG - 15/06/2010
+; **** Nuevo campo agregadó ****
+[Embarque.tbl/Agente2]
+Clave=Agente2
+Nombre=Ayudante
+Visible=S
+TamanoValidacion=10
+Tamano=10
+Mayusculas=S
+ValorRefrescar=SQL(<T>SELECT Agente2 FROM Vehiculo WHERE Vehiculo=:tVehiculo<T>,Vehiculo)
+AyudaEnCaptura=Vista
+AyudaForma=AgenteLista
+AyudaVista=AgenteA
+AyudaCampo=Agente.Agente
+ConRefrescar=S
+ListaRefrescar=LicenciaAgente2
+ValidacionUsaTabla=N
+ValidacionTablas=
+
+
+; **** Nuevo campo agregadó ****
+[Embarque.tbl/LicenciaAgente2]
+Clave=LicenciaAgente2
+Nombre=Licencia
+Visible=S
+TamanoValidacion=20
+Tamano=20
+ValorRefrescar=SQL(<T>SELECT Licencia FROM Agente WHERE Agente=:tAgente<T>,Agente2)
+CondicionDespliege=Embarque:Embarque.Mov noen(<T>Orden Cobro<T>)
+
+
+
+; ****Nueva Realcion agregada ****
+[Embarque.tbl/Relaciones.Agente2]
+TipoRelacion=Opcional
+LlaveLocal=Agente2
+Clave=Agente2
+TablaRemota=AgenteAux
+LlaveRemota=Agente
+
+
+
+
+; ****Nueva Realcion agregada ****
+[Embarque.tbl/Relaciones.Ruta]
+TipoRelacion=Opcional
+LlaveLocal=Ruta
+Clave=Ruta
+TablaRemota=Ruta
+LlaveRemota=Ruta
+
+
+; *** Nuevo Campo agregado  por el Costeo de Fletes V2 GRB 18-Feb-2010***
+[Embarque.tbl/FleteMagisterio]
+Clave=FleteMagisterio
+Nombre=FleteMagisterio
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+ValorPorOmision=SQL(<T>SELECT FactorCosteoMagisterio FROM FactorCosteoFleteMagisterio <T>)
+CondicionEdicion=EstatusSinAfectar
+
+
+; ***** Integracion de campo Situacion para desarrollo DM0125 VALIDACIONES A INCORPORAR AL PROCESO DE EMBARQUES dentro del paquete DM0125_12052011. Al seleccionar un mov se asigne la primer situacion al movimiento Victor De los Santos 12/05/2011. JR 12-May-2011. *****  
+[Embarque.tbl/Situacion]
+ValorPorOmision=Si Mov en(<T>Embarque Sucursales<T>,<T>Embarque<T>) Entonces <T>Pasa a Escanear<T><BR>   Sino<BR>      si Mov en(<T>Embarque Mayoreo<T>,<T>Embarque Magisterio<T>) Entonces <T>Completar<T> sino <T> <T> Fin<BR><BR>Fin
+
+[Embarque.tbl/ProgramadoPara]
+Clave=ProgramadoPara
+Nombre=Programado Para
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+AyudaEnCaptura=Calendario sin Hora
+ValorPorOmision=FechaTrabajo
+

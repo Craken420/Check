@@ -1,0 +1,9 @@
+;**** Ultima modificación:01-Feb-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:
+
+
+; **** Se modifico esta accion para que no fuera visible ****
+[GenerarCxcNCredito.dlg/Acciones.Endoso]
+Visible=N
+VisibleCondicion=

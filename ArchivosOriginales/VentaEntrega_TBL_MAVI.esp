@@ -1,0 +1,155 @@
+[VentaEntrega.tbl/Tabla]
+ListaCampos=ID<BR>Embarque<BR>EmbarqueFecha<BR>EmbarqueReferencia<BR>Recibo<BR>ReciboFecha<BR>ReciboReferencia<BR>Sucursal<BR>SucursalOrigen<BR>EntregaMercancia<BR>Direccion<BR>DireccionNumero<BR>DireccionNumeroInt<BR>CodigoPostal<BR>Delegacion<BR>Colonia<BR>Poblacion<BR>Estado<BR>Telefono
+SQL=SELECT<BR>  ID,<BR>  Embarque,<BR>  EmbarqueFecha,<BR>  EmbarqueReferencia,<BR>  Recibo,<BR>  ReciboFecha,<BR>  ReciboReferencia,<BR>  EntregaMercancia,<BR>  Sucursal,<BR>  SucursalOrigen,<BR>  Direccion,<BR>  DireccionNumero,<BR>  DireccionNumeroInt,<BR>  CodigoPostal,<BR>  Delegacion,<BR>  Colonia,<BR>  Poblacion,<BR>  Estado,<BR>  Telefono<BR><BR>FROM<BR>  VentaEntrega
+
+
+[VentaEntrega.tbl/EmbarqueFecha]
+Nombre=Fecha Entrega
+
+[VentaEntrega.tbl/ReciboFecha]
+Nombre=Fecha Recibo
+
+[VentaEntrega.tbl/ID]
+Clave=ID
+Nombre=ID
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=Info.ID
+ConRefrescar=S
+ListaRefrescar=Direccion<BR>DireccionNumero<BR>DireccionNumeroInt<BR>CodigoPostal<BR>Delegacion<BR>Colonia<BR>Poblacion<BR>Estado
+AyudaForma=Acceso
+AyudaVista=Acceso
+AyudaCampo=Acceso.ID
+[Embarque]
+Clave=Embarque
+Nombre=Embarque
+Visible=S
+TamanoValidacion=50
+Tamano=50
+TipoDatos=Texto
+
+[VentaEntrega.tbl/Direccion]
+Clave=Direccion
+Nombre=Dirección
+Tamano=100
+TamanoValidacion=250
+TipoDatos=Texto
+AyudaEnCaptura=Vista
+AyudaForma=RM1131DomiciliosEntregaFRM
+AyudaVista=RM1131DomicilioEntregaVis
+AyudaCampo=Direccion
+ValorRefrescar=SQL(<T>Select Direccion<BR> from VentaEntrega ve<BR> inner join Venta v on v.ID=ve.ID<BR> where Direccion is not null and Direccion <> <T>+comillas(<T> <T>)+<BR> <T>and Cliente=:tCte and ve.ID=:tID<T>,Mavi.RM1131ClienteSeleccionado,Info.ABC)
+ConRefrescar=S
+ListaRefrescar=ID<BR>Direccion<BR>DireccionNumero<BR>DireccionNumeroInt<BR>CodigoPostal<BR>Delegacion<BR>Colonia<BR>Poblacion<BR>Estado
+
+[VentaEntrega.tbl/DireccionNumero]
+Clave=DireccionNumero
+Nombre=Número Exterior
+Visible=S
+TamanoValidacion=20
+Tamano=20
+ValorRefrescar=SQL(<T>Select DireccionNumero<BR> from VentaEntrega ve<BR> inner join Venta v on v.ID=ve.ID<BR> where Direccion is not null and Direccion <> <T>+comillas(<T> <T>)+<BR> <T>and Cliente=:tCte and ve.ID=:tID<T>,Mavi.RM1131ClienteSeleccionado,Info.ABC)
+TipoDatos=Texto
+
+[VentaEntrega.tbl/DireccionNumeroInt]
+Clave=DireccionNumeroInt
+Nombre=Número Interior
+Visible=S
+TamanoValidacion=20
+Tamano=20
+TipoDatos=Texto
+ValorRefrescar=SQL(<T>Select DireccionNumeroInt<BR> from VentaEntrega ve<BR> inner join Venta v on v.ID=ve.ID<BR> where Direccion is not null and Direccion <> <T>+comillas(<T> <T>)+<T><BR> and Cliente=:tCte and ve.ID=:tID<T> ,Mavi.RM1131ClienteSeleccionado,Info.ABC)
+
+[VentaEntrega.tbl/CodigoPostal]
+Clave=CodigoPostal
+Nombre=Código Postal
+Tamano=15
+TamanoValidacion=10
+Mayusculas=S
+ValorRefrescar=SQL(<T>Select CodigoPostal<BR> from VentaEntrega ve<BR> inner join Venta v on v.ID=ve.ID<BR> where Direccion is not null and Direccion <> <T>+comillas(<T> <T>)+<T><BR> and Cliente=:tCte and ve.ID=:tID<T> ,Mavi.RM1131ClienteSeleccionado,Info.ABC)
+AyudaEnCaptura=Vista
+AyudaForma=CodigoPostalCEVentas
+AyudaVista=CodigoPostalCEVentas
+AyudaCampo=CodigoPostal.CodigoPostal
+AyudaRefrescar=S
+TipoDatos=Texto
+
+
+[VentaEntrega.tbl/Delegacion]
+Clave=Delegacion
+Nombre=Delegación
+Visible=S
+TamanoValidacion=30
+Tamano=100
+AyudaEnCaptura=Expresion
+AyudaForma=CodigoPostalCEVentas
+AyudaVista=CodigoPostalCEVentas
+AyudaCampo=CodigoPostal.Delegacion
+AyudaMemRenglones=8
+AyudaMemOpc=Consulta opcional
+AyudaMemTabla=aroSeveridadCuantitativa
+AyudaRefrescar=S
+ValorRefrescar=SQL(<T>Select Delegacion<BR> from VentaEntrega ve<BR> inner join Venta v on v.ID=ve.ID<BR> where Direccion is not null and Direccion <> <T>+comillas(<T> <T>)+<T><BR> and Cliente=:tCte and ve.ID=:tID<T> ,Mavi.RM1131ClienteSeleccionado,Info.ABC)
+Formula=info.Delegacion
+TipoDatos=Texto
+
+
+[VentaEntrega.tbl/Colonia]
+Clave=Colonia
+Nombre=Colonia
+Tamano=100
+TamanoValidacion=30
+ValorRefrescar=SQL(<T>Select Colonia<BR> from VentaEntrega ve<BR> inner join Venta v on v.ID=ve.ID<BR> where Direccion is not null and Direccion <> <T>+comillas(<T> <T>)+<T><BR> and Cliente=:tCte and ve.ID=:tID<T> ,Mavi.RM1131ClienteSeleccionado,Info.ABC)
+AyudaMemRenglones=8
+AyudaMemOpc=Consulta opcional
+AyudaForma=CodigoPostalCEVentas
+AyudaVista=CodigoPostalCEVentas
+AyudaCampo=CodigoPostal.Colonia
+AyudaEnCaptura=Expresion
+AyudaRefrescar=S
+Formula=Info.Colonia
+
+[VentaEntrega.tbl/Poblacion]
+Clave=Poblacion
+Nombre=Población
+Tamano=100
+TamanoValidacion=30
+AyudaEnCaptura=Expresion
+AyudaForma=CodigoPostalCEVentas
+AyudaVista=CodigoPostalCEVentas
+AyudaCampo=CodigoPostal.Delegacion
+AyudaMemRenglones=8
+AyudaMemOpc=Consulta opcional
+AyudaRefrescar=S
+ValorRefrescar=SQL(<T>Select Poblacion<BR> from VentaEntrega ve<BR> inner join Venta v on v.ID=ve.ID<BR> where Direccion is not null and Direccion <> <T>+comillas(<T> <T>)+<T><BR> and Cliente=:tCte and ve.ID=:tID<T> ,Mavi.RM1131ClienteSeleccionado,Info.ABC)
+Visible=S
+Formula=Info.Delegacion
+
+[VentaEntrega.tbl/Estado]
+Clave=Estado
+Nombre=Estado
+Tamano=30
+TamanoValidacion=30
+AyudaEnCaptura=Expresion
+AyudaMemTabla=PaisEstadoMexico
+AyudaMemRenglones=8
+AyudaMemOpc=Consulta opcional
+AyudaForma=CodigoPostalCEVentas
+AyudaVista=CodigoPostalCEVentas
+AyudaCampo=CodigoPostal.Estado
+AyudaRefrescar=S
+ValorRefrescar=SQL(<T>Select Estado<BR> from VentaEntrega ve<BR> inner join Venta v on v.ID=ve.ID<BR> where Direccion is not null and Direccion <> <T>+comillas(<T> <T>)+<T>                                   <BR> and Cliente=:tCte and ve.ID=:tID<T> ,Mavi.RM1131ClienteSeleccionado,Info.ABC)
+Formula=Info.Estado
+TipoDatos=Texto
+
+[VentaEntrega.tbl/Telefono]
+Clave=Telefono
+Nombre=Telefono
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+

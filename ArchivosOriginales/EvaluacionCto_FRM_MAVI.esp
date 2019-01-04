@@ -1,0 +1,151 @@
+;Ultima modificacion: 30-Sep-2008
+;Responsable: Arly Rubio  
+;Modifico: Se agrego el campo CostoDeHoyMAVI.
+
+;**** Modificación: 20-Feb-09
+;**** Modifico: Edgar Montelongo
+;**** Se modifico: Cambio de nombre campo CostoDeHoyMAVI - RespuestaMAVI, se agregaron secciones B1 y B2
+
+
+
+;**** Se cambio la variable Info.Fecha por la Info.FechaEvaluacionMAVI ******
+;**** Se agregaron las posiciones y lista de carpetas (EM) *****
+[EvaluacionCto.frm/Forma]
+Nombre=<T>Evaluación - <T>+Info.Evaluacion+ <T> (<T>+FechaEnTexto(Info.FechaEvaluacionMAVI, <T>dd/mm/aaaa hh:mm:ss<T>)+<T>)<T>
+PosicionInicialIzquierda=161
+PosicionInicialArriba=161
+PosicionInicialAlturaCliente=440
+PosicionInicialAncho=739
+PosicionColumna1=69
+PosicionCol1=478
+PosicionSec1=188
+PosicionCol2=478
+ListaCarpetas=Lista<BR>Desc<BR>Lista2<BR>Desc2
+ExpresionesAlMostrar=EjecutarSQL(<T>spEvaluacionCto :tEval, :fFecha, :tCto<T>, Info.Evaluacion, Info.FechaEvaluacionMAVI, Info.Clave)
+
+
+
+;**** Se cambio la variable Info.Fecha por la Info.FechaEvaluacionMAVI ******
+;**** Se agrego en la lista en captura los campos: CostoDeHoyMAVI ****
+[EvaluacionCto.frm/Lista]
+ListaEnCaptura=EvaluacionCto.Punto<BR>EvaluacionCto.Respuesta
+FiltroGeneral=EvaluacionCto.Contacto=<T>{Info.Clave}<T> AND <BR>EvaluacionCto.Fecha=<T>{FechaEnTexto(Info.FechaEvaluacionMAVI, <T>aaaa/mm/dd hh:mm:ss<T>)}<T> AND<BR>EvaluacionCto.Evaluacion=<T>{Info.Evaluacion}<T> AND<BR>EvaluacionFormato.ValorNumerico=0
+
+[EvaluacionCto.frm/Desc]
+PermiteEditar=N
+
+[EvaluacionCto.frm/Desc.EvaluacionFormato.Descripcion]
+Editar=N
+
+
+;**** 30-Sep-08 Se agrego en la lista de columnas los campos: CostoDeHoyMAVI ****
+[EvaluacionCto.frm/Lista.Columnas]
+Punto=353
+Descripcion=604
+Respuesta=80
+
+
+
+
+
+;**** Se cambio la variable Info.Fecha por la Info.FechaEvaluacionMAVI ******
+[EvaluacionCto.frm/Acciones.Aceptar]
+AntesExpresiones=EjecutarSQL(<T>spEvaluacionReferencia :tReferencia, :tContacto, :fFecha<T>, Info.Evaluacion, Info.Clave, Info.FechaEvaluacionMAVI)
+
+
+
+;**** Se agrega Lista2 y Desc2
+[EvaluacionCto.frm/Lista2]
+Estilo=Hoja
+Clave=Lista2
+AlineacionAutomatica=S
+AcomodarTexto=S
+MostrarConteoRegistros=S
+Zona=B1
+Vista=EvaluacionCto2
+Fuente={Tahoma, 8, Negro, []}
+HojaTitulos=S
+HojaMostrarColumnas=S
+HojaMostrarRenglones=S
+HojaColoresPorEstatus=S
+HojaVistaOmision=Automática
+CampoColorLetras=Negro
+CampoColorFondo=Blanco
+Filtros=S
+OtroOrden=S
+PermiteEditar=S
+HojaAjustarColumnas=S
+HojaMantenerSeleccion=S
+ListaEnCaptura=EvaluacionCto.Punto<BR>EvaluacionCto.RespuestaMAVI
+ListaOrden=EvaluacionFormato.Orden<TAB>(Acendente)<BR>EvaluacionCto.Punto<TAB>(Acendente)
+FiltroAplicaEn=EvaluacionFormato.Seccion
+FiltroPredefinido=S
+FiltroAutoCampo=EvaluacionFormato.Seccion
+FiltroAutoValidar=EvaluacionFormato.Seccion
+FiltroNullNombre=(sin clasificar)
+FiltroEnOrden=S
+FiltroTodoNombre=(Todo)
+FiltroAncho=20
+FiltroEstilo=Folder (1 línea)
+FiltroRespetar=S
+FiltroTipo=Automático
+CarpetaVisible=S
+FiltroGeneral=EvaluacionCto.Contacto=<T>{Info.Clave}<T> AND <BR>EvaluacionCto.Fecha=<T>{FechaEnTexto(Info.FechaEvaluacionMAVI, <T>aaaa/mm/dd hh:mm:ss<T>)}<T> AND<BR>EvaluacionCto.Evaluacion=<T>{Info.Evaluacion}<T> AND<BR>EvaluacionFormato.ValorNumerico=1
+
+[EvaluacionCto.frm/Lista2.EvaluacionCto.Punto]
+Carpeta=Lista2
+Clave=EvaluacionCto.Punto
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=100
+ColorFondo=Blanco
+ColorFuente=Negro
+Efectos=[Negritas]
+
+[EvaluacionCto.frm/Lista2.EvaluacionCto.RespuestaMAVI]
+Carpeta=Lista2
+Clave=EvaluacionCto.RespuestaMAVI
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[EvaluacionCto.frm/Lista2.Columnas]
+Punto=356
+RespuestaMAVI=80
+
+[EvaluacionCto.frm/Desc2]
+Estilo=Ficha
+Clave=Desc2
+PermiteEditar=N
+AlineacionAutomatica=S
+AcomodarTexto=S
+MostrarConteoRegistros=S
+Zona=B2
+Vista=EvaluacionCto2
+Fuente={Tahoma, 8, Negro, []}
+FichaEspacioEntreLineas=6
+FichaEspacioNombres=100
+FichaEspacioNombresAuto=S
+FichaNombres=Izquierda
+FichaAlineacion=Izquierda
+FichaColorFondo=Plata
+FichaAlineacionDerecha=S
+CampoColorLetras=Negro
+CampoColorFondo=Blanco
+ListaEnCaptura=EvaluacionFormato.Descripcion
+CarpetaVisible=S
+AlinearTodaCarpeta=S
+
+[EvaluacionCto.frm/Desc2.EvaluacionFormato.Descripcion]
+Carpeta=Desc2
+Clave=EvaluacionFormato.Descripcion
+Editar=N
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro

@@ -1,0 +1,24 @@
+;**** Ultima modificación:23-Jul-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:Creacion
+
+
+
+
+
+;**** Nuevas variables agregadas: Info.FechaEvaluacionMAVI, se quito la variable Info.Fecha ****
+[EvaluacionNueva.frm/(Variables)]
+ListaEnCaptura=Info.Evaluacion<BR>Info.FechaEvaluacionMAVI
+
+
+;**** Nueva variable agregada *****
+[EvaluacionNueva.frm/(Variables).Info.FechaEvaluacionMAVI]
+Carpeta=(Variables)
+Clave=Info.FechaEvaluacionMAVI
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+ColorFuente=Negro

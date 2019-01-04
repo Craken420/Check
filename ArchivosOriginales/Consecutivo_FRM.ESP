@@ -1,0 +1,13 @@
+[Consecutivo.frm/Lista]
+ListaEnCaptura=Consecutivo.Tipo<BR>Consecutivo.Nivel<BR>Consecutivo.TieneControl<BR>Consecutivo.Prefijo<BR>Consecutivo.Concurrencia<BR>Consecutivo.Consecutivo<BR>Consecutivo.DividirSeries
+
+[Consecutivo.frm/Lista.Consecutivo.DividirSeries]
+Carpeta=Lista
+Clave=Consecutivo.DividirSeries
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=1
+ColorFondo=Blanco
+ColorFuente=Negro

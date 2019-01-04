@@ -1,0 +1,14 @@
+;**** Ultima modificación:18-Jul-08
+;**** Modifico:Miguel Peña
+;**** Se modifico:Creacion
+
+
+;***** se cambio la vista en la ayuda en captura para agregar nuevos valores, fechanacimiento, regimen fiscal ****
+[VentaTFiltro.tbl/Campo]
+Formula=SQLEnLista(<T>SELECT Campo FROM SysVistaCampo WHERE Vista=:tVista ORDER BY Campo<T>, <T>VentaTCalcMAVI<T>)
+
+
+
+;**** Se cambio el sp por una copia del mismo para evitar conflictos ****
+[VentaTFiltro.tbl/Valor]
+Formula=SQLEnLista(<T>spVentaTFiltroAyudaMAVI :tEmpresa, :tCampo<T>, Empresa, Campo)

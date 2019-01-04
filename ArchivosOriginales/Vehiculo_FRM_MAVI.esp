@@ -1,0 +1,96 @@
+
+;**** Ultima modificación:26-Mayo-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:
+
+; ****Se agregaron nievas acciones: TipoUnidad ****
+[Vehiculo.frm/Forma]
+ListaAcciones=Cerrar<BR>Nuevo<BR>Eliminar<BR>Propiedades<BR>Anexos<BR>TipoUnidad<BR>Navegador
+
+; **** Nueva acción agregada ****
+[Vehiculo.frm/Acciones.TipoUnidad]
+Nombre=TipoUnidad
+Boton=47
+NombreEnBoton=S
+NombreDesplegar=Tipos de Unidad Vehicular 
+EnBarraHerramientas=S
+TipoAccion=Formas
+ClaveAccion=TipoUnidadVehicularMAVI
+Activo=S
+Visible=S
+RefrescarDespues=S
+GuardarAntes=S
+EspacioPrevio=S
+
+;****Se agregaron nuevos campos en la lista en captura: TipoUnidadVehicular, UnidadPropiaMAVI****
+[vehiculo.frm/Detalle]
+ListaEnCaptura=Vehiculo.Vehiculo<BR>Vehiculo.Estatus<BR>Vehiculo.Descripcion<BR>Vehiculo.Placas<BR>Vehiculo.TipoUnidadVehicular<BR>Vehiculo.Volumen<BR>Vehiculo.Peso<BR>Vehiculo.RendimientoCombustible<BR>Vehiculo.RendimientoTermo<BR>Vehiculo.Ruta<BR>Vehiculo.Proveedor<BR>Prov.Nombre<BR>Vehiculo.GenerarGasto<BR>Vehiculo.UnidadPropiaMAVI
+
+;****Nuevo campo agregado en la carpeta "Detalle"****
+[vehiculo.frm/Detalle.Vehiculo.TipoUnidadVehicular]
+Carpeta=Detalle
+Clave=Vehiculo.TipoUnidadVehicular
+Editar=S
+ValidaNombre=S
+3D=S
+Pegado=S
+Tamano=18
+ColorFondo=Blanco
+ColorFuente=Negro
+
+;****Nuevo campo agregado en la carpeta "Detalle"****
+[Vehiculo.frm/Detalle.Vehiculo.UnidadPropiaMAVI]
+Carpeta=Detalle
+Clave=Vehiculo.UnidadPropiaMAVI
+Editar=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+
+
+;********Se agrego buscador en la forma de vehiculos en la carpeta lista y se dio un orden 
+;Fernando Romero Robles DM0169
+
+[vehiculo.frm/Lista]
+OtroOrden=S
+ListaOrden=Vehiculo.Vehiculo<TAB>(Acendente)
+BusquedaRapidaControles=S
+BusquedaRapida=S
+BusquedaRespetarFiltros=S
+BusquedaInicializar=S
+BusquedaRespetarControles=S
+BusquedaRespetarUsuario=S
+BusquedaAncho=20
+BusquedaEnLinea=S
+
+
+;***** se cambio accion cerrar para hacerla multiple y agragar la validacion del nivel de acceso de agente jr 15-Abr-10 *****
+[Vehiculo.frm/Acciones.Cerrar]
+Multiple=S
+ListaAccionesMultiples=Aceptar<BR>Cerrar
+
+;Modificacion para acomodar el Nivel de Acceso ALQG - 15/06/2010
+[Vehiculo.frm/Acciones.Cerrar.Aceptar]
+Nombre=Aceptar
+Boton=0
+TipoAccion=Expresion
+;Expresion= si condatos(vehiculo:vehiculo.agente) <BR>  Entonces <BR>    Asigna(Info.Agente, Vehiculo:Vehiculo.Agente) <BR>    asigna(rep.opcion, SQL(<T> Exec spNivelAccesoAgenteVeh   :tAgente, :tUsuario<T>, Vehiculo:Vehiculo.Agente, Usuario)) <BR>    Asigna(Temp.Numerico1, Rep.Opcion) <BR>    si rep.opcion noen (nulo, 0) <BR>      Entonces <BR>        si(Rep.opcion=1, Error('El Agente No Existe' + NuevaLinea + Info.Agente)) <BR>      Fin <BR>    Fin
+;Expresion=Asigna(Info.Agente, Nulo)<BR>Asigna(Temp.Numerico1, 0)<BR>Asigna(Temp.Numerico2, 0)<BR>Asigna(Temp.Numerico3, 0)<BR>Si ConDatos(Vehiculo:Vehiculo.Agente)<BR>  Entonces<BR>    Asigna(Info.Agente, Vehiculo:Vehiculo.Agente)<BR>    Asigna(Temp.Numerico1, EjecutarSQL(<T> spNivelAccesoAgenteVeh   :tAgente, :tUsuario<T>, Vehiculo:Vehiculo.Agente, Usuario) )<BR>   // informacion(temp.numerico1)<BR>    Si Temp.Numerico1 <> 0<BR>      Entonces<BR>        Si( Temp.Numerico1 /*Rep.Opcion*/=1, Error(<T>El Agente No Existe<T> + NuevaLinea + NuevaLinea + Info.Agente))<BR>        Si( Temp.Numerico1 /*Rep.Opcion*/=2, Error(<T>Usuario Asignado al Agente No Valido<T> + NuevaLinea + NuevaLinea + Info.Agente))<BR>        Si( Temp.Numerico1 /*Rep.Opcion*/=3, Error(<T>Usuario Asignado al Agente No Existe<T> + NuevaLinea + NuevaLinea + Info.Agente))<BR>        Si( Temp.Numerico1 /*Rep.Opcion*/=4, Error(<T>Grupo de Trabajo del Usuario Asignado al Agente No Es Correcto<T> + NuevaLinea + NuevaLinea + Info.Agente))<BR>        Si( Temp.Numerico1 /*Rep.Opcion*/=5, Error(<T>Grupo de Trabajo del Usuario Asignado al Agente No Existe<T> + NuevaLinea + NuevaLinea + Info.Agente))<BR>    Fin<BR>Fin<BR>//informacion( Temp.Numerico1)<BR>Si ConDatos(Vehiculo:Vehiculo.Agente2)<BR>  Entonces<BR>    Asigna(Info.Agente, Vehiculo:Vehiculo.Agente2)<BR>//    Asigna(Rep.Opcion, EjecutarSQL(<T>  spNivelAccesoAgenteVeh   :tAgente, :tUsuario<T>, Vehiculo:Vehiculo.Agente2, Usuario))<BR>    Asigna(Temp.Numerico2, SQL(<T> Exec spNivelAccesoAgenteVeh   :tAgente, :tUsuario<T>,  Vehiculo:Vehiculo.Agente2, Usuario))<BR>//    Asigna(Temp.Numerico2, Rep.Opcion)<BR>    Si Temp.Numerico2 <> 0 /*Rep.Opcion noen (Nulo, 0)*/<BR>      Entonces<BR>        Si( Temp.Numerico2 /*Rep.Opcion*/=1, Error(<T>El Agente No Existe<T> + NuevaLinea + NuevaLinea + Info.Agente))<BR>        Si( Temp.Numerico2 /*Rep.Opcion*/=2, Error(<T>Usuario Asignado al Agente No Valido<T> + NuevaLinea + NuevaLinea + Info.Agente))<BR>        Si( Temp.Numerico2 /*Rep.Opcion*/=3, Error(<T>Usuario Asignado al Agente No Existe<T> + NuevaLinea + NuevaLinea + Info.Agente))<BR>        Si( Temp.Numerico2 /*Rep.Opcion*/=4, Error(<T>Grupo de Trabajo del Usuario Asignado al Agente No Es Correcto<T> + NuevaLinea + NuevaLinea + Info.Agente))<BR>        Si( Temp.Numerico2 /*Rep.Opcion*/=5, Error(<T>Grupo de Trabajo del Usuario Asignado al Agente No Existe<T> + NuevaLinea + NuevaLinea + Info.Agente))<BR>    Fin<BR>Fin<BR>//informacion( Temp.Numerico2)<BR>Si ConDatos(Vehiculo:Vehiculo.Agente3)<BR>  Entonces<BR>    Asigna(Info.Agente, Vehiculo:Vehiculo.Agente3)<BR>//    Asigna(Rep.Opcion, SQL(<T> Exec spNivelAccesoAgenteVeh   :tAgente, :tUsuario<T>, Vehiculo:Vehiculo.Agente3, Usuario))<BR>    Asigna(Temp.Numerico3, SQL(<T> Exec spNivelAccesoAgenteVeh   :tAgente, :tUsuario<T>, Vehiculo:Vehiculo.Agente3, Usuario))<BR>//    Asigna(Temp.Numerico3, Rep.Opcion)<BR>    Si Temp.Numerico3 <> 0 /*Rep.Opcion noen (Nulo, 0)*/<BR>      Entonces<BR>        Si( Temp.Numerico3 /*Rep.Opcion*/=1, Error(<T>El Agente No Existe<T> + NuevaLinea + NuevaLinea + Info.Agente))<BR>        Si( Temp.Numerico3 /*Rep.Opcion*/=2, Error(<T>Usuario Asignado al Agente No Valido<T> + NuevaLinea + NuevaLinea + Info.Agente))<BR>        Si( Temp.Numerico3 /*Rep.Opcion*/=3, Error(<T>Usuario Asignado al Agente No Existe<T> + NuevaLinea + NuevaLinea + Info.Agente))<BR>        Si( Temp.Numerico3 /*Rep.Opcion*/=4, Error(<T>Grupo de Trabajo del Usuario Asignado al Agente No Es Correcto<T> + NuevaLinea + NuevaLinea + Info.Agente))<BR>        Si( Temp.Numerico3 /*Rep.Opcion*/=5, Error(<T>Grupo de Trabajo del Usuario Asignado al Agente No Existe<T> + NuevaLinea + NuevaLinea + Info.Agente))<BR>    Fin<BR>Fin<BR>//informacion( Temp.Numerico3)
+;Expresion=Asigna(Info.Agente, Nulo)<BR>Asigna(Temp.Numerico1, 0)<BR>Asigna(Temp.Numerico3, 0)<BR>Si ConDatos(Vehiculo:Vehiculo.Agente)<BR>  Entonces<BR>    Asigna(Info.Agente, Vehiculo:Vehiculo.Agente)<BR>    Asigna(Temp.Numerico1, SQL(<T> exec spNivelAccesoAgenteVeh   :tAgente, :tUsuario<T>, Vehiculo:Vehiculo.Agente, Usuario) )<BR>    Si Temp.Numerico1 <> 0<BR>      Entonces<BR>        Si( Temp.Numerico1 =1, Error(<T>El Agente No Existe<T> + NuevaLinea + NuevaLinea + Info.Agente))<BR>        Si( Temp.Numerico1 =2, Error(<T>Usuario Asignado al Agente No Valido<T> + NuevaLinea + NuevaLinea + Info.Agente) )<BR>        Si( Temp.Numerico1 =3, Error(<T>Usuario Asignado al Agente No Existe<T> + NuevaLinea + NuevaLinea + Info.Agente))<BR>        Si( Temp.Numerico1 =4, Error(<T>Grupo de Trabajo del Usuario Asignado al Agente No Es Correcto<T> + NuevaLinea + NuevaLinea + Info.Agente))<BR>        Si( Temp.Numerico1 =5, Error(<T>Grupo de Trabajo del Usuario Asignado al Agente No Existe<T> + NuevaLinea + NuevaLinea + Info.Agente))<BR>        EjecutarSQL(<T>spLimpiaAgenteVehMavi :tVehiculo, :tAgente, :nNumAgent<T>, Vehiculo:Vehiculo.Vehiculo,Vehiculo:Vehiculo.Agente,1)<BR>    Fin<BR>Fin<BR><BR>Si ConDatos(Vehiculo:Vehiculo.Agente3)<BR>  Entonces<BR>    Asigna(Info.Agente, Vehiculo:Vehiculo.Agente3)<BR>    Asigna(Temp.Numerico3, SQL(<T> exec spNivelAccesoAgenteVeh   :tAgente, :tUsuario<T>, Vehiculo:Vehiculo.Agente3, Usuario) )<BR>    Si Temp.Numerico3 <> 0<BR>      Entonces<BR>        Si( Temp.Numerico3 =1, Error(<T>El Agente No Existe<T> + NuevaLinea + NuevaLinea + Info.Agente))<BR>        Si( Temp.Numerico3 =2, Error(<T>Usuario Asignado al Agente No Valido<T> + NuevaLinea + NuevaLinea + Info.Agente) )<BR>        Si( Temp.Numerico3 =3, Error(<T>Usuario Asignado al Agente No Existe<T> + NuevaLinea + NuevaLinea + Info.Agente))<BR>        Si( Temp.Numerico3 =4, Error(<T>Grupo de Trabajo del Usuario Asignado al Agente No Es Correcto<T> + NuevaLinea + NuevaLinea + Info.Agente))<BR>        Si( Temp.Numerico3 =5, Error(<T>Grupo de Trabajo del Usuario Asignado al Agente No Existe<T> + NuevaLinea + NuevaLinea + Info.Agente))<BR>        EjecutarSQL(<T>spLimpiaAgenteVehMavi :tVehiculo, :tAgente, :nNumAgent<T>, Vehiculo:Vehiculo.Vehiculo,Vehiculo:Vehiculo.Agente,3)<BR>    Fin<BR>Fin<BR>Si(Temp.Numerico3 =0 y Temp.Numerico1 =0, Asigna(Rep.Opcion,0),Asigna(Rep.Opcion,1))<BR>ActualizarForma
+Expresion=Asigna(Info.Agente, Nulo)<BR>Asigna(Temp.Numerico1, 0)<BR>Asigna(Temp.Numerico2, 0)<BR>Asigna(Temp.Numerico3, 0)<BR>Si ConDatos(Vehiculo:Vehiculo.Agente)<BR>  Entonces<BR>    Asigna(Info.Agente, Vehiculo:Vehiculo.Agente)<BR>    Asigna(Temp.Numerico1, SQL(<T> exec spNivelAccesoAgenteVeh   :tAgente, :tUsuario<T>, Vehiculo:Vehiculo.Agente, Usuario) )<BR>    Si Temp.Numerico1 <> 0<BR>      Entonces<BR>        Si( Temp.Numerico1 =1, Error(<T>El Agente No Existe<T> + NuevaLinea + NuevaLinea + Info.Agente))<BR>        Si( Temp.Numerico1 =2, Error(<T>Usuario Asignado al Agente No Valido<T> + NuevaLinea + NuevaLinea + Info.Agente) )<BR>        Si( Temp.Numerico1 =3, Error(<T>Usuario Asignado al Agente No Existe<T> + NuevaLinea + NuevaLinea + Info.Agente))<BR>        Si( Temp.Numerico1 =4, Error(<T>Grupo de Trabajo del Usuario Asignado al Agente No Es Correcto<T> + NuevaLinea + NuevaLinea + Info.Agente))<BR>        Si( Temp.Numerico1 =5, Error(<T>Grupo de Trabajo del Usuario Asignado al Agente No Existe<T> + NuevaLinea + NuevaLinea + Info.Agente))<BR>        EjecutarSQL(<T>spLimpiaAgenteVehMavi :tVehiculo, :tAgente, :nNumAgent<T>, Vehiculo:Vehiculo.Vehiculo,Vehiculo:Vehiculo.Agente,1)<BR>    Fin<BR>Fin<BR><BR>Si ConDatos(Vehiculo:Vehiculo.Agente2)<BR>  Entonces<BR>    Asigna(Info.Agente, Vehiculo:Vehiculo.Agente2)<BR>    Asigna(Temp.Numerico2, SQL(<T> exec spNivelAccesoAgenteVeh   :tAgente, :tUsuario<T>, Vehiculo:Vehiculo.Agente2, Usuario) )<BR>    Si Temp.Numerico2 <> 0<BR>      Entonces<BR>        Si( Temp.Numerico2 =1, Error(<T>El Agente No Existe<T> + NuevaLinea + NuevaLinea + Info.Agente))<BR>        Si( Temp.Numerico2 =2, Error(<T>Usuario Asignado al Agente No Valido<T> + NuevaLinea + NuevaLinea + Info.Agente) )<BR>        Si( Temp.Numerico2 =3, Error(<T>Usuario Asignado al Agente No Existe<T> + NuevaLinea + NuevaLinea + Info.Agente))<BR>        Si( Temp.Numerico2 =4, Error(<T>Grupo de Trabajo del Usuario Asignado al Agente No Es Correcto<T> + NuevaLinea + NuevaLinea + Info.Agente))<BR>        Si( Temp.Numerico2 =5, Error(<T>Grupo de Trabajo del Usuario Asignado al Agente No Existe<T> + NuevaLinea + NuevaLinea + Info.Agente))<BR>        EjecutarSQL(<T>spLimpiaAgenteVehMavi :tVehiculo, :tAgente, :nNumAgent<T>, Vehiculo:Vehiculo.Vehiculo,Vehiculo:Vehiculo.Agente2,2)<BR>    Fin<BR>Fin<BR><BR>Si ConDatos(Vehiculo:Vehiculo.Agente3)<BR>  Entonces<BR>    Asigna(Info.Agente, Vehiculo:Vehiculo.Agente3)<BR>    Asigna(Temp.Numerico3, SQL(<T> exec spNivelAccesoAgenteVeh   :tAgente, :tUsuario<T>, Vehiculo:Vehiculo.Agente3, Usuario) )<BR>    Si Temp.Numerico3 <> 0<BR>      Entonces<BR>        Si( Temp.Numerico3 =1, Error(<T>El Agente No Existe<T> + NuevaLinea + NuevaLinea + Info.Agente))<BR>        Si( Temp.Numerico3 =2, Error(<T>Usuario Asignado al Agente No Valido<T> + NuevaLinea + NuevaLinea + Info.Agente) )<BR>        Si( Temp.Numerico3 =3, Error(<T>Usuario Asignado al Agente No Existe<T> + NuevaLinea + NuevaLinea + Info.Agente))<BR>        Si( Temp.Numerico3 =4, Error(<T>Grupo de Trabajo del Usuario Asignado al Agente No Es Correcto<T> + NuevaLinea + NuevaLinea + Info.Agente))<BR>        Si( Temp.Numerico3 =5, Error(<T>Grupo de Trabajo del Usuario Asignado al Agente No Existe<T> + NuevaLinea + NuevaLinea + Info.Agente))<BR>        EjecutarSQL(<T>spLimpiaAgenteVehMavi :tVehiculo, :tAgente, :nNumAgent<T>, Vehiculo:Vehiculo.Vehiculo,Vehiculo:Vehiculo.Agente3,3)<BR>    Fin<BR>Fin<BR>Si(((Temp.Numerico3 =0 y Temp.Numerico1 =0) y Temp.Numerico2= 0), Asigna(Rep.Opcion,0),Asigna(Rep.Opcion,1))<BR>ActualizarForma
+Activo=S
+Visible=S
+
+[Vehiculo.frm/Acciones.Cerrar.Cerrar]
+Nombre=Cerrar
+Boton=0
+TipoAccion=Ventana
+ClaveAccion=Cerrar
+Activo=S
+Visible=S
+ConCondicion=S
+;EjecucionCondicion=((Temp.Numerico1 = 0 y  Temp.Numerico2 = 0) y  (Temp.Numerico3 = 0 y Temp.Numerico1 = 0)) y (Temp.Numerico2 = 0 y  Temp.Numerico3 = 0)
+EjecucionCondicion=(Rep.Opcion = 0)

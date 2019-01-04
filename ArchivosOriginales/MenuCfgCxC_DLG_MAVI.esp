@@ -1,0 +1,108 @@
+;**** Ultima modificación:23-Oct-08
+;**** Modifico: Leticia Quezada
+;**** Integracion del Desarrollo de Intereses Moratorios
+
+;*** Desarrollo de Calificaciones *** 
+;*** 21-Oct-08  LQG ***
+
+
+[MenuCfgCxc.dlg/Dialogo]
+;ListaAcciones.Cambios=Insertar<TAB>ExcepcionesMoratorios<TAB>4<BR>Insertar<TAB>MenuCfgCxcCalifCtes<TAB>5<BR>Insertar<TAB>MenuNivelCobranza<TAB>6<BR>Insertar<TAB>MovimietosCxc<TAB>7
+;ListaAcciones.Cambios=Insertar<TAB>ExcepcionesMoratorios<TAB>4<BR>Insertar<TAB>MenuCfgCxcCalifCtes<TAB>5<BR>Insertar<TAB>MenuNivelCobranza<TAB>6<BR>Insertar<TAB>MovimietosCxc<TAB>7<BR>MenuNivelCobranzaDiv
+;ListaAcciones.Cambios=Insertar<TAB>ExcepcionesMoratorios<TAB>4<BR>Insertar<TAB>MenuCfgCxcCalifCtes<TAB>5<BR>Insertar<TAB>MenuNivelCobranza<TAB>6<BR>Insertar<TAB>MovimietosCxc<TAB>7<BR>Insertar<TAB>MenuNivelCobranzaDiv<TAB>8<BR>Insertar<TAB>DM0207NivelCobranzaMaviDivCteFFrm
+ListaAcciones.Cambios=Insertar<TAB>ExcepcionesMoratorios<TAB>4<BR>Insertar<TAB>MenuCfgCxcCalifCtes<TAB>5<BR>Insertar<TAB>MenuNivelCobranza<TAB>6<BR>Insertar<TAB>MovimietosCxc<TAB>7<BR>Insertar<TAB>MenuNivelCobranzaDiv<TAB>8<BR>Insertar<TAB>DM0207NivelCobranzaMaviDivCteFFrm<TAB>9<BR>Insertar<TAB>DM0207CategoriasVentaFrm
+PosicionInicialIzquierda=395
+PosicionInicialArriba=305
+PosicionInicialAlturaCliente=162
+
+;**** Modificación:18-jun-09 por MP
+;**** Integracion del Desarrollo de Intereses Moratorios
+
+
+[MenuCfgCxc.dlg/Acciones.ExcepcionesMoratorios]
+Nombre=ExcepcionesMoratorios
+Boton=0
+NombreDesplegar=Excepciones Moratorios
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=CalculoMoratoriosExMAVI
+Activo=S
+Visible=S
+
+;*** Desarrollo de Calificaciones *** 
+;*** 21-Oct-08  LQG ***
+
+[MenuCfgCxc.dlg/Acciones.MenuCfgCxcCalifCtes]
+Nombre=MenuCfgCxcCalifCtes
+Boton=0
+NombreDesplegar=Calificación de Cuentas
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=MenuCfgCxcCalifCtes
+Activo=S
+Visible=S
+
+
+;*** 19-May-09 ARC Nueva accion desarrollo cobranza menudeo *** 
+[MenuCfgCxc.dlg/Acciones.MenuNivelCobranza]
+Nombre=MenuNivelCobranza
+Boton=0
+NombreDesplegar=Nivel de Cobranza
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=NivelCobranzaMavi
+Activo=S
+Visible=S
+EspacioPrevio=S
+
+;***ARC 19-May-09 Nueva accion agregada desarrollo cobranza menudeo ***
+[MenuCfgCxc.dlg/Acciones.MovimietosCxc]
+Nombre=MovimietosCxc
+Boton=0
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=MovMavi
+Activo=S
+Visible=S
+NombreDesplegar=Movs. a Incluir en Asignación Ctas
+
+;*** 22-Abr-2015 Tonatiuh Del Villar DM0207 Asignación de Cuentas
+[MenuCfgCxc.dlg/Acciones.MenuNivelCobranzaDiv]
+Nombre=MenuNivelCobranzaDiv
+Boton=0
+NombreDesplegar=Nivel de Cobranza por Divisiones
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=DM0207NivelCobranzaDivFrm
+Activo=S
+Visible=S
+EspacioPrevio=S
+
+;*** 10-Sep-2015 Tonatiuh Del Villar DM0207 Asignación de Cuentas CteFinal
+[MenuCfgCxc.dlg/Acciones.DM0207NivelCobranzaMaviDivCteFFrm]
+Nombre=DM0207NivelCobranzaMaviDivCteFFrm
+Boton=0
+NombreDesplegar=Configuración Nivel Cobranza por Divisiones Final
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=DM0207NivelCobranzaMaviDivCteFFrm
+Activo=S
+Visible=S
+
+;*** 28-Sep-2015 Tonatiuh Del Villar DM0207 Asignación de Cuentas
+[MenuCfgCxc.dlg/Acciones.DM0207CategoriasVentaFrm]
+Nombre=DM0207CategoriasVentaFrm
+Boton=0
+NombreDesplegar=Configuración de Categorias
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=DM0207CategoriasVentaFrm
+Activo=S
+Visible=S

@@ -1,0 +1,10 @@
+;**** Ultima modificación:02-Dic-08
+;**** Modifico:Arly Rubio
+;**** Se modifico: valor por omision del campo propiedades 
+
+
+;**** Se quito el valor por omision que era Info.Propiedades (ARC 04-Dic-08) ****
+[SerieLoteMov.tbl/Propiedades]
+ValorPorOmision=
+CondicionDespliege=Info.EsEntrada o Usuario.ModificarSerieLoteProp o (Info.Estatus noen (EstatusSinAfectar, EstatusPorConfirmar)) o (SQL(<T>SELECT dbo.FN_MAVIDM0169VerPropSerie(:nID,:tArt,:tMod,:nRen,:tUsr)<T>,Info.ID,Info.Articulo,Info.Modulo,Info.RenglonID,Usuario))
+CondicionEdicion=Info.EsEntrada o Usuario.ModificarSerieLoteProp o (SQL(<T>SELECT dbo.FN_MAVIDM0169VerPropSerie(:nID,:tArt,:tMod,:nRen,:tUsr)<T>,Info.ID,Info.Articulo,Info.Modulo,Info.RenglonID,Usuario))

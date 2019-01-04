@@ -1,0 +1,15 @@
+[BancoSucursal.Vis/Banco]
+Clave=BancoSucursal.Banco
+LigaTabla=BancoSucursal
+LigaCampo=Banco
+ClaveBDE=Banco
+TamanoValidacion=20
+Alineacion=por Omisión
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+AyudaRefrescar=S
+AyudaIgnoraChequeos=S
+Nombre=Banco
+Requerido=S
+Formula=SQLEnLista( <T>SELECT Institucion FROM InstitucionFin<T>)

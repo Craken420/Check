@@ -1,0 +1,210 @@
+[Art.tbl/Tabla]
+ListaCampos=Articulo<BR>Rama<BR>Descripcion1<BR>Descripcion2<BR>NombreCorto<BR>Grupo<BR>Categoria<BR>CategoriaActivoFijo<BR>Familia<BR>Fabricante<BR>Linea<BR>ClaveFabricante<BR>Impuesto1<BR>Impuesto2<BR>Impuesto3<BR>Factor<BR>Unidad<BR>UnidadCompra<BR>UnidadTraspaso<BR>UnidadCantidad<BR>TipoCosteo<BR>Peso<BR>Tara<BR>Volumen<BR>Tipo<BR>TipoOpcion<BR>Accesorios<BR>Refacciones<BR>Servicios<BR>Consumibles<BR>MonedaCosto<BR>MonedaPrecio<BR>MargenMinimo<BR>PrecioMinimo<BR>DescuentoCompra<BR>PrecioLista<BR>FactorAlterno<BR>PrecioAnterior<BR>Utilidad<BR>Comision<BR>Arancel<BR>ABC<BR>Clase<BR>Estatus<BR>EstatusPrecio<BR>UltimoCambio<BR>Sustitutos<BR>Alta<BR>Conciliar<BR>Mensaje<BR>Precio2<BR>Precio3<BR>Precio4<BR>Precio5<BR>Precio6<BR>Precio7<BR>Precio8<BR>Precio9<BR>Precio10<BR>Refrigeracion<BR>TieneCaducidad<CONTINUA>
+ListaCampos002=<CONTINUA><BR>ProdCantidad<BR>ProdUsuario<BR>CategoriaProd<BR>ProdPasoTotal<BR>ProdMov<BR>ProdMovGrupo<BR>ProdOpciones<BR>ProdEstacion<BR>wMostrar<BR>TiempoEntrega<BR>TiempoEntregaUnidad<BR>TiempoEntregaSeg<BR>TiempoEntregaSegUnidad<BR>Merma<BR>Desperdicio<BR>Usuario<BR>ProdRuta<BR>InvSeguridad<BR>SeVende<BR>SeCompra<BR>SeProduce<BR>EsFormula<BR>LoteOrdenar<BR>CantidadOrdenar<BR>MultiplosOrdenar<BR>AlmacenROP<BR>ProdVerCostoAcumulado<BR>ProdVerMerma<BR>ProdVerDesperdicio<BR>ProdVerConcentracion<BR>RevisionUsuario<BR>RevisionUltima<BR>RevisionFrecuencia<BR>RevisionFrecuenciaUnidad<BR>RevisionSiguiente<BR>Situacion<BR>SituacionFecha<BR>SituacionUsuario<BR>SituacionNota<BR>TipoCompra<BR>TieneMovimientos<BR>Registro1<BR>Registro1Vencimiento<BR>AlmacenEspecificoVenta<BR>AlmacenEspecificoVentaMov<BR>Costo<CONTINUA>
+ListaCampos003=<CONTINUA>Estandar<BR>CostoReposicion<BR>EstatusCosto<BR>Margen<BR>RutaDistribucion<BR>Proveedor<BR>NivelAcceso<BR>ProdVerPorcentaje<BR>Temporada<BR>SolicitarPrecios<BR>AutoRecaudacion<BR>Concepto<BR>Cuenta<BR>Espacios<BR>EspaciosEspecificos<BR>EspaciosSobreventa<BR>EspaciosNivel<BR>EspaciosBloquearAnteriores<BR>EspaciosHoraD<BR>EspaciosHoraA<BR>EspaciosMinutos<BR>Retencion1<BR>Retencion2<BR>Retencion3<BR>BasculaPesar<BR>SerieLoteInfo<BR>CantidadMinimaVenta<BR>CantidadMaximaVenta<BR>EstimuloFiscal<BR>OrigenPais<BR>OrigenLocalidad<BR>Incentivo<BR>FactorCompra<BR>Horas<BR>ISAN<BR>ExcluirDescFormaPago<BR>EsDeducible<BR>Peaje<BR>CodigoAlterno<BR>TipoCatalogo<BR>AnexosAlFacturar<BR>CaducidadMinima<BR>Actividades<BR>ValidarPresupuestoCompra<BR>SeriesLotesAutoOrden<BR>LotesFijos<BR>LotesAuto<BR>Consecutivo<CONTINUA>
+ListaCampos004=<CONTINUA><BR>TipoEmpaque<BR>Modelo<BR>Version<BR>TieneDireccion<BR>Direccion<BR>DireccionNumero<BR>DireccionNumeroInt<BR>EntreCalles<BR>Plano<BR>Observaciones<BR>Colonia<BR>Poblacion<BR>Estado<BR>Pais<BR>CodigoPostal<BR>Delegacion<BR>Ruta<BR>Codigo<BR>ClaveVehicular<BR>TipoVehiculo<BR>DiasLibresIntereses<BR>PrecioLiberado<BR>ValidarCodigo<BR>Presentacion<BR>GarantiaPlazo<BR>CostoIdentificado<BR>CantidadTarima<BR>UnidadTarima<BR>DepartamentoDetallista<BR>TratadoComercial<BR>CuentaPresupuesto<BR>ProgramaSectorial<BR>ArancelDesperdicio<BR>PedimentoClave<BR>PedimentoRegimen<BR>Permiso<BR>PermisoRenglon<BR>MinimoTarima<BR>Cuenta2<BR>Cuenta3<BR>Impuesto1Excento<BR>InflacionPresupuesto<BR>CalcularPresupuesto<BR>Excento2<BR>Excento3<BR>Capital<BR>UltimoMov<BR>FechaUltimoMov<BR>MarcaE<BR>ModeloE<BR>LineaE<BR>CtaCliente<BR>TipoEntradaMavi<CONTINUA>
+ListaCampos005=<CONTINUA>R>codigopadre<BR>espadre
+
+SQL=SELECT<BR>  Articulo,<BR>  Rama,<BR>  Descripcion1,<BR>  Descripcion2,<BR>  NombreCorto,<BR>  Grupo,<BR>  Categoria,<BR>  CategoriaActivoFijo,<BR>  Familia,<BR>  Linea,<BR>  Fabricante,<BR>  ClaveFabricante,<BR>  Impuesto1,<BR>  Impuesto2,<BR>  Impuesto3,<BR>  Factor,<BR>  Unidad,<BR>  UnidadCompra,<BR>  UnidadTraspaso,<BR>  UnidadCantidad,<BR>  TipoCosteo,<BR>  Peso,<BR>  Tara,<BR>  Volumen,<BR>  Tipo,<BR>  TipoOpcion,<BR>  Accesorios,<BR>  Refacciones,<BR>  Sustitutos,<BR>  Servicios,<BR>  Consumibles,<BR>  MonedaCosto,<BR>  MonedaPrecio,<BR>  MargenMinimo,<BR>  PrecioLista,<BR>  PrecioMinimo,<BR>  FactorAlterno,<BR>  PrecioAnterior,<BR>  Utilidad,<BR>  DescuentoCompra,<BR>  Clase,<BR>  Estatus,<BR>  UltimoCambio,<BR>  Alta,<BR>  Conciliar,<BR>  Mensaje,<BR>  Comision,<BR>  Arancel,<BR> <CONTINUA>
+SQL002=<CONTINUA> ArancelDesperdicio,<BR>  ABC,<BR>  Usuario,<BR>  Precio2,<BR>  Precio3,<BR>  Precio4,<BR>  Precio5,<BR>  Precio6,<BR>  Precio7,<BR>  Precio8,<BR>  Precio9,<BR>  Precio10,<BR>  Refrigeracion,<BR>  TieneCaducidad,<BR>  BasculaPesar,<BR>  SeProduce,<BR>  Situacion,<BR>  SituacionFecha,<BR>  SituacionUsuario,<BR>  SituacionNota,<BR>  EstatusPrecio,<BR>  wMostrar,<BR>  Merma,<BR>  Desperdicio,<BR>  SeCompra,<BR>  SeVende,<BR>  EsFormula,<BR>  TiempoEntrega,<BR>  TiempoEntregaUnidad,<BR>  TiempoEntregaSeg,<BR>  TiempoEntregaSegUnidad,<BR>  LoteOrdenar,<BR>  CantidadOrdenar,<BR>  MultiplosOrdenar,<BR>  InvSeguridad,<BR>  ProdRuta,<BR>  AlmacenROP,<BR>  CategoriaProd,<BR>  ProdCantidad,<BR>  ProdUsuario,<BR>  ProdPasoTotal,<BR>  ProdMovGrupo,<BR>  ProdEstacion,<BR>  ProdOpciones,<BR>  ProdVerConc<CONTINUA>
+SQL003=<CONTINUA>entracion,<BR>  ProdVerCostoAcumulado,<BR>  ProdVerMerma,<BR>  ProdVerDesperdicio,<BR>  ProdVerPorcentaje,<BR>  RevisionUltima,<BR>  RevisionUsuario,<BR>  RevisionFrecuencia,<BR>  RevisionFrecuenciaUnidad,<BR>  RevisionSiguiente,<BR>  ProdMov,<BR>  TipoCompra,<BR>  TieneMovimientos,<BR>  Registro1,<BR>  Registro1Vencimiento,<BR>  AlmacenEspecificoVenta,<BR>  AlmacenEspecificoVentaMov,<BR>  RutaDistribucion,<BR>  CostoEstandar,<BR>  CostoReposicion,<BR>  EstatusCosto,<BR>  Margen,<BR>  Proveedor,<BR>  NivelAcceso,<BR>  Temporada,<BR>  SolicitarPrecios,<BR>  AutoRecaudacion,<BR>  Concepto,<BR>  Cuenta,<BR>  Retencion1,<BR>  Retencion2,<BR>  Retencion3,<BR>  Espacios,<BR>  EspaciosEspecificos,<BR>  EspaciosSobreventa,<BR>  EspaciosNivel,<BR>  EspaciosMinutos,<BR>  EspaciosBloquearAnteriores,<<CONTINUA>
+SQL004=<CONTINUA>BR>  EspaciosHoraD,<BR>  EspaciosHoraA,<BR>  SerieLoteInfo,<BR>  CantidadMinimaVenta,<BR>  CantidadMaximaVenta,<BR>  EstimuloFiscal,<BR>  OrigenPais,<BR>  OrigenLocalidad,<BR>  Incentivo,<BR>  FactorCompra,<BR>  Horas,<BR>  ISAN,<BR>  ExcluirDescFormaPago,<BR>  EsDeducible,<BR>  Peaje,<BR>  CodigoAlterno,<BR>  TipoCatalogo,<BR>  AnexosAlFacturar,<BR>  CaducidadMinima,<BR>  Actividades,<BR>  ValidarPresupuestoCompra,<BR>  SeriesLotesAutoOrden,<BR>  LotesFijos,<BR>  LotesAuto,<BR>  Consecutivo,<BR>  TipoEmpaque,<BR>  Modelo,<BR>  Version,<BR>  TieneDireccion,<BR>  Direccion,<BR>  DireccionNumero,<BR>  DireccionNumeroInt,<BR>  EntreCalles,<BR>  Plano,<BR>  Observaciones,<BR>  Colonia,<BR>  Delegacion,<BR>  Poblacion,<BR>  Estado,<BR>  Pais,<BR>  CodigoPostal,<BR>  Ruta,<BR>  Codigo,<BR>  Clav<CONTINUA>
+SQL005=<CONTINUA>eVehicular,<BR>  TipoVehiculo,<BR>  DiasLibresIntereses,<BR>  PrecioLiberado,<BR>  ValidarCodigo,<BR>  Presentacion,<BR>  GarantiaPlazo,<BR>  CostoIdentificado,<BR>  CantidadTarima,<BR>  UnidadTarima,<BR>  MinimoTarima,<BR>  DepartamentoDetallista,<BR>  TratadoComercial,<BR>  CuentaPresupuesto,<BR>  ProgramaSectorial,<BR>  PedimentoClave,<BR>  PedimentoRegimen,<BR>  Permiso,<BR>  PermisoRenglon,<BR>  Cuenta2,<BR>  Cuenta3,<BR>  Impuesto1Excento,<BR>  InflacionPresupuesto,<BR>  CalcularPresupuesto,<BR>  Excento2,<BR>  Excento3,<BR>  Capital,<BR>  UltimoMov,<BR>  FechaUltimoMov,<BR>  MarcaE,<BR>  ModeloE,<BR>  LineaE,<BR>  CtaCliente,<BR>  TipoEntradaMavi,<BR>  codigopadre,<BR>  espadre<BR><BR>FROM<BR>  Art
+
+[Art.tbl/EspaciosEspecificos]
+Clave=EspaciosEspecificos
+Nombre=Catálogo
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+RefrescarTodoCondiciones=
+CondicionEdicion=
+CondicionDespliege=
+
+
+
+
+
+[Art.tbl/Espacios]
+Clave=Espacios
+Nombre=Revistón
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+RefrescarTodoCondiciones=S
+ConRefrescarCondiciones=S
+CondicionEdicion=
+CondicionDespliege=
+
+
+[Art.tbl/Categoria]
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+CondicionEdicion=Vacio(SQL(<T>SELECT CATEGORIA FROM  DM0144ArtdPerfilesXAgrupador GT INNER JOIN DM0144ArtPerfilesXAgrupador P ON GT.ID = P.ID WHERE GT.GrupoTrabajo = (SELECT GrupoTrabajo FROM USUARIO WHERE USUARIO={COMILLAS(USUARIO)})<T>))
+ValorPorOmision=SQL(<T>SELECT CATEGORIA FROM  DM0144ArtdPerfilesXAgrupador GT INNER JOIN DM0144ArtPerfilesXAgrupador P ON GT.ID = P.ID WHERE GT.GrupoTrabajo = (SELECT GrupoTrabajo FROM USUARIO WHERE USUARIO={COMILLAS(USUARIO)})<T>)
+ValidacionConCondiciones=S
+Requerido=S
+
+
+[Art.tbl/Capital]
+Clave=Capital
+Nombre=Monto Capital
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Monetario=S
+AyudaEnCaptura=Calculadora
+
+
+[Art.tbl/UltimoMov]
+Clave=UltimoMov
+Nombre=Ultimo Mov
+Visible=S
+TamanoValidacion=100
+Tamano=100
+
+
+[Art.tbl/FechaUltimoMov]
+Clave=FechaUltimoMov
+Nombre=Fecha Ultimo Mov
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+FormatoValidacion=dd/mmm/aaaa
+
+
+[Art.tbl/NivelAcceso]
+CondicionEdicion=SQL(<T>select case when (select Acceso From Usuario Where Usuario=<T>+comillas(usuario)+<T>)<BR>In (Select Nombre From TablaStD Where TablaSt = <T>+comillas(<T>PERFILES MAESTROS ART/AGTE<T>)+<T>)<BR>then 1 else 0 End<T>)=1
+
+
+[Art.tbl/Articulo]
+;CondicionEdicion=no TieneMovimientos  y<BR> SQL(<T>SELECT CASE WHEN<BR>(SELECT CASE WHEN CATEGORIA=<T>+comillas(<T> <T>)+<T> THEN <T>+comillas(<T><T>)+<T> ELSE CATEGORIA END<BR>FROM DM0144ArtPerfilesXAgrupador WHERE ID =<BR>(SELECT ARTD.ID FROM DM0144ArtDPerfilesXAgrupador ARTD<BR>WHERE ARTD.GRUPOTRABAJO =<BR>(SELECT U.GRUPOTRABAJO FROM USUARIO U WHERE U.USUARIO = <T>+comillas(usuario)+<T>)))=<T>+comillas(<T>ADJUDICACION<T>)+<T><BR>AND<BR>(SELECT CASE WHEN GRUPO=<T>+comillas(<T> <T>)+<T> THEN <T>+comillas(<T><T>)+<T> ELSE GRUPO END<BR>FROM DM0144ArtPerfilesXAgrupador WHERE ID =<BR>(SELECT ARTD.ID FROM DM0144ArtDPerfilesXAgrupador ARTD<BR>WHERE ARTD.GRUPOTRABAJO =<BR>(SELECT U.GRUPOTRABAJO FROM USUARIO U WHERE U.USUARIO = <T>+comillas(usuario)+<T>)))=<T>+comillas(<T>MERCANCIA ESPECIAL<T>)+<T><BR> THEN 0 ELSE 1 END<T>)=1
+;*****CQ DM0144 Se modifico la condicion para la edicion del campo (23/08/2011)
+;CondicionEdicion=vacio(SQL(<T>SELECT CATEGORIA  FROM  DM0144ArtdPerfilesXAgrupador GT INNER JOIN DM0144ArtPerfilesXAgrupador P ON GT.ID = P.ID WHERE GT.GrupoTrabajo = (SELECT GrupoTrabajo FROM USUARIO WHERE USUARIO={COMILLAS(USUARIO)})<T>))
+;*****CQ DM0144 Se modifica la condición de edición del campo (25/08/2011)
+;CondicionEdicion=(((SQL(<T>SELECT CATEGORIA FROM DM0144ArtdPerfilesXAgrupador GT INNER JOIN DM0144ArtPerfilesXAgrupador P ON GT.ID = P.ID WHERE GT.GrupoTrabajo =<BR>  (SELECT GrupoTrabajo FROM USUARIO WHERE USUARIO={COMILLAS(USUARIO)})<T>))<><T>ADJUDICACION<T>) Y<BR>  ((SQL(<T>SELECT GRUPO FROM DM0144ArtdPerfilesXAgrupador GT INNER JOIN DM0144ArtPerfilesXAgrupador P ON GT.ID = P.ID WHERE GT.GrupoTrabajo =<BR>  (SELECT GrupoTrabajo FROM USUARIO WHERE USUARIO={COMILLAS(USUARIO)})<T>))<><T>MERCANCIA ESPECIAL<T>))
+;CondicionEdicion002=<CONTINUA>JUDICACION<T>)<BR><BR>  Informacion<BR>  ((SQL(<T>SELECT GRUPO FROM DM0144ArtdPerfilesXAgrupador GT INNER JOIN DM0144ArtPerfilesXAgrupador P ON GT.ID = P.ID WHERE GT.GrupoTrabajo =<BR>  (SELECT GrupoTrabajo FROM USUARIO WHERE USUARIO={COMILLAS(USUARIO)})<T>))<><T>MERCANCIA ESPECIAL<T>)<BR><BR>  Informacion<BR>  ((SQL(<T>SELECT CATEGORIA FROM DM0144ArtdPerfilesXAgrupador GT INNER JOIN DM0144ArtPerfilesXAgrupador P ON GT.ID = P.ID WHERE GT.GrupoTrabajo =<BR>  (SELECT GrupoTrabajo FROM USUARIO WHERE USUARIO={COMILLAS(USUARIO)})<T>))<><T>ADJUDICACION<T>) Y<BR>  ((SQL(<T>SELECT GRUPO FROM DM0144ArtdPerfilesXAgrupador GT INNER JOIN DM0144ArtPerfilesXAgrupador P ON GT.ID = P.ID WHERE GT.GrupoTrabajo =<BR>  (SELECT GrupoTrabajo FROM USUARIO WHERE USUARIO={COMILLAS(USUARIO)})<T>))<><T>MERCANCIA ESP<CONTINUA>
+;CondicionEdicion003=<CONTINUA>ECIAL<T>)
+;CondicionEdicion=Izquierda(SQL(<T>SELECT Usuario FROM dbo.Usuario WHERE Usuario =:tUsu<T>,Usuario),5)  = <T>GERAD<T>
+CondicionEdicion=SI SQL(<T>SELECT COUNT(Articulo) FROM dbo.Art WHERE Articulo=:tArt<T>,Articulo)=1<BR>ENTONCES<BR>    SI Izquierda(SQL(<T>SELECT Usuario FROM dbo.Usuario WHERE Usuario =:tUsu<T>,Usuario),5)  = <T>GERAD<T><BR>    ENTONCES<BR>        VERDADERO<BR>    SINO<BR>        FALSO<BR>    FIN<BR>SINO          <BR>    VERDADERO<BR>FIN
+
+
+
+;**** Integracion de campo Grupo para desarrollo DM0144 Catalogo Articulos dentro del paquete DM0144_30082011. JR 31-Ago-2011. ****
+[Art.tbl/Grupo]
+;***** JAVT DM0144 08/08/2011 Se condiciono campo
+;CondicionEdicion=vacio(Grupo)
+;*****CQ DM0144 Se condiciono el campo, se dio valor por omisión y es requerido oblogatoriamente (18/08/2011)
+CondicionEdicion=Vacio(SQL(<T>SELECT GRUPO FROM  DM0144ArtdPerfilesXAgrupador GT INNER JOIN DM0144ArtPerfilesXAgrupador P ON GT.ID = P.ID WHERE GT.GrupoTrabajo = (SELECT GrupoTrabajo FROM USUARIO WHERE USUARIO={COMILLAS(USUARIO)})<T>))
+ValorPorOmision=SQL(<T>SELECT GRUPO FROM  DM0144ArtdPerfilesXAgrupador GT INNER JOIN DM0144ArtPerfilesXAgrupador P ON GT.ID = P.ID WHERE GT.GrupoTrabajo = (SELECT GrupoTrabajo FROM USUARIO WHERE USUARIO={COMILLAS(USUARIO)})<T>)
+ValidacionConCondiciones=S
+;*****CQ DM0144 Se abligan los campos a ser capturados (25/08/2011)
+Requerido=S
+
+
+;**** Integracion de campo Familia para desarrollo DM0144 Catalogo Articulos dentro del paquete DM0144_30082011. JR 31-Ago-2011. ****
+[Art.tbl/Familia]
+;***** JAVT DM0144 08/08/2011 Se condiciono campo
+;CondicionEdicion=vacio(Familia)
+;*****CQ DM0144 Se condiciono el campo, se dio valor por omisión y es requerido oblogatoriamente (18/08/2011)
+CondicionEdicion=Vacio(SQL(<T>SELECT FAMILIA FROM  DM0144ArtdPerfilesXAgrupador GT INNER JOIN DM0144ArtPerfilesXAgrupador P ON GT.ID = P.ID WHERE GT.GrupoTrabajo = (SELECT GrupoTrabajo FROM USUARIO WHERE USUARIO={COMILLAS(USUARIO)})<T>))
+ValorPorOmision=SQL(<T>SELECT FAMILIA FROM  DM0144ArtdPerfilesXAgrupador GT INNER JOIN DM0144ArtPerfilesXAgrupador P ON GT.ID = P.ID WHERE GT.GrupoTrabajo = (SELECT GrupoTrabajo FROM USUARIO WHERE USUARIO={COMILLAS(USUARIO)})<T>)
+ValidacionConCondiciones=S
+;*****CQ DM0144 Se abligan los campos a ser capturados (25/08/2011)
+Requerido=S
+
+
+; **** Integracion de modificacion a CondicionEdicion para el desarrollo DM0144 Catalogo Articulos dentro del paquete DM0144_02062012. JR 05-Jun-2012. ****
+; **** Integracion de modificacion a CondicionEdicion para el desarrollo DM0144 Catalogo Articulos dentro del paquete DM0144_06062012. JR 07-Jun-2012. ****
+[Art.tbl/Descripcion1]
+;CondicionEdicion=Izquierda(SQL(<T>SELECT Usuario FROM dbo.Usuario WHERE Usuario =:tUsu<T>,Usuario),5)  = <T>GERAD<T>
+CondicionEdicion=SI SQL(<T>SELECT COUNT(Descripcion1) FROM dbo.Art WHERE Descripcion1=:tArt<T>,Descripcion1)=1<BR>ENTONCES<BR>    SI Izquierda(SQL(<T>SELECT Usuario FROM dbo.Usuario WHERE Usuario =:tUsu<T>,Usuario),5)  = <T>GERAD<T><BR>      ENTONCES <BR>        VERDADERO<BR>    SINO<BR>        FALSO                     <BR>    FIN<BR>SINO<BR>    VERDADERO<BR>FIN
+
+;integracion del paquete DM0270 campos nuevos para ecommerce fernando romero 25/05/2016
+[Art.tbl/MarcaE]
+Clave=MarcaE
+Nombre=Marca
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Vista
+AyudaMemOpc=Unicamente opciones listadas
+AyudaMemEnBlanco=S
+Mayusculas=S
+AyudaForma=DM0270MarcasFrm
+AyudaVista=DM0270MarcasVis
+AyudaCampo=Marca
+ValidacionConCondiciones=S
+ValidacionCondicion=SQL(<T>select count(Marca) From DM0270CatalogoMarcas Where Marca=:tmar<T>,Art:Art.MarcaE) > 0
+ValidacionMensajeError=<T>no existe esa marca en el catalogo<T>
+
+[Art.tbl/ModeloE]
+Clave=ModeloE
+Nombre=Modelo
+Visible=S
+TamanoValidacion=50
+Tamano=50
+
+[Art.tbl/LineaE]
+Clave=LineaE
+Nombre=Tipo Ecommerce
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Vista
+AyudaMemOpc=Unicamente opciones listadas
+AyudaMemEnBlanco=S
+Mayusculas=S
+AyudaForma=DM0270tipoFrm
+AyudaVista=DM0270tipovis
+AyudaCampo=Tipo
+ValidacionConCondiciones=S
+ValidacionCondicion=SQL(<T>select Count(Tipo) from DM0270CatalogoTipo Where Tipo=:tti<T>,Art:Art.lineaE) > 0
+ValidacionMensajeError=<T>Este tipo no existe en el catalgo<T>
+
+
+[Art.tbl/NombreCorto]
+Nombre=Nombre Ecommerce
+TamanoValidacion=255
+Tamano=255
+CondicionEdicion=1=0
+
+[Art.tbl/Linea]
+Requerido=S
+
+[Art.tbl/CtaCliente]
+Clave=CtaCliente
+Nombre=CtaCliente
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=9
+TipoDatos=Texto
+Tamano=9
+
+[Art.tbl/TipoEntradaMavi]
+Clave=TipoEntradaMavi
+Nombre=TipoEntradaMavi
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=15
+TipoDatos=Texto
+Tamano=15
+
+[Art.tbl/codigopadre]
+Clave=codigopadre
+Nombre=codigopadre
+Visible=S
+TamanoValidacion=11
+Tamano=11
+
+[Art.tbl/espadre]
+Clave=espadre
+Nombre=espadre
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+

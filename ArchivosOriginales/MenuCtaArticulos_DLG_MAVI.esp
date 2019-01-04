@@ -1,0 +1,24 @@
+;**** Ultima modificación:08-Dic-08
+;**** Modifico:Arly Rubio
+;**** Se modifico: Se hizo no visible la accion para modificar las propiedades
+
+[MenuCtaArticulos.dlg/Dialogo]
+ListaAcciones=Art<BR>Catalogos<BR>ArtL<BR>ListaPreciosEsp<BR>ArtListaPrecio<BR>ArtListaCostos<BR>ArtH<BR>SerieLoteProp<BR>CB<BR>Opcion<BR>CRPromocion<BR>ArtSEO
+
+
+;***** Se hizo no visible para que no se puedan editar las propiedades ARC (08-Dic-08) *****
+[MenuCtaArticulos.dlg/Acciones.SerieLoteProp]
+Activo=N
+VisibleCondicion=Falso
+
+
+[MenuCtaArticulos.dlg/Acciones.ArtSEO]
+Nombre=ArtSEO
+Boton=0
+EnMenu=S
+EnBarraAcciones=S
+Activo=S
+Visible=S
+NombreDesplegar=Articulo SEO
+TipoAccion=Expresion
+Expresion=Ejecutar(<T>PlugIns\eComerce.exe <T>+<T> <T>+<T> <T>+<T>0<T>+<T> <T>+Usuario )

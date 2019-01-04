@@ -1,0 +1,17 @@
+[Sucursal.tbl/Tabla]
+ListaCampos=Sucursal<BR>Nombre<BR>Prefijo<BR>Relacion<BR>Direccion<BR>DireccionNumero<BR>DireccionNumeroInt<BR>Colonia<BR>CodigoPostal<BR>Poblacion<BR>Estado<BR>Pais<BR>Telefonos<BR>Fax<BR>RFC<BR>RegistroPatronal<BR>Estatus<BR>UltimoCambio<BR>Region<BR>Encargado<BR>EnLinea<BR>SucursalPrincipal<BR>ListaPreciosEsp<BR>Cajeros<BR>CentroCostos<BR>OperacionContinua<BR>wMovVentas<BR>wAlmacen<BR>wAgente<BR>wUsuario<BR>wUEN<BR>wConcepto<BR>CentralRegional<BR>ZonaEconomica<BR>Grupo<BR>AlmacenPrincipal<BR>Servidor<BR>BaseDatos<BR>Usuario<BR>CajaCentral<BR>Alta<BR>ZonaImpuesto<BR>Cliente<BR>CRTipoCredito<BR>Categoria<BR>Acreedor<BR>LocalidadCNBV<BR>Tipo<BR>FechaApertura<BR>VencimientoContrato<BR>Metros<BR>Delegacion<BR>GLN<BR>CostoBase<BR>UltimaSincronizacion<BR>IP<BR>IPPuerto<BR>IPDinamica<BR>ComunicacionEncript<CONTINUA>
+ListaCampos002=<CONTINUA>ada<BR>PropreEstatus<BR>ProprePorcentajeNormal<BR>PropreMarca<BR>CFDFlex<BR>noCertificado<BR>Llave<BR>ContrasenaSello<BR>CertificadoBase64<BR>RutaCertificado<BR>LiberaAut
+SQL=SELECT<BR>  Sucursal,<BR>  Nombre,<BR>  Prefijo,<BR>  Relacion,<BR>  Direccion,<BR>  DireccionNumero,<BR>  DireccionNumeroInt,<BR>  Delegacion,<BR>  GLN,<BR>  Colonia,<BR>  Poblacion,<BR>  Estado,<BR>  Pais,<BR>  CodigoPostal,<BR>  Telefonos,<BR>  Fax,<BR>  Estatus,<BR>  UltimoCambio,<BR>  RFC,<BR>  RegistroPatronal,<BR>  Encargado,<BR>  Alta,<BR>  Region,<BR>  CentralRegional,<BR>  EnLinea,<BR>  SucursalPrincipal,<BR>  ListaPreciosEsp,<BR>  Cajeros,<BR>  CentroCostos,<BR>  OperacionContinua,<BR>  ZonaEconomica,<BR>  Grupo,<BR>  AlmacenPrincipal,<BR>  Servidor,<BR>  BaseDatos,<BR>  Usuario,<BR>  ZonaImpuesto,<BR>  CajaCentral,<BR>  wMovVentas,<BR>  wAlmacen,<BR>  wAgente,<BR>  wUsuario,<BR>  wUEN,<BR>  wConcepto,<BR>  CRTipoCredito,<BR>  Cliente,<BR>  Categoria,<BR>  Acreedor,<BR>  Localid<CONTINUA>
+SQL002=<CONTINUA>adCNBV,<BR>  Tipo,<BR>  FechaApertura,<BR>  VencimientoContrato,<BR>  Metros,<BR>  CostoBase,<BR>  UltimaSincronizacion,<BR>  IP,<BR>  IPDinamica,<BR>  IPPuerto,<BR>  ComunicacionEncriptada,<BR>  PropreEstatus,<BR>  ProprePorcentajeNormal,<BR>  PropreMarca,<BR>  CFDFlex,<BR>  noCertificado,<BR>  Llave,<BR>  ContrasenaSello,<BR>  CertificadoBase64,<BR>  RutaCertificado,<BR>  LiberaAut<BR><BR>FROM<BR>  Sucursal
+
+[Sucursal.tbl/LiberaAut]
+Clave=LiberaAut
+Nombre=LiberaAut
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Si - No
+OpcionesRenglones=8

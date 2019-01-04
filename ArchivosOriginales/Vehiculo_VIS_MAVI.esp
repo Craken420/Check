@@ -1,0 +1,62 @@
+;**** Ultima modificación:16-Jun-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:Campos Busqueda Rapida
+
+
+
+
+
+;**** Se agregaron nuevos campos: TipoUnidadVehicular, UnidadPropiaMAVI****
+[Vehiculo.vis/Vista]
+ListaCampos=Vehiculo.Vehiculo<BR>Vehiculo.Descripcion<BR>Vehiculo.Placas<BR>Vehiculo.Volumen<BR>Vehiculo.Peso<BR>Vehiculo.Agente<BR>Vehiculo.Ruta<BR>Vehiculo.Estatus<BR>Vehiculo.Cxp<BR>Vehiculo.Proveedor<BR>Vehiculo.Condicion<BR>Vehiculo.Concepto<BR>Vehiculo.TieneMovimientos<BR>Vehiculo.GenerarGasto<BR>Vehiculo.Impuestos<BR>Vehiculo.Retencion<BR>Vehiculo.Retencion2<BR>Vehiculo.Retencion3<BR>Vehiculo.Clase<BR>Vehiculo.Subclase<BR>Vehiculo.Articulo<BR>Vehiculo.Serie<BR>Vehiculo.RendimientoCombustible<BR>Vehiculo.RendimientoTermo<BR>Vehiculo.Agente2<BR>Vehiculo.Agente3<BR>Vehiculo.Descripcion1<BR>Vehiculo.Descripcion2<BR>Vehiculo.Descripcion3<BR>Vehiculo.Descripcion4<BR>Vehiculo.Descripcion5<BR>Vehiculo.TipoUnidadVehicular<BR>Vehiculo.UnidadPropiaMAVI<BR>Agente.Agente<BR>Agente.Nombre<BR>Prov.Proveedor<B<CONTINUA>
+ListaCampos002=<CONTINUA>R>Prov.Nombre<BR>Prov.Tipo<BR>Prov.Condicion<BR>Prov.Estatus<BR>Art.Descripcion1<BR>ActivoF.Serie<BR>AgenteDestino.Nombre<BR>AgenteDetalle.Nombre
+CamposBusquedaRapida=Vehiculo.Vehiculo<BR>Vehiculo.Descripcion<BR>Vehiculo.Placas<BR>Vehiculo.TipoUnidadVehicular<BR>Prov.Nombre<BR>Vehiculo.Proveedor
+SQL=SELECT<BR>  Vehiculo.Vehiculo,<BR>  Vehiculo.Descripcion,<BR>  Vehiculo.Placas,<BR>  Vehiculo.Volumen,<BR>  Vehiculo.Peso,<BR>  Vehiculo.Agente,<BR>  Vehiculo.Ruta,<BR>  Vehiculo.Estatus,<BR>  Vehiculo.Cxp,<BR>  Vehiculo.Proveedor,<BR>  Vehiculo.Condicion,<BR>  Vehiculo.Concepto,<BR>  Vehiculo.TieneMovimientos,<BR>  Vehiculo.GenerarGasto,<BR>  Vehiculo.Impuestos,<BR>  Vehiculo.Retencion,<BR>  Vehiculo.Retencion2,<BR>  Vehiculo.Retencion3,<BR>  Vehiculo.Clase,<BR>  Vehiculo.Subclase,<BR>  Vehiculo.Articulo,<BR>  Vehiculo.Serie,<BR>  Vehiculo.RendimientoCombustible,<BR>  Vehiculo.RendimientoTermo,<BR>  Vehiculo.Agente2,<BR>  Vehiculo.Agente3,<BR>  Vehiculo.Descripcion1,<BR>  Vehiculo.Descripcion2,<BR>  Vehiculo.Descripcion3,<BR>  Vehiculo.Descripcion4,<BR>  Vehiculo.Descripcion5,<BR>  Vehicu<CONTINUA>
+SQL002=<CONTINUA>lo.TipoUnidadVehicular,<BR>  Vehiculo.UnidadPropiaMAVI,<BR>  Agente.Agente,<BR>  Agente.Nombre,<BR>  Prov.Proveedor,<BR>  Prov.Nombre,<BR>  Prov.Tipo,<BR>  Prov.Condicion,<BR>  Prov.Estatus,<BR>  Art.Descripcion1,<BR>  ActivoF.Serie,<BR>  AgenteDestino.Nombre,<BR>  AgenteDetalle.Nombre<BR><BR>FROM<BR>  Vehiculo<BR>  LEFT OUTER JOIN Agente ON Vehiculo.Agente=Agente.Agente<BR>  LEFT OUTER JOIN Prov ON Vehiculo.Proveedor=Prov.Proveedor<BR>  LEFT OUTER JOIN Art ON Vehiculo.Articulo=Art.Articulo<BR>  LEFT OUTER JOIN ActivoF ON Vehiculo.Articulo=ActivoF.Articulo AND Vehiculo.Serie=ActivoF.Serie AND {Comillas(Empresa)}=ActivoF.Empresa<BR>  LEFT OUTER JOIN Agente AgenteDestino ON Vehiculo.Agente2=AgenteDestino.Agente<BR>  LEFT OUTER JOIN Agente AgenteDetalle ON Vehiculo.Agente3=AgenteDetalle.Agent<CONTINUA>
+SQL003=<CONTINUA>e
+
+;Se modifica la vista para agregarle el campo de busqueda TipounidadVehicular
+;Fernando Romero Robles DM0169
+CamposBusquedaRapida=Vehiculo.Vehiculo<BR>Vehiculo.Descripcion<BR>Vehiculo.Placas<BR>Vehiculo.TipoUnidadVehicular<BR>Prov.Nombre<BR>Vehiculo.Proveedor
+
+;ListaCampos=Vehiculo.Vehiculo<BR>Vehiculo.Descripcion<BR>Vehiculo.Placas<BR>Vehiculo.Volumen<BR>Vehiculo.Peso<BR>Vehiculo.Agente<BR>Vehiculo.Ruta<BR>Vehiculo.Estatus<BR>Vehiculo.Cxp<BR>Vehiculo.Proveedor<BR>Vehiculo.Condicion<BR>Vehiculo.Concepto<BR>Vehiculo.TieneMovimientos<BR>Vehiculo.GenerarGasto<BR>Vehiculo.Impuestos<BR>Vehiculo.Retencion<BR>Vehiculo.Retencion2<BR>Vehiculo.Retencion3<BR>Vehiculo.Clase<BR>Vehiculo.Subclase<BR>Vehiculo.Articulo<BR>Vehiculo.Serie<BR>Vehiculo.RendimientoCombustible<BR>Vehiculo.RendimientoTermo<BR>Vehiculo.Agente2<BR>Vehiculo.Agente3<BR>Vehiculo.Descripcion1<BR>Vehiculo.Descripcion2<BR>Vehiculo.Descripcion3<BR>Vehiculo.Descripcion4<BR>Vehiculo.Descripcion5<BR>Vehiculo.TipoUnidadVehicular<BR>Agente.Agente<BR>Agente.Nombre<BR>Prov.Proveedor<BR>Prov.Nombre<BR>Prov.Tipo<BR<CONTINUA>
+;ListaCampos002=<CONTINUA>>Prov.Condicion<BR>Prov.Estatus<BR>Art.Descripcion1<BR>ActivoF.Serie<BR>AgenteDestino.Nombre<BR>AgenteDetalle.Nombre
+;SQL=SELECT<BR>  Vehiculo.Vehiculo,<BR>  Vehiculo.Descripcion,<BR>  Vehiculo.Placas,<BR>  Vehiculo.Volumen,<BR>  Vehiculo.Peso,<BR>  Vehiculo.Agente,<BR>  Vehiculo.Ruta,<BR>  Vehiculo.Estatus,<BR>  Vehiculo.Cxp,<BR>  Vehiculo.Proveedor,<BR>  Vehiculo.Condicion,<BR>  Vehiculo.Concepto,<BR>  Vehiculo.TieneMovimientos,<BR>  Vehiculo.GenerarGasto,<BR>  Vehiculo.Impuestos,<BR>  Vehiculo.Retencion,<BR>  Vehiculo.Retencion2,<BR>  Vehiculo.Retencion3,<BR>  Vehiculo.Clase,<BR>  Vehiculo.Subclase,<BR>  Vehiculo.Articulo,<BR>  Vehiculo.Serie,<BR>  Vehiculo.RendimientoCombustible,<BR>  Vehiculo.RendimientoTermo,<BR>  Vehiculo.Agente2,<BR>  Vehiculo.Agente3,<BR>  Vehiculo.Descripcion1,<BR>  Vehiculo.Descripcion2,<BR>  Vehiculo.Descripcion3,<BR>  Vehiculo.Descripcion4,<BR>  Vehiculo.Descripcion5,<BR>  Vehicu<CONTINUA>
+;SQL002=<CONTINUA>lo.TipoUnidadVehicular,<BR>  Agente.Agente,<BR>  Agente.Nombre,<BR>  Prov.Proveedor,<BR>  Prov.Nombre,<BR>  Prov.Tipo,<BR>  Prov.Condicion,<BR>  Prov.Estatus,<BR>  Art.Descripcion1,<BR>  ActivoF.Serie,<BR>  AgenteDestino.Nombre,<BR>  AgenteDetalle.Nombre<BR><BR>FROM<BR>  Vehiculo<BR>  LEFT OUTER JOIN Agente ON Vehiculo.Agente=Agente.Agente<BR>  LEFT OUTER JOIN Prov ON Vehiculo.Proveedor=Prov.Proveedor<BR>  LEFT OUTER JOIN Art ON Vehiculo.Articulo=Art.Articulo<BR>  LEFT OUTER JOIN ActivoF ON Vehiculo.Articulo=ActivoF.Articulo AND Vehiculo.Serie=ActivoF.Serie AND {Comillas(Empresa)}=ActivoF.Empresa<BR>  LEFT OUTER JOIN Agente AgenteDestino ON Vehiculo.Agente2=AgenteDestino.Agente<BR>  LEFT OUTER JOIN Agente AgenteDetalle ON Vehiculo.Agente3=AgenteDetalle.Agente
+
+
+
+
+;****Nuevo campo agregado****
+[Vehiculo.vis/Vehiculo.TipoUnidadVehicular]
+Clave=Vehiculo.TipoUnidadVehicular
+Nombre=Tipo de Unidad
+Visible=S
+TamanoValidacion=20
+Tamano=20
+RequeridoActivo=S
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Validar captura en la lista
+AyudaMemRenglones=12
+Formula=SQLEnLista(<T>Select TipoUnidad from TipoUnidadVehicularMAVI<T> )
+LigaTabla=Vehiculo
+LigaCampo=TipoUnidadVehicular
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=TipoUnidadVehicular
+
+
+;****Nuevo campo agregado****
+[Vehiculo.vis/Vehiculo.UnidadPropiaMAVI]
+Clave=Vehiculo.UnidadPropiaMAVI
+Nombre=UnidadPropiaMAVI
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=0
+LigaTabla=Vehiculo
+LigaCampo=UnidadPropiaMAVI
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=UnidadPropiaMAVI

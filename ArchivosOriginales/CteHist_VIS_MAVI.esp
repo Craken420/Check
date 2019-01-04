@@ -1,0 +1,67 @@
+
+
+[CteHist.vis/vista]
+ListaCampos=CteHist.Cliente<BR>CteHist.Fecha<BR>CteHist.ID<BR>CteHist.Nombre<BR>CteHist.NombreCorto<BR>CteHist.Tipo<BR>CteHist.Direccion<BR>CteHist.Delegacion<BR>CteHist.Colonia<BR>CteHist.CodigoPostal<BR>CteHist.Poblacion<BR>CteHist.Estado<BR>CteHist.Pais<BR>CteHist.Zona<BR>CteHist.RFC<BR>CteHist.Credito<BR>CteHist.ZonaImpuesto<BR>CteHist.Estatus<BR>CteHist.Descuento<BR>CteHist.Proyecto<BR>CteHist.Agente<BR>CteHist.AgenteServicio<BR>CteHist.EnviarA<BR>CteHist.FormaEnvio<BR>CteHist.Condicion<BR>CteHist.Ruta<BR>CteHist.ListaPrecios<BR>CteHist.ListaPreciosEsp<BR>CteHist.DefMoneda<BR>CteHist.Situacion<BR>CteHist.CURP<BR>CteHist.IEPS<BR>CteHist.NivelAcceso<BR>CteHist.Usuario<BR>CteHist.DireccionNumero<BR>CteHist.DireccionNumeroInt<BR>CteHist.EntreCalles<BR>CteHist.TipoCalle
+SQL=SELECT<BR>  CteHist.Cliente,<BR>  CteHist.Fecha,<BR>  CteHist.ID,<BR>  CteHist.Nombre,<BR>  CteHist.NombreCorto,<BR>  CteHist.Tipo,<BR>  CteHist.Direccion,<BR>  CteHist.Delegacion,<BR>  CteHist.Colonia,<BR>  CteHist.CodigoPostal,<BR>  CteHist.Poblacion,<BR>  CteHist.Estado,<BR>  CteHist.Pais,<BR>  CteHist.Zona,<BR>  CteHist.RFC,<BR>  CteHist.Credito,<BR>  CteHist.ZonaImpuesto,<BR>  CteHist.Estatus,<BR>  CteHist.Descuento,<BR>  CteHist.Proyecto,<BR>  CteHist.Agente,<BR>  CteHist.AgenteServicio,<BR>  CteHist.EnviarA,<BR>  CteHist.FormaEnvio,<BR>  CteHist.Condicion,<BR>  CteHist.Ruta,<BR>  CteHist.ListaPrecios,<BR>  CteHist.ListaPreciosEsp,<BR>  CteHist.DefMoneda,<BR>  CteHist.Situacion,<BR>  CteHist.CURP,<BR>  CteHist.IEPS,<BR>  CteHist.NivelAcceso,<BR>  CteHist.Usuario,<BR>  CteHist.Direcci<CONTINUA>
+SQL002=<CONTINUA>onNumero,<BR>  CteHist.DireccionNumeroInt,<BR>  CteHist.EntreCalles,<BR>  CteHist.TipoCalle<BR><BR>FROM<BR>  CteHist
+
+
+
+
+
+[CteHist.vis/CteHist.DireccionNumero]
+Clave=CteHist.DireccionNumero
+Nombre=Número
+Visible=S
+TamanoValidacion=20
+Tamano=20
+LigaTabla=CteHist
+LigaCampo=DireccionNumero
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=DireccionNumero
+
+
+[CteHist.vis/CteHist.DireccionNumeroInt]
+Clave=CteHist.DireccionNumeroInt
+Nombre=Número Int.
+Visible=S
+TamanoValidacion=20
+Tamano=20
+LigaTabla=CteHist
+LigaCampo=DireccionNumeroInt
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=DireccionNumeroInt
+
+
+
+[CteHist.vis/CteHist.EntreCalles]
+Clave=CteHist.EntreCalles
+Nombre=Entre Calles
+Visible=S
+TamanoValidacion=100
+Tamano=100
+LigaTabla=CteHist
+LigaCampo=EntreCalles
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=EntreCalles
+
+
+
+[CteHist.vis/CteHist.TipoCalle]
+Clave=CteHist.TipoCalle
+Nombre=Tipo Calle
+Visible=S
+TamanoValidacion=25
+Tamano=25
+LigaTabla=CteHist
+LigaCampo=TipoCalle
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=TipoCalle

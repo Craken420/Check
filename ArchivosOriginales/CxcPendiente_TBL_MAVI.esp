@@ -1,0 +1,10 @@
+;Ultima Modificacion: 09-Feb-09
+;Modifico: ARC
+
+
+
+
+;***** ARC 09-Feb-09 : Se configuro el campo ID ****
+[CxcPendiente.tbl/Tabla]
+ControlID=S
+CampoID=ID

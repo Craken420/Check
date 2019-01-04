@@ -1,0 +1,21 @@
+;**** Ultima modificación:17-Abr-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:Accion "LocalEditar"
+
+
+; *** Se modificó la acción para que estuviera activa aun cuando estuviera  encendido el check de proyectos en la configuración general de la empresa ****
+[Tarea.frm/Acciones.Nueva]
+ActivoCondicion=Info.PuedeEditar
+
+
+
+
+; *** Se modificó la acción para que estuviera activa aun cuando estuviera  encendido el check de proyectos en la configuración general de la empresa ****
+[Tarea.frm/Acciones.CompletarSeleccion]
+ActivoCondicion=Info.PuedeEditar
+
+
+; *** Se modificó la acción para que estuviera activa aun cuando estuviera  encendido el check de proyectos en la configuración general de la empresa ****
+[Tarea.frm/Acciones.LocalEditar]
+Activo=S
+ActivoCondicion=

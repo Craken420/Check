@@ -1,0 +1,3 @@
+[fnCxcInfo.vis/Dias]
+;Formula=Asigna(Temp.Fecha, ExtraeFecha(Vacio(Vencimiento, FechaEmision)))<BR>Si(ConDatos(Temp.Fecha), Hoy-Temp.Fecha)
+Formula=DiasMoratorios

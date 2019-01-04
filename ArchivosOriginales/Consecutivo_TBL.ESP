@@ -1,0 +1,17 @@
+[Consecutivo.tbl/Tabla]
+ListaCampos=Tipo<BR>Nivel<BR>Prefijo<BR>Consecutivo<BR>TieneControl<BR>Concurrencia<BR>DividirSeries
+SQL=SELECT<BR>  Tipo,<BR>  Nivel,<BR>  TieneControl,<BR>  Prefijo,<BR>  Consecutivo,<BR>  Concurrencia, <BR>DividirSeries<BR>FROM<BR>  Consecutivo
+
+
+[Consecutivo.tbl/DividirSeries]
+Clave=DividirSeries
+Nombre=DividirSeries
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=1
+Tamano=1
+ValorPorOmision=<T>No<T>
+AyudaEnCaptura=Lista de Opciones
+ListaOpciones=Si<BR>No
+TipoDatos=Lógico

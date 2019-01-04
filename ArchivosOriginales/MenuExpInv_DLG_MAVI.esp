@@ -1,0 +1,15 @@
+[MenuExpInv.dlg/Dialogo]
+ListaAcciones.Cambios=Insertar<TAB>ArtListaDisponibleDetalle<TAB>1
+
+[MenuExpInv.dlg/Acciones.ArtListaDisponibleDetalle]
+Nombre=ArtListaDisponibleDetalle
+Boton=0
+NombreDesplegar=L&ista de Articulos Disponibles (Detalle)
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=RM0970ArtListaDisponibleFrm
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna( Info.Almacen, Usuario.DefAlmacen)<BR>Asigna( Info.Origen, <T>VTAS<T>)

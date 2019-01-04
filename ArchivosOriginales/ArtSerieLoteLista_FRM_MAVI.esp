@@ -1,0 +1,41 @@
+;**** Ultima modificación:11-Ago-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:
+;***** el asistente no estaba mostrando los serie lotes del articulo porque la variable subcuenta gurdaba el valor NULL, para corregir el error se agrego la funcion vacio(Info.Subcuenta,'')
+
+;**** Ultima modificación:10-May-2017
+;**** Modifico:Pedro Aguayo Hernández
+;**** Se modifico: Se agrega un campo calculado(Modelo2) el cual se obtiene el modelo del artículo siempre y cuando su línea sea 'MOTOCICLETAS'
+;*****
+
+[ArtSerieLoteLista.frm/Lista]
+
+FiltroGeneral=SerieLote.Empresa=<T>{Empresa}<T> AND<BR>SerieLote.Articulo=<T>{Info.Articulo}<T> AND <BR>SerieLote.SubCuenta=<T>{Vacio(Info.SubCuenta,<T><T>)}<T> AND<BR>SerieLote.Existencia{Si(Info.AlmTipo=<T>Activos Fijos<T>,<T>ActivoFijo<T>,<T><T>)}>0 AND<BR>SerieLote.Almacen=<T>{Info.Almacen}<T><BR>{Si(General.Autotransportes y ConDatos(Filtro.Espacio), <T> AND SerieLote.SerieLote LIKE <T>+Comillas(Filtro.Espacio+<T>%<T>), <T><T>)}
+
+ListaEnCaptura=SerieLote.SerieLote<BR>SerieLote.Existencia<BR>SerieLote.ExistenciaAlterna<BR>SerieLote.ExistenciaActivoFijo<BR>SerieLoteProp.Fecha1<BR>Modelo2
+
+[ArtSerieLoteLista.frm/Lista.Columnas]
+SerieLote=176
+Propiedades=124
+Existencia=57
+EnExistencia=69
+0=164
+SubCuenta=108
+ExistenciaAlterna=68
+ExistenciaActivoFijo=69
+Fecha1=79
+Extra3=804
+Modelo2=114
+
+[ArtSerieLoteLista.frm/Lista.Modelo2]
+Carpeta=Lista
+Clave=Modelo2
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=10
+ColorFondo=Blanco
+ColorFuente=Negro
+
+

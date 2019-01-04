@@ -1,0 +1,25 @@
+;**** Ultima modificación:16-Jun-08
+;**** Modifico:Miguel Peña
+;**** Se modifico:Creacion
+
+
+
+
+;**** Se agregaron nuevas acciones: Rep.Relacion ****
+[MenuRepEmbarque.dlg/Dialogo]
+ListaAcciones=General<BR>Rep.Relacion
+
+
+;**** Nueva accion ****
+[MenurepEmbarque.dlg/Acciones.Rep.Relacion]
+Nombre=Rep.Relacion
+Boton=0
+Menu=&Reportes
+NombreDesplegar=Relación Cheques Mayoreo
+EnMenu=S
+TipoAccion=Formas
+ClaveAccion=RelChequeMay
+Activo=S
+Visible=S
+
+

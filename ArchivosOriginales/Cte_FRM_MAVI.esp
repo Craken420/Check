@@ -1,0 +1,661 @@
+;**** Modificación Reciente:10-Dic-08
+;**** Modifico: Edgar Montelongo
+;**** Se modifico:Accion Eliminar
+
+;**** Modificación Anterior:22-Oct-08
+;**** Modifico: Leticia Quezada
+;**** Se modifico:Incluyo desarrollo de Buro de Credito
+
+;**** Modificación:17-Jul-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:Se agrego el campo MaviEstatus
+
+; ***** Modifico: Judith Ramirez 03-Dic-09 *****
+; ***** Modificacion: Integracion de campos nuevos en pestaña Venta: ParentescoRecomiendaMavi, DireccionRecomiendaMavi, 
+; 		para Cte Express por Arturo Guizer. *****
+
+
+[Cte.frm/Forma]
+ExpresionesAlMostrar=Asigna(Info.Copiar, Falso)<BR>Asigna(Info.CategoriaMavi,nulo)<BR>Asigna(Info.CanalVentaMavi,nulo)
+PosicionInicialAlturaCliente=680
+
+; **** Se agregó el nuevo campo: "TipoCalle" que proviene de la tabla "Cte", MaviEstatus****
+; **** Se quito el campo: Cte.Categoria ARC 09-Dic-08 ****
+[Cte.frm/Ficha]
+ListaEnCaptura=Cte.Cliente<BR>Cte.Tipo<BR>Cte.Rama<BR>Cte.Estatus<BR>Cte.MaviEstatus<BR>Cte.Nombre<BR>Cte.Grado<BR>Cte.NombreCorto<BR>Cte.Grupo<BR>Cte.RFC<BR>Cte.GLN<BR>Cte.Familia<BR>Cte.CURP<BR>Cte.Direccion<BR>Cte.DireccionNumero<BR>Cte.DireccionNumeroInt<BR>Cte.TipoCalle<BR>Cte.EntreCalles<BR>Cte.Plano<BR>Cte.Observaciones<BR>Cte.Delegacion<BR>Cte.Colonia<BR>Cte.CodigoPostal<BR>Cte.Ruta<BR>Cte.Poblacion<BR>Cte.Estado<BR>Cte.Pais<BR>Cte.Telefonos<BR>Cte.TelefonosLada<BR>Cte.Fax<BR>Cte.PedirTono<BR>Cte.Contacto1<BR>Cte.Extencion1<BR>Cte.Contacto2<BR>Cte.Extencion2<BR>Cte.eMail1<BR>Cte.eMail2<BR>Cte.eMailAuto<BR>Cte.ViveEnCalidad<BR>Cte.ImporteRentaMavi<BR>Cte.AntiguedadNegocioMavi<BR>Cte.CFD_Enviar
+
+[Cte.frm/Ficha.Cte.Poblacion]
+Editar=N
+
+;*** Se agrego campo para Facturacion Electronica BVF 
+[Cte.frm/Ficha.Cte.CFD_Enviar]
+Carpeta=Ficha
+Clave=Cte.CFD_Enviar
+Editar=S
+ValidaNombre=S
+3D=S
+Tamano=10
+ColorFondo=Blanco
+ColorFuente=Negro
+
+; integracion CteExpress Pilar Flores 20-May-09
+[Cte.frm/Ficha.Cte.Telefonos]
+Editar=N
+
+[Cte.frm/Ficha.Cte.Fax]
+Editar=N
+
+[Cte.frm/Ficha.Cte.Pais]
+Editar=N
+
+[Cte.frm/Ficha.Cte.Estado]
+Editar=N
+
+[Cte.frm/Ficha.Cte.PedirTono]
+Editar=N
+
+[Cte.frm/Ficha.Cte.Contacto1]
+Editar=N
+
+[Cte.frm/Ficha.Cte.Contacto2]
+Editar=N
+
+[Cte.frm/CRM]
+ListaEnCaptura=Cte.Cliente<BR>Cte.Nombre<BR>Cte.CRMImporte<BR>Cte.CRMCantidad<BR>Cte.CRMPresupuestoAsignado<BR>Cte.CRMEtapa<BR>Cte.CRMCierreProbabilidad<BR>Cte.CRMCierreFechaAprox<BR>Cte.CRMCompetencia<BR>Cte.CRMInfluencia<BR>Cte.CRMFuente<BR>Cte.Descripcion1<BR>Cte.Descripcion2<BR>Cte.Descripcion3<BR>Cte.Descripcion4<BR>Cte.Descripcion5<BR>Cte.Descripcion6<BR>Cte.Descripcion7<BR>Cte.Descripcion8<BR>Cte.Descripcion9<BR>Cte.Descripcion10<BR>Cte.Descripcion11<BR>Cte.Descripcion12<BR>Cte.Descripcion13<BR>Cte.Descripcion14<BR>Cte.Descripcion15<BR>Cte.Descripcion16<BR>Cte.Descripcion17<BR>Cte.Descripcion18<BR>Cte.Descripcion19<BR>Cte.Descripcion20<BR>Cte.LCAXSI
+
+
+
+[Cte.frm/CRM.Cte.LCAXSI]
+Carpeta=CRM
+Clave=Cte.LCAXSI
+Editar=S
+LineaNueva=S
+EspacioPrevio=S
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Plata
+ColorFuente=Negro
+
+
+[Cte.frm/CRM.Cte.Descripcion1]
+Editar=N
+
+[Cte.frm/CRM.Cte.Descripcion2]
+Editar=N
+
+[Cte.frm/CRM.Cte.Descripcion3]
+Editar=N
+
+[Cte.frm/CRM.Cte.Descripcion4]
+Editar=N
+
+[Cte.frm/CRM.Cte.Descripcion5]
+Editar=N
+
+[Cte.frm/CRM.Cte.Descripcion6]
+Editar=N
+
+[Cte.frm/CRM.Cte.Descripcion7]
+Editar=N
+
+[Cte.frm/CRM.Cte.Descripcion8]
+Editar=N
+
+[Cte.frm/CRM.Cte.Descripcion9]
+Editar=N
+
+[Cte.frm/CRM.Cte.Descripcion10]
+Editar=N
+
+[Cte.frm/CRM.Cte.Descripcion11]
+Editar=N
+
+[Cte.frm/CRM.Cte.Descripcion12]
+Editar=N
+
+[Cte.frm/CRM.Cte.Descripcion13]
+Editar=N
+
+[Cte.frm/CRM.Cte.Descripcion14]
+Editar=N
+
+[Cte.frm/CRM.Cte.Descripcion15]
+Editar=N
+
+[Cte.frm/Ficha.Cte.Extencion1]
+Editar=N
+
+[Cte.frm/Ficha.Cte.Extencion2]
+Editar=N
+
+[Cte.frm/Ficha.Cte.TelefonosLada]
+Editar=N
+; termina integracion Pilar Flores 
+
+
+;**** Se hizo linea nueva porque se quito el campo "Categoria" ARC 09-Dic-08 *****
+[Cte.frm/Ficha.Cte.NombreCorto]
+LineaNueva=s
+Tamano=66
+
+
+
+[Cte.frm/Ficha.Cte.ViveEnCalidad]
+Carpeta=Ficha
+Clave=Cte.ViveEnCalidad
+Editar=S
+ValidaNombre=S
+3D=S
+Tamano=30
+ColorFondo=Blanco
+ColorFuente=Negro
+LineaNueva=S
+
+[Cte.frm/Ficha.Cte.ImporteRentaMavi]
+Carpeta=Ficha
+Clave=Cte.ImporteRentaMavi
+Editar=S
+LineaNueva=N
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[Cte.frm/Ficha.Cte.AntiguedadNegocioMavi]
+Carpeta=Ficha
+Clave=Cte.AntiguedadNegocioMavi
+Editar=S
+ValidaNombre=S
+3D=S
+Tamano=10
+ColorFondo=Blanco
+ColorFuente=Negro
+LineaNueva=S
+
+; **** Nuevo Campo: "TipoCalle", tiene una lista de opciones para que se especifique el tipo de calle del cliente: avenida, boulevard, callejón, etc. ****
+[Cte.frm/Ficha.Cte.TipoCalle]
+Carpeta=Ficha
+Clave=Cte.TipoCalle
+Editar=S
+3D=S
+Pegado=S
+Tamano=18
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+;***** Nuevo campo agregado para indicar el estatus de la supervision******
+[Cte.frm/Ficha.Cte.MaviEstatus]
+Carpeta=Ficha
+Clave=Cte.MaviEstatus
+Editar=S
+ValidaNombre=N
+3D=S
+Tamano=18
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+; **** Integracion de campo modificado Cte.Tipo en carpeta Ficha por accesos por perfiles, 26/dic/2011 Victor Enrique Murillo Torres, para desarrollo DM0169 Modificaciones Especiales dentro del paquete DM0169_27122011. JR 27-Dic-2011. ****
+[Cte.frm/Ficha.Cte.Tipo]
+Editar=N
+Activo=N
+
+
+;**** Se modifico la lista en captura se quito el campo: Cte.DefMoneda (Arly Rubio Camacho 05-Sep-08)****
+; ***** Integracion de campos nuevos en pestaña Venta: ParentescoRecomiendaMavi, DireccionRecomiendaMavi, 
+; 		para Cte Express por Arturo Guizer.  JR 03-Dic-09. *****
+[Cte.frm/Venta]
+ListaEnCaptura=Cte.Cliente<BR>Cte.Nombre<BR>Cte.MaviRecomendadoPor<BR>MaviRecomendadoPorNombre<BR>Cte.ParentescoRecomiendaMavi<BR>Cte.DireccionRecomiendaMavi<BR>Cte.EnviarA<BR>CteEnviarA.Nombre<BR>Cte.TipoCredito<BR>TipoCreditoNombre<BR>Cte.Licencias<BR>Cte.LicenciasTipo<BR>Cte.Agente<BR>Agente.Nombre<BR>Cte.AgenteServicio<BR>AgenteServicio.Nombre<BR>Cte.Agente3<BR>Agente3.Nombre<BR>Cte.Agente4<BR>Agente4.Nombre<BR>Cte.PersonalCobrador<BR>PersonalNombre<BR>Cte.SucursalEmpresa<BR>Sucursal.Nombre<BR>Cte.Publico<BR>Cte.DiaRevision1<BR>Cte.DiaRevision2<BR>Cte.HorarioRevision<BR>Cte.DiaPago1<BR>Cte.DiaPago2<BR>Cte.HorarioPago
+
+
+;*** Se modifico como linea nueva Arly Rubio (05-Sep-08)****
+[Cte.frm/Venta.Cte.Licencias]
+LineaNueva=S
+
+;*** Nuevo campo de recomendado para clientes nuevos ***
+[Cte.frm/Venta.Cte.MaviRecomendadoPor]
+Carpeta=Venta
+Clave=Cte.MaviRecomendadoPor
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+;*** Nuevo campo calculado de recomendado para clientes nuevos ***
+[Cte.frm/Venta.MaviRecomendadoPorNombre]
+Carpeta=Venta
+Clave=MaviRecomendadoPorNombre
+ValidaNombre=S
+3D=S
+Tamano=60
+ColorFondo=Plata
+ColorFuente=Negro
+
+; ***** Integracion de campos nuevos en pestaña Venta: ParentescoRecomiendaMavi, DireccionRecomiendaMavi, 
+; 		para Cte Express por Arturo Guizer. JR 03-Dic-09. *****
+[Cte.frm/Venta.Cte.ParentescoRecomiendaMavi]
+Carpeta=Venta
+Clave=Cte.ParentescoRecomiendaMavi
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[Cte.frm/Venta.Cte.DireccionRecomiendaMavi]
+Carpeta=Venta
+Clave=Cte.DireccionRecomiendaMavi
+Editar=S
+LineaNueva=N
+ValidaNombre=S
+3D=S
+Tamano=60
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+
+
+
+; *****  TAB - REGLAS DE NEGOCIO ***
+
+;****Modificacion 22-Oct-08 por Leticia Quezada
+;**** Se modifico:Incluyo desarrollo de Buro de Credito
+[Cte.frm/ReglaNegocio]
+ListaEnCaptura=Cte.Cliente<BR>Cte.Nombre<BR>Cte.BonificacionTipo<BR>Cte.ZonaImpuesto<BR>Cte.BloquearMorosos<BR>Cte.ChecarCredito<BR>Cte.RecorrerVencimiento<BR>Cte.ModificarVencimiento<BR>Cte.CreditoEspecial<BR>Cte.Credito<BR>Cte.OtrosCargos<BR><CONTINUA>
+ListaEnCaptura002=<CONTINUA>Cte.CRMovVenta<BR>Cte.CreditoConLimite<BR>Cte.CreditoConLimitePedidos<BR>Cte.CreditoConDias<BR>Cte.CreditoConCondiciones<BR>Cte.CreditoLimite<BR>Cte.CreditoMoneda<BR>Cte.CreditoLimitePedidos<BR>Cte.CreditoDias<BR>Cte.CreditoCondiciones<BR><CONTINUA>
+ListaEnCaptura003=<CONTINUA>Cte.esAutCredEspecial<BR>Cte.esDimaElite<BR>Cte.TipoDIMA<BR>Cte.LimiteCredDimaElite<BR>Cte.siPorcFactDima<BR>Cte.PedidosParciales<BR>Cte.Conciliar<BR>Cte.DocumentacionCompleta<BR>Cte.SeEnviaBuroCreditoMAVI<BR>Cte.NivelCobranzaEspecialMAVI<BR>Cte.NivelespecialContacto<BR>Cte.EnviarCobTelMavi<BR><CONTINUA>
+ListaEnCaptura004=<CONTINUA>Cte.MotivoMavi<BR>Cte.PublicidadMAVI<BR>Cte.MotivoMAVIPublicidad
+
+
+[Cte.frm/ReglaNegocio.Cte.BonificacionTipo]
+LineaNueva=S
+EspacioPrevio=S
+
+[Cte.frm/ReglaNegocio.Cte.BloquearMorosos]
+LineaNueva=S
+EspacioPrevio=S
+
+[Cte.frm/ReglaNegocio.Cte.Conciliar]
+LineaNueva=N
+
+[Cte.frm/ReglaNegocio.Cte.SeEnviaBuroCreditoMAVI]
+Carpeta=ReglaNegocio
+Clave=Cte.SeEnviaBuroCreditoMAVI
+Editar=S
+LineaNueva=S
+EspacioPrevio=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+;***ARC 19-may-09 Nuevo campo agregado desarrollo cobranza menudeo ***
+[Cte.frm/ReglaNegocio.Cte.NivelCobranzaEspecialMAVI]
+Carpeta=ReglaNegocio
+Clave=Cte.NivelCobranzaEspecialMAVI
+Editar=S
+LineaNueva=N
+ValidaNombre=S
+3D=S
+Tamano=25
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+[Cte.frm/ReglaNegocio.Cte.NivelespecialContacto]
+Carpeta=ReglaNegocio
+Clave=Cte.NivelespecialContacto
+Editar=N
+LineaNueva=N
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+[Cte.frm/ReglaNegocio.Cte.EnviarCobTelMavi]
+Carpeta=ReglaNegocio
+Clave=Cte.EnviarCobTelMavi
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+EspacioPrevio=S
+ColorFondo=Blanco
+ColorFuente=Negro
+Tamano=5
+
+[Cte.frm/ReglaNegocio.Cte.MotivoMavi]
+Carpeta=ReglaNegocio
+Clave=Cte.MotivoMavi
+Editar=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+Tamano=30
+
+
+
+;**** Desarrollo Campañas 27/08/09, Joel García (Mex) , se agregaron los Campos PublicidadMAVI,MotivoMAVIPublicidad,FechaUltimoCobro,MovimientoUltimoCobro
+[Cte.frm/ReglaNegocio.Cte.PublicidadMAVI]
+Carpeta=ReglaNegocio
+Clave=Cte.PublicidadMAVI
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[Cte.frm/ReglaNegocio.Cte.MotivoMAVIPublicidad]
+Carpeta=ReglaNegocio
+Clave=Cte.MotivoMAVIPublicidad
+Editar=S
+ValidaNombre=S
+3D=S
+Tamano=30
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+Cte.esAutCredEspecial
+[Cte.frm/ReglaNegocio.Cte.esAutCredEspecial]
+Carpeta=ReglaNegocio
+Clave=Cte.esAutCredEspecial
+Editar=S
+LineaNueva=S
+EspacioPrevio=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+Cte.esDimaElite
+[Cte.frm/ReglaNegocio.Cte.esDimaElite]
+Carpeta=ReglaNegocio
+Clave=Cte.esDimaElite
+Editar=N
+LineaNueva=S
+EspacioPrevio=N
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+Cte.LimiteCredDimaElite
+[Cte.frm/ReglaNegocio.Cte.LimiteCredDimaElite]
+Carpeta=ReglaNegocio
+Clave=Cte.LimiteCredDimaElite
+Editar=S
+Tamano=20
+EspacioPrevio=N
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+Cte.siPorcFactDima
+[Cte.frm/ReglaNegocio.Cte.siPorcFactDima]
+Carpeta=ReglaNegocio
+Clave=Cte.siPorcFactDima
+Editar=S
+EspacioPrevio=N
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+;*** Desarrollo Campañas 27/08/09 YR, Se agregaron los campos de Cte.MovimientoUltimoCobro y Cte.FechaUltimoCobro
+[Cte.frm/Otros]
+ListaEnCaptura=Cte.Cliente<BR>Cte.Nombre<BR>Cte.Espacio<BR>Espacio.Nombre<BR>Cte.Cuenta<BR>Cta.Descripcion<BR>Cte.CuentaRetencion<BR>CtaRetencion.Descripcion<BR>Cte.Mensaje<BR>Cte.DirInternet<BR>Cte.NivelAcceso<BR>Cte.CBDir<BR>Cte.Idioma<BR>Cte.SinBonifDIMA<BR>Cte.Alta<BR>Cte.UltimoCambio<BR>Cte.Intercompania<BR>Cte.MovimientoUltimoCobro<BR>Cte.FechaUltimoCobro
+
+
+[Cte.frm/Otros.Cte.FechaUltimoCobro]
+Carpeta=Otros
+Clave=Cte.FechaUltimoCobro
+Editar=N
+LineaNueva=N
+ValidaNombre=S
+3D=S
+ColorFondo=Plata
+ColorFuente=Negro
+
+[Cte.frm/Otros.Cte.MovimientoUltimoCobro]
+Carpeta=Otros
+Clave=Cte.MovimientoUltimoCobro
+Editar=N
+LineaNueva=S
+EspacioPrevio=S
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Plata
+ColorFuente=Negro
+
+;*** Termina desarrollo de Campañas YR.
+
+
+;************************************************************************* ACCIONES **********************************************************
+;*********************************************************************************************************************************************
+
+
+[Cte.frm/Forma]
+ListaAcciones=Nuevo<BR>Abrir<BR>Guardar<BR>Situacion<BR>PlantillasOffice<BR>Eliminar<BR>MovCte<BR>Cerrar<BR>CteRelacion<BR>CteBonificacion<BR>EspacioAsignacion<BR>CteEvento<BR>CteUEN<BR>EnviarA<BR>CteCto<BR>CamposExtras<BR>Agentes<BR>CtePedidoDef<BR>Conciliar<BR>Tareas<BR>Propiedades<BR>Evaluaciones<BR>Anexos<BR>Doc<BR>Politica<BR>RefCta<BR>AgregarEvento<BR>CteArt<BR>CapacidadPago<BR>CteOtrosDatos<BR>CteTel<BR>CtePension<BR>CteDepto<BR>CteMapeoMov<BR>CteCFD<BR>CteEntregaMercancia<BR>SugerirRFC<BR>OtrosDatosCteRep<BR>OtrosDatosSentinel<BR>CteAcceso<BR>ListaPrecioEsp<BR>Bitacora<BR>Informacion<BR>Cubos<BR>Mapa<BR>Mensajes<BR>Movimientos<BR>ListaNegra<BR>ListaPoliticos<BR>Historico<BR><CONTINUA>
+ListaAcciones002=<CONTINUA>CteParecidos<BR>Navegador<BR>CteCat<BR>CteGrupo<BR>CteFam<BR>Cobrador<BR>ExpedienteFamiliar<BR>Otros1<BR>Otros2<BR>Otros3<BR>Otros4<BR>Otros5<BR>Otros6<BR>Otros7<BR>Otros8<BR>Otros9<BR>Motivos
+
+
+; **** Se modifico el nombre a desplegar "Canales de Venta" en lugar de "Sucursales"
+[Cte.frm/Acciones.EnviarA]
+NombreDesplegar=Canales de Venta
+
+
+
+; Enrique Toral 16-May-2008
+; Agrega a la forma el botón para generar movimientos de Supervisión
+[Cte.Frm/Acciones.Otros1]
+Nombre=Otros1
+Menu=&Edición
+GuardarAntes=S
+EnMenu=S
+TipoAccion=Expresion
+Boton=78
+NombreDesplegar=Supervisar Referencias
+EnBarraHerramientas=S
+Expresion=ProcesarSQL(<T>spMaviCteGenerarSupervision :tEmpresa, :tCte, :tUsuario, :nSucursal<T>, Empresa, Cte:Cte.Cliente, Usuario, Sucursal)<BR>ActualizarVista
+Activo=S
+Visible=S
+
+
+
+; Se agrego "AntesExpresiones" para eliminar los registros
+; de la tabla CTOCampoExtra correspondientes al cliente eliminado
+; Edgar Montelongo 10-Dic-08
+[Cte.Frm/Acciones.Eliminar]
+Nombre=Eliminar
+Boton=5
+Menu=&Archivo
+NombreDesplegar=E&liminar
+EnMenu=S
+EspacioPrevio=S
+TipoAccion=Controles Captura
+ClaveAccion=Documento Eliminar
+Visible=S
+EnBarraHerramientas=S
+ActivoCondicion=no Cte:Cte.TieneMovimientos
+Antes=S
+AntesExpresiones=EjecutarSQL(<T>EXEC xpCTOCampoExtra_Borra :tCliente<T>, Cte:Cte.Cliente)
+
+
+;**** Desarrollo Campañas 27/08/09, Joel García (Mex), se  agrego la Accion Motivo como Catalogo
+; **** Modificacion de accion Motivos en Activo e integracion de ActivoCondicion por accesos por perfiles, 26/dic/2011 Victor Enrique Murillo Torres, para desarrollo DM0169 Modificaciones Especiales dentro del paquete DM0169_27122011. JR 27-Dic-2011. ****
+[Cte.frm/Acciones.Motivos]
+Nombre=Motivos
+Boton=0
+NombreEnBoton=S
+Menu=&Maestros
+NombreDesplegar=Catalgo de &Motivos
+EnMenu=S
+TipoAccion=Formas
+ClaveAccion=MotivoMAVIPublicidad
+;Activo=S
+Visible=S
+Activo=
+ActivoCondicion=SQL(<T>select case when (select Acceso From Usuario Where Usuario=<T>+comillas(usuario)+<T>)<BR>In (Select Nombre From TablaStD Where TablaSt = <T>+comillas(<T>PERFILES MAESTROS ART/AGTE<T>)+<T>)<BR>then 1 else 0 End<T>)=1
+
+
+;**** Desarrollo Campañas 27/08/09, Joel García (Mex)
+[Cte.frm/MotivoInfo.Columnas]
+Motivo=154
+
+
+; **** Integracion de acciones modificada CteCat, CteGrupo, CteFam, ExpedienteFamiliar, CteCFD  por accesos por perfiles, 26/dic/2011 Victor Enrique Murillo Torres, para desarrollo DM0169 Modificaciones Especiales dentro del paquete DM0169_27122011. JR 27-Dic-2011. ****
+[Cte.frm/Acciones.CteCat]
+Activo=
+ActivoCondicion=SQL(<T>select case when (select Acceso From Usuario Where Usuario=<T>+comillas(usuario)+<T>)<BR>In (Select Nombre From TablaStD Where TablaSt = <T>+comillas(<T>PERFILES MAESTROS ART/AGTE<T>)+<T>)<BR>then 1 else 0 End<T>)=1
+
+[Cte.frm/Acciones.CteGrupo]
+Activo=
+ActivoCondicion=SQL(<T>select case when (select Acceso From Usuario Where Usuario=<T>+comillas(usuario)+<T>)<BR>In (Select Nombre From TablaStD Where TablaSt = <T>+comillas(<T>PERFILES MAESTROS ART/AGTE<T>)+<T>)<BR>then 1 else 0 End<T>)=1
+
+[Cte.frm/Acciones.CteFam]
+Activo=
+ActivoCondicion=SQL(<T>select case when (select Acceso From Usuario Where Usuario=<T>+comillas(usuario)+<T>)<BR>In (Select Nombre From TablaStD Where TablaSt = <T>+comillas(<T>PERFILES MAESTROS ART/AGTE<T>)+<T>)<BR>then 1 else 0 End<T>)=1
+
+[Cte.frm/Acciones.ExpedienteFamiliar]
+Activo=
+ActivoCondicion=SQL(<T>select case when (select Acceso From Usuario Where Usuario=<T>+comillas(usuario)+<T>)<BR>In (Select Nombre From TablaStD Where TablaSt = <T>+comillas(<T>PERFILES MAESTROS ART/AGTE<T>)+<T>)<BR>then 1 else 0 End<T>)=1
+
+[Cte.frm/Acciones.CteCFD]
+Activo=N
+ActivoCondicion=1<>1
+; **** Termina integracion de acciones modificadas para desarrollo DM0169 Modificaciones Especiales del paquete DM0169_27122011. ****
+
+;*** Integracion paquete DM0117_06012012 BVF 06012012
+;***** Carmen Quintana 04/01/2012 Se desactiva la propiedad visible de la acción nuevo ya que para agregar nuevos clientes se agregaron nuevos objetos.
+[Cte.frm/Acciones.Nuevo]
+Activo=N 
+
+;***** Carmen Quintana 04/01/2012 Se desactiva la propiedad editar para todos los clientes.
+[Cte.frm/Ficha.Cte.Cliente]
+Editar=N
+
+;*** Integracion CFDFlex BVF 01062012
+[Cte.frm/Acciones.CteCFD]
+VisibleCondicion=(Empresa.CFD) o (General.CFDFlex)
+ClaveAccion=CteCFDFlexible
+
+ [Cte.frm/Ficha.Cte.Nombre]
+Carpeta=Ficha
+Clave=Cte.Nombre
+Editar=N
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=66
+ColorFuente=Negro
+Efectos=[Negritas]
+EspacioPrevio=S
+ColorFondo=Blanco
+
+
+[Cte.frm/Acciones.Guardar.Guardar]
+Nombre=Guardar
+Boton=0
+TipoAccion=Controles Captura
+ClaveAccion=Guardar Cambios
+Activo=S
+Visible=S
+
+[Cte.frm/Acciones.Guardar.Ejecutar SP]
+Nombre=Ejecutar SP
+Boton=0
+TipoAccion=Expresion
+Expresion=EjecutarSQL(<T>EXEC SP_MaviDM0295ActualizarDatosCTE :tCliente<T>,Cte:Cte.Cliente)<BR>EjecutarSQL(<T>EXEC SpCXCIntervencionDIMA :tCte,:tUsu<T>, Cte:Cte.Cliente, Usuario)
+Activo=S
+Visible=S
+ConCondicion=S
+EjecucionCondicion=Cte:Cte.FiscalRegimen  noen(<T>Persona Moral<T>) o (Cte:Cte.FiscalRegimen  en(<T>Persona Moral<T>) y (ConDatos(Cte:Cte.PersonalNombres) o ConDatos(Cte:Cte.PersonalApellidoPaterno) o Condatos(Cte:Cte.PersonalApellidoMaterno)))
+EjecucionMensaje=<T>Nombre no Actualizado. Favor de llenar campo Nombre<T>
+EjecucionConError=S
+
+
+[Cte.frm/Acciones.Guardar]
+Nombre=Guardar
+Boton=3
+Menu=&Archivo
+UsaTeclaRapida=S
+TeclaRapida=Ctrl+G
+NombreDesplegar=&Guardar Cambios
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Controles Captura
+ClaveAccion=Guardar Cambios
+Activo=S
+Visible=S
+Multiple=S
+ListaAccionesMultiples=Guardar<BR>Ejecutar SP<BR>Actualizar
+
+[Cte.frm/Acciones.Guardar.Actualizar]
+Nombre=Actualizar
+Boton=0
+TipoAccion=Controles Captura
+ClaveAccion=Actualizar Vista
+Activo=S
+Visible=S
+
+[Cte.frm/Venta.Cte.TipoCredito]
+Carpeta=Venta
+Clave=Cte.TipoCredito
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=8
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[Cte.frm/Venta.TipoCreditoNombre]
+Carpeta=Venta
+Clave=TipoCreditoNombre
+Editar=S
+LineaNueva=N
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+OcultaNombre=S
+Tamano=35
+
+Cte.SinBonifDIMA
+[Cte.frm/Otros.Cte.SinBonifDIMA]
+Carpeta=Otros
+Clave=Cte.SinBonifDIMA
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+
+[Cte.frm/ReglaNegocio.Cte.TipoDIMA]
+Carpeta=ReglaNegocio
+Clave=Cte.TipoDIMA
+Editar=S
+LineaNueva=S
+EspacioPrevio=N
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco

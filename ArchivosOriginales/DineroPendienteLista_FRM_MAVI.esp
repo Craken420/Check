@@ -1,0 +1,28 @@
+;Oscar Daniel Campos Montes
+;10-08-2012
+;Se agrega campo MOVID
+
+
+[DineroPendienteLista.frm/Lista]
+ListaEnCaptura=DineroPendiente.FechaEmision<BR>DineroPendiente.FechaProgramada<BR>DineroPendiente.CtaDinero<BR>DineroPendiente.Referencia<BR>DineroPendiente.MovID<BR>DineroPendiente.Saldo
+
+[DineroPendienteLista.frm/Lista.DineroPendiente.MovID]
+Carpeta=Lista
+Clave=DineroPendiente.MovID
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+
+
+
+
+
+
+
+

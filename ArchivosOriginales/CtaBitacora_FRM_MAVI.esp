@@ -1,0 +1,7 @@
+[CtaBitacora.frm/Lista]
+ListaEnCaptura=CtaBitacora.Evento
+
+;***** Integracion de modificacion a accion. Se condicionó la Accion de Agregar Evento según el Usuario que accesa. Carmen Quintana 31/05/2012. Paquete DM0152_05062012. JR 05-Jun-2012. ****
+[CtaBitacora.frm/Acciones.Agregar]
+Activo=
+ActivoCondicion=SI Vacio(sql(<T>Select Nombre From TablaSTD<BR>where TablaST = :tVal<BR>and nombre = (<BR>Select acceso from Usuario where usuario = :tUs )<T>, <T>PERFILES NOTAS CLIENTES<T>, Usuario ))//<T>VENTP00012<T>))//<T>CREDI00029<T>))<BR>    ENTONCES<BR>        Falso<BR>    SINO<BR>        Verdadero<BR>FIN

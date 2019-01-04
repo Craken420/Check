@@ -1,0 +1,198 @@
+[Art.vis/Vista]
+ListaCalculados=EstatusNombre<BR>Esp<BR>ClaveSAT
+ListaCampos=Art.Articulo<BR>Art.Rama<BR>Art.Descripcion1<BR>Art.Descripcion2<BR>Art.NombreCorto<BR>Art.Grupo<BR>Art.Categoria<BR>Art.CategoriaActivoFijo<BR>Art.Familia<BR>Art.Fabricante<BR>Art.Linea<BR>Art.ClaveFabricante<BR>Art.Impuesto1<BR>Art.Impuesto2<BR>Art.Impuesto3<BR>Art.Factor<BR>Art.Unidad<BR>Art.UnidadCompra<BR>Art.UnidadTraspaso<BR>Art.UnidadCantidad<BR>Art.TipoCosteo<BR>Art.Peso<BR>Art.Tara<BR>Art.Volumen<BR>Art.Tipo<BR>Art.TipoOpcion<BR>Art.Accesorios<BR>Art.Refacciones<BR>Art.Servicios<BR>Art.Consumibles<BR>Art.MonedaCosto<BR>Art.MonedaPrecio<BR>Art.MargenMinimo<BR>Art.PrecioMinimo<BR>Art.DescuentoCompra<BR>Art.PrecioLista<BR>Art.FactorAlterno<BR>Art.PrecioAnterior<BR>Art.Utilidad<BR>Art.Comision<BR>Art.Arancel<BR>Art.ABC<BR>Art.Estatus<BR>Art.EstatusPrecio<BR>Art.UltimoCambio<BR>Art.Su<CONTINUA>
+ListaCampos002=<CONTINUA>stitutos<BR>Art.Alta<BR>Art.Mensaje<BR>Art.Precio2<BR>Art.Precio3<BR>Art.Precio4<BR>Art.Precio5<BR>Art.Precio6<BR>Art.Precio7<BR>Art.Precio8<BR>Art.Precio9<BR>Art.Precio10<BR>Art.Refrigeracion<BR>Art.TieneCaducidad<BR>Art.CategoriaProd<BR>Art.ProdMovGrupo<BR>Art.wMostrar<BR>Art.TiempoEntrega<BR>Art.TiempoEntregaUnidad<BR>Art.TiempoEntregaSeg<BR>Art.TiempoEntregaSegUnidad<BR>Art.Merma<BR>Art.Desperdicio<BR>Art.Usuario<BR>Art.ProdRuta<BR>Art.InvSeguridad<BR>Art.SeVende<BR>Art.SeCompra<BR>Art.SeProduce<BR>Art.EsFormula<BR>Art.LoteOrdenar<BR>Art.CantidadOrdenar<BR>Art.MultiplosOrdenar<BR>Art.AlmacenROP<BR>Art.RevisionUsuario<BR>Art.RevisionUltima<BR>Art.RevisionFrecuencia<BR>Art.RevisionFrecuenciaUnidad<BR>Art.RevisionSiguiente<BR>Art.Situacion<BR>Art.SituacionFecha<BR>Art.SituacionUsuario<BR><CONTINUA>
+ListaCampos003=<CONTINUA>Art.SituacionNota<BR>Art.TipoCompra<BR>Art.TieneMovimientos<BR>Art.Registro1<BR>Art.Registro1Vencimiento<BR>Art.AlmacenEspecificoVenta<BR>Art.AlmacenEspecificoVentaMov<BR>Art.EstatusCosto<BR>Art.Margen<BR>Art.RutaDistribucion<BR>Art.Proveedor<BR>Art.NivelAcceso<BR>Art.Temporada<BR>Art.SolicitarPrecios<BR>Art.AutoRecaudacion<BR>Art.Concepto<BR>Art.Cuenta<BR>Art.Espacios<BR>Art.EspaciosEspecificos<BR>Art.EspaciosSobreventa<BR>Art.EspaciosNivel<BR>Art.EspaciosBloquearAnteriores<BR>Art.EspaciosHoraD<BR>Art.EspaciosHoraA<BR>Art.EspaciosMinutos<BR>Art.Retencion1<BR>Art.Retencion2<BR>Art.Retencion3<BR>Art.BasculaPesar<BR>Art.SerieLoteInfo<BR>Art.CantidadMinimaVenta<BR>Art.CantidadMaximaVenta<BR>Art.EstimuloFiscal<BR>Art.OrigenPais<BR>Art.OrigenLocalidad<BR>Art.Incentivo<BR>Art.FactorCompra<BR>Art<CONTINUA>
+ListaCampos004=<CONTINUA>.Horas<BR>Art.ISAN<BR>Art.ExcluirDescFormaPago<BR>Art.EsDeducible<BR>Art.Peaje<BR>Art.CodigoAlterno<BR>Art.TipoCatalogo<BR>Art.AnexosAlFacturar<BR>Art.CaducidadMinima<BR>Art.Actividades<BR>Art.ValidarPresupuestoCompra<BR>Art.SeriesLotesAutoOrden<BR>Art.LotesFijos<BR>Art.LotesAuto<BR>Art.Consecutivo<BR>Art.TipoEmpaque<BR>Art.Modelo<BR>Art.Version<BR>Art.TieneDireccion<BR>Art.Direccion<BR>Art.DireccionNumero<BR>Art.DireccionNumeroInt<BR>Art.EntreCalles<BR>Art.Plano<BR>Art.Observaciones<BR>Art.Colonia<BR>Art.Poblacion<BR>Art.Estado<BR>Art.Pais<BR>Art.CodigoPostal<BR>Art.Delegacion<BR>Art.Ruta<BR>Art.Codigo<BR>Art.ClaveVehicular<BR>Art.TipoVehiculo<BR>Art.DiasLibresIntereses<BR>Art.PrecioLiberado<BR>Art.ValidarCodigo<BR>Art.Presentacion<BR>Art.GarantiaPlazo<BR>Art.CostoIdentificado<BR>Art.Cant<CONTINUA>
+ListaCampos005=<CONTINUA>idadTarima<BR>Art.UnidadTarima<BR>Art.DepartamentoDetallista<BR>Art.TratadoComercial<BR>Art.CuentaPresupuesto<BR>Art.ProgramaSectorial<BR>Art.ArancelDesperdicio<BR>Art.PedimentoClave<BR>Art.PedimentoRegimen<BR>Art.Permiso<BR>Art.PermisoRenglon<BR>Art.MinimoTarima<BR>Art.Cuenta2<BR>Art.Cuenta3<BR>Art.Impuesto1Excento<BR>Art.InflacionPresupuesto<BR>Art.CalcularPresupuesto<BR>Art.Excento2<BR>Art.Excento3<BR>Art.Capital<BR>Art.UltimoMov<BR>Art.FechaUltimoMov<BR>Art.MarcaE<BR>Art.ModeloE<BR>Art.LineaE<BR>Art.CtaCliente<BR>Art.TipoEntradaMavi<BR>Art.codigopadre<BR>Art.espadre<BR>ArtFam.Familia<BR>ArtFam.Impuesto1<BR>ArtFam.Impuesto2<BR>ArtFam.Impuesto3<BR>ArtArancel.Arancel<BR>ArtArancel.Porcentaje<BR>ArtArancel2.Arancel<BR>ArtArancel2.Porcentaje<BR>ProdRuta.Ruta<BR>ProdRuta.Descripcion<BR>ProdRuta.Categoria<BR>Usuario.Usuario<BR>Usuario.Nombre<BR>Prov.Proveedor<BR>Prov.Nombre<CONTINUA>
+ListaCampos006=<CONTINUA><BR>Prov.Estatus<BR>Cta.Cuenta<BR>Cta.Descripcion<BR>Cta.Tipo<BR>Cta.EsAcumulativa<BR>Cta.Estatus<BR>CtaSituacion.Icono<BR>DepartamentoDetallista.Nombre<BR>DepartamentoDetallista.Merma<BR>CtaPresupuesto.Descripcion
+
+SQL=SELECT<BR>  Art.Articulo,<BR>  Art.Rama,<BR>  Art.Descripcion1,<BR>  Art.Descripcion2,<BR>  Art.NombreCorto,<BR>  Art.Grupo,<BR>  Art.Categoria,<BR>  Art.CategoriaActivoFijo,<BR>  Art.Familia,<BR>  Art.Fabricante,<BR>  Art.Linea,<BR>  Art.ClaveFabricante,<BR>  Art.Impuesto1,<BR>  Art.Impuesto2,<BR>  Art.Impuesto3,<BR>  Art.Factor,<BR>  Art.Unidad,<BR>  Art.UnidadCompra,<BR>  Art.UnidadTraspaso,<BR>  Art.UnidadCantidad,<BR>  Art.TipoCosteo,<BR>  Art.Peso,<BR>  Art.Tara,<BR>  Art.Volumen,<BR>  Art.Tipo,<BR>  Art.TipoOpcion,<BR>  Art.Accesorios,<BR>  Art.Refacciones,<BR>  Art.Servicios,<BR>  Art.Consumibles,<BR>  Art.MonedaCosto,<BR>  Art.MonedaPrecio,<BR>  Art.MargenMinimo,<BR>  Art.PrecioMinimo,<BR>  Art.DescuentoCompra,<BR>  Art.PrecioLista,<BR>  Art.FactorAlterno,<BR>  Art.PrecioAnterior,<CONTINUA>
+SQL002=<CONTINUA><BR>  Art.Utilidad,<BR>  Art.Comision,<BR>  Art.Arancel,<BR>  Art.ABC,<BR>  Art.Estatus,<BR>  Art.EstatusPrecio,<BR>  Art.UltimoCambio,<BR>  Art.Sustitutos,<BR>  Art.Alta,<BR>  Art.Mensaje,<BR>  Art.Precio2,<BR>  Art.Precio3,<BR>  Art.Precio4,<BR>  Art.Precio5,<BR>  Art.Precio6,<BR>  Art.Precio7,<BR>  Art.Precio8,<BR>  Art.Precio9,<BR>  Art.Precio10,<BR>  Art.Refrigeracion,<BR>  Art.TieneCaducidad,<BR>  Art.CategoriaProd,<BR>  Art.ProdMovGrupo,<BR>  Art.wMostrar,<BR>  Art.TiempoEntrega,<BR>  Art.TiempoEntregaUnidad,<BR>  Art.TiempoEntregaSeg,<BR>  Art.TiempoEntregaSegUnidad,<BR>  Art.Merma,<BR>  Art.Desperdicio,<BR>  Art.Usuario,<BR>  Art.ProdRuta,<BR>  Art.InvSeguridad,<BR>  Art.SeVende,<BR>  Art.SeCompra,<BR>  Art.SeProduce,<BR>  Art.EsFormula,<BR>  Art.LoteOrdenar,<BR>  Art.CantidadOrde<CONTINUA>
+SQL003=<CONTINUA>nar,<BR>  Art.MultiplosOrdenar,<BR>  Art.AlmacenROP,<BR>  Art.RevisionUsuario,<BR>  Art.RevisionUltima,<BR>  Art.RevisionFrecuencia,<BR>  Art.RevisionFrecuenciaUnidad,<BR>  Art.RevisionSiguiente,<BR>  Art.Situacion,<BR>  Art.SituacionFecha,<BR>  Art.SituacionUsuario,<BR>  Art.SituacionNota,<BR>  Art.TipoCompra,<BR>  Art.TieneMovimientos,<BR>  Art.Registro1,<BR>  Art.Registro1Vencimiento,<BR>  Art.AlmacenEspecificoVenta,<BR>  Art.AlmacenEspecificoVentaMov,<BR>  Art.EstatusCosto,<BR>  Art.Margen,<BR>  Art.RutaDistribucion,<BR>  Art.Proveedor,<BR>  Art.NivelAcceso,<BR>  Art.Temporada,<BR>  Art.SolicitarPrecios,<BR>  Art.AutoRecaudacion,<BR>  Art.Concepto,<BR>  Art.Cuenta,<BR>  Art.Espacios,<BR>  Art.EspaciosEspecificos,<BR>  Art.EspaciosSobreventa,<BR>  Art.EspaciosNivel,<BR>  Art.EspaciosBlo<CONTINUA>
+SQL004=<CONTINUA>quearAnteriores,<BR>  Art.EspaciosHoraD,<BR>  Art.EspaciosHoraA,<BR>  Art.EspaciosMinutos,<BR>  Art.Retencion1,<BR>  Art.Retencion2,<BR>  Art.Retencion3,<BR>  Art.BasculaPesar,<BR>  Art.SerieLoteInfo,<BR>  Art.CantidadMinimaVenta,<BR>  Art.CantidadMaximaVenta,<BR>  Art.EstimuloFiscal,<BR>  Art.OrigenPais,<BR>  Art.OrigenLocalidad,<BR>  Art.Incentivo,<BR>  Art.FactorCompra,<BR>  Art.Horas,<BR>  Art.ISAN,<BR>  Art.ExcluirDescFormaPago,<BR>  Art.EsDeducible,<BR>  Art.Peaje,<BR>  Art.CodigoAlterno,<BR>  Art.TipoCatalogo,<BR>  Art.AnexosAlFacturar,<BR>  Art.CaducidadMinima,<BR>  Art.Actividades,<BR>  Art.ValidarPresupuestoCompra,<BR>  Art.SeriesLotesAutoOrden,<BR>  Art.LotesFijos,<BR>  Art.LotesAuto,<BR>  Art.Consecutivo,<BR>  Art.TipoEmpaque,<BR>  Art.Modelo,<BR>  Art.Version,<BR>  Art.TieneDi<CONTINUA>
+SQL005=<CONTINUA>reccion,<BR>  Art.Direccion,<BR>  Art.DireccionNumero,<BR>  Art.DireccionNumeroInt,<BR>  Art.EntreCalles,<BR>  Art.Plano,<BR>  Art.Observaciones,<BR>  Art.Colonia,<BR>  Art.Poblacion,<BR>  Art.Estado,<BR>  Art.Pais,<BR>  Art.CodigoPostal,<BR>  Art.Delegacion,<BR>  Art.Ruta,<BR>  Art.Codigo,<BR>  Art.ClaveVehicular,<BR>  Art.TipoVehiculo,<BR>  Art.DiasLibresIntereses,<BR>  Art.PrecioLiberado,<BR>  Art.ValidarCodigo,<BR>  Art.Presentacion,<BR>  Art.GarantiaPlazo,<BR>  Art.CostoIdentificado,<BR>  Art.CantidadTarima,<BR>  Art.UnidadTarima,<BR>  Art.DepartamentoDetallista,<BR>  Art.TratadoComercial,<BR>  Art.CuentaPresupuesto,<BR>  Art.ProgramaSectorial,<BR>  Art.ArancelDesperdicio,<BR>  Art.PedimentoClave,<BR>  Art.PedimentoRegimen,<BR>  Art.Permiso,<BR>  Art.PermisoRenglon,<BR>  Art.MinimoTar<CONTINUA>
+SQL006=<CONTINUA>ima,<BR>  Art.Cuenta2,<BR>  Art.Cuenta3,<BR>  Art.Impuesto1Excento,<BR>  Art.InflacionPresupuesto,<BR>  Art.CalcularPresupuesto,<BR>  Art.Excento2,<BR>  Art.Excento3,<BR>  Art.Capital,<BR>  Art.UltimoMov,<BR>  Art.FechaUltimoMov,<BR>Art.MarcaE,<BR>  Art.ModeloE,<BR>  Art.LineaE,<BR>  Art.CtaCliente,<BR>  Art.TipoEntradaMavi,<BR> Art.codigopadre,<BR>  Art.espadre,<BR>  ArtFam.Familia,<BR>  ArtFam.Impuesto1,<BR>  ArtFam.Impuesto2,<BR>  ArtFam.Impuesto3,<BR>  ArtArancel.Arancel,<BR>  ArtArancel.Porcentaje,<BR>  ArtArancel2.Arancel,<BR>  ArtArancel2.Porcentaje,<BR>  ProdRuta.Ruta,<BR>  ProdRuta.Descripcion,<BR>  ProdRuta.Categoria,<BR>  Usuario.Usuario,<BR>  Usuario.Nombre,<BR>  Prov.Proveedor,<BR>  Prov.Nombre,<BR>  Prov.Estatus,<BR>  Cta.Cuenta,<BR>  Cta.Descripcion,<BR>  Cta.Tipo,<BR>  Cta.EsAcumulativa,<BR>  Cta.Estatus,<BR>  CtaSituacion.Icono,<BR>  DepartamentoDetallista.Nombre,<CONTINUA>
+SQL007=<CONTINUA><BR>  DepartamentoDetallista.Merma,<BR>  CtaPresupuesto.Descripcion<BR><BR>FROM<BR>  Art<BR>  LEFT OUTER JOIN ArtFam ON Art.Familia=ArtFam.Familia<BR>  LEFT OUTER JOIN ProdRuta ON Art.ProdRuta=ProdRuta.Ruta<BR>  LEFT OUTER JOIN Usuario ON Art.RevisionUsuario=Usuario.Usuario<BR>  LEFT OUTER JOIN Prov ON Art.Proveedor=Prov.Proveedor<BR>  LEFT OUTER JOIN Cta ON Art.Cuenta=Cta.Cuenta<BR>  LEFT OUTER JOIN CtaSituacion ON {Comillas(<T>INV<T>)}=CtaSituacion.Rama AND Art.Situacion=CtaSituacion.Situacion<BR>  LEFT OUTER JOIN DepartamentoDetallista ON Art.DepartamentoDetallista=DepartamentoDetallista.Departamento<BR>  LEFT OUTER JOIN ArtArancel ON Art.Arancel=ArtArancel.Arancel<BR>  LEFT OUTER JOIN Cta CtaPresupuesto ON Art.CuentaPresupuesto=CtaPresupuesto.Cuenta<BR>  LEFT OUTER JOIN ArtArancel ArtArancel2<CONTINUA>  
+SQL008=<CONTINUA> ON Art.ArancelDesperdicio=ArtArancel2.Arancel
+
+
+[Art.vis/Art.Capital]
+Clave=Art.Capital
+Nombre=Monto Capital
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+Monetario=S
+AyudaEnCaptura=Calculadora
+LigaTabla=Art
+LigaCampo=Capital
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Capital
+
+[Art.vis/Art.UltimoMov]
+Clave=Art.UltimoMov
+Nombre=Ultimo Mov
+Visible=S
+TamanoValidacion=100
+Tamano=100
+LigaTabla=Art
+LigaCampo=UltimoMov
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=UltimoMov
+
+
+[Art.vis/Art.FechaUltimoMov]
+Clave=Art.FechaUltimoMov
+Nombre=Fecha Ultimo Mov
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+LigaTabla=Art
+LigaCampo=FechaUltimoMov
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=FechaUltimoMov
+
+
+[Art.vis/Art.MarcaE]
+Clave=Art.MarcaE
+Nombre=Marca 
+Visible=S
+TamanoValidacion=10
+Tamano=50
+AyudaMemTabla=DM0270CatMarcastbl
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+Ligado=N
+LigaTabla=Art
+LigaCampo=MarcaE
+ClaveBDE=MarcaE
+Alineacion=por Omisión
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=DM0270MarcasFrm
+AyudaVista=DM0270MarcasVis
+AyudaCampo=Marca
+ValidacionConCondiciones=S
+ValidacionCondicion=SQL(<T>select count(Marca) From DM0270CatalogoMarcas Where Marca=:tmar<T>,Art.MarcaE) > 0
+ValidacionMensajeError=<T>la marca ingresada no existe en el catalogo<T>
+[Art.vis/Art.ModeloE]
+Clave=Art.ModeloE
+Nombre=Modelo 
+Visible=S
+TamanoValidacion=10
+Tamano=50
+Ligado=N
+LigaTabla=Art
+LigaCampo=ModeloE
+ClaveBDE=ModeloE
+Alineacion=por Omisión
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+Mayusculas=S
+[Art.vis/Art.LineaE]
+Clave=Art.LineaE
+Nombre=Tipo Ecommerce
+Visible=S
+TamanoValidacion=10
+Tamano=50
+AyudaMemTabla=DM0270Cattipostbl
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+Ligado=N
+LigaTabla=Art
+LigaCampo=LineaE
+ClaveBDE=LineaE
+Alineacion=por Omisión
+Mayusculas=S
+AyudaEnCaptura=Vista
+AyudaForma=DM0270tipoFrm
+AyudaVista=DM0270tipovis
+AyudaCampo=Tipo
+ValidacionConCondiciones=S
+ValidacionCondicion=SQL(<T>select Count(Tipo) from DM0270CatalogoTipo Where Tipo=:tti<T>,Art.LineaE) > 0
+ValidacionMensajeError=<T>El tipo no existe en el catalago<T>
+
+[Art.vis/Art.CtaCliente]
+Clave=Art.CtaCliente
+Nombre=Cuenta Cliente
+Visible=S
+TamanoValidacion=10
+Tamano=9
+LigaTabla=Art
+LigaCampo=CtaCliente
+ClaveBDE=CtaCliente
+Alineacion=por Omisión
+AyudaEnCaptura=Vista
+AyudaForma=CteLista
+AyudaVista=MaviCteA
+AyudaCampo=Cte.Cliente
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+AyudaRefrescar=S
+
+[Art.vis/Art.TipoEntradaMavi]
+Clave=Art.TipoEntradaMavi
+Nombre=Tipo Entrada Mavi
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+Tamano=15
+LigaTabla=Art
+LigaCampo=TipoEntradaMavi
+ClaveBDE=TipoEntradaMavi
+Alineacion=por Omisión
+AyudaEnCaptura=Lista de Opciones
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+OpcionesPredefinidas=Ninguna
+ListaOpciones=ADJUDICACION<BR>EMBARGADO
+
+[Art.vis/Art.codigopadre]
+Clave=Art.codigopadre
+Nombre=Código Padre
+Visible=S
+TamanoValidacion=10
+Tamano=11
+LigaTabla=Art
+LigaCampo=codigopadre
+ClaveBDE=codigopadre
+Alineacion=por Omisión
+AyudaEnCaptura=Vista
+AyudaForma=DM0303AyudaArticulosFrm
+AyudaVista=DM0303AyudaArticulosVis
+AyudaCampo=Articulo
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+AyudaRefrescar=S
+ValidacionConCondiciones=S
+AyudaIgnoraChequeos=S
+ValidacionCondicion=Si SQL(<T>SELECT COUNT(TablaSt) FROM TablaStd WHERE TablaSt = :tTabla AND Nombre = :tLinea AND Valor = :tFamilia<T>,<T>FAMILIA LINEA DESPIEZAR ARTICULOS<T>,Art.Linea,Art.Familia)>0<BR>Entonces Verdadero<BR>Sino Error(<T>Solo llenar si artículo es despiezado<T>) AbortarOperacion<BR>Fin
+
+[Art.vis/Art.espadre]
+Clave=Art.espadre
+Nombre=Es Padre
+Visible=S
+TamanoValidacion=12
+TipoDatos=Lógico
+LigaTabla=Art
+LigaCampo=espadre
+ClaveBDE=espadre
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+ValidacionConCondiciones=S
+ValidacionCondicion=Si SQL(<T>SELECT COUNT(TablaSt) FROM TablaStd WHERE TablaSt = :tTabla AND Nombre = :tLinea AND Valor = :tFamilia<T>,<T>FAMILIA LINEA DESPIEZAR ARTICULOS<T>,Art.Linea,Art.Familia)>0<BR>Entonces Verdadero<BR>Sino Error(<T>Solo llenar si artículo es despiezado<T>) AbortarOperacion<BR>Fin
+
+[Art.vis/ClaveSAT]
+Clave=ClaveSAT
+TipoCampo=Calculado
+TamanoValidacion=20
+Alineacion=por Omisión
+Nombre=Clasificación SAT
+Tamano=20
+Formula=Si<BR>  SQL(<T>SELECT COUNT(CveProdServ) FROM DM0306ArtProdServExcep WITH(NOLOCK) WHERE Articulo= :tArticulo<T>,Art.Articulo)>0<BR>Entonces<BR>  SQL(<T>SELECT CveProdServ FROM DM0306ArtProdServExcep WITH(NOLOCK) WHERE Articulo= :tArticulo<T>,Art.Articulo)<BR>Sino<BR>Si<BR>SQL(<T>SELECT COUNT(C.CveProdSAT) FROM ActivoFCat C JOIN Art A ON A.CategoriaActivoFijo = C.Categoria WHERE A.Articulo= :tArticulo<T>,Art.Articulo)>0<BR>Entonces<BR>SQL(<T>SELECT C.CveProdSAT FROM ActivoFCat C JOIN Art A ON A.CategoriaActivoFijo = C.Categoria WHERE A.Articulo= :tArticulo<T>,Art.Articulo) <BR>Sino<BR>  SQL(<T>SELECT CveProdSAT FROM ArtLinea WITH(NOLOCK) WHERE Linea= :tLinea<T>,Art.Linea)<BR>Fin<BR>Fin

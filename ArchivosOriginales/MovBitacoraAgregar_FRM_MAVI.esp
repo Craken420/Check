@@ -1,0 +1,166 @@
+;Modificacion Anterior: 08-Jul-2008
+;Responsable: Arly Rubio  
+;Modificacion Reciente: 09-Dic-2008
+;Responsable: Edgar Montelongo
+;Modifico: Creacion a partir del objeto MAVI3000.
+
+
+
+;***** Se modificaron las dimensiones de la forma ******
+;***** Se agrega ExpresionAlMostrar (EM) ******
+[MovBitacoraAgregar.frm/Forma]
+PosicionInicialIzquierda=210
+PosicionInicialArriba=260
+PosicionInicialAncho=591
+PosicionInicialAlturaCliente=181
+VentanaSinIconosMarco=S
+;ExpresionesAlMostrar=Si<BR>  Izquierda( Usuario, 3 )=<T>COB<T><BR>Entonces<BR>  Asigna( Info.ClaveMS, <T>MAY%<T> )<BR>Sino<BR>  Si<BR>    Izquierda( Usuario, 5 )=<T>CREDI<T><BR>  Entonces<BR>    Asigna( Info.ClaveMS, <T>MEN%<T> )<BR>  Sino<BR>    Si<BR>      Izquierda( Usuario, 5)=<T>SERVI<T><BR>    Entonces<BR>      Asigna( Info.ClaveMS, <T>SER%<T> )<BR>    Sino<BR>      Asigna( Info.ClaveMS, <T><T> )
+ExpresionesAlMostrar=Si<BR>  Izquierda( Usuario, 3 )=<T>COB<T><BR>Entonces<BR>  Asigna( Info.ClaveMS, <T>MAY%<T> )<BR>Sino<BR>  Si<BR>    Izquierda( Usuario, 5 )=<T>CREDI<T><BR>  Entonces<BR>    Asigna( Info.ClaveMS, <T>MEN%<T> )<BR>  Sino<BR>    Si<BR>      Izquierda( Usuario, 5)=<T>SERVI<T><BR>    Entonces<BR>      Asigna( Info.ClaveMS, <T>SER%<T> )<BR>  Sino<BR>    Si<BR>  Izquierda( Usuario, 4)=<T>VENT<T><BR>    Entonces<BR>      Asigna( Info.ClaveMS, <T>VTA%<T> )<BR>  Sino<BR>      Asigna( Info.ClaveMS, <T><T> )
+ListaAcciones=Aceptar<BR>Cancelar<BR>GuardaCal
+
+
+;***** Se modifico la accion, se agregaron expresiones antes de ejecutar: Validar que el campo clave y agente tengan datos ***** Arly *****
+; Se modifico AntesExpresiones y se integro GuardarAntes para desarrollo DM0112 SERVICASA / SERVICRED dentro del paquete DM0112_13102011. JR 14-Oct-2011. *****
+; **** Modificacion de AntesExpresiones. Correge error en los usuarios COBMA, Victor Enrique Murillo Torres, 03/Nov/11. Para desarrollo DM0112 SERVICASA / SERVICRED dentro del paquete DM0112_04112011. JR 04-Nov-2011. **** 
+[MovBitacoraAgregar.frm/Acciones.Aceptar]
+
+;AntesExpresiones=Si(ConDatos(MovBitacora:MovBitacora.Clave),<T> <T>,Si(Precaucion(<T>No se ha especificado la clave de seguimiento<T>, BotonCancelar)=BotonCancelar, AbortarOperacion, AbortarOperacion))<BR>Si(ConDatos(MovBitacora:MovBitacora.Agente),<T> <T>,Si(Precaucion(<T>No se ha especificado el agente<T>, BotonCancelar)=BotonCancelar, AbortarOperacion, AbortarOperacion))
+;***** Arly *****
+;AntesExpresiones=SI sql(<T>select count(u.usuario) from usuario u where u.GrupoTrabajo like :tcred and u.usuario = :tvitor<T>,<T>%Credito%<T>,USUARIO) = 1 Y  VACIO(MovBitacora:MovBitacora.Evento)<BR>    ENTONCES<BR>        ASIGNA(MovBitacora:MovBitacora.Evento,<T> <T>)<BR>FIN<BR>SI sql(<T>select count(u.usuario) from usuario u where u.GrupoTrabajo like :tcred and u.usuario = :tvitor<T>,<T>%Credito%<T>,USUARIO) = 0 Y VACIO(MovBitacora:MovBitacora.Evento)<BR>    ENTONCES<BR>        Si(Precaucion(<T>No se ha especificado una descripcion<T>, BotonCancelar)=BotonCancelar, AbortarOperacion, AbortarOperacion))<BR>FIN<BR>Si(ConDatos(MovBitacora:MovBitacora.Clave),<T> <T>,Si(Precaucion(<T>No se ha especificado la clave de seguimiento<T>, BotonCancelar)=BotonCancelar, AbortarOperacion, AbortarOperacion))<BR>Si(ConDatos(MovBitacora:MovBitacora.Agente),<T> <T>,Si(Precaucion(<T>No se ha especificado el agente<T>, BotonCancelar)=BotonCancelar, AbortarOperacion, AbortarOperacion))
+GuardarAntes=S
+;AntesExpresiones=SI sql(<T>select count(u.usuario) from usuario u where u.usuario like :tcred and u.usuario = :tvitor<T>,<T>%Credi%<T>,USUARIO) = 1 Y  VACIO(MovBitacora:MovBitacora.Evento)<BR>    ENTONCES<BR>        ASIGNA(MovBitacora:MovBitacora.Evento,<T> <T>)<BR>FIN<BR>SI sql(<T>select count(u.usuario) from usuario u where u.usuario like :tcred and u.usuario = :tvitor<T>,<T>%Credito%<T>,USUARIO) = 0 Y VACIO(MovBitacora:MovBitacora.Evento)<BR>    ENTONCES<BR>        Si(Precaucion(<T>No se ha especificado una descripcion<T>, BotonCancelar)=BotonCancelar, AbortarOperacion, AbortarOperacion))<BR>FIN<BR>Si(ConDatos(MovBitacora:MovBitacora.Clave),<T> <T>,Si(Precaucion(<T>No se ha especificado la clave de seguimiento<T>, BotonCancelar)=BotonCancelar, AbortarOperacion, AbortarOperacion))<BR>Si(ConDatos(MovBitacora:MovBitacora.Agente),<T> <T>,Si(Precaucion(<T>No se ha especificado el agente<T>, BotonCancelar)=BotonCancelar, AbortarOperacion, AbortarOperacion))
+;*******EFMARTINEZ se modifica la tabla SID_HOJA_VERDE para el evento MEN00099
+AntesExpresiones=SI sql(<T>select count(u.usuario) from usuario u where u.usuario like :tcred and u.usuario = :tvitor<T>,<T>%Credi%<T>,USUARIO) = 1 Y  VACIO(MovBitacora:MovBitacora.Evento)<BR>    ENTONCES<BR>        ASIGNA(MovBitacora:MovBitacora.Evento,<T> <T>)<BR>FIN<BR>SI sql(<T>select count(u.usuario) from usuario u where u.usuario like :tcred and u.usuario = :tvitor<T>,<T>%Credito%<T>,USUARIO) = 0 Y VACIO(MovBitacora:MovBitacora.Evento)<BR>    ENTONCES<BR>        Si(Precaucion(<T>No se ha especificado una descripcion<T>, BotonCancelar)=BotonCancelar, AbortarOperacion, AbortarOperacion))<BR>FIN<BR>Si(ConDatos(MovBitacora:MovBitacora.Clave),<T> <T>,Si(Precaucion(<T>No se ha especificado la clave de seguimiento<T>, BotonCancelar)=BotonCancelar, AbortarOperacion, AbortarOperacion))<BR>Si(ConDatos(MovBitac<CONTINUA>
+AntesExpresiones002=<CONTINUA>ora:MovBitacora.Agente),<T> <T>,Si(Precaucion(<T>No se ha especificado el agente<T>, BotonCancelar)=BotonCancelar, AbortarOperacion, AbortarOperacion))<BR>SI ConDatos(MovBitacora:MovBitacora.Clave)<BR>ENTONCES<BR>  SI MovBitacora:MovBitacora.Clave = <T>MEN00099<T><BR>  ENTONCES<BR>         EjecutarSQLAnimado( <T>SET ANSI_NULLS ON SET ANSI_WARNINGS ON EXEC SP_ActSID_HOJA_VERDE :tmov , :tmovid<T>,Info.Mov,Info.MovID)<BR>  FIN<BR>FIN
+
+
+;******efmartinez obligar a evento valalera si es una compra directa de zapatos 
+[MovBitacoraAgregar.frm/Acciones.Cancelar]
+ConCondicion=S
+EjecucionConError=S
+EjecucionCondicion=Si Mavi.BanderarFlujo = 1<BR>Entonces<BR>    Si SQL(<T>Select count(*) From SHM_ValorDeEventosValera With(nolock) Where  Evento = :tcl<T>,MovBitacora:MovBitacora.Clave) > 0<BR>    Entonces<BR>        Asigna(Mavi.BanderarFlujo,0)<BR>        verdadero<BR>    sino<BR>        falso<BR>    fin<BR>sino<BR>    verdadero<BR>fin
+EjecucionMensaje=<T>Capturar el Evento para valera<T>
+
+;***** Se agregaron nuevos campos en la lista de captura: DesarrolloMexico(MovBotacora.Clave, MAVIClaveSeguimiento.Descripcion, MovBitacora.Agente, Agente.Nombre) *****
+;***** Se quitaron de la lista en captura los campos: DesarrolloMexico(MovBitacora.Tipo, MovBitacora.Duracion, MovBitacora.DuracionUnidad)******
+[MovBitacoraAgregar.frm/Ficha]
+CampoColorFondo=Plata
+ListaEnCaptura=MovBitacora.Clave<BR>MAVIClaveSeguimiento.Descripcion<BR>MovBitacora.Evento<BR>MovBitacora.Fecha<BR>MovBitacora.Agente<BR>Agente.Nombre
+;ListaEnCaptura.Cambios=Eliminar<TAB>MovBitacora.Tipo<BR>Insertar<TAB>MovBitacora.Clave<TAB>0<BR>Insertar<TAB>MAVIClaveSeguimiento.Descripcion<TAB>1<BR>Insertar<TAB>MovBitacora.Agente<TAB>4<BR>Insertar<TAB>Agente.Nombre<TAB>5
+Filtros=S
+FiltroPredefinido=S
+FiltroNullNombre=(sin clasificar)
+FiltroEnOrden=S
+FiltroTodoNombre=(Todo)
+FiltroAncho=20
+FiltroGeneral=1=0
+FiltroRespetar=S
+FiltroTipo=General
+
+
+;**** Modificacion al campo para que no fuera editable - Arly*****
+[MovBitacoraAgregar.frm/Ficha.MovBitacora.Fecha]
+Editar=N
+
+
+;**** Nuevo campor agregado ******
+[MovBitacoraAgregar.frm/Ficha.MovBitacora.Clave]
+Carpeta=Ficha
+Tamano=14
+Clave=MovBitacora.Clave
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+
+;***** Nuevo campo agregado ******
+[MovBitacoraAgregar.frm/Ficha.MAVIClaveSeguimiento.Descripcion]
+Carpeta=Ficha
+Clave=MAVIClaveSeguimiento.Descripcion
+Editar=N
+LineaNueva=N
+ValidaNombre=S
+3D=S
+Tamano=53
+ColorFondo=Plata
+ColorFuente=Negro
+Pegado=S
+OcultaNombre=S
+
+
+
+;***** Nuevo campo agregado ******
+[MovBitacoraAgregar.frm/Ficha.MovBitacora.Agente]
+Carpeta=Ficha
+Clave=MovBitacora.Agente
+Editar=S
+LineaNueva=N
+ValidaNombre=S
+3D=S
+Tamano=10
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+;***** Nuevo campo agregado *****
+[MovBitacoraAgregar.frm/Ficha.Agente.Nombre]
+Carpeta=Ficha
+Clave=Agente.Nombre
+Editar=N
+LineaNueva=N
+ValidaNombre=N
+3D=S
+Tamano=25
+ColorFondo=Plata
+ColorFuente=Negro
+OcultaNombre=S
+Pegado=S
+
+[MovBitacoraAgregar.frm/Acciones.GuardaCal]
+Nombre=GuardaCal
+Boton=38
+NombreEnBoton=S
+NombreDesplegar=&Guardar Calificacion
+EnBarraHerramientas=S
+TipoAccion=Formas
+ClaveAccion=DM0112GuardaCalFrm
+EspacioPrevio=S
+Antes=S
+ConCondicion=S
+EjecucionConError=S
+Visible=S
+ActivoCondicion=Si<BR> sql(<T>select acceso from Usuario where Usuario = :tUs<T>,Usuario) en (<T>CREDI_GERA<T>,<T>CREDI_ANAA<T>,<T>CREDI_USRA<T>,<T>CREDI_AUXC<T>,<T>CREDI_GERB<T>))<BR>Entonces<BR>  verdadero<BR>Sino<BR> falso<BR>Fin
+EjecucionCondicion=si<BR>Vacio(MovBitacora:MovBitacora.Clave)<BR>entonces<BR>falso<BR>sino<BR>verdadero<BR>fin
+EjecucionMensaje=<T>seleccione clave de calificacion<T>
+AntesExpresiones=//&informacion(MovBitacora:MovBitacora.Clave)<BR>Asigna(Mavi.DM0112Calif,MovBitacora:MovBitacora.Clave)
+
+[MovBitacoraAgregar.frm/Acciones.Aceptar]
+;***** SE CAMBIO A EXPRESIONES MULTIPLES PARA METER UN SP
+Multiple=S
+ListaAccionesMultiples=Aceptar<BR>Expresion
+
+[MovBitacoraAgregar.frm/Acciones.Aceptar.Aceptar]
+Nombre=Aceptar
+Boton=0
+TipoAccion=Ventana
+ClaveAccion=Aceptar
+Activo=S
+Visible=S
+;******efmartinez obligar a evento valalera si es una compra directa de zapatos 
+ConCondicion=S
+EjecucionConError=S
+EjecucionCondicion=Si Mavi.BanderarFlujo = 1<BR>Entonces<BR>    Si SQL(<T>Select count(*) From SHM_ValorDeEventosValera With(nolock) Where  Evento = :tcl<T>,MovBitacora:MovBitacora.Clave) > 0<BR>    Entonces<BR>        Asigna(Mavi.BanderarFlujo,0)<BR>        verdadero<BR>    sino<BR>        falso<BR>    fin<BR>sino<BR>    verdadero<BR>fin
+EjecucionMensaje=<T>Capturar el Evento para valera<T>
+Antes=S
+
+[MovBitacoraAgregar.frm/Acciones.Aceptar.Expresion]
+Nombre=Expresion
+Boton=0
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=SQL( <T>EXEC dbo.SP_DM0257GuardaListaNegra <T>+ {Comillas(MovBitacora:MovBitacora.Clave)}+<T>, <T>+{Comillas(MovBitacora:MovBitacora.Evento)}+<T>, <T>+{Comillas(MovBitacora:MovBitacora.Sucursal)}+<T> <T>)

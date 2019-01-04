@@ -1,0 +1,9 @@
+[ArtAlm.tbl/Almacen]
+AyudaEnCaptura=Vista
+ValidacionUsaTabla=S
+ValidacionTablas=Alm
+AyudaForma=AlmListaMAVI
+AyudaVista=Alm
+AyudaCampo=Alm.Almacen
+AyudaMemAvanzada=S
+AyudaMultiple=S

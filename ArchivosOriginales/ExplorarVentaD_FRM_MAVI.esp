@@ -1,0 +1,30 @@
+;**** Ultima modificación:12-Junio-2017
+;**** Modifico:Reynaldo Enrique Nuñez Robles
+;**** Se modifico: Se agrega el campo "sucursal" a la forma 
+;*****
+
+
+[ExplorarVentaD.frm/Lista]
+
+ListaEnCaptura=Venta.Cliente<BR>VentaD.Articulo<BR>CantidadNeta<BR>PrecioTotalNeto<BR>DescuentosNetos<BR>SubTotalNeto<BR>Venta.Sucursal
+
+[ExplorarVentaD.frm/Lista.Columnas]
+0=125
+1=87
+2=87
+3=55
+4=102
+5=70
+6=91
+7=84
+8=73
+
+[Lista.Venta.Sucursal]
+Carpeta=Lista
+Clave=Venta.Sucursal
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro

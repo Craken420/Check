@@ -1,0 +1,10 @@
+;**** Ultima modificación:20-Ago-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:Creacion
+
+
+
+
+;***** Se cambio la vista de la ayuda en captura por la que elaboro Elias*****
+[ListaPreciosD.tbl/Articulo]
+AyudaVista=MaviArtA

@@ -1,0 +1,2 @@
+[CteDepto.frm/Acciones.DatosCFD]
+ActivoCondicion=(Empresa.CFD) o (General.CFDFlex)

@@ -1,0 +1,61 @@
+;**** 28-May-09 ARC Cambio para autoguardar cambios ***
+[EquipoAgente.frm/Forma]
+AutoGuardar=S
+
+;**** 28-May-09 ARC Cambio para autoguardar cambios ***
+[EquipoAgente.frm/Lista]
+GuardarPorRegistro=S
+
+;24/12/14 TOMATIUH DEL VILLAR
+
+[EquipoAgente.frm/Acciones.Aceptar]
+Nombre=Aceptar
+Boton=82
+NombreEnBoton=S
+NombreDesplegar=&Guardar Cambios
+EnBarraHerramientas=S
+EspacioPrevio=S
+Activo=S
+Visible=S
+Multiple=S
+ListaAccionesMultiples=actual<BR>guardar<BR>asigna<BR>corregir<BR>refrescar<BR>cerrar
+
+[EquipoAgente.frm/Acciones.Aceptar.guardar]
+Nombre=guardar
+Boton=0
+TipoAccion=Controles Captura
+ClaveAccion=Guardar Cambios
+Activo=S
+Visible=S
+
+[EquipoAgente.frm/Acciones.Aceptar.asigna]
+Nombre=asigna
+Boton=0
+TipoAccion=Controles Captura
+ClaveAccion=Variables Asignar
+Activo=S
+Visible=S
+
+[EquipoAgente.frm/Acciones.Aceptar.corregir]
+Nombre=corregir
+Boton=0
+TipoAccion=Expresion
+Activo=S
+Visible=S
+Expresion=SQL( <T>EXEC Sp_DM0237MODIFICACIONAGENTE :tagt,:tusr<T>,EquipoAgente:EquipoAgente.Agente,Usuario )
+
+[EquipoAgente.frm/Acciones.Aceptar.refrescar]
+Nombre=refrescar
+Boton=0
+TipoAccion=Controles Captura
+ClaveAccion=Actualizar Vista
+Activo=S
+Visible=S
+
+[EquipoAgente.frm/Acciones.Aceptar.cerrar]
+Nombre=cerrar
+Boton=0
+TipoAccion=Ventana
+ClaveAccion=Cerrar
+Activo=S
+Visible=S

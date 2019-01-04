@@ -1,0 +1,8 @@
+
+; **** Archivo creado por Mavi
+;26/dic/2011	Victor Enrique Murillo Torres
+; **** Modificacion: Integracion de ExpresionesAlMostrar de Forma por accesos por perfiles, 26/dic/2011 Victor Enrique Murillo Torres, para desarrollo DM0169 Modificaciones Especiales dentro del paquete DM0169_27122011. JR 27-Dic-2011. ****
+
+
+[PersonalInfo.frm/Forma]
+ExpresionesAlMostrar=informacion(<T>Esta opción a sido deshabilitada por los administradores...<T>)<BR>Forma.Accion(AbortarOperacion)

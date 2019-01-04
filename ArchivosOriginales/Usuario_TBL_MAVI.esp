@@ -1,0 +1,62 @@
+
+
+
+
+
+;**** Se agregaron nuevos campos: Tipo_Descuento *****
+[Usuario.tbl/Tabla]
+ListaCampos=Usuario<BR>Nombre<BR>Sucursal<BR>DefEmpresa<BR>GrupoTrabajo<BR>Departamento<BR>Contrasena<BR>ContrasenaConfirmacion<BR>ContrasenaFecha<BR>Telefono<BR>Extencion<BR>DefAgente<BR>DefCajero<BR>DefAlmacen<BR>DefAlmacenTrans<BR>DefCtaDinero<BR>DefCtaDineroTrans<BR>DefMoneda<BR>DefLocalidad<BR>DefProyecto<BR>DefCliente<BR>DefActividad<BR>DefMovVentas<BR>Afectar<BR>Cancelar<BR>Desafectar<BR>Autorizar<BR>AfectarOtrosMovs<BR>CancelarOtrosMovs<BR>ConsultarOtrosMovs<BR>ConsultarOtrosMovsGrupo<BR>ConsultarOtrasEmpresas<BR>ConsultarOtrasSucursales<BR>AccesarOtrasSucursalesEnLinea<BR>AfectarOtrasSucursalesEnLinea<BR>ModificarOtrosMovs<BR>ModificarVencimientos<BR>ModificarEntregas<BR>ModificarFechaRequerida<BR>ModificarEnvios<BR>ModificarReferencias<BR>ModificarAlmacenEntregas<BR>ModificarSituacion<BR>Mod<CONTINUA>
+ListaCampos002=<CONTINUA>ificarAgente<BR>ModificarUsuario<BR>ModificarSucursalDestino<BR>AgregarCteExpress<BR>AgregarArtExpress<BR>VerInfoDeudores<BR>VerInfoAcreedores<BR>VerComisionesPendientes<BR>Costos<BR>BloquearCostos<BR>EnviarExcel<BR>ImprimirMovs<BR>PreliminarMovs<BR>Reservar<BR>DesReservar<BR>Asignar<BR>DesAsignar<BR>ModificarAlmacenPedidos<BR>ModificarConceptos<BR>ModificarListaPrecios<BR>ModificarZonaImpuesto<BR>Oficina<BR>Estatus<BR>UltimoCambio<BR>Alta<BR>BloquearEncabezadoVenta<BR>BloquearCxpCtaDinero<BR>BloquearCxcCtaDinero<BR>BloquearDineroCtaDinero<BR>BloquearCondiciones<BR>BloquearMoneda<BR>BloquearAlmacen<BR>BloquearAgente<BR>BloquearProyecto<BR>BloquearFechaEmision<BR>BloquearPrecios<BR>BloquearDescGlobal<BR>BloquearDescLinea<BR>BloquearNotasNegativas<BR>Configuracion<BR>DefUnidad<BR>DefArtTipo<<CONTINUA>
+ListaCampos003=<CONTINUA>BR>AbrirCajon<BR>TieneMovimientos<BR>BloquearCobroInmediato<BR>ConsultarCompraPendiente<BR>Refacturar<BR>DefListaPreciosEsp<BR>LimiteTableroControl<BR>CteInfo<BR>ImpresionInmediata<BR>CambioValidarCobertura<BR>AccesoTotalCuentas<BR>CambioNormatividad<BR>CambioEditarCobertura<BR>AutorizarVenta<BR>AutorizarCxp<BR>AutorizarGasto<BR>AutorizarDinero<BR>AutorizarPV<BR>AutorizarSeriesLotes<BR>MostrarCampos<BR>AsistentePrecios<BR>Acceso<BR>CambioVerPosicionEmpresa<BR>CambioVerPosicionSucursal<BR>CambioVerPosicionOtraSucursal<BR>AutoDobleCapturaPrecios<BR>AutoArtGrupo<BR>BloquearActividad<BR>CteBloquearOtrosDatos<BR>CteSucursalVenta<BR>ArtBloquearOtrosDatos<BR>UEN<BR>eMail<BR>CteMov<BR>CteArt<BR>ProvMov<BR>ArtMov<BR>DefContUso<BR>BloquearContUso<BR>ModificarReferenciasSiempre<BR>ModificarProyUENAct<CONTINUA>
+ListaCampos004=<CONTINUA>CC<BR>Observaciones<BR>TraspasarTodo<BR>AutoAgregarRecaudacionConsumo<BR>AutoDiesel<BR>ModificarAgenteCxcPendiente<BR>ModificarSerieLoteProp<BR>NominaEliminacionParcial<BR>CtaDineroInfo<BR>DefZonaImpuesto<BR>DefFormaPago<BR>BloquearFormaPago<BR>PVAbrirCajonSiempre<BR>PVBloquearEgresos<BR>ModificarPropiedadesLotes<BR>PVCobrarNotasEstatusBorrador<BR>PVModificarEstatusBorrador<BR>BloquearPersonalCfg<BR>ModificarMovsNominaVigentes<BR>BloquearFacturacionDirecta<BR>Idioma<BR>AutorizarCompra<BR>ModificarDatosVIN<BR>ModificarDatosCliente<BR>CxcExpress<BR>CxpExpress<BR>Cliente<BR>SubModuloAtencion<BR>BloquearCancelarFactura<BR>CambioPresentacionExpress<BR>ModificarConsecutivos<BR>ModificarVINFechaBaja<BR>ModificarVINFechaPago<BR>ModificarVINAccesorio<BR>PVEditarNota<BR>ModificarDescGlobalImporte<BR<CONTINUA>
+ListaCampos005=<CONTINUA>>ConsultarClientesOtrosAgentes<BR>ACLCUsoEspecifico<BR>ACEditarTablaAmortizacion<BR>CambioAutorizarOperacionLimite<BR>PlantillasOffice<BR>ConfigPlantillasOffice<BR>ACTasaGrupo<BR>CambioAgregarBeneficiarios<BR>AgregarConceptoExpress<BR>BloquearArtMaterial<BR>InfoPath<BR>InfoPathExe<BR>FEA<BR>FEACertificado<BR>FEALlave<BR>ContrasenaNuncaExpira<BR>AgregarProvExpress<BR>Menu<BR>MenuAccesoTotal<BR>BloquearPDF<BR>VerificarOrtografia<BR>ContSinOrigen<BR>UnidadOrganizacional<BR>ProyMov<BR>CompraDevTodo<BR>ProyectoMov<BR>BloquearWebContenido<BR>BloquearWebHTML<BR>Tipo_Descuento<BR>PorcDescuento<BR>ContrasenaPocket
+SQL=SELECT<BR>  Usuario,<BR>  Nombre,<BR>  Sucursal,<BR>  DefEmpresa,<BR>  GrupoTrabajo,<BR>  Departamento,<BR>  Contrasena,<BR>  ContrasenaConfirmacion,<BR>  ContrasenaFecha,<BR>  Telefono,<BR>  Extencion,<BR>  DefAgente,<BR>  DefCajero,<BR>  DefAlmacen,<BR>  DefAlmacenTrans,<BR>  DefCtaDinero,<BR>  DefCtaDineroTrans,<BR>  DefMoneda,<BR>  DefProyecto,<BR>  DefLocalidad,<BR>  DefCliente,<BR>  DefActividad,<BR>  DefMovVentas,<BR>  DefZonaImpuesto,<BR>  DefFormaPago,<BR>  Afectar,<BR>  Cancelar,<BR>  Desafectar,<BR>  Autorizar,<BR>  AutorizarVenta,<BR>  AutorizarCxp,<BR>  AutorizarGasto,<BR>  AutorizarDinero,<BR>  AutorizarPV,<BR>  AutorizarCompra,<BR>  AutorizarSeriesLotes,<BR>  AfectarOtrosMovs,<BR>  CancelarOtrosMovs,<BR>  ConsultarOtrosMovs,<BR>  ConsultarOtrosMovsGrupo,<BR>  ConsultarOtrasE<CONTINUA>
+SQL002=<CONTINUA>mpresas,<BR>  ConsultarOtrasSucursales,<BR>  AccesarOtrasSucursalesEnLinea,<BR>  AfectarOtrasSucursalesEnLinea,<BR>  ModificarOtrosMovs,<BR>  ModificarVencimientos,<BR>  ModificarEntregas,<BR>  ModificarFechaRequerida,<BR>  ModificarEnvios,<BR>  ModificarReferencias,<BR>  ModificarAlmacenEntregas,<BR>  ModificarSituacion,<BR>  ModificarAgente,<BR>  ModificarUsuario,<BR>  ModificarListaPrecios,<BR>  ModificarZonaImpuesto,<BR>  ModificarSucursalDestino,<BR>  ModificarProyUENActCC,<BR>  AgregarCteExpress,<BR>  AgregarArtExpress,<BR>  Costos,<BR>  BloquearCostos,<BR>  VerInfoDeudores,<BR>  VerInfoAcreedores,<BR>  VerComisionesPendientes,<BR>  BloquearEncabezadoVenta,<BR>  BloquearCxcCtaDinero,<BR>  BloquearCxpCtaDinero,<BR>  BloquearDineroCtaDinero,<BR>  EnviarExcel,<BR>  ImprimirMovs,<BR>  Pr<CONTINUA>
+SQL003=<CONTINUA>eliminarMovs,<BR>  Reservar,<BR>  DesReservar,<BR>  Asignar,<BR>  DesAsignar,<BR>  ModificarAlmacenPedidos,<BR>  ModificarConceptos,<BR>  ModificarReferenciasSiempre,<BR>  ModificarAgenteCxcPendiente,<BR>  ModificarMovsNominaVigentes,<BR>  BloquearPrecios,<BR>  BloquearDescGlobal,<BR>  BloquearDescLinea,<BR>  BloquearCondiciones,<BR>  BloquearAlmacen,<BR>  BloquearMoneda,<BR>  BloquearAgente,<BR>  BloquearFechaEmision,<BR>  BloquearProyecto,<BR>  BloquearFormaPago,<BR>  Oficina,<BR>  DefArtTipo,<BR>  DefUnidad,<BR>  AbrirCajon,<BR>  BloquearCobroInmediato,<BR>  ConsultarCompraPendiente,<BR>  AccesoTotalCuentas,<BR>  Estatus,<BR>  UltimoCambio,<BR>  Alta,<BR>  Configuracion,<BR>  Acceso,<BR>  TieneMovimientos,<BR>  Refacturar,<BR>  DefListaPreciosEsp,<BR>  LimiteTableroControl,<BR>  CteInfo<CONTINUA>
+SQL004=<CONTINUA>,<BR>  CteBloquearOtrosDatos,<BR>  ArtBloquearOtrosDatos,<BR>  CteSucursalVenta,<BR>  CtaDineroInfo,<BR>  ImpresionInmediata,<BR>  MostrarCampos,<BR>  AsistentePrecios,<BR>  CambioValidarCobertura,<BR>  CambioNormatividad,<BR>  CambioEditarCobertura,<BR>  CambioVerPosicionEmpresa,<BR>  CambioVerPosicionSucursal,<BR>  CambioVerPosicionOtraSucursal,<BR>  CambioAutorizarOperacionLimite,<BR>  AutoDobleCapturaPrecios,<BR>  AutoArtGrupo,<BR>  AutoAgregarRecaudacionConsumo,<BR>  AutoDiesel,<BR>  BloquearActividad,<BR>  UEN,<BR>  eMail,<BR>  CteMov,<BR>  CteArt,<BR>  ProvMov,<BR>  ArtMov,<BR>  DefContUso,<BR>  BloquearContUso,<BR>  Observaciones,<BR>  TraspasarTodo,<BR>  BloquearNotasNegativas,<BR>  ModificarSerieLoteProp,<BR>  NominaEliminacionParcial,<BR>  ModificarPropiedadesLotes,<BR>  PVAbrir<CONTINUA>
+SQL005=<CONTINUA>CajonSiempre,<BR>  PVBloquearEgresos,<BR>  PVCobrarNotasEstatusBorrador,<BR>  PVModificarEstatusBorrador,<BR>  BloquearPersonalCfg,<BR>  BloquearFacturacionDirecta,<BR>  Idioma,<BR>  ModificarDatosVIN,<BR>  ModificarDatosCliente,<BR>  CxcExpress,<BR>  CxpExpress,<BR>  Cliente,<BR>  SubModuloAtencion,<BR>  BloquearCancelarFactura,<BR>  CambioPresentacionExpress,<BR>  ModificarConsecutivos,<BR>  ModificarVINFechaBaja,<BR>  ModificarVINFechaPago,<BR>  ModificarVINAccesorio,<BR>  PVEditarNota,<BR>  ModificarDescGlobalImporte,<BR>  ConsultarClientesOtrosAgentes,<BR>  ACLCUsoEspecifico,<BR>  ACEditarTablaAmortizacion,<BR>  PlantillasOffice,<BR>  ConfigPlantillasOffice,<BR>  ACTasaGrupo,<BR>  CambioAgregarBeneficiarios,<BR>  AgregarConceptoExpress,<BR>  BloquearArtMaterial,<BR>  InfoPath,<BR>  In<CONTINUA>
+SQL006=<CONTINUA>foPathExe,<BR>  FEA,<BR>  FEACertificado,<BR>  FEALlave,<BR>  ContrasenaNuncaExpira,<BR>  Menu,<BR>  MenuAccesoTotal,<BR>  BloquearPDF,<BR>  VerificarOrtografia,<BR>  ContSinOrigen,<BR>  UnidadOrganizacional,<BR>  ProyectoMov,<BR>  CompraDevTodo,<BR>  AgregarProvExpress,<BR>  ProyMov,<BR>  BloquearWebContenido,<BR>  BloquearWebHTML,<BR>  Tipo_Descuento,<BR>  PorcDescuento,<BR>  ContrasenaPocket<BR><BR>FROM<BR>  Usuario
+
+
+;**** ARC 13-Ene-09 Nuevo campo agregado PROPRE *****
+[Usuario.tbl/Tipo_Descuento]
+Clave=Tipo_Descuento
+Nombre=Tipo de Descuento
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+Tamano=50
+Mayusculas=N
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+RefrescarTodoCondiciones=
+ListaRefrescarCondiciones=PorcDescuento
+ConRefrescarCondiciones=S
+ConRefrescar=S
+ListaRefrescar=PorcDescuento
+ListaOpciones=No Permitir<BR>Permitir Hasta Margen<BR>Especifico
+
+
+;**** ARC 14-Abril-09 Nuevo campo agregado PROPRE *****
+[Usuario.tbl/PorcDescuento]
+Clave=PorcDescuento
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumFlotante
+AyudaEnCaptura=Calculadora
+Nombre=Porcentaje
+CondicionDespliege=Usuario:Usuario.Tipo_Descuento=<T>Especifico<T>
+ValorPorOmision=Info.Porcentaje
+ValorRefrescar=si(Tipo_Descuento <> <T>Especifico<T>, NULO, PorcDescuento)
+
+;***** JRD 13-Agosto-10 Nuevo campo para Pocket *****
+[Usuario.tbl/ContrasenaPocket]
+Clave=ContrasenaPocket
+Nombre=Contraseña Pocket
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+Contrasena=S
+Mayusculas=S

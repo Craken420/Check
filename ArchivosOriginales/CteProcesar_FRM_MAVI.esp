@@ -1,0 +1,12 @@
+;**** Ultima modificación:22-Ago-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:Mike
+
+
+
+
+
+
+; ***** Se modifico la expresion para agregar un nuevo sp que obtiene nuevas columnas****
+[CteProcesar.frm/Acciones.Sugerir]
+Expresion=Si<BR>  Forma(<T>VentaTFiltro<T>)<BR>Entonces<BR>  EjecutarSQL(<T>spVentaTFiltroMAVI :nEstacion, :tEmpresa<T>, EstacionTrabajo, Empresa)<BR>  Forma.ActualizarVista(<T>Lista<T>) <BR>Fin

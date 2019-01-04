@@ -1,0 +1,83 @@
+;**** Ultima modificación:31-Oct-08
+;**** Modifico: Arly Rubio
+;**** Se modifico: Se modifico el valor de actualizar del campo ContUso
+
+[GastoD.tbl/Tabla]
+
+ListaCampos=ID<BR>Renglon<BR>RenglonSub<BR>Fecha<BR>Concepto<BR>Referencia<BR>Cantidad<BR>Precio<BR>Importe<BR>Impuestos<BR>Retencion<BR>Retencion2<BR>Retencion3<BR>ContUso<BR>Sucursal<BR>SucursalOrigen<BR>Proyecto<BR>Actividad<BR>DescripcionExtra<BR>VIN<BR>Espacio<BR>UEN<BR>AcreedorRef<BR>AFArticulo<BR>AFSerie<BR>PorcentajeDeducible<BR>Lectura<BR>LecturaAnterior<BR>EndosarA<BR>Provision<BR>Personal<BR>DepartamentoDetallista<BR>PresupuestoEsp<BR>AreaMotora
+
+
+; **** Se habilito el campo de Lectura  Leticia Quezada 21-Oct-08****
+[GastoD.tbl/Lectura]
+CondicionDespliege=MovTipoEn(<T>GAS<T>, Gasto:Gasto.Mov, (GAS.G, GAS.GTC, GAS.GP, GAS.C, GAS.CP, GAS.CCH, GAS.S))
+
+
+
+;**** Se activo el conrefrescar y se agrego el campo: ContUso (ARC 31-Oct-08)*****
+[GastoD.tbl/AFArticulo]
+ConRefrescar=S
+ListaRefrescar=ContUso
+
+
+;**** Se activo el conrefrescar y se agrego el campo: ContUso (ARC 31-Oct-08)*****
+[GastoD.tbl/AFSerie]
+ConRefrescar=S
+ListaRefrescar=ContUso
+
+
+;***** Se agrego una expresion al refrescar (ARC 31-Oct-08)*****
+[GastoD.tbl/ContUso]
+ValorRefrescar=SQL(<T>SELECT CentroCostos FROM ActivoF WHERE Empresa=:tEmpresa AND Articulo=:tArt AND Serie=:tSerie<T>, <T>MAVI<T>, AFArticulo, AFSerie)
+
+
+;***** Integracion Desarrollo Cuatro Ceros Manuel Velasco 11-07-09 *****
+[GastoD.tbl/Importe]
+FormatoValidacion=$ #,.0000
+
+[GastoD.tbl/Impuestos]
+FormatoValidacion=$ #,.0000
+CondicionEdicion=1=0
+
+[GastoD.tbl/Retencion]
+ValorRefrescar=Si(Gasto:Gasto.Estatus en (EstatusSinAfectar, EstatusPorConfirmar, EstatusBorrador), Si((MovTipo(<T>GAS<T>,Gasto:Gasto.Mov) en (GAS.S, GAS.P, GAS.A, GAS.G, GAS.GP, GAS.C, GAS.CCH, GAS.CP, GAS.DG, GAS.DGP, GAS.OI, GAS.GR, GAS.CTO)) y Gasto:Gasto.TieneRetencion,  Redondea(Importe*Concepto.Retencion/100, 4)), Retencion)
+FormatoValidacion=$ #,.0000
+
+[GastoD.tbl/Retencion2]
+ValorRefrescar=Si(Gasto:Gasto.Estatus en (EstatusSinAfectar, EstatusPorConfirmar, EstatusBorrador), Si((MovTipo(<T>GAS<T>,Gasto:Gasto.Mov) en (GAS.S, GAS.P, GAS.A, GAS.G, GAS.GTC, GAS.GP, GAS.C, GAS.CCH, GAS.CP, GAS.DG, GAS.DGP, GAS.OI, GAS.GR, GAS.CTO)) y Gasto:Gasto.TieneRetencion y Config.Gasto2Retenciones,  Redondea(Importe*Concepto.Retencion2/100, 4)), Retencion2)
+FormatoValidacion=$ #,.0000
+
+[GastoD.tbl/Precio]
+FormatoValidacion=$ #,.0000
+
+[GastoD.tbl/Retencion3]
+ValorRefrescar=Si(Gasto:Gasto.Estatus en (EstatusSinAfectar, EstatusPorConfirmar, EstatusBorrador), Si((MovTipo(<T>GAS<T>,Gasto:Gasto.Mov) en (GAS.S, GAS.P, GAS.A, GAS.G, GAS.GTC, GAS.GP, GAS.C, GAS.CCH, GAS.CP, GAS.DG, GAS.DGP, GAS.OI, GAS.GR, GAS.CTO)) y Gasto:Gasto.TieneRetencion y Config.Gasto3Retenciones,  Redondea(Importe*Concepto.Retencion3/100, 4)), Retencion3)
+FormatoValidacion=$ #,.0000
+
+;Se Agrega Campo Area Motora para Conocer El Area Que disfruta del gasto 
+;Fernando Romero 13/12/2013
+
+[GastoD.tbl/AreaMotora]
+Clave=AreaMotora
+Nombre=Area Motora
+Visible=S
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Vista
+AyudaForma=DM0169AreaMotoraFrm
+AyudaVista=DM0169AreaMotoraVis
+AyudaCampo=Valor
+CondicionDespliege=Config.ContUsoGastos
+
+
+;Se modifico la ayuda en captura del campo Referencia Fernando Romero Robles 05/07/2014
+
+[GastoD.tbl/Referencia]
+Clave=Referencia
+Nombre=Referencia
+TamanoValidacion=50
+Tamano=50
+CondicionEdicion=(Gasto:Gasto.Estatus en (EstatusSinAfectar, EstatusPlantilla, EstatusPorConfirmar)) o ((Gasto:Gasto.Estatus en (EstatusPendiente,EstatusPorAutorizar)) y Usuario.ModificarReferencias y (Gasto:Gasto.Mov <> <T>Solicitud<T>)) o Usuario.ModificarReferenciasSiempre
+AyudaEnCaptura=Vista
+AyudaForma=RM1100XmlFrm
+AyudaVista=RM1100XmlVis
+AyudaCampo=FolioFiscal

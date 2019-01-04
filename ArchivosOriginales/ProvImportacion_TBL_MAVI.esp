@@ -1,0 +1,24 @@
+;Se agrega el campo TipoTercero al TBL
+
+[provImportacion.tbl/Tabla]
+
+ListaCampos=Proveedor<BR>Nombre<BR>Rama<BR>NombreCorto<BR>Direccion<BR>EntreCalles<BR>Plano<BR>Observaciones<BR>Colonia<BR>Poblacion<BR>Estado<BR>Zona<BR>Pais<BR>CodigoPostal<BR>Telefonos<BR>Fax<BR>PedirTono<BR>DirInternet<BR>Contacto1<BR>Contacto2<BR>Extencion1<BR>Extencion2<BR>eMail1<BR>eMail2<BR>RFC<BR>Categoria<BR>Familia<BR>ZonaImpuesto<BR>FormaEnvio<BR>Descuento<BR>Comprador<BR>Proyecto<BR>Condicion<BR>CtaDinero<BR>Almacen<BR>DiaRevision1<BR>DiaRevision2<BR>HorarioRevision<BR>DiaPago1<BR>DiaPago2<BR>HorarioPago<BR>Beneficiario<BR>BeneficiarioNombre<BR>Agente<BR>Clase<BR>Estatus<BR>UltimoCambio<BR>Alta<BR>Conciliar<BR>Mensaje<BR>Tipo<BR>ProntoPago<BR>DefMoneda<BR>ProvBancoSucursal<BR>ProvCuenta<BR>Situacion<BR>SituacionFecha<BR>TieneMovimientos<BR>TipoTercero
+
+SQL=SELECT<BR>  Proveedor,<BR>  Rama,<BR>  Nombre,<BR>  NombreCorto,<BR>  Direccion,<BR>  EntreCalles,<BR>  Plano,<BR>  Observaciones,<BR>  Colonia,<BR>  Poblacion,<BR>  Estado,<BR>  Zona,<BR>  Pais,<BR>  CodigoPostal,<BR>  Telefonos,<BR>  Fax,<BR>  PedirTono,<BR>  DirInternet,<BR>  Contacto1,<BR>  Contacto2,<BR>  Extencion1,<BR>  Extencion2,<BR>  eMail1,<BR>  eMail2,<BR>  RFC,<BR>  Categoria,<BR>  Familia,<BR>  ZonaImpuesto,<BR>  FormaEnvio,<BR>  Descuento,<BR>  Comprador,<BR>  Proyecto,<BR>  Condicion,<BR>  CtaDinero,<BR>  Almacen,<BR>  DiaRevision1,<BR>  DiaRevision2,<BR>  HorarioRevision,<BR>  DiaPago1,<BR>  DiaPago2,<BR>  HorarioPago,<BR>  Beneficiario,<BR>  BeneficiarioNombre,<BR>  Agente,<BR>  Situacion,<BR>  SituacionFecha,<BR>  Clase,<BR>  Estatus,<BR>  UltimoCambio,<BR>  Alta,<BR>  C<CONTINUA>
+SQL002=<CONTINUA>onciliar,<BR>  Mensaje,<BR>  Tipo,<BR>  ProntoPago,<BR>  DefMoneda,<BR>  ProvBancoSucursal,<BR>  ProvCuenta,<BR>  TieneMovimientos,<BR>  TipoTercero<BR><BR>FROM<BR>  Prov
+
+
+
+[ProvImportacion.tbl/TipoTercero]
+Clave=TipoTercero
+Nombre=Tipo Tercero
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=5
+TamanoValidacion=5
+TipoDatos=Texto
+Tamano=5
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Ninguna
+OpcionesUnicamente=S
+ListaOpciones=04<BR>05<BR>15

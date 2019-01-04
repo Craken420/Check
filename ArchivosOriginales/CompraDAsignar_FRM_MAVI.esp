@@ -1,0 +1,17 @@
+;**** Ultima modificación:30-Abr-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:
+
+
+
+
+
+
+;**** Se mofico para que el filtro de estatus sea solo "concluidos" y para que solo muestre los movimientos con clave de afectacion: "COMS.F", y "COMS.EG" ****
+[CompraDAsignar.frm/Lista]
+FiltroListaEstatus=CONCLUIDO
+;FiltroGeneral=(Compra.Proveedor=<T>{Info.Proveedor}<T>) OR (CompraD.ImportacionProveedor=<T>{Info.Proveedor}<T>) AND<BR>Compra.Mov IN (SELECT MovTipo.Mov from MovTipo where MovTipo.Modulo = <T>COMS<T> AND (MovTipo.Clave=<T>COMS.F<T>  OR  MovTipo.Clave=<T>COMS.EG<T>))
+FiltroGeneral=Compra.Mov IN (SELECT MovTipo.Mov from MovTipo where MovTipo.Modulo = <T>COMS<T> AND (MovTipo.Clave=<T>COMS.F<T>)  OR  (MovTipo.Clave=<T>COMS.EG<T>)) AND<BR>(Compra.Proveedor=<T>{Info.Proveedor}<T>) OR (CompraD.ImportacionProveedor=<T>{Info.Proveedor}<T>)
+
+
+

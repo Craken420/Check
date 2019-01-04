@@ -1,0 +1,8 @@
+;[Cont.frm/Acciones.Eliminar]
+;ActivoCondicion=Vacio(Cont:Cont.OrigenTipo) y Vacio(Cont:Cont.MovID) y (Cont:Cont.Estatus en (EstatusSinAfectar, EstatusPorConfirmar)) y PuedeAfectar(Verdadero, Usuario.ModificarOtrosMovs, Cont:Cont.Usuario)
+;ActivoCondicion=(Cont:Cont.Estatus en (EstatusSinAfectar, EstatusPorConfirmar)) y PuedeAfectar(Verdadero, Usuario.ModificarOtrosMovs, Cont:Cont.Usuario)
+
+
+;[Cont.frm/Acciones.Cancelar]
+;ActivoCondicion=Vacio(Cont:Cont.OrigenTipo) y PuedeAfectar(Usuario.Cancelar, Usuario.CancelarOtrosMovs, Cont:Cont.Usuario) y ConDatos(Cont:Cont.ID) y (ConDatos(Cont:Cont.MovID) o (Cont:Cont.Estatus=EstatusBorrador)) y<BR>(Cont:Cont.Estatus en (EstatusSinAfectar, EstatusPorConfirmar, EstatusBorrador, EstatusSincro, EstatusConcluido))
+;ActivoCondicion=PuedeAfectar(Usuario.Cancelar, Usuario.CancelarOtrosMovs, Cont:Cont.Usuario) y ConDatos(Cont:Cont.ID) y (ConDatos(Cont:Cont.MovID) o (Cont:Cont.Estatus=EstatusBorrador)) y<BR>(Cont:Cont.Estatus en (EstatusSinAfectar, EstatusPorConfirmar, EstatusBorrador, EstatusSincro, EstatusConcluido))

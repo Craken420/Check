@@ -1,0 +1,105 @@
+;**** Ultima modificación:01-Feb-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:
+
+
+
+
+[GenerarOrdenTraspaso.dlg/Dialogo]
+Clave=GenerarOrdenTraspaso
+Nombre=Orden Traspaso
+Icono=17
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+PosicionInicialIzquierda=502
+PosicionInicialArriba=405
+PosicionInicialAltura=213
+PosicionInicialAncho=276
+ListaAcciones=Traspaso<BR>Ajuste<BR>Reservar<BR>DesReservar<BR>Asignar<BR>DesAsignar
+VentanaSiempreAlFrente=S
+VentanaConIcono=S
+PosicionInicialAlturaCliente=186
+
+; *** Se modifico para que esta acción no sea visible ***
+[GenerarOrdenTraspaso.dlg/Acciones.Reservar]
+Nombre=Reservar
+Boton=0
+NombreDesplegar=Reser&var
+EnMenu=S
+Visible=N
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=Reservar
+ActivoCondicion=Usuario.Reservar
+
+; *** Se modifico para que esta acción no sea visible ***
+[GenerarOrdenTraspaso.dlg/Acciones.DesReservar]
+Nombre=DesReservar
+Boton=0
+NombreDesplegar=De&s-Reservar
+EnMenu=S
+Visible=N
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=DesReservar
+ActivoCondicion=Usuario.DesReservar
+
+; *** Se modifico para que esta acción no sea visible ***
+[GenerarOrdenTraspaso.dlg/Acciones.Asignar]
+Nombre=Asignar
+Boton=0
+NombreDesplegar=As&ignar
+EnMenu=S
+Visible=N
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=Asignar
+ActivoCondicion=Usuario.Asignar y Config.BackOrders
+
+
+; *** Se modifico para que esta acción no sea visible ***
+[GenerarOrdenTraspaso.dlg/Acciones.DesAsignar]
+Nombre=DesAsignar
+Boton=0
+NombreDesplegar=Des-Asig&nar
+EnMenu=S
+Visible=N
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=DesAsignar
+ActivoCondicion=Usuario.DesAsignar y Config.BackOrders
+
+[GenerarOrdenTraspaso.dlg/Acciones.Traspaso]
+Nombre=Traspaso
+Boton=0
+NombreDesplegar=Generar &Salida Traspaso
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.InvSalidaTraspaso)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+
+
+; *** Se modifico para que esta acción no sea visible ***
+[GenerarOrdenTraspaso.dlg/Acciones.Ajuste]
+Nombre=Ajuste
+Boton=0
+NombreDesplegar=Generar &Ajuste
+EnMenu=S
+Visible=N
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.InvAjuste)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))

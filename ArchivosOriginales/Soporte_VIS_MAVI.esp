@@ -1,0 +1,88 @@
+;**** Ultima modificación:24-Jun-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:Se modifico la condicion de despliegue del campo proveedor.nombre
+
+
+
+;*********************************************************************************
+;************************* Desarrollo I04 ****************************************
+
+;**** Se agregaron nuevos campos a la vista: Soporte.Destino, Soporte.SoporteSucursal****
+[Soporte.vis/Vista]
+ListaCampos=Soporte.ID<BR>Soporte.Empresa<BR>Soporte.Mov<BR>Soporte.MovID<BR>Soporte.FechaEmision<BR>Soporte.UltimoCambio<BR>Soporte.Concepto<BR>Soporte.Proyecto<BR>Soporte.Usuario<BR>Soporte.Autorizacion<BR>Soporte.Referencia<BR>Soporte.DocFuente<BR>Soporte.Observaciones<BR>Soporte.Estatus<BR>Soporte.Situacion<BR>Soporte.SituacionFecha<BR>Soporte.SituacionUsuario<BR>Soporte.SituacionNota<BR>Soporte.FechaInicio<BR>Soporte.FechaTermino<BR>Soporte.Vencimiento<BR>Soporte.TieneContrato<BR>Soporte.Cliente<BR>Soporte.EnviarA<BR>Soporte.Proveedor<BR>Soporte.Personal<BR>Soporte.Contacto<BR>Soporte.Telefono<BR>Soporte.Extencion<BR>Soporte.Fax<BR>Soporte.eMail<BR>Soporte.Agente<BR>Soporte.Estado<BR>Soporte.PuedeDevolver<BR>Soporte.Prioridad<BR>Soporte.Titulo<BR>Soporte.Problema<BR>Soporte.Solucion<BR>Soporte.Co<CONTINUA>
+ListaCampos002=<CONTINUA>mentarios<BR>Soporte.Importe<BR>Soporte.CondicionPago<BR>Soporte.CondicionEntrega<BR>Soporte.UsuarioResponsable<BR>Soporte.Clase<BR>Soporte.Subclase<BR>Soporte.OrigenTipo<BR>Soporte.Origen<BR>Soporte.OrigenID<BR>Soporte.GenerarPoliza<BR>Soporte.ContID<BR>Soporte.FechaRegistro<BR>Soporte.FechaConclusion<BR>Soporte.FechaCancelacion<BR>Soporte.Version<BR>Soporte.Sucursal<BR>Soporte.SucursalDestino<BR>Soporte.SucursalOrigen<BR>Soporte.Tiempo<BR>Soporte.TiempoUnidad<BR>Soporte.ReferenciaInicial<BR>Soporte.SubModulo<BR>Soporte.Espacio<BR>Soporte.UEN<BR>Soporte.ProyectoFolio<BR>Soporte.Fuente<BR>Soporte.Medio<BR>Soporte.Elemento<BR>Soporte.VIN<BR>Soporte.ServicioTipo<BR>Soporte.FechaRequerida<BR>Soporte.FechaRevision<BR>Soporte.FechaAprobacion<BR>Soporte.FechaInicioEst<BR>Soporte.FechaFinEst<BR>S<CONTINUA>
+ListaCampos003=<CONTINUA>oporte.Direccion<BR>Soporte.DireccionNumero<BR>Soporte.EntreCalles<BR>Soporte.Plano<BR>Soporte.Delegacion<BR>Soporte.Colonia<BR>Soporte.CodigoPostal<BR>Soporte.Poblacion<BR>Soporte.PaisEstado<BR>Soporte.Pais<BR>Soporte.Zona<BR>Soporte.Orden<BR>Soporte.Calificacion<BR>Soporte.Reporte<BR>Soporte.LineaCredito<BR>Soporte.Articulo<BR>Soporte.SerieLote<BR>Soporte.Causa<BR>Soporte.Clase1<BR>Soporte.Clase2<BR>Soporte.Clase3<BR>Soporte.Clase4<BR>Soporte.Clase5<BR>Soporte.Avance<BR>Soporte.Destino<BR>Soporte.SoporteSucursal<BR>MovTipo.Modulo<BR>MovTipo.Mov<BR>MovTipo.Clave<BR>MovTipo.DiasVencimiento<BR>UsuarioRelacion.Usuario<BR>UsuarioRelacion.Nombre<BR>UsuarioRelacion.GrupoTrabajo<BR>UsuarioRelacion.Estatus<BR>UsuarioCopia.Usuario<BR>UsuarioCopia.Nombre<BR>UsuarioCopia.GrupoTrabajo<BR>UsuarioCopia.Estatus<BR>Rep.Reporte<BR>Rep.Asunto<BR>Rep.T<CONTINUA>
+ListaCampos004=<CONTINUA>ipo<BR>LC.LineaCredito<BR>LC.Descripcion<BR>Cte.Nombre<BR>Cte.Telefonos<BR>Cte.Fax<BR>Cte.Contacto1<BR>Cte.Contacto2<BR>Cte.eMail1<BR>Cte.eMail2<BR>Cte.Estatus<BR>Cte.Proyecto<BR>Cte.AgenteServicio<BR>Cte.Mensaje<BR>Cte.Extencion1<BR>Cte.Extencion2<BR>CteEnviarA.Nombre<BR>CteEnviarA.Telefonos<BR>CteEnviarA.Fax<BR>CteEnviarA.Contacto1<BR>CteEnviarA.Contacto2<BR>CteEnviarA.eMail1<BR>CteEnviarA.eMail2<BR>CteEnviarA.Mensaje<BR>CteEnviarA.Extencion1<BR>CteEnviarA.Extencion2<BR>Agente.Agente<BR>Agente.Nombre<BR>Agente.Estatus<BR>Personal.Personal<BR>Personal.ApellidoPaterno<BR>Personal.ApellidoMaterno<BR>Personal.Nombre<BR>Personal.Tipo<BR>Personal.Estatus<BR>Personal.SucursalTrabajo<BR>Prov.Proveedor<BR>Prov.Nombre<BR>Prov.Estatus<BR>Espacio.Espacio<BR>Espacio.Nombre<BR>UEN.UEN<BR>UEN.Nombre<BR<CONTINUA>
+ListaCampos005=<CONTINUA>>AgenteRef.Agente<BR>AgenteRef.Nombre<BR>AgenteRef.Estatus<BR>VIN.VIN<BR>VIN.TieneMovimientos<BR>VIN.Placas<BR>VIN.NumeroEconomico<BR>Art.Descripcion1<BR>ActivoF.ID
+SQL=SELECT<BR>  Soporte.ID,<BR>  Soporte.Empresa,<BR>  Soporte.Mov,<BR>  Soporte.MovID,<BR>  Soporte.FechaEmision,<BR>  Soporte.UltimoCambio,<BR>  Soporte.Concepto,<BR>  Soporte.Proyecto,<BR>  Soporte.Usuario,<BR>  Soporte.Autorizacion,<BR>  Soporte.Referencia,<BR>  Soporte.DocFuente,<BR>  Soporte.Observaciones,<BR>  Soporte.Estatus,<BR>  Soporte.Situacion,<BR>  Soporte.SituacionFecha,<BR>  Soporte.SituacionUsuario,<BR>  Soporte.SituacionNota,<BR>  Soporte.FechaInicio,<BR>  Soporte.FechaTermino,<BR>  Soporte.Vencimiento,<BR>  Soporte.TieneContrato,<BR>  Soporte.Cliente,<BR>  Soporte.EnviarA,<BR>  Soporte.Proveedor,<BR>  Soporte.Personal,<BR>  Soporte.Contacto,<BR>  Soporte.Telefono,<BR>  Soporte.Extencion,<BR>  Soporte.Fax,<BR>  Soporte.eMail,<BR>  Soporte.Agente,<BR>  Soporte.Estado,<BR>  Sop<CONTINUA>
+SQL002=<CONTINUA>orte.PuedeDevolver,<BR>  Soporte.Prioridad,<BR>  Soporte.Titulo,<BR>  Soporte.Problema,<BR>  Soporte.Solucion,<BR>  Soporte.Comentarios,<BR>  Soporte.Importe,<BR>  Soporte.CondicionPago,<BR>  Soporte.CondicionEntrega,<BR>  Soporte.UsuarioResponsable,<BR>  Soporte.Clase,<BR>  Soporte.Subclase,<BR>  Soporte.OrigenTipo,<BR>  Soporte.Origen,<BR>  Soporte.OrigenID,<BR>  Soporte.GenerarPoliza,<BR>  Soporte.ContID,<BR>  Soporte.FechaRegistro,<BR>  Soporte.FechaConclusion,<BR>  Soporte.FechaCancelacion,<BR>  Soporte.Version,<BR>  Soporte.Sucursal,<BR>  Soporte.SucursalDestino,<BR>  Soporte.SucursalOrigen,<BR>  Soporte.Tiempo,<BR>  Soporte.TiempoUnidad,<BR>  Soporte.ReferenciaInicial,<BR>  Soporte.SubModulo,<BR>  Soporte.Espacio,<BR>  Soporte.UEN,<BR>  Soporte.ProyectoFolio,<BR>  Soporte.Fuente,<BR<CONTINUA>
+SQL003=<CONTINUA>>  Soporte.Medio,<BR>  Soporte.Elemento,<BR>  Soporte.VIN,<BR>  Soporte.ServicioTipo,<BR>  Soporte.FechaRequerida,<BR>  Soporte.FechaRevision,<BR>  Soporte.FechaAprobacion,<BR>  Soporte.FechaInicioEst,<BR>  Soporte.FechaFinEst,<BR>  Soporte.Direccion,<BR>  Soporte.DireccionNumero,<BR>  Soporte.EntreCalles,<BR>  Soporte.Plano,<BR>  Soporte.Delegacion,<BR>  Soporte.Colonia,<BR>  Soporte.CodigoPostal,<BR>  Soporte.Poblacion,<BR>  Soporte.PaisEstado,<BR>  Soporte.Pais,<BR>  Soporte.Zona,<BR>  Soporte.Orden,<BR>  Soporte.Calificacion,<BR>  Soporte.Reporte,<BR>  Soporte.LineaCredito,<BR>  Soporte.Articulo,<BR>  Soporte.SerieLote,<BR>  Soporte.Causa,<BR>  Soporte.Clase1,<BR>  Soporte.Clase2,<BR>  Soporte.Clase3,<BR>  Soporte.Clase4,<BR>  Soporte.Clase5,<BR>  Soporte.Avance,<BR>  Soporte.Destino,<BR>  Soporte.SoporteSucursal,<BR>  MovTipo.Modulo,<B<CONTINUA>
+SQL004=<CONTINUA>R>  MovTipo.Mov,<BR>  MovTipo.Clave,<BR>  MovTipo.DiasVencimiento,<BR>  UsuarioRelacion.Usuario,<BR>  UsuarioRelacion.Nombre,<BR>  UsuarioRelacion.GrupoTrabajo,<BR>  UsuarioRelacion.Estatus,<BR>  UsuarioCopia.Usuario,<BR>  UsuarioCopia.Nombre,<BR>  UsuarioCopia.GrupoTrabajo,<BR>  UsuarioCopia.Estatus,<BR>  Rep.Reporte,<BR>  Rep.Asunto,<BR>  Rep.Tipo,<BR>  LC.LineaCredito,<BR>  LC.Descripcion,<BR>  Cte.Nombre,<BR>  Cte.Telefonos,<BR>  Cte.Fax,<BR>  Cte.Contacto1,<BR>  Cte.Contacto2,<BR>  Cte.eMail1,<BR>  Cte.eMail2,<BR>  Cte.Estatus,<BR>  Cte.Proyecto,<BR>  Cte.AgenteServicio,<BR>  Cte.Mensaje,<BR>  Cte.Extencion1,<BR>  Cte.Extencion2,<BR>  CteEnviarA.Nombre,<BR>  CteEnviarA.Telefonos,<BR>  CteEnviarA.Fax,<BR>  CteEnviarA.Contacto1,<BR>  CteEnviarA.Contacto2,<BR>  CteEnviarA.eMail1,<BR>  Ct<CONTINUA>
+SQL005=<CONTINUA>eEnviarA.eMail2,<BR>  CteEnviarA.Mensaje,<BR>  CteEnviarA.Extencion1,<BR>  CteEnviarA.Extencion2,<BR>  Agente.Agente,<BR>  Agente.Nombre,<BR>  Agente.Estatus,<BR>  Personal.Personal,<BR>  Personal.ApellidoPaterno,<BR>  Personal.ApellidoMaterno,<BR>  Personal.Nombre,<BR>  Personal.Tipo,<BR>  Personal.Estatus,<BR>  Personal.SucursalTrabajo,<BR>  Prov.Proveedor,<BR>  Prov.Nombre,<BR>  Prov.Estatus,<BR>  Espacio.Espacio,<BR>  Espacio.Nombre,<BR>  UEN.UEN,<BR>  UEN.Nombre,<BR>  AgenteRef.Agente,<BR>  AgenteRef.Nombre,<BR>  AgenteRef.Estatus,<BR>  VIN.VIN,<BR>  VIN.TieneMovimientos,<BR>  VIN.Placas,<BR>  VIN.NumeroEconomico,<BR>  Art.Descripcion1,<BR>  ActivoF.ID<BR><BR>FROM<BR>  Soporte<BR>  JOIN MovTipo ON {Comillas(<T>ST<T>)}=MovTipo.Modulo AND Soporte.Mov=MovTipo.Mov<BR>  LEFT OUTER JOIN Cte<CONTINUA>
+SQL006=<CONTINUA> ON Soporte.Cliente=Cte.Cliente<BR>  LEFT OUTER JOIN Agente ON Soporte.Agente=Agente.Agente<BR>  LEFT OUTER JOIN CteEnviarA ON Soporte.Cliente=CteEnviarA.Cliente AND Soporte.EnviarA=CteEnviarA.ID<BR>  JOIN Usuario UsuarioRelacion ON Soporte.Usuario=UsuarioRelacion.Usuario<BR>  JOIN Usuario UsuarioCopia ON Soporte.UsuarioResponsable=UsuarioCopia.Usuario<BR>  LEFT OUTER JOIN Prov ON Soporte.Proveedor=Prov.Proveedor<BR>  LEFT OUTER JOIN Personal ON Soporte.Personal=Personal.Personal<BR>  LEFT OUTER JOIN Espacio ON Soporte.Espacio=Espacio.Espacio<BR>  LEFT OUTER JOIN UEN ON Soporte.UEN=UEN.UEN<BR>  LEFT OUTER JOIN Agente AgenteRef ON Soporte.Fuente=AgenteRef.Agente<BR>  LEFT OUTER JOIN VIN ON Soporte.VIN=VIN.VIN<BR>  LEFT OUTER JOIN Rep ON Soporte.Reporte=Rep.Reporte<BR>  LEFT OUTER JOIN LC ON<CONTINUA>
+SQL007=<CONTINUA> Soporte.LineaCredito=LC.LineaCredito<BR>  LEFT OUTER JOIN Art ON Soporte.Articulo=Art.Articulo<BR>  LEFT OUTER JOIN ActivoF ON Soporte.Empresa=ActivoF.Empresa AND Soporte.Articulo=ActivoF.Articulo AND Soporte.SerieLote=ActivoF.Serie
+
+
+;***** Se modifico el tamaño del campo *****
+[Soporte.vis/Soporte.SerieLote]
+Tamano=50
+
+
+;***** Nuevo Campo Agregado *****
+[Soporte.vis/Soporte.Destino]
+Clave=Soporte.Destino
+Nombre=Salida Servicio
+Visible=S
+TamanoValidacion=50
+Tamano=50
+LigaTabla=Soporte
+LigaCampo=Destino
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=Destino
+
+
+;*****************************************************************************************
+;************************* Termina Desarrollo I04 ****************************************
+
+
+;***** Nuevo campo agregado ******
+[Soporte.vis/Soporte.SoporteSucursal]
+Clave=Soporte.SoporteSucursal
+Nombre=Sucursal
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+ValorPorOmision=Sucursal
+AyudaEnCaptura=Vista
+AyudaForma=SucursalLista
+AyudaVista=Sucursal
+AyudaCampo=Sucursal.Sucursal
+ValidacionConCondiciones=S
+ValidacionCondicion=SQL(<T>Select count(Sucursal) from Sucursal where Sucursal =:nSuc<T>,Soporte.SoporteSucursal)>0
+ValidacionMensajeError=<T>Seleccione una sucursal correcta<T>
+LigaTabla=Soporte
+LigaCampo=SoporteSucursal
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=SoporteSucursal
+
+
+;**** Se modifico la condición de despliegue, por que aparecian en el modulo de servicios internos****
+[Soporte.vis/Cte.Nombre]
+CondicionDespliege=Info.SubModuloST noen (<T>STPRO<T>, <T>STPER<T>,  <T>SI<T>)
+
+
+
+;**** Se modifico la condición de despliegue, por que aparecian en el modulo de servicios internos****
+[Soporte.vis/CteEnviarA.Nombre]
+CondicionDespliege=Info.SubModuloST noen (<T>STPRO<T>, <T>STPER<T>,  <T>SI<T>)
+
+
+
+;**** Se modifico la condición de despliegue****
+[Soporte.vis/Prov.Nombre]
+CondicionDespliege=(Info.SubModuloST En(<T>STPRO<T>, <T>PROY<T>, <T>SI<T>)) o (Soporte.Mov En(<T>Reporte Servicio<T>,<T>Queja Servicio<T>))
+
+

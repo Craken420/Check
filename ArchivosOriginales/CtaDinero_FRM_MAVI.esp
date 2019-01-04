@@ -1,0 +1,24 @@
+
+; **** Archivo creado por Mavi
+;26/dic/2011	Victor Enrique Murillo Torres
+; **** Modificacion: Integracion de accion modificada CtaDineroCat, CtaDineroGrupo, CtaDineroFam por accesos por perfiles, 26/dic/2011 Victor Enrique Murillo Torres, para desarrollo DM0169 Modificaciones Especiales dentro del paquete DM0169_27122011. JR 27-Dic-2011. ****
+
+
+[CtaDinero.frm/Acciones.CtaDineroCat]
+Activo=
+ActivoCondicion=SQL(<T>select case when (select Acceso From Usuario Where Usuario=<T>+comillas(usuario)+<T>)<BR>In (Select Nombre From TablaStD Where TablaSt = <T>+comillas(<T>PERFILES MAESTROS ART/AGTE<T>)+<T>)<BR>then 1 else 0 End<T>)=1
+
+[CtaDinero.frm/Acciones.CtaDineroGrupo]
+Activo=
+ActivoCondicion=SQL(<T>select case when (select Acceso From Usuario Where Usuario=<T>+comillas(usuario)+<T>)<BR>In (Select Nombre From TablaStD Where TablaSt = <T>+comillas(<T>PERFILES MAESTROS ART/AGTE<T>)+<T>)<BR>then 1 else 0 End<T>)=1
+
+[CtaDinero.frm/Acciones.CtaDineroFam]
+Activo=
+ActivoCondicion=SQL(<T>select case when (select Acceso From Usuario Where Usuario=<T>+comillas(usuario)+<T>)<BR>In (Select Nombre From TablaStD Where TablaSt = <T>+comillas(<T>PERFILES MAESTROS ART/AGTE<T>)+<T>)<BR>then 1 else 0 End<T>)=1
+
+[CtaDinero.frm/Forma]
+ExpresionesAlMostrar=asigna(Mavi.DM0169BanderaContabilidad,1)
+
+[CtaDinero.frm/Acciones.Guardar]
+Antes=S
+AntesExpresiones=si Mavi.DM0169BanderaContabilidad=0<BR>Entonces<BR>    informacion(<T>El campo CLABE debe ser de 18 caracteres, la institucion y sucursal bancaria deben ser validas<T>)<BR>    abortarOperacion<BR>Fin<BR>si Mavi.DM0169BanderaSucBanco=0 entonces<BR>    Error(<T>el campo institucion no es correcto<T>)<BR>    abortarOperacion<BR>fin

@@ -1,0 +1,352 @@
+;Ultima modificacion: 22-Jul-2008
+;Responsable: Arly Rubio  
+;Modifico: Se agrego un filtro general en la lista de movimientos para que no aparecieran aquellos que contienen articulos de la familia financiera.
+
+
+
+;**** Integracion de Forma para desarrollo DM0159 PROCESAR EN LOTE dentro del paquete DM0159_22112011. Tomas Echeverria Garcia 11 Nov 2011: se realiza una asignacion a la variable "Mavi.DM0159ProcesarEnLoteMov" y se agrega en la lista de acciones una nueva. JR 22-Nov-2011. ****
+; **** Modificacion de listaCarpetas con nueva carpeta ListaSE dentro del paquete DM0116_05092012.JR 05-Sép-2012. ****
+[ProcesarVenta.frm/Forma]
+;ListaCarpetas=Lista<BR>Variables
+PosicionInicialArriba=137
+ListaAcciones=Cerrar<BR>Seleccionar Todo<BR>MovPropiedades<BR>Mostrar Campos<BR>Nota<BR>GenerarCFD<BR>Ref
+PosicionSec1=37
+VentanaEstadoInicial=Normal
+ExpresionesAlMostrar=Asigna(Mavi.DM0159ProcesarEnLoteMov,<T>(Todo)<T>)
+ListaCarpetas=Lista<BR>ListaSE<BR>Variables
+
+
+
+;**** Se modifico el parametro "Expresion" para que validara que las facturas que se generan corresponden con la UEN del movimiento ****
+; **** Modificacion de Expresion para el desarrollo DM0159 PROCESAR EN LOTE dentro del paquete DM0159_22112011. Modificacion de mensaje uen Tomas Echeverria Garcia 14 Nov 2011. JR 22-Nov-2011 ****
+; **** Modificacion de Expresion para la variable que almacena el movimiento. Tomas Echeverria Garcia 23 Nov 2011. Para desarrollo DM0159 PROCESAR EN LOTE dentro del paquete DM0159_30112011. JR 30-Nov.2011. ****
+[ProcesarVenta.frm/Acciones.Facturar]
+Antes=S
+AntesExpresiones=asigna(MAVI.DM0268ValidaMensajeError,SQL(<T>SELECT dbo.FN_DM0281PermiteEjecutar(:tMov)<T>, <T>FacturacionLote<T>))<BR>si  MAVI.DM0268ValidaMensajeError=<T>Permite<T><BR>entonces<BR>  verdadero<BR>sino<BR>  Informacion(MAVI.DM0268ValidaMensajeError)<BR>  Abortaroperacion<BR>fin
+Expresion=Si<BR>  Forma(<T>EspecificarMovFactura<T>) y (MovTipo(<T>VTAS<T>, Mavi.DM0159MovFactura) = VTAS.F)<BR>Entonces<BR>  RegistrarSeleccionID<BR> EjecutarSQL(<T>spEsModVentas :nid<T>, EstacionTrabajo)<BR>  Si(SQL(<T>spValidarUEN_MAVI :nEstacion, :tMov<T>, EstacionTrabajo, Mavi.DM0159MovFactura) = 0,Si(Precaucion(<T>UEN ó Artículo Incompatible con el Movimiento<T>, BotonCancelar)=BotonCancelar, AbortarOperacion))<BR>  ProcesarSQL(<T>spAfectarLoteLista :nEstacion, :tEmpresa, :tModulo, :tAccion, :tBase, :tGenerarMov, :tUsuario, :tFactLote<T>, EstacionTrabajo, Empresa, <T>VTAS<T>, <T>GENERAR<T>, <T>TODO<T>, Mavi.DM0159MovFactura, Usuario, Info.FacturarLote)<BR>  EjecutarSQL(<T>SP_DM0169ActualizaBanderaVentaGlobal :nEstacion , :tEmpresa<T>, EstacionTrabajo,Empresa)<BR>  Forma(<T>ListaIDOk<T>)<BR>  I<CONTINUA>
+Expresion002=<CONTINUA>nformacion(SQL(<T>spMAVIMsjProceso :nEstacion<T>, EstacionTrabajo ))<BR>Fin
+
+;**** Se modificó el parametro "ListaCaptura" para que apareciera la columna UEN por default ****
+;****Se agregó el filtro UEN **** 
+;****Se agrego un filtro general para que no muestre los pedidos que contienen articulos de la familia financiera ***
+; **** Modificacion de propiedades de filtro para desarrollo dentro del paquete . Tomas Echeverria Garcia 11 NOv 2011. se modifica la carpeta LIsta, se cambia de posiscion por que se agrega una nueva carpeta. JR 22-Nov-2011. ****
+; **** Modificacin de ListaAcciones dentro del paquete DM0116_05092012.JR 05-Sép-2012. ****
+[ProcesarVenta.frm/Lista]
+ListaEnCaptura=NombreEstatus<BR>e.UEN<BR>FechaEmision<BR>e.Cliente<BR>Nombre<BR>Pendiente<BR>Reservado<BR>Ordenado<BR>Importe
+FiltroUENs=S
+FiltroUENsCampo=e.UEN
+;FiltroGeneral=dbo.fnContieneFinancieros(e.ID) = 0
+Zona=B1
+FiltroTodoNombre=(Todo)
+FiltroAutoCampo=
+FiltroAutoValidar=
+FiltroAutoOrden=
+FiltroAplicaEn=
+ListaAcciones=LocalPropiedades<BR>Localizar<BR>LocalizarSiguiente<BR>SeleccionarTodo<BR>QuitarSeleccion<BR>Afectar<BR>Concluir<BR>Reservar<BR>Desreservar<BR>ImprimirSeleccion<BR>Facturar<BR>FacturacionRapida<BR>FacturacionRapidaAgrupada<BR>CancelarMov<BR>CancelarPendiente<BR>VentaPerdida<BR>Imprimir<BR>Preliminar<BR>Enviar a Excel<BR>LocalCampos
+PestanaOtroNombre=S
+Pestana=S
+PestanaNombre=Pedidos Pendientes Sin Facturar
+
+
+;**** Nueva columna agregada****
+[ProcesarVenta.frm/Lista.e.UEN]
+Carpeta=Lista
+Clave=e.UEN
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+;**** Integracion de nueva carpeta variables para desarrollo DM0159 PROCESAR EN LOTE dentro del paquete DM0159_22112011. JR 22-Nov-2011. ****
+[ProcesarVenta.frm/Variables]
+Estilo=Ficha
+Clave=Variables
+AlineacionAutomatica=S
+AcomodarTexto=S
+MostrarConteoRegistros=S
+Zona=A1
+Vista=(Variables)
+Fuente={Tahoma, 8, Negro, []}
+CampoColorLetras=Negro
+CampoColorFondo=Blanco
+ListaEnCaptura=Mavi.DM0159ProcesarEnLoteMov
+CarpetaVisible=S
+FichaEspacioEntreLineas=40
+FichaEspacioNombres=100
+FichaColorFondo=Negro
+PermiteEditar=S
+FichaNombres=Izquierda
+FichaAlineacion=Centrado
+
+;**** Integracion de campo de carpeta variables para desarrollo DM0159 PROCESAR EN LOTE dentro del paquete DM0159_22112011. JR 22-Nov-2011. ****
+[ProcesarVenta.frm/Variables.Mavi.DM0159ProcesarEnLoteMov]
+Carpeta=Variables
+Clave=Mavi.DM0159ProcesarEnLoteMov
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+;**** Integracion de accion GenerarCFD para desarrollo DM0159 PROCESAR EN LOTE dentro del paquete DM0159_22112011. JR 22-Nov-2011. ****
+[ProcesarVenta.frm/Acciones.GenerarCFD]
+Nombre=GenerarCFD
+Boton=58
+NombreDesplegar=GenerarCFD
+EnBarraHerramientas=S
+TipoAccion=Formas
+ClaveAccion=VentaCFD
+Activo=S
+ConCondicion=S
+VisibleCondicion=Empresa.CFD
+NombreEnBoton=S
+RefrescarDespues=S
+EspacioPrevio=S
+EjecucionCondicion=Empresa.CFD
+
+
+;**** Integracion de accion Ref para desarrollo DM0159 PROCESAR EN LOTE dentro del paquete DM0159_22112011. JR 22-Nov-2011. ****
+[ProcesarVenta.frm/Acciones.Ref.Asi]
+Nombre=Asi
+Boton=0
+TipoAccion=Controles Captura
+ClaveAccion=Variables Asignar
+Activo=S
+Visible=S
+
+[ProcesarVenta.frm/Acciones.Ref.R]
+Nombre=R
+Boton=0
+TipoAccion=Controles Captura
+ClaveAccion=Actualizar Forma
+Activo=S
+Visible=S
+
+[ProcesarVenta.frm/Acciones.Ref]
+Nombre=Ref
+Boton=82
+NombreDesplegar=Refrescar
+Multiple=S
+EnBarraHerramientas=S
+ListaAccionesMultiples=Asi<BR>R
+Activo=S
+Visible=S
+NombreEnBoton=S
+EspacioPrevio=S
+
+
+; **** Integracion de nueva carpeta ListaSE dentro del paquete DM0116_05092012.JR 05-Sép-2012. ****
+[ProcesarVenta.frm/ListaSE]
+Estilo=Iconos
+Clave=ListaSE
+AlineacionAutomatica=S
+AcomodarTexto=S
+MostrarConteoRegistros=S
+;Zona=A1
+Vista=VentaPSE
+Fuente={MS Sans Serif, 8, Negro, []}
+CampoColorLetras=Negro
+CampoColorFondo=Blanco
+;ListaEnCaptura=NombreEstatus<BR>FechaEmision<BR>e.Cliente<BR>Nombre<BR>Pendiente<BR>Reservado<BR>Ordenado<BR>Importe
+CarpetaVisible=S
+PestanaOtroNombre=S
+BusquedaRapidaControles=S
+FiltroCambiarPeriodo=S
+FiltroBuscarEn=S
+FiltroFechasCambiar=S
+FiltroListaEstatus=SINAFECTAR<BR>PENDIENTE<BR>CONCLUIDO<BR>CANCELADO
+FiltroEstatusDefault=PENDIENTE
+FiltroUsuarioDefault=(Usuario)
+FiltroFechasNormal=S
+FiltroMonedasCampo=Venta.Moneda
+BusquedaRapida=S
+BusquedaInicializar=S
+BusquedaRespetarControles=S
+BusquedaAncho=20
+BusquedaEnLinea=S
+IconosCampo=(sin Icono)
+IconosEstilo=Detalles
+IconosAlineacion=de Arriba hacia Abajo
+IconosSubTitulo=<T>Movimiento<T>
+ElementosPorPagina=200
+BusquedaRespetarFiltros=S
+BusquedaRespetarUsuario=S
+FiltroFechasCampo=FechaEmision
+FiltroFechasDefault=(Todo)
+FiltroFechas=S
+FiltroMovs=S
+FiltroMovsTodos=S
+FiltroModificarEstatus=S
+FiltroMovDefault=(Todos)
+FiltroSituacionTodo=S
+IconosConSenales=S
+FiltroEstatus=S
+FiltroUsuarios=S
+FiltroSucursales=S
+Filtros=S
+FiltroPredefinido=S
+FiltroGrupo1=(Validaciones Memoria)
+FiltroValida1=Alm
+FiltroNullNombre=(sin clasificar)
+FiltroEnOrden=S
+;FiltroTodoNombre=Todo
+FiltroAncho=20
+FiltroRespetar=S
+FiltroTipo=Múltiple (por Grupos)
+;FiltroAutoCampo=(Validaciones Memoria)
+;FiltroAutoValidar=Alm
+;FiltroAutoOrden=Alm
+FiltroTodo=S
+;FiltroAplicaEn=e.Almacen
+FiltroAplicaEn1=e.Almacen
+FiltroSituacion=S
+ListaEnCaptura=NombreEstatus<BR>e.UEN<BR>FechaEmision<BR>e.Cliente<BR>Nombre<BR>Pendiente<BR>Reservado<BR>Ordenado<BR>Importe
+FiltroUENs=S
+FiltroUENsCampo=e.UEN
+Zona=B1
+FiltroTodoNombre=(Todo)
+Pestana=S
+PestanaNombre=Sin Existencias
+IconosNombre=VentaPSE:Mov+<T> <T>+VentaPSE:MovID
+
+[ProcesarVenta.frm/ListaSE.Columnas]
+0=127
+1=76
+2=81
+3=81
+4=117
+5=64
+6=64
+7=60
+8=87
+9=170
+10=59
+11=76
+12=64
+13=83
+14=71
+15=56
+16=97
+17=92
+18=24
+19=51
+20=56
+21=56
+22=56
+23=56
+24=72
+25=81
+26=81
+27=81
+28=81
+29=64
+30=73
+31=73
+32=73
+33=73
+34=47
+35=41
+
+[ProcesarVenta.frm/ListaSE.NombreEstatus]
+Carpeta=ListaSE
+Clave=NombreEstatus
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=30
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[ProcesarVenta.frm/ListaSE.FechaEmision]
+Carpeta=ListaSE
+Clave=FechaEmision
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[ProcesarVenta.frm/ListaSE.Nombre]
+Carpeta=ListaSE
+Clave=Nombre
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=100
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[ProcesarVenta.frm/ListaSE.Importe]
+Carpeta=ListaSE
+Clave=Importe
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+Totalizador=0
+Tamano=30
+
+[ProcesarVenta.frm/ListaSE.Pendiente]
+Carpeta=ListaSE
+Clave=Pendiente
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[ProcesarVenta.frm/ListaSE.Reservado]
+Carpeta=ListaSE
+Clave=Reservado
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+Tamano=30
+
+[ProcesarVenta.frm/ListaSE.Ordenado]
+Carpeta=ListaSE
+Clave=Ordenado
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+Tamano=30
+
+[ProcesarVenta.frm/ListaSE.e.Cliente]
+Carpeta=ListaSE
+Clave=e.Cliente
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=10
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[ProcesarVenta.frm/ListaSE.e.UEN]
+Carpeta=ListaSE
+Clave=e.UEN
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+

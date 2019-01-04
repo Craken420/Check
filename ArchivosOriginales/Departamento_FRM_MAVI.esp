@@ -1,0 +1,28 @@
+;Modifico: ARC
+;UltimaModificacion: 28-Feb-09
+
+
+
+;**** Nuevo campo agregado : ComisionChoferesMAVI ****
+[Departamento.frm/Detalle]
+ListaEnCaptura=Departamento.Departamento<BR>Departamento.Descripcion<BR>Departamento.Localidad<BR>Departamento.CtaDinero<BR>CtaDinero.Descripcion<BR>Departamento.Sucursal<BR>Sucursal.Nombre<BR>Departamento.ComisionChoferesMAVI
+
+
+
+
+
+
+
+
+;**** Nuevo campo agregado ARC 28-02-09****
+[Departamento.frm/Detalle.Departamento.ComisionChoferesMAVI]
+Carpeta=Detalle
+Clave=Departamento.ComisionChoferesMAVI
+Editar=S
+LineaNueva=S
+ValidaNombre=N
+Tamano=20
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+EspacioPrevio=S

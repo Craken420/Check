@@ -1,0 +1,91 @@
+
+
+
+;**** Nuevo campo agregado: IDCopiaMAVI ****
+;**** Nuevo campo calculado: MovDevMAVI ****
+;Je.Deltoro
+;30-12-2011
+;Se agregan validaciones para ocultar los costos, Integracion paquete DM0135_09022012 BVF 09022012
+; **** Modificacion de SQL, se cambia el campo Configurcion por el campo Acceso Para los filtros de los usuarios, J del Toro 11-02-2012, para desarrollo DM0135 Informacion Del Articulo dentro del paquete DM0135_13022012. JR 13-Feb-2012. ****
+
+[CompraD.vis/Vista]
+ListaCampos=CompraD.ID<BR>CompraD.Renglon<BR>CompraD.RenglonSub<BR>CompraD.RenglonID<BR>CompraD.RenglonTipo<BR>CompraD.Almacen<BR>CompraD.FechaRequerida<BR>CompraD.FechaOrdenar<BR>CompraD.FechaEntrega<BR>CompraD.Codigo<BR>CompraD.Articulo<BR>CompraD.SubCuenta<BR>CompraD.Cantidad<BR>CompraD.Costo<BR>CompraD.CostoInv<BR>CompraD.Impuesto1<BR>CompraD.Impuesto2<BR>CompraD.Impuesto3<BR>CompraD.Descuento<BR>CompraD.DescuentoTipo<BR>CompraD.DescuentoLinea<BR>CompraD.DescuentoImporte<BR>CompraD.DescripcionExtra<BR>CompraD.ReferenciaExtra<BR>CompraD.DestinoTipo<BR>CompraD.Destino<BR>CompraD.DestinoID<BR>CompraD.Cliente<BR>CompraD.Aplica<BR>CompraD.AplicaID<BR>CompraD.CantidadPendiente<BR>CompraD.CantidadCancelada<BR>CompraD.CantidadInventario<BR>CompraD.CantidadA<BR>CompraD.ContUso<BR>CompraD.Unidad<BR>CompraD.<CONTINUA>
+ListaCampos002=<CONTINUA>Factor<BR>CompraD.ServicioArticulo<BR>CompraD.ServicioSerie<BR>CompraD.Sucursal<BR>CompraD.SucursalOrigen<BR>CompraD.Paquete<BR>CompraD.ImportacionProveedor<BR>CompraD.ImportacionReferencia<BR>CompraD.Retencion1<BR>CompraD.Retencion2<BR>CompraD.Retencion3<BR>CompraD.FechaCaducidad<BR>CompraD.ProveedorArt<BR>CompraD.ProveedorArtCosto<BR>CompraD.Posicion<BR>CompraD.Pais<BR>CompraD.TratadoComercial<BR>CompraD.ProgramaSectorial<BR>CompraD.ValorAduana<BR>CompraD.ID1<BR>CompraD.ID2<BR>CompraD.FormaPago<BR>CompraD.ImportacionImpuesto1<BR>CompraD.ImportacionImpuesto2<BR>CompraD.EsEstadistica<BR>CompraD.PresupuestoEsp<BR>CompraD.IDCopiaMAVI<BR>CompraD.AreaMotora<BR>AlmPos.Tipo<BR>CB.Codigo<BR>CB.TipoCuenta<BR>CB.Cuenta<BR>CB.SubCuenta<BR>Art.Articulo<BR>Art.Rama<BR>Art.Descripcion1<BR>Art.Grupo<BR>Art.Categ<CONTINUA>
+ListaCampos003=<CONTINUA>oria<BR>Art.Familia<BR>Art.Fabricante<BR>Art.ClaveFabricante<BR>Art.Impuesto1<BR>Art.Impuesto2<BR>Art.Impuesto3<BR>Art.Unidad<BR>Art.UnidadCompra<BR>Art.Tipo<BR>Art.TipoOpcion<BR>Art.DescuentoCompra<BR>Art.PrecioLista<BR>Art.Arancel<BR>Art.Mensaje<BR>Art.TipoCompra<BR>Art.Proveedor<BR>Art.Retencion1<BR>Art.Retencion2<BR>Art.Retencion3<BR>Art.OrigenPais<BR>AlmDetalle.Almacen<BR>AlmDetalle.Estatus<BR>AlmDetalle.Tipo<BR>Cte.Cliente<BR>Cte.Nombre<BR>Cte.Estatus<BR>Cte.Mensaje<BR>CentroCostos.CentroCostos<BR>ProvImportacion.Proveedor<BR>ProvImportacion.Nombre<BR>ProvArt.Proveedor<BR>ProvArt.Nombre<BR>Descuento.Porcentaje
+;SQL=Declare @Us INT,@Co INT<BR><BR>Set @Co=(SELECT Costos FROM dbo.Usuario WHERE Usuario={Comillas(Usuario)})<BR>Set @Us=(SELECT COUNT(Configuracion) FROM dbo.TablaStD St <BR>         INNER JOIN dbo.Usuario U ON U.Configuracion=St.Nombre <BR>         WHERE TablaSt=<T>CFG PERFIL COSTOS VTAS<T> AND U.Usuario={Comillas(Usuario)})<BR><BR>SELECT<BR>  CompraD.ID,<BR>  CompraD.Renglon,<BR>  CompraD.RenglonSub,<BR>  CompraD.RenglonID,<BR>  CompraD.RenglonTipo,<BR>  CompraD.Almacen,<BR>  CompraD.FechaRequerida,<BR>  CompraD.FechaOrdenar,<BR>  CompraD.FechaEntrega,<BR>  CompraD.Codigo,<BR>  CompraD.Articulo,<BR>  CompraD.SubCuenta,<BR>  CompraD.Cantidad,<BR>  Costo=Case When @Us=1 AND @Co=1 THEN CompraD.Costo<BR>             When @Co=1 AND Art.Categoria Not In (<T>Venta<T>)<BR>                  Then Com<CONTINUA>
+;SQL002=<CONTINUA>praD.Costo<BR>             Else <T>0.00<T> END,<BR>  CostoInv=Case When @Us=1 AND @Co=1 THEN CompraD.CostoInv<BR>             When @Co=1 AND Art.Categoria Not In (<T>Venta<T>)<BR>                  Then CompraD.CostoInv<BR>             Else <T>0.00<T> END,<BR>  CompraD.Impuesto1,<BR>  CompraD.Impuesto2,<BR>  CompraD.Impuesto3,<BR>  CompraD.Descuento,<BR>  CompraD.DescuentoTipo,<BR>  CompraD.DescuentoLinea,<BR>  CompraD.DescuentoImporte,<BR>  CompraD.DescripcionExtra,<BR>  CompraD.ReferenciaExtra,<BR>  CompraD.DestinoTipo,<BR>  CompraD.Destino,<BR>  CompraD.DestinoID,<BR>  CompraD.Cliente,<BR>  CompraD.Aplica,<BR>  CompraD.AplicaID,<BR>  CompraD.CantidadPendiente,<BR>  CompraD.CantidadCancelada,<BR>  CompraD.CantidadInventario,<BR>  CompraD.CantidadA,<BR>  CompraD.ContUso,<BR>  CompraD.Unida<CONTINUA>
+;SQL003=<CONTINUA>d,<BR>  CompraD.Factor,<BR>  CompraD.ServicioArticulo,<BR>  CompraD.ServicioSerie,<BR>  CompraD.Sucursal,<BR>  CompraD.SucursalOrigen,<BR>  CompraD.Paquete,<BR>  CompraD.ImportacionProveedor,<BR>  CompraD.ImportacionReferencia,<BR>  CompraD.Retencion1,<BR>  CompraD.Retencion2,<BR>  CompraD.Retencion3,<BR>  CompraD.FechaCaducidad,<BR>  CompraD.ProveedorArt,<BR>  CompraD.ProveedorArtCosto,<BR>  CompraD.Posicion,<BR>  CompraD.Pais,<BR>  CompraD.TratadoComercial,<BR>  CompraD.ProgramaSectorial,<BR>  CompraD.ValorAduana,<BR>  CompraD.ID1,<BR>  CompraD.ID2,<BR>  CompraD.FormaPago,<BR>  CompraD.ImportacionImpuesto1,<BR>  CompraD.ImportacionImpuesto2,<BR>  CompraD.EsEstadistica,<BR>  CompraD.PresupuestoEsp,<BR>  CompraD.IDCopiaMAVI,<BR>  AlmPos.Tipo,<BR>  CB.Codigo,<BR>  CB.TipoCuenta,<BR>  CB.Cue<CONTINUA>
+;SQL004=<CONTINUA>nta,<BR>  CB.SubCuenta,<BR>  Art.Articulo,<BR>  Art.Rama,<BR>  Art.Descripcion1,<BR>  Art.Grupo,<BR>  Art.Categoria,<BR>  Art.Familia,<BR>  Art.Fabricante,<BR>  Art.ClaveFabricante,<BR>  Art.Impuesto1,<BR>  Art.Impuesto2,<BR>  Art.Impuesto3,<BR>  Art.Unidad,<BR>  Art.UnidadCompra,<BR>  Art.Tipo,<BR>  Art.TipoOpcion,<BR>  Art.DescuentoCompra,<BR>  Art.PrecioLista,<BR>  Art.Arancel,<BR>  Art.Mensaje,<BR>  Art.TipoCompra,<BR>  Art.Proveedor,<BR>  Art.Retencion1,<BR>  Art.Retencion2,<BR>  Art.Retencion3,<BR>  Art.OrigenPais,<BR>  AlmDetalle.Almacen,<BR>  AlmDetalle.Estatus,<BR>  AlmDetalle.Tipo,<BR>  Cte.Cliente,<BR>  Cte.Nombre,<BR>  Cte.Estatus,<BR>  Cte.Mensaje,<BR>  CentroCostos.CentroCostos,<BR>  ProvImportacion.Proveedor,<BR>  ProvImportacion.Nombre,<BR>  ProvArt.Proveedor,<BR>  ProvArt.<CONTINUA>
+;SQL005=<CONTINUA>Nombre,<BR>  Descuento.Porcentaje<BR><BR>FROM<BR>  CompraD<BR>  LEFT OUTER JOIN CB ON CompraD.Codigo=CB.Codigo AND {Comillas(<T>Articulos<T>)}=CB.TipoCuenta<BR>  JOIN Art ON CompraD.Articulo=Art.Articulo<BR>  LEFT OUTER JOIN Alm AlmDetalle ON CompraD.Almacen=AlmDetalle.Almacen<BR>  LEFT OUTER JOIN CentroCostos ON CompraD.ContUso=CentroCostos.CentroCostos<BR>  LEFT OUTER JOIN Cte ON CompraD.Cliente=Cte.Cliente<BR>  LEFT OUTER JOIN Prov ProvImportacion ON CompraD.ImportacionProveedor=ProvImportacion.Proveedor<BR>  LEFT OUTER JOIN Prov ProvArt ON CompraD.ProveedorArt=ProvArt.Proveedor<BR>  LEFT OUTER JOIN Descuento ON CompraD.Descuento=Descuento.Descuento<BR>  LEFT OUTER JOIN AlmPos ON CompraD.Almacen=AlmPos.Almacen AND CompraD.Posicion=AlmPos.Posicion
+ListaCalculados=AplicaNombre<BR>DestinoNombre<BR>CantidadNeta<BR>CantidadInvNeta<BR>GastosPct<BR>CostoTotal<BR>DescLinea<BR>Importe<BR>DescGlobal<BR>SubTotal<BR>SubImpuesto2<BR>SubImpuesto3<BR>SubImpuesto1<BR>Impuesto<BR>ImporteTotal<BR>ClaveProveedor<BR>ClaveIdioma<BR>OpcionDesc<BR>SubClaveFabricante<BR>Ejercido<BR>Pendiente<BR>Disponible<BR>MovDevMAVI<BR>AreamotDesc
+
+SQL=Declare @Us INT,@Co INT<BR><BR>Set @Co=(SELECT Costos FROM dbo.Usuario WHERE Usuario={Comillas(Usuario)})<BR>Set @Us=(SELECT COUNT(Acceso) FROM dbo.TablaStD St <BR>         INNER JOIN dbo.Usuario U ON U.Acceso=St.Nombre <BR>         WHERE TablaSt=<T>CFG PERFIL COSTOS VTAS<T> AND U.Usuario={Comillas(Usuario)})<BR><BR>SELECT<BR>  CompraD.ID,<BR>  CompraD.Renglon,<BR>  CompraD.RenglonSub,<BR>  CompraD.RenglonID,<BR>  CompraD.RenglonTipo,<BR>  CompraD.Almacen,<BR>  CompraD.FechaRequerida,<BR>  CompraD.FechaOrdenar,<BR>  CompraD.FechaEntrega,<BR>  CompraD.Codigo,<BR>  CompraD.Articulo,<BR>  CompraD.SubCuenta,<BR>  CompraD.Cantidad,<BR>  Costo=Case When @Us=1 AND @Co=1 THEN CompraD.Costo<BR>             When @Co=1 AND Art.Categoria Not In (<T>Venta<T>)<BR>                  Then Com<CONTINUA>
+SQL002=<CONTINUA>praD.Costo<BR>             Else <T>0.00<T> END,<BR>  CostoInv=Case When @Us=1 AND @Co=1 THEN CompraD.CostoInv<BR>             When @Co=1 AND Art.Categoria Not In (<T>Venta<T>)<BR>                  Then CompraD.CostoInv<BR>             Else <T>0.00<T> END,<BR>  CompraD.Impuesto1,<BR>  CompraD.Impuesto2,<BR>  CompraD.Impuesto3,<BR>  CompraD.Descuento,<BR>  CompraD.DescuentoTipo,<BR>  CompraD.DescuentoLinea,<BR>  CompraD.DescuentoImporte,<BR>  CompraD.DescripcionExtra,<BR>  CompraD.ReferenciaExtra,<BR>  CompraD.DestinoTipo,<BR>  CompraD.Destino,<BR>  CompraD.DestinoID,<BR>  CompraD.Cliente,<BR>  CompraD.Aplica,<BR>  CompraD.AplicaID,<BR>  CompraD.CantidadPendiente,<BR>  CompraD.CantidadCancelada,<BR>  CompraD.CantidadInventario,<BR>  CompraD.CantidadA,<BR>  CompraD.ContUso,<BR>  CompraD.Unida<CONTINUA>
+SQL003=<CONTINUA>d,<BR>  CompraD.Factor,<BR>  CompraD.ServicioArticulo,<BR>  CompraD.ServicioSerie,<BR>  CompraD.Sucursal,<BR>  CompraD.SucursalOrigen,<BR>  CompraD.Paquete,<BR>  CompraD.ImportacionProveedor,<BR>  CompraD.ImportacionReferencia,<BR>  CompraD.Retencion1,<BR>  CompraD.Retencion2,<BR>  CompraD.Retencion3,<BR>  CompraD.FechaCaducidad,<BR>  CompraD.ProveedorArt,<BR>  CompraD.ProveedorArtCosto,<BR>  CompraD.Posicion,<BR>  CompraD.Pais,<BR>  CompraD.TratadoComercial,<BR>  CompraD.ProgramaSectorial,<BR>  CompraD.ValorAduana,<BR>  CompraD.ID1,<BR>  CompraD.ID2,<BR>  CompraD.FormaPago,<BR>  CompraD.ImportacionImpuesto1,<BR>  CompraD.ImportacionImpuesto2,<BR>  CompraD.EsEstadistica,<BR>  CompraD.PresupuestoEsp,<BR>  CompraD.IDCopiaMAVI,<BR>CompraD.AreaMotora,<BR>  AlmPos.Tipo,<BR>  CB.Codigo,<BR>  CB.TipoCuenta,<BR>  CB.Cue<CONTINUA>
+SQL004=<CONTINUA>nta,<BR>  CB.SubCuenta,<BR>  Art.Articulo,<BR>  Art.Rama,<BR>  Art.Descripcion1,<BR>  Art.Grupo,<BR>  Art.Categoria,<BR>  Art.Familia,<BR>  Art.Fabricante,<BR>  Art.ClaveFabricante,<BR>  Art.Impuesto1,<BR>  Art.Impuesto2,<BR>  Art.Impuesto3,<BR>  Art.Unidad,<BR>  Art.UnidadCompra,<BR>  Art.Tipo,<BR>  Art.TipoOpcion,<BR>  Art.DescuentoCompra,<BR>  Art.PrecioLista,<BR>  Art.Arancel,<BR>  Art.Mensaje,<BR>  Art.TipoCompra,<BR>  Art.Proveedor,<BR>  Art.Retencion1,<BR>  Art.Retencion2,<BR>  Art.Retencion3,<BR>  Art.OrigenPais,<BR>  AlmDetalle.Almacen,<BR>  AlmDetalle.Estatus,<BR>  AlmDetalle.Tipo,<BR>  Cte.Cliente,<BR>  Cte.Nombre,<BR>  Cte.Estatus,<BR>  Cte.Mensaje,<BR>  CentroCostos.CentroCostos,<BR>  ProvImportacion.Proveedor,<BR>  ProvImportacion.Nombre,<BR>  ProvArt.Proveedor,<BR>  ProvArt.<CONTINUA>
+SQL005=<CONTINUA>Nombre,<BR>  Descuento.Porcentaje<BR><BR>FROM<BR>  CompraD<BR>  LEFT OUTER JOIN CB ON CompraD.Codigo=CB.Codigo AND {Comillas(<T>Articulos<T>)}=CB.TipoCuenta<BR>  JOIN Art ON CompraD.Articulo=Art.Articulo<BR>  LEFT OUTER JOIN Alm AlmDetalle ON CompraD.Almacen=AlmDetalle.Almacen<BR>  LEFT OUTER JOIN CentroCostos ON CompraD.ContUso=CentroCostos.CentroCostos<BR>  LEFT OUTER JOIN Cte ON CompraD.Cliente=Cte.Cliente<BR>  LEFT OUTER JOIN Prov ProvImportacion ON CompraD.ImportacionProveedor=ProvImportacion.Proveedor<BR>  LEFT OUTER JOIN Prov ProvArt ON CompraD.ProveedorArt=ProvArt.Proveedor<BR>  LEFT OUTER JOIN Descuento ON CompraD.Descuento=Descuento.Descuento<BR>  LEFT OUTER JOIN AlmPos ON CompraD.Almacen=AlmPos.Almacen AND CompraD.Posicion=AlmPos.Posicion
+
+
+;**** Ultima modificación:01-Dic-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:Creación
+
+
+
+
+
+;**** Nuevo campo calculado agregado 01-Dic-08 (ARC) ****
+[CompraD.vis/CompraD.IDCopiaMAVI]
+Clave=CompraD.IDCopiaMAVI
+Nombre=IDCopiaMAVI
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+LigaTabla=CompraD
+LigaCampo=IDCopiaMAVI
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=IDCopiaMAVI
+
+
+;**** Nuevo campo calculado agregado 01-Dic-08 (ARC) ****
+[CompraD.vis/MovDevMAVI]
+Clave=MovDevMAVI
+Tamano=41
+TipoCampo=Calculado
+TamanoValidacion=41
+Alineacion=por Omisión
+Nombre=Referencia Devolución
+CondicionDespliege=MovTipoEn(<T>COMS<T>, Compra:Compra.Mov,(COMS.OD, COMS.D))
+Formula=SQL(<T>SELECT (Mov+ :tEspacio +MovID) FROM Compra WHERE ID=:nID<T>, <T> <T>,CompraD.IDCopiaMAVI)
+
+
+
+
+
+;*****Nuevo Campo Agregado desde el TBL
+[CompraD.vis/CompraD.AreaMotora]
+Clave=CompraD.AreaMotora
+LigaTabla=CompraD
+LigaCampo=AreaMotora
+CondicionDespliege=Config.ContUsoCompras
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=100
+ClaveBDE=AreaMotora
+
+
+;Nuevo Campo Calculado 
+
+[CompraD.vis/AreamotDesc]
+Clave=AreamotDesc
+Tamano=20
+TipoCampo=Calculado
+TamanoValidacion=20
+CondicionDespliege=Config.ContUsoCompras
+Alineacion=por Omisión
+Nombre=Area Motora Descripcion
+Formula=SQL(<T>select Nombre from tablastd where tablast=:tTB and Valor=:tVal<T>,<T>AREAS MOTORAS<T>,CompraD.AreaMotora)

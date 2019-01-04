@@ -1,0 +1,37 @@
+;**** modificación:03-Ago-09
+;**** Modifico: Joel García Díaz (Mex)
+;**** Se modifico:Creación desarrollo de Campañas
+
+[CampanaD.frm/Forma]
+PosicionInicialIzquierda=155
+PosicionInicialArriba=33
+
+[CampanaD.frm/Lista]
+ListaEnCaptura.Cambios=Eliminar<TAB>ContactoNombre<BR>Eliminar<TAB>ContactoSubTipo<BR>Insertar<TAB>CampanaD.Nombre<TAB>0<BR>Insertar<TAB>CampanaD.Tipo<TAB>1
+ListaOrden=CampanaD.Nombre<TAB>(Acendente)
+
+[CampanaD.frm/Lista.Columnas]
+Nombre=503
+
+[CampanaD.frm/Acciones.Contacto]
+Expresion=Asigna(Info.RID, CampanaD:CampanaD.RID)<BR>Asigna(Info.PuedeEditar, Info.Estatus noen (EstatusConcluido, EstatusCancelado))<BR>Asigna(Info.Clave, CampanaD:CampanaD.Contacto)<BR>//Asigna(Info.Nombre, CampanaD:ContactoNombre)<BR>Asigna(Info.Nombre, CampanaD:CampanaD.Nombre)<BR>Si<BR>  Caso CampanaD:CampanaD.ContactoTipo<BR>    Es <T>Prospecto<T> Entonces Forma(<T>CampanaProspecto<T>)<BR>    Es <T>Cliente<T>   Entonces Forma(<T>CampanaCte<T>)<BR>  Sino<BR>    Falso<BR>  Fin<BR>Entonces<BR>  Asigna(CampanaD:CampanaD.Calificacion, SQL(<T>spCampanaDCalificacion :nID, :nRID<T>, CampanaD:CampanaD.ID, CampanaD:CampanaD.RID))<BR>  Asigna(CampanaD:CampanaD.Situacion, SQL(<T>spCampanaDSituacion :nID, :nRID<T>, CampanaD:CampanaD.ID, CampanaD:CampanaD.RID))<BR>  Asigna(CampanaD:CampanaD.SituacionFecha, SQL(<T>spCampanaDSituacionFecha :nID, :nRID<T>, CampanaD:CampanaD.ID, CampanaD:CampanaD.RID))<BR>  Asigna(CampanaD:CampanaD.Observaciones, SQL(<T>spCampanaDObservaciones :nID, :nRID<T>, CampanaD:CampanaD.ID, CampanaD:CampanaD.RID))  GuardarCambios<BR>  Forma.ActualizarVista(<T>Tareas<T>)<BR>  Forma.ActualizarVista(<T>Bitacora<T>)<BR>Fin
+
+[CampanaD.frm/Lista.CampanaD.Nombre]
+Carpeta=Lista
+Clave=CampanaD.Nombre
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=100
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[CampanaD.frm/Lista.CampanaD.Tipo]
+Carpeta=Lista
+Clave=CampanaD.Tipo
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+ColorFuente=Negro

@@ -1,0 +1,8 @@
+[ArtGrupo.frm/Forma]
+PosicionInicialArriba=209
+ExpresionesAlCerrar=EJECUTARSQL(<T>SpActualizaPropreArtFamGrupo<T>)
+
+
+
+[ArtGrupo.frm/Lista]
+HojaAjustarColumnas=S

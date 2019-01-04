@@ -1,0 +1,111 @@
+;**** Ultima modificación:11-Jul-08
+;**** Modifico:Arly Rubio Camacho
+;**** Se modifico:Integracion desarrollo mexico
+
+
+
+;***** Integracion cambio mexico *****
+;***** Se agregaron nuevos campos: desarrollomexico(CteCtoDireccion.MaviNumero, CteCtoDireccion.MaviNumeroInterno)*****
+;***** Se agregaron nuevos campos ARC 10-Jun-09: AntiguedadMesesMAVI y  AntiguedadAniosMAVI ****
+[CteCtoDireccion.vis/Vista]
+;ListaCampos=CteCtoDireccion.Cliente<BR>CteCtoDireccion.ID<BR>CteCtoDireccion.Tipo<BR>CteCtoDireccion.Direccion<BR>CteCtoDireccion.MaviNumero<BR>CteCtoDireccion.MaviNumeroInterno<BR>CteCtoDireccion.TipoCalle<BR>CteCtoDireccion.Delegacion<BR>CteCtoDireccion.CodigoPostal<BR>CteCtoDireccion.Colonia<BR>CteCtoDireccion.Poblacion<BR>CteCtoDireccion.Estado<BR>CteCtoDireccion.Pais<BR>CteCtoDireccion.AntiguedadMesesMAVI<BR>CteCtoDireccion.AntiguedadAniosMAVI
+;SQL=SELECT<BR>  CteCtoDireccion.Cliente,<BR>  CteCtoDireccion.ID,<BR>  CteCtoDireccion.Tipo,<BR>  CteCtoDireccion.Direccion,<BR>  CteCtoDireccion.MaviNumero,<BR>  CteCtoDireccion.MaviNumeroInterno,<BR>  CteCtoDireccion.TipoCalle,<BR>  CteCtoDireccion.Delegacion,<BR>  CteCtoDireccion.CodigoPostal,<BR>  CteCtoDireccion.Colonia,<BR>  CteCtoDireccion.Poblacion,<BR>  CteCtoDireccion.Estado,<BR>  CteCtoDireccion.Pais,<BR>  CteCtoDireccion.AntiguedadMesesMAVI,<BR>  CteCtoDireccion.AntiguedadAniosMAVI<BR><BR>FROM<BR>  CteCtoDireccion
+ListaCampos=CteCtoDireccion.Cliente<BR>CteCtoDireccion.ID<BR>CteCtoDireccion.Tipo<BR>CteCtoDireccion.Direccion<BR>CteCtoDireccion.MaviNumero<BR>CteCtoDireccion.MaviNumeroInterno<BR>CteCtoDireccion.TipoCalle<BR>CteCtoDireccion.Delegacion<BR>CteCtoDireccion.CodigoPostal<BR>CteCtoDireccion.Colonia<BR>CteCtoDireccion.Poblacion<BR>CteCtoDireccion.Estado<BR>CteCtoDireccion.Pais<BR>CteCtoDireccion.AntiguedadMesesMAVI<BR>CteCtoDireccion.AntiguedadAniosMAVI<BR>CteCtoDireccion.Cruces
+SQL=SELECT<BR>  CteCtoDireccion.Cliente,<BR>  CteCtoDireccion.ID,<BR>  CteCtoDireccion.Tipo,<BR>  CteCtoDireccion.Direccion,<BR>  CteCtoDireccion.MaviNumero,<BR>  CteCtoDireccion.MaviNumeroInterno,<BR>  CteCtoDireccion.TipoCalle,<BR>  CteCtoDireccion.Delegacion,<BR>  CteCtoDireccion.CodigoPostal,<BR>  CteCtoDireccion.Colonia,<BR>  CteCtoDireccion.Poblacion,<BR>  CteCtoDireccion.Estado,<BR>  CteCtoDireccion.Pais,<BR>  CteCtoDireccion.AntiguedadMesesMAVI,<BR>  CteCtoDireccion.AntiguedadAniosMAVI,<BR>  CteCtoDireccion.Cruces<BR><BR>FROM<BR>  CteCtoDireccion
+
+;***** Integracion cambio mexico *****
+;***** Nuevo campo agregado desarrollo mexico *****
+;[CteCtoDireccion.vis/CteCtoDireccion.MaviNumero]
+;Clave=CteCtoDireccion.MaviNumero
+;Nombre=Número
+;Visible=S
+;TamanoValidacion=20
+;Tamano=20
+;LigaTabla=CteCtoDireccion
+;LigaCampo=MaviNumero
+;Ligado=S
+;TipoCampo=Tabla
+;TipoDatos=Texto
+;ClaveBDE=MaviNumero
+
+[CteCtoDireccion.vis/CteCtoDireccion.MaviNumero]
+Clave=CteCtoDireccion.MaviNumero
+LigaTabla=CteCtoDireccion
+LigaCampo=MaviNumero
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=MaviNumero
+
+
+;***** Integracion cambio mexico *****
+;***** Nuevo campo agregado desarrollo mexico *****
+;[CteCtoDireccion.vis/CteCtoDireccion.MaviNumeroInterno]
+;Clave=CteCtoDireccion.MaviNumeroInterno
+;Nombre=Número Interno
+;Visible=S
+;TamanoValidacion=20
+;Tamano=20
+;LigaTabla=CteCtoDireccion
+;LigaCampo=MaviNumeroInterno
+;Ligado=S
+;TipoCampo=Tabla
+;TipoDatos=Texto
+;ClaveBDE=MaviNumeroInterno
+
+[CteCtoDireccion.vis/CteCtoDireccion.MaviNumeroInterno]
+Clave=CteCtoDireccion.MaviNumeroInterno
+LigaTabla=CteCtoDireccion
+LigaCampo=MaviNumeroInterno
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=20
+ClaveBDE=MaviNumeroInterno
+
+[CteCtoDireccion.vis/CteCtoDireccion.TipoCalle]
+Clave=CteCtoDireccion.TipoCalle
+Nombre=TipoCalle
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=30
+TipoDatos=Texto
+Tamano=30
+LigaTabla=CteCtoDireccion
+LigaCampo=TipoCalle
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=TipoCalle
+
+;*** Nuevo campo ***
+[CteCtoDireccion.vis/CteCtoDireccion.AntiguedadMesesMAVI]
+Clave=CteCtoDireccion.AntiguedadMesesMAVI
+LigaTabla=CteCtoDireccion
+LigaCampo=AntiguedadMesesMAVI
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Numérico
+ClaveBDE=AntiguedadMesesMAVI
+
+;*** Nuevo campo ***
+[CteCtoDireccion.vis/CteCtoDireccion.AntiguedadAniosMAVI]
+Clave=CteCtoDireccion.AntiguedadAniosMAVI
+LigaTabla=CteCtoDireccion
+LigaCampo=AntiguedadAniosMAVI
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Numérico
+ClaveBDE=AntiguedadAniosMAVI
+
+;*** Nuevo campo ***
+[CteCtoDireccion.vis/CteCtoDireccion.Cruces]
+Clave=CteCtoDireccion.Cruces
+LigaTabla=CteCtoDireccion
+LigaCampo=Cruces
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=200
+ClaveBDE=Cruces

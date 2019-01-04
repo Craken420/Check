@@ -1,0 +1,12 @@
+;**** Ultima modificación:30-Abr-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:
+
+
+
+
+
+;**** Se mofico para que el filtro de estatus sea solo "concluidos" y para que solo muestre los movimientos: "Factura", "Factura VIU" y "Factura Mayoreo" ****
+[VentaCopiar.frm/Lista]
+FiltroListaEstatus=CONCLUIDO
+FiltroGeneral=VentaCteD.Estacion = {EstacionTrabajo} AND VentaCteD.Empresa=<T>{Empresa}<T> AND<BR>VentaCteD.Mov IN (<T>Factura<T>,<T>Factura VIU<T>,<T>Factura Mayoreo<T>,<T>Credilana<T>,<T>Prestamo Personal<T>,<T>Seguro Auto<T>,<T>Seguro Vida<T>) AND<BR>VentaCteD.Cliente=<T>{Info.Cliente}<T><BR>{Si(ConDatos(Info.EnviarA), <T> AND VentaCteD.EnviarA = <T>+Info.EnviarA, <T><T>)}

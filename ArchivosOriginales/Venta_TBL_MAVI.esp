@@ -1,0 +1,288 @@
+; *** Ultima Modificacion 17022010
+; *** Belem Vazquez 
+;**** Agrego campo para Facturacion Electronica
+
+; *** Ultima Modificacion 09-10-08
+; *** Arly Rubio Camacho
+
+;**** Modificación:27-Jun-08
+;**** Modifico:Elias
+;**** Se modifico:Campo Cliente
+
+
+;**** Nuevos campos agregados : AfectaComisionMavi (MAVI) ****
+[Venta.tbl/Tabla]
+;SQL=SELECT<BR>  ID,<BR>  Empresa,<BR>  Mov,<BR>  MovID,<BR>  FechaEmision,<BR>  UltimoCambio,<BR>  Concepto,<BR>  Proyecto,<BR>  UEN,<BR>  Moneda,<BR>  TipoCambio,<BR>  Usuario,<BR>  Autorizacion,<BR>  Referencia,<BR>  DocFuente,<BR>  Observaciones,<BR>  Estatus,<BR>  Situacion,<BR>  SituacionFecha,<BR>  Directo,<BR>  Prioridad,<BR>  RenglonID,<BR>  FechaOriginal,<BR>  Cliente,<BR>  EnviarA,<BR>  Almacen,<BR>  AlmacenDestino,<BR>  Agente,<BR>  AgenteServicio,<BR>  FormaEnvio,<BR>  FechaRequerida,<BR>  HoraRequerida,<BR>  FechaProgramadaEnvio,<BR>  FechaOrdenCompra,<BR>  OrdenCompra,<BR>  Condicion,<BR>  Vencimiento,<BR>  CtaDinero,<BR>  Descuento,<BR>  DescuentoGlobal,<BR>  Importe,<BR>  Impuestos,<BR>  Saldo,<BR>  AnticiposFacturados,<BR>  AnticiposImpuestos,<BR>  Retencion,<BR>  DescuentoLin<CONTINUA>
+;SQL002=<CONTINUA>eal,<BR>  ComisionTotal,<BR>  CostoTotal,<BR>  PrecioTotal,<BR>  Paquetes,<BR>  ServicioTipo,<BR>  ServicioArticulo,<BR>  ServicioSerie,<BR>  ServicioContrato,<BR>  ServicioContratoID,<BR>  ServicioContratoTipo,<BR>  ServicioGarantia,<BR>  ServicioFecha,<BR>  ServicioFlotilla,<BR>  ServicioRampa,<BR>  ServicioIdentificador,<BR>  ServicioPlacas,<BR>  ServicioKms,<BR>  ServicioTipoOrden,<BR>  ServicioTipoOperacion,<BR>  ServicioSiniestro,<BR>  ServicioExpress,<BR>  ServicioDemerito,<BR>  ServicioDeducible,<BR>  ServicioDeducibleImporte,<BR>  ServicioNumero,<BR>  ServicioNumeroEconomico,<BR>  ServicioAseguradora,<BR>  OrigenTipo,<BR>  Origen,<BR>  OrigenID,<BR>  Poliza,<BR>  PolizaID,<BR>  GenerarPoliza,<BR>  ContID,<BR>  Ejercicio,<BR>  Periodo,<BR>  FechaRegistro,<BR>  FechaConclusion,<BR> <CONTINUA>
+;SQL003=<CONTINUA> FechaCancelacion,<BR>  FechaEntrega,<BR>  EmbarqueEstado,<BR>  EmbarqueGastos,<BR>  Peso,<BR>  Volumen,<BR>  Causa,<BR>  Atencion,<BR>  AtencionTelefono,<BR>  ListaPreciosEsp,<BR>  ZonaImpuesto,<BR>  Extra,<BR>  CancelacionID,<BR>  Mensaje,<BR>  Departamento,<BR>  Sucursal,<BR>  GenerarOP,<BR>  DesglosarImpuestos,<BR>  DesglosarImpuesto2,<BR>  ExcluirPlaneacion,<BR>  ConVigencia,<BR>  VigenciaDesde,<BR>  VigenciaHasta,<BR>  Enganche,<BR>  Bonificacion,<BR>  IVAFiscal,<BR>  IEPSFiscal,<BR>  EstaImpreso,<BR>  Periodicidad,<BR>  SubModulo,<BR>  ContUso,<BR>  Espacio,<BR>  AutoCorrida,<BR>  AutoCorridaHora,<BR>  AutoCorridaServicio,<BR>  AutoCorridaRol,<BR>  AutoCorridaOrigen,<BR>  AutoCorridaDestino,<BR>  AutoCorridaKms,<BR>  AutoCorridaLts,<BR>  AutoCorridaRuta,<BR>  AutoBoleto,<BR>  AutoKm<CONTINUA>
+;SQL004=<CONTINUA>s,<BR>  AutoKmsActuales,<BR>  AutoBomba,<BR>  AutoBombaContador,<BR>  DifCredito,<BR>  EspacioResultado,<BR>  Clase,<BR>  Subclase,<BR>  GastoAcreedor,<BR>  GastoConcepto,<BR>  Comentarios,<BR>  Pagado,<BR>  GenerarDinero,<BR>  Dinero,<BR>  DineroID,<BR>  DineroCtaDinero,<BR>  DineroConciliado,<BR>  DineroFechaConciliacion,<BR>  Extra1,<BR>  Extra2,<BR>  Extra3,<BR>  Reabastecido,<BR>  SucursalVenta,<BR>  AF,<BR>  AFArticulo,<BR>  AFSerie,<BR>  ContratoTipo,<BR>  ContratoDescripcion,<BR>  ContratoSerie,<BR>  ContratoValor,<BR>  ContratoValorMoneda,<BR>  ContratoSeguro,<BR>  ContratoVencimiento,<BR>  ContratoResponsable,<BR>  Incentivo,<BR>  EndosarA,<BR>  InteresTasa,<BR>  InteresIVA,<BR>  AnexoID,<BR>  LineaCredito,<BR>  SucursalOrigen,<BR>  SucursalDestino,<BR>  TipoAmortizacion,<BR>  Ti<CONTINUA>
+;SQL005=<CONTINUA>poTasa,<BR>  AutoOperador2,<BR>  Comisiones,<BR>  ComisionesIVA,<BR>  CompraID,<BR>  IncentivoConcepto,<BR>  ServicioPuntual,<BR>  OperacionRelevante,<BR>  AgenteComision,<BR>  FordVisitoOASIS,<BR>  ServicioDescripcion,<BR>  TieneTasaEsp,<BR>  TasaEsp,<BR>  ServicioPoliza,<BR>  SituacionUsuario,<BR>  SituacionNota,<BR>  ReferenciaOrdenCompra,<BR>  Codigo,<BR>  FormaPagoTipo,<BR>  SobrePrecio<BR><BR>FROM<BR>  Venta WHERE Moneda = <T>Pesos<T>
+
+ListaCampos=ID<BR>Empresa<BR>Mov<BR>MovID<BR>FechaEmision<BR>FechaProgramadaEnvio<BR>UltimoCambio<BR>Concepto<BR>Proyecto<BR>Moneda<BR>TipoCambio<BR>Usuario<BR>Autorizacion<BR>Referencia<BR>DocFuente<BR>Observaciones<BR>Estatus<BR>Situacion<BR>SituacionFecha<BR>SituacionUsuario<BR>SituacionNota<BR>Directo<BR>Prioridad<BR>RenglonID<BR>Cliente<BR>EnviarA<BR>Almacen<BR>AlmacenDestino<BR>Agente<BR>AgenteServicio<BR>FormaEnvio<BR>Descuento<BR>FechaRequerida<BR>HoraRequerida<BR>FechaOrdenCompra<BR>ReferenciaOrdenCompra<BR>FechaOriginal<BR>OrdenCompra<BR>Condicion<BR>Vencimiento<BR>CtaDinero<BR>DescuentoGlobal<BR>Saldo<BR>Importe<BR>Impuestos<BR>ComisionTotal<BR>DescuentoLineal<BR>AnticiposFacturados<BR>Retencion<BR>CostoTotal<BR>PrecioTotal<BR>OrigenTipo<BR>Origen<BR>OrigenID<BR>Poliza<BR>PolizaID<BR>Genera<CONTINUA>
+ListaCampos002=<CONTINUA>rPoliza<BR>ContID<BR>FechaRegistro<BR>FechaConclusion<BR>FechaCancelacion<BR>ServicioTipo<BR>ServicioTipoOrden<BR>ServicioTipoOperacion<BR>ServicioArticulo<BR>ServicioSerie<BR>ServicioContrato<BR>ServicioContratoID<BR>ServicioContratoTipo<BR>ServicioGarantia<BR>ServicioExpress<BR>ServicioDescripcion<BR>ServicioFecha<BR>ServicioIdentificador<BR>ServicioPlacas<BR>ServicioKms<BR>ServicioSiniestro<BR>ServicioDemerito<BR>ServicioDeducible<BR>ServicioDeducibleImporte<BR>ServicioNumero<BR>ServicioNumeroEconomico<BR>ServicioFlotilla<BR>ServicioRampa<BR>ServicioAseguradora<BR>ServicioPoliza<BR>Ejercicio<BR>Periodo<BR>Peso<BR>Volumen<BR>Paquetes<BR>Causa<BR>Atencion<BR>AtencionTelefono<BR>Extra<BR>CancelacionID<BR>ListaPreciosEsp<BR>ZonaImpuesto<BR>Mensaje<BR>EmbarqueEstado<BR>EmbarqueGastos<BR>Fech<CONTINUA>
+ListaCampos003=<CONTINUA>aEntrega<BR>Departamento<BR>Sucursal<BR>SucursalDestino<BR>SucursalOrigen<BR>GenerarOP<BR>ConVigencia<BR>VigenciaDesde<BR>VigenciaHasta<BR>DesglosarImpuestos<BR>DesglosarImpuesto2<BR>ExcluirPlaneacion<BR>Enganche<BR>Bonificacion<BR>IVAFiscal<BR>IEPSFiscal<BR>EstaImpreso<BR>ContUso<BR>AutoBoleto<BR>AutoKms<BR>AutoKmsActuales<BR>AutoBomba<BR>AutoBombaContador<BR>SubModulo<BR>Periodicidad<BR>AnticiposImpuestos<BR>DifCredito<BR>Espacio<BR>EspacioResultado<BR>UEN<BR>Clase<BR>Subclase<BR>AutoCorrida<BR>AutoCorridaHora<BR>AutoCorridaServicio<BR>AutoCorridaRol<BR>AutoCorridaRuta<BR>AutoCorridaOrigen<BR>AutoCorridaDestino<BR>AutoCorridaKms<BR>AutoCorridaLts<BR>AutoOperador2<BR>GastoAcreedor<BR>GastoConcepto<BR>Comentarios<BR>Pagado<BR>GenerarDinero<BR>Dinero<BR>DineroID<BR>DineroCtaDinero<BR>Dinero<CONTINUA>
+ListaCampos004=<CONTINUA>Conciliado<BR>DineroFechaConciliacion<BR>Extra1<BR>Extra2<BR>Extra3<BR>Reabastecido<BR>SucursalVenta<BR>AF<BR>AFArticulo<BR>AFSerie<BR>ContratoTipo<BR>ContratoDescripcion<BR>ContratoSerie<BR>ContratoValor<BR>ContratoValorMoneda<BR>ContratoSeguro<BR>ContratoResponsable<BR>ContratoVencimiento<BR>Incentivo<BR>IncentivoConcepto<BR>EndosarA<BR>AnexoID<BR>FordVisitoOASIS<BR>InteresTasa<BR>InteresIVA<BR>LineaCredito<BR>TipoAmortizacion<BR>TipoTasa<BR>Comisiones<BR>ComisionesIVA<BR>CompraID<BR>ServicioPuntual<BR>OperacionRelevante<BR>AgenteComision<BR>TieneTasaEsp<BR>TasaEsp<BR>Codigo<BR>FormaPagoTipo<BR>SobrePrecio<BR>AfectaComisionMavi<BR>OrigenSucursal<BR>FacDesgloseIVA<BR>FormaCobro<BR>NoCtaPago<BR>RedimePtos<BR>MaviTipoVenta<BR>IDEcommerce
+
+SQL=SELECT<BR>  ID,<BR>  Empresa,<BR>  Mov,<BR>  MovID,<BR>  FechaEmision,<BR>  UltimoCambio,<BR>  Concepto,<BR>  Proyecto,<BR>  UEN,<BR>  Moneda,<BR>  TipoCambio,<BR>  Usuario,<BR>  Autorizacion,<BR>  Referencia,<BR>  DocFuente,<BR>  Observaciones,<BR>  Estatus,<BR>  Situacion,<BR>  SituacionFecha,<BR>  Directo,<BR>  Prioridad,<BR>  RenglonID,<BR>  FechaOriginal,<BR>  Cliente,<BR>  EnviarA,<BR>  Almacen,<BR>  AlmacenDestino,<BR>  Agente,<BR>  AgenteServicio,<BR>  FormaEnvio,<BR>  FechaRequerida,<BR>  HoraRequerida,<BR>  FechaProgramadaEnvio,<BR>  FechaOrdenCompra,<BR>  OrdenCompra,<BR>  Condicion,<BR>  Vencimiento,<BR>  CtaDinero,<BR>  Descuento,<BR>  DescuentoGlobal,<BR>  Importe,<BR>  Impuestos,<BR>  Saldo,<BR>  AnticiposFacturados,<BR>  AnticiposImpuestos,<BR>  Retencion,<BR>  DescuentoLin<CONTINUA>
+SQL002=<CONTINUA>eal,<BR>  ComisionTotal,<BR>  CostoTotal,<BR>  PrecioTotal,<BR>  Paquetes,<BR>  ServicioTipo,<BR>  ServicioArticulo,<BR>  ServicioSerie,<BR>  ServicioContrato,<BR>  ServicioContratoID,<BR>  ServicioContratoTipo,<BR>  ServicioGarantia,<BR>  ServicioFecha,<BR>  ServicioFlotilla,<BR>  ServicioRampa,<BR>  ServicioIdentificador,<BR>  ServicioPlacas,<BR>  ServicioKms,<BR>  ServicioTipoOrden,<BR>  ServicioTipoOperacion,<BR>  ServicioSiniestro,<BR>  ServicioExpress,<BR>  ServicioDemerito,<BR>  ServicioDeducible,<BR>  ServicioDeducibleImporte,<BR>  ServicioNumero,<BR>  ServicioNumeroEconomico,<BR>  ServicioAseguradora,<BR>  OrigenTipo,<BR>  Origen,<BR>  OrigenID,<BR>  Poliza,<BR>  PolizaID,<BR>  GenerarPoliza,<BR>  ContID,<BR>  Ejercicio,<BR>  Periodo,<BR>  FechaRegistro,<BR>  FechaConclusion,<BR> <CONTINUA>
+SQL003=<CONTINUA> FechaCancelacion,<BR>  FechaEntrega,<BR>  EmbarqueEstado,<BR>  EmbarqueGastos,<BR>  Peso,<BR>  Volumen,<BR>  Causa,<BR>  Atencion,<BR>  AtencionTelefono,<BR>  ListaPreciosEsp,<BR>  ZonaImpuesto,<BR>  Extra,<BR>  CancelacionID,<BR>  Mensaje,<BR>  Departamento,<BR>  Sucursal,<BR>  GenerarOP,<BR>  DesglosarImpuestos,<BR>  DesglosarImpuesto2,<BR>  ExcluirPlaneacion,<BR>  ConVigencia,<BR>  VigenciaDesde,<BR>  VigenciaHasta,<BR>  Enganche,<BR>  Bonificacion,<BR>  IVAFiscal,<BR>  IEPSFiscal,<BR>  EstaImpreso,<BR>  Periodicidad,<BR>  SubModulo,<BR>  ContUso,<BR>  Espacio,<BR>  AutoCorrida,<BR>  AutoCorridaHora,<BR>  AutoCorridaServicio,<BR>  AutoCorridaRol,<BR>  AutoCorridaOrigen,<BR>  AutoCorridaDestino,<BR>  AutoCorridaKms,<BR>  AutoCorridaLts,<BR>  AutoCorridaRuta,<BR>  AutoBoleto,<BR>  AutoKm<CONTINUA>
+SQL004=<CONTINUA>s,<BR>  AutoKmsActuales,<BR>  AutoBomba,<BR>  AutoBombaContador,<BR>  DifCredito,<BR>  EspacioResultado,<BR>  Clase,<BR>  Subclase,<BR>  GastoAcreedor,<BR>  GastoConcepto,<BR>  Comentarios,<BR>  Pagado,<BR>  GenerarDinero,<BR>  Dinero,<BR>  DineroID,<BR>  DineroCtaDinero,<BR>  DineroConciliado,<BR>  DineroFechaConciliacion,<BR>  Extra1,<BR>  Extra2,<BR>  Extra3,<BR>  Reabastecido,<BR>  SucursalVenta,<BR>  AF,<BR>  AFArticulo,<BR>  AFSerie,<BR>  ContratoTipo,<BR>  ContratoDescripcion,<BR>  ContratoSerie,<BR>  ContratoValor,<BR>  ContratoValorMoneda,<BR>  ContratoSeguro,<BR>  ContratoVencimiento,<BR>  ContratoResponsable,<BR>  Incentivo,<BR>  EndosarA,<BR>  InteresTasa,<BR>  InteresIVA,<BR>  AnexoID,<BR>  LineaCredito,<BR>  SucursalOrigen,<BR>  SucursalDestino,<BR>  TipoAmortizacion,<BR>  Ti<CONTINUA>
+SQL005=<CONTINUA>poTasa,<BR>  AutoOperador2,<BR>  Comisiones,<BR>  ComisionesIVA,<BR>  CompraID,<BR>  IncentivoConcepto,<BR>  ServicioPuntual,<BR>  OperacionRelevante,<BR>  AgenteComision,<BR>  FordVisitoOASIS,<BR>  ServicioDescripcion,<BR>  TieneTasaEsp,<BR>  TasaEsp,<BR>  ServicioPoliza,<BR>  SituacionUsuario,<BR>  SituacionNota,<BR>  ReferenciaOrdenCompra,<BR>  Codigo,<BR>  FormaPagoTipo,<BR>  SobrePrecio,<BR>  AfectaComisionMavi,<BR>  OrigenSucursal,<BR>  FacDesgloseIVA,<BR> FormaCobro,<BR>  NoCtaPago,<BR>  RedimePtos,<BR> MaviTipoVenta,<BR>IDEcommerce <BR><BR>FROM<BR>  Venta
+
+; **** Modificacion de CondicionEdicion para excluir el tipo de la condicion de pago. JR 09-Ago-2012. ****
+[Venta.tbl/FormaCobro]
+Clave=FormaCobro
+Nombre=Forma Pago
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+;CondicionEdicion=no Usuario.BloquearFormaPago y (((SQL(<T>SELECT TipoCondicion FROM Condicion WHERE Condicion=:tcond<T>, Condicion)=<T>Credito<T> Y (Mov en (<T>Solicitud Credito<T>, <T>Solicitud Mayoreo<T>))) O (SQL(<T>SELECT TipoCondicion FROM Condicion WHERE Condicion=:tcond<T>, Condicion)=<T>Contado<T> Y (Mov=<T>Pedido<T>))) y (Estatus=EstatusSinAfectar))
+CondicionEdicion=no Usuario.BloquearFormaPago y ((Mov en ('Solicitud Credito', 'Solicitud Mayoreo') o ((Mov='Pedido') y (Origen = nulo))) y (Estatus=EstatusSinAfectar))
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=FormaPago
+AyudaMemRenglones=12
+AyudaMemOpc=Unicamente opciones listadas
+ValorPorOmision=Vacio(Usuario.DefFormaPago, Config.FormaCobroOmision)
+CondicionDespliege=usuario =(sql(<T>select usuario from Usuario<BR>where Sucursal in (90,41)and Estatus=<T>+comillas(<T>alta<T>)+ <T>and usuario =:tvent<T>,usuario)) 
+
+; **** Modificacion de CondicionEdicion para excluir el tipo de la condicion de pago. JR 09-Ago-2012. ****
+[Venta.tbl/NoCtaPago]
+Clave=NoCtaPago
+Nombre=No Cta Pago
+Visible=S
+TamanoValidacion=25
+TipoDatos=Texto
+Tamano=25
+;CondicionEdicion=((SQL(<T>SELECT TipoCondicion FROM Condicion WHERE Condicion=:tcond<T>, Condicion)=<T>Credito<T> Y (Mov en (<T>Solicitud Credito<T>, <T>Solicitud Mayoreo<T>))) O (SQL(<T>SELECT TipoCondicion FROM Condicion WHERE Condicion=:tcond<T>, Condicion)=<T>Contado<T> Y (Mov=<T>Pedido<T>))) y (Estatus=EstatusSinAfectar)
+CondicionEdicion=((Mov en (<T>Solicitud Credito<T>, <T>Solicitud Mayoreo<T>,<T>Pedido Mayoreo<T>) o ((Mov=<T>Pedido<T>) y (Origen = nulo))) y (Estatus=EstatusSinAfectar))
+ValorPorOmision=<T>No Identificado<T>
+CondicionDespliege=SQL(<T>Select dbo.fn_MaviDM0169ValidaUsuario (:tUsu, :nEnvi)<T> , usuario, Venta:Venta.EnviarA) = 0
+
+
+;**** Se agrego en la lista a refrescar los campos: FormaPagoTipo ****
+;**** Se agrego en la lista a refrescar los campos: Condicion Arly Rubio Camacho(09-Oct-08)*****
+[Venta.tbl/Mov]
+ListaRefrescar=Concepto<BR>Almacen<BR>Periodicidad<BR>ConVigencia<BR>DesglosarImpuesto2<BR>Condicion<BR>FacDesgloseIVA
+CondicionEdicion=(Estatus=EstatusSinAfectar) y Vacio(Mensaje) y Vacio(MovID) y Vacio(Filtro.Mov) y<BR>(Mov Noen (<T>Analisis Credito<T>,<T>Factura<T>,<T>Credilana<T>,<T>Seguro Vida<T>,<T>Seguro Auto<T>,<T>Analisis Mayoreo<T>,<T>Pedido Mayoreo<T>,<T>Factura Mayoreo<T>))
+
+
+
+; **** Se modifico el campo para que fuera requerido siempre ****
+; **** Se modifico la condicion de despliegue para que solo presente por nivel de acceso ***
+; **** Se modifico la condicion de despliegue para que no estuviera habiliatado cuando el tipo de movimiento es: VTAS.D, VTAS.SD, VTAS.B (Arly Rubio Camacho 09-Oct-08)
+; **** Se modifico el valor a refrescar para que sea 'fecha' cuando el tipo de movimiento es: VTAS.D, VTAS.SD, VTAS.B (Arly Rubio Camacho 09-Oct-08)
+;*** 20-Oct-08 LQG : Validacion de Condiciones ***
+; **** 18-08-09 GRB: se agrego lineas de ayuda y se modifico formula. ***
+[Venta.tbl/Condicion]
+Requerido=S
+AyudaMemEnBlanco=N
+CondicionEdicion=(Vacio(Origen) y Vacio(OrigenID)) y Vacio(AnexoID) y (no Usuario.BloquearCondiciones) y (MovTipo(<T>VTAS<T>,Mov) noen(<T>VTAS.D<T>,<T>VTAS.SD<T>,<T>VTAS.B<T>))
+;CondicionEdicion=Vacio(AnexoID) y (no Usuario.BloquearCondiciones) y (MovTipo(<T>VTAS<T>,Mov) noen(<T>VTAS.D<T>,<T>VTAS.SD<T>,<T>VTAS.B<T>))
+ValorRefrescar=Si( MovTipoEn(<T>VTAS<T>,Mov,(<T>VTAS.D<T>, <T>VTAS.SD<T>, <T>VTAS.B<T>)) , <T>(Fecha)<T>, Si(ConDatos(Venta:CteEnviarA.Condicion), Venta:CteEnviarA.Condicion, Venta:Cte.Condicion))
+;Formula=SQLEnLista(<T>SELECT Condicion FROM Condicion WHERE NivelAcceso is NULL UNION SELECT Condicion FROM CondicionAccesoMAVI WHERE Usuario =:tusuario<T> , Usuario.Usuario)
+;Original -> ValorRefrescar=Si(ConDatos(Venta:Venta.LineaCredito), SQL(<T>SELECT Condicion FROM LC WHERE LineaCredito=:tLC<T>, LineaCredito), Si(ConDatos(Venta:CteEnviarA.Condicion), Venta:CteEnviarA.Condicion, Venta:Cte.Condicion))
+AyudaEnCaptura=Expresion
+;Formula=SQLEnLista(<T>SELECT Condicion FROM Condicion WHERE NivelAcceso=:tLC or NivelAcceso is NULL<T>, <T>(<T>+ Usuario.GrupoTrabajo + <T>)<T>)
+Formula=Si<BR>  Directo=Verdadero<BR>Entonces<BR>    Si Estatus = (<T>SINAFECTAR<T>)<BR>    Entonces<BR>        si sql(<T>select dbo.fnClientesNuevosCasaMAVICanal(:tcliente,:nenviar)<T>,Cliente,EnviarA)=<T>Casa<T><BR>           entonces<BR>           SQLEnLista(<T>EXEC spCondicionNivelAccesoFiltrado :tusuario,:nEnviarA<T>, Usuario,EnviarA)<BR>           sino<BR>           SQLEnLista(<T>EXEC spCondicionNivelAccesoFiltradoCanalVenta :tusuario,:nEnviarA<T>, Usuario,EnviarA)<BR>       fin<BR><BR><BR>    Fin<BR>Sino<BR>      si sql(<T>select dbo.fnClientesNuevosCasaMAVICanal(:tcliente,:nenviar)<T>,Cliente,EnviarA)=<T>Casa<T><BR>      entonces<BR>            SQLEnLista(<T>SELECT Condicion FROM Condicion where condicion not in (<T>+comillas(<T>12 M MA PP CN<T>)+<T>,<T>+comillas(<T>12 M VIU PP CN<T>)+<T>)<CONTINUA>
+Formula002=<CONTINUA><T>)<BR>      sino<BR>        SQLEnLista(<T>SELECT Condicion FROM Condicion<T>)<BR>      fin<BR><BR><BR>Fin
+AyudaMemOpc=Validar captura en la lista
+AyudaRefrescar=S
+
+
+[Venta.tbl/Vencimiento]
+CondicionEdicion=Vacio(AnexoID) y (MovTipo(<T>VTAS<T>,Mov) noen(<T>VTAS.D<T>,<T>VTAS.SD<T>,<T>VTAS.B<T>)) y ((Condicion=<T>(Fecha)<T>) y ((Estatus en (EstatusSinAfectar,EstatusPorConfirmar)) o ((Estatus en (EstatusPendiente,EstatusPorAutorizar)) y Usuario.ModificarVencimientos)))
+
+
+; **** Se modifico el campo para que tomara la uen de la sucursal por default y para que no fuera editable****
+[Venta.tbl/UEN]
+ValorPorOmision=Sucursal.wUEN
+CondicionEdicion=Falso
+
+
+
+; **** Se modifico el campo para que fuera requerido siempre que esta activo ****
+; **** Se modifico el nombre a desplegar del campo ****
+;******se agrego los campos de almacen y agente para refrescar en condiciones de edicion
+[Venta.tbl/EnviarA]
+Nombre=Canal Venta
+RequeridoActivo=S
+CondicionEdicion=(Vacio(Origen) y Vacio(OrigenID))
+ListaRefrescar=Agente<BR>Proyecto<BR>FormaEnvio<BR>Descuento<BR>DescuentoGlobal<BR>Condicion<BR>Vencimiento<BR>ZonaImpuesto<BR>ListaPreciosEsp<BR>Almacen<BR>FormaPagoTipo
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=Vencimiento<BR>Agente<BR>Concepto<BR>Condicion<BR>FormaEnvio<BR>FormaPagoTipo<BR>NoCtaPago<BR>Descuento<BR>DescuentoGlobal<BR>ListaPreciosEsp
+
+
+
+; **** Se modifico el campo para que fuera requerido siempre que esta activo ****
+; **** Se modifico la ayuda en captura ****
+; **** Se agrego la validacion de captura ****
+[Venta.tbl/FormaPagoTipo]
+Clave=FormaPagoTipo
+Nombre=Tipo Forma Pago
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Vista
+AyudaMemOpc=Unicamente opciones listadas
+ConRefrescar=S
+ListaRefrescar=SobrePrecio
+RefrescarTotales=S
+AutoBloqueaDetalle=S
+RequeridoActivo=S
+AyudaForma=MovFormaPagoListaMAVI
+AyudaVista=MovFormaPagoListaMAVI
+AyudaCampo=FormaPagoTipo
+AyudaBusquedaRapida=Asigna(Info.Clave, Mov)
+ConAyudaBusquedaRapida=S
+AyudaRefrescar=S
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Seleccione un tipo de forma de pago de correcto<T>
+ValidacionCondicion=SQL(<T>SELECT Count(*) from MovFormaPagoMAVI Where Mov =:tMov and FormaPagoTipo =:tFPT<T>,Mov,FormaPagoTipo)>0
+CondicionEdicion=(Vacio(Origen) y Vacio(OrigenID)) y ((Venta:Venta.Mov noen(<T>Pedido<T>,<T>Solicitud Credito<T>)) /*y (venta:Venta.Estatus <> <T>SINAFECTAR<T>)*/)
+ValorRefrescar=Asigna(Info.AFMovMAVI,SQL(<T>select dbo.FN_DM0169defaultformapagotipo(:nId,:tMov)<T>,Venta:Venta.EnviarA,Venta:Venta.Mov))<BR>Info.AFMovMAVI
+
+
+; **** Se modifico el nombre a desplegar ****
+;*** Se quito la opcion de edicion debido al desarrollo de Costeo de Fletes V2 GBR 18/02/09
+[Venta.tbl/Atencion]
+Nombre=Población de envío
+UnicamenteLectura=S
+
+
+;**** Elias ****
+[Venta.tbl/Cliente]
+AlCambiar=Asigna(Info.Cliente, Cliente)
+AyudaVista=MaviCteA
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=Vencimiento<BR>Bonificacion<BR>Referencia
+
+;Modificacion para acomodar el Nivel de Acceso ALQG - 15/06/2010
+;**** Se hizo el campo requerido si activo (ARC 19-Nov-08) ****
+;Se mofifico la condicion De Edicion del campo Fernando Romero 10/02/2014
+[Venta.tbl/Agente]
+;CondicionEdicion=(Vacio(Origen) y Vacio(OrigenID))
+;CondicionEdicion=(Estatus=EstatusSinAfectar) y (Mov Noen(<T>Solicitud Devolucion<T>,<T>Sol Dev Mayoreo<T>))
+;CondicionEdicion=(Estatus=EstatusSinAfectar) y (Mov Noen(<T>Solicitud Devolucion<T>,<T>Sol Dev Mayoreo<T>,<T>Devolucion Mayoreo<T>,<T>Devolucion ;Venta<T>,<T>Devolucion VIU<T>))
+CondicionEdicion=Estatus=EstatusSinAfectar y<BR>(<BR> Mov en(<T>Analisis Mayoreo<T>,<T>Solicitud Credito<T>,<T>Solicitud Mayoreo<T>,<T>Sol Dev Mayoreo<T>,<T>Sol Dev Unicaja<T>,<T>Solicitud Devolucion<T>,<T>Pedido Mayoreo<T>)<BR>  o<BR>   (<BR>    (Mov =<T>Pedido<T>)  y EnviarA en (1,2,5,6,8)            <BR>    )<BR><BR> )
+;RequeridoActivo=S
+ValidacionUsaTabla=N
+ValidacionTablas=
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+ValidacionConCondiciones=S
+ValidacionCondicion=Si<BR>  (SQL(<T>EXEC SP_DM0169ValidacionAgentes :tAgt, :nSucursal, :tMovimiento, :tAlmacen<T>,Agente,Sucursal,Mov,Almacen)= 1)<BR>Entonces<BR>  Verdadero<BR>Sino<BR>  Error(<T>El agente seleccionado (<T>+ Agente + <T>) no pertenece a esta sucursal.<T>)<BR>  AbortarOperacion<BR>Fin
+
+;Se mofifico la condicion De Edicion del campo Fernando Romero 10/02/2014
+[Venta.tbl/Almacen]
+CondicionEdicion=Vacio(AnexoID) y (no Usuario.BloquearAlmacen)
+ValorRefrescar=SQL(<T>select  Case When Sucursal=98 Then <T>+Comillas(<T>V00096<T>)+<T> Else AlmacenPrincipal End from Sucursal With(Nolock) Where Sucursal=:nSuc<T>,Sucursal)
+
+;**** Nuevo campo agregado ARC 07-May-09 (MAVI) ****
+[Venta.tbl/AfectaComisionMavi]
+Clave=AfectaComisionMavi
+Nombre=Comisión Mayoreo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionEdicion=Mov = <T>Pedido Mayoreo<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+OpcionesValidar=S
+ListaOpciones=1<BR>0
+
+;**** PENDIENTEINTEGRACIONMOISES SE MODIFICO LA CONDICION DE EDICION DE SucursalOrigen PARA QUE NO SEA POSIBLE MODIFICARLA. SOLO DESPLIEGUE EN VENTAS 15/JUNIO/2009
+[Venta.tbl/SucursalOrigen]
+CondicionEdicion=Falso
+
+;**** PENDIENTEINTEGRACIONMOISES SE MODIFICO LA CONDICION DE EDICION DE LA SUCURSALVENTA PARA QUE SOLO SEA POSIBLE MODIFICARLA SI EL MOVIMIENTO ES ANALISIS CREDITO Y SI ESTE ESTA EN ESTATUS PENDIENTE Y SI EL USUARIO EN SU CONFIGURACION O PERFIL TIENE LA OPCION DE "MODIFICAR SUCURSAL VENTA" HABILITADA MOISES MAVI 15/JUNIO/2009
+[Venta.tbl/SucursalVenta]
+CondicionEdicion=Temp.Num=1
+
+[Venta.tbl/OrigenSucursal]
+Clave=OrigenSucursal
+Nombre=Sucursal Origen
+Visible=S
+TamanoValidacion=60
+TipoDatos=Numérico
+Tamano=60
+UnicamenteLectura=S
+
+;Se agrego campo para Facturacion Electronica BVF 17022010
+[Venta.tbl/FacDesgloseIva]
+Clave=FacDesgloseIva
+Nombre=Desglosar Iva
+Visible=S
+TamanoValidacion=50
+TipoDatos=Lógico
+ValorPorOmision=si(Mov En(<T>Solicitud Mayoreo<T>,<T>Pedido Mayoreo<T>,<T>Sol Dev Mayoreo<T>),Verdadero,Falso)
+ListaRefrescar=FacDesgloseIva
+ValorRefrescar=si(Venta:Venta.Mov En(<T>Solicitud Mayoreo<T>,<T>Sol Dev Mayoreo<T>,<T>Pedido Mayoreo<T>),Verdadero,Falso)
+CondicionDespliege=Venta:Venta.Mov En(<T>Solicitud Credito<T>,<T>Analisis Credito<T>,<T>Pedido<T>,<T>Factura<T>,<T>Factura VIU<T>,<T>Credilana<T>,<T>Prestamo Personal<T>,<T>Seguro Auto<T>,<T>Seguro Vida<T>,<T>Solicitud Mayoreo<T>,<T>Analisis Mayoreo<T>,<T>Pedido Mayoreo<T>,<T>Factura Mayoreo<T>,<T>Solicitud Devolucion<T>,<T>Devolucion Venta<T>,<T>Sol Dev Mayoreo<T>,<T>Devolucion Mayoreo<T>)
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=FacDesgloseIva
+
+
+[Venta.tbl/AgenteServicio]
+ValidacionUsaTabla=N
+ValidacionTablas=
+
+;*** Integracion por paquete CFD MODIFICACION CAMPO OBSERVACIONES BVF 24052011
+;**** se le cambia el tamaño a este campo a 255 TEG 21/05/2011****
+[Venta.tbl/Observaciones]
+Tamano=255
+TamanoValidacion=255
+
+; **** Integracion de nuevo campo para monedero electronico. JR 13-Oct-2012. **** 
+[Venta.tbl/RedimePtos]
+Clave=RedimePtos
+Nombre=RedimePtos
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[Venta.tbl/FormaEnvio]
+CondicionDespliege=no MovTipoEn(<T>VTAS<T>, Mov, (VTAS.D,VTAS.DF,VTAS.B,VTAS.DR,VTAS.DC,VTAS.DCR,VTAS.CO)) y SQL(<T>Select dbo.fn_MaviDM0169ValidaUsuario (:tUsu, :nEnvi)<T> , usuario, EnviarA) = 0
+
+[Venta.tbl/Concepto]
+CondicionDespliege=sql(<T>SELECT count(concepto) FROM EmpresaConceptoValidar<BR>WHERE Modulo=<T>+comillas(<T>VTAS<T>)+<BR><T> and mov=:tmov<BR>group by Empresa,Modulo,Mov<T>,mov)>1
+
+[Venta.tbl/Proyecto]
+CondicionDespliege=sql(<T>select COUNT(*) from Proyecto<T>)>0
+
+[Venta.tbl/DescuentoGlobal]
+CondicionDespliege=SQL(<T>Select dbo.fn_MaviDM0169ValidaUsuario (:tUsu, :nEnvi)<T> , usuario, Venta:Venta.EnviarA) = 0
+
+[Venta.tbl/Descuento]
+CondicionDespliege=SQL(<T>Select dbo.fn_MaviDM0169ValidaUsuario (:tUsu, :nEnvi)<T> , usuario, Venta:Venta.EnviarA) = 0
+
+[Venta.tbl/ListaPreciosEsp]
+CondicionDespliege=SQL(<T>Select dbo.fn_MaviDM0169ValidaUsuario (:tUsu, :nEnvi)<T> , usuario, Venta:Venta.EnviarA) = 0
+
+[Venta.tbl/OrdenCompra]
+CondicionDespliege=1=0<BR>/*MovTipo(<T>VTAS<T>,Mov) noen (VTAS.D,VTAS.DF,VTAS.B,VTAS.DC,VTAS.DCR,VTAS.N,VTAS.NO,VTAS.NR,VTAS.FM)*/
+
+[Venta.tbl/MaviTipoVenta]
+Clave=MaviTipoVenta
+Nombre=MaviTipoVenta
+Visible=S
+TamanoValidacion=5
+Tamano=5
+
+[Venta.tbl/ReferenciaOrdenCompra]
+Nombre=Pedido Ecommerce
+CondicionDespliege=SQL(<T>select SUBSTRING(Nombre,1,14) from Sucursal Where Sucursal=:nSuc<T>,Sucursal)=<T>VENTA EN LINEA<T>
+
+[Venta.tbl/IDEcommerce]
+Clave=IDEcommerce
+Nombre=IDEcommerce
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Texto

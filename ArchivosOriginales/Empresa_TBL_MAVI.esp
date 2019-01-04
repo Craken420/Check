@@ -1,0 +1,36 @@
+[Empresa.tbl/Tabla]
+;ListaCampos.Cambios=Insertar<TAB>FiscalRegimen<TAB>28
+;SQL.Cambios=Insertar<TAB>  FiscalRegimen<TAB>29<BR>
+ListaCampos=Empresa<BR>Nombre<BR>Grupo<BR>Direccion<BR>DireccionNumero<BR>DireccionNumeroInt<BR>Colonia<BR>Poblacion<BR>Estado<BR>Pais<BR>CodigoPostal<BR>Telefonos<BR>Fax<BR>Encabezado1<BR>Encabezado2<BR>Estatus<BR>UltimoCambio<BR>UltimaCorrida<BR>Alta<BR>RFC<BR>RegistroPatronal<BR>ClaveActividad<BR>Representante<BR>RepresentanteRFC<BR>RepresentanteCURP<BR>Zona<BR>Numero<BR>TieneMovimientos<BR>CambioBloquear<BR>Controladora<BR>FactorIntegracion<BR>Tipo<BR>ImportadorRegimen<BR>ImportadorRegistro<BR>ImportadorFechaD<BR>ImportadorFechaA<BR>Delegacion<BR>GLN<BR>CFD<BR>CFD_noCertificado<BR>CFD_version<BR>CFD_versionFecha<BR>CFD_versionAnterior<BR>CFD_EAN13<BR>CFD_DUN14<BR>CFD_SKU<BR>CFD_SKUCodigoInterno<BR>CFD_Llave<BR>CFD_Certificado<BR>CFD_ContrasenaSello<BR>FiscalRegimen
+SQL=SELECT<BR>  Empresa,<BR>  Nombre,<BR>  Grupo,<BR>  Direccion,<BR>  DireccionNumero,<BR>  DireccionNumeroInt,<BR>  Colonia,<BR>  Poblacion,<BR>  Estado,<BR>  Pais,<BR>  CodigoPostal,<BR>  Telefonos,<BR>  Fax,<BR>  Encabezado1,<BR>  Encabezado2,<BR>  Estatus,<BR>  UltimoCambio,<BR>  UltimaCorrida,<BR>  Alta,<BR>  RFC,<BR>  RegistroPatronal,<BR>  ClaveActividad,<BR>  Representante,<BR>  RepresentanteRFC,<BR>  RepresentanteCURP,<BR>  Zona,<BR>  Numero,<BR>  TieneMovimientos,<BR>  CambioBloquear,<BR>  Controladora,<BR>  FactorIntegracion,<BR>  Tipo,<BR>  ImportadorRegimen,<BR>  ImportadorRegistro,<BR>  ImportadorFechaD,<BR>  ImportadorFechaA,<BR>  Delegacion,<BR>  GLN,<BR>  CFD,<BR>  CFD_noCertificado,<BR>  CFD_version,<BR>  CFD_versionFecha,<BR>  CFD_versionAnterior,<BR>  CFD_EAN13,<BR>  CFD_DUN14,<BR>  CFD_SKU,<BR>  CFD_SKUCodigoInterno,<BR>  CFD_Llave,<BR>  CFD_Certificado,<BR>  CFD_ContrasenaSello,<BR>  FiscalRegimen<BR><BR>FROM Empresa
+
+
+
+;[Empresa.tbl/FiscalRegimen]
+;Clave=FiscalRegimen
+;Nombre=Régimen Fiscal
+;Visible=S
+;TamanoValidacion=30
+;TipoDatos=Texto
+;Tamano=30
+;AyudaEnCaptura=Expresion
+;AyudaMemRenglones=4
+;AyudaMemOpc=Validar captura en la lista
+;Formula=SQLEnLista(<T>SELECT FiscalRegimen FROM FiscalRegimen<T>)
+
+[Empresa.tbl/FiscalRegimen]
+Clave=FiscalRegimen
+Nombre=FiscalRegimen
+Visible=S
+TamanoValidacion=100
+TipoDatos=Texto
+Tamano=100
+AyudaEnCaptura=Expresion
+AyudaMemOpc=Validar captura en la lista
+Formula=SQLEnLista(<T>SELECT FiscalRegimen FROM FiscalRegimen<T>)
+
+
+[Empresa.tbl/CFD]
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>No puede activar CFD y CFD Flexible simultaneamente. <T>
+ValidacionCondicion=SI(Empresa:Empresa.CFD Y SQL(<T>SELECT CFDFlex FROM EmpresaGral WHERE Empresa = :tEmpresa<T>,Empresa),FALSO,VERDADERO)

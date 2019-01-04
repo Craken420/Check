@@ -1,0 +1,50 @@
+
+; **** Modificacion de ListaAcciones, se integro CteL, 27/DIC/2011 Victor Enrique Murillo Torres,  para desarrollo DM0155 SEGMENTACION DE MENUS dentro del paquete DM0155_27122011. JR 27-Dic-2011. ****
+[MenuCtaClientes.dlg/Dialogo]
+Clave=MenuCtaClientes
+Nombre=Clientes
+Icono=14
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={Tahoma, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+;ListaAcciones=Clientes
+PosicionInicialAltura=141
+PosicionInicialAncho=247
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaConIcono=S
+PosicionInicialIzquierda=516
+PosicionInicialArriba=426
+PosicionInicialAlturaCliente=138
+ListaAcciones=Clientes<BR>CteL
+
+
+[MenuCtaClientes.dlg/Acciones.Clientes]
+Nombre=Clientes
+Boton=0
+NombreDesplegar=&Clientes
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=Cte
+Activo=S
+Visible=S
+
+; **** Integracion de nueva accion CteL, 27/DIC/2011 Victor Enrique Murillo Torres, para desarrollo DM0155 SEGMENTACION DE MENUS dentro del paquete DM0155_27122011. JR 27-Dic-2011. ****
+[MenuCtaClientes.dlg/Acciones.CteL]
+Nombre=CteL
+Boton=0
+NombreDesplegar=&Listas de Clientes
+Menu=&Cuentas
+EnMenu=S
+EnBarraAcciones=S
+EspacioPrevio=S
+TipoAccion=Formas
+ClaveAccion=CteL
+Activo=S
+Visible=S
+

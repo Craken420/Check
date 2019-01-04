@@ -1,0 +1,46 @@
+[Dinero.Vis/Dinero.CtaDineroDestino]
+Clave=Dinero.CtaDineroDestino
+Ligado=N
+LigaTabla=Dinero
+LigaCampo=CtaDineroDestino
+Tamano=10
+ClaveBDE=CtaDineroDestino
+TamanoValidacion=10
+Alineacion=por Omisión
+AyudaEnCaptura=Vista
+AyudaForma=CtaDineroLista
+AyudaVista=CtaDinero
+AyudaCampo=CtaDinero.CtaDinero
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+AyudaRefrescar=S
+Nombre=Cuenta Des&tino
+Mayusculas=S
+CondicionDespliege=MovTipoEn(<T>DIN<T>,Dinero.Mov, (DIN.T, DIN.TI, DIN.INV, DIN.RET, DIN.TC, DIN.A, DIN.AP, DIN.CP, DIN.C))
+ConRefrescar=S
+CondicionEdicion=no Usuario.BloquearDineroCtaDinero
+ListaRefrescar=Dinero.TipoCambioDestino
+ValorRefrescar=Si<BR>  MovTipoEn(<T>DIN<T>,Dinero.Mov, (DIN.T, DIN.TI, DIN.INV, DIN.RET, DIN.TC, DIN.A, DIN.AP, DIN.CP, DIN.C))<BR>Entonces<BR>  Si(MovTipoEn(<T>DIN<T>, Dinero.Mov, (DIN.A,DIN.AP)), Usuario.DefCtaDinero, Usuario.DefCtaDineroTrans)<BR>Sino<BR>  Nulo<BR>Fin
+RequeridoActivo=S
+ValidacionUsaTabla=S
+ValidacionTablas=CtaDineroDestino
+
+[Dinero.Vis/ConDesglose]
+Ligado=N
+CondicionDespliege=(MovTipo(<T>DIN<T>, Mov) noen (DIN.RE, DIN.REI, DIN.RND)) y (Dinero.Mov noen(<T>Pago Dinero<T>,<T>Envio Dinero<T>))
+
+[Dinero.Vis/Concepto]
+Ligado=N
+CondicionDespliege=Dinero.Mov noen(<T>Pago Dinero<T>,<T>Envio Dinero<T>)
+
+[Dinero.Vis/Observaciones]
+Ligado=N
+CondicionDespliege=Dinero.Mov noen(<T>Pago Dinero<T>,<T>Envio Dinero<T>)
+
+[Dinero.Vis/Directo]
+Ligado=N
+CondicionEdicion=Dinero.Mov noen(<T>Pago Dinero<T>,<T>Envio Dinero<T>)
+
+[Dinero.Vis/LeyendaCheque]
+Ligado=N
+CondicionDespliege=(MovTipoEn(<T>DIN<T>,Mov,(DIN.CH, DIN.CHE, DIN.E, DIN.SCH))) y (Dinero.Mov noen(<T>Pago Dinero<T>,<T>Envio Dinero<T>))

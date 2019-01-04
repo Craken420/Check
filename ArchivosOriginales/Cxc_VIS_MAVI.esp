@@ -1,0 +1,189 @@
+;**** Ultima modificación:12-Ago-08
+;**** Modifico:Arly Rubio
+;**** Se modifico: Se agrego el campo CteEnviarA.Cadena, financiamiento
+
+;***** Modificacion: 09-Ene-09
+;***** Modifico: Judith Ramirez
+;***** Se modifico: Se agrego campo seenviaburocreditomavi para desarrollo buro credito
+
+;***** Modificacion: 13-Feb-09
+;***** Modifico: Edgar Montelongo
+;***** Se modifico: SE agregaron 3 campos para control de Politica de Enganche
+
+
+
+;**** Se agreagó nuevos campos: CteEnviarA.Cadena, Cxc.Financiamiento ****
+; EWQ. Agosto 2009. Inicio
+;***** Agrego campo NoCtaPago para cobro fiscal-no fiscal BVF 02062012
+[Cxc.vis/Vista]
+ListaCampos=Cxc.ID<BR>Cxc.Empresa<BR>Cxc.Mov<BR>Cxc.MovID<BR>Cxc.FechaEmision<BR>Cxc.UltimoCambio<BR>Cxc.Concepto<BR>Cxc.Proyecto<BR>Cxc.Moneda<BR>Cxc.TipoCambio<BR>Cxc.Usuario<BR>Cxc.Autorizacion<BR>Cxc.Referencia<BR>Cxc.DocFuente<BR>Cxc.Observaciones<BR>Cxc.Estatus<BR>Cxc.Situacion<BR>Cxc.SituacionFecha<BR>Cxc.SituacionUsuario<BR>Cxc.SituacionNota<BR>Cxc.Cliente<BR>Cxc.ClienteEnviarA<BR>Cxc.ClienteMoneda<BR>Cxc.ClienteTipoCambio<BR>Cxc.Cobrador<BR>Cxc.Condicion<BR>Cxc.Vencimiento<BR>Cxc.FormaCobro<BR>Cxc.CtaDinero<BR>Cxc.Importe<BR>Cxc.Impuestos<BR>Cxc.Retencion<BR>Cxc.AplicaManual<BR>Cxc.ConDesglose<BR>Cxc.FormaCobro1<BR>Cxc.FormaCobro2<BR>Cxc.FormaCobro3<BR>Cxc.FormaCobro4<BR>Cxc.FormaCobro5<BR>Cxc.Referencia1<BR>Cxc.Referencia2<BR>Cxc.Referencia3<BR>Cxc.Referencia4<BR>Cxc.Referencia5<BR>Cxc.Impor<CONTINUA>
+ListaCampos002=<CONTINUA>te1<BR>Cxc.Importe2<BR>Cxc.Importe3<BR>Cxc.Importe4<BR>Cxc.Importe5<BR>Cxc.Cambio<BR>Cxc.DelEfectivo<BR>Cxc.Agente<BR>Cxc.ComisionTotal<BR>Cxc.ComisionPendiente<BR>Cxc.MovAplica<BR>Cxc.MovAplicaID<BR>Cxc.Saldo<BR>Cxc.OrigenTipo<BR>Cxc.Origen<BR>Cxc.OrigenID<BR>Cxc.Poliza<BR>Cxc.PolizaID<BR>Cxc.FechaConclusion<BR>Cxc.FechaCancelacion<BR>Cxc.Dinero<BR>Cxc.DineroID<BR>Cxc.DineroCtaDinero<BR>Cxc.ConTramites<BR>Cxc.VIN<BR>Cxc.Sucursal<BR>Cxc.SucursalDestino<BR>Cxc.SucursalOrigen<BR>Cxc.Cajero<BR>Cxc.UEN<BR>Cxc.PersonalCobrador<BR>Cxc.FechaOriginal<BR>Cxc.Nota<BR>Cxc.Comentarios<BR>Cxc.LineaCredito<BR>Cxc.TipoAmortizacion<BR>Cxc.TipoTasa<BR>Cxc.Amortizaciones<BR>Cxc.InteresesOrdinarios<BR>Cxc.Financiamiento<BR>Cxc.InteresesMoratorios<BR>Cxc.InteresesFijos<BR>Cxc.InteresesAnticipados<BR>Cxc.CarteraVencidaCNBV<BR>Cxc.C<CONTINUA>
+ListaCampos003=<CONTINUA>omisiones<BR>Cxc.ComisionesIVA<BR>Cxc.FechaRevision<BR>Cxc.ContUso<BR>Cxc.TieneTasaEsp<BR>Cxc.TasaEsp<BR>Cxc.Codigo<BR>Cxc.SaldoDevueltoMAVI<BR>Cxc.SaldoAplicadoMAVI<BR>Cxc.RefAnticipoMAVI<BR>Mon.TipoCambio<BR>Mon.TipoCambioVenta<BR>Mon.TipoCambioCompra<BR>Cte.Nombre<BR>Cte.NombreCorto<BR>Cte.Numero<BR>Cte.Tipo<BR>Cte.Direccion<BR>Cte.EntreCalles<BR>Cte.Plano<BR>Cte.Observaciones<BR>Cte.Colonia<BR>Cte.CodigoPostal<BR>Cte.Poblacion<BR>Cte.Estado<BR>Cte.Pais<BR>Cte.Zona<BR>Cte.RFC<BR>Cte.Telefonos<BR>Cte.Fax<BR>Cte.Categoria<BR>Cte.Familia<BR>Cte.Credito<BR>Cte.Grupo<BR>Cte.ZonaImpuesto<BR>Cte.Estatus<BR>Cte.Proyecto<BR>Cte.Agente<BR>Cte.EnviarA<BR>Cte.Condicion<BR>Cte.DefMoneda<BR>Cte.Mensaje<BR>Cte.Cobrador<BR>Cte.DescuentoRecargos<BR>Cte.Agente3<BR>Cte.Agente4<BR>CteEnviarA.Clave<BR>CteEnviarA.Nombre<BR>CteEnviarA.Direccion<BR>CteEnviarA.ZonaImpuesto<BR>CteEnviarA.Cadena<BR>CxcSal<CONTINUA>
+ListaCampos004=<CONTINUA>do.Saldo<BR>MonSaldo.TipoCambio<BR>MonSaldo.TipoCambioVenta<BR>MonSaldo.TipoCambioCompra<BR>LC.Descripcion<BR>LC.VigenciaDesde<BR>LC.VigenciaCondicion<BR>LC.VigenciaHasta<BR>LC.TieneTasaEsp<BR>LC.TasaEsp<BR>TipoAmortizacion.Descripcion<BR>TipoTasa.Descripcion<BR>CtaDinero.Tipo<BR>CtaDinero.Estatus<BR>CtaDinero.Mensaje<BR>CxcPendiente.ID<BR>CxcPendiente.Empresa<BR>CxcPendiente.Mov<BR>CxcPendiente.MovID<BR>CxcPendiente.Cliente<BR>CxcPendiente.Moneda<BR>CxcPendiente.FechaEmision<BR>CxcPendiente.Vencimiento<BR>CxcPendiente.Saldo<BR>CxcPendiente.Referencia<BR>CxcPendiente.Estatus<BR>MovTipo.Factor<BR>Cajero.Nombre<BR>Cajero.Estatus<BR>AgenteValida.Nombre<BR>AgenteValida.Estatus<BR>UEN.Nombre<BR>Personal.ApellidoPaterno<BR>Personal.ApellidoMaterno<BR>Personal.Nombre<BR>CentroCostos.Descripcion<BR>Cxc.SeEnviaBuroCreditoMavi<BR>Cxc.CondRef<BR>Cxc.CoincideMavi<BR>Cxc.FacDesgloseIVA<BR>Cxc.NoCtaPago
+
+
+SQL=SELECT<BR>  Cxc.CoincideMavi,<BR>  Cxc.ID,<BR>  Cxc.Empresa,<BR>  Cxc.Mov,<BR>  Cxc.MovID,<BR>  Cxc.FechaEmision,<BR>  Cxc.UltimoCambio,<BR>  Cxc.Concepto,<BR>  Cxc.Proyecto,<BR>  Cxc.Moneda,<BR>  Cxc.TipoCambio,<BR>  Cxc.Usuario,<BR>  Cxc.Autorizacion,<BR>  Cxc.Referencia,<BR>  Cxc.DocFuente,<BR>  Cxc.Observaciones,<BR>  Cxc.Estatus,<BR>  Cxc.Situacion,<BR>  Cxc.SituacionFecha,<BR>  Cxc.SituacionUsuario,<BR>  Cxc.SituacionNota,<BR>  Cxc.Cliente,<BR>  Cxc.ClienteEnviarA,<BR>  Cxc.ClienteMoneda,<BR>  Cxc.ClienteTipoCambio,<BR>  Cxc.Cobrador,<BR>  Cxc.Condicion,<BR>  Cxc.Vencimiento,<BR>  Cxc.FormaCobro,<BR>  Cxc.CtaDinero,<BR>  Cxc.Importe,<BR>  Cxc.Impuestos,<BR>  Cxc.Retencion,<BR>  Cxc.AplicaManual,<BR>  Cxc.ConDesglose,<BR>  Cxc.FormaCobro1,<BR>  Cxc.FormaCobro2,<BR>  Cxc.FormaCobro3,<BR>  Cxc.FormaCobro4,<BR<CONTINUA>
+SQL002=<CONTINUA>>  Cxc.FormaCobro5,<BR>  Cxc.Referencia1,<BR>  Cxc.Referencia2,<BR>  Cxc.Referencia3,<BR>  Cxc.Referencia4,<BR>  Cxc.Referencia5,<BR>  Cxc.Importe1,<BR>  Cxc.Importe2,<BR>  Cxc.Importe3,<BR>  Cxc.Importe4,<BR>  Cxc.Importe5,<BR>  Cxc.Cambio,<BR>  Cxc.DelEfectivo,<BR>  Cxc.Agente,<BR>  Cxc.ComisionTotal,<BR>  Cxc.ComisionPendiente,<BR>  Cxc.MovAplica,<BR>  Cxc.MovAplicaID,<BR>  Cxc.Saldo,<BR>  Cxc.OrigenTipo,<BR>  Cxc.Origen,<BR>  Cxc.OrigenID,<BR>  Cxc.Poliza,<BR>  Cxc.PolizaID,<BR>  Cxc.FechaConclusion,<BR>  Cxc.FechaCancelacion,<BR>  Cxc.Dinero,<BR>  Cxc.DineroID,<BR>  Cxc.DineroCtaDinero,<BR>  Cxc.ConTramites,<BR>  Cxc.VIN,<BR>  Cxc.Sucursal,<BR>  Cxc.SucursalDestino,<BR>  Cxc.SucursalOrigen,<BR>  Cxc.Cajero,<BR>  Cxc.UEN,<BR>  Cxc.PersonalCobrador,<BR>  Cxc.FechaOriginal,<BR>  Cxc.CondRef,<BR>  Cxc.Nota<CONTINUA>
+SQL003=<CONTINUA>,<BR>  Cxc.Comentarios,<BR>  Cxc.LineaCredito,<BR>  Cxc.TipoAmortizacion,<BR>  Cxc.TipoTasa,<BR>  Cxc.Amortizaciones,<BR>  Cxc.InteresesOrdinarios,<BR>  Cxc.Financiamiento,<BR>  Cxc.InteresesMoratorios,<BR>  Cxc.InteresesFijos,<BR>  Cxc.InteresesAnticipados,<BR>  Cxc.CarteraVencidaCNBV,<BR>  Cxc.Comisiones,<BR>  Cxc.ComisionesIVA,<BR>  Cxc.FechaRevision,<BR>  Cxc.ContUso,<BR>  Cxc.TieneTasaEsp,<BR>  Cxc.TasaEsp,<BR>  Cxc.Codigo,<BR>  Cxc.SaldoDevueltoMAVI,<BR>  Cxc.SaldoAplicadoMAVI,<BR>  Cxc.RefAnticipoMAVI,<BR>  Cxc.SeEnviaBuroCreditoMavi,<BR>  Mon.TipoCambio,<BR>  Mon.TipoCambioVenta,<BR>  Mon.TipoCambioCompra,<BR>  Cte.Nombre,<BR>  Cte.NombreCorto,<BR>  Cte.Numero,<BR>  Cte.Tipo,<BR>  Cte.Direccion,<BR>  Cte.EntreCalles,<BR>  Cte.Plano,<BR>  Cte.Observaciones,<BR>  Cte.Colonia,<BR>  Cte.CodigoPostal,<BR>  Cte.Poblacion,<BR>  Cte.Estado,<BR>  Cte.Pais,<BR>  Cte.Zona,<BR>  Cte.RFC,<BR>  Cte.Telefonos,<BR>  Cte.Fax,<BR>  Cte.<CONTINUA>
+SQL004=<CONTINUA>Categoria,<BR>  Cte.Familia,<BR>  Cte.Credito,<BR>  Cte.Grupo,<BR>  Cte.ZonaImpuesto,<BR>  Cte.Estatus,<BR>  Cte.Proyecto,<BR>  Cte.Agente,<BR>  Cte.EnviarA,<BR>  Cte.Condicion,<BR>  Cte.DefMoneda,<BR>  Cte.Mensaje,<BR>  Cte.Cobrador,<BR>  Cte.DescuentoRecargos,<BR>  Cte.Agente3,<BR>  Cte.Agente4,<BR>  CteEnviarA.Clave,<BR>  CteEnviarA.Nombre,<BR>  CteEnviarA.Direccion,<BR>  CteEnviarA.ZonaImpuesto,<BR>  CteEnviarA.Cadena,<BR>  CxcSaldo.Saldo,<BR>  MonSaldo.TipoCambio,<BR>  MonSaldo.TipoCambioVenta,<BR>  MonSaldo.TipoCambioCompra,<BR>  LC.Descripcion,<BR>  LC.VigenciaDesde,<BR>  LC.VigenciaCondicion,<BR>  LC.VigenciaHasta,<BR>  LC.TieneTasaEsp,<BR>  LC.TasaEsp,<BR>  TipoAmortizacion.Descripcion,<BR>  TipoTasa.Descripcion,<BR>  CtaDinero.Tipo,<BR>  CtaDinero.Estatus,<BR>  CtaDinero.Mensaje,<BR>  CxcPendiente.ID,<B<CONTINUA>
+SQL005=<CONTINUA>R>  CxcPendiente.Empresa,<BR>  CxcPendiente.Mov,<BR>  CxcPendiente.MovID,<BR>  CxcPendiente.Cliente,<BR>  CxcPendiente.Moneda,<BR>  CxcPendiente.FechaEmision,<BR>  CxcPendiente.Vencimiento,<BR>  CxcPendiente.Saldo,<BR>  CxcPendiente.Referencia,<BR>  CxcPendiente.Estatus,<BR>  MovTipo.Factor,<BR>  Cajero.Nombre,<BR>  Cajero.Estatus,<BR>  AgenteValida.Nombre,<BR>  AgenteValida.Estatus,<BR>  UEN.Nombre,<BR>  Personal.ApellidoPaterno,<BR>  Personal.ApellidoMaterno,<BR>  Personal.Nombre,<BR>  CentroCostos.Descripcion,<BR>Cxc.FacDesgloseIVA,<BR>Cxc.NoCtaPago<BR><BR>FROM<BR>  Cxc<BR>  JOIN Mon ON Cxc.Moneda=Mon.Moneda<BR>  JOIN Mon MonSaldo ON Cxc.ClienteMoneda=MonSaldo.Moneda<BR>  LEFT OUTER JOIN UEN ON Cxc.UEN=UEN.UEN<BR>  JOIN Cte ON Cxc.Cliente=Cte.Cliente<BR>  LEFT OUTER JOIN CxcSaldo ON Cxc.Empresa=CxcSaldo.Empresa AND Cxc.Cliente<CONTINUA>
+SQL006=<CONTINUA>Moneda=CxcSaldo.Moneda AND Cxc.Cliente=CxcSaldo.Cliente<BR>  LEFT OUTER JOIN CtaDinero ON Cxc.CtaDinero=CtaDinero.CtaDinero<BR>  LEFT OUTER JOIN CxcPendiente ON Cxc.Empresa=CxcPendiente.Empresa AND Cxc.Cliente=CxcPendiente.Cliente AND Cxc.MovAplica=CxcPendiente.Mov AND Cxc.MovAplicaID=CxcPendiente.MovID<BR>  LEFT OUTER JOIN CteEnviarA ON Cxc.Cliente=CteEnviarA.Cliente AND Cxc.ClienteEnviarA=CteEnviarA.ID<BR>  JOIN MovTipo ON <T>CXC<T>=MovTipo.Modulo AND Cxc.Mov=MovTipo.Mov<BR>  LEFT OUTER JOIN Agente Cajero ON Cxc.Cajero=Cajero.Agente<BR>  LEFT OUTER JOIN Agente AgenteValida ON Cxc.Agente=AgenteValida.Agente<BR>  LEFT OUTER JOIN Personal ON Cxc.PersonalCobrador=Personal.Personal<BR>  LEFT OUTER JOIN LC ON Cxc.LineaCredito=LC.LineaCredito<BR>  LEFT OUTER JOIN TipoAmortizacion ON Cxc.TipoAmo<CONTINUA>
+SQL007=<CONTINUA>rtizacion=TipoAmortizacion.TipoAmortizacion<BR>  LEFT OUTER JOIN TipoTasa ON Cxc.TipoTasa=TipoTasa.TipoTasa<BR>  LEFT OUTER JOIN VIN ON Cxc.VIN=VIN.VIN<BR>  LEFT OUTER JOIN CentroCostos ON Cxc.ContUso=CentroCostos.CentroCostos
+
+
+[Cxc.vis/Cxc.NoCtaPago]
+Clave=Cxc.NoCtaPago
+Nombre=NoCtaPago
+Visible=S
+TipoDatos=Texto
+ValorPorOmision=<T>No Identificado<T>
+ConRefrescar=S
+ListaRefrescar=Cxc.NoCtaPago
+ValorRefrescar=
+LigaTabla=Cxc
+LigaCampo=NoCtaPago
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=NoCtaPago
+Tamano=25
+
+[Cxc.vis/Cxc.CoincideMavi]
+Clave=Cxc.CoincideMavi
+Nombre=CoincideMavi
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+LigaTabla=Cxc
+LigaCampo=CoincideMavi
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=CoincideMavi
+
+; EWQ. Agosto 2009. Fin
+
+;**** Nuevo Campor agregado ****
+[Cxc.vis/CteEnviarA.Cadena]
+Clave=CteEnviarA.Cadena
+Nombre=Cadena
+Visible=S
+TamanoValidacion=50
+Tamano=50
+ValorRefrescar=SQL(<T>Select Cadena from VentasCanalMAVI where ID=:nClave<T>,ID)
+LigaTabla=CteEnviarA
+LigaCampo=Cadena
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=Cadena
+
+
+;**** Nuevo Campor agregado ****
+[Cxc.vis/Cxc.Financiamiento]
+Clave=Cxc.Financiamiento
+Nombre=Financiamiento
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+Monetario=S
+UnicamenteLectura=S
+CondicionDespliege=Cxc.Origen en(<T>Credilana<T>,<T>Prestamo Personal<T>)
+LigaTabla=Cxc
+LigaCampo=Financiamiento
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=Financiamiento
+
+
+
+;***** Campo Nuevo para desarrollo buro de credito *****
+[Cxc.vis/Cxc.SeEnviaBuroCreditoMavi]
+Clave=Cxc.SeEnviaBuroCreditoMavi
+LigaTabla=Cxc
+LigaCampo=SeEnviaBuroCreditoMavi
+ClaveBDE=SeEnviaBuroCreditoMavi
+Visible=S
+Ligado=S
+
+
+
+;***** Campos agregados para control de Politica de enganche
+;***** EM 13-Feb-09
+
+[Cxc.vis/Cxc.SaldoDevueltoMAVI]
+Clave=Cxc.SaldoDevueltoMAVI
+Nombre=SaldoDevueltoMAVI
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+LigaTabla=Cxc
+LigaCampo=SaldoDevueltoMAVI
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=SaldoDevueltoMAVI
+
+[Cxc.vis/Cxc.SaldoAplicadoMAVI]
+Clave=Cxc.SaldoAplicadoMAVI
+Nombre=SaldoAplicadoMAVI
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+LigaTabla=Cxc
+LigaCampo=SaldoAplicadoMAVI
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=SaldoAplicadoMAVI
+
+[Cxc.vis/Cxc.RefAnticipoMAVI]
+Clave=Cxc.RefAnticipoMAVI
+Nombre=RefAnticipoMAVI
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+LigaTabla=Cxc
+LigaCampo=RefAnticipoMAVI
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=RefAnticipoMAVI
+
+
+;*** ARC 22-May-09 Nuevo campo agregado - Desarrollo de Refinanciamiento
+[Cxc.vis/Cxc.CondRef]
+Clave=Cxc.CondRef
+Nombre=Condicion Refinanciamiento
+Visible=S
+TamanoValidacion=50
+Tamano=50
+CondicionDespliege=Cxc.Mov = <T>Sol Refinanciamiento<T>
+CondicionEdicion=Cxc.Situacion en(EstatusPendiente)
+LigaTabla=Cxc
+LigaCampo=CondRef
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=CondRef
+
+;***** Agrego campo FacDesgloseIva para CFD
+[Cxc.vis/Cxc.FacDesgloseIVA]
+Clave=Cxc.FacDesgloseIVA
+Nombre=FacDesgloseIVA
+Visible=S
+TipoDatos=Lógico
+ValorPorOmision=si(Mov En(<T>Nota Cargo Mayoreo<T>,<T>Nota Credito Mayoreo<T>),Verdadero,Falso)
+ConRefrescar=S
+ListaRefrescar=Cxc.FacDesgloseIva
+ValorRefrescar=si(Mov En(<T>Nota Cargo Mayoreo<T>,<T>Nota Credito Mayoreo<T>),Verdadero,Falso)
+LigaTabla=Cxc
+LigaCampo=FacDesgloseIva
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=FacDesgloseIva
+

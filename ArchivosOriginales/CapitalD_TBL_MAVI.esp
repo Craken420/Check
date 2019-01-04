@@ -1,0 +1,17 @@
+
+;**** Ultima modificación:24-Mar-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:
+
+
+
+
+
+; Se modifico el valor a refrescar porque marcaba un error: "CapitalD:CapitalD.Precio" por "Precio"
+[CapitalD.tbl/Precio]
+ValorRefrescar=Precio
+
+
+; Se modifico el valor a refrescar porque marcaba un error: "CapitalD:CapitalD.Costo" por "Costo"
+[CapitalD.tbl/Costo]
+ValorRefrescar=Costo

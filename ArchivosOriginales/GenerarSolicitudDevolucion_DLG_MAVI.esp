@@ -1,0 +1,151 @@
+;**** Ultima modificación:21-Ago-08
+;**** Modifico:Arly Rubio
+;**** Se modifico: Se agregaron nuevas acciones
+
+
+; **** Se modifico para agregar nuevas acciones: "DevolucionMayoreo","DevolucionVEnta","DevolucionVIU","CancelaCredilana", "CancelaPrestamo","CancelaSegAuto", "CancelaSegVida"****
+[GenerarSolicitudDevolucion.dlg/Dialogo]
+ListaAcciones=DevVenta<BR>DevFaltante<BR>DevolucionMayoreo<BR>DevolucionVenta<BR>DevolucionVIU<BR>CancelaCredilana<BR>CancelaPrestamo<BR>CancelaSegAuto<BR>CancelaSegVida
+
+
+[GenerarSolicitudDevolucion.dlg/Acciones.DevVenta]
+Nombre=DevVenta
+Boton=0
+NombreDesplegar=Generar &Devolución Venta
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+Activo=S
+Visible=N
+ClaveAccion=GenerarPedidoPendiente
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.VentaDev)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+
+
+
+[GenerarSolicitudDevolucion.dlg/Acciones.DevFaltante]
+Nombre=DevFaltante
+Boton=0
+NombreDesplegar=Generar Devolución &Faltante
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Antes=S
+Visible=N
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.VentaDevolucionFaltante)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+
+; **** Nueva Accion solo es visible si movimiento es: "Sol Dev Mayoreo", "Sol Dev Unicaja"ARC(25-Nov.08) ****
+[GenerarSolicitudDevolucion.dlg/Acciones.DevolucionMayoreo]
+Nombre=DevolucionMayoreo
+Boton=0
+NombreDesplegar=Generar Devolución Mayoreo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, <T>Devolucion Mayoreo<T>)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=(Info.Mov en (<T>Sol Dev Mayoreo<T>,<T>Sol Dev Unicaja<T>)) y (Info.UEN=<T>3<T>)
+
+; **** Nueva Accion solo es visible si movimiento es: ("Solicitud Devolucion",  "Sol Dev Unicaja"ARC(25-Nov.08)) y la UEN es: 1****
+[GenerarSolicitudDevolucion.dlg/Acciones.DevolucionVenta]
+Nombre=DevolucionVenta
+Boton=0
+NombreDesplegar=Generar Devolución de Venta
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, <T>Devolucion Venta<T>)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=(Info.Mov en (<T>Solicitud Devolucion<T>,<T>Sol Dev Unicaja<T>)) y (Info.UEN=<T>1<T>)
+
+
+
+; **** Nueva Accion solo es visible si movimiento es: ("Solicitud Devolucion", "Sol Dev Unicaja (ARC 25-Nov-08)") y la UEN es: 2****
+[GenerarSolicitudDevolucion.dlg/Acciones.DevolucionVIU]
+Nombre=DevolucionVIU
+Boton=0
+NombreDesplegar=Generar Devolución VIU
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, <T>Devolucion VIU<T>)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=(Info.Mov en (<T>Solicitud Devolucion<T>,<T>Sol Dev Unicaja<T>)) y (Info.UEN=<T>2<T>)
+
+
+; **** Nueva Accion solo es visible si movimiento es: "Solicitud Devolucion", "Sol Dev Unicaja"(ARC 25-Nov-08) y la UEN es: 1****
+[GenerarSolicitudDevolucion.dlg/Acciones.CancelaCredilana]
+Nombre=CancelaCredilana
+Boton=0
+NombreDesplegar=Generar Cancelación Credilana
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, <T>Cancela Credilana<T>)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=(Info.Mov en (<T>Solicitud Devolucion<T>,<T>Sol Dev Unicaja<T>)) y (Info.UEN=<T>1<T>)
+
+
+; **** Nueva Accion solo es visible si movimiento es: "Solicitud Devolucion", "Sol Dev Unicaja"(ARC 25-Nov-08) y la UEN es: 2****
+[GenerarSolicitudDevolucion.dlg/Acciones.CancelaPrestamo]
+Nombre=CancelaPrestamo
+Boton=0
+NombreDesplegar=Generar Cancelación Préstamo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, <T>Cancela Prestamo<T>)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=(Info.Mov en (<T>Solicitud Devolucion<T>,<T>Sol Dev Unicaja<T>)) y (Info.UEN=<T>2<T>)
+
+
+
+; **** Nueva Accion solo es visible si movimiento es: "Solicitud Devolucion", "Sol Dev Unicaja"(ARC 25-Nov-08)****
+[GenerarSolicitudDevolucion.dlg/Acciones.CancelaSegAuto]
+Nombre=CancelaSegAuto
+Boton=0
+NombreDesplegar=Generar Cancelación Seguro Auto
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, <T>Cancela Seg Auto<T>)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=(Info.Mov en (<T>Solicitud Devolucion<T>,<T>Sol Dev Unicaja<T>))
+
+
+
+; **** Nueva Accion solo es visible si movimiento es: "Solicitud Devolucion", "Sol Dev Unicaja"(ARC 25-Nov-08)****
+[GenerarSolicitudDevolucion.dlg/Acciones.CancelaSegVida]
+Nombre=CancelaSegVida
+Boton=0
+NombreDesplegar=Generar Cancelación Seguro Vida
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, <T>Cancela Seg Vida<T>)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=(Info.Mov en (<T>Solicitud Devolucion<T>,<T>Sol Dev Unicaja<T>))
+
+
+
+
+
+
+
+

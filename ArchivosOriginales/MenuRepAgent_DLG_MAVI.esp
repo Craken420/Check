@@ -1,0 +1,33 @@
+;**** Ultima modificación:25-Ago-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:Cambio de Mexico
+
+
+
+[MenuRepAgent.dlg/Dialogo]
+ListaAcciones.Cambios=Insertar<TAB>TablaComisiones<TAB>5<BR>Insertar<TAB>MaviComisionMayorista<TAB>6
+PosicionInicialIzquierda=499
+PosicionInicialArriba=378
+PosicionInicialAlturaCliente=234
+
+[MenuRepAgent.dlg/Acciones.TablaComisiones]
+Nombre=TablaComisiones
+Boton=0
+NombreDesplegar=Tabla Rangos de Comisiones
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=TablaComisionRangos
+Activo=S
+Visible=S
+
+[MenuRepAgent.dlg/Acciones.MaviComisionMayorista]
+Nombre=MaviComisionMayorista
+Boton=0
+NombreDesplegar=Comisiones Mayoristas
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Reportes Pantalla
+ClaveAccion=MaviComisionMayorista
+Activo=S
+Visible=S

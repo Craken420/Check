@@ -1,0 +1,22 @@
+;**** Ultima modificación:23-Jul-08
+;**** Modifico:Arly Rubio Camacho
+;**** Se modifico:Creacion
+
+
+;**** Nuevos campos calculados: FechaElaboro ****
+[EvaluacionCalificacion.vis/Vista]
+ListaCalculados=FechaElaboro
+
+
+
+
+;****Nuevo campo calculado ****
+[EvaluacionCalificacion.vis/FechaElaboro]
+Clave=FechaElaboro
+TipoDatos=Texto
+Tamano=20
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Fecha Elaboro
+Formula=FechaEnTexto(EvaluacionCalificacion.Fecha, <T>dd/mm/aaaa hh:mm:ss<T>)

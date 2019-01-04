@@ -1,0 +1,216 @@
+
+; ***** Modifico: Judith Ramirez 04-Dic-09.*****
+; ***** Modificacion: cambio en forma y en acciones para cte express. ****
+
+; ***** JR 04-Dic-09. Cambio en ListaAcciones para cte express. Cambio por Arturo Guizer. ****
+; **** Modificacion de ListaCarpetas para cambiar el orden de carpetas, Jesus Del Toro Andrade 17-Ene-2012, para desarrollo DM0152 Campos Extras, I(Informacion de Cliente) y Preliminar de Cobro del paquete DM0152_18012012. JR 18-Ene-2012. ****
+[CteInfo.frm/Forma]
+PosicionInicialIzquierda=173
+PosicionInicialArriba=196
+; ** JR 04-Dic-09. ListaAcciones=Cerrar<BR>Tareas<BR>Propiedades<BR>Evaluaciones<BR>Anexos<BR>Doc<BR>Politica<BR>Bitacora<BR>Cubos<BR>Correos<BR>Mapa<BR>Movimientos<BR>VentaPendiente<BR>CteCompraPendiente<BR>ExplorarVenta<BR>ExplorarVentaD<BR>VentaAcum<BR>CteInfoServicio<BR>CxcAcum<BR>EfectivoAcum<BR>ValesAcum<BR>Redondeo<BR>AnticiposFacturados<BR>Sentinel<BR>Calificacion<BR>Salir
+;ListaAcciones.Cambios=Insertar<TAB>Calificacion<TAB>25
+ListaAcciones=Cerrar<BR>Tareas<BR>Propiedades<BR>Evaluaciones<BR>Anexos<BR>Doc<BR>Politica<BR>Bitacora<BR>Cubos<BR>Correos<BR>Mapa<BR>Movimientos<BR>VentaPendiente<BR>CteCompraPendiente<BR>ExplorarVenta<BR>ExplorarVentaD<BR>VentaAcum<BR>CteInfoServicio<BR>CxcAcum<BR>EfectivoAcum<BR>ValesAcum<BR>Redondeo<BR>AnticiposFacturados<BR>Sentinel<BR>Calificacion<BR>RFCEDI<BR>Salir
+;Se modifica la lista para cambiar el orden a las carpetas DM0152_29092011 BVF29092011
+;ListaCarpetas=CreditoEspecial<BR>Ficha<BR>Credito<BR>Ventas<BR>Seguro<BR>FormaExtraValor<BR>CRM<BR>PorCobrar<BR>CobrosPosfechados<BR>Embarques<BR>VentaPendiente<BR>Habitos<BR>Soporte<BR>VentaVigente
+; **** Modificaciones para desarrollo Servicasa / Servicred de MAVI. JR 08-Feb-2011 ****
+VentanaExclusiva=N
+VentanaRepetir=S
+VentanaEstadoInicial=Normal
+ListaCarpetas=Ficha<BR>CreditoEspecial<BR>Credito<BR>Ventas<BR>Seguro<BR>FormaExtraValor<BR>CRM<BR>PorCobrar<BR>CobrosPosfechados<BR>Embarques<BR>VentaPendiente<BR>Habitos<BR>Soporte<BR>VentaVigente
+
+
+;Se agrega la Condicion paquete DM0152_29092011 BVF29092011
+; **** Modificacion de ListaEnCaptura para desarrollo DM0152 I (Informacion de Cliente) dentro del paquete DM0152_19122011. JR 20-Dic-2011. *****
+; **** Modificacion de CarpetaVisible y CondicionVisible para que la carpeta siempre sea visible, Jesus Del Toro Andrade 17-Ene-2012, para desarrollo DM0152 Campos Extras, I(Informacion de Cliente) y Preliminar de Cobro del paquete DM0152_18012012. JR 18-Ene-2012. ****
+[CteInfo.frm/Ficha]
+;ListaEnCaptura=Cte.Nombre<BR>Cte.Direccion<BR>Cte.DireccionNumero<BR>Cte.DireccionNumeroInt<BR>Cte.Colonia<BR>Cte.CodigoPostal<BR>Cte.Estado<BR>Cte.Pais<BR>Cte.Grupo<BR>EstatusNombre<BR>Cte.Telefonos<BR>Cte.Contacto1<BR>Cte.Categoria<BR>Cte.Familia<BR>Cte.RFC<BR>SaldoMN<BR>LimiteCreditoMN<BR>DisponibleMN
+;CarpetaVisible=
+;CondicionVisible=Sql(<T>select count(u.usuario) from usuario u<BR>join tablastd tb on u.acceso = tb.Nombre<BR>where TablaSt = :tPrfil and u.usuario =:tUSR<T>, <T>CFG BLOQUEO PERFILES CE VENTAS<T>,Usuario) = 0
+CampoColorFondo=Blanco
+ListaEnCaptura=Cte.Nombre<BR>Cte.Direccion<BR>Cte.DireccionNumero<BR>Cte.DireccionNumeroInt<BR>Cte.Colonia<BR>Cte.CodigoPostal<BR>Cte.Estado<BR>Cte.Pais<BR>Cte.Grupo<BR>EstatusNombre<BR>TelParticular<BR>TelMovil<BR>TelTrabajo<BR>TelOtros<BR>Cte.RFC<BR>SaldoMN<BR>LimiteCreditoMN<BR>DisponibleMN
+CarpetaVisible=S
+
+
+
+;Se agregaron los campos de numero interior y exterior en la Informacion del cliente BVF 13012001
+[CteInfo.frm/Ficha.Cte.DireccionNumero]
+Carpeta=Ficha
+Clave=Cte.DireccionNumero
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+
+[CteInfo.frm/Ficha.Cte.DireccionNumeroInt]
+Carpeta=Ficha
+Clave=Cte.DireccionNumeroInt
+Editar=S
+LineaNueva=N
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+
+[CteInfo.frm/Acciones.Calificacion]
+Nombre=Calificacion
+Boton=41
+NombreEnBoton=S
+NombreDesplegar=Calificación
+Multiple=S
+EnBarraHerramientas=S
+EnMenu=S
+TipoAccion=Paginas
+ListaAccionesMultiples=Variables Asignar<BR>Expresion<BR>Seleccionar<BR>Forma
+Activo=S
+Visible=S
+EspacioPrevio=S
+Antes=S
+AntesExpresiones=Asigna(Info.Cliente,CteInfo:Cte.Cliente)
+
+[CteInfo.frm/Acciones.Calificacion.Variables Asignar]
+Nombre=Variables Asignar
+Boton=0
+TipoAccion=Controles Captura
+ClaveAccion=Variables Asignar
+Activo=S
+Visible=S
+
+
+[CteInfo.frm/Acciones.Calificacion.Expresion]
+Nombre=Expresion
+Boton=0
+TipoAccion=Expresion
+Expresion=Asigna(Info.Mov, (SQL('SELECT TOP 1 Mov FROM CXC WHERE Cliente = :t2 AND PadreMAVI=Mov AND PadreIDMAVI=MovID', CteInfo:Cte.Cliente)))<BR>Asigna(Info.MovID, (SQL('SELECT TOP 1 MovID FROM CXC WHERE Cliente = :t3 AND PadreMAVI=Mov AND PadreIDMAVI=MovID',CteInfo:Cte.Cliente)))
+Activo=S
+Visible=S
+
+;[CteInfo.frm/Acciones.Calificacion.Explorador]
+;Nombre=Explorador
+;Boton=0
+;TipoAccion=Formas
+;ClaveAccion=MAVIExploradorCalificacion
+;Activo=S
+;Visible=S
+
+[CteInfo.frm/Acciones.Calificacion.Seleccionar]
+Nombre=Seleccionar
+Boton=0
+TipoAccion=Ventana
+ClaveAccion=Seleccionar
+Activo=S
+Visible=S
+
+[CteInfo.frm/Acciones.Calificacion.Forma]
+Nombre=Forma
+Boton=0
+TipoAccion=Expresion
+Expresion=Ejecutar(<T>PlugIns\ResumenFactura.exe <T>+Info.Cliente+'|'+EstacionTrabajo)
+Activo=S
+Visible=S
+ConCondicion=S
+EjecucionConError=S
+EjecucionCondicion=ConDatos(Info.MovID)
+EjecucionMensaje=<T>No tiene datos..<T>
+
+; ***** JR 04-Dic-09. Nueva accion para ct express. Cambio por Arturo Guizer. ****
+[CteInfo.frm/Acciones.RFCEDI]
+Nombre=RFCEDI
+Boton=8
+NombreEnBoton=S
+NombreDesplegar=&Editar RFC
+GuardarConfirmar=S
+EnBarraHerramientas=S
+TipoAccion=Formas
+ClaveAccion=EdicionRFC
+Menu=&Ver
+UsaTeclaRapida=S
+TeclaRapida=Ctrl+E
+EsDefault=S
+TeclaFuncion=F10
+EnMenu=S
+ConCondicion=N
+ActivoCondicion=(SQL(<T>select Configuracion from Usuario where Usuario=:tusu<T>,Usuario)=<T>VENTM_GERA<T>) o<BR>(Info.Mov en(<T>Solicitud Credito<T>,<T>Pedido<T>))
+Visible=S
+
+;se agrega el filtro por cliente a la carpeta CreditoEspecial DM0152_29092011 BVF29092011
+[CteInfo.frm/CreditoEspecial]
+Filtros=S
+FiltroPredefinido=S
+FiltroNullNombre=(sin clasificar)
+FiltroEnOrden=S
+FiltroTodoNombre=(Todo)
+FiltroAncho=20
+FiltroRespetar=S
+FiltroTipo=General
+FiltroGeneral=cte.Cliente=<T>{Info.Cliente}<T>
+
+
+; **** Integracion de nuevos campos en Ficha para desarrollo DM0152 I (Informacion de Cliente) dentro del paquete DM0152_19122011. JR 20-Dic-2011. *****
+[CteInfo.frm/Ficha.TelParticular]
+Carpeta=Ficha
+Clave=TelParticular
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[CteInfo.frm/Ficha.TelMovil]
+Carpeta=Ficha
+Clave=TelMovil
+Editar=S
+LineaNueva=N
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[CteInfo.frm/Ficha.TelTrabajo]
+Carpeta=Ficha
+Clave=TelTrabajo
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+ColorFuente=Negro
+
+[CteInfo.frm/Ficha.TelOtros]
+Carpeta=Ficha
+Clave=TelOtros
+Editar=S
+LineaNueva=N
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+ColorFuente=Negro
+; ***** Termina integracion de nuevos campos en Ficha. ***** 
+
+;Modificado 29/02/2012 	Victor Enrique Murillo Torres, Se agrego el campo "Agente" de la tabla Venta. Paquete DM0152_26032012 integra BVF27032012
+; **** Integracion de carpeta Embarques, campo nuevo de venta Causa, 24/02/2012 Victor Enrique Murillo Torres, para desarrollo DM0152 Campos Extras, I(Informacion de Cliente) y Preliminar de Cobro dentro del paquete RM0152_27202012. JR 27-Feb-2012. ****
+[CteInfo.frm/Embarques]
+ListaEnCaptura=Venta.EmbarqueEstado<BR>Venta.FechaEmision<BR>Venta.FechaEntrega<BR>Venta.EnviarA<BR>Venta.FormaEnvio<BR>Venta.Agente<BR>ImporteTotal<BR>Venta.Moneda<BR>Venta.Causa
+ListaAcciones=EmbarquePropiedades<BR>EmbarqueImprimir<BR>EmbarquePreliminar<BR>EmbarqueExcel<BR>EmbarcarCampos<BR>VerHST
+
+
+;Modificado 21/03/2012 	Victor Enrique Murillo Torres, Se Agrego un reporte para mostrar un historial y el estado de los embarques.Paquete DM0152_26032012 integra BVF27032012
+[CteInfo.frm/Acciones.VerHST]
+Nombre=VerHST
+Boton=0
+NombreDesplegar=Ver Historial
+EnMenu=S
+TipoAccion=Reportes Pantalla
+Visible=S
+ClaveAccion=DM0152EmbHistoFacRep
+ListaParametros1=<BR>VentaEmbarque:Venta.MovID
+ListaParametros=S
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(MAVI.DM0152MovIdfact,VentaEmbarque:Venta.MovID)

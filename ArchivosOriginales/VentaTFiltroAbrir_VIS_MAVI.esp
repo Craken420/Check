@@ -1,0 +1,4 @@
+
+;*** Desarrollo de Campañas 27/08/09, Modifico:Joel García (Mex), se modifico el select original de la vista.
+[VentaTFiltroAbrir.vis/Vista]
+SQL=SELECT DISTINCT Nombre FROM VentaTFiltroMAVIGuarda

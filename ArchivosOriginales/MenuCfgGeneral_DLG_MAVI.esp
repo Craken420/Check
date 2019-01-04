@@ -1,0 +1,66 @@
+;**** Ultima modificación:07-Jul-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:Se agrego la accion MontoAdjudica
+
+;***** Se agregaron nuevas acciones: DesarrolloMexico(MenuNivelCobranza, MontoAdjudica) *****
+;**** Integracion de ListaAcciones.Cambios=DM0144CatArt para desarrollo DM0144 Catalogo Articulos dentro del paquete DM0144_30082011. JR 31-Ago-2011. ****
+[MenuCfgGeneral.dlg/Dialogo]
+ListaAcciones=Mon<BR>Titulos<BR>Unidad<BR>Condicion<BR>FormaPago<BR>FormaPagoTipo<BR>PropTipo<BR>ContUso<BR>ValeTipo<BR>UEN<BR>Evaluacion<BR>Actividad<BR>CampoExtra<BR>FormaTipo<BR>MontoAdjudica<BR>MenuCfgAnexo<BR>Bonificacion<BR>AnaliticoConfig
+;ListaAcciones.Cambios=Insertar<TAB>MenuNivelCobranza<TAB>15
+PosicionInicialIzquierda=378
+PosicionInicialArriba=154
+PosicionInicialAlturaCliente=426
+;***** JAVT DM0144 08/08/2011 Se añadio un nuevo menu
+ListaAcciones.Cambios=Insertar<TAB>DM0144CatArt<TAB>15
+
+
+;**** Nueva accion agregada *******
+[MenuCfgGeneral.dlg/Acciones.MontoAdjudica]
+Nombre=MontoAdjudica
+Boton=0
+NombreDesplegar=Monto Adjudicación
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=MAVIMontoAdjudicacion
+Activo=S
+Visible=S
+[MenuCfgGeneral.dlg/Acciones.Bonificacion]
+Nombre=Bonificacion
+Boton=0
+NombreEnBoton=S
+NombreDesplegar=&Bonificación Mayoreo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=MaviBonifMayoreoFrm
+Activo=S
+Visible=S
+
+;**** Integracion de accion para desarrollo DM0144 Catalogo Articulos dentro del paquete DM0144_30082011. JR 31-Ago-2011. ****
+;***** JAVT DM0144 08/08/2011 Se añadio un nuevo menu
+[MenuCfgGeneral.dlg/Acciones.DM0144CatArt]
+Nombre=DM0144CatArt
+Boton=0
+NombreDesplegar=DM0144 Catalogo Articulos
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=DM0144ArtPerfilesXAgrupadorFrm
+Activo=S
+Visible=S
+
+
+
+;Se agrega nueva accion para el objeto de la tabla de configuracion de los RMS Analiticos RM1076 y RM1077
+;Fernando Romero 16/12/2013
+[MenuCfgGeneral.dlg/Acciones.AnaliticoConfig]
+Nombre=AnaliticoConfig
+Boton=0
+EnMenu=S
+Activo=S
+Visible=S
+NombreDesplegar=RMS Analitico Balance
+TipoAccion=Formas
+ClaveAccion=RMSAnaliticoBalance
+EnBarraAcciones=S

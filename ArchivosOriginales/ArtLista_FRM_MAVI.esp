@@ -1,0 +1,13 @@
+;**** Ultima modificación:27-Jun-08
+;**** Modifico:Elias
+;**** Se modifico:Creacion
+
+
+
+
+
+[ArtLista.frm/Lista]
+Vista=MaviArtA
+FiltroTodo=
+FiltroListaEstatus=PROTOTIPO<BR>ALTA<BR>BLOQUEADO<BR>DESCONTINUADO<BR>BAJA
+FiltroSituacionTodo=

@@ -1,0 +1,28 @@
+
+
+;**** Nuevo campo agregado: ParaComisionChoferMAIV ****
+[EmbarqueD.vis/Vista]
+ListaCampos=EmbarqueD.ID<BR>EmbarqueD.Orden<BR>EmbarqueD.EmbarqueMov<BR>EmbarqueD.Paquetes<BR>EmbarqueD.Observaciones<BR>EmbarqueD.Estado<BR>EmbarqueD.FechaHora<BR>EmbarqueD.Persona<BR>EmbarqueD.PersonaID<BR>EmbarqueD.Forma<BR>EmbarqueD.Importe<BR>EmbarqueD.Referencia<BR>EmbarqueD.Sucursal<BR>EmbarqueD.SucursalOrigen<BR>EmbarqueD.Causa<BR>EmbarqueD.MovPorcentaje<BR>EmbarqueD.DesembarqueParcial<BR>EmbarqueD.ParaComisionChoferMAVI<BR>EmbarqueMov.Accion<BR>EmbarqueMov.Zona<BR>EmbarqueMov.Ruta<BR>EmbarqueMov.ZonaTipo<BR>EmbarqueMov.OrdenEmbarque<BR>EmbarqueMov.Empresa<BR>EmbarqueMov.Modulo<BR>EmbarqueMov.ModuloID<BR>EmbarqueMov.Mov<BR>EmbarqueMov.MovID<BR>EmbarqueMov.FechaEmision<BR>EmbarqueMov.MovReferencia<BR>EmbarqueMov.MovObservaciones<BR>EmbarqueMov.MovEstatus<BR>EmbarqueMov.Almacen<BR>EmbarqueMov.Cl<CONTINUA>
+ListaCampos002=<CONTINUA>iente<BR>EmbarqueMov.ClienteEnviarA<BR>EmbarqueMov.Proveedor<BR>EmbarqueMov.AlmacenDestino<BR>EmbarqueMov.Peso<BR>EmbarqueMov.Volumen<BR>EmbarqueMov.Paquetes<BR>EmbarqueMov.Importe<BR>EmbarqueMov.Impuestos<BR>EmbarqueMov.Moneda<BR>EmbarqueMov.TipoCambio<BR>EmbarqueMov.Condicion<BR>EmbarqueMov.Vencimiento<BR>EmbarqueMov.Nombre<BR>EmbarqueMov.NombreEnvio<BR>EmbarqueMov.Direccion<BR>EmbarqueMov.EntreCalles<BR>EmbarqueMov.Plano<BR>EmbarqueMov.Observaciones<BR>EmbarqueMov.Colonia<BR>EmbarqueMov.Poblacion<BR>EmbarqueMov.Estado<BR>EmbarqueMov.Pais<BR>EmbarqueMov.CodigoPostal<BR>EmbarqueMov.Telefonos<BR>EmbarqueMov.Contacto1<BR>EmbarqueMov.Contacto2<BR>EmbarqueMov.Extencion1<BR>EmbarqueMov.Extencion2<BR>EmbarqueMov.Sucursal<BR>EmbarqueMov.Gastos<BR>EmbarqueMov.Concluido<BR>EmbarqueMov.Delegacion<B<CONTINUA>
+ListaCampos003=<CONTINUA>R>EmbarqueMov.MovPorcentaje<BR>EmbarqueMov.ObservacionesEmbarque<BR>EmbarqueMov.UEN
+SQL=SELECT<BR>  EmbarqueD.ID,<BR>  EmbarqueD.Orden,<BR>  EmbarqueD.EmbarqueMov,<BR>  EmbarqueD.Paquetes,<BR>  EmbarqueD.Observaciones,<BR>  EmbarqueD.Estado,<BR>  EmbarqueD.FechaHora,<BR>  EmbarqueD.Persona,<BR>  EmbarqueD.PersonaID,<BR>  EmbarqueD.Forma,<BR>  EmbarqueD.Importe,<BR>  EmbarqueD.Referencia,<BR>  EmbarqueD.Sucursal,<BR>  EmbarqueD.SucursalOrigen,<BR>  EmbarqueD.Causa,<BR>  EmbarqueD.MovPorcentaje,<BR>  EmbarqueD.DesembarqueParcial,<BR>  EmbarqueD.ParaComisionChoferMAVI,<BR>  EmbarqueMov.Accion,<BR>  EmbarqueMov.Zona,<BR>  EmbarqueMov.Ruta,<BR>  EmbarqueMov.ZonaTipo,<BR>  EmbarqueMov.OrdenEmbarque,<BR>  EmbarqueMov.Empresa,<BR>  EmbarqueMov.Modulo,<BR>  EmbarqueMov.ModuloID,<BR>  EmbarqueMov.Mov,<BR>  EmbarqueMov.MovID,<BR>  EmbarqueMov.FechaEmision,<BR>  EmbarqueMov.MovReferencia<CONTINUA>
+SQL002=<CONTINUA>,<BR>  EmbarqueMov.MovObservaciones,<BR>  EmbarqueMov.MovEstatus,<BR>  EmbarqueMov.Almacen,<BR>  EmbarqueMov.Cliente,<BR>  EmbarqueMov.ClienteEnviarA,<BR>  EmbarqueMov.Proveedor,<BR>  EmbarqueMov.AlmacenDestino,<BR>  EmbarqueMov.Peso,<BR>  EmbarqueMov.Volumen,<BR>  EmbarqueMov.Paquetes,<BR>  EmbarqueMov.Importe,<BR>  EmbarqueMov.Impuestos,<BR>  EmbarqueMov.Moneda,<BR>  EmbarqueMov.TipoCambio,<BR>  EmbarqueMov.Condicion,<BR>  EmbarqueMov.Vencimiento,<BR>  EmbarqueMov.Nombre,<BR>  EmbarqueMov.NombreEnvio,<BR>  EmbarqueMov.Direccion,<BR>  EmbarqueMov.EntreCalles,<BR>  EmbarqueMov.Plano,<BR>  EmbarqueMov.Observaciones,<BR>  EmbarqueMov.Colonia,<BR>  EmbarqueMov.Poblacion,<BR>  EmbarqueMov.Estado,<BR>  EmbarqueMov.Pais,<BR>  EmbarqueMov.CodigoPostal,<BR>  EmbarqueMov.Telefonos,<BR>  EmbarqueMov<CONTINUA>
+SQL003=<CONTINUA>.Contacto1,<BR>  EmbarqueMov.Contacto2,<BR>  EmbarqueMov.Extencion1,<BR>  EmbarqueMov.Extencion2,<BR>  EmbarqueMov.Sucursal,<BR>  EmbarqueMov.Gastos,<BR>  EmbarqueMov.Concluido,<BR>  EmbarqueMov.Delegacion,<BR>  EmbarqueMov.MovPorcentaje,<BR>  EmbarqueMov.ObservacionesEmbarque,<BR>  EmbarqueMov.UEN<BR><BR>FROM<BR>  EmbarqueD<BR>  JOIN EmbarqueMov ON EmbarqueD.EmbarqueMov=EmbarqueMov.ID
+
+
+
+
+;**** Nuevo campo agregado ARC 28-Feb-09 ****
+[EmbarqueD.vis/EmbarqueD.ParaComisionChoferMAVI]
+Clave=EmbarqueD.ParaComisionChoferMAVI
+Nombre=Para Comisión
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionEdicion=(Embarque:Embarque.Estatus en(EstatusConcluido)) y (Usuario.ModifComisnsChoferesMAVI)
+CondicionDespliege=Embarque:Embarque.Estatus en(EstatusConcluido)
+LigaTabla=EmbarqueD
+LigaCampo=ParaComisionChoferMAVI
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=ParaComisionChoferMAVI

@@ -1,0 +1,85 @@
+;**** Ultima modificación:09-Ene-09
+;**** Modifico:Leticia Quezada
+;**** Se modifico: Flujos
+
+;**** Ultima modificación:08-Ago-08
+;**** Modifico:Arly Rubio
+;**** Se modifico: Flujos
+
+[GenerarCxpPago.dlg/Dialogo]
+ListaAcciones=Pago<BR>Posfechado<BR>ContraRecibo<BR>Documento<BR>Pagare<BR>Factoraje<BR>NCredito<BR>NCargo<BR>Endoso<BR>CartaCredito<BR>GenerarForward<BR>Otros1<BR>Otros2<BR>Otros3<BR>Otros4<BR>Otros5<BR>Otros6<BR>Otros7<BR>Otros8<BR>Otros9<BR>CancAcuerdo
+
+
+;**** Accion Generar Credito Proveedor no es visible para los movimientos:Entrada Compra,Entrada con Gastos,Compra Publicidad,Compra Papeleria,Compra Taller,Compra Sistemas,Compra Admva,Compra ActivoFijo,Gasto,Documento,Nota Credito,Prestamo,Factoraje, Importacion, Acuerdo Espejo ****
+[GenerarCxpPago.dlg/Acciones.NCredito]
+Visible=N
+VisibleCondicion=Info.Mov NoEn(<T>Entrada Compra<T>,<T>Entrada con Gastos<T>,<T>Compra Publicidad<T>,<T>Compra Papeleria<T>,<T>Compra Taller<T>,<T>Compra Sistemas<T>,<T>Compra Admva<T>,<T>Compra ActivoFijo<T>,<T>Gasto<T>,<T>Documento<T>,<T>Nota Credito<T>,<T>Prestamo<T>,<T>Factoraje<T>,<T>Importacion<T>,<T>Acuerdo Espejo<T>,<T>Cobro Servicios<T>)
+
+
+
+;**** Accion Generar Documento no es visible para los movimientos:Entrada Compra,Entrada con Gastos,Compra Publicidad,Compra Papeleria,Compra Taller,Compra Sistemas,Compra Admva,Compra ActivoFijo,Gasto,Documento,Nota Credito,Prestamo,Factoraje, Importacion, Acuerdo Espejo ****
+[GenerarCxpPago.dlg/Acciones.Documento]
+Visible=N
+VisibleCondicion=(Info.MovTipo noen (CXC.D,CXC.DM)) y (Info.Mov noen (<T>Entrada Compra<T>,<T>Entrada con Gastos<T>,<T>Compra Publicidad<T>,<T>Compra Papeleria<T>,<T>Compra Taller<T>,<T>Compra Sistemas<T>,<T>Compra Admva<T>,<T>Compra ActivoFijo<T>,<T>Gasto<T>,<T>Documento<T>,<T>Nota Credito<T>,<T>Prestamo<T>,<T>Factoraje<T>,<T>Importacion<T>,<T>Acuerdo Espejo<T>,<T>Cobro Servicios<T>))
+
+
+
+;**** Accion Generar Carta Credito no es visible para los movimientos:Entrada Compra,Entrada con Gastos,Compra Publicidad,Compra Papeleria,Compra Taller,Compra Sistemas,Compra Admva,Compra ActivoFijo,Gasto,Documento,Nota Credito,Prestamo,Factoraje, Importacion, Acuerdo Espejo ****
+[GenerarCxpPago.dlg/Acciones.CartaCredito]
+Visible=N
+VisibleCondicion=(Info.MovTipo en (CXP.F, CXP.CA, CXP.CAD, CXP.PAG)) y (Info.Mov NoEn(<T>Entrada Compra<T>,<T>Entrada con Gastos<T>,<T>Compra Publicidad<T>,<T>Compra Papeleria<T>,<T>Compra Taller<T>,<T>Compra Sistemas<T>,<T>Compra Admva<T>,<T>Compra ActivoFijo<T>,<T>Gasto<T>,<T>Documento<T>,<T>Nota Credito<T>,<T>Prestamo<T>,<T>Factoraje<T>,<T>Importacion<T>,<T>Acuerdo Espejo<T>,<T>Cobro Servicios<T>))
+
+
+;**** Accion Generar Endoso no es visible para los movimientos:Entrada Compra,Entrada con Gastos,Compra Publicidad,Compra Papeleria,Compra Taller,Compra Sistemas,Compra Admva,Compra ActivoFijo,Gasto,Documento,Nota Credito,Prestamo,Factoraje, Importacion, Acuerdo Espejo ****
+[GenerarCxpPago.dlg/Acciones.Endoso]
+Visible=N
+VisibleCondicion=Info.Mov NoEn(<T>Entrada Compra<T>,<T>Entrada con Gastos<T>,<T>Compra Publicidad<T>,<T>Compra Papeleria<T>,<T>Compra Taller<T>,<T>Compra Sistemas<T>,<T>Compra Admva<T>,<T>Compra ActivoFijo<T>,<T>Gasto<T>,<T>Documento<T>,<T>Nota Credito<T>,<T>Prestamo<T>,<T>Factoraje<T>,<T>Importacion<T>,<T>Acuerdo Espejo<T>,<T>Cobro Servicios<T>)
+
+
+;**** Accion Generar Cargo Proveedor no es visible para los movimientos:Entrada Compra,Entrada con Gastos,Compra Publicidad,Compra Papeleria,Compra Taller,Compra Sistemas,Compra Admva,Compra ActivoFijo,Gasto,Documento,Nota Credito,Prestamo,Factoraje, Importacion, Acuerdo Espejo ****
+[GenerarCxpPago.dlg/Acciones.NCargo]
+Visible=N
+VisibleCondicion=Info.Mov NoEn(<T>Entrada Compra<T>,<T>Entrada con Gastos<T>,<T>Compra Publicidad<T>,<T>Compra Papeleria<T>,<T>Compra Taller<T>,<T>Compra Sistemas<T>,<T>Compra Admva<T>,<T>Compra ActivoFijo<T>,<T>Gasto<T>,<T>Documento<T>,<T>Nota Credito<T>,<T>Prestamo<T>,<T>Factoraje<T>,<T>Importacion<T>,<T>Acuerdo Espejo<T>,<T>Cobro Servicios<T>)
+
+
+;**** Accion Generar Factoraje es visible para los movimientos:Entrada Compra,Entrada con Gastos,Compra Publicidad,Compra Papeleria,Compra Taller,Compra Sistemas,Compra Admva,Compra ActivoFijo,Gasto,Documento,Nota Credito,Prestamo, Importacion, Acuerdo Espejo ****
+[GenerarCxpPago.dlg/Acciones.Factoraje]
+Visible=N
+VisibleCondicion= (Info.MovTipo = CXP.PAG) o (Info.Mov En(<T>Entrada Compra<T>,<T>Entrada con Gastos<T>,<T>Compra Publicidad<T>,<T>Compra Papeleria<T>,<T>Compra Taller<T>,<T>Compra Sistemas<T>,<T>Compra Admva<T>,<T>Compra ActivoFijo<T>,<T>Gasto<T>,<T>Documento<T>,<T>Nota Credito<T>,<T>Prestamo<T>,<T>Importacion<T>,<T>Acuerdo Espejo<T>,<T>Cobro Servicios<T>))
+
+
+;***** La condicion de visibilidad se cambio, la original era VisibleCondicion=Info.MovTipo noen (CXP.D, CXP.DM), se permitio que un contra recib se genere desde un documento ****
+[GenerarCxpPago.dlg/Acciones.ContraRecibo]
+VisibleCondicion=Info.MovTipo noen (CXP.DM) y (Info.Mov <> 'Acuerdo Espejo' )
+
+
+
+;**** Accion Generar Pago no es visible para los movimientos: Acuerdo Espejo **** LQG
+[GenerarCxpPago.dlg/Acciones.Pago]
+Visible=N
+VisibleCondicion=Info.Mov NoEn(<T>Acuerdo Espejo<T>)
+
+
+;**** Accion Generar Pago Posfechado no es visible para los movimientos: Acuerdo Espejo **** LQG
+[GenerarCxpPago.dlg/Acciones.Posfechado]
+Visible=N
+VisibleCondicion=(Config.CxpPosfechados) y (Info.Mov NoEn(<T>Acuerdo Espejo<T>))
+
+
+;**** Accion Generar Factoraje no es visible para los movimientos: Acuerdo Espejo **** LQG
+[GenerarCxpPago.dlg/Acciones.Factoraje]
+Visible=N
+VisibleCondicion=(Info.MovTipo = CXP.PAG) y (Info.Mov NoEn(<T>Acuerdo Espejo<T>))
+
+
+; **** Accion nueva solo es visible si movimiento es: "Canc Acuerdo Espejo" ****
+[GenerarCxpPago.dlg/Acciones.CancAcuerdo]
+Nombre=CancAcuerdo
+Boton=0
+NombreDesplegar=Generar Canc Acuerdo Espejo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Expresion
+Activo=S
+Expresion=Generar('CXP', Afectar.ID, Afectar.Mov, Afectar.MovID, 'Todo', 'Canc Acuerdo Espejo', Afectar.FormaCaptura)
+VisibleCondicion=Info.Mov en (<T>Acuerdo Espejo<T>)

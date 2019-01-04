@@ -1,0 +1,178 @@
+;**** Responsable: ARC 
+;**** Fecha Modificacion: 12-Feb-09
+;**** Se modifico: Se agregaron Rangos para eliminacion de saldos menores
+
+;**** Responsable: MP 
+;**** Fecha Modificacion: 18-Jun-09
+;**** Se modifico: Se Integro Intereses Moratorios
+
+;***** ARC 12-feb-09: Se agragron nuevos campos:   EliminarSaldosMenoresD, EliminarSaldosMenores, EliminarSaldosMenoresDDolar, EliminarSaldosMenoresA, EliminarSaldosMenoresADolar
+;***** MP 07-Jul-09: Se agragron nuevos campos:   CalculoMoratoriosMAVI, ConsecutivoModulo
+;*** Desarrollo de Campañas 27/08/09 YR, se agrego un campo adicional a los movimientos: IncluirEnCampania.
+[MovTipo.tbl/Tabla]
+ListaCampos=Modulo<BR>Mov<BR>Orden<BR>Clave<BR>SubClave<BR>Icono<BR>Grupo<BR>EstatusContabilizar<BR>ConsecutivoModulo<BR>ConsecutivoMov<BR>ConsecutivoPorPeriodo<BR>ConsecutivoPorEjercicio<BR>ConsecutivoPorEmpresa<BR>Factor<BR>Almacen<BR>DiasVencimiento<BR>NomProcesarIncidencias<BR>NomGenerarBaja<BR>NomDividirCantidades<BR>GenerarParalelo<BR>PV<BR>ConsecutivoSucursalEsp<BR>SucursalEsp<BR>GenerarGasto<BR>GastoMov<BR>GastoClase<BR>GastoSubClase<BR>GastoConcepto<BR>GastoAcreedor<BR>eMailAuto<BR>SinAfectarVINCostoExtra<BR>ConsecutivoControl<BR>TipoPago<BR>GastoFactor<BR>CE<BR>CEAntesAfectar<BR>CEAfectarContacto<BR>NomAuto<BR>NomAutoTipo<BR>NomAutoCalcSDI<BR>NomAutoCxc<BR>NomAutoCalendarioEsp<BR>ImpresionInmediata<BR>ConsecutivoFEA<BR>EditarDeptoDetallista<BR>AfectarPresupuesto<BR>CFD<BR>CFD_tipoDeComproban<CONTINUA>
+ListaCampos002=<CONTINUA>te<BR>CFD_Reporte<BR>Instrucciones<BR>ProyectoContactoTipo<BR>PlantillaProyecto<BR>PlantillaProyectoFija<BR>FormaTipo<BR>FormaFija<BR>AplicarOfertas<BR>FormaAnexaOmision<BR>ProyectoLineaBase<BR>ProyectoSugerir<BR>TraspasoExpress<BR>ModuloCentral<BR>AfectarFiscal<BR>EliminarSaldosMenores<BR>EliminarSaldosMenoresD<BR>EliminarSaldosMenoresA<BR>EliminarSaldosMenoresDDolar<BR>EliminarSaldosMenoresADolar<BR>CalculoMoratorioMAVI<BR>ConsecutivoFiscal<BR>IncluirEnCampania<BR>TipoConsecutivo<BR>ConsecutivoGeneral
+SQL=SELECT<BR>  Modulo,<BR>  Mov,<BR>  Orden,<BR>  Clave,<BR>  ConsecutivoModulo,<BR>  ConsecutivoMov,<BR>  Grupo,<BR>  Icono,<BR>  Factor,<BR>  ConsecutivoPorPeriodo,<BR>  ConsecutivoPorEjercicio,<BR>  ConsecutivoPorEmpresa,<BR>  ConsecutivoSucursalEsp,<BR>  ConsecutivoControl,<BR>  SucursalEsp,<BR>  Almacen,<BR>  DiasVencimiento,<BR>  NomProcesarIncidencias,<BR>  NomGenerarBaja,<BR>  NomDividirCantidades,<BR>  GenerarParalelo,<BR>  PV,<BR>  EstatusContabilizar,<BR>  AfectarPresupuesto,<BR>  GenerarGasto,<BR>  GastoMov,<BR>  GastoClase,<BR>  GastoSubClase,<BR>  GastoAcreedor,<BR>  GastoFactor,<BR>  GastoConcepto,<BR>  eMailAuto,<BR>  SinAfectarVINCostoExtra,<BR>  TipoPago,<BR>  CE,<BR>  CEAntesAfectar,<BR>  CEAfectarContacto,<BR>  NomAuto,<BR>  NomAutoTipo,<BR>  NomAutoCalcSDI,<BR>  NomAutoCx<CONTINUA>
+SQL002=<CONTINUA>c,<BR>  NomAutoCalendarioEsp,<BR>  ImpresionInmediata,<BR>  ConsecutivoFEA,<BR>  EditarDeptoDetallista,<BR>  ProyectoContactoTipo,<BR>  PlantillaProyecto,<BR>  PlantillaProyectoFija,<BR>  ProyectoLineaBase,<BR>  CFD,<BR>  CFD_tipoDeComprobante,<BR>  CFD_Reporte,<BR>  Instrucciones,<BR>  FormaTipo,<BR>  FormaFija,<BR>  AplicarOfertas,<BR>  FormaAnexaOmision,<BR>  TraspasoExpress,<BR>  ProyectoSugerir,<BR>  ModuloCentral,<BR>  AfectarFiscal,<BR>  SubClave,<BR>  EliminarSaldosMenoresD,<BR>  EliminarSaldosMenores,<BR>  EliminarSaldosMenoresDDolar,<BR>  EliminarSaldosMenoresA,<BR>  EliminarSaldosMenoresADolar,<BR>  CalculoMoratorioMAVI,<BR>ConsecutivoFiscal,<BR> IncluirEnCampania,<BR>TipoConsecutivo,<BR>ConsecutivoGeneral<BR><BR>FROM<BR>  MovTipo
+
+[MovTipo.tbl/ConsecutivoFiscal]
+Clave=ConsecutivoFiscal
+Nombre=Consecutivo Fiscal
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=(ConsecutivoModulo = <T>CXC<T>) o (ConsecutivoModulo = <T>Cxc<T>)
+ValorPorOmision=Nulo
+
+
+[MovTipo.tbl/TipoConsecutivo]
+Clave=TipoConsecutivo
+Nombre=Tipo Consecutivo
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ValorPorOmision=<T>Modulo<T>
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+ListaOpciones=Modulo<BR>General
+
+[MovTipo.tbl/ConsecutivoGeneral]
+Clave=ConsecutivoGeneral
+Nombre=Consecutivo General
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+CondicionDespliege=TipoConsecutivo=<T>General<T>
+AyudaEnCaptura=Validaciones Memoria
+AyudaMemTabla=Consecutivo
+AyudaMemRenglones=12
+AyudaMemEnBlanco=S
+AyudaMemOpc=Unicamente opciones listadas
+
+[MovTipo.tbl/ConsecutivoModulo]
+CondicionDespliege=TipoConsecutivo=<T>Modulo<T>
+
+[MovTipo.tbl/ConsecutivoMov]
+CondicionDespliege=TipoConsecutivo=<T>Modulo<T>
+
+[MovTipo.tbl/ConsecutivoPorEmpresa]
+CondicionDespliege=TipoConsecutivo=<T>Modulo<T>
+
+[MovTipo.tbl/ConsecutivoSucursalEsp]
+CondicionDespliege=TipoConsecutivo=<T>Modulo<T>
+
+[MovTipo.tbl/ConsecutivoControl]
+CondicionDespliege=TipoConsecutivo=<T>Modulo<T>
+
+;***** Nuevo campo agregado ARC 12-Feb-09 ****
+[MovTipo.tbl/EliminarSaldosMenoresD]
+Clave=EliminarSaldosMenoresD
+Nombre=Eliminar Saldos Menores De (Pesos)
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+AyudaEnCaptura=Calculadora
+ValorMinimo=0
+CondicionDespliege=EliminarSaldosMenores y (Clave en(<T>CXC.F<T>, <T>CXC.FAC<T>, <T>CXC.CA<T>, <T>CXC.CAD<T>, <T>CXC.D<T>, <T>CXC.DM<T>, <T>CXC.DA<T>,<T>CXC.NC<T>,<T>CXC.NCD<T>,<T>CXC.NCF<T>,<T>CXC.DV<T>,<T>CXC.NCP<T>,<T>CXC.DC<T>,<T>CXP.F<T>, <T>CXP.FAC<T>, <T>CXP.CA<T>, <T>CXP.CAD<T>, <T>CXP.D<T>, <T>CXP.DM<T>, <T>CXP.A<T>,<T>CXP.NC<T>,<T>CXP.NCD<T>,<T>CXP.NCP<T>,<T>CXP.NCF<T>,<T>CXP.DC<T>)) y (Modulo en(<T>CXC<T>,<T>CXP<T>))
+FormatoValidacion=0,.00
+ValorMaximo=Vacio(EliminarSaldosMenoresA,1000)
+
+
+;***** Nuevo campo agregado ARC 12-Feb-09 ****
+[MovTipo.tbl/EliminarSaldosMenores]
+Clave=EliminarSaldosMenores
+Nombre=Eliminar Saldos Menores
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=EliminarSaldosMenoresD<BR>EliminarSaldosMenoresDDolar<BR>EliminarSaldosMenoresA<BR>EliminarSaldosMenoresADolar
+CondicionDespliege=(Clave en(<T>CXC.F<T>, <T>CXC.FAC<T>, <T>CXC.CA<T>, <T>CXC.CAD<T>, <T>CXC.D<T>, <T>CXC.DM<T>, <T>CXC.DA<T>,<T>CXC.NC<T>,<T>CXC.NCD<T>,<T>CXC.NCF<T>,<T>CXC.DV<T>,<T>CXC.NCP<T>,<T>CXC.DC<T>,<T>CXP.F<T>, <T>CXP.FAC<T>, <T>CXP.CA<T>, <T>CXP.CAD<T>, <T>CXP.D<T>, <T>CXP.DM<T>, <T>CXP.A<T>,<T>CXP.NC<T>,<T>CXP.NCD<T>,<T>CXP.NCP<T>,<T>CXP.NCF<T>,<T>CXP.DC<T>)) y (Modulo en(<T>CXC<T>,<T>CXP<T>))
+
+
+;***** Nuevo campo agregado ARC 12-Feb-09 ****
+[MovTipo.tbl/EliminarSaldosMenoresDDolar]
+Clave=EliminarSaldosMenoresDDolar
+Nombre=Eliminar Saldos Menores De  (Dolar) 
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+AyudaEnCaptura=Calculadora
+ValorMinimo=0
+CondicionDespliege=EliminarSaldosMenores y (Clave en(<T>CXC.F<T>, <T>CXC.FAC<T>, <T>CXC.CA<T>, <T>CXC.CAD<T>, <T>CXC.D<T>, <T>CXC.DM<T>, <T>CXC.DA<T>,<T>CXC.NC<T>,<T>CXC.NCD<T>,<T>CXC.NCF<T>,<T>CXC.DV<T>,<T>CXC.NCP<T>,<T>CXC.DC<T>,<T>CXP.F<T>, <T>CXP.FAC<T>, <T>CXP.CA<T>, <T>CXP.CAD<T>, <T>CXP.D<T>, <T>CXP.DM<T>, <T>CXP.A<T>,<T>CXP.NC<T>,<T>CXP.NCD<T>,<T>CXP.NCP<T>,<T>CXP.NCF<T>,<T>CXP.DC<T>)) y (Modulo en(<T>CXC<T>,<T>CXP<T>))
+FormatoValidacion=0,.00
+ValorMaximo=Vacio(EliminarSaldosMenoresADolar,1000)
+
+
+;***** Nuevo campo agregado ARC 12-Feb-09 ****
+[MovTipo.tbl/EliminarSaldosMenoresA]
+Clave=EliminarSaldosMenoresA
+Nombre=A
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+AyudaEnCaptura=Calculadora
+CondicionDespliege=EliminarSaldosMenores y (Clave en(<T>CXC.F<T>, <T>CXC.FAC<T>, <T>CXC.CA<T>, <T>CXC.CAD<T>, <T>CXC.D<T>, <T>CXC.DM<T>, <T>CXC.DA<T>,<T>CXC.NC<T>,<T>CXC.NCD<T>,<T>CXC.NCF<T>,<T>CXC.DV<T>,<T>CXC.NCP<T>,<T>CXC.DC<T>,<T>CXP.F<T>, <T>CXP.FAC<T>, <T>CXP.CA<T>, <T>CXP.CAD<T>, <T>CXP.D<T>, <T>CXP.DM<T>, <T>CXP.A<T>,<T>CXP.NC<T>,<T>CXP.NCD<T>,<T>CXP.NCP<T>,<T>CXP.NCF<T>,<T>CXP.DC<T>)) y (Modulo en(<T>CXC<T>,<T>CXP<T>))
+FormatoValidacion=0,.00
+ValorMinimo=vacio(EliminarSaldosMenoresD,0)
+
+
+
+;***** Nuevo campo agregado ARC 12-Feb-09 ****
+[MovTipo.tbl/EliminarSaldosMenoresADolar]
+Clave=EliminarSaldosMenoresADolar
+Nombre=A
+Visible=S
+TamanoValidacion=10
+TipoDatos=NumMonetario
+CondicionDespliege=EliminarSaldosMenores y (Clave en(<T>CXC.F<T>, <T>CXC.FAC<T>, <T>CXC.CA<T>, <T>CXC.CAD<T>, <T>CXC.D<T>, <T>CXC.DM<T>, <T>CXC.DA<T>,<T>CXC.NC<T>,<T>CXC.NCD<T>,<T>CXC.NCF<T>,<T>CXC.DV<T>,<T>CXC.NCP<T>,<T>CXC.DC<T>,<T>CXP.F<T>, <T>CXP.FAC<T>, <T>CXP.CA<T>, <T>CXP.CAD<T>, <T>CXP.D<T>, <T>CXP.DM<T>, <T>CXP.A<T>,<T>CXP.NC<T>,<T>CXP.NCD<T>,<T>CXP.NCP<T>,<T>CXP.NCF<T>,<T>CXP.DC<T>)) y (Modulo en(<T>CXC<T>,<T>CXP<T>))
+AyudaEnCaptura=Calculadora
+FormatoValidacion=0,.00
+ValorMinimo=vacio(EliminarSaldosMenoresDDolar,0)
+
+
+;***** Nuevo campo agregado MP 18-Jun-09 ****
+[MovTipo.tbl/ConsecutivoModulo]
+Clave=ConsecutivoModulo
+Nombre=Consecutivo Módulo
+AyudaEnCaptura=Lista de Opciones
+TamanoValidacion=5
+Tamano=5
+OpcionesColumnas=1
+OpcionesPredefinidas=Módulos
+OpcionesRenglones=8
+ValorPorOmision=Info.Modulo
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=CalculoMoratorioMAVI
+
+;***** Nuevo campo agregado MP 18-Jun-09 ****
+[MovTipo.tbl/CalculoMoratorioMAVI]
+Clave=CalculoMoratorioMAVI
+Nombre=Calculo Moratorios
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=(ConsecutivoModulo = <T>CXC<T>) o (ConsecutivoModulo = <T>Cxc<T>)
+ValorPorOmision=Nulo
+
+;*** Desarrollo de Campañas 27/08/09 YR, se agrego un campo adicional a los movimientos: IncluirEnCampania.
+[MovTipo.tbl/IncluirEnCampania]
+Clave=IncluirEnCampania
+Nombre=Incluir En Campaña
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionDespliege=Modulo = <T>VTAS<T>
+
+[MovTipo.tbl/Modulo]
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=IncluirEnCampania
+
+; *** Termina modificacion de Campañas

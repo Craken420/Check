@@ -1,0 +1,19 @@
+[EmpresaConcepto.vis/Vista]
+ListaCampos=EmpresaConcepto.Empresa<BR>EmpresaConcepto.Modulo<BR>EmpresaConcepto.Mov<BR>EmpresaConcepto.Concepto<BR>EmpresaConcepto.Requerido<BR>EmpresaConcepto.UtilizarEste<BR>EmpresaConcepto.TipoCfdi
+SQL=SELECT<BR>EmpresaConcepto.Empresa,<BR>EmpresaConcepto.Modulo,<BR>EmpresaConcepto.Mov,<BR>EmpresaConcepto.Concepto,<BR>EmpresaConcepto.Requerido,<BR>EmpresaConcepto.UtilizarEste,<BR>EmpresaConcepto.TipoCfdi<BR>FROM EmpresaConcepto
+
+
+[EmpresaConcepto.vis/EmpresaConcepto.TipoCfdi]
+Clave=EmpresaConcepto.TipoCfdi
+Nombre=TipoCfdi
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=1
+TipoDatos=Texto
+Tamano=1
+LigaTabla=EmpresaConcepto
+LigaCampo=TipoCfdi
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=TipoCfdi

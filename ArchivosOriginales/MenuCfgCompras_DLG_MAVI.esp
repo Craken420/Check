@@ -1,0 +1,14 @@
+[MenuCfgCompras.dlg/Dialogo]
+ListaAcciones=Causas<BR>Instruccion<BR>CompraProrrateada<BR>FormaEntrega<BR>DM0289Configuraciones<BR>
+
+
+[MenuCfgCompras.dlg/Acciones.DM0289Configuraciones]
+Nombre=DM0289Configuraciones
+Boton=0
+NombreDesplegar=DM0289 Configuraciones
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=DM0289ConfiguracionFRM
+Activo=S
+Visible=S

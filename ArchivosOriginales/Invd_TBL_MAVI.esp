@@ -1,0 +1,15 @@
+;**** Modificación: 28-01-2015
+;**** Modificó: Tonatiuh Del Villar
+;**** Se Modificó: Se Agrego una CondicionEdicion y un ValorRefrescar en el campo Costo y en Articulo se agregó a ListaRefrescarCondiciones el campo Costo.
+
+[Invd.tbl/Costo]
+CondicionDespliege=Usuario.Costos y<BR>((MovTipoEn(<T>INV<T>, Inv:Inv.Mov, (INV.E, INV.EI, INV.A, INV.TIS, INV.EST)) o (Inv:Inv.Estatus=EstatusConcluido)) y <BR>(no MovTipoEn(<T>INV<T>,Inv:Inv.Mov,(INV.T, INV.TG, INV.P, INV.R, INV.IF, INV.SOL, INV.OT, INV.OI, INV.TI, INV.DTI, INV.SM))) y<BR>(Inv:Alm.Tipo<><T>Garantias<T>))
+ValorRefrescar=Si<BR>      (Vacio(Cantidad, 0)>=0) y (<BR>      (MovTipo(<T>INV<T>, Inv:Inv.Mov) = INV.IF) o<BR>      (MovTipoEn(<T>INV<T>,Inv:Inv.Mov, (INV.E, INV.EP, INV.EI, INV.A, INV.TIS)) y (Inv:Alm.Tipo<><T>Garantias<T>) y (Config.SugerirCostoDev<><T>No<T>)) o<BR>      ((MovTipo(<T>INV<T>, Inv:Inv.Mov) = INV.CM) y (InvD:InvD.Tipo=<T>Devolucion<T>)))<BR>      )<BR>    Entonces<BR>      Si<BR>          (Inv:Inv.Mov = <T>Ajuste<T>) Y (ConDatos(Articulo))<BR>      Entonces<BR>          Asigna(Info.Sucursal, SQL(<T>select Sucursal from Sucursal where AlmacenPrincipal = :tAlm<T>, Almacen))<BR>          SQL(<T>spVerCosto :nSucursal, :tEmpresa, NULL, :tArticulo, :tSub, :tUnidad, :tCual, :tMoneda, :nTipoCambio<T>, Info.Sucursal, Empresa, Articulo, SubCuenta, Unidad, Si(Config.FormaCosteo=<T>Articulo<T>, Art<CONTINUA>
+CondicionEdicion=Si<BR>  (Inv:Inv.Mov = <T>Ajuste<T>) Y (ConDatos(Articulo))<BR>Entonces<BR>  Si<BR>      (SQL(<T>Select dbo.FN_costoCorrecto(:talm, :tart)<T>, Almacen, Articulo)= 0)<BR>  Entonces<BR>      Verdadero<BR>   Sino<BR>      Falso<BR>  fin<BR>Sino<BR>    no Usuario.BloquearCostos<BR>Fin
+ValorRefrescar002=<CONTINUA>.TipoCosteo, Config.TipoCosteo), Inv:Inv.Moneda, Inv:Inv.TipoCambio)<BR>      Sino<BR>          SQL(<T>spVerCosto :nSucursal, :tEmpresa, NULL, :tArticulo, :tSub, :tUnidad, :tCual, :tMoneda, :nTipoCambio<T>, Sucursal, Empresa, Articulo, SubCuenta, Unidad, Si(Config.FormaCosteo=<T>Articulo<T>, Art.TipoCosteo, Config.TipoCosteo), Inv:Inv.Moneda, Inv:Inv.TipoCambio)<BR>      Fin<BR>    Sino<BR>      Nulo<BR>    Fin
+
+[Invd.tbl/Articulo]
+AlCambiar=<BR>Si<BR> (SQL(<T>SELECT dbo.FN_ValidaArticulo ( :tArt,:tAlm)<T>,Info.Articulo,Info.AlmacenDestino)= 0) y (Filtro.Mov = <T>SI<T>)<BR>Entonces<BR>    si<BR>       Error(<T>!!!!!!!!!!!!!!!! Artículo no autorizado para su distribución en este almacén<T>, BotonAceptar , BotonCancelar)=BotonCancelar<BR>    entonces<BR>        Forma.IrCarpeta(<T>Ficha<T>)<BR>        Forma.IrCarpeta(<T>Detalle<T>)<BR>        AbortarOperacion<BR>    sino                               <BR>        VERDADERO<BR>    FIN<BR>sino<BR>    VERDADERO<BR>Fin
+ValorMinimo=Asigna( Info.Articulo,Articulo )
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=Costo

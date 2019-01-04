@@ -1,0 +1,77 @@
+;**** Adaptacion de Contratos y Presupuestos
+;**** Nov 05, 09 ALQG
+[GastoD.vis/Vista]
+ListaCampos=GastoD.ID<BR>GastoD.Renglon<BR>GastoD.RenglonSub<BR>GastoD.Fecha<BR>GastoD.Concepto<BR>GastoD.Referencia<BR>GastoD.Cantidad<BR>GastoD.Precio<BR>GastoD.Importe<BR>GastoD.Impuestos<BR>GastoD.Retencion<BR>GastoD.Retencion2<BR>GastoD.Retencion3<BR>GastoD.ContUso<BR>GastoD.Sucursal<BR>GastoD.SucursalOrigen<BR>GastoD.Proyecto<BR>GastoD.Actividad<BR>GastoD.DescripcionExtra<BR>GastoD.VIN<BR>GastoD.Espacio<BR>GastoD.UEN<BR>GastoD.AcreedorRef<BR>GastoD.AFArticulo<BR>GastoD.AFSerie<BR>GastoD.PorcentajeDeducible<BR>GastoD.Lectura<BR>GastoD.LecturaAnterior<BR>GastoD.EndosarA<BR>GastoD.Provision<BR>GastoD.Personal<BR>GastoD.DepartamentoDetallista<BR>GastoD.PresupuestoEsp<BR>GastoD.AreaMotora<BR>Concepto.Modulo<BR>Concepto.Concepto<BR>Concepto.EsDeducible<BR>Concepto.PorcentajeDeducible<BR>Concepto.Limit<CONTINUA>
+ListaCampos002=<CONTINUA>eDeducible<BR>Concepto.Impuestos<BR>Concepto.Retencion<BR>Concepto.Retencion2<BR>Concepto.Retencion3<BR>Concepto.Proyecto<BR>CentroCostos.CentroCostos<BR>Espacio.Espacio<BR>Espacio.Nombre<BR>Espacio.NumeroEconomico<BR>UEN.UEN<BR>UEN.Nombre<BR>Acreedor.Proveedor<BR>Acreedor.Nombre<BR>Acreedor2.Nombre<BR>Art.Articulo<BR>Art.Descripcion1<BR>ActivoF.Serie<BR>VIN.VIN<BR>Personal.Personal<BR>Personal.ApellidoPaterno<BR>Personal.ApellidoMaterno<BR>Personal.Nombre<BR>DepartamentoDetallista.Nombre<BR>ProyectoDEnFirme.Asunto
+
+ListaCalculados=Total<BR>Ejercido<BR>Pendiente<BR>Acumulado<BR>Disponible<BR>Consumo<BR>AreaMotoraDesc
+
+
+
+
+SQL=SELECT<BR>  GastoD.ID,<BR>  GastoD.Renglon,<BR>  GastoD.RenglonSub,<BR>  GastoD.Fecha,<BR>  GastoD.Concepto,<BR>  GastoD.Referencia,<BR>  GastoD.Cantidad,<BR>  GastoD.Precio,<BR>  GastoD.Importe,<BR>  GastoD.Impuestos,<BR>  GastoD.Retencion,<BR>  GastoD.Retencion2,<BR>  GastoD.Retencion3,<BR>  GastoD.ContUso,<BR>  GastoD.Sucursal,<BR>  GastoD.SucursalOrigen,<BR>  GastoD.Proyecto,<BR>  GastoD.Actividad,<BR>  GastoD.DescripcionExtra,<BR>  GastoD.VIN,<BR>  GastoD.Espacio,<BR>  GastoD.UEN,<BR>  GastoD.AcreedorRef,<BR>  GastoD.AFArticulo,<BR>  GastoD.AFSerie,<BR>  GastoD.PorcentajeDeducible,<BR>  GastoD.Lectura,<BR>  GastoD.LecturaAnterior,<BR>  GastoD.EndosarA,<BR>  GastoD.Provision,<BR>  GastoD.Personal,<BR>  GastoD.DepartamentoDetallista,<BR>  GastoD.PresupuestoEsp,<BR>  GastoD.AreaMotora,<B<CONTINUA>
+SQL002=<CONTINUA>R>  Concepto.Modulo,<BR>  Concepto.Concepto,<BR>  Concepto.EsDeducible,<BR>  Concepto.PorcentajeDeducible,<BR>  Concepto.LimiteDeducible,<BR>  Concepto.Impuestos,<BR>  Concepto.Retencion,<BR>  Concepto.Retencion2,<BR>  Concepto.Retencion3,<BR>  Concepto.Proyecto,<BR>  CentroCostos.CentroCostos,<BR>  Espacio.Espacio,<BR>  Espacio.Nombre,<BR>  Espacio.NumeroEconomico,<BR>  UEN.UEN,<BR>  UEN.Nombre,<BR>  Acreedor.Proveedor,<BR>  Acreedor.Nombre,<BR>  Acreedor2.Nombre,<BR>  Art.Articulo,<BR>  Art.Descripcion1,<BR>  ActivoF.Serie,<BR>  VIN.VIN,<BR>  Personal.Personal,<BR>  Personal.ApellidoPaterno,<BR>  Personal.ApellidoMaterno,<BR>  Personal.Nombre,<BR>  DepartamentoDetallista.Nombre,<BR>  ProyectoDEnFirme.Asunto<BR><BR>FROM<BR>  GastoD<BR>  LEFT OUTER JOIN Concepto ON {Comillas(<T>GAS<T>)}=Co<CONTINUA>
+SQL003=<CONTINUA>ncepto.Modulo AND GastoD.Concepto=Concepto.Concepto<BR>  LEFT OUTER JOIN CentroCostos ON GastoD.ContUso=CentroCostos.CentroCostos<BR>  LEFT OUTER JOIN Espacio ON GastoD.Espacio=Espacio.Espacio<BR>  LEFT OUTER JOIN UEN ON GastoD.UEN=UEN.UEN<BR>  LEFT OUTER JOIN Prov Acreedor ON GastoD.AcreedorRef=Acreedor.Proveedor<BR>  LEFT OUTER JOIN Art ON GastoD.AFArticulo=Art.Articulo<BR>  LEFT OUTER JOIN ActivoF ON GastoD.AFArticulo=ActivoF.Articulo AND GastoD.AFSerie=ActivoF.Serie AND {Comillas(Empresa)}=ActivoF.Empresa<BR>  LEFT OUTER JOIN Prov Acreedor2 ON GastoD.EndosarA=Acreedor2.Proveedor<BR>  LEFT OUTER JOIN VIN ON GastoD.VIN=VIN.VIN<BR>  LEFT OUTER JOIN Personal ON GastoD.Personal=Personal.Personal<BR>  LEFT OUTER JOIN DepartamentoDetallista ON GastoD.DepartamentoDetallista=DepartamentoDetalli<CONTINUA>
+SQL004=<CONTINUA>sta.Departamento<BR>  LEFT OUTER JOIN ProyectoDEnFirme ON GastoD.Proyecto=ProyectoDEnFirme.Proyecto AND GastoD.Actividad=ProyectoDEnFirme.Actividad
+
+
+
+[GastoD.vis/Acumulado]
+Clave=Acumulado
+TipoDatos=NumFlotante
+TipoCampo=Calculado
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Acumulado
+CondicionDespliege=(MovTipo(<T>GAS<T>, Gasto:Gasto.Mov)=GAS.PR) y (Gasto:Gasto.Estatus=EstatusConcluido)
+Formula=Si((MovTipo(<T>GAS<T>, Gasto:Gasto.Mov)=GAS.PR) y (Gasto:Gasto.Estatus=EstatusConcluido), <BR>SQL(<T>spVerGastoAcumuladoMavi :tEmpresa, :fFecha, :fReq, :tConcepto, :tMoneda, :tCC<T>, Empresa, Gasto:Gasto.FechaEmision, Gasto:Gasto.FechaRequerida, GastoD.Concepto, Gasto:Gasto.Moneda, GastoD.ContUso))
+
+[GastoD.vis/Disponible]
+Formula=GastoD.Importe+Acumulado-Ejercido-Pendiente
+
+
+;***** Integracion Desarrollo Cuatro Ceros Manuel Velasco 11-07-09 *****
+
+[GastoD.vis/Total]
+FormatoValidacion=$ #,.0000
+
+[GastoD.vis/GastoD.Precio]
+FormatoValidacion=$ #,.0000
+
+[GastoD.vis/GastoD.Importe]
+FormatoValidacion=$ #,.0000
+
+[GastoD.vis/GastoD.Impuestos]
+FormatoValidacion=$ #,.0000
+
+;Se Agrega El Campo Area Motora Para Conocer El area que disfruta el gasto
+;Fernando Romero 13/12/2013
+
+[GastoD.vis/GastoD.AreaMotora]
+Clave=GastoD.AreaMotora
+Nombre=AreaMotora
+Visible=S
+TamanoValidacion=100
+Tamano=100
+CondicionDespliege=Config.ContUsoGastos
+AyudaEnCaptura=Vista
+AyudaForma=DM0169AreaMotoraFrm
+AyudaVista=DM0169AreaMotoraVis
+AyudaCampo=Nombre
+LigaTabla=GastoD
+LigaCampo=AreaMotora
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=AreaMotora
+
+
+
+[GastoD.vis/AreaMotoraDesc]
+Clave=AreaMotoraDesc
+TipoCampo=Calculado
+Nombre=Area Motora Desc
+Tamano=20
+TamanoValidacion=20
+CondicionDespliege=Config.ContUsoGastos
+Formula=SQL(<T>select Nombre from tablastd where tablast=:tTB and Valor=:tVal<T>,<T>AREAS MOTORAS<T>,GastoD.AreaMotora)

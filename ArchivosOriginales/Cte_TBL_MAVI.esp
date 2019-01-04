@@ -1,0 +1,395 @@
+;**** Ultima modificación:22-Oct-08
+;**** Modifico: Leticia Quezada
+;**** Se modifico:Incluyo desarrollo de Buro de Credito
+
+;****Modificación:22-Oct-08
+;**** Modifico: Leticia Quezada
+;**** Se modifico:Incluyo desarrollo de Buro de Credito
+
+
+
+;**** Modificación:18-Sep-08 por Leticia Quezada
+;**** Se modifico: Se agrego el campo MaviRecomendadoPor
+
+; **** Se agregó el nuevo campo: "TipoCalle", MaviEstatus ****
+;****Modificacion 22-Oct-08 por Leticia Quezada
+;**** Se modifico:Incluyo desarrollo de Buro de Credito
+
+; ***** Modifico: Judith Ramirez 03-Dic-09 *****
+; ***** Modificacion: Integracion de campos nuevos: ParentescoRecomiendaMavi, DireccionRecomiendaMavi, 
+; 		para Cte Express por Arturo Guizer. *****
+
+;***** Carmen Quintana 04/0/2012 Modificación para eliminar la generacion de consecutivos. Paquete DM0117_06012012 BVF 06012012
+[Cte.tbl/Tabla]
+ControlSugerido=N
+ListaCampos=Cliente<BR>Rama<BR>Nombre<BR>NombreCorto<BR>Numero<BR>Tipo<BR>Direccion<BR>DireccionNumero<BR>DireccionNumeroInt<BR>EntreCalles<BR>Plano<BR>Observaciones<BR>Delegacion<BR>Colonia<BR>CodigoPostal<BR>Poblacion<BR>Estado<BR>Pais<BR>Zona<BR>RFC<BR>Telefonos<BR>TelefonosLada<BR>Fax<BR>PedirTono<BR>Contacto1<BR>Contacto2<BR>eMail1<BR>eMail2<BR>DirInternet<BR>Categoria<BR>Familia<BR>Credito<BR>Grupo<BR>DiaRevision1<BR>DiaRevision2<BR>HorarioRevision<BR>DiaPago1<BR>DiaPago2<BR>HorarioPago<BR>ZonaImpuesto<BR>PedidosParciales<BR>Clase<BR>Estatus<BR>UltimoCambio<BR>Alta<BR>Conciliar<BR>Descuento<BR>Proyecto<BR>Agente<BR>AgenteServicio<BR>EnviarA<BR>FormaEnvio<BR>Condicion<BR>Ruta<BR>ListaPrecios<BR>ListaPreciosEsp<BR>DefMoneda<BR>VtasConsignacion<BR>AlmacenVtasConsignacion<BR>Mensaje<BR>Extencion1<BR<CONTINUA>
+ListaCampos002=<CONTINUA>>Extencion2<BR>CreditoEspecial<BR>CreditoConLimite<BR>CreditoLimite<BR>CreditoConLimitePedidos<BR>CreditoLimitePedidos<BR>CreditoMoneda<BR>CreditoConDias<BR>CreditoDias<BR>CreditoConCondiciones<BR>CreditoCondiciones<BR>Contrasena<BR>Contrasena2<BR>wVerDisponible<BR>ChecarCredito<BR>BloquearMorosos<BR>ModificarVencimiento<BR>Situacion<BR>SituacionFecha<BR>SituacionUsuario<BR>SituacionNota<BR>TieneMovimientos<BR>Cobrador<BR>DescuentoRecargos<BR>CURP<BR>RecorrerVencimiento<BR>SucursalEmpresa<BR>NivelAcceso<BR>Idioma<BR>BonificacionTipo<BR>Bonificacion<BR>VigenciaDesde<BR>VigenciaHasta<BR>Descripcion1<BR>Descripcion2<BR>Descripcion3<BR>Descripcion4<BR>Descripcion5<BR>Descripcion6<BR>Descripcion7<BR>Descripcion8<BR>Descripcion9<BR>Descripcion10<BR>FormasPagoRestringidas<BR>AlmacenDef<BR>Descrip<CONTINUA>
+ListaCampos003=<CONTINUA>cion11<BR>Descripcion12<BR>Descripcion13<BR>Descripcion14<BR>Descripcion15<BR>Descripcion16<BR>Descripcion17<BR>Descripcion18<BR>Descripcion19<BR>Descripcion20<BR>CBDir<BR>PersonalNombres<BR>PersonalApellidoPaterno<BR>PersonalApellidoMaterno<BR>PersonalDireccion<BR>PersonalEntreCalles<BR>PersonalPlano<BR>PersonalDelegacion<BR>PersonalColonia<BR>PersonalPoblacion<BR>PersonalEstado<BR>PersonalPais<BR>PersonalZona<BR>PersonalCodigoPostal<BR>PersonalTelefonos<BR>PersonalTelefonosLada<BR>PersonalTelefonoMovil<BR>FechaNacimiento<BR>FechaMatrimonio<BR>Conyuge<BR>Sexo<BR>Fuma<BR>Profesion<BR>Puesto<BR>NumeroHijos<BR>Aseguradora<BR>PolizaTipo<BR>PolizaNumero<BR>PolizaReferencia<BR>PolizaImporte<BR>Deducible<BR>DeducibleMoneda<BR>Coaseguro<BR>Espacio<BR>Alergias<BR>Religion<BR>Responsable<BR>Parente<CONTINUA>
+ListaCampos004=<CONTINUA>sco<BR>NombreAsegurado<BR>Titulo<BR>EstadoCivil<BR>FacturarCte<BR>FacturarCteEnviarA<BR>OtrosCargos<BR>PersonalCobrador<BR>wVerArtListaPreciosEsp<BR>CRMImporte<BR>CRMCantidad<BR>CRMEtapa<BR>CRMCierreProbabilidad<BR>CRMCierreFechaAprox<BR>CRMPresupuestoAsignado<BR>CRMCompetencia<BR>CRMInfluencia<BR>CRMFuente<BR>Flotilla<BR>FordDistribuidor<BR>ExcentoISAN<BR>Fecha1<BR>Fecha2<BR>Fecha3<BR>Fecha4<BR>Fecha5<BR>EsProveedor<BR>EsPersonal<BR>EsAgente<BR>EsAlmacen<BR>EsEspacio<BR>EsCentroCostos<BR>EsProyecto<BR>EsCentroTrabajo<BR>EsEstacionTrabajo<BR>Usuario<BR>Licencias<BR>LicenciasTipo<BR>LicenciasLlave<BR>Cuenta<BR>CuentaRetencion<BR>PreciosInferioresMinimo<BR>FiscalRegimen<BR>FordZona<BR>PedidoDef<BR>eMailAuto<BR>RutaOrden<BR>IEPS<BR>PITEX<BR>wMovVentas<BR>Intercompania<BR>Agente3<BR>Agente4<BR<CONTINUA>
+ListaCampos005=<CONTINUA>>Publico<BR>Extranjero<BR>DocumentacionCompleta<BR>OperacionLimite<BR>CRMovVenta<BR>ImportadorRegimen<BR>ImportadorRegistro<BR>LocalidadCNBV<BR>ActividadEconomicaCNBV<BR>Grado<BR>GLN<BR>PersonalSMS<BR>InterfacturaRI<BR>EDIIdentificador<BR>EDICalificador<BR>ProveedorClave<BR>ProveedorInfo<BR>RPU<BR>SIRAC<BR>IFE<BR>Pasaporte<BR>GrupoSanguineo<BR>GrupoSanguineoRH<BR>Peso<BR>Estatura<BR>Comentarios<BR>PolizaFechaEmision<BR>PolizaVencimiento<BR>NotificarA<BR>NoriticarATelefonos<BR>ExpedienteFamiliar<BR>TipoCalle<BR>MaviEstatus<BR>MaviRecomendadoPor<BR>SeEnviaBuroCreditoMAVI<BR>NivelCobranzaEspecialMAVI<BR>ImporteRentaMavi<BR>ViveEnCalidad<BR>AntiguedadNegocioMavi<BR>EnviarCobTelMavi<BR>MotivoMavi<BR>FechaUltimoCobro<BR>MovimientoUltimoCobro<BR>PublicidadMAVI<BR>MotivoMAVIPublicidad<BR><CONTINUA>
+ListaCampos006=<CONTINUA>ParentescoRecomiendaMavi<BR>DireccionRecomiendaMavi<BR>CFD_Enviar<BR>Canal<BR>NivelEspecialContacto<BR>LCAXSI<BR>TipoCredito<BR>esAutCredEspecial<BR>esDimaElite<BR>LimiteCredDimaElite<BR>SIPorcFactDIMA<BR>SinBonifDIMA<BR>TipoDIMA
+
+
+
+SQL=SELECT<BR>  Cliente,<BR>  Rama,<BR>  Nombre,<BR>  NombreCorto,<BR>  Direccion,<BR>  DireccionNumero,<BR>  DireccionNumeroInt,<BR>  EntreCalles,<BR>  Plano,<BR>  Observaciones,<BR>  Delegacion,<BR>  Colonia,<BR>  Poblacion,<BR>  Estado,<BR>  Pais,<BR>  Zona,<BR>  CodigoPostal,<BR>  RFC,<BR>  IEPS,<BR>  PITEX,<BR>  CURP,<BR>  Telefonos,<BR>  TelefonosLada,<BR>  Fax,<BR>  PedirTono,<BR>  Contacto1,<BR>  Contacto2,<BR>  Extencion1,<BR>  Extencion2,<BR>  eMail1,<BR>  eMail2,<BR>  DirInternet,<BR>  Categoria,<BR>  Grupo,<BR>  Familia,<BR>  Credito,<BR>  DiaRevision1,<BR>  DiaRevision2,<BR>  HorarioRevision,<BR>  DiaPago1,<BR>  DiaPago2,<BR>  HorarioPago,<BR>  ZonaImpuesto,<BR>  PedidosParciales,<BR>  Tipo,<BR>  Situacion,<BR>  SituacionFecha,<BR>  SituacionUsuario,<BR>  SituacionNota,<BR>  Descu<CONTINUA>
+SQL002=<CONTINUA>ento,<BR>  Agente,<BR>  AgenteServicio,<BR>  Agente3,<BR>  Agente4,<BR>  EnviarA,<BR>  Proyecto,<BR>  FormaEnvio,<BR>  Condicion,<BR>  Ruta,<BR>  RutaOrden,<BR>  ListaPrecios,<BR>  ListaPreciosEsp,<BR>  DefMoneda,<BR>  VtasConsignacion,<BR>  AlmacenVtasConsignacion,<BR>  Clase,<BR>  Estatus,<BR>  UltimoCambio,<BR>  Alta,<BR>  Conciliar,<BR>  Mensaje,<BR>  Numero,<BR>  Contrasena,<BR>  Contrasena2,<BR>  wVerDisponible,<BR>  wVerArtListaPreciosEsp,<BR>  ChecarCredito,<BR>  BloquearMorosos,<BR>  ModificarVencimiento,<BR>  CreditoEspecial,<BR>  CreditoConLimite,<BR>  CreditoLimite,<BR>  CreditoConLimitePedidos,<BR>  CreditoLimitePedidos,<BR>  CreditoMoneda,<BR>  CreditoConDias,<BR>  CreditoDias,<BR>  CreditoConCondiciones,<BR>  CreditoCondiciones,<BR>  TieneMovimientos,<BR>  Cobrador,<BR>  Per<CONTINUA>
+SQL003=<CONTINUA>sonalCobrador,<BR>  DescuentoRecargos,<BR>  RecorrerVencimiento,<BR>  AlmacenDef,<BR>  SucursalEmpresa,<BR>  NivelAcceso,<BR>  Idioma,<BR>  BonificacionTipo,<BR>  Bonificacion,<BR>  VigenciaDesde,<BR>  VigenciaHasta,<BR>  Descripcion1,<BR>  Descripcion2,<BR>  Descripcion3,<BR>  Descripcion4,<BR>  Descripcion5,<BR>  Descripcion6,<BR>  Descripcion7,<BR>  Descripcion8,<BR>  Descripcion9,<BR>  Descripcion10,<BR>  Descripcion11,<BR>  Descripcion12,<BR>  Descripcion13,<BR>  Descripcion14,<BR>  Descripcion15,<BR>  Descripcion16,<BR>  Descripcion17,<BR>  Descripcion18,<BR>  Descripcion19,<BR>  Descripcion20,<BR>  FormasPagoRestringidas,<BR>  PreciosInferioresMinimo,<BR>  CBDir,<BR>  PersonalNombres,<BR>  PersonalApellidoPaterno,<BR>  PersonalApellidoMaterno,<BR>  PersonalDireccion,<BR>  PersonalEn<CONTINUA>
+SQL004=<CONTINUA>treCalles,<BR>  PersonalPlano,<BR>  PersonalDelegacion,<BR>  PersonalColonia,<BR>  PersonalPoblacion,<BR>  PersonalEstado,<BR>  PersonalPais,<BR>  PersonalZona,<BR>  PersonalCodigoPostal,<BR>  PersonalTelefonos,<BR>  PersonalTelefonosLada,<BR>  PersonalTelefonoMovil,<BR>  PersonalSMS,<BR>  FechaNacimiento,<BR>  Titulo,<BR>  EstadoCivil,<BR>  FechaMatrimonio,<BR>  Conyuge,<BR>  Sexo,<BR>  Fuma,<BR>  Profesion,<BR>  Puesto,<BR>  NumeroHijos,<BR>  Alergias,<BR>  Religion,<BR>  Responsable,<BR>  Parentesco,<BR>  FacturarCte,<BR>  FacturarCteEnviarA,<BR>  Aseguradora,<BR>  NombreAsegurado,<BR>  PolizaTipo,<BR>  PolizaNumero,<BR>  PolizaReferencia,<BR>  PolizaImporte,<BR>  Deducible,<BR>  DeducibleMoneda,<BR>  Coaseguro,<BR>  Espacio,<BR>  OtrosCargos,<BR>  Flotilla,<BR>  FordDistribuidor,<BR>  <CONTINUA>
+SQL005=<CONTINUA>FordZona,<BR>  ExcentoISAN,<BR>  CRMImporte,<BR>  CRMCantidad,<BR>  CRMEtapa,<BR>  CRMCierreProbabilidad,<BR>  CRMCierreFechaAprox,<BR>  CRMPresupuestoAsignado,<BR>  CRMCompetencia,<BR>  CRMInfluencia,<BR>  CRMFuente,<BR>  Fecha1,<BR>  Fecha2,<BR>  Fecha3,<BR>  Fecha4,<BR>  Fecha5,<BR>  EsProveedor,<BR>  EsPersonal,<BR>  EsAgente,<BR>  EsAlmacen,<BR>  EsEspacio,<BR>  EsCentroCostos,<BR>  EsProyecto,<BR>  EsCentroTrabajo,<BR>  EsEstacionTrabajo,<BR>  Usuario,<BR>  Licencias,<BR>  LicenciasTipo,<BR>  LicenciasLlave,<BR>  Cuenta,<BR>  CuentaRetencion,<BR>  FiscalRegimen,<BR>  PedidoDef,<BR>  eMailAuto,<BR>  wMovVentas,<BR>  Intercompania,<BR>  Publico,<BR>  CRMovVenta,<BR>  Extranjero,<BR>  DocumentacionCompleta,<BR>  OperacionLimite,<BR>  ImportadorRegimen,<BR>  ImportadorRegistro,<BR>  Loca<CONTINUA>
+SQL006=<CONTINUA>lidadCNBV,<BR>  ActividadEconomicaCNBV,<BR>  Grado,<BR>  GLN,<BR>  InterfacturaRI,<BR>  EDIIdentificador,<BR>  EDICalificador,<BR>  ProveedorClave,<BR>  ProveedorInfo,<BR>  RPU,<BR>  SIRAC,<BR>  IFE,<BR>  Pasaporte,<BR>  GrupoSanguineo,<BR>  GrupoSanguineoRH,<BR>  Peso,<BR>  Estatura,<BR>  Comentarios,<BR>  PolizaFechaEmision,<BR>  PolizaVencimiento,<BR>  NotificarA,<BR>  NoriticarATelefonos,<BR>  ExpedienteFamiliar,<BR>  TipoCalle,<BR>  MaviEstatus,<BR>  MaviRecomendadoPor,<BR>SeEnviaBuroCreditoMAVI,<BR>  NivelCobranzaEspecialMAVI,<BR>  ImporteRentaMavi,<BR>  ViveEnCalidad,<BR>  AntiguedadNegocioMav,<BR>  EnviarCobTelMavi,<BR>  MotivoMavi,<BR> FechaUltimoCobro,<BR> MovimientoUltimoCobro,<BR> PublicidadMAVI,<BR> MotivoMAVIPublicidad,<BR>  ParentescoRecomiendaMavi,<BR>  DireccionRecomiendaMavi<CONTINUA>
+SQL007=<CONTINUA>,<BR>CFD_Enviar,<BR>  Canal,<BR> NivelEspecialContacto,<BR>  LCAXSI,<BR>TipoCredito,<BR>esAutCredEspecial, <BR>esDimaElite,<BR>LimiteCredDimaElite<BR>SIPorcFactDIMA,<BR>SinBonifDIMA,<BR>  TipoDIMA<BR> FROM<BR>  Cte
+
+
+;Se agrego campo para Facturacion Electronica BVF 
+[Cte.tbl/CFD_Enviar]
+Clave=CFD_Enviar
+Nombre=Enviar CFD
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ListaRefrescar=CFD_Enviar
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=CFD_Enviar
+ValorPorOmision=Falso
+
+
+
+; **** Nuevo Campo: "TipoCalle", tiene una lista de opciones para que se especifique el tipo de calle del cliente: avenida, boulevard, callejón, etc. ****
+[Cte.tbl/TipoCalle]
+Clave=TipoCalle
+Nombre=Tipo de Calle
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=25
+Tamano=25
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+ValorPorOmision=<T>Calle<T>
+ListaOpciones=Andador<BR>Autopista<BR>Avenida<BR>Boulevard<BR>Calle<BR>Callejón<BR>Calzada<BR>Camino<BR>Carretera<BR>Cerrada o Privada<BR>Pasaje
+
+
+
+;***** Nuevo campo agregado para indicar el estatus de supervision*****
+[Cte.tbl/MaviEstatus]
+Clave=MaviEstatus
+Nombre=Estatus Supervisión
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=30
+Tamano=30
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesPredefinidas=Ninguna
+OpcionesValidar=S
+ValorPorOmision=<T>Nuevo<T>
+ListaOpciones=Nuevo<BR>En supervision<BR>Supervisado<BR>Resupervision<BR>Rechazado<BR>Baja
+TipoDatos=Texto
+
+
+
+; *** Nuevo campo de Recomendado para relacion clientes y facilidad de revision en credito  ***
+[Cte.tbl/MaviRecomendadoPor]
+Clave=MaviRecomendadoPor
+Nombre=Recomendado por
+Visible=S
+TamanoValidacion=10
+Tamano=10
+AyudaEnCaptura=Vista
+AyudaForma=CteLista
+AyudaVista=MaviCteA
+AyudaCampo=Cte.Cliente
+
+;****Modificacion 22-Oct-08 por Leticia Quezada
+;**** Se modifico:Incluyo desarrollo de Buro de Credito
+[Cte.tbl/SeEnviaBuroCreditoMAVI]
+Clave=SeEnviaBuroCreditoMAVI
+Nombre=Se Envía a Buró de Crédito
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+AyudaEnCaptura=Lista de Opciones
+OpcionesPredefinidas=Si - No
+
+
+;***** Se modificó la condicion de edición para que no fuera editable si ya se utilizo la herramienta de cambiar prospecto a cliente Arly Rubio Camacho (30-Sep-08)*****
+[Cte.tbl/Tipo]
+CondicionEdicion=Vacio(SQL(<T>Select ProspectoACteMAVI from Cte where Cliente =:tCte<T>,Cliente),0)=0
+
+
+;***ARC 19-May-09 nuevo campo agregado desarrollo cobranza menudeo***
+[Cte.tbl/NivelCobranzaEspecialMAVI]
+Clave=NivelCobranzaEspecialMAVI
+Nombre=Nivel Cobranza Especial
+Visible=S
+TamanoValidacion=100
+Tamano=100
+AyudaEnCaptura=Expresion
+;AyudaMemOpc=Unicamente opciones listadas
+AyudaMemOpc=Consulta opcional
+ValidacionConCondiciones=S
+ValidacionCondicion=SQL(<T>SELECT COUNT(0) FROM NivelesEspecialesCobranzaMavi WHERE Nombre =:tNombre<T>, NivelCobranzaEspecialMAVI) > 0
+ValidacionMensajeError=<T>No existe el nivel de cobranza...<T>
+Formula=SQLEnLista(<T>SELECT Nombre FROM NivelesEspecialesCobranzaMAVI<T>)
+
+
+
+; ***Inicio ARC Desarrollo Cte Express
+[Cte.tbl/ImporteRentaMavi]
+Clave=ImporteRentaMavi
+Nombre=Importe Renta
+Visible=S
+TamanoValidacion=30
+AyudaEnCaptura=Calculadora
+TipoDatos=NumMonetario
+Monetario=S
+
+[Cte.tbl/ViveEnCalidad]
+Clave=ViveEnCalidad
+Nombre=Vive en calidad
+Visible=S
+TamanoValidacion=30
+Tamano=30
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=20
+AyudaMemOpc=Consulta opcional
+Formula=Lista( SQLEnLista(<T>select ViveEnCalidad from MaviCtectoViveEnCalidad<T>))
+TipoDatos=Texto
+
+[Cte.tbl/AntiguedadNegocioMavi]
+Clave=AntiguedadNegocioMavi
+Nombre=Antigüedad Negocio
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+FormatoValidacion=# Años
+
+
+; ***termina ARC Desarrollo Cte Express
+
+
+[Cte.tbl/EnviarCobTelMavi]
+Clave=EnviarCobTelMavi
+Nombre=Enviar a Cobranza Telefonica
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Verdadero
+
+[Cte.tbl/MotivoMavi]
+Clave=MotivoMavi
+Nombre=Motivo por el cual no envia a Cobranza Telefonica
+Visible=S
+TamanoValidacion=50
+Tamano=50
+
+; *** Desarrollo de Campañas 27/08/09,  Joel García Díaz (Mex), se agregaron nuevos campos a la tabla.
+[Cte.tbl/FechaUltimoCobro]
+Clave=FechaUltimoCobro
+Nombre=Fecha Registro
+Visible=S
+TamanoValidacion=15
+TipoDatos=FechaHora
+
+[Cte.tbl/MovimientoUltimoCobro]
+Clave=MovimientoUltimoCobro
+Nombre=Movimiento Ultimo Cobro
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+
+[Cte.tbl/PublicidadMAVI]
+Clave=PublicidadMAVI
+Nombre=No se envia Publicidad
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+ListaRefrescar=MotivoMAVIPublicidad
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=MotivoMAVIPublicidad
+ValorPorOmision=Falso
+
+[Cte.tbl/MotivoMAVIPublicidad]
+Clave=MotivoMAVIPublicidad
+Nombre=Motivo
+Visible=S
+TamanoValidacion=50
+TipoDatos=Texto
+Tamano=50
+CondicionDespliege=PublicidadMAVI
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=12
+AyudaMemOpc=Validar captura en la lista
+AyudaForma=MotivoMAVIPublicidadInfo
+AyudaVista=MotivoMAVIPublicidad
+AyudaCampo=MotivoMAVIPublicidad.Motivo
+Mayusculas=S
+AyudaRefrescar=S
+RequeridoActivo=S
+Formula=SQLEnLista( <T>SELECT Motivo FROM MotivoMAVIPublicidad ORDER BY 1<T> )
+
+; *** Fin Desarrollo para CAMPAÑAS
+
+;Se modifica la lista de refresco para el campo de Delegacion para tambien considere la poblacion Moises Mavi 13/11/2009 
+[Cte.tbl/Delegacion]
+ListaRefrescar=Colonia<BR>CodigoPostal<BR>Estado<BR>Pais<BR>Poblacion<BR>LocalidadCNBV<BR>Ruta
+
+;Se modifica la lista de refresco para el campo de Codigo Postal para tambien considere la poblacion Moises Mavi 13/11/2009 
+[Cte.tbl/CodigoPostal]
+ListaRefrescar=Colonia<BR>Delegacion<BR>Estado<BR>Pais<BR>Poblacion<BR>LocalidadCNBV<BR>Ruta
+
+;Se modifica la lista de refresco para el campo de Colonia para tambien considere la poblacion Moises Mavi 13/11/2009 
+[Cte.tbl/Colonia]
+ListaRefrescar=Delegacion<BR>CodigoPostal<BR>Estado<BR>Pais<BR>Poblacion<BR>LocalidadCNBV<BR>Ruta<BR>
+
+;Se el valor por omision del campo poblacionn para que sea igual que el de Delegacion Moises Mavi 13/11/2009 
+[Cte.tbl/Poblacion]
+ValorPorOmision=Delegacion
+CondicionEdicion=1=2
+ValorRefrescar=Delegacion
+
+
+; ***** Integracion de campos nuevo: ParentescoRecomiendaMavi, DireccionRecomiendaMavi 
+; 		para Cte Express por Arturo Guizer. JR 03-Dic-09 *****
+[Cte.tbl/ParentescoRecomiendaMavi]
+Clave=ParentescoRecomiendaMavi
+Nombre=Parentesco
+Visible=S
+TamanoValidacion=20
+Tamano=20
+;agr 13112009 cambios en campo para que sea de listado
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=30
+AyudaMemOpc=Validar captura en la lista
+Formula=Lista( SQLEnLista(<T>SELECT Parentesco FROM Parentesco<T>))
+
+
+[Cte.tbl/DireccionRecomiendaMavi]
+Clave=DireccionRecomiendaMavi
+Nombre=Dirección
+Visible=S
+TamanoValidacion=60
+Tamano=60
+Mayusculas=S
+
+
+
+[Cte.tbl/Canal]
+Clave=Canal
+Nombre=Canal
+Visible=S
+TamanoValidacion=100
+Tamano=100
+TipoDatos=Texto
+
+[Cte.tbl/NivelEspecialContacto]
+Clave=NivelEspecialContacto
+Nombre=NivelEspecialContacto
+Visible=S
+TamanoValidacion=100
+Tamano=100
+AyudaEnCaptura=Vista
+AyudaForma=DM0123ANivelCobranzaVisFrm
+AyudaVista=DM0123ANivelCobranzaVis
+AyudaCampo=Nombre
+TipoDatos=Texto
+
+[Cte.tbl/LCAXSI]
+Clave=LCAXSI
+Nombre=LCAXSI
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+
+[Cte.tbl/TipoCredito]
+Clave=TipoCredito
+Nombre=TipoCredito
+Visible=S
+TamanoValidacion=10
+TipoDatos=Numérico
+AyudaEnCaptura=Vista
+AyudaForma=DM0299CreditoFrm
+AyudaVista=DM0299CreditoVis
+AyudaCampo=DM0299Tipodecliente.ID
+AyudaMemOpc=Consulta opcional
+
+[Cte.tbl/esAutCredEspecial]
+Clave=esAutCredEspecial
+Nombre=Autorizacion Especial
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+
+[Cte.tbl/esDimaElite]
+Clave=esDimaElite
+Nombre=Dima Elite
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+ListaRefrescar=LimiteCredDimaElite
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=LimiteCredDimaElite
+ValorRefrescar=Si<BR>   Mayusculas(TipoDIMA) = <T>NORMAL<T><BR>Entonces<BR>  Falso<BR>Sino<BR>    Si<BR>        SQL(<T>SELECT COUNT(TipoDIMA) FROM VTASCLimTipoDIMA WHERE TipoDIMA = :tTipo<T>,TipoDIMA) > 0<BR>    Entonces<BR>      Verdadero<BR>    Sino<BR>      Falso<BR>    Fin<BR>Fin
+
+[Cte.tbl/LimiteCredDimaElite]
+Clave=LimiteCredDimaElite
+Nombre=Limite Credito DimaElite
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=NumMonetario
+CondicionEdicion=esDimaElite
+AyudaEnCaptura=Calculadora
+ValidacionConCondiciones=S
+ValidacionCondicion=SQL(<T>SELECT Count(*) FROM TABLANUMD WHERE TablaNum = <T> + Comillas(<T>MAX LIMITE CREDITO DIMA ELITE<T>) + <T> And NUMERO >= :nlIM<T>,LimiteCredDimaElite) >= 1
+ValidacionMensajeError=<T>Limite es Mayor al Tope ...<T>
+ValorRefrescar=Si<BR>  ConDatos(TipoDIMA)<BR>Entonces<BR>  SQL(<T>SELECT LimiteCredito FROM VTASCLimTipoDIMA WHERE Mov = :tMov AND TipoDIMA = :tTipo<T>,<T>Credilana<T>,TipoDIMA)<BR>Fin
+
+[Cte.tbl/siPorcFactDima]
+Clave=siPorcFactDima
+Nombre=Sin Limite de Facturas Dima
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+ValorPorOmision=Falso
+
+
+[Cte.tbl/SinBonifDIMA]
+Clave=SinBonifDIMA
+Nombre=Intervención DIMA
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+
+[Cte.tbl/TipoDIMA]
+Clave=TipoDIMA
+Nombre=TipoDIMA
+Visible=S
+TamanoValidacion=20
+TipoDatos=Texto
+Tamano=20
+AyudaEnCaptura=Expresion
+AyudaMemRenglones=8
+AyudaMemOpc=Validar captura en la lista
+Formula=SQLEnLista(<T>SELECT DISTINCT TipoDIMA FROM VTASCLimTipoDIMA<T>)
+ConRefrescar=S
+ListaRefrescar=esDimaElite<BR>LimiteCredDimaElite

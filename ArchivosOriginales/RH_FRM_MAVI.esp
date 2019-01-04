@@ -1,0 +1,11 @@
+;Ultima modificacion: 09-Jul-2008
+;Responsable: Arly Rubio  
+;Modifico: Integracion cambio mexico carpeta abrir.
+
+
+
+
+;***** Cambio Mexico ******
+[RH.frm/(Carpeta Abrir)]
+FiltroAutoCampo=RH.Moneda
+FiltroAutoValidar=RH.Moneda

@@ -1,0 +1,10 @@
+;**** Ultima modificación:14-Jul-08
+;**** Modifico: Benjamin Valentin
+;**** Se modifico:Fecha de Poliza
+
+
+
+
+;[CxcT.vis/FechaPoliza]
+;FormulaSQL={Si(General.ContXCancelarMismoMes, 'CASE WHEN Cxc.GenerarDinero = 0 AND Cxc.Dinero IS NOT NULL AND Cxc.DineroID IS NOT NULL AND Cxc.DineroCtaDinero IS NOT NULL THEN (SELECT Dinero.FechaEmision FROM Dinero WHERE Dinero.MovID = Cxc.DineroID AND Dinero.Mov = Cxc.Dinero AND Dinero.Empresa = Cxc.Empresa AND Dinero.CtaDinero = Cxc.DineroCtaDinero AND (CASE WHEN Dinero.Estatus = '+Comillas(EstatusPendiente)+' THEN '+Comillas(EstatusConcluido)+' ELSE Dinero.Estatus END) = (CASE WHEN Cxc.Estatus = '+Comillas(EstatusPendiente)+' THEN '+Comillas(EstatusConcluido)+' ELSE Cxc.Estatus END)) ELSE Cxc.FechaEmision END', 'CASE WHEN Cxc.Estatus = '+Comillas(EstatusCancelado)+' THEN CASE WHEN Cxc.GenerarDinero = 0 AND Cxc.Dinero IS NOT NULL AND Cxc.DineroID IS NOT NULL AND Cxc.DineroCtaDinero IS NOT NULL THEN (SELECT Dinero.FechaCancelacion FROM Dinero WHERE Dinero.MovID = Cxc.DineroID AND Dinero.Mov = Cxc.Dinero AND Dinero.Empresa = Cxc.Empresa AND Dinero.CtaDinero = Cxc.DineroCtaDinero AND Dinero.Estatus = Cxc.Est;atus) ELSE Cxc.FechaCancelacion END ELSE CASE WHEN Cxc.GenerarDinero = 0 AND Cxc.Dinero IS NOT NULL AND Cxc.DineroID IS NOT NULL AND Cxc.DineroCtaDinero IS NOT NULL THEN (SELECT Dinero.FechaEmision FROM Dinero WHERE Dinero.MovID = Cxc.DineroID AND Dinero.Mov = Cxc.Dinero AND Dinero.Empresa = Cxc.Empresa AND Dinero.CtaDinero = Cxc.DineroCtaDinero AND (CASE WHEN Dinero.Estatus = '+Comillas(EstatusPendiente)+' THEN '+Comillas(EstatusConcluido)+' ELSE Dinero.Estatus END) = (CASE WHEN Cxc.Estatus = '+Comillas(EstatusPendiente)+' THEN '+Comillas(EstatusConcluido)+' ELSE Cxc.Estatus END)) ELSE Cxc.FechaEmision END END')}
+

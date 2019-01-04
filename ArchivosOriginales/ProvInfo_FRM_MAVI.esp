@@ -1,0 +1,5 @@
+;**Integracion paquete DM0169_27122011A BVF 27122011
+;******Se modifico la consulta para que tome los privilegios del check 'Informacion Acredor' almacenado en la tabla Usuario Campo VerInfoAcreedores
+;******26/dic/2011 Victor Enrique Murillo Torres
+[ProvInfo.frm/Forma]
+ExpresionesAlMostrar=si<BR> ( SQL( <T>SELECT VerInfoAcreedores FROM Usuario WHERE Usuario = :tusuario<T>,USUARIO) = 0)<BR> entonces<BR>     informacion(<T>Tu perfil no tiene los privilegios para abrir esta forma...<T>)<BR>    Forma.Accion(AbortarOperacion)<BR>fin

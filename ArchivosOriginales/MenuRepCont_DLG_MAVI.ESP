@@ -1,0 +1,29 @@
+:AGR 20110111 SE AGREGAN CONDICIONES PARA CIERTOS PERFILES
+
+[MenuRepCont.dlg/Dialogo]
+ListaAcciones=Contables<BR>Financieros<BR>Auditoria
+
+
+[MenuRepCont.dlg/Acciones.Contables]
+Visible=S
+Activo=N
+ActivoCondicion=Si<BR>   SQL(<T>select dbo.FN_ValidaAcceso(:tUsr,<T>+comillas(<T>Contable<T>)+<T>)<T>,Usuario)=1<BR>Entonces<BR> Verdadero<BR>Sino<BR> Falso<BR>Fin
+
+[MenuRepCont.dlg/Acciones.Financieros]
+Activo=N
+Visible=S
+ActivoCondicion=Si<BR>   SQL(<T>select dbo.FN_ValidaAcceso(:tUsr,<T>+comillas(<T>Financiero<T>)+<T>)<T>,Usuario)=1<BR>Entonces<BR> Verdadero<BR>Sino<BR> Falso<BR>Fin
+
+;Se agrega nueva accion para el menu de reportes de contabilidad y la condicion de visibilidad
+
+[MenuRepCont.dlg/Acciones.Auditoria]
+Nombre=Auditoria
+Boton=0
+NombreDesplegar=Auditoria
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=RM1065MenuRepAudiContadlg
+Activo=N
+ActivoCondicion=Si<BR>   SQL(<T>select dbo.FN_ValidaAcceso(:tUsr,<T>+comillas(<T>Auditoria<T>)+<T>)<T>,Usuario)=1<BR>Entonces<BR> Verdadero<BR>Sino<BR> Falso<BR>Fin
+Visible=S

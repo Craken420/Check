@@ -1,0 +1,55 @@
+[MenuHerramientaCxc.dlg/Dialogo]
+ListaAcciones=Instituciones<BR>CobranzaMenudeo<BR>DocAuto<BR>CxcConversion<BR>AplicarAuto<BR>EliminarSaldosMenores<BR>AjusteRedondeo<BR>Tasas<BR>MenuCteBloquear<BR>GenerarComisionesLote<BR>CxcLiberarCobranza<BR>ReasignarCobrador<BR>CxcGenerarComisionesCobranza<BR>CxcTraspasarMovimientos<BR>CxcFusionar<BR>CxcSituacionLote<BR>EditarCampos<BR>Reevaluar<BR>Neteo<BR>CarteraVencidaCNBV<BR>CxcModificarVencimiento<BR>EndosarEnLote<BR>Otros1<BR>Otros2<BR>Otros3<BR>Otros4<BR>Otros5<BR>Otros6<BR>Otros7<BR>Otros8<BR>Otros9<BR>CxcCFD
+
+[MenuHerramientaCxc.dlg/Acciones.Instituciones]
+Nombre=Instituciones
+Boton=0
+NombreDesplegar=Cobranza Instituciones
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=MenuHerrInstitucionesMAVI
+Activo=S
+Visible=S
+
+
+;**** ARC 09-Feb-09 Nueva Accion agregada *****
+[MenuHerramientaCxc.dlg/Acciones.EndosarEnLote]
+Nombre=EndosarEnLote
+Boton=0
+NombreDesplegar=Endosar En Lote
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Formas
+ClaveAccion=CxcEndosarEnLoteMAVI
+Activo=S
+Visible=S
+EspacioPrevio=S
+
+
+;*** ARC 19-May-09 Integracion de la herramienta de cobranza menudeo ***
+[MenuHerramientaCxc.dlg/Acciones.CobranzaMenudeo]
+Nombre=CobranzaMenudeo
+Boton=0
+NombreDesplegar=Cobranza Menudeo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=MenuHerrCobranzaMenudeoMAVI
+Activo=S
+Visible=S
+
+;*** ALQG 23 Nov 09 - Emision de CFD en Lote en CXC ***
+[MenuHerramientaCxc.dlg/Acciones.CxcCFD]
+Nombre=CxcCFD
+Boton=0
+NombreEnBoton=S
+NombreDesplegar=Comprobantes Digitales
+EnMenu=S
+EspacioPrevio=S
+TipoAccion=Formas
+ClaveAccion=CtasCobrarCFD
+Activo=S
+ConCondicion=S
+EjecucionCondicion=Empresa.CFD
+VisibleCondicion=Empresa.CFD

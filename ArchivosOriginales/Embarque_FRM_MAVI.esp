@@ -1,0 +1,305 @@
+;**** Ultima modificación:28-Ago-08
+;**** Modifico:Arly Rubio
+;**** Se modifico: Se activo la carpeta de gastos
+
+
+
+;***** Cambio Mexico ******
+[Embarque.frm/(Carpeta Abrir)]
+FiltroAutoCampo=Embarque.Moneda
+FiltroAutoValidar=Embarque.Moneda
+
+; ****Se modificaron las dimensiones de la forma ****
+[Embarque.frm/Forma]
+PosicionInicialIzquierda=253
+PosicionInicialArriba=88
+PosicionInicialAltura=549
+PosicionInicialAncho=774
+PosicionSeccion1=47
+PosicionSeccion2=92
+PosicionInicialAlturaCliente=590
+PosicionSec1=245
+PosicionSec2=429
+ExpresionesAlMostrar=Asigna(Info.Copiar, Falso)<BR>Asigna(Mavi.DM0125BanderaEmb,<T>VERDADERO<T>)
+
+
+ListaAcciones=Nuevo<BR>MovCopiar<BR>Abrir<BR>Localizar<BR>Guardar Cambios<BR>MovPersonal<BR>Evaluaciones<BR>Propiedades<BR>Imprimir<BR>RepPantalla<BR>PlantillasOffice<BR>FormasAnexas<BR>Verificar<BR>Situacion<BR>Sucursal<BR>Afectar<BR>Consecutivo<BR>Eliminar<BR>Cancelar<BR>ReasignarUsuario<BR>Asignar<BR>EmbarqueParcial<BR>AsistenteCobro<BR>Campos<BR>CamposExtras<BR>Tareas<BR>Anexos<BR>AgregarEvento<BR>GastosAnexos<BR>Guia<BR>Anterior<BR>Siguiente<BR>InfoMov<BR>ProyInfo<BR>Bitacora<BR>Tiempo<BR>Politica<BR>PoliticaConcepto<BR>MovPos<BR>Navegador<BR>Cerrar<BR>Otros1<BR>Otros2<BR>Otros3<BR>Otros4<BR>Otros5<BR>Otros6<BR>Otros7<BR>Otros8<BR>Otros9<BR>GeneraTran
+
+
+;**** Se activo la carpeta para que se mostraran los gasto y se refrescara al entrar 28-Ago-08 (Arly) ****
+[Embarque.frm/Gastos]
+RefrescarAlEntrar=S
+CarpetaDesActivada=N
+
+; ****Se agragaron nuevos campos en la lista en captura: TipoUnidadVehicular, LicenciaAgente, Agente2, AgenteAux.Nombre, LicenciaAgente2, Ruta.kms ****
+[Embarque.frm/Ficha]
+ListaEnCaptura=Embarque.Mov<BR>Embarque.MovID<BR>Embarque.Proyecto<BR>Embarque.UEN<BR>Embarque.ProgramadoPara<BR>Embarque.PersonalCobrador<BR>Embarque.FechaEmision<BR>Embarque.CtaDinero<BR>Embarque.Vehiculo<BR>Vehiculo.Descripcion<BR>Vehiculo.Placas<BR>Vehiculo.Peso<BR>Vehiculo.Volumen<BR>Vehiculo.TipoUnidadVehicular<BR>Embarque.Agente<BR>Agente.Nombre<BR>Embarque.LicenciaAgente<BR>Embarque.Agente2<BR>AgenteAux.Nombre<BR>Embarque.LicenciaAgente2<BR>Embarque.Ruta<BR>Ruta.Kms<BR>Embarque.Referencia<BR>Embarque.Concepto<BR>Embarque.Observaciones<BR>%Costo
+
+
+;**** Nuevo campo agregado ****
+[Embarque.frm/Ficha.Vehiculo.TipoUnidadVehicular]
+Carpeta=Ficha
+Clave=Vehiculo.TipoUnidadVehicular
+Editar=S
+LineaNueva=N
+ValidaNombre=N
+3D=S
+Tamano=20
+ColorFondo=Plata
+ColorFuente=Negro
+Pegado=N
+
+
+; ****Nuevo campo agregado ****
+[Embarque.frm/Ficha.Embarque.LicenciaAgente]
+Carpeta=Ficha
+Clave=Embarque.LicenciaAgente
+Editar=S
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+
+; **** Nuevo campo agregado****
+[Embarque.frm/Ficha.Embarque.Agente2]
+Carpeta=Ficha
+Clave=Embarque.Agente2
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=25
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+
+; **** Nuevo campo agregado****
+[Embarque.frm/Ficha.AgenteAux.Nombre]
+Carpeta=Ficha
+Clave=AgenteAux.Nombre
+Editar=S
+3D=S
+Tamano=33
+ColorFondo=Plata
+ColorFuente=Negro
+
+
+
+
+
+; **** Nuevo campo agregado****
+[Embarque.frm/Ficha.Embarque.LicenciaAgente2]
+Carpeta=Ficha
+Clave=Embarque.LicenciaAgente2
+Editar=S
+ValidaNombre=S
+3D=S
+Tamano=20
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+; **** Nuevo campo agregado****
+[Embarque.frm/Ficha.Ruta.Kms]
+Carpeta=Ficha
+Clave=Ruta.Kms
+Editar=S
+3D=S
+Pegado=N
+ColorFondo=Plata
+ColorFuente=Negro
+Tamano=7
+
+
+
+;**** Modificacion de campo para que no despliegue nombre ****
+[Embarque.frm/Ficha.Embarque.Referencia]
+ValidaNombre=N
+Tamano=25
+
+
+;**** Nuevo campos agregado: ParaComisionChoferMAVI ****
+[Embarque.frm/Detalle]
+ListaEnCaptura=EmbarqueD.Orden<BR>EmbarqueMov.Accion<BR>Movimiento<BR>EmbarqueD.MovPorcentaje<BR>EmbarqueMov.Zona<BR>EmbarqueMov.Ruta<BR>EmbarqueMov.UEN<BR>ImporteTotal<BR>CxcSaldo<BR>ImporteEmbarque<BR>EmbarqueD.Paquetes<BR>EmbarqueD.Observaciones<BR>EmbarqueD.Estado<BR>EmbarqueD.ParaComisionChoferMAVI<BR>EmbarqueD.FechaHora<BR>EmbarqueD.Persona<BR>EmbarqueD.PersonaID<BR>EmbarqueD.Forma<BR>EmbarqueD.Importe<BR>EmbarqueD.Referencia<BR>EmbarqueD.Causa
+
+
+;**** Nuevo campo agregado ARC 28-Feb-09 ****
+[Embarque.frm/Detalle.EmbarqueD.ParaComisionChoferMAVI]
+Carpeta=Detalle
+Clave=EmbarqueD.ParaComisionChoferMAVI
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+EditarConBloqueo=S
+
+
+
+;****Se agrego un nuevo totalizador: Magisterio ****
+;**** Se modifico el totalizador Magisterio para obtener el costo por PropreArt GRB 18-Feb-2010
+; **** Modificacion en totalizadore Magisterio para desarrollo DM0158 Costeo de Fletes dentro del paquete DM0158_24112011. JR 25-Nov-2011. ****
+[Embarque.frm/(Carpeta Totalizadores)]
+;Totalizadores1=Peso Disp<BR>Volumen Disp<BR>Importe Total<BR>Paquetes<BR>Total Cobrado<BR>Total Embarque<BR>Magisterio
+;Totalizadores2=Embarque:Vehiculo.Peso-Suma(EmbarqueD:EmbarqueMov.Peso)<BR>Embarque:Vehiculo.Volumen-Suma(EmbarqueD:EmbarqueMov.Volumen)<BR>Suma(EmbarqueD:ImporteTotal*EmbarqueD:EmbarqueMov.TipoCambio)<BR>Suma(EmbarqueD:EmbarqueD.Paquetes)<BR>Suma(EmbarqueD:EmbarqueD.Importe)<BR>Suma(EmbarqueD:ImporteEmbarque*EmbarqueD:EmbarqueMov.TipoCambio)<BR>Si(Embarque:Embarque.Mov = <T>Embarque Magisterio<T>,SQL('SELECT dbo.FnCostoFleteMag (:nid)', Embarque:Embarque.ID)-(SQL('SELECT dbo.FnCostoFleteMag (:nid)', Embarque:Embarque.ID)*(Embarque:Embarque.FleteMagisterio/100.0)),0)
+;Totalizadores3=#,.##<BR>#,.##<BR>(Monetario)<BR>#,<BR>(Monetario)<BR>(Monetario)<BR>(Monetario)
+Totalizadores=S
+;ListaEnCaptura=Peso Disp<BR>Volumen Disp<BR>Paquetes<BR>Total ;Embarque<BR>Total Cobrado<BR>Magisterio
+;Totalizadores1=Peso Disp<BR>Volumen Disp<BR>Importe Total<BR>Paquetes<BR>Total ;Cobrado<BR>Total Embarque<BR>Magisterio
+;Totalizadores2=Embarque:Vehiculo.Peso-Suma;(EmbarqueD:EmbarqueMov.Peso)<BR>Embarque:Vehiculo.Volumen-Suma;(EmbarqueD:EmbarqueMov.Volumen)<BR>Suma;(EmbarqueD:ImporteTotal*EmbarqueD:EmbarqueMov.TipoCambio)<BR>Suma;(EmbarqueD:EmbarqueD.Paquetes)<BR>Suma(EmbarqueD:EmbarqueD.Importe)<BR>Suma;(EmbarqueD:ImporteEmbarque*EmbarqueD:EmbarqueMov.TipoCambio)<BR>Si;(Embarque:Embarque.Mov = <T>Embarque Magisterio<T>,(SQL('SELECT ;dbo.FnCostoFleteMag (:nid)', Embarque:Embarque.ID)*;(Embarque:Embarque.FleteMagisterio/100.0)),0)
+;Totalizadores3=#,.##<BR>#,.##<BR>(Monetario)<BR>#,<BR>(Monetario)<BR>;(Monetario)<BR>(Monetario)
+
+ListaEnCaptura=Peso Disp<BR>Volumen Disp<BR>Paquetes<BR>Total Embarque<BR>Total Cobrado<BR>Magisterio
+Totalizadores1=Peso Disp<BR>Volumen Disp<BR>Importe Total<BR>Paquetes<BR>Total Cobrado<BR>Total Embarque<BR>Magisterio
+Totalizadores2=SQL(<T>SELECT DBO.FN_EmbarquesPesoVolumenTotal(:n,2)<T>,Embarque:Embarque.ID)<BR>SQL(<T>SELECT DBO.FN_EmbarquesPesoVolumenTotal(:n,1)<T>,Embarque:Embarque.ID)<BR>Suma(EmbarqueD:ImporteTotal*EmbarqueD:EmbarqueMov.TipoCambio)<BR>Suma(EmbarqueD:EmbarqueD.Paquetes)<BR>Suma(EmbarqueD:EmbarqueD.Importe)<BR>Suma(EmbarqueD:ImporteEmbarque*EmbarqueD:EmbarqueMov.TipoCambio)<BR>Si(Embarque:Embarque.Mov = <T>Embarque Magisterio<T>,(SQL('SELECT dbo.FnCostoFleteMag (:nid)', Embarque:Embarque.ID)*(Embarque:Embarque.FleteMagisterio/100.0)),0)
+Totalizadores3=#,.##<BR>#,.##<BR>(Monetario)<BR>#,<BR>(Monetario)<BR>(Monetario)<BR>(Monetario)
+
+
+;*****Nuevo totalizador ****
+[Embarque.frm/(Carpeta Totalizadores).Magisterio]
+Carpeta=(Carpeta Totalizadores)
+Clave=Magisterio
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=25
+ColorFondo=Plata
+ColorFuente=$00808040
+Pegado=S
+Efectos=[Negritas]
+
+
+;*******************
+;******ACCIONES*****
+
+;TEG 12 Oct 2011 Se agrega la validacion del agente y la Ruta para el mov Orden cobro
+;Nuevas Condiciones para el boton de Situacion en embarques Javier Quiñones Vizcarra 15/08/2011, paquete DM0125_19082011 BVF 19082011
+;*** ARC 18-May-09 para que no sea requerido el vehiculo ****
+; **** Cambio de nuevas condiciones para EjecucionCondicion y EjecucionMensaje e integracion de ActivoCondicion para desarrollo DM0125 VALIDACIONES A INCORPORAR AL PROCESO DE EMBARQUES en el paquete DM0125_07042011. Cambio por victor de los santos Nuevas Condiciones de Bloqueo para el Escaneo de Embarque. Integrado por JR 7-Abr-2011. ****
+; **** Cambio en ActivoCondicion Javier Quiñones Vizcarra 27/08/2011 para desarrollo DM0125 VALIDACIONES A INCORPORAR AL PROCESO DE EMBARQUES en paquete DM0125_30082011. JR 30-Ago-2011 **** 
+; **** Modificacion de Expresion para disporar un consecutivo mensual. TEG 31 Oct 2011. Para desarrollo DM0158 Costeo de Fletes dentro del paquete DM0158_24112011. JR 25-Nov-2011. ***
+; **** Cambio en EjecucionCondicion, para no activar hasta que las ordenes traspaso incluidas en el embarque tengan un transito pendiente JDelTA, dentro del paquete DM0125_07092012. JR 07-Sep-2012. ****
+;Jesus Del Toro Andrade 03-09-2012 Se agrega condicion para no activar hasta que las ordenes traspaso incluidas en el embarque tengan un transito pendiente BVF10092012 DM0125_10092012
+; **** Modificacion de ActivoCondicion, Carmen Quintana 26/09/2012 Se modifica validación de Embarques con Devoluciones de Venta, dentro del paquete DM0125_29092012. JR 28-Sep-2012. ****
+[Embarque.frm/Acciones.Afectar]
+EjecucionMensaje=si Embarque:Embarque.Mov=<T>Orden Cobro<T><BR>entonces<BR>  si<BR>     sql(<T>SELECT count (*) FROM AgenteRutaMavi WHERE Agente=:tAgte AND Ruta=:tRuta<T>,Embarque:Embarque.Agente,Embarque:Embarque.Ruta)=0<BR>  entonces <T>La Ruta no coinside con el Agente<T><BR>  fin<BR>sino<BR>Si(Vacio(Embarque:Embarque.Vehiculo), <T>Falta Especificar el Vehículo<T>,<T>Falta Especificar el Movimiento<T>)<BR>fin
+Expresion=Ejecutarsql(<T>exec SP_MAVIDM0158ConsecutivoEmb :NiD<T>, Embarque:Embarque.ID)<BR>Si(Embarque:Embarque.Mov noen(<T>Orden Cobro<T>,<T>Orden Cobro Mayoreo<T>), Si(Vacio(Embarque:Embarque.Vehiculo), Si(Error(<T>Falta especificar el vehiculo<T>,BotonAceptar)=BotonAceptar, AbortarOperacion, AbortarOperacion)))<BR>Afectar(<T>EMB<T>, Embarque:Embarque.ID, Embarque:Embarque.Mov, Embarque:Embarque.MovID, <T>Todo<T>, <T><T>, <T>Embarque<T>)<BR>SI((SQL(<T>Select COUNT(*) From dbo.fn_MaviDM0285validaIdecommerce(:nID)<T>,Embarque:Embarque.ID)> 0) y (Embarque:Embarque.Estatus <> <T>SINAFECTAR<T>) y (SQL(<T>Select Count(*) From TablaStD T join Embarque E on E.Vehiculo=T.nombre Where T.Tablast =:tTab and E.Vehiculo=:tV and E.ID=:nId<T>,<T>DM0285CAMBIOESTATUSMAGENTO<T>,Embarque:Embarque.Vehiculo,Embarque:E<CONTINUA>
+Expresion002=<CONTINUA>mbarque.ID)=0), Ejecutar(<T>PlugIns\ActualizaEcommers.exe <T>+<T>EMBARQUE<T>+<T> <T>+ CampoEnTexto(Embarque:Embarque.ID)+<T> <T>+<T>COMPLETADO<T>))
+;EjecucionCondicion=si Embarque:Embarque.Mov=<T>Orden Cobro<T><BR>entonces<BR>  si<BR>     sql(<T>SELECT count (*) FROM AgenteRutaMavi WHERE Agente=:tAgte AND Ruta=:tRuta<T>,Embarque:Embarque.Agente,Embarque:Embarque.Ruta)>0<BR>  entonces Verdadero<BR>  sino falso<BR>  fin<BR>sino<BR>//ConDatos(Embarque:Embarque.Vehiculo) y --COmento ARC 18-May-09<BR>(ConDatos(Embarque:Embarque.Mov)) y<BR>(<BR>Si (MovTipoEn(<T>EMB<T>,Embarque:Embarque.Mov,(EMB.E)))y( Embarque:Embarque.Estatus=EstatusPendiente)<BR>Entonces<BR>    Si SQL(<T>Sp_MaviDM0125Embarques :Nid,:Nnum<T>,Embarque:Embarque.ID,2)=0 y<BR>    SQL(<T>Sp_MaviDM0125EmbarqueyEscaneo :Nid<T>,Embarque:Embarque.ID)=0 y<BR>    SQL(<T>SP_MaviDM0125ValidaRecTrasp :Nid<T>,Embarque:Embarque.ID)=0 Entonces Verdadero Sino Falso Fin<BR>Sino<BR>    SI (SQL(<T>EXEC SP_MAVIDM0<CONTINUA>
+;EjecucionCondicion002=<CONTINUA>125ValidaDetalleEmbarque :Nid<T>,Embarque:Embarque.ID)=0) y (MovTipoEn(<T>EMB<T>,Embarque:Embarque.Mov,(EMB.E)))<BR>    y (Embarque:Embarque.Estatus=EstatusSinAfectar)<BR>    ENTONCES<BR>        Verdadero<BR>    SINO<BR>        Falso<BR>    FIN<BR>Fin<BR>)<BR>fin
+;EjecucionMensaje=SI (SQL(<T>EXEC SP_MAVIDM0125ValidaDetalleEmbarque :Nid<T>,Embarque:Embarque.ID)=1) y (MovTipoEn(<T>EMB<T>,Embarque:Embarque.Mov,(EMB.E)))<BR>    y (Embarque:Embarque.Estatus=EstatusSinAfectar)<BR>ENTONCES<BR>    <T>Falta Afectar Ordenes Traspaso<T><BR>SINO<BR>(<BR>si Embarque:Embarque.Mov=<T>Orden Cobro<T><BR>entonces<BR>  si<BR>     sql(<T>SELECT count (*) FROM AgenteRutaMavi WHERE Agente=:tAgte AND Ruta=:tRuta<T>,Embarque:Embarque.Agente,Embarque:Embarque.Ruta)=0<BR>  entonces <T>La Ruta no coinside con el Agente<T><BR>  fin<BR>sino<BR>Si(Vacio(Embarque:Embarque.Vehiculo), <T>Falta Especificar el Vehículo<T>,<T>Falta Especificar el Movimiento<T>)<BR>fin<BR>)<BR>Fin
+EjecucionMensaje=SI SQL(<T>SP_MAVIDM0125ValidaDetalleEmbarque :Nid<T>,Embarque:Embarque.ID)=1<BR>ENTONCES<BR>    <T>Falta Afectar Ordenes Traspaso...<T><BR>SINO<BR>    SI Embarque:Embarque.Mov=<T>Orden Cobro<T><BR>    ENTONCES<BR>        SI SQL(<T>SELECT count (*) FROM AgenteRutaMavi WHERE Agente=:tAgte AND Ruta=:tRuta<T>,Embarque:Embarque.Agente,Embarque:Embarque.Ruta)=0<BR>        ENTONCES<BR>            <T>La Ruta no coinside con el Agente<T><BR>        SINO<BR>            1=1<BR>        FIN<BR>    SINO<BR>        SI(Vacio(Embarque:Embarque.Vehiculo), <T>Falta Especificar el Vehículo<T>,<T>Falta Especificar el Movimiento<T>)<BR>    FIN<BR>FIN
+;ActivoCondicion=((<BR>PuedeAfectar(Usuario.Afectar, Usuario.AfectarOtrosMovs, Embarque:Embarque.Usuario)<BR>y<BR>((Embarque:Embarque.Estatus=EstatusSinAfectar) o (Embarque:Embarque.Estatus=EstatusPendiente))<BR>y<BR>PuedeAvanzarEstatus(<T>EMB<T>, Embarque:Embarque.Mov, Embarque:Embarque.Estatus, FormaSituacion)                    <BR>y<BR>(Si (MovTipoEn(<T>EMB<T>,Embarque:Embarque.Mov,(EMB.E)))y(Embarque:Embarque.Estatus=EstatusPendiente)<BR>    Entonces<BR>        Si SQL(<T>Sp_MaviDM0125Embarques :Nid,:Nnum<T>,Embarque:Embarque.ID,2)=0 y<BR>        SQL(<T>Sp_MaviDM0125EmbarqueyEscaneo :Nid<T>,Embarque:Embarque.ID)=0 y<BR>        SQL(<T>SP_MaviDM0125ValidaRecTrasp :Nid<T>,Embarque:Embarque.ID)=0 Entonces Verdadero Sino Falso Fin<BR>    Sino<BR>        Verdadero<BR>Fin<BR>) = Verdadero<BR>)Y<BR>(Si (MovTip<CONTINUA>
+;ActivoCondicion002=<CONTINUA>oEn(<T>EMB<T>,Embarque:Embarque.Mov,(EMB.E)))    <BR>    y<BR>    (Embarque:Embarque.Estatus EN (<T>SINAFECTAR<T>, <T>PENDIENTE<T>))<BR>    ENTONCES                                 <BR>        VERDADERO<BR>    SINO<BR>        FALSO<BR>FIN))<BR>Y<BR>(Si (SQL(<T>SELECT isnull(COUNT(E.ID), 0)<BR>          FROM Embarque E<BR>              INNER JOIN dbo.EmbarqueD ED ON E.ID = ED.ID<BR>              INNER JOIN dbo.EmbarqueMov EM ON ED.EmbarqueMov = EM.ID<BR>              INNER JOIN dbo.MovTipo MT ON E.Mov = MT.Mov<BR>              INNER JOIN dbo.Venta V ON V.Referencia= EM.Mov+<BR>              <T>+comillas(<T> <T>)+<T>+ EM.Movid and v.mov like <T>+comillas(<T>Devolucion%<T>)+<T> AND V.ESTATUS=<T>+comillas(<T>CONCLUIDO<T>)+<T><BR>          WHERE MT.Modulo = <T>+comillas(<T>EMB<T>)+<T> AND MT.Cl<CONTINUA>
+;ActivoCondicion003=<CONTINUA>ave = <T>+ comillas(<T>EMB.E<T>)+<T>AND E.ESTATUS IN (<T>+comillas(<T>SINAFECTAR<T>)+<T>,<T>+comillas(<T>PENDIENTE<T>)+<T>)<BR>              AND E.ID =:nVal<T>,Embarque:Embarque.ID<BR>     )=0)<BR>    Entonces<BR>        Verdadero<BR>    Sino<BR>        Si (SQL(<T>select acceso from usuario where usuario = :tUcu<T>, Usuario)) en (<T>GERAD_GERA<T>, <T>INVEN_GERA<T>)<BR>            Entonces<BR>                Verdadero<BR>            Sino<BR>                Falso<BR>        Fin<BR>Fin)
+EjecucionCondicion=Si Embarque:Embarque.Mov=<T>Orden Cobro<T><BR>Entonces<BR>    Si SQL(<T>SELECT count (*) FROM AgenteRutaMavi WHERE Agente=:tAgte AND Ruta=:tRuta<T>,Embarque:Embarque.Agente,Embarque:Embarque.Ruta)>0<BR>    Entonces<BR>        Verdadero<BR>    Sino<BR>        Falso<BR>    Fin<BR>Sino<BR>    (ConDatos(Embarque:Embarque.Mov)) y<BR>    (Si (MovTipoEn(<T>EMB<T>,Embarque:Embarque.Mov,(EMB.E)))y(Embarque:Embarque.Estatus=EstatusPendiente)<BR>    Entonces<BR>        Si SQL(<T>SP_MaviDM0125ValidaRecTrasp :Nid<T>,Embarque:Embarque.ID)=0<BR>        Entonces<BR>            Verdadero<BR>        Sino<BR>           Si (Mavi.DM0125BanderaEmb) = <T>VERDADERO<T><BR>    Entonces<BR>        Si Precaucion(<T>No es posible concluir el embarque debido a que existen <T>+<BR>        <T>recibos traspaso o devolucio<CONTINUA>
+EjecucionCondicion002=<CONTINUA>nes transito pendientes de los siguiente movimientos: <T><BR>        +SQLEnlista(<T> SELECT Distinct EM.MOV,EM.MOVID<BR>        FROM dbo.Embarque E With(NoLock)<BR>        INNER JOIN dbo.EmbarqueD ED With(NoLock) ON E.ID = ED.ID<BR>        INNER JOIN dbo.EmbarqueMov EM With(NoLock) ON ED.EmbarqueMov = EM.ID<BR>        INNER JOIN dbo.MovTipo MT With(NoLock) ON E.Mov = MT.Mov<BR>        INNER JOIN INV With(NoLock) ON INV.MOV=EM.MOV AND INV.MOVID=EM.MOVID<BR>        INNER JOIN INV TRA With(Nolock) ON Tra.IDOrdTrasMavi=INV.ID and TRA.Mov=<T>+Comillas(<T>Transito<T>)+<T> and TRA.Estatus=<T>+Comillas(<T>PENDIENTE<T>)+<T><BR>        Where E.ID=:nID<T>,Embarque:Embarque.ID)+<T> Solo Usuarios Gerentes pueden concluir el embarque ¿Desea Continuar? <T>, BotonAceptar , BotonCancelar) =  BotonAceptar<B<CONTINUA>
+EjecucionCondicion003=<CONTINUA>R>        Entonces<BR>            Forma(<T>DM0125ValidaConclusionEmba<T>)<BR>            AbortarOperacion<BR>            Sino<BR>            AbortarOperacion<BR>            Fin<BR>    Sino<BR><BR>        SQL(<T>SP_MAVIDM0125ValidaDetalleEmbarque :Nid<T>,Embarque:Embarque.ID)=0<BR>    Fin)<BR>Fin<BR>Si<BR>  SQL(<T>SP_MAVIDM0125ValidaDetalleEmbarque :Nid<T>,Embarque:Embarque.ID)<>0<BR> Entonces<BR>     Error(<T>Falta Especificar el Movimiento<T>)<BR>     AbortarOperacion<BR> sino Verdadero<BR>Fin
+
+
+
+
+
+AntesExpresiones=Si<BR> General.CamposExtras=<T>Campos Extras<T> y (Embarque:Embarque.Estatus en (EstatusSinAfectar, EstatusPorConfirmar, EstatusBorrador)) y SQL(<T>SELECT CEAntesAfectar FROM MovTipo WHERE Modulo=:tModulo AND Mov=:tMov AND CE=1<T>, <T>EMB<T>, Embarque:Embarque.Mov)<BR> Entonces<BR>  Si(no CamposExtrasMovimiento(<T>EMB<T>, Embarque:Embarque.Mov, Embarque:Embarque.ID, Verdadero, Embarque:Embarque.Estatus noen (EstatusSinAfectar, EstatusPorConfirmar, EstatusBorrador)), AbortarOperacion)<BR>FIn<BR>Si<BR>  (Embarque:Embarque.Mov en (<T>Embarque<T>,<T>Embarque Magisterio<T>,<T>Embarque Mayoreo<T>,<T>Embarque Sucursales<T>)) y (Embarque:Embarque.Estatus=<T>SINAFECTAR<T>) y (SQL(<T>select Estatus from Vehiculo With(Nolock) Where Vehiculo=:tV<T>,Embarque:Embarque.Vehiculo)<> <T>DISPONIBLE<T>)<BR> E<CONTINUA>
+AntesExpresiones002=<CONTINUA>ntonces<BR>   Error(<T>El Vehiculo no esta disponible<T>)<BR>Abortaroperacion<BR>Fin<BR>Si((Embarque:Embarque.Estatus=<T>SINAFECTAR<T>) y (MovTipoEn(<T>EMB<T>,Embarque:Embarque.Mov,(EMB.E)))  y (SQL(<T>Sp_MaviDM0125Embarques :Nid, :nNum<T>,Embarque:Embarque.ID,2) <> 0),Error(<T>No conicide lo embarcado contra lo escaneado<T>) AbortarOperacion,Verdadero)<BR>SI<BR> SQL(<T>SELECT isnull(COUNT(E.ID), 0)<BR>        FROM Embarque E<BR>             INNER JOIN dbo.EmbarqueD ED ON E.ID = ED.ID<BR>             INNER JOIN dbo.EmbarqueMov EM ON ED.EmbarqueMov = EM.ID<BR>             INNER JOIN dbo.MovTipo MT ON E.Mov = MT.Mov<BR>             INNER JOIN dbo.Venta V ON V.Referencia= EM.Mov+<BR>             <T>+comillas(<T> <T>)+<T>+ EM.Movid and v.mov like <T>+comillas(<T>Devolucion%<T>)+<T> AND V.ESTAT<CONTINUA>
+AntesExpresiones003=<CONTINUA>US=<T>+comillas(<T>CONCLUIDO<T>)+<T><BR>             WHERE MT.Modulo = <T>+comillas(<T>EMB<T>)+<T> AND MT.Clave = <T>+ comillas(<T>EMB.E<T>)+<T> AND E.ESTATUS IN (<T>+comillas(<T>SINAFECTAR<T>)+<T>,<T>+comillas(<T>PENDIENTE<T>)+<T>)<BR>             AND E.ID =:nVal<T>,Embarque:Embarque.ID<BR>             )=0<BR>             Entonces<BR>               Verdadero<BR>            Sino<BR>             Si (SQL(<T>select acceso from usuario where usuario = :tUcu<T>, Usuario)) en<BR>                   (SQL(<T>Select Nombre From TablaSTD Where TablaST = :tTabla<T>, <T>PERFILES AFECTAR EMBARQUES<T>)) y (Embarque:Embarque.Estatus=<T>PENDIENTE<T>)<BR>                    Entonces<BR>                        Verdadero                <BR>                 Sino<BR>                SI Precaucion(<T>Existen movi<CONTINUA>
+AntesExpresiones004=<CONTINUA>mientos con devolucion: <T><BR>                +SQLEnlista(<T>SELECT distinct EM.Mov,EM.MovID<BR>                 FROM Embarque E<BR>                 INNER JOIN dbo.EmbarqueD ED ON E.ID = ED.ID<BR>                 INNER JOIN dbo.EmbarqueMov EM ON ED.EmbarqueMov = EM.ID<BR>                 INNER JOIN dbo.MovTipo MT ON E.Mov = MT.Mov<BR>                 INNER JOIN dbo.Venta V ON V.Referencia= EM.Mov+<BR>                 <T>+comillas(<T> <T>)+<T>+ EM.Movid and v.mov like <T>+comillas(<T>Devolucion%<T>)+<T> AND V.ESTATUS=<T>+comillas(<T>CONCLUIDO<T>)+<T><BR>                 WHERE MT.Modulo = <T>+comillas(<T>EMB<T>)+<T> AND MT.Clave = <T>+ comillas(<T>EMB.E<T>)+<T> AND E.ESTATUS IN (<T>+comillas(<T>SINAFECTAR<T>)+<T>,<T>+comillas(<T>PENDIENTE<T>)+<T>)<BR>                 AND E.ID =:nVal<T>,Emba<CONTINUA>
+AntesExpresiones005=<CONTINUA>rque:Embarque.ID),BotonAceptar)=BotonAceptar<BR>                 Entonces                                   <BR>                      AbortarOperacion<BR>                 fin<BR>                Fin<BR><BR>Fin
+;ActivoCondicion=PuedeAfectar(Usuario.Afectar, Usuario.AfectarOtrosMovs, Embarque:Embarque.Usuario) y <BR>((Embarque:Embarque.Estatus=EstatusSinAfectar) o (Embarque:Embarque.Estatus=EstatusPendiente)) y<BR>PuedeAvanzarEstatus(<T>EMB<T>, Embarque:Embarque.Mov, Embarque:Embarque.Estatus, FormaSituacion)
+ActivoCondicion=PuedeAfectar(Usuario.Afectar, Usuario.AfectarOtrosMovs, Embarque:Embarque.Usuario) y<BR>((Embarque:Embarque.Estatus=EstatusSinAfectar) o (Embarque:Embarque.Estatus=EstatusPendiente)) y<BR>PuedeAvanzarEstatus(<T>EMB<T>, Embarque:Embarque.Mov, Embarque:Embarque.Estatus, FormaSituacion)<BR>y<BR>(Si ((MovTipoEn(<T>EMB<T>,Embarque:Embarque.Mov,(EMB.E))) y (Embarque:Embarque.Estatus EN (<T>SINAFECTAR<T>, <T>PENDIENTE<T>)))<BR>    Entonces<BR>        Si (SQL(<T>SELECT isnull(COUNT(E.ID), 0)<BR>              FROM Embarque E<BR>                  INNER JOIN dbo.EmbarqueD ED ON E.ID = ED.ID<BR>                  INNER JOIN dbo.EmbarqueMov EM ON ED.EmbarqueMov = EM.ID<BR>                  INNER JOIN dbo.MovTipo MT ON E.Mov = MT.Mov<BR>                  INNER JOIN dbo.Venta V ON V.Referencia= EM.Mov+<BR<CONTINUA>
+ActivoCondicion002=<CONTINUA>>                  <T>+comillas(<T> <T>)+<T>+ EM.Movid and v.mov like <T>+comillas(<T>Devolucion%<T>)+<T> AND V.ESTATUS=<T>+comillas(<T>CONCLUIDO<T>)+<T><BR>              WHERE MT.Modulo = <T>+comillas(<T>EMB<T>)+<T> AND MT.Clave = <T>+ comillas(<T>EMB.E<T>)+<T>AND E.ESTATUS IN (<T>+comillas(<T>SINAFECTAR<T>)+<T>,<T>+comillas(<T>PENDIENTE<T>)+<T>)<BR>                  AND E.ID =:nVal<T>,Embarque:Embarque.ID<BR>         )=0)<BR>            Entonces<BR>                Verdadero<BR>            Sino<BR>                Si (SQL(<T>select acceso from usuario where usuario = :tUcu<T>, Usuario)) en<BR>                (SQL(<T>Select Nombre From TablaSTD Where TablaST = :tTabla<T>, <T>PERFILES AFECTAR EMBARQUES<T>))<BR>                    Entonces<BR>                        Verdadero<BR>             <CONTINUA>
+ActivoCondicion003=<CONTINUA>       Sino<BR>                        Falso<BR>                Fin<BR>        Fin<BR>    Sino<BR>        Verdadero<BR>Fin)
+
+;**** Se modificaron las acciones antes de afectar para que se asignaran algunas variables extras ****
+;**** Se modifico para que solo este activo si el estatus del embarque esta en Pendiente o Concluido 28-Ago-08 (Arly)****
+; *** Modificado por MAVI 03/12/09 ***
+;**** Modificacion de AntesExpresiones agregando el ID de embarque porque se necesita en gastos.27 OCT 2011 TEG. Para desarrollo DM0158 Costeo de Fletes dentro del paquete DM0158_24112011. JR 25-Nov-2011. ****
+[Embarque.frm/Acciones.GastosAnexos]
+Activo=N
+;ActivoCondicion=Embarque:Embarque.Estatus en (EstatusPendiente, EstatusConcluido)
+;AntesExpresiones=Asigna(Anexo.Modulo, <T>EMB<T>)<BR>Asigna(Anexo.ID, Embarque:Embarque.ID)<BR>Asigna(Anexo.Mov, Embarque:Embarque.Mov)<BR>Asigna(Anexo.MovID, Embarque:Embarque.MovID)<BR>Asigna(Anexo.Estatus, Embarque:Embarque.Estatus)<BR>Asigna(Info.Proveedor, Embarque:Embarque.Proveedor)<BR>Asigna(Info.Copiar, Verdadero)<BR>Asigna(Anexo.Ruta, Embarque:Embarque.Ruta)<BR>Asigna(Anexo.Vehiculo, Embarque:Embarque.Vehiculo)<BR>Asigna(Anexo.EvaluarTipoUnidad, SQL(<T>Select TipoUnidadVehicular FROM Vehiculo WHERE Vehiculo=:tVehiculo<T>,Anexo.Vehiculo))
+ActivoCondicion=Embarque:Embarque.Estatus en (EstatusSinAfectar, EstatusPendiente, EstatusConcluido)
+;AntesExpresiones=Asigna(Anexo.Modulo, <T>EMB<T>)<BR>Asigna(Anexo.ID, Embarque:Embarque.ID)<BR>Asigna(Anexo.Mov, Embarque:Embarque.Mov)<BR>Asigna(Anexo.MovID, Embarque:Embarque.MovID)<BR>Asigna(Anexo.Estatus, Embarque:Embarque.Estatus)<BR>Asigna(Info.Proveedor, Embarque:Embarque.Proveedor)<BR>Asigna(Info.Copiar, Verdadero)<BR>Asigna(Anexo.Ruta, Embarque:Embarque.Ruta)<BR>Asigna(Anexo.Vehiculo, Embarque:Embarque.Vehiculo)<BR>Asigna(Anexo.EvaluarTipoUnidad, SQL(<T>Select TipoUnidadVehicular FROM Vehiculo WHERE Vehiculo=:tVehiculo<T>,Anexo.Vehiculo))
+AntesExpresiones=Asigna(Anexo.Modulo, <T>EMB<T>)<BR>Asigna(Anexo.ID, Embarque:Embarque.ID)<BR>Asigna(Anexo.Mov, Embarque:Embarque.Mov)<BR>Asigna(Anexo.MovID, Embarque:Embarque.MovID)<BR>Asigna(Anexo.Estatus, Embarque:Embarque.Estatus)<BR>Asigna(Info.Proveedor, Embarque:Embarque.Proveedor)<BR>Asigna(Info.Copiar, Verdadero)<BR>Asigna(Anexo.Ruta, Embarque:Embarque.Ruta)<BR>Asigna(Anexo.Vehiculo, Embarque:Embarque.Vehiculo)<BR>Asigna(Anexo.EvaluarTipoUnidad, SQL(<T>Select TipoUnidadVehicular FROM Vehiculo WHERE Vehiculo=:tVehiculo<T>,Anexo.Vehiculo))<BR>Asigna(Info.ID,Embarque:Embarque.ID)
+
+;Se agrega condicion para que no sea visible en caso de que tenga una dev 27/01/12 ODCAMPOS, Paquete DM0125_01022012 BVF 01022012
+;Nuevas Condiciones para el boton de Situacion en embarques Javier Quiñones Vizcarra 15/08/2011, paquete DM0125_19082011 BVF19082011 
+;Nuevas Condiciones de Bloqueo para el boton de Situaciones para el Escaneo de Embarques Moises Mavi 18 Abril 2009
+; Modificacion realizada por Mavi 09 Nov 09 - Se cambio la condicion para activar la situacion.
+; **** Cambio de nuevas condiciones para ActivoCondicion y EjecucionCondicion para desarrollo DM0125 VALIDACIONES A INCORPORAR AL PROCESO DE EMBARQUES en el paquete DM0125_07042011. Cambio por victor de los santos. Integrado por JR 7-Abr-2011. ****
+; **** Integracion de AntesExpresiones, TEG 22 MARZO 2012, para el desarrollo dentro DM0158 Costeo de Fletes del paquete DM0158_29032012. JR 29-Mar-2012. **** 
+; **** Modificacion de ActivoCondicion, Carmen Quintana 26/09/2012 Se modifica validación de Embarques con Devoluciones de Venta, dentro del paquete DM0125_29092012. JR 28-Sep-2012. ****
+[Embarque.frm/Acciones.Situacion]
+;ActivoCondicion=((ConfigModulo(<T>EMB<T>,<T>Situaciones<T>)=<T>Si<T>) y Usuario.ModificarSituacion y<BR>PuedeAvanzarSituacion(<T>EMB<T>, Embarque:Embarque.Mov, Embarque:Embarque.Estatus, FormaSituacion) y ((SI(Embarque:Embarque.Mov=<T>Embarque Sucursales<T>,(SQL(<T>Exec SP_MaviAlmFactVsCApFisicaEmbarque :nval1,:nval2,:nval3<T>,Embarque:Embarque.ID,2,0)),(SQL(<T>Exec SP_MaviAlmFactVsCApFisicaEmbarque :nval1,:nval2,:nval3<T>,Embarque:Embarque.ID,1,0))))=0 o vacio(Embarque:Embarque.Situacion)))
+;ActivoCondicion=(<BR>  (ConfigModulo(<T>EMB<T>,<T>Situaciones<T>)=<T>Si<T>) y Usuario.ModificarSituacion y<BR>    PuedeAvanzarSituacion(<T>EMB<T>, Embarque:Embarque.Mov,           Embarque:Embarque.Estatus, FormaSituacion) <BR><BR><BR>y <BR><BR>(<BR>  (<BR>    ((SQL(<T>Select top 1 (idEmbarque) from MAVIDevEmbarqueFisicoAlmacen Where idEmbarque=:nval1<T>,Embarque:Embarque.ID))=Embarque:Embarque.ID)<BR> o<BR>(FormaSituacion<><T>Recibe Retorno<T>)<BR>   )<BR>y<BR><BR>((SI(Embarque:Embarque.Mov=<T>Embarque Sucursales<T>,(SQL(<T>Exec SP_MaviAlmFactVsCApFisicaEmbarque :nval1,:nval2,:nval3<T>,Embarque:Embarque.ID,2,0)),(SQL(<T>Exec SP_MaviAlmFactVsCApFisicaEmbarque :nval1,:nval2,:nval3<T>,Embarque:Embarque.ID,1,0))))=0) o<BR>(vacio( FormaSituacion ))<BR>))
+;ActivoCondicion=((ConfigModulo(<T>EMB<T>,<T>Situaciones<T>)=<T>Si<T>) y Usuario.ModificarSituacion y<BR>PuedeAvanzarSituacion(<T>EMB<T>, Embarque:Embarque.Mov,Embarque:Embarque.Estatus, FormaSituacion)<BR>y<BR>((((SQL(<T>Select top 1 (idEmbarque) from MAVIDevEmbarqueFisicoAlmacen Where idEmbarque=:nval1<T>,Embarque:Embarque.ID))=Embarque:Embarque.ID)<BR>o<BR>(FormaSituacion<><T>Recibe Retorno<T>))<BR>y<BR>(((MovTipoEn(<T>EMB<T>,Embarque:Embarque.Mov,(EMB.E))) y (SQL(<T>Sp_MaviDM0125Embarques :Nid,:Nnum<T>,Embarque:Embarque.ID,2)=0)<BR>y(SQL(<T>Sp_MaviDM0125EmbarqueyEscaneo :Nid<T>,Embarque:Embarque.ID)=0)<BR>y(SQL(<T>SELECT COUNT(E.ID)<BR>       FROM Embarque E<BR>        INNER JOIN dbo.EmbarqueD ED ON E.ID = ED.ID<BR>        INNER JOIN dbo.EmbarqueMov EM ON ED.EmbarqueMov = EM.ID<BR>        INNER JOIN dbo.MovTipo MT ON E.Mov = MT.Mov<BR>        INNER JOIN dbo.Venta V ON V.Referencia= EM.Mov+<BR>        <T>+comillas(<T> <T>)+<T>+ EM.Movid and v.mov like <T>+comillas(<T>Devolucion%<T>)+<T> AND V.ESTATUS=<T>+comillas(<T>CONCLUIDO<T>)+<T><BR>        WHERE MT.Modulo = <T>+comillas(<T>EMB<T>)+<T> AND MT.Clave = <T>+ comillas(<T>EMB.E<T>)+<T>AND E.ESTATUS=<T>+comillas(<T>SINAFECTAR<T>)+<T><BR>        AND E.SITUACION IN (<T>+COMILLAS(<T>Completar<T>)+<T>,<T>+COMILLAS(<T>Pasa a Escanear<T>)+<T>)<BR>        AND E.ID =:nVal<T>,Embarque:Embarque.ID<BR>      )=0)) )<BR>o (vacio( FormaSituacion )) ))<BR>y(sql(<T>Sp_MaviDM0125EmbarquesDev :Nid<T>,Embarque:Embarque.ID)=0)
+ConCondicion=S
+EjecucionConError=S
+;EjecucionCondicion=((SI(Embarque:Embarque.Mov=<T>Embarque Sucursales<T>,(SQL(<T>Exec SP_MaviAlmFactVsCApFisicaEmbarque :nval1,:nval2,:nval3<T>,Embarque:Embarque.ID,2,0)),(SQL(<T>Exec SP_MaviAlmFactVsCApFisicaEmbarque :nval1,:nval2,:nval3<T>,Embarque:Embarque.ID,1,0))))=0 o vacio(Embarque:Embarque.Situacion))
+EjecucionCondicion=((MovTipoEn(<T>EMB<T>,Embarque:Embarque.Mov,(EMB.E))) o vacio(Embarque:Embarque.Situacion))<BR>SI<BR> (SQL(<T>Sp_MaviDM0125EmbarqueyEscaneo :Nid<T>,Embarque:Embarque.ID)=0)<BR>  Entonces<BR>    Verdadero<BR>  Sino<BR>   Falso<BR>   informacion(<T>NO COINCIDE LA CANTIDAD DE ARTICULOS EMBARCADOS Y ESCANEADOS.<T>)<BR>   AbortarOperacion<BR>Fin<BR>SI<BR> (SQL(<T>Sp_MaviDM0125Embarques :Nid, :nNum<T>,Embarque:Embarque.ID,2)=0)<BR>  Entonces<BR>    Verdadero<BR>  Sino<BR>   Falso<BR>   informacion(<T>NO COINCIDE LA CANTIDAD DE ARTICULOS EMBARCADOS Y ESCANEADOS.<T>)<BR>   AbortarOperacion<BR>Fin<BR>SI<BR> SQL(<T>SELECT isnull(COUNT(E.ID), 0)<BR>        FROM Embarque E<BR>             INNER JOIN dbo.EmbarqueD ED ON E.ID = ED.ID<BR>             INNER JOIN dbo.EmbarqueMov EM ON ED.EmbarqueMov = EM.I<CONTINUA>
+EjecucionCondicion002=<CONTINUA>D<BR>             INNER JOIN dbo.MovTipo MT ON E.Mov = MT.Mov<BR>             INNER JOIN dbo.Venta V ON V.Referencia= EM.Mov+<BR>             <T>+comillas(<T> <T>)+<T>+ EM.Movid and v.mov like <T>+comillas(<T>Devolucion%<T>)+<T> AND V.ESTATUS=<T>+comillas(<T>CONCLUIDO<T>)+<T><BR>             WHERE MT.Modulo = <T>+comillas(<T>EMB<T>)+<T> AND MT.Clave = <T>+ comillas(<T>EMB.E<T>)+<T> AND E.ESTATUS IN (<T>+comillas(<T>SINAFECTAR<T>)+<T>,<T>+comillas(<T>PENDIENTE<T>)+<T>)<BR>             AND E.ID =:nVal<T>,Embarque:Embarque.ID<BR>             )=0<BR>             Entonces<BR>               Verdadero<BR>            Sino<BR>             Si (SQL(<T>select acceso from usuario where usuario = :tUcu<T>, Usuario)) en<BR>                   (SQL(<T>Select Nombre From TablaSTD Where TablaST = :tTabla<T>,<CONTINUA>
+EjecucionCondicion003=<CONTINUA> <T>PERFILES AFECTAR EMBARQUES<T>)) y (Embarque:Embarque.Estatus=<T>PENDIENTE<T>)<BR>                    Entonces<BR>                        Verdadero<BR>                 Sino<BR>                 SI Precaucion(<T>Existen movimientos con devolucion: <T><BR>                +SQLEnlista(<T>SELECT distinct EM.Mov,EM.MovID<BR>                 FROM Embarque E<BR>                 INNER JOIN dbo.EmbarqueD ED ON E.ID = ED.ID<BR>                 INNER JOIN dbo.EmbarqueMov EM ON ED.EmbarqueMov = EM.ID<BR>                 INNER JOIN dbo.MovTipo MT ON E.Mov = MT.Mov<BR>                 INNER JOIN dbo.Venta V ON V.Referencia= EM.Mov+<BR>                 <T>+comillas(<T> <T>)+<T>+ EM.Movid and v.mov like <T>+comillas(<T>Devolucion%<T>)+<T> AND V.ESTATUS=<T>+comillas(<T>CONCLUIDO<T>)+<T><BR>               <CONTINUA>
+EjecucionCondicion004=<CONTINUA>  WHERE MT.Modulo = <T>+comillas(<T>EMB<T>)+<T> AND MT.Clave = <T>+ comillas(<T>EMB.E<T>)+<T> AND E.ESTATUS IN (<T>+comillas(<T>SINAFECTAR<T>)+<T>,<T>+comillas(<T>PENDIENTE<T>)+<T>)<BR>                 AND E.ID =:nVal<T>,Embarque:Embarque.ID),BotonAceptar)=BotonAceptar<BR>                     entonces<BR>                      AbortarOperacion<BR>                  fin<BR>                Fin<BR><BR>Fin<BR>SI<BR> sql(<T>Sp_MaviDM0125EmbarquesDev :Nid<T>,Embarque:Embarque.ID)=0<BR>  Entonces<BR>    Verdadero<BR>    Sino<BR>     Falso<BR>     informacion(<T>NO TIENE NINGUN ESCANEO DE RETORNO.<T>)<BR>     AbortarOperacion<BR>Fin
+EjecucionMensaje=<T>El Escaneo no esta Completo<T>
+AntesExpresiones=Si(Vacio(Embarque:Embarque.ID),GuardarCambios)<BR>Ejecutarsql(<T>exec SP_MAVIDM0158ConsecutivoEmb :NiD<T>, Embarque:Embarque.ID)<BR>SI((Embarque:Embarque.Estatus=<T>SINAFECTAR<T>) y (SQL(<T>Select situacion From Embarque Where ID=:ni<T>,Embarque:Embarque.ID)/*Embarque:Embarque.Situacion*/=<T>Envio a Facturacion<T>) y (SQL(<T>select Count(*) From fn_MaviDM0285validaIdecommerce(:nID)<T>,Embarque:Embarque.ID)>0),Ejecutar(<T>PlugIns\ActualizaEcommers.exe <T>+<T>EMBARQUE<T>+<T> <T>+ CampoEnTexto(Embarque:Embarque.ID)+<T> <T>+<T>ENVIADO<T>))
+ActivoCondicion=(ConfigModulo(<T>EMB<T>,<T>Situaciones<T>)=<T>Si<T>) y Usuario.ModificarSituacion y<BR>PuedeAvanzarSituacion(<T>EMB<T>, Embarque:Embarque.Mov, Embarque:Embarque.Estatus, FormaSituacion)
+
+; ***** Integracion de cambio a accion de eliminar para desarrollo DM0125 VALIDACIONES A INCORPORAR AL PROCESO DE EMBARQUES contenido en el paquete DM0125_07042011. Cambio por victor de los santos 23/03/2011 Nuevas Condiciones de Bloqueo para el Escaneo de Embarques. Integrado por JR 7-Abr-2011. *****
+[Embarque.frm/Acciones.Eliminar]
+ActivoCondicion=Vacio(Embarque:Embarque.MovID) y (Embarque:Embarque.Estatus=EstatusSinAfectar) y PuedeAfectar(Verdadero, Usuario.ModificarOtrosMovs, Embarque:Embarque.Usuario)
+EjecucionCondicion=Vacio(SQL(<T>SELECT MovID FROM Embarque WHERE ID=:nID<T>, Embarque:Embarque.ID))
+EjecucionMensaje=Forma.ActualizarForma<BR><T>El movimiento ya fue afectado por otro usuario<T>
+EjecucionConError=S
+
+
+;Nuevas Condiciones para el boton de Informacion Movimiento en embarques Javier Quiñones Vizcarra 2/08/2011, Paquete DM0125_26082011 BVF26082011
+[Embarque.frm/Acciones.InfoMov]
+Activo=
+ActivoCondicion=1=2
+
+;se le asigna a la variable Mavi.MovEmbarque para saber que movimientos se le pueden embarcar EFMARTINEZ 05-ago-2013
+[Embarque.frm/Acciones.Asignar]
+AntesExpresiones=Asigna(Info.ID, Embarque:Embarque.ID)<BR>Asigna(Info.Vehiculo, Embarque:Embarque.Vehiculo)<BR>Asigna(Info.Ruta, Embarque:Embarque.Ruta)<BR>Asigna(Info.Peso, Embarque:Vehiculo.Peso)<BR>Asigna(Info.Volumen, Embarque:Vehiculo.Volumen)<BR>Asigna(Info.AntecedenteID, Nulo)<BR>Asigna(Info.Personal, Embarque:Embarque.PersonalCobrador)<BR><BR>Si(Vacio(Embarque:Embarque.Vehiculo) y MovTipoEn(<T>EMB<T>,Embarque:Embarque.Mov,(EMB.E)),Error(<T>El Campo Vehiculo es Obligatorio<T>) AbortarOperacion)<BR>SI(Vacio(Embarque:Embarque.Agente),Error(<T>El Campo Agente es Obligartorio<T>)AbortarOperacion)<BR>SI(Vacio(Embarque:Embarque.LicenciaAgente),Error(<T>El Campo licencia  es Obligartorio<T>)AbortarOperacion)<BR>SI(Vacio(Embarque:Embarque.Ruta),Error(<T>El Campo Ruta  es Obligartorio<T>)AbortarOperacion)
+
+
+[Embarque.frm/(Carpeta Totalizadores).Volumen Disp]
+Tamano=11
+
+[Embarque.frm/(Carpeta Totalizadores).Peso Disp]
+Tamano=11
+
+[Embarque.Frm/Acciones.GeneraTran]
+
+Nombre=GeneraTran
+Boton=25
+NombreDesplegar=Generar Transitos
+EnBarraHerramientas=S
+EspacioPrevio=S
+TipoAccion=Expresion
+Visible=S
+NombreEnBoton=S
+ConCondicion=S
+Expresion=Asigna(Mavi.DM0125Embarque,Embarque:Embarque.ID)<BR>ReporteImpresora(<T>DM0125ImpresionTraspasosLoteRepImp<T>)<BR>ReporteImpresora(<T>DM0125ImpresionTraspasosLoteRepImp<T>)<BR>ReporteImpresora(<T>DM0125ImpresionTraspasosLoteRepImp<T>)<BR>ActualizarForma
+ActivoCondicion=(Embarque:Embarque.Mov en (<T>Embarque<T>,<T>Embarque Sucursales<T>,<T>Embarque Mayoreo<T>,<T>Embarque Magisterio<T>)) y (Embarque:Embarque.Situacion en (<T>Revision de Escaneo<T>,<T>Revisado por Almacén<T>))
+EjecucionCondicion=//Se verifica si los articulos escaneados son igual a los embarcados<BR>SI SQL(<T>Sp_MaviDM0125EmbarqueyEscaneo :nID<T>,Embarque:Embarque.ID)=0<BR>ENTONCES<BR>    Verdadero<BR>SINO<BR>    Informacion(<T>Existe una diferencia entre los articulos escaneados y los embarcados<T>)<BR>    AbortarOperacion<BR>FIN<BR>//Se limpia la variable<BR>Asigna(Info.Dialogo,<T><T>)<BR>//Condición para afectar las <T>ordenes traspaso<T> a <T>salidas traspaso<T> y posteriormente a <T>transitos<T><BR>Asigna(Info.Dialogo, SQL(<T>exec SP_DM0125AfectacionEmbarques <T> + Comillas(Embarque:Embarque.ID)+ <T>,<T> + Comillas(Usuario) + <T><T>))<BR>Informacion(Info.Dialogo)<BR>SI Info.Dialogo = <T>Afectacion Concluida<T><BR>    ENTONCES<BR>        Verdadero<BR>    SINO<BR>        AbortarOperacion<BR>FIN
+
+
+[Embarque.frm/Ficha.Embarque.ProgramadoPara]
+Carpeta=Ficha
+Clave=Embarque.ProgramadoPara
+Editar=S
+LineaNueva=N
+ValidaNombre=S
+3D=S
+Tamano=25
+EspacioPrevio=N
+IgnoraFlujo=N
+ColorFondo=Blanco
+ColorFuente=Negro
+Pegado=S

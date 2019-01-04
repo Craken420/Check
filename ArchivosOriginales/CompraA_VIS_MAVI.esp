@@ -1,0 +1,10 @@
+;Je.deltoro	
+;29-12-2011
+;Se modifica la formula para no mostrar lso importes 
+;en movimientos que algunos usuarios no pueden ver
+
+; **** Modificacion de Formula, se cambia el campo Configurcion por el campo Acceso Para los filtros de los usuarios, J del Toro 11-02-2012, para desarrollo DM0135 Informacion Del Articulo dentro del paquete DM0135_13022012. JR 13-Feb-2012. ****
+[CompraA.Vis/ImporteTotal]
+;Formula=SI<BR>(((sql(<T>SELECT COUNT(Configuracion) FROM dbo.TablaStD St INNER JOIN dbo.Usuario U ON U.Configuracion=St.Nombre WHERE TablaSt=:tPer AND U.Usuario=:tUs<T>,<T>CFG PERFIL COSTOS VTAS<T>,Usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(SQL(<T>SELECT COUNT(Nombre) FROM dbo.TablaStD WHERE TablaSt=:tPer AND Nombre=:tNom<T>,<T>CONTROL COSTOS MOVIMIENTOS<T>,Compra.Mov)=0) ))<BR>Entonces<BR>    DisminuyePorcentaje(Compra.Importe, Compra.DescuentoGlobal)+Compra.Impuestos<BR>SINO<BR>    <T>0.00<T><BR>FIN
+Formula=SI<BR>(((sql(<T>SELECT COUNT(Acceso) FROM dbo.TablaStD St INNER JOIN dbo.Usuario U ON U.Acceso=St.Nombre WHERE TablaSt=:tPer AND U.Usuario=:tUs<T>,<T>CFG PERFIL COSTOS VTAS<T>,Usuario))=1 y<BR>(sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>))<BR> o<BR>((sql(<T>select costos from usuario where usuario=:tUsu1<T>,Usuario)=<T>1<T>) y<BR>(SQL(<T>SELECT COUNT(Nombre) FROM dbo.TablaStD WHERE TablaSt=:tPer AND Nombre=:tNom<T>,<T>CONTROL COSTOS MOVIMIENTOS<T>,Compra.Mov)=0) ))<BR>Entonces<BR>    DisminuyePorcentaje(Compra.Importe, Compra.DescuentoGlobal)+Compra.Impuestos<BR>SINO<BR>    <T>0.00<T><BR>FIN
+

@@ -1,0 +1,11 @@
+; *** Ultima Modificacion: 04 Nov 2009
+; *** Se corrigio que los campos de Proyecto y Descripcion no soliciten un ID ya que no existe tal en las tablas. ALQG
+
+[Proy.tbl/Proyecto]
+CondicionEdicion=
+
+[Proy.tbl/Descripcion]
+CondicionEdicion=
+
+[Proy.tbl/Rama]
+CondicionEdicion=

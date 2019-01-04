@@ -1,0 +1,16 @@
+
+
+; **** Integracion de objeto que incorpora campo CtaAnterior, JDelTA 12-06-2012, para desarrollo RM1005 Impresion Cheques por Cliente dentro del paquete RM1005_12062012. JR 12-Jun-2012. ****
+[DineroA.vis/Vista]
+ListaCalculados=ImporteTotal<BR>EstatusContable<BR>EstatusFechaRequerida<BR>VencimientoOrigen<BR>CtaAnterior
+
+
+[DineroA.vis/CtaAnterior]
+Clave=CtaAnterior
+TipoCampo=Calculado
+TipoDatos=Texto
+TamanoValidacion=10
+Alineacion=por Omisión
+Nombre=Cuenta Anterior
+Tamano=10
+Formula=SQL(<T>SELECT ISNULL(CtaDinero,<T>+Comillas(<T> <T>)+<T>) FROM Dinero WITH(NOLOCK) WHERE Mov=:tOrigen AND MovID=:tOrigenID<T>,Dinero.Origen,Dinero.OrigenID)

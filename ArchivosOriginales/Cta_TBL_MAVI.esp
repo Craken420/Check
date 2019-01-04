@@ -1,0 +1,61 @@
+;Archivo creado por la solicitud de igualar la forma de contabilidad a la contabilidad electronica
+;Fernando Romero Robles 21/04/2015
+
+[Cta.Tbl/Tabla]
+ListaCampos=Cuenta<BR>Rama<BR>Descripcion<BR>Tipo<BR>Categoria<BR>Familia<BR>Grupo<BR>EsAcreedora<BR>EsAcumulativa<BR>TieneMovimientos<BR>Conciliar<BR>Directa<BR>CentrosCostos<BR>CentroCostosRequerido<BR>CentroCostosOmision<BR>Estatus<BR>UltimoCambio<BR>Alta<BR>Mensaje<BR>NivelAcceso<BR>AjusteInflacionario<BR>Bucket<BR>BucketSt<BR>CuadreContable<BR>PresupuestoNivelUEN<BR>CuentaDistribucion<BR>PresupuestoOtrosPeriodos<BR>DetalleTipo<BR>ContSATCFD<BR>ContSATDin<BR>ClaveSAT<BR>TipoComprobacion
+
+ListaRelaciones=CtaLista<BR>CtaSaldo<BR>Acum<BR>CodigoAgrupador
+
+SQL=SELECT<BR>  Cuenta,<BR>  Rama,<BR>  Descripcion,<BR>  Tipo,<BR>  Categoria,<BR>  Familia,<BR>  Grupo,<BR>  EsAcreedora,<BR>  EsAcumulativa,<BR>  TieneMovimientos,<BR>  Conciliar,<BR>  Directa,<BR>  CentrosCostos,<BR>  CentroCostosRequerido,<BR>  CentroCostosOmision,<BR>  Estatus,<BR>  UltimoCambio,<BR>  Alta,<BR>  Mensaje,<BR>  NivelAcceso,<BR>  AjusteInflacionario,<BR>  Bucket,<BR>  BucketSt,<BR>  CuadreContable,<BR>  PresupuestoNivelUEN,<BR>  CuentaDistribucion,<BR>  PresupuestoOtrosPeriodos,<BR>  DetalleTipo,<BR>  ContSATCFD,<BR>  ContSATDin,<BR>  ClaveSAT,<BR>  TipoComprobacion<BR><BR>FROM<BR>  Cta
+
+
+
+
+[Cta.Tbl/ContSATCFD]
+Clave=ContSATCFD
+Nombre=Asociar CFD
+Visible=S
+TamanoValidacion=10
+TipoDatos=Lógico
+[Cta.Tbl/ContSATDin]
+Clave=ContSATDin
+Nombre=Asoc. Transf/Cheque
+Visible=S
+TamanoValidacion=12
+TipoDatos=Lógico
+[Cta.Tbl/ClaveSAT]
+Clave=ClaveSAT
+Nombre=Clave SAT
+Visible=S
+TamanoValidacion=40
+Tamano=40
+Mayusculas=S
+ConRefrescar=S
+ListaRefrescar=TipoComprobacion
+ConRefrescarCondiciones=S
+RefrescarTodoCondiciones=S
+AyudaEnCaptura=Vista
+AyudaForma=CodigoAgrupadorLista
+AyudaVista=CodigoAgrupadorLista
+AyudaCampo=CodigoAgrupador.ClaveSAT
+ValidacionUsaTabla=S
+ValidacionTablas=CodigoAgrupador
+[Cta.Tbl/TipoComprobacion]
+Clave=TipoComprobacion
+Nombre=Comprobación
+Visible=S
+TamanoValidacion=50
+Tamano=50
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+OpcionesColumnas=1
+OpcionesPredefinidas=Ninguna
+OpcionesRenglones=8
+ListaOpciones=1.1 Transferencia / Cheque<BR>1.2 CFDi<BR>1.3 Tranferencia / Cheque / CFDi
+OpcionesValidar=S
+[Cta.Tbl/Relaciones.CodigoAgrupador]
+TipoRelacion=Opcional
+LlaveLocal=ClaveSAT
+Clave=CodigoAgrupador
+TablaRemota=CodigoAgrupador
+LlaveRemota=ClaveSAT

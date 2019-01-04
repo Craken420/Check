@@ -1,0 +1,262 @@
+;**** Ultima modificación:14-May-08
+;**** Modifico:Arly Rubio
+;**** Se modifico: Se agrego el campo CteEnviarA.Cadena
+
+;**** Se agreagó nuevos campos: CteEnviarA.Cadena ****
+[Venta.vis/Vista]
+ListaCampos=Venta.ID<BR>Venta.Empresa<BR>Venta.Mov<BR>Venta.MovID<BR>Venta.FechaEmision<BR>Venta.UltimoCambio<BR>Venta.Concepto<BR>Venta.Proyecto<BR>Venta.Moneda<BR>Venta.TipoCambio<BR>Venta.Usuario<BR>Venta.Autorizacion<BR>Venta.Referencia<BR>Venta.DocFuente<BR>Venta.Observaciones<BR>Venta.Estatus<BR>Venta.Situacion<BR>Venta.SituacionFecha<BR>Venta.SituacionUsuario<BR>Venta.SituacionNota<BR>Venta.Directo<BR>Venta.Prioridad<BR>Venta.RenglonID<BR>Venta.Cliente<BR>Venta.EnviarA<BR>Venta.Almacen<BR>Venta.AlmacenDestino<BR>Venta.Agente<BR>Venta.AgenteServicio<BR>Venta.FormaEnvio<BR>Venta.Descuento<BR>Venta.FechaRequerida<BR>Venta.HoraRequerida<BR>Venta.FechaOrdenCompra<BR>Venta.ReferenciaOrdenCompra<BR>Venta.FechaOriginal<BR>Venta.OrdenCompra<BR>Venta.Condicion<BR>Venta.Vencimiento<BR>Venta.DescuentoGloba<CONTINUA>
+ListaCampos002=<CONTINUA>l<BR>Venta.Saldo<BR>Venta.Importe<BR>Venta.Impuestos<BR>Venta.ComisionTotal<BR>Venta.DescuentoLineal<BR>Venta.AnticiposFacturados<BR>Venta.Retencion<BR>Venta.CostoTotal<BR>Venta.PrecioTotal<BR>Venta.OrigenTipo<BR>Venta.Origen<BR>Venta.OrigenID<BR>Venta.Poliza<BR>Venta.PolizaID<BR>Venta.FechaConclusion<BR>Venta.ServicioTipo<BR>Venta.ServicioTipoOrden<BR>Venta.ServicioTipoOperacion<BR>Venta.ServicioArticulo<BR>Venta.ServicioSerie<BR>Venta.ServicioContrato<BR>Venta.ServicioContratoID<BR>Venta.ServicioContratoTipo<BR>Venta.ServicioGarantia<BR>Venta.ServicioExpress<BR>Venta.ServicioDescripcion<BR>Venta.ServicioFecha<BR>Venta.ServicioIdentificador<BR>Venta.ServicioPlacas<BR>Venta.ServicioKms<BR>Venta.ServicioSiniestro<BR>Venta.ServicioDemerito<BR>Venta.ServicioDeducible<BR>Venta.ServicioDeducibl<CONTINUA>
+ListaCampos003=<CONTINUA>eImporte<BR>Venta.ServicioNumero<BR>Venta.ServicioNumeroEconomico<BR>Venta.ServicioFlotilla<BR>Venta.ServicioRampa<BR>Venta.ServicioAseguradora<BR>Venta.ServicioPoliza<BR>Venta.Peso<BR>Venta.Volumen<BR>Venta.Paquetes<BR>Venta.Causa<BR>Venta.Atencion<BR>Venta.AtencionTelefono<BR>Venta.Extra<BR>Venta.CancelacionID<BR>Venta.ListaPreciosEsp<BR>Venta.ZonaImpuesto<BR>Venta.Mensaje<BR>Venta.FechaEntrega<BR>Venta.Departamento<BR>Venta.Sucursal<BR>Venta.SucursalDestino<BR>Venta.SucursalOrigen<BR>Venta.GenerarOP<BR>Venta.ConVigencia<BR>Venta.VigenciaDesde<BR>Venta.VigenciaHasta<BR>Venta.DesglosarImpuestos<BR>Venta.DesglosarImpuesto2<BR>Venta.ExcluirPlaneacion<BR>Venta.Enganche<BR>Venta.Bonificacion<BR>Venta.ContUso<BR>Venta.AutoBoleto<BR>Venta.AutoKms<BR>Venta.AutoKmsActuales<BR>Venta.AutoBomba<BR>V<CONTINUA>
+ListaCampos004=<CONTINUA>enta.AutoBombaContador<BR>Venta.SubModulo<BR>Venta.Periodicidad<BR>Venta.AnticiposImpuestos<BR>Venta.Espacio<BR>Venta.UEN<BR>Venta.Clase<BR>Venta.Subclase<BR>Venta.AutoCorrida<BR>Venta.AutoCorridaHora<BR>Venta.AutoCorridaServicio<BR>Venta.AutoCorridaRol<BR>Venta.AutoCorridaRuta<BR>Venta.AutoCorridaOrigen<BR>Venta.AutoCorridaDestino<BR>Venta.AutoCorridaKms<BR>Venta.AutoCorridaLts<BR>Venta.AutoOperador2<BR>Venta.GastoAcreedor<BR>Venta.GastoConcepto<BR>Venta.Comentarios<BR>Venta.Extra1<BR>Venta.SucursalVenta<BR>Venta.AF<BR>Venta.AFArticulo<BR>Venta.AFSerie<BR>Venta.ContratoTipo<BR>Venta.ContratoDescripcion<BR>Venta.ContratoSerie<BR>Venta.ContratoValor<BR>Venta.ContratoValorMoneda<BR>Venta.ContratoSeguro<BR>Venta.ContratoResponsable<BR>Venta.ContratoVencimiento<BR>Venta.EndosarA<BR>Venta.Anexo<CONTINUA>
+ListaCampos005=<CONTINUA>ID<BR>Venta.FordVisitoOASIS<BR>Venta.LineaCredito<BR>Venta.TipoAmortizacion<BR>Venta.TipoTasa<BR>Venta.Comisiones<BR>Venta.ComisionesIVA<BR>Venta.ServicioPuntual<BR>Venta.AgenteComision<BR>Venta.TieneTasaEsp<BR>Venta.TasaEsp<BR>Venta.Codigo<BR>Venta.FormaPagoTipo<BR>Venta.SobrePrecio<BR>Venta.AfectaComisionMavi<BR>Venta.FacDesgloseIVA<BR>Venta.IDEcommerce<BR>Mon.Moneda<BR>Mon.TipoCambio<BR>Mon.TipoCambioVenta<BR>Mon.TipoCambioCompra<BR>Cte.Cliente<BR>Cte.Nombre<BR>Cte.Tipo<BR>Cte.Direccion<BR>Cte.Zona<BR>Cte.RFC<BR>Cte.Telefonos<BR>Cte.Categoria<BR>Cte.Familia<BR>Cte.Grupo<BR>Cte.ZonaImpuesto<BR>Cte.Estatus<BR>Cte.Descuento<BR>Cte.Proyecto<BR>Cte.AgenteServicio<BR>Cte.FormaEnvio<BR>Cte.Condicion<BR>Cte.ListaPrecios<BR>Cte.ListaPreciosEsp<BR>Cte.DefMoneda<BR>Cte.VtasConsignacion<BR>Cte.Mensaje<BR>Cte.Idioma<BR>Cte.BonificacionTipo<BR>Cte.Bonificacion<BR>Cte.Alma<CONTINUA>
+ListaCampos006=<CONTINUA>cenDef<BR>Cte.CBDir<BR>Cte.ExcentoISAN<BR>Cte.IEPS<BR>CteEnviarA.Clave<BR>CteEnviarA.Nombre<BR>CteEnviarA.Direccion<BR>CteEnviarA.FormaEnvio<BR>CteEnviarA.ZonaImpuesto<BR>CteEnviarA.Agente<BR>CteEnviarA.ListaPreciosEsp<BR>CteEnviarA.Proyecto<BR>CteEnviarA.Condicion<BR>CteEnviarA.Descuento<BR>CteEnviarA.Categoria<BR>CteEnviarA.Grupo<BR>CteEnviarA.Familia<BR>CteEnviarA.Cadena<BR>CteEnviarA.Almacen<BR>LC.Descripcion<BR>LC.Uso<BR>LC.VigenciaDesde<BR>LC.VigenciaCondicion<BR>LC.VigenciaHasta<BR>LC.TieneTasaEsp<BR>LC.TasaEsp<BR>TipoAmortizacion.Descripcion<BR>TipoTasa.Descripcion<BR>Agente.Agente<BR>Agente.Nombre<BR>Agente.Estatus<BR>Agente.Porcentaje<BR>AgenteDestino.Agente<BR>AgenteDestino.Nombre<BR>Descuento.Descuento<BR>Descuento.Descuento1<BR>Descuento.Descuento2<BR>Descuento.Descuento3<BR>Descuento.Descuento4<B<CONTINUA>
+ListaCampos007=<CONTINUA>R>Descuento.Porcentaje<BR>ArtDestino.Articulo<BR>ArtDestino.Descripcion1<BR>ArtDestino.Tipo<BR>Alm.Almacen<BR>Alm.Tipo<BR>Alm.Estatus<BR>Alm.Sucursal<BR>Alm.CBDir<BR>AlmDestino.Almacen<BR>AlmDestino.Estatus<BR>AlmDestino.Tipo<BR>MensajeLista.Mensaje<BR>MensajeLista.Descripcion<BR>Condicion.Condicion<BR>Condicion.ControlAnticipos<BR>Espacio.Espacio<BR>Espacio.Nombre<BR>Espacio.Servicio<BR>Espacio.Rol<BR>Espacio.KmsActuales<BR>AutoCorrida.Corrida<BR>AutoCorrida.Nombre<BR>AutoCorrida.Hora<BR>AutoCorrida.Servicio<BR>AutoCorrida.Rol<BR>AutoCorrida.Ruta<BR>AutoCorrida.Origen<BR>AutoCorrida.Destino<BR>AutoCorrida.Kms<BR>AutoCorrida.Lts<BR>UEN.UEN<BR>UEN.Nombre<BR>Acreedor.Proveedor<BR>Acreedor.Nombre<BR>CteAseguradora.Cliente<BR>CteAseguradora.Nombre<BR>Venta.OrigenSucursal<BR>Venta.FormaCobro<BR>Venta.NoCtaPago<BR>Venta.RedimePtos<BR>Venta.MaviTipoVenta
+
+
+SQL=SELECT<BR>  Venta.ID,<BR>  Venta.Empresa,<BR>  Venta.Mov,<BR>  Venta.MovID,<BR>  Venta.FechaEmision,<BR>  Venta.UltimoCambio,<BR>  Venta.Concepto,<BR>  Venta.Proyecto,<BR>  Venta.Moneda,<BR>  Venta.TipoCambio,<BR>  Venta.Usuario,<BR>  Venta.Autorizacion,<BR>  Venta.Referencia,<BR>  Venta.DocFuente,<BR>  Venta.Observaciones,<BR>  Venta.Estatus,<BR>  Venta.Situacion,<BR>  Venta.SituacionFecha,<BR>  Venta.SituacionUsuario,<BR>  Venta.SituacionNota,<BR>  Venta.Directo,<BR>  Venta.Prioridad,<BR>  Venta.RenglonID,<BR>  Venta.Cliente,<BR>  Venta.EnviarA,<BR>  Venta.Almacen,<BR>  Venta.AlmacenDestino,<BR>  Venta.Agente,<BR>  Venta.AgenteServicio,<BR>  Venta.FormaEnvio,<BR>  Venta.Descuento,<BR>  Venta.FechaRequerida,<BR>  Venta.HoraRequerida,<BR>  Venta.FechaOrdenCompra,<BR> Venta.MaviTipoVenta,<BR>  Venta.ReferenciaOrden<CONTINUA>
+SQL002=<CONTINUA>Compra,<BR>  Venta.FechaOriginal,<BR>  Venta.OrdenCompra,<BR>  Venta.Condicion,<BR>  Venta.Vencimiento,<BR>  Venta.DescuentoGlobal,<BR>  Venta.Saldo,<BR>  Venta.Importe,<BR>  Venta.Impuestos,<BR>  Venta.ComisionTotal,<BR>  Venta.DescuentoLineal,<BR>  Venta.AnticiposFacturados,<BR>  Venta.Retencion,<BR>  Venta.CostoTotal,<BR>  Venta.PrecioTotal,<BR>  Venta.OrigenTipo,<BR>  Venta.Origen,<BR>  Venta.OrigenID,<BR>  Venta.Poliza,<BR>  Venta.PolizaID,<BR>  Venta.FechaConclusion,<BR>  Venta.ServicioTipo,<BR>  Venta.ServicioTipoOrden,<BR>  Venta.ServicioTipoOperacion,<BR>  Venta.ServicioArticulo,<BR>  Venta.ServicioSerie,<BR>  Venta.ServicioContrato,<BR>  Venta.ServicioContratoID,<BR>  Venta.ServicioContratoTipo,<BR>  Venta.ServicioGarantia,<BR>  Venta.ServicioExpress,<BR>  Venta.ServicioDescripci<CONTINUA>
+SQL003=<CONTINUA>on,<BR>  Venta.ServicioFecha,<BR>  Venta.ServicioIdentificador,<BR>  Venta.ServicioPlacas,<BR>  Venta.ServicioKms,<BR>  Venta.ServicioSiniestro,<BR>  Venta.ServicioDemerito,<BR>  Venta.ServicioDeducible,<BR>  Venta.ServicioDeducibleImporte,<BR>  Venta.ServicioNumero,<BR>  Venta.ServicioNumeroEconomico,<BR>  Venta.ServicioFlotilla,<BR>  Venta.ServicioRampa,<BR>  Venta.ServicioAseguradora,<BR>  Venta.ServicioPoliza,<BR>  Venta.Peso,<BR>  Venta.Volumen,<BR>  Venta.Paquetes,<BR>  Venta.Causa,<BR>  Venta.Atencion,<BR>  Venta.AtencionTelefono,<BR>  Venta.Extra,<BR>  Venta.CancelacionID,<BR>  Venta.ListaPreciosEsp,<BR>  Venta.ZonaImpuesto,<BR>  Venta.Mensaje,<BR>  Venta.FechaEntrega,<BR>  Venta.Departamento,<BR>  Venta.Sucursal,<BR>  Venta.SucursalDestino,<BR>  Venta.SucursalOrigen,<BR>  Venta.Ge<CONTINUA>
+SQL004=<CONTINUA>nerarOP,<BR>  Venta.ConVigencia,<BR>  Venta.VigenciaDesde,<BR>  Venta.VigenciaHasta,<BR>  Venta.DesglosarImpuestos,<BR>  Venta.DesglosarImpuesto2,<BR>  Venta.ExcluirPlaneacion,<BR>  Venta.Enganche,<BR>  Venta.Bonificacion,<BR>  Venta.ContUso,<BR>  Venta.AutoBoleto,<BR>  Venta.AutoKms,<BR>  Venta.AutoKmsActuales,<BR>  Venta.AutoBomba,<BR>  Venta.AutoBombaContador,<BR>  Venta.SubModulo,<BR>  Venta.Periodicidad,<BR>  Venta.AnticiposImpuestos,<BR>  Venta.Espacio,<BR>  Venta.UEN,<BR>  Venta.Clase,<BR>  Venta.Subclase,<BR>  Venta.AutoCorrida,<BR>  Venta.AutoCorridaHora,<BR>  Venta.AutoCorridaServicio,<BR>  Venta.AutoCorridaRol,<BR>  Venta.AutoCorridaRuta,<BR>  Venta.AutoCorridaOrigen,<BR>  Venta.AutoCorridaDestino,<BR>  Venta.AutoCorridaKms,<BR>  Venta.AutoCorridaLts,<BR>  Venta.AutoOperador2,<B<CONTINUA>
+SQL005=<CONTINUA>R>  Venta.GastoAcreedor,<BR>  Venta.GastoConcepto,<BR>  Venta.Comentarios,<BR>  Venta.Extra1,<BR>  Venta.SucursalVenta,<BR>  Venta.AF,<BR>  Venta.AFArticulo,<BR>  Venta.AFSerie,<BR>  Venta.ContratoTipo,<BR>  Venta.ContratoDescripcion,<BR>  Venta.ContratoSerie,<BR>  Venta.ContratoValor,<BR>  Venta.ContratoValorMoneda,<BR>  Venta.ContratoSeguro,<BR>  Venta.ContratoResponsable,<BR>  Venta.ContratoVencimiento,<BR>  Venta.EndosarA,<BR>  Venta.AnexoID,<BR>  Venta.FordVisitoOASIS,<BR>  Venta.LineaCredito,<BR>  Venta.TipoAmortizacion,<BR>  Venta.TipoTasa,<BR>  Venta.Comisiones,<BR>  Venta.ComisionesIVA,<BR>  Venta.ServicioPuntual,<BR>  Venta.AgenteComision,<BR>  Venta.TieneTasaEsp,<BR>  Venta.TasaEsp,<BR>  Venta.Codigo,<BR>  Venta.FormaPagoTipo,<BR>  Venta.SobrePrecio,<BR>  Venta.AfectaComisionMavi,<BR>  Venta.FacDesgloseIVA,<BR>Venta.IDEcommerce,<BR>  Mon.Moneda,<BR>  Mon.Ti<CONTINUA>
+SQL006=<CONTINUA>poCambio,<BR>  Mon.TipoCambioVenta,<BR>  Mon.TipoCambioCompra,<BR>  Cte.Cliente,<BR>  Cte.Nombre,<BR>  Cte.Tipo,<BR>  Cte.Direccion,<BR>  Cte.Zona,<BR>  Cte.RFC,<BR>  Cte.Telefonos,<BR>  Cte.Categoria,<BR>  Cte.Familia,<BR>  Cte.Grupo,<BR>  Cte.ZonaImpuesto,<BR>  Cte.Estatus,<BR>  Cte.Descuento,<BR>  Cte.Proyecto,<BR>  Cte.AgenteServicio,<BR>  Cte.FormaEnvio,<BR>  Cte.Condicion,<BR>  Cte.ListaPrecios,<BR>  Cte.ListaPreciosEsp,<BR>  Cte.DefMoneda,<BR>  Cte.VtasConsignacion,<BR>  Cte.Mensaje,<BR>  Cte.Idioma,<BR>  Cte.BonificacionTipo,<BR>  Cte.Bonificacion,<BR>  Cte.AlmacenDef,<BR>  Cte.CBDir,<BR>  Cte.ExcentoISAN,<BR>  Cte.IEPS,<BR>  CteEnviarA.Clave,<BR>  CteEnviarA.Nombre,<BR>  CteEnviarA.Direccion,<BR>  CteEnviarA.FormaEnvio,<BR>  CteEnviarA.ZonaImpuesto,<BR>  CteEnviarA.Agente,<BR>  Ct<CONTINUA>
+SQL007=<CONTINUA>eEnviarA.ListaPreciosEsp,<BR>  CteEnviarA.Proyecto,<BR>  CteEnviarA.Condicion,<BR>  CteEnviarA.Descuento,<BR>  CteEnviarA.Categoria,<BR>  CteEnviarA.Grupo,<BR>  CteEnviarA.Familia,<BR>  CteEnviarA.Cadena,<BR>  CteEnviarA.Almacen,<BR>  LC.Descripcion,<BR>  LC.Uso,<BR>  LC.VigenciaDesde,<BR>  LC.VigenciaCondicion,<BR>  LC.VigenciaHasta,<BR>  LC.TieneTasaEsp,<BR>  LC.TasaEsp,<BR>  TipoAmortizacion.Descripcion,<BR>  TipoTasa.Descripcion,<BR>  Agente.Agente,<BR>  Agente.Nombre,<BR>  Agente.Estatus,<BR>  Agente.Porcentaje,<BR>  AgenteDestino.Agente,<BR>  AgenteDestino.Nombre,<BR>  Descuento.Descuento,<BR>  Descuento.Descuento1,<BR>  Descuento.Descuento2,<BR>  Descuento.Descuento3,<BR>  Descuento.Descuento4,<BR>  Descuento.Porcentaje,<BR>  ArtDestino.Articulo,<BR>  ArtDestino.Descripcion1,<BR>  ArtDestino.Tipo,<BR>  Alm<CONTINUA>
+SQL008=<CONTINUA>.Almacen,<BR>  Alm.Tipo,<BR>  Alm.Estatus,<BR>  Alm.Sucursal,<BR>  Alm.CBDir,<BR>  AlmDestino.Almacen,<BR>  AlmDestino.Estatus,<BR>  AlmDestino.Tipo,<BR>  MensajeLista.Mensaje,<BR>  MensajeLista.Descripcion,<BR>  Condicion.Condicion,<BR>  Condicion.ControlAnticipos,<BR>  Espacio.Espacio,<BR>  Espacio.Nombre,<BR>  Espacio.Servicio,<BR>  Espacio.Rol,<BR>  Espacio.KmsActuales,<BR>  AutoCorrida.Corrida,<BR>  AutoCorrida.Nombre,<BR>  AutoCorrida.Hora,<BR>  AutoCorrida.Servicio,<BR>  AutoCorrida.Rol,<BR>  AutoCorrida.Ruta,<BR>  AutoCorrida.Origen,<BR>  AutoCorrida.Destino,<BR>  AutoCorrida.Kms,<BR>  AutoCorrida.Lts,<BR>  UEN.UEN,<BR>  UEN.Nombre,<BR>  Acreedor.Proveedor,<BR>  Acreedor.Nombre,<BR>  CteAseguradora.Cliente,<BR>  CteAseguradora.Nombre,<BR>  Venta.OrigenSucursal,<BR> Venta.FormaCobro,<BR>  Venta.NoCtaPago,<BR>  Venta.RedimePtos<BR><BR>FROM<BR>  Venta<BR>  JOIN Cte ON Venta.Cl<CONTINUA>
+SQL009=<CONTINUA>iente=Cte.Cliente<BR>  JOIN Alm ON Venta.Almacen=Alm.Almacen<BR>  LEFT OUTER JOIN Alm AlmDestino ON Venta.AlmacenDestino=AlmDestino.Almacen<BR>  LEFT OUTER JOIN Agente ON Venta.Agente=Agente.Agente<BR>  LEFT OUTER JOIN Agente AgenteDestino ON Venta.AgenteServicio=AgenteDestino.Agente<BR>  LEFT OUTER JOIN CteEnviarA ON Venta.Cliente=CteEnviarA.Cliente AND Venta.EnviarA=CteEnviarA.ID<BR>  LEFT OUTER JOIN Descuento ON Venta.Descuento=Descuento.Descuento<BR>  JOIN Mon ON Venta.Moneda=Mon.Moneda<BR>  LEFT OUTER JOIN Art ArtDestino ON Venta.ServicioArticulo=ArtDestino.Articulo<BR>  LEFT OUTER JOIN MensajeLista ON Venta.Mensaje=MensajeLista.Mensaje<BR>  LEFT OUTER JOIN Condicion ON Venta.Condicion=Condicion.Condicion<BR>  LEFT OUTER JOIN AutoCorrida ON Venta.AutoCorrida=AutoCorrida.Corrida<BR>  L<CONTINUA>
+SQL010=<CONTINUA>EFT OUTER JOIN Espacio ON Venta.Espacio=Espacio.Espacio<BR>  LEFT OUTER JOIN UEN ON Venta.UEN=UEN.UEN<BR>  LEFT OUTER JOIN Prov Acreedor ON Venta.GastoAcreedor=Acreedor.Proveedor<BR>  LEFT OUTER JOIN Cte CteAseguradora ON Venta.ServicioAseguradora=CteAseguradora.Cliente<BR>  LEFT OUTER JOIN LC ON Venta.LineaCredito=LC.LineaCredito<BR>  LEFT OUTER JOIN TipoAmortizacion ON Venta.TipoAmortizacion=TipoAmortizacion.TipoAmortizacion<BR>  LEFT OUTER JOIN TipoTasa ON Venta.TipoTasa=TipoTasa.TipoTasa
+
+
+[Venta.vis/Venta.FormaCobro]
+Clave=Venta.FormaCobro
+LigaTabla=Venta
+LigaCampo=FormaCobro
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=50
+ClaveBDE=FormaCobro
+
+[Venta.vis/Venta.NoCtaPago]
+Clave=Venta.NoCtaPago
+LigaTabla=Venta
+LigaCampo=NoCtaPago
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=25
+ClaveBDE=NoCtaPago
+
+;**** Nuevo campo agregado ****
+
+[Venta.vis/CteEnviarA.Cadena]
+Clave=CteEnviarA.Cadena
+Nombre=Cadena
+Visible=S
+TamanoValidacion=50
+Tamano=50
+ValorRefrescar=SQL(<T>Select Cadena from VentasCanalMAVI where ID=:nClave<T>,ID)
+LigaTabla=CteEnviarA
+LigaCampo=Cadena
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+ClaveBDE=Cadena
+
+
+
+;**** Nuevo campo agregado ARC 07-May-09 (MAVI) *****
+[Venta.vis/Venta.AfectaComisionMavi]
+Clave=Venta.AfectaComisionMavi
+Nombre=AfectaComisionMavi
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Lógico
+CondicionEdicion=Venta.Mov = <T>Solicitud Mayoreo<T>
+ConMensageEmergente=S
+MensageEmergente=<T>Afectala comision al 50%<T>
+AyudaEnCaptura=Lista de Opciones
+OpcionesUnicamente=S
+ListaOpciones=1<BR>0
+OpcionesPredefinidas=Ninguna
+OpcionesValidar=S
+LigaTabla=Venta
+LigaCampo=AfectaComisionMavi
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=AfectaComisionMavi
+
+;**** PENDIENTEINTEGRACIONMOISES SE AGREGA NUEVO CAMPO DE VENTAS "ORIGENSUCURSAL" MOISES MAVI 15/JUNIO/2009
+[Venta.vis/Venta.OrigenSucursal]
+Clave=Venta.OrigenSucursal
+Nombre=Sucursal Origen
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Numérico
+LigaTabla=Venta
+LigaCampo=OrigenSucursal
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=OrigenSucursal
+
+;****** Campo agregado para la Facturacion Electronica BVF
+[Venta.vis/Venta.FacDesgloseIVA]
+Clave=Venta.FacDesgloseIVA
+Nombre=FacDesgloseIVA
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+LigaTabla=Venta
+LigaCampo=FacDesgloseIVA
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Lógico
+ClaveBDE=FacDesgloseIVA
+
+; **** Integracion de campo RedimePtos para Monedero Electronico. JR 11-Oct-2012. ****
+[Venta.vis/Venta.RedimePtos]
+Clave=Venta.RedimePtos
+LigaTabla=Venta
+LigaCampo=RedimePtos
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Lógico
+ClaveBDE=RedimePtos
+
+;Miguel Ramos 05/11/2014 modificacion CondicionDespliegue Cte.RFC y ListaRefrescarCondiciones en Venta.EnviarA y Venta.Cliente
+
+[Venta.Vis/Cte.RFC]
+Clave=Cte.RFC
+Tamano=15
+ClaveBDE=RFC
+TamanoValidacion=15
+CondicionDespliege=SQL(<T>Select ID From CteEnviarA Where Cliente=:tCte<T>,Venta.Cliente) = 11
+Nombre=RFC
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>Incorrecto<T>
+Mayusculas=S
+ValidacionCondicion=SQL(<T>spRegistroOk :tCual, :tRegistro, :tEmpresa<T>, <T>RFC<T>, Cte.RFC, Empresa)
+Ligado=N
+
+[Venta.Vis/Venta.Cliente]
+Clave=Venta.Cliente
+Tamano=10
+ClaveBDE=Cliente
+TamanoValidacion=10
+Ligado=N
+Nombre=&Cliente
+Mayusculas=S
+CondicionEdicion=Vacio(Venta.AnexoID) y Vacio(Filtro.Cliente)
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+ValorPorOmision=Si(ConDatos(Filtro.Cliente), Filtro.Cliente, Usuario.DefCliente)
+AlCambiar=Asigna(Info.Cliente, Venta.Cliente)
+MascaraEdicion=Config.CteFormato
+ValorRefrescar=Si(ConDatos(Info.Cliente),Info.Cliente,Venta.Cliente)
+Requerido=S
+ConRefrescar=S
+ListaRefrescar=Venta.Proyecto<BR>Venta.EnviarA<BR>Venta.Agente<BR>Venta.AgenteServicio<BR>Venta.FormaEnvio<BR>Venta.Condicion<BR>Venta.Vencimiento<BR>Venta.Descuento<BR>VEnta.DescuentoGlobal<BR>VEnta.Bonificacion<BR>Venta.Almacen<BR>Venta.ListaPreciosEsp<BR>Venta.ZonaImpuesto<BR>Venta.Moneda<BR>Venta.DesglosarImpuestos<BR>Venta.DesglosarImpuesto2
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=Venta.Vencimiento<BR>Venta.Bonificacion<BR>Cte.RFC
+ConMensageEmergente=S
+RefrescarTotales=S
+AutoBloqueaDetalle=S
+MensageEmergente=Cte.Mensaje
+AyudaEnCaptura=Vista
+AyudaForma=CteLista
+AyudaVista=MaviCteA
+AyudaCampo=Cte.Cliente
+ValidacionUsaTabla=S
+ValidacionTablas=Cte
+ValidacionConCondiciones=S
+ValidacionMensajeError=Cte.Cliente+Si(Cte.Tipo=<T>Estructura<T>,<T> No es un Cliente<T>,<T> No permiten las Ventas a Consignación<T>)
+ValidacionCondicion=(Cte.Tipo<><T>Estructura<T>) y<BR>((MovTipo(<T>VTAS<T>,Venta.Mov) noen (VTAS.VC, VTAS.DC,VTAS.DCR)) o Cte.VtasConsignacion)
+
+;[Venta.Vis/Venta.EnviarA]
+;Clave=Venta.EnviarA
+;LigaTabla=Venta
+;LigaCampo=EnviarA
+;ClaveBDE=EnviarA
+;TipoDatos=Numérico
+;TamanoValidacion=10
+;ConRefrescarCondiciones=S
+;ListaRefrescarCondiciones=Venta.Vencimiento<BR>Venta.Agente<BR>Cte.RFC
+;AyudaMemRenglones=8
+;AyudaMemOpc=Unicamente opciones listadas
+;CondicionDespliege=MovTipo(<T>VTAS<T>, Venta.Mov) <> VTAS.CO
+;ConRefrescar=S
+;CondicionEdicion=(Vacio(Venta.Origen) y Vacio(Venta.OrigenID))
+;ValorRefrescar=SQL(<T>SELECT EnviarA FROM Cte WHERE Cliente=:tCliente<T>,Venta.Cliente )
+;RequeridoActivo=S
+;Nombre=Canal Venta
+;ListaRefrescar=Venta.Agente<BR>Venta.Proyecto<BR>Venta.FormaEnvio<BR>Venta.Descuento<BR>Venta.DescuentoGlobal<BR>Venta.Condicion<BR>Venta.Vencimiento<BR>Venta.ZonaImpuesto<BR>Venta.ListaPreciosEsp<BR>Venta.Almacen
+;AyudaEnCaptura=Vista
+;AyudaForma=CteEnviarALista
+;AyudaVista=CteEnviarA
+;AyudaCampo=CteEnviarA.ID
+;AyudaBusquedaRapida=Asigna(Info.Cliente,Venta.Cliente)
+;ConAyudaBusquedaRapida=S
+;ValidacionUsaTabla=S
+;ValidacionTablas=CteEnviarA
+;Ligado=N
+
+;***** Fernando Hernandez 10/12/14  DM0238 - Se agrego validacioncondicion del campo Venta.EnviarA para validar que el canal de venta seleccionado tenga estatus activo
+;Se agrego ValidacionCondicion por el canal de venta
+[Venta.Vis/Venta.EnviarA]
+Clave=Venta.EnviarA
+LigaTabla=Venta
+LigaCampo=EnviarA
+ClaveBDE=EnviarA
+TipoDatos=Numérico
+TamanoValidacion=10
+ConRefrescarCondiciones=S
+ListaRefrescarCondiciones=Venta.Vencimiento<BR>Venta.Agente<BR>Cte.RFC<BR>Venta.Concepto<BR>Venta.FormaEnvio<BR>Venta.NoCtaPago<BR>Venta.Descuento<BR>Venta.Condicion<BR>Venta.DescuentoGlobal<BR>Venta.Proyecto<BR>Venta.ListaPreciosEsp<BR>Venta.OrdenCompra<BR>Venta.FormaCobro 
+AyudaMemRenglones=8
+AyudaMemOpc=Unicamente opciones listadas
+CondicionDespliege=MovTipo(<T>VTAS<T>, Venta.Mov) <> VTAS.CO
+ConRefrescar=S
+CondicionEdicion=(Vacio(Venta.Origen) y Vacio(Venta.OrigenID))
+ValorRefrescar=SQL(<T>SELECT EnviarA FROM Cte WHERE Cliente=:tCliente<T>,Venta.Cliente )
+RequeridoActivo=S
+Nombre=Canal Venta
+ListaRefrescar=Venta.Agente<BR>Venta.Proyecto<BR>Venta.FormaEnvio<BR>Venta.Descuento<BR>Venta.DescuentoGlobal<BR>Venta.Condicion<BR>Venta.Vencimiento<BR>Venta.ZonaImpuesto<BR>Venta.ListaPreciosEsp<BR>Venta.Almacen<BR>Venta.formaPagoTipo
+AyudaEnCaptura=Vista
+AyudaForma=CteEnviarALista
+AyudaVista=CteEnviarA
+AyudaCampo=CteEnviarA.ID
+AyudaBusquedaRapida=Asigna(Info.Cliente,Venta.Cliente)
+ConAyudaBusquedaRapida=S
+ValidacionUsaTabla=S
+ValidacionTablas=CteEnviarA
+Ligado=N
+ValidacionConCondiciones=S
+ValidacionMensajeError=<T>EL CANAL DE VENTA DE ESTA INSTITUCION ESTA SUSPENDIDO<T>
+;ValidacionCondicion=SQL(<T>SELECT COUNT(ESTATUS) AS VALOR FROM DM0238VIGENCIASINSTITUCIONES DM JOIN VENTASCANALMAVI VC ON DM.CANAL_VENTA=VC.ID WHERE VC.CATEGORIA IN (:tcat,:tcat2) AND CANAL_VENTA=:ncv AND (ESTATUS=:tcan OR ESTATUS=:tina)<T>,<T>INSTITUCIONES<T>,<T>CREDITO MENUDEO<T>,Venta.EnviarA,<T>CANCELADO<T>,<T>INACTIVA<T>)=0
+ValidacionCondicion=Si (Venta.Mov noen (<T>Solicitud Credito<T>,<T>Analisis Credito<T>,<T>Pedido<T>,<T>Factura<T>,<T>Credilana<T>,<T>Prestamo Personal<T>,<T>Factura VIU<T>,<T>Seguro Vida<T>))<BR>Entonces<BR>  Verdadero<BR>SiNo<BR>  Si SQL(<T>SELECT COUNT(ESTATUS) AS VALOR FROM DM0238VIGENCIASINSTITUCIONES DM JOIN VENTASCANALMAVI VC ON DM.CANAL_VENTA=VC.ID WHERE VC.CATEGORIA IN (:tcat,:tcat2) AND CANAL_VENTA=:ncv AND (ESTATUS=:tcan OR ESTATUS=:tina)<T>,<T>INSTITUCIONES<T>,<T>CREDITO MENUDEO<T>,Venta.EnviarA,<T>CANCELADO<T>,<T>INACTIVA<T>)=0<BR>  Entonces<BR>    Verdadero<BR>  Sino<BR>    Falso<BR>Fin
+
+[Venta.vis/Venta.MaviTipoVenta]
+Clave=Venta.MaviTipoVenta
+LigaTabla=Venta
+LigaCampo=MaviTipoVenta
+Ligado=S
+TipoCampo=Tabla
+TipoDatos=Texto
+Tamano=5
+ClaveBDE=MaviTipoVenta
+
+[Venta.vis/Venta.IDEcommerce]
+Clave=Venta.IDEcommerce
+Nombre=IDEcommerce
+Visible=S
+OpcionesColumnas=1
+OpcionesRenglones=8
+TamanoValidacion=10
+TipoDatos=Texto
+LigaTabla=Venta
+LigaCampo=IDEcommerce
+Ligado=S
+TipoCampo=Tabla
+ClaveBDE=IDEcommerce

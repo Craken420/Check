@@ -1,0 +1,74 @@
+;**** Ultima modificación:05-Dic-08
+;**** Modifico:Arly Rubio Camacho
+;**** Se modifico:Modificacion en el orden de captura
+
+
+
+
+
+
+;***** Se modificaron las dimensiones de la forma ARC 05-Dic-08 ****
+[SerieLoteProp.frm/Forma]
+PosicionInicialIzquierda=307
+PosicionInicialArriba=181
+PosicionInicialAltura=335
+PosicionInicialAncho=673
+PosicionInicialAlturaCliente=444
+PosicionCol1=245
+
+
+
+;**** Se modifico el orden la lista en captura ARC 05-Dic-08****
+[SerieLoteProp.frm/Detalles]
+ListaEnCaptura=SerieLoteProp.Propiedades<BR>SerieLoteProp.Extra1<BR>SerieLoteProp.Extra2<BR>SerieLoteProp.Fecha2<BR>SerieLoteProp.Extra3<BR>SerieLoteProp.Aduana<BR>SerieLoteProp.Fecha1<BR>SerieLoteProp.Fecha3<BR>SerieLoteProp.Factor1<BR>SerieLoteProp.Factor2<BR>SerieLoteProp.Factor3
+
+
+;**** Se hizo como linea nueva y se modifico la dimension del campo ARC 05-Dic-08 ****
+[SerieLoteProp.frm/Detalles.SerieLoteProp.Fecha2]
+LineaNueva=S
+Tamano=50
+
+;**** Se agrego en la carpeta "Detalle" ARC 05-Dic-08 ****
+[SerieLoteProp.frm/Detalles.SerieLoteProp.Aduana]
+Carpeta=Detalles
+Clave=SerieLoteProp.Aduana
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=17
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+;**** Se quito de la carpeta "Pedimento" y se agrego en la carpeta "Detalle" ARC 05-Dic-08 ****
+[SerieLoteProp.frm/Detalles.Aduana.Seccion]
+Carpeta=Detalles
+Clave=Aduana.Seccion
+Editar=S
+ValidaNombre=S
+3D=S
+Tamano=17
+ColorFondo=Plata
+ColorFuente=Negro
+
+
+;**** Se quito de la carpeta "Pedimento" y se agrego en la carpeta "Detalle" ARC 05-Dic-08 ****
+[SerieLoteProp.frm/Detalles.Aduana.Denominacion]
+Carpeta=Detalles
+Clave=Aduana.Denominacion
+Editar=S
+ValidaNombre=S
+3D=S
+Tamano=17
+ColorFondo=Plata
+ColorFuente=Negro
+
+
+
+;**** Se quito de la lista en captura el campo SerieLoteProp.Aduana, Aduana.Seccion y Aduana.Denominacion ****
+[SerieLoteProp.frm/Pedimento]
+ListaEnCaptura=SerieLoteProp.PedimentoClave<BR>SerieLoteProp.PedimentoRegimen<BR>SerieLoteProp.PedimentoTipo<BR>SerieLoteProp.Vencimiento<BR>SerieLoteProp.ValorDolares<BR>SerieLoteProp.ValorAduana<BR>SerieLoteProp.ValorComercial<BR>SerieLoteProp.AgenteAduanal<BR>Prov.Nombre<BR>SerieLoteProp.DTA<BR>SerieLoteProp.IVA<BR>SerieLoteProp.IGI<BR>Total<BR>SerieLoteProp.TieneRectificacion
+
+
+

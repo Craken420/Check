@@ -1,0 +1,6 @@
+;Jesus Del Toro Andrade
+;03-09-2012
+;Se agregan campos
+
+[ExplorarProv.frm/Lista]
+ListaEnCaptura=Prov.Nombre<BR>Prov.Tipo<BR>Prov.Familia<BR>Prov.FormaPago<BR>Prov.ProvBancoSucursal<BR>Prov.ProvCuenta

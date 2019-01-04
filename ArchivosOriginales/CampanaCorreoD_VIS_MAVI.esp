@@ -1,0 +1,6 @@
+;**** modificación:05-Ago-09
+;**** Modifico: Joel García Díaz (Mex)
+;**** Se modifico:Creación desarrollo de Campañas
+
+[CampanaCorreoD.vis/Vista]
+SQL.Cambios=Eliminar<TAB>SELECT *, <BR>Eliminar<TAB>       dbo.fnContactoNivel(CampanaD.ContactoTipo, CampanaD.Contacto, <T>Nombre<T>) as ContactoNombre,<BR>Eliminar<TAB>       dbo.fnContactoNivel(CampanaD.ContactoTipo, CampanaD.Contacto, <T>Sub Tipo<T>) as ContactoSubTipo<BR>Insertar<TAB>SELECT ID,RID,Contacto,ContactoTipo,Observaciones,Calificacion,Sucursal,SucursalOrigen,Nombre ContactoNombre,Tipo ContactoSubTipo,Situacion,SituacionFecha,Usuario<TAB>0

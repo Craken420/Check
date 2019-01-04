@@ -1,0 +1,10 @@
+
+
+; **** Integracion de cambio a forma dentro del paquete DM0117_15062012. JR 16-Jun-2012. ****
+[ProvLista.frm/Forma]
+ExpresionesAlMostrar=
+EsConsultaExclusiva=N
+[ProvLista.frm/Lista]
+FiltroGeneral=(((select accesototalcuentas from usuario where usuario={comillas(Usuario)})=0 and<BR><BR><BR>Prov.Tipo<><T>Estructura<T> AND ((ISNULL(RTRIM(Prov.NivelAcceso), <T><T>) IN (<T><T>, <T>(Todos)<T>)<BR>OR (Prov.NivelAcceso=<T>(Especifico)<T> AND EXISTS(SELECT * FROM ProvAcceso WHERE<BR>ProvAcceso.Proveedor=Prov.Proveedor AND ProvAcceso.Usuario={comillas(Usuario)}))))  )<BR>or<BR>((select accesototalcuentas from usuario where usuario={comillas(Usuario)})=1))
+
+

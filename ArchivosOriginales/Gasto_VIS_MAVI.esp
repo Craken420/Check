@@ -1,0 +1,15 @@
+;***** Integracion Desarrollo Cuatro Ceros Manuel Velasco 11-07-09 *****
+
+[Gasto.vis/ImporteTotal]o.
+FormatoValidacion=$ #,.0000
+
+[Gasto.vis/Gasto.Importe]
+FormatoValidacion=$ #,.0000
+
+[Gasto.vis/Gasto.Impuestos]
+FormatoValidacion=$ #,.0000
+
+[Gasto.vis/Gasto.Retencion]
+FormatoValidacion=$ #,.0000
+
+

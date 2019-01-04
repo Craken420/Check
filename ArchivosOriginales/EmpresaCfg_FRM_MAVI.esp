@@ -1,0 +1,51 @@
+;**** Modificacion: 18-Jun-09
+;**** Modifico: Miguel Peña
+;**** Se modifico: Integracion Moratorios
+
+[EmpresaCfg.frm/Forma]
+PosicionInicialIzquierda=210
+PosicionInicialArriba=71
+
+
+;*** 25-May-09 ARC Nuevo campo agregado desarrollo de Cobranza telefonica (MAVI)***
+;*** Desarrollo de Campañas 27/08/09, Joel García (Mex) se agregaron campos a la configuracion de la empresa.
+[EmpresaCfg.frm/Cxc2]
+ListaEnCaptura=EmpresaCfg2.CxcPosfechados<BR>EmpresaCfg2.CxcAnticiposFacturados<BR>EmpresaCfg2.CxcAplicaManualDef<BR>EmpresaCfg2.CxcDegloseDef<BR>EmpresaCfg2.CxcCobroImpuestos<BR>EmpresaCfg2.CxcComisionCreditos<BR>EmpresaCfg2.CxcAutoAplicarAnticiposPedidos<BR>EmpresaCfg2.ComisionesCobranza<BR>EmpresaCfg2.CxcVerRetencion<BR>EmpresaCfg2.CxcSugerirProntoPago<BR>EmpresaCfg2.CxcEnviarABeneficiario<BR>EmpresaCfg2.CxcRecorrerVenceRevisionPago<BR>EmpresaCfg2.CxcDocAutoBorrador<BR>EmpresaCfg2.CxcDiasMorosidad<BR>EmpresaCfg2.MontoMincobTelMavi<BR>EmpresaCfg2.MontoMinMoratorioMAVI<BR>EmpresaCfg2.CxcSaldoCero
+
+
+;*** 25-May-09 ARC Nuevo campo agregado desarrollo de Cobranza telefonica (MAVI)***
+[EmpresaCfg.frm/Cxc2.EmpresaCfg2.MontoMincobTelMavi]
+Carpeta=Cxc2
+Clave=EmpresaCfg2.MontoMincobTelMavi
+Editar=S
+ValidaNombre=S
+3D=S
+ColorFondo=Blanco
+ColorFuente=Negro
+
+;*** 08-Jul-09 MP Nuevo campo agregado desarrollo Moratorios***
+[EmpresaCfg.frm/Cxc2.EmpresaCfg2.MontoMinMoratorioMAVI]
+Carpeta=Cxc2
+Clave=EmpresaCfg2.MontoMinMoratorioMAVI
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=10
+ColorFondo=Blanco
+ColorFuente=Negro
+
+
+;*** Desarrollo de Campañas 27/08/09, Joel García (Mex) se agregaron campos a la configuracion de la empresa.
+[EmpresaCfg.frm/Cxc2.EmpresaCfg2.CxcSaldoCero]
+Carpeta=Cxc2
+Clave=EmpresaCfg2.CxcSaldoCero
+Clave=CxcSaldoCero
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+EspacioPrevio=S
+Tamano=15
+ColorFondo=Blanco
+ColorFuente=Negro

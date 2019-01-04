@@ -1,0 +1,3 @@
+[ArtCompraLista.frm/Lista]
+FiltroTodo=
+FiltroGeneral=Art.Tipo<><T>Estructura<T><BR>{Si(ConDatos(Info.Proveedor), <T> AND (Art.Proveedor = <T>+Comillas(Info.Proveedor)+<T> OR (Articulo IN (SELECT Articulo FROM ArtProv WHERE Proveedor = <T>+Comillas(Info.Proveedor)+<T>)))<T>, <T><T>)}<BR>{SI(SQL(<T>SELECT COUNT(Acceso) FROM dbo.TablaStD St INNER JOIN dbo.Usuario U ON St.Nombre=U.Acceso WHERE TablaSt=:tPer AND U.Usuario=:tUs<T>,<T>CFG PERFIL COSTOS VTAS<T>,Usuario)=1,<T><T>,<T> AND Art.Categoria NOT IN (<T>+Comillas(<T>VENTA<T>)+<T>)<T>)}

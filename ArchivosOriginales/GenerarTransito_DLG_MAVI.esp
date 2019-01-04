@@ -1,0 +1,99 @@
+;**** Ultima modificación:01-Feb-08
+;**** Modifico:Arly Rubio
+;**** Se modifico:
+
+
+; No se agrego ninguna nueva accion solo se modificaron ALGUNAS de las ya existentes.
+[GenerarTransito.dlg/Dialogo]
+Clave=GenerarTransito
+Nombre=Orden Transito
+Icono=17
+TipoDialogo=Menú
+Modulos=(Todos)
+Fuente={MS Sans Serif, 8, Negro, []}
+MenuEstilo=Lista Opciones
+MenuColumnas=1
+AccionesTamanoBoton=15x5
+AccionesDerecha=S
+VentanaTipoMarco=Diálogo
+VentanaPosicionInicial=Centrado
+VentanaExclusiva=S
+PosicionInicialIzquierda=702
+PosicionInicialArriba=415
+PosicionInicialAltura=165
+PosicionInicialAncho=276
+ListaAcciones=ReciboTraspaso<BR>ReciboPrevio<BR>DevTransito<BR>TransitoFaltante<BR>TransitoSobrante
+VentanaSiempreAlFrente=S
+VentanaConIcono=S
+PosicionInicialAlturaCliente=186
+
+[GenerarTransito.dlg/Acciones.ReciboTraspaso]
+Nombre=ReciboTraspaso
+Boton=0
+NombreDesplegar=Generar &Recibo Traspaso
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Antes=S
+Visible=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.InvReciboTraspaso)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+
+
+; *** Se modifico esta acción para que no sea visible ***
+[GenerarTransito.dlg/Acciones.TransitoFaltante]
+Nombre=TransitoFaltante
+Boton=0
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Visible=N
+Activo=S
+NombreDesplegar=Generar &Faltante
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.InvTransitoFaltante)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+
+
+; *** Se modifico esta acción para que no sea visible ***
+[GenerarTransito.dlg/Acciones.TransitoSobrante]
+Nombre=TransitoSobrante
+Boton=0
+NombreDesplegar=Generar &Sobrante
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Visible=N
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.InvTransitoSobrante)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+
+
+; *** Se modifico esta acción para que no sea visible ***
+[GenerarTransito.dlg/Acciones.ReciboPrevio]
+Nombre=ReciboPrevio
+Boton=0
+NombreDesplegar=Generar Recibo &Previo
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Visible=N
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.InvReciboPrevio)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+
+[GenerarTransito.dlg/Acciones.DevTransito]
+Nombre=DevTransito
+Boton=0
+NombreDesplegar=Generar &Devolución Transito
+EnMenu=S
+EnBarraAcciones=S
+TipoAccion=Dialogos
+ClaveAccion=GenerarPedidoPendiente
+Activo=S
+Antes=S
+AntesExpresiones=Asigna(Afectar.GenerarMov, ConfigMov.InvDevTransito)<BR>Asigna(Info.TituloDialogo, <T>Generar <T>+Comillas(Afectar.GenerarMov)+<T> de <T>+Comillas(Afectar.Mov))
+VisibleCondicion=Info.MovTipo<>INV.DTI
