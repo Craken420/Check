@@ -11,10 +11,10 @@ const recodificacion = 'Latin1'
 
 function fileExists(path) {
     try {
-        console.log('b',path,'existe',fs.statSync(path).isFile())
+        //console.log('b',path,'existe',fs.statSync(path).isFile())
         return fs.statSync(path).isFile();
     } catch (e) {
-        console.log('c',path,'no existe')
+        //console.log('c',path,'no existe')
         return false;
     }
   }
@@ -34,26 +34,30 @@ function fileExists(path) {
 
 
 function crearExpresion (texto) {
-    let regEx = `\\[(?!${texto})[^~]*?(?=(\\n|)\\[)`
-    return new RegExp(`${regEx}`, `g`)
+    let regEx = `\\[(?!${texto})(?=.*?\\/.*?\\])[^~]*?(?=(\\n|)\\[)`
+    //let regEx = `\\[(?!${texto})[^~]*?(?=(\\n|)\\[)`
+    return new RegExp(`${regEx}`, `gi`)
 }
 
 function transformar (archivo, texto) {
     
-    console.log (archivo,/\w+/g.test(texto))
-    if(!/\w+/g.test(texto))
-        //console.log('borrar', archivo)
-        fs.unlinkSync(archivo)
-        
+
+    //if(!/\w+/g.test(texto)) fs.unlinkSync(archivo)
+
     texto = texto + '\n['
     //Crear el nombre de la accion con el archivo, ejemplo: UsuarioCfg.frm
-    let archivoFrm      =  archivo.replace(/.*(\/|\\)|\_MAVI.*|\.esp/g, '')
-    archivoFrm = archivoFrm.replace(/\_/g, '.')
-    archivoFrm = archivoFrm.replace(/(?<=\.)\w+$/gm, (archivoFrm) => {
+    let archivoFrm      =  archivo.replace(/.*(\/|\\)|\_MAVI.*|\.esp/gi, '')
+    archivoFrm = archivoFrm.replace(/\_/gi, '.')
+    archivoFrm = archivoFrm.replace(/(?<=\.)\w+$/gim, (archivoFrm) => {
         return archivoFrm.toLowerCase()
     })
     let expresion       = crearExpresion(archivoFrm)
 
+    if(texto.match(expresion) != null)
+    console.log(archivo)//,expresion,texto.match(expresion))
+
+    //if(texto.match(expresion).join('\n') != null) console.log(archivo)
+    
     if(texto.match(expresion) != null){
 
         //Extraccion para las acciones con nombres diferentes al archivo
@@ -62,15 +66,16 @@ function transformar (archivo, texto) {
         txtExtraccion = txtExtraccion + '\n['
         
         //Extrae los nombres de las acciones ejemplo:'UsuarioCfg', 'Cont'
-        let nomNuevoArchivo = txtExtraccion.match(/(?<=\[).*?\.(frm|vis|tbl|dlg|rep)/g)
-            
+        let nomNuevoArchivo = txtExtraccion.match(/(?<=\[).*?\.(frm|vis|tbl|dlg|rep)/gi)
+        
+        if(nomNuevoArchivo != null){
         //Elimina datos duplicados del objeto y formatear para busqueda
         let set                 = new Set( nomNuevoArchivo.map( JSON.stringify ) )
         let arrSinDuplicaciones = Array.from( set ).map( JSON.parse )
         
         let nombresArchivos = arrSinDuplicaciones.map(x => {
             x = x.replace('.', '_') + '_MAVI.esp'
-            x = x.replace(/(?<=\_)\w+(?=\_)/g, x => x.toUpperCase())
+            x = x.replace(/(?<=\_)\w+(?=\_)/gi, x => x.toUpperCase())
             return x
         })
         //console.log(archivo,arrSinDuplicaciones,nombresArchivos)
@@ -92,39 +97,14 @@ function transformar (archivo, texto) {
                 // Crear archivo
                 remplazarTexto (archivosOriginales + nombresArchivos[key2], txtFinal)
             }
-            
-            //chocolate
-            // fileExists(archivosOriginales + nombresArchivos[key2], (err, exists) => {
-    
-            //     if(err) {
-            //       // manejar otro tipo de error
-            //     }
-            //     if(exists) {
-            //         console.log(nombresArchivos[key2],'existe')
-            //     } else {
-            //         console.log(nombresArchivos[key2],'no existe')
-            // //         remplazarTexto (ArchivosCreados+arrSinDuplicaciones[key2] + '_FRM_MAVI.esp', txtFinal)
-            // //         texto = texto.replace(expresion, '')
-            // //         texto = texto.replace(/\[(?!(\s+|)\w)/g, '')
-
-            // //         remplazarTexto(archivosModificados + archivo.replace(/.*(\/|\\)/, ''), texto)
-            //     }
-            // })
-            //A la hora de crear el nuevo archivo se tiene que 
-            //verificar si existe en la carpeta orioginal o en la capeta de archivos creados
-            //y si existe se tiene que abrir y colocar al final
-            //remplazarTexto (ArchivosCreados+nombresArchivos[key2], txtFinal)
-        }
+        }}
 
         //Elimina el texto del match para quitar el contenido incorrecto
         texto = texto.replace(expresion, '')
-        texto = texto.replace(/\[(?!(\s+|)\w)/g, '')
+        texto = texto.replace(/\[(?!(\s+|)\w)/gi, '')
 
         remplazarTexto(archivo, texto)
 
-    } else {
-        
-        // fs.unlinkSync(archivo)
     }
 }
 
@@ -135,7 +115,7 @@ function recodificar(archivo, recodificacion) {
 function remplazarTexto (archivo, texto) {
     fs.writeFile(archivo, texto, (err) => {
         if (err) {
-            return console.log(err)
+            //return console.log(err)
         }
         // console.log('Archivo : ' + archivo.replace(/.*(\/|\\)/, ''))
     })
@@ -149,6 +129,7 @@ function comprobar (carpeta, archivos) {
     filtrarExtension(archivos).map((archivo) => {
         return path.join(carpeta, archivo)
     }).filter((archivo) => {
+        // return archivo == 'ArchivosOriginales\\ActivoFCat_FRM_MAVI.esp'
         return fs.statSync(archivo).isFile()
     }).forEach((archivo) => {
         transformar (archivo, recodificar(archivo, recodificacion))
