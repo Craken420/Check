@@ -34,6 +34,7 @@ function fileExists(path) {
 
 
 function crearExpresion (texto) {
+    // console.log(texto)
     let regEx = `\\[(?!${texto})(?=.*?\\/.*?\\])[^~]*?(?=(\\n|)^\\[)`
     //let regEx = `\\[(?!${texto})[^~]*?(?=(\\n|)\\[)`
     return new RegExp(`${regEx}`, `gim`)
@@ -42,21 +43,26 @@ function crearExpresion (texto) {
 function transformar (archivo, texto) {
     if(!/\w+/g.test(texto)) {
         fs.unlinkSync(archivo)
+        // console.log('retorno')
         return
     }
+    texto = texto + '\n['
     let textoBorrar = texto
     texto = texto.replace(/^;.*/gm, '')
-    texto = texto + '\n['
     //Crear el nombre de la accion con el archivo, ejemplo: UsuarioCfg.frm
     let archivoFrm      =  archivo.replace(/.*(\/|\\)|\_MAVI.*|\.esp/gi, '')
-    archivoFrm = archivoFrm.replace(/\_/gi, '.')
+    // console.log('aqui',archivoFrm)
+    archivoFrm = archivoFrm.replace(/\_(?=(frm|vis|tbl|dlg|rep))/gi, '.')
+    // console.log('aca',archivoFrm)
     archivoFrm = archivoFrm.replace(/(?<=\.)\w+$/gim, (archivoFrm) => {
+        // /\.(?=(frm|vis|tbl|dlg|rep))/gi
         return archivoFrm.toLowerCase()
     })
     let expresion       = crearExpresion(archivoFrm)
+    // console.log(expresion,archivoFrm)
 
-    if(texto.match(expresion) != null)
-    console.log(archivo)//,expresion,texto.match(expresion))
+    // if(texto.match(expresion) != null)
+    // console.log(archivo)//,expresion,texto.match(expresion))
 
     //if(texto.match(expresion).join('\n') != null) console.log(archivo)
     
@@ -76,18 +82,20 @@ function transformar (archivo, texto) {
         let arrSinDuplicaciones = Array.from( set ).map( JSON.parse )
         
         let nombresArchivos = arrSinDuplicaciones.map(x => {
-            x = x.replace('.', '_') + '_MAVI.esp'
+            x = x.replace(/\.(?=(frm|vis|tbl|dlg|rep))/gi, '_') + '_MAVI.esp'
             x = x.replace(/(?<=\_)\w+(?=\_)/gi, x => x.toUpperCase())
             return x
         })
-        //console.log(archivo,arrSinDuplicaciones,nombresArchivos)
+        // console.log('aqui',archivo,arrSinDuplicaciones,nombresArchivos,expresion)
 
 
         for (key2 in arrSinDuplicaciones) {
-
-            let regExNuevoArchivo   = `\\[${arrSinDuplicaciones[key2]}.*?\\.[^~]*?(?=\\[)`
+            console.log('err',archivo)
+            let regExNuevoArchivo   = `\\[${arrSinDuplicaciones[key2]}[^~]*?(?=\\[)`
             let extraerAccion       = new RegExp(`${regExNuevoArchivo}`, `gi`)
             let resBool             = txtExtraccion.match(extraerAccion)
+            // console.log('err',archivo,extraerAccion,txtExtraccion)
+            // if(txtExtraccion.match(extraerAccion) == null) return
             let txtFinal            = resBool.join('\n')
 
 
@@ -101,9 +109,15 @@ function transformar (archivo, texto) {
             }
         }}
 
+        
         //Elimina el texto del match para quitar el contenido incorrecto
         textoBorrar = textoBorrar.replace(expresion, '')
         textoBorrar = textoBorrar.replace(/\[(?!(\s+|)\w)/gi, '')
+        
+        if(!/\w+/g.test(textoBorrar)) {
+            fs.unlinkSync(archivo)
+            return
+        }
 
         remplazarTexto(archivo, textoBorrar)
 
@@ -131,8 +145,10 @@ function comprobar (carpeta, archivos) {
     filtrarExtension(archivos).map((archivo) => {
         return path.join(carpeta, archivo)
     }).filter((archivo) => {
-        // return archivo == 'ArchivosOriginales\\ActivarDesafectar.esp'
-        return fs.statSync(archivo).isFile()
+        return archivo != 'ArchivosOriginales\\Personal_TBL_MAVI.esp' 
+        //     || archivo == 'ArchivosOriginales\\AccesoExpirado_FRM_MAVI.esp'
+        //     || archivo == 'ArchivosOriginales\\Agente_FRM_MAVI.esp'
+        // return fs.statSync(archivo).isFile()
     }).forEach((archivo) => {
         transformar (archivo, recodificar(archivo, recodificacion))
     })
