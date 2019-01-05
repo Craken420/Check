@@ -35,7 +35,7 @@ function fileExists(path) {
 
 function crearExpresion (texto) {
     // console.log(texto)
-    let regEx = `\\[(?!${texto})(?=.*?\\/.*?\\])[^~]*?(?=(\\n|)^\\[)`
+    let regEx = `\\[(?!\\w+;)(?!${texto})(?=.*?\\/.*?\\])[^~]*?(?=(\\n|)^\\[)`
     //let regEx = `\\[(?!${texto})[^~]*?(?=(\\n|)\\[)`
     return new RegExp(`${regEx}`, `gim`)
 }
@@ -100,21 +100,27 @@ function transformar (archivo, texto) {
 
 
             //console.log(archivo,regExNuevoArchivo)
-            if(fileExists(archivosOriginales + nombresArchivos[key2])){
-                // Añadir al archivo
-                fs.appendFileSync(archivosOriginales + nombresArchivos[key2],txtFinal)
-            } else {
-                // Crear archivo
-                remplazarTexto (archivosOriginales + nombresArchivos[key2], txtFinal)
-            }
+            // if(fileExists(archivosOriginales + nombresArchivos[key2])){
+            //     // Añadir al archivo
+            //     console.log('añadir',txtFinal)
+            txtFinal = txtFinal.replace(/((?=[\ \t])|^\s+|$)+/mg, '')
+            txtFinal = txtFinal.replace(/\[/g, ' \n[')
+            fs.appendFileSync(archivosOriginales + nombresArchivos[key2],'\n'+txtFinal,{flag:'as'})
+            // } else {
+            //     // Crear archivo
+            //     console.log('creacion',txtFinal)
+            //     remplazarTexto (archivosOriginales + nombresArchivos[key2], txtFinal)
+            // }
         }}
 
         
         //Elimina el texto del match para quitar el contenido incorrecto
         textoBorrar = textoBorrar.replace(expresion, '')
         textoBorrar = textoBorrar.replace(/\[(?!(\s+|)\w)/gi, '')
+
+        textoComentario = textoBorrar.replace(/^;.*/gm, '')
         
-        if(!/\w+/g.test(textoBorrar)) {
+        if(!/\w+/g.test(textoBorrar) || !/\w+/g.test(textoComentario)) {
             fs.unlinkSync(archivo)
             return
         }
@@ -145,10 +151,10 @@ function comprobar (carpeta, archivos) {
     filtrarExtension(archivos).map((archivo) => {
         return path.join(carpeta, archivo)
     }).filter((archivo) => {
-        return archivo != 'ArchivosOriginales\\Personal_TBL_MAVI.esp' 
-        //     || archivo == 'ArchivosOriginales\\AccesoExpirado_FRM_MAVI.esp'
-        //     || archivo == 'ArchivosOriginales\\Agente_FRM_MAVI.esp'
-        // return fs.statSync(archivo).isFile()
+        // return archivo == 'ArchivosOriginales\\Usuario_FRM_MAVI.esp.esp' 
+        //     || archivo == 'ArchivosOriginales\\ActivarDesafectar.esp'
+        //     || archivo == 'ArchivosOriginales\\UsuarioCfg2_FRM_MAVI.esp'
+        return fs.statSync(archivo).isFile()
     }).forEach((archivo) => {
         transformar (archivo, recodificar(archivo, recodificacion))
     })
