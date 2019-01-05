@@ -36,25 +36,26 @@ function transformar (archivo, texto) {
         
         if(nomNuevoArchivo != null) {
       
-        let set                 = new Set( nomNuevoArchivo.map( JSON.stringify ) )
-        let arrSinDuplicaciones = Array.from( set ).map( JSON.parse )
-        
-        let nombresArchivos = arrSinDuplicaciones.map(x => {
-            x = x.replace(/\.(?=(frm|vis|tbl|dlg|rep))/gi, '_') + '_MAVI.esp'
-            x = x.replace(/(?<=\_)\w+(?=\_)/gi, x => x.toUpperCase())
-            return x
-        })
+            let set                 = new Set( nomNuevoArchivo.map( JSON.stringify ) )
+            let arrSinDuplicaciones = Array.from( set ).map( JSON.parse )
+            
+            let nombresArchivos = arrSinDuplicaciones.map(x => {
+                x = x.replace(/\.(?=(frm|vis|tbl|dlg|rep))/gi, '_') + '_MAVI.esp'
+                x = x.replace(/(?<=\_)\w+(?=\_)/gi, x => x.toUpperCase())
+                return x
+            })
 
-        for (key2 in arrSinDuplicaciones) {
-            let regExNuevoArchivo   = `\\[${arrSinDuplicaciones[key2]}[^~]*?(?=\\[)`
-            let extraerAccion       = new RegExp(`${regExNuevoArchivo}`, `gi`)
-            let resBool             = txtExtraccion.match(extraerAccion)
-            let txtFinal            = resBool.join('\n')
+            for (key2 in arrSinDuplicaciones) {
+                let regExNuevoArchivo   = `\\[${arrSinDuplicaciones[key2]}[^~]*?(?=\\[)`
+                let extraerAccion       = new RegExp(`${regExNuevoArchivo}`, `gi`)
+                let resBool             = txtExtraccion.match(extraerAccion)
+                let txtFinal            = resBool.join('\n')
 
-            txtFinal = txtFinal.replace(/((?=[\ \t])|^\s+|$)+/mg, '')
-            txtFinal = txtFinal.replace(/\[/g, ' \n[')
-            fs.appendFileSync(archivosOriginales + nombresArchivos[key2], '\n' + txtFinal, { flag:'as' })
-        }}
+                txtFinal = txtFinal.replace(/((?=[\ \t])|^\s+|$)+/mg, '')
+                txtFinal = txtFinal.replace(/\[/g, ' \n[')
+                fs.appendFileSync(archivosOriginales + nombresArchivos[key2], '\n' + txtFinal, { flag:'as' })
+            }
+        }
 
         textoBorrar     = textoBorrar.replace(expresion, '')
         textoBorrar     = textoBorrar.replace(/\[(?!(\s+|)\w)/gi, '')
