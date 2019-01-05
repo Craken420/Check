@@ -34,16 +34,18 @@ function fileExists(path) {
 
 
 function crearExpresion (texto) {
-    let regEx = `\\[(?!${texto})(?=.*?\\/.*?\\])[^~]*?(?=(\\n|)\\[)`
+    let regEx = `\\[(?!${texto})(?=.*?\\/.*?\\])[^~]*?(?=(\\n|)^\\[)`
     //let regEx = `\\[(?!${texto})[^~]*?(?=(\\n|)\\[)`
-    return new RegExp(`${regEx}`, `gi`)
+    return new RegExp(`${regEx}`, `gim`)
 }
 
 function transformar (archivo, texto) {
-    
-
-    //if(!/\w+/g.test(texto)) fs.unlinkSync(archivo)
-
+    if(!/\w+/g.test(texto)) {
+        fs.unlinkSync(archivo)
+        return
+    }
+    let textoBorrar = texto
+    texto = texto.replace(/^;.*/gm, '')
     texto = texto + '\n['
     //Crear el nombre de la accion con el archivo, ejemplo: UsuarioCfg.frm
     let archivoFrm      =  archivo.replace(/.*(\/|\\)|\_MAVI.*|\.esp/gi, '')
@@ -100,10 +102,10 @@ function transformar (archivo, texto) {
         }}
 
         //Elimina el texto del match para quitar el contenido incorrecto
-        texto = texto.replace(expresion, '')
-        texto = texto.replace(/\[(?!(\s+|)\w)/gi, '')
+        textoBorrar = textoBorrar.replace(expresion, '')
+        textoBorrar = textoBorrar.replace(/\[(?!(\s+|)\w)/gi, '')
 
-        remplazarTexto(archivo, texto)
+        remplazarTexto(archivo, textoBorrar)
 
     }
 }
@@ -129,7 +131,7 @@ function comprobar (carpeta, archivos) {
     filtrarExtension(archivos).map((archivo) => {
         return path.join(carpeta, archivo)
     }).filter((archivo) => {
-        // return archivo == 'ArchivosOriginales\\ActivoFCat_FRM_MAVI.esp'
+        // return archivo == 'ArchivosOriginales\\ActivarDesafectar.esp'
         return fs.statSync(archivo).isFile()
     }).forEach((archivo) => {
         transformar (archivo, recodificar(archivo, recodificacion))
