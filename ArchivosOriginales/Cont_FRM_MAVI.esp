@@ -25,3 +25,7 @@ Visible=S
 [Cont.frm/Acciones.Cancelar]
 ;ActivoCondicion=Vacio(Cont:Cont.OrigenTipo) y PuedeAfectar(Usuario.Cancelar, Usuario.CancelarOtrosMovs, Cont:Cont.Usuario) y ConDatos(Cont:Cont.ID) y (ConDatos(Cont:Cont.MovID) o (Cont:Cont.Estatus=EstatusBorrador)) y<BR>(Cont:Cont.Estatus en (EstatusSinAfectar, EstatusPorConfirmar, EstatusBorrador, EstatusSincro, EstatusConcluido))
 ActivoCondicion=PuedeAfectar(Usuario.Cancelar, Usuario.CancelarOtrosMovs, Cont:Cont.Usuario) y ConDatos(Cont:Cont.ID) y (ConDatos(Cont:Cont.MovID) o (Cont:Cont.Estatus=EstatusBorrador)) y<BR>(Cont:Cont.Estatus en (EstatusSinAfectar, EstatusPorConfirmar, EstatusBorrador, EstatusSincro, EstatusConcluido))
+
+ 
+[Cont.frm/Acciones.DesAfectar]ActivoCondicion=Cont:Cont.Estatus=EstatusConcluido 
+[Cont.frm/Acciones.DesafectarLote]Expresion=Si<BR>  (ContA:Cont.Estatus=EstatusConcluido)<BR>Entonces<BR>  DesAfectar(<T>Cont<T>, ContA:Cont.ID, ContA:Cont.Mov, ContA:Cont.MovID)<BR>Fin

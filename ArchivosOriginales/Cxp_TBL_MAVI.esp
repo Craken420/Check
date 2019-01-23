@@ -59,3 +59,6 @@ CondicionDespliege=Si<BR> (Mov=<T>Sol Acuerdo Prov<T>) o (Mov=<T>Acuerdo Proveed
 CondicionEdicion=Si<BR>(Mov=<T>Sol Acuerdo Prov<T>) o ((Mov=<T>Acuerdo Proveedor<T>)y ((Estatus = (<T>SINAFECTAR<T>)) o (Estatus = (<T>PENDIENTE<T>))))<BR>Entonces<BR>    Verdadero<BR>Sino<BR>    Falso<BR>Fin
 ValorRefrescar=Cxp:cxp.vencimientoProveedor
 ValorPorOmision=Cxp:cxp.vencimientoProveedor
+
+ 
+[Cxp.tbl/UEN]ValorPorOmision=Sucursal.wUENCondicionEdicion=Falso

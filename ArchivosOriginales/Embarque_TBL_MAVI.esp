@@ -145,3 +145,6 @@ FormatoValidacion=dd/mmm/aaaa
 AyudaEnCaptura=Calendario sin Hora
 ValorPorOmision=FechaTrabajo
 
+
+ 
+[Embarque.tbl/UEN]ValorPorOmision=Sucursal.wUENCondicionEdicion=Falso

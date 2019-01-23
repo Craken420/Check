@@ -50,3 +50,5 @@ LlaveRemota=Proveedor
 [Dinero.tbl/FormaPago]
 AyudaEnCaptura=Expresion
 Formula=SQLEnLista( <T>SELECT  formapago FROM FormaPago<T>)
+ 
+[Dinero.tbl/UEN]ValorPorOmision=Sucursal.wUENCondicionEdicion=Falso

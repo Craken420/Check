@@ -2,36 +2,8 @@ const fs = require('fs')
 const iconvlite = require('iconv-lite')
 const path = require('path')
 
-//const carpeta = 'C:/Users/lapena/Documents/Luis Angel/Intelisis/Intelisis3100/Reportes MAVI/'
-const ArchivosCreados = 'ArchivosCreados\\'
 const archivosOriginales = 'ArchivosOriginales\\'
-const archivosModificados = 'ArchivosModificados\\'
 const recodificacion = 'Latin1'
-
-
-function fileExists(path) {
-    try {
-        //console.log('b',path,'existe',fs.statSync(path).isFile())
-        return fs.statSync(path).isFile();
-    } catch (e) {
-        //console.log('c',path,'no existe')
-        return false;
-    }
-  }
-// function fileExists(file, cb) {
-//     console.log(fs.statSync(file))
-    // fs.stat(file, (err, stats) => {
-    //   if (err) {
-    //     if (err.code === 'ENOENT') {
-    //       return cb(null, false);
-    //     } else { // en caso de otro error
-    //       return cb(err);
-    //     }
-    //   }
-    //   // devolvemos el resultado de `isFile`.
-    //   return cb(null, stats.isFile());
-    // });
-
 
 function crearExpresion (texto) {
     // console.log(texto)
