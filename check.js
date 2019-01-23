@@ -2,8 +2,13 @@ const iconvlite = require('iconv-lite')
 const fs = require('fs')
 const path = require('path')
 
+<<<<<<< HEAD
 const archivosOriginales    = 'ArchivosOriginales\\'
 const recodificacion        = 'Latin1'
+=======
+const archivosOriginales = 'ArchivosOriginales\\'
+const recodificacion = 'Latin1'
+>>>>>>> c6f94e1f0b9f85c1cf7b098d2259e04636dccebf
 
 function crearExpresion (texto) {
     return new RegExp(`\\[(?!\\w+;)(?!${texto})(?=.*?\\/.*?\\])[^~]*?(?=(\\n|)^\\[)`, `gim`)

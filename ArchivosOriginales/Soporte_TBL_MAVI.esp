@@ -231,3 +231,6 @@ ValorRefrescar=SQL(<T>SELECT Articulo + <T>+<T><T>+ <T>+Descripcion1 FROM Art WH
 [Soporte.tbl/Solucion]
 CondicionEdicion=Soporte:Soporte.Estatus noen (EstatusConcluido, EstatusCancelado) y PuedeModificar(Soporte:Soporte.Usuario)<BR> y SQL(<T>SELECT dbo.FN_MAVIDM0273ValidacionSoporte(<T>+comillas(Usuario)+<T>)<T>)=1
 
+
+ 
+[Soporte.tbl/UEN]ValorPorOmision=Sucursal.wUENCondicionEdicion=Falso

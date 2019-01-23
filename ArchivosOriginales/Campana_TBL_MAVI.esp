@@ -91,3 +91,5 @@ Visible=S
 TamanoValidacion=15
 TipoDatos=FechaHora
 AyudaEnCaptura=Calendario sin Hora
+ 
+[Campana.tbl/UEN]ValorPorOmision=Sucursal.wUENCondicionEdicion=Falso

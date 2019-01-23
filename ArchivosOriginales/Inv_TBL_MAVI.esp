@@ -95,3 +95,5 @@ CondicionEdicion=(Estatus en (EstatusSinAfectar,EstatusPorConfirmar) y (Referenc
 
 [Inv.tbl/Observaciones]
 CondicionEdicion=no(Mov = <T>Entrega Papeleria<T>)
+ 
+[Inv.tbl/UEN]ValorPorOmision=Sucursal.wUENCondicionEdicion=Falso

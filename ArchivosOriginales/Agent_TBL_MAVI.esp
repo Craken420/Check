@@ -7,3 +7,5 @@ CondicionDespliege=(Mov en (<T>Cobro Dif Caja<T>)) o ((no Agent:Agente.Nomina) y
 [Agent.tbl/Agente]
 ValidacionUsaTabla=N
 ValidacionTablas=
+ 
+[Agent.tbl/UEN]ValorPorOmision=Sucursal.wUENCondicionEdicion=Falso

@@ -41,3 +41,5 @@ AyudaForma=RM1100XmlFrm
 AyudaVista=RM1100XmlVis
 AyudaCampo=FolioFiscal
 AlCambiar=Asigna(Info.Referencia,Referencia)
+ 
+[Compra.tbl/UEN]ValorPorOmision=Sucursal.wUENCondicionEdicion=Falso
