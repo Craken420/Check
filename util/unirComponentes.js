@@ -1,4 +1,7 @@
-function unirComponentes (cmpDominador, cmpDenominador) {
+const {eliminarDuplicado} = require('./eliminarDuplicado')
+const {jsonRegEx} = require('./jsonRgx')
+
+unirComponentes = function (cmpDominador, cmpDenominador) {
     //console.log(cmpDenominador)
     let arregloCmpDenominador = cmpDenominador.replace(/^\n$|\r/gm, '').split('\n')
     //console.log('arreglocmpDenominador\n',arreglocmpDenominador[4])
@@ -37,3 +40,19 @@ function unirComponentes (cmpDominador, cmpDenominador) {
     //fq.appendArchivo(carpetas.carpetaTesting + '6-extraccionUnificadaCmpDominador.txt', cmpDominador)
     return cmpDominador
 }
+
+
+unirArchivo = function (cmpDominador, cmpDenominador) {
+    var componentes = []
+    if(jsonRegEx.hasComponente.test(cmpDenominador)){
+        componentes = cmpDenominador.match(jsonRegEx.hasComponente)
+    }
+    return componentes.map(x => {
+        console.log('q',x,x.match(jsonRegEx.nombreComponente))
+        return x.replace(x.match(jsonRegEx.nombreComponente)+'/','')
+        
+    })
+}
+
+module.exports.unirComponentes = unirComponentes
+module.exports.unirArchivo = unirArchivo

@@ -4,6 +4,11 @@ exports.jsonRegEx = {
     'reducirRuta':    /.*\\/,
     'buscarSaltoLinea': /\s\n(?=\w)(?!$)/g,
     'clsSaltoLinea': /((?=[\ \t])|^\s+|$)+/mg,
+    lineasBlancas: new RegExp(/^\n[\s\t]*/gm),
+    hasComponente: new RegExp(/^\[.*\]/gm), //Para consultar si existe algun titulo de componente
+    inComponente: new RegExp(/^\[[\W\w]*?(?=(^\[|^$))/gm),
+    nombreComponente: new RegExp(/(?<=^\[)\w*\.(tbl|vis|frm|rep|dlg)(?=\/)/gm),
+        //[MenuPrincipal.dlg/Acciones.Exp.MaviRefin] -> MenuPrincipal.dlg
     'metodos': {
       'limpiarComentarios': texto => {return texto.replace(this.clsComentarios, '')},
       'limpiarRuta':        ruta => { return ruta.replace(this.reducirRuta, '')},

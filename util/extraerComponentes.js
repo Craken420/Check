@@ -1,5 +1,6 @@
+const regex = require('./jsonRgx')
 
-exports.extraerAccionesDelContenido = function (contenidoArchivo) {
+exports.extraerComponentes = function (contenidoArchivo) {
     contenidoArchivo = contenidoArchivo + '\n['
 
     let acciones = contenidoArchivo.match(/\[.*?.*?[^*]*?(?=\[)/g)

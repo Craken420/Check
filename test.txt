@@ -1,0 +1,2 @@
+[Dialogo]Clave=AAANombre=MenúIcono=14TipoDialogo=MenúModulos=(Todos)Fuente={Tahoma, 8, Negro, []}MenuEstilo=Lista OpcionesMenuColumnas=1AccionesTamanoBoton=15x5AccionesDerecha=SListaAcciones=ExpresionsPosicionInicialAlturaCliente=80PosicionInicialAncho=500[Acciones.Expresion]Nombre=ExpresionBoton=0NombreDesplegar=ExpresionEnMenu=SEnBarraAcciones=STipoAccion=ExpresionExpresion=Informacion(<T>Hola<T>)Activo=SVisible=S
+{"algo":{}}
