@@ -1,2 +1,184 @@
-[Dialogo]Clave=AAANombre=MenúIcono=14TipoDialogo=MenúModulos=(Todos)Fuente={Tahoma, 8, Negro, []}MenuEstilo=Lista OpcionesMenuColumnas=1AccionesTamanoBoton=15x5AccionesDerecha=SListaAcciones=ExpresionsPosicionInicialAlturaCliente=80PosicionInicialAncho=500[Acciones.Expresion]Nombre=ExpresionBoton=0NombreDesplegar=ExpresionEnMenu=SEnBarraAcciones=STipoAccion=ExpresionExpresion=Informacion(<T>Hola<T>)Activo=SVisible=S
-{"algo":{}}
+Herramienta.Paginas|General.AccesoPaginas
+Herramienta.CerrarDia|General.CerrarDia
+Mov.VentaSurtirCB|Config.Partidas
+Cta.VIN|Config.VIN
+Mov.Produccion|General.Prod
+Cta.ProdCentro|General.Prod
+Cta.ProdEstacion|General.Prod
+Cta.ProdRuta|General.Prod
+Config.PC|General.PC
+Mov.PC|General.PC
+Mov.AtnProyectos|no General.PM
+Mov.Autotransportes|General.Autotransportes
+Config.Autotransportes|General.Autotransportes
+Config.ContabilidadAutomatica|General.ContAuto
+Cta.Espacio|General.Espacios
+Exp.Espacios|General.Espacios
+Cubo.Ventas|CuboActivo(<T>VTAS<T>)
+Cubo.Cxc|CuboActivo(<T>CXC<T>)
+Cubo.Cxp|CuboActivo(<T>CXP<T>)
+Cubo.ActivoFijo|CuboActivo(<T>AF<T>)
+Cubo.AtnClientes|CuboActivo(<T>ST_CTE<T>)
+Cubo.Embarques|CuboActivo(<T>EMB<T>)
+Cubo.Gastos|CuboActivo(<T>GAS<T>)
+Cubo.Nomina|CuboActivo(<T>NOM<T>)
+Cubo.Tesoreria|CuboActivo(<T>DIN<T>)
+Cubo.FlujoInv|CuboActivo(<T>INV_FLUJO<T>)
+Cubo.Compras|CuboActivo(<T>COMS<T>)
+Cubo.Inv|CuboActivo(<T>INV<T>)
+Herramienta.Ford|General.Ford
+Cubo.Servicios|CuboActivo(<T>SERV<T>)
+Cubo.Personal|CuboActivo(<T>PER<T>)
+Cubo.SerieLote|CuboActivo(<T>SL<T>)
+Cubo.Comisiones|CuboActivo(<T>AGENT<T>)
+Exp.Autotransportes|General.Autotransportes
+Herramienta.Autotransportes|General.Autotransportes
+Cubo.Autotransportes|General.Autotransportes y CuboActivo(<T>AUTO_RESULTADO<T>)
+Cubo.Contabilidad|CuboActivo(<T>CONT<T>)
+Mov.CR|General.CR
+Cubo.VIN|Config.VIN
+Cubo.EvaluacionServicio|CuboActivo(<T>SERVEVA<T>)
+Cubo.Clientes|CuboActivo(<T>CTE<T>)
+Cubo.Almacenes|CuboActivo(<T>ALM<T>)
+Cubo.MovimientosProyectos|CuboActivo(<T>PROY<T>)
+Cubo.Proyectos|CuboActivo(<T>MPROY<T>)
+Cubo.Proveedores|CuboActivo(<T>PROV<T>)
+Cubo.Agentes|CuboActivo(<T>MAGENTE<T>)
+Cubo.Retardos|CuboActivo(<T>RETARDO<T>)
+Cubo.IVA|CuboActivo(<T>IVA<T>)
+Cubo.Cambios|General.Cambios y CuboActivo(<T>CAM<T>)
+Cubo.CR|General.CR y CuboActivo(<T>CR<T>)
+Exp.VIN|Config.VIN
+Herramienta.Chrysler|General.Chrysler
+Cta.LineasCredito|General.AC
+Cta.TipoAmortizacion|General.AC
+Cta.TipoTasa|General.AC
+Mov.Capital|General.Capital
+Config.Capital|General.Capital
+Herramienta.AdmonCreditos|General.AC
+Mov.Incidencia|General.NomAuto
+Mov.WMS|General.WMS
+Config.WMS|General.WMS
+Herramienta.Hasp|General.HASP
+Mov.Proyectos|General.PM
+Config.Proyectos|General.PM
+Mov.Credito|General.AC
+Cta.Prospectos|General.CMP
+Config.Campana|General.CMP
+Mov.Campana|General.CMP
+Mov.Oferta|General.OFER
+Mov.Riesgos|General.ARO
+Hist.Venta|SQL(<T>SELECT Hist FROM Modulo WHERE Modulo=:tModulo<T>, <T>VTAS<T>)
+Hist.Compras|SQL(<T>SELECT Hist FROM Modulo WHERE Modulo=:tModulo<T>, <T>COMS<T>)
+Hist.Inventarios|SQL(<T>SELECT Hist FROM Modulo WHERE Modulo=:tModulo<T>, <T>INV<T>)
+Hist.Cxc|SQL(<T>SELECT Hist FROM Modulo WHERE Modulo=:tModulo<T>, <T>CXC<T>)
+Hist.Cxp|SQL(<T>SELECT Hist FROM Modulo WHERE Modulo=:tModulo<T>, <T>CXP<T>)
+Hist.Nomina|SQL(<T>SELECT Hist FROM Modulo WHERE Modulo=:tModulo<T>, <T>NOM<T>)
+Config.ARO|General.ARO
+Mov.EventosPerdida|General.ARO
+Config.ModuloCentral|Version.ModuloCentral
+Cta.ProspectoExpress|General.CMP
+Mov.Fiscal|General.Fiscal
+Config.Fiscal|General.Fiscal
+Herramienta.Fiscal|General.Fiscal
+Mov.ServicasaServicredCredito|Si(SQL(<T>SELECT COUNT(Nombre) FROM TablaStD WHERE TablaSt = :tTabla AND Nombre = :tSuc<T>,<T>SUCURSALES SIN SERVICASA<T>,Sucursal) > 0, Falso, Verdadero)
+Mov.ServicasaServicredSucursales|Si(SQL(<T>SELECT COUNT(Nombre) FROM TablaStD WHERE TablaSt = :tTabla AND Nombre = :tSuc<T>,<T>SUCURSALES SIN SERVICASA<T>,Sucursal) > 0, Falso, Verdadero)
+Mov.ServicasaServicredCreditoMayoreo|Si(SQL(<T>SELECT COUNT(Nombre) FROM TablaStD WHERE TablaSt = :tTabla AND Nombre = :tSuc<T>,<T>SUCURSALES SIN SERVICASA<T>,Sucursal) > 0, Falso, Verdadero)
+Herramienta.CxcCFD|Empresa.CFD
+EXPDM0174EmbarquesPiso|SQL(<T>Select IsNull(Valor,0) From TablaStd where Nombre = :tSuc  and tablaSt = :tEmbarque<T>,Sucursal,<T>DM0174EMBARQUESPISO<T>)=1
+Config.eDoc|General.eDoc
+Herramienta.CFDFlex|General.CFDFlex
+EXPDM0238ConvenInstVigen|Si SQL(<T>SELECT COUNT(U.USUARIO) VAL FROM USUARIO U JOIN TABLASTD T ON U.USUARIO=T.NOMBRE WHERE T.TABLAST=:ttab AND T.VALOR =:tins AND U.USUARIO=:tusr<T>,<T>ACCESO_VIGENCIAS_INSTITUCIONES<T>,<T>INSTITUCIONES<T>,Usuario)=1,entonces,Verdadero
+EXPDM0238ConvenInstVigenEstatus|Si SQL(<T>SELECT COUNT(U.USUARIO) VAL FROM USUARIO U JOIN TABLASTD T ON U.USUARIO=T.NOMBRE WHERE T.TABLAST=:ttab AND T.VALOR =:tins AND U.USUARIO=:tusr<T>,<T>ACCESO_VIGENCIAS_INSTITUCIONES_EST<T>,<T>ESTATUS<T>,Usuario)=1,entonces,Verdadero
+Herramienta.Paginas|General.AccesoPaginas
+Herramienta.CerrarDia|General.CerrarDia
+Mov.VentaSurtirCB|Config.Partidas
+Cta.VIN|Config.VIN
+Mov.Produccion|General.Prod
+Cta.ProdCentro|General.Prod
+Cta.ProdEstacion|General.Prod
+Cta.ProdRuta|General.Prod
+Config.PC|General.PC
+Mov.PC|General.PC
+Mov.AtnProyectos|no General.PM
+Mov.Autotransportes|General.Autotransportes
+Config.Autotransportes|General.Autotransportes
+Config.ContabilidadAutomatica|General.ContAuto
+Cta.Espacio|General.Espacios
+Exp.Espacios|General.Espacios
+Cubo.Ventas|CuboActivo(<T>VTAS<T>)
+Cubo.Cxc|CuboActivo(<T>CXC<T>)
+Cubo.Cxp|CuboActivo(<T>CXP<T>)
+Cubo.ActivoFijo|CuboActivo(<T>AF<T>)
+Cubo.AtnClientes|CuboActivo(<T>ST_CTE<T>)
+Cubo.Embarques|CuboActivo(<T>EMB<T>)
+Cubo.Gastos|CuboActivo(<T>GAS<T>)
+Cubo.Nomina|CuboActivo(<T>NOM<T>)
+Cubo.Tesoreria|CuboActivo(<T>DIN<T>)
+Cubo.FlujoInv|CuboActivo(<T>INV_FLUJO<T>)
+Cubo.Compras|CuboActivo(<T>COMS<T>)
+Cubo.Inv|CuboActivo(<T>INV<T>)
+Herramienta.Ford|General.Ford
+Cubo.Servicios|CuboActivo(<T>SERV<T>)
+Cubo.Personal|CuboActivo(<T>PER<T>)
+Cubo.SerieLote|CuboActivo(<T>SL<T>)
+Cubo.Comisiones|CuboActivo(<T>AGENT<T>)
+Exp.Autotransportes|General.Autotransportes
+Herramienta.Autotransportes|General.Autotransportes
+Cubo.Autotransportes|General.Autotransportes y CuboActivo(<T>AUTO_RESULTADO<T>)
+Cubo.Contabilidad|CuboActivo(<T>CONT<T>)
+Mov.CR|General.CR
+Cubo.VIN|Config.VIN
+Cubo.EvaluacionServicio|CuboActivo(<T>SERVEVA<T>)
+Cubo.Clientes|CuboActivo(<T>CTE<T>)
+Cubo.Almacenes|CuboActivo(<T>ALM<T>)
+Cubo.MovimientosProyectos|CuboActivo(<T>PROY<T>)
+Cubo.Proyectos|CuboActivo(<T>MPROY<T>)
+Cubo.Proveedores|CuboActivo(<T>PROV<T>)
+Cubo.Agentes|CuboActivo(<T>MAGENTE<T>)
+Cubo.Retardos|CuboActivo(<T>RETARDO<T>)
+Cubo.IVA|CuboActivo(<T>IVA<T>)
+Cubo.Cambios|General.Cambios y CuboActivo(<T>CAM<T>)
+Cubo.CR|General.CR y CuboActivo(<T>CR<T>)
+Exp.VIN|Config.VIN
+Herramienta.Chrysler|General.Chrysler
+Cta.LineasCredito|General.AC
+Cta.TipoAmortizacion|General.AC
+Cta.TipoTasa|General.AC
+Mov.Capital|General.Capital
+Config.Capital|General.Capital
+Herramienta.AdmonCreditos|General.AC
+Mov.Incidencia|General.NomAuto
+Mov.WMS|General.WMS
+Config.WMS|General.WMS
+Herramienta.Hasp|General.HASP
+Mov.Proyectos|General.PM
+Config.Proyectos|General.PM
+Mov.Credito|General.AC
+Cta.Prospectos|General.CMP
+Config.Campana|General.CMP
+Mov.Campana|General.CMP
+Mov.Oferta|General.OFER
+Mov.Riesgos|General.ARO
+Hist.Venta|SQL(<T>SELECT Hist FROM Modulo WHERE Modulo=:tModulo<T>, <T>VTAS<T>)
+Hist.Compras|SQL(<T>SELECT Hist FROM Modulo WHERE Modulo=:tModulo<T>, <T>COMS<T>)
+Hist.Inventarios|SQL(<T>SELECT Hist FROM Modulo WHERE Modulo=:tModulo<T>, <T>INV<T>)
+Hist.Cxc|SQL(<T>SELECT Hist FROM Modulo WHERE Modulo=:tModulo<T>, <T>CXC<T>)
+Hist.Cxp|SQL(<T>SELECT Hist FROM Modulo WHERE Modulo=:tModulo<T>, <T>CXP<T>)
+Hist.Nomina|SQL(<T>SELECT Hist FROM Modulo WHERE Modulo=:tModulo<T>, <T>NOM<T>)
+Config.ARO|General.ARO
+Mov.EventosPerdida|General.ARO
+Config.ModuloCentral|Version.ModuloCentral
+Cta.ProspectoExpress|General.CMP
+Mov.Fiscal|General.Fiscal
+Config.Fiscal|General.Fiscal
+Herramienta.Fiscal|General.Fiscal
+Mov.ServicasaServicredCredito|Si(SQL(<T>SELECT COUNT(Nombre) FROM TablaStD WHERE TablaSt = :tTabla AND Nombre = :tSuc<T>,<T>SUCURSALES SIN SERVICASA<T>,Sucursal) > 0, Falso, Verdadero)
+Mov.ServicasaServicredSucursales|Si(SQL(<T>SELECT COUNT(Nombre) FROM TablaStD WHERE TablaSt = :tTabla AND Nombre = :tSuc<T>,<T>SUCURSALES SIN SERVICASA<T>,Sucursal) > 0, Falso, Verdadero)
+Mov.ServicasaServicredCreditoMayoreo|Si(SQL(<T>SELECT COUNT(Nombre) FROM TablaStD WHERE TablaSt = :tTabla AND Nombre = :tSuc<T>,<T>SUCURSALES SIN SERVICASA<T>,Sucursal) > 0, Falso, Verdadero)
+Herramienta.CxcCFD|Empresa.CFD
+EXPDM0174EmbarquesPiso|SQL(<T>Select IsNull(Valor,0) From TablaStd where Nombre = :tSuc  and tablaSt = :tEmbarque<T>,Sucursal,<T>DM0174EMBARQUESPISO<T>)=1
+Config.eDoc|General.eDoc
+Herramienta.CFDFlex|General.CFDFlex
+EXPDM0238ConvenInstVigen|Si SQL(<T>SELECT COUNT(U.USUARIO) VAL FROM USUARIO U JOIN TABLASTD T ON U.USUARIO=T.NOMBRE WHERE T.TABLAST=:ttab AND T.VALOR =:tins AND U.USUARIO=:tusr<T>,<T>ACCESO_VIGENCIAS_INSTITUCIONES<T>,<T>INSTITUCIONES<T>,Usuario)=1,entonces,Verdadero
+EXPDM0238ConvenInstVigenEstatus|Si SQL(<T>SELECT COUNT(U.USUARIO) VAL FROM USUARIO U JOIN TABLASTD T ON U.USUARIO=T.NOMBRE WHERE T.TABLAST=:ttab AND T.VALOR =:tins AND U.USUARIO=:tusr<T>,<T>ACCESO_VIGENCIAS_INSTITUCIONES_EST<T>,<T>ESTATUS<T>,Usuario)=1,entonces,Verdadero

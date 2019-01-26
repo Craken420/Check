@@ -1,0 +1,1677 @@
+Funcional: el campo: ListaAcciones005 esta repetido en el componete MenuPrincipal.dlg/Dialogo del archivo: ..\5000Capacitacion\Reportes MAVI\test\MenuPrincipal_DLG_MAVI.esp
+Funcional: el componente: MenuPrincipal.dlg/Acciones.Config.PanelInformacionConfig esta repetido en al archivo: ..\5000Capacitacion\Reportes MAVI\test\MenuPrincipal_DLG_MAVI.esp
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Mov.Formas no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: ChequeenLote no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramienta.Sincro no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: HERRBUCRED no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramienta.PROPRE no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: DM0128MenuPubliPreSegAut no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: DM0102ASIGPREESP no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramientas.BuroDigital no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones:  no tiene componente
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Paginas VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.CerrarDia VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.VentaSurtirCB VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Produccion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdCentro VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdEstacion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdRuta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.PC VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.PC VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.Otros apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Exp.Otros apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Cta.Otros apunta a un menu inexistente
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.AtnProyectos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ContabilidadAutomatica VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.Espacio VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.Espacios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.FlujoInv VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Ford VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Cubo.Comisiones Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Autotransportes VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Cubo.Autotransportes Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.CR VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.EvaluacionServicio VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.Cambios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.CR VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Chrysler VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.LineasCredito VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.TipoAmortizacion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.TipoTasa VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Capital VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Capital VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.AdmonCreditos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.WMS VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.WMS VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Hasp VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Credito VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Oferta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Riesgos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Venta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Compras VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Inventarios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Cxc VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Cxp VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Nomina VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ARO VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.EventosPerdida VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.FormaVirtual no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.ModuloCentral no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ModuloCentral VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.Web no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Cta.ProspectoExpress no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Exp.Anexos no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Cubo.IntegracionContable no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.FormasExtras no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.SincroSSB no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Paginas no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Usuarios no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Sitios no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.Propre no esta en la listaAcciones
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCredito Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredSucursales Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCreditoMayoreo Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.CxcCFD Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0174EmbarquesPiso Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.eDoc VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.CFDFlex VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigen Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigenEstatus Favor de revisar condicion att Beto
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.ACW00042FichaTecnica apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Test no esta en la listaAcciones
+Funcional: el campo: ListaAcciones005 esta repetido en el componete MenuPrincipal.dlg/Dialogo del archivo: ..\5000Capacitacion\Reportes MAVI\test\MenuPrincipal_DLG_MAVI.esp
+Funcional: el componente: MenuPrincipal.dlg/Acciones.Config.PanelInformacionConfig esta repetido en al archivo: ..\5000Capacitacion\Reportes MAVI\test\MenuPrincipal_DLG_MAVI.esp
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Mov.Formas no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: ChequeenLote no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramienta.Sincro no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: HERRBUCRED no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramienta.PROPRE no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: DM0128MenuPubliPreSegAut no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: DM0102ASIGPREESP no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramientas.BuroDigital no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones:  no tiene componente
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Paginas VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.CerrarDia VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.VentaSurtirCB VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Produccion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdCentro VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdEstacion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdRuta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.PC VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.PC VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.Otros apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Exp.Otros apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Cta.Otros apunta a un menu inexistente
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.AtnProyectos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ContabilidadAutomatica VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.Espacio VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.Espacios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.FlujoInv VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Ford VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Cubo.Comisiones Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Autotransportes VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Cubo.Autotransportes Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.CR VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.EvaluacionServicio VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.Cambios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.CR VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Chrysler VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.LineasCredito VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.TipoAmortizacion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.TipoTasa VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Capital VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Capital VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.AdmonCreditos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.WMS VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.WMS VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Hasp VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Credito VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Oferta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Riesgos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Venta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Compras VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Inventarios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Cxc VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Cxp VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Nomina VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ARO VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.EventosPerdida VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.FormaVirtual no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.ModuloCentral no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ModuloCentral VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.Web no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Cta.ProspectoExpress no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Exp.Anexos no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Cubo.IntegracionContable no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.FormasExtras no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.SincroSSB no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Paginas no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Usuarios no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Sitios no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.Propre no esta en la listaAcciones
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCredito Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredSucursales Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCreditoMayoreo Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.CxcCFD Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0174EmbarquesPiso Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.eDoc VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.CFDFlex VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigen Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigenEstatus Favor de revisar condicion att Beto
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.ACW00042FichaTecnica apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Test no esta en la listaAcciones
+Funcional: el campo: ListaAcciones005 esta repetido en el componete MenuPrincipal.dlg/Dialogo del archivo: ..\5000Capacitacion\Reportes MAVI\test\MenuPrincipal_DLG_MAVI.esp
+Funcional: el componente: MenuPrincipal.dlg/Acciones.Config.PanelInformacionConfig esta repetido en al archivo: ..\5000Capacitacion\Reportes MAVI\test\MenuPrincipal_DLG_MAVI.esp
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Mov.Formas no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: ChequeenLote no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramienta.Sincro no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: HERRBUCRED no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramienta.PROPRE no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: DM0128MenuPubliPreSegAut no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: DM0102ASIGPREESP no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramientas.BuroDigital no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones:  no tiene componente
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Paginas VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.CerrarDia VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.VentaSurtirCB VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Produccion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdCentro VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdEstacion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdRuta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.PC VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.PC VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.Otros apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Exp.Otros apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Cta.Otros apunta a un menu inexistente
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.AtnProyectos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ContabilidadAutomatica VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.Espacio VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.Espacios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.FlujoInv VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Ford VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Cubo.Comisiones Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Autotransportes VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Cubo.Autotransportes Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.CR VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.EvaluacionServicio VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.Cambios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.CR VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Chrysler VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.LineasCredito VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.TipoAmortizacion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.TipoTasa VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Capital VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Capital VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.AdmonCreditos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.WMS VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.WMS VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Hasp VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Credito VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Oferta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Riesgos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Venta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Compras VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Inventarios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Cxc VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Cxp VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Nomina VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ARO VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.EventosPerdida VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.FormaVirtual no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.ModuloCentral no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ModuloCentral VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.Web no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Cta.ProspectoExpress no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Exp.Anexos no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Cubo.IntegracionContable no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.FormasExtras no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.SincroSSB no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Paginas no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Usuarios no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Sitios no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.Propre no esta en la listaAcciones
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCredito Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredSucursales Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCreditoMayoreo Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.CxcCFD Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0174EmbarquesPiso Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.eDoc VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.CFDFlex VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigen Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigenEstatus Favor de revisar condicion att Beto
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.ACW00042FichaTecnica apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Test no esta en la listaAcciones
+Funcional: el campo: ListaAcciones005 esta repetido en el componete MenuPrincipal.dlg/Dialogo del archivo: ..\5000Capacitacion\Reportes MAVI\test\MenuPrincipal_DLG_MAVI.esp
+Funcional: el componente: MenuPrincipal.dlg/Acciones.Config.PanelInformacionConfig esta repetido en al archivo: ..\5000Capacitacion\Reportes MAVI\test\MenuPrincipal_DLG_MAVI.esp
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Mov.Formas no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: ChequeenLote no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramienta.Sincro no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: HERRBUCRED no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramienta.PROPRE no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: DM0128MenuPubliPreSegAut no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: DM0102ASIGPREESP no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramientas.BuroDigital no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones:  no tiene componente
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Paginas VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.CerrarDia VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.VentaSurtirCB VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Produccion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdCentro VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdEstacion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdRuta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.PC VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.PC VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.Otros apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Exp.Otros apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Cta.Otros apunta a un menu inexistente
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.AtnProyectos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ContabilidadAutomatica VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.Espacio VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.Espacios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.FlujoInv VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Ford VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Cubo.Comisiones Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Autotransportes VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Cubo.Autotransportes Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.CR VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.EvaluacionServicio VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.Cambios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.CR VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Chrysler VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.LineasCredito VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.TipoAmortizacion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.TipoTasa VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Capital VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Capital VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.AdmonCreditos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.WMS VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.WMS VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Hasp VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Credito VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Oferta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Riesgos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Venta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Compras VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Inventarios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Cxc VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Cxp VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Nomina VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ARO VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.EventosPerdida VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.FormaVirtual no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.ModuloCentral no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ModuloCentral VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.Web no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Cta.ProspectoExpress no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Exp.Anexos no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Cubo.IntegracionContable no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.FormasExtras no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.SincroSSB no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Paginas no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Usuarios no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Sitios no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.Propre no esta en la listaAcciones
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCredito Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredSucursales Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCreditoMayoreo Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.CxcCFD Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0174EmbarquesPiso Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.eDoc VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.CFDFlex VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigen Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigenEstatus Favor de revisar condicion att Beto
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.ACW00042FichaTecnica apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Test no esta en la listaAcciones
+Funcional: el campo: ListaAcciones005 esta repetido en el componete MenuPrincipal.dlg/Dialogo del archivo: ..\5000Capacitacion\Reportes MAVI\test\MenuPrincipal_DLG_MAVI.esp
+Funcional: el componente: MenuPrincipal.dlg/Acciones.Config.PanelInformacionConfig esta repetido en al archivo: ..\5000Capacitacion\Reportes MAVI\test\MenuPrincipal_DLG_MAVI.esp
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Mov.Formas no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: ChequeenLote no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramienta.Sincro no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: HERRBUCRED no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramienta.PROPRE no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: DM0128MenuPubliPreSegAut no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: DM0102ASIGPREESP no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramientas.BuroDigital no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones:  no tiene componente
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Paginas VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.CerrarDia VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.VentaSurtirCB VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Produccion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdCentro VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdEstacion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdRuta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.PC VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.PC VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.Otros apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Exp.Otros apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Cta.Otros apunta a un menu inexistente
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.AtnProyectos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ContabilidadAutomatica VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.Espacio VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.Espacios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.FlujoInv VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Ford VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Cubo.Comisiones Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Autotransportes VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Cubo.Autotransportes Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.CR VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.EvaluacionServicio VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.Cambios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.CR VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Chrysler VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.LineasCredito VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.TipoAmortizacion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.TipoTasa VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Capital VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Capital VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.AdmonCreditos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.WMS VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.WMS VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Hasp VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Credito VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Oferta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Riesgos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Venta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Compras VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Inventarios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Cxc VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Cxp VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Nomina VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ARO VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.EventosPerdida VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.FormaVirtual no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.ModuloCentral no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ModuloCentral VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.Web no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Cta.ProspectoExpress no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Exp.Anexos no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Cubo.IntegracionContable no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.FormasExtras no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.SincroSSB no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Paginas no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Usuarios no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Sitios no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.Propre no esta en la listaAcciones
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCredito Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredSucursales Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCreditoMayoreo Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.CxcCFD Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0174EmbarquesPiso Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.eDoc VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.CFDFlex VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigen Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigenEstatus Favor de revisar condicion att Beto
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.ACW00042FichaTecnica apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Test no esta en la listaAcciones
+Funcional: el campo: ListaAcciones005 esta repetido en el componete MenuPrincipal.dlg/Dialogo del archivo: ..\5000Capacitacion\Reportes MAVI\test\MenuPrincipal_DLG_MAVI.esp
+Funcional: el componente: MenuPrincipal.dlg/Acciones.Config.PanelInformacionConfig esta repetido en al archivo: ..\5000Capacitacion\Reportes MAVI\test\MenuPrincipal_DLG_MAVI.esp
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Mov.Formas no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: ChequeenLote no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramienta.Sincro no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: HERRBUCRED no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramienta.PROPRE no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: DM0128MenuPubliPreSegAut no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: DM0102ASIGPREESP no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramientas.BuroDigital no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones:  no tiene componente
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Paginas VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.CerrarDia VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.VentaSurtirCB VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Produccion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdCentro VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdEstacion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdRuta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.PC VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.PC VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.Otros apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Exp.Otros apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Cta.Otros apunta a un menu inexistente
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.AtnProyectos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ContabilidadAutomatica VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.Espacio VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.Espacios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.FlujoInv VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Ford VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Cubo.Comisiones Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Autotransportes VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Cubo.Autotransportes Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.CR VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.EvaluacionServicio VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.Cambios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.CR VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Chrysler VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.LineasCredito VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.TipoAmortizacion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.TipoTasa VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Capital VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Capital VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.AdmonCreditos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.WMS VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.WMS VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Hasp VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Credito VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Oferta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Riesgos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Venta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Compras VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Inventarios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Cxc VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Cxp VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Nomina VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ARO VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.EventosPerdida VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.FormaVirtual no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.ModuloCentral no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ModuloCentral VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.Web no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Cta.ProspectoExpress no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Exp.Anexos no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Cubo.IntegracionContable no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.FormasExtras no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.SincroSSB no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Paginas no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Usuarios no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Sitios no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.Propre no esta en la listaAcciones
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCredito Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredSucursales Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCreditoMayoreo Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.CxcCFD Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0174EmbarquesPiso Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.eDoc VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.CFDFlex VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigen Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigenEstatus Favor de revisar condicion att Beto
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.ACW00042FichaTecnica apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Test no esta en la listaAcciones
+Funcional: el campo: ListaAcciones005 esta repetido en el componete MenuPrincipal.dlg/Dialogo del archivo: ..\5000Capacitacion\Reportes MAVI\test\MenuPrincipal_DLG_MAVI.esp
+Funcional: el componente: MenuPrincipal.dlg/Acciones.Config.PanelInformacionConfig esta repetido en al archivo: ..\5000Capacitacion\Reportes MAVI\test\MenuPrincipal_DLG_MAVI.esp
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Mov.Formas no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: ChequeenLote no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramienta.Sincro no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: HERRBUCRED no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramienta.PROPRE no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: DM0128MenuPubliPreSegAut no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: DM0102ASIGPREESP no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramientas.BuroDigital no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones:  no tiene componente
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Paginas VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.CerrarDia VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.VentaSurtirCB VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Produccion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdCentro VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdEstacion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdRuta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.PC VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.PC VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.Otros apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Exp.Otros apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Cta.Otros apunta a un menu inexistente
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.AtnProyectos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ContabilidadAutomatica VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.Espacio VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.Espacios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.FlujoInv VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Ford VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Cubo.Comisiones Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Autotransportes VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Cubo.Autotransportes Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.CR VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.EvaluacionServicio VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.Cambios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.CR VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Chrysler VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.LineasCredito VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.TipoAmortizacion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.TipoTasa VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Capital VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Capital VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.AdmonCreditos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.WMS VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.WMS VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Hasp VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Credito VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Oferta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Riesgos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Venta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Compras VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Inventarios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Cxc VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Cxp VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Nomina VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ARO VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.EventosPerdida VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.FormaVirtual no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.ModuloCentral no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ModuloCentral VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.Web no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Cta.ProspectoExpress no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Exp.Anexos no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Cubo.IntegracionContable no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.FormasExtras no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.SincroSSB no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Paginas no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Usuarios no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Sitios no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.Propre no esta en la listaAcciones
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCredito Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredSucursales Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCreditoMayoreo Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.CxcCFD Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0174EmbarquesPiso Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.eDoc VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.CFDFlex VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigen Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigenEstatus Favor de revisar condicion att Beto
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.ACW00042FichaTecnica apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Test no esta en la listaAcciones
+Funcional: el campo: ListaAcciones005 esta repetido en el componete MenuPrincipal.dlg/Dialogo del archivo: ..\5000Capacitacion\Reportes MAVI\test\MenuPrincipal_DLG_MAVI.esp
+Funcional: el componente: MenuPrincipal.dlg/Acciones.Config.PanelInformacionConfig esta repetido en al archivo: ..\5000Capacitacion\Reportes MAVI\test\MenuPrincipal_DLG_MAVI.esp
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Mov.Formas no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: ChequeenLote no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramienta.Sincro no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: HERRBUCRED no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramienta.PROPRE no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: DM0128MenuPubliPreSegAut no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: DM0102ASIGPREESP no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramientas.BuroDigital no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones:  no tiene componente
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Paginas VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.CerrarDia VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.VentaSurtirCB VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Produccion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdCentro VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdEstacion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdRuta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.PC VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.PC VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.Otros apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Exp.Otros apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Cta.Otros apunta a un menu inexistente
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.AtnProyectos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ContabilidadAutomatica VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.Espacio VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.Espacios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.FlujoInv VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Ford VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Cubo.Comisiones Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Autotransportes VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Cubo.Autotransportes Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.CR VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.EvaluacionServicio VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.Cambios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.CR VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Chrysler VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.LineasCredito VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.TipoAmortizacion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.TipoTasa VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Capital VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Capital VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.AdmonCreditos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.WMS VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.WMS VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Hasp VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Credito VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Oferta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Riesgos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Venta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Compras VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Inventarios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Cxc VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Cxp VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Nomina VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ARO VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.EventosPerdida VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.FormaVirtual no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.ModuloCentral no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ModuloCentral VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.Web no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Cta.ProspectoExpress no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Exp.Anexos no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Cubo.IntegracionContable no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.FormasExtras no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.SincroSSB no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Paginas no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Usuarios no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Sitios no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.Propre no esta en la listaAcciones
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCredito Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredSucursales Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCreditoMayoreo Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.CxcCFD Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0174EmbarquesPiso Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.eDoc VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.CFDFlex VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigen Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigenEstatus Favor de revisar condicion att Beto
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.ACW00042FichaTecnica apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Test no esta en la listaAcciones
+Funcional: el campo: ListaAcciones005 esta repetido en el componete MenuPrincipal.dlg/Dialogo del archivo: ..\5000Capacitacion\Reportes MAVI\test\MenuPrincipal_DLG_MAVI.esp
+Funcional: el componente: MenuPrincipal.dlg/Acciones.Config.PanelInformacionConfig esta repetido en al archivo: ..\5000Capacitacion\Reportes MAVI\test\MenuPrincipal_DLG_MAVI.esp
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Mov.Formas no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: ChequeenLote no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramienta.Sincro no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: HERRBUCRED no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramienta.PROPRE no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: DM0128MenuPubliPreSegAut no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: DM0102ASIGPREESP no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramientas.BuroDigital no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones:  no tiene componente
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Paginas VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.CerrarDia VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.VentaSurtirCB VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Produccion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdCentro VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdEstacion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdRuta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.PC VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.PC VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.Otros apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Exp.Otros apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Cta.Otros apunta a un menu inexistente
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.AtnProyectos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ContabilidadAutomatica VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.Espacio VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.Espacios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.FlujoInv VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Ford VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Cubo.Comisiones Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Autotransportes VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Cubo.Autotransportes Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.CR VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.EvaluacionServicio VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.Cambios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.CR VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Chrysler VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.LineasCredito VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.TipoAmortizacion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.TipoTasa VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Capital VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Capital VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.AdmonCreditos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.WMS VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.WMS VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Hasp VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Credito VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Oferta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Riesgos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Venta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Compras VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Inventarios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Cxc VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Cxp VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Nomina VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ARO VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.EventosPerdida VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.FormaVirtual no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.ModuloCentral no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ModuloCentral VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.Web no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Cta.ProspectoExpress no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Exp.Anexos no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Cubo.IntegracionContable no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.FormasExtras no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.SincroSSB no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Paginas no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Usuarios no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Sitios no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.Propre no esta en la listaAcciones
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCredito Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredSucursales Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCreditoMayoreo Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.CxcCFD Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0174EmbarquesPiso Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.eDoc VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.CFDFlex VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigen Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigenEstatus Favor de revisar condicion att Beto
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.ACW00042FichaTecnica apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Test no esta en la listaAcciones
+Funcional: el campo: ListaAcciones005 esta repetido en el componete MenuPrincipal.dlg/Dialogo del archivo: ..\5000Capacitacion\Reportes MAVI\test\MenuPrincipal_DLG_MAVI.esp
+Funcional: el componente: MenuPrincipal.dlg/Acciones.Config.PanelInformacionConfig esta repetido en al archivo: ..\5000Capacitacion\Reportes MAVI\test\MenuPrincipal_DLG_MAVI.esp
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Mov.Formas no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: ChequeenLote no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramienta.Sincro no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: HERRBUCRED no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramienta.PROPRE no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: DM0128MenuPubliPreSegAut no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: DM0102ASIGPREESP no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramientas.BuroDigital no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones:  no tiene componente
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Paginas VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.CerrarDia VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.VentaSurtirCB VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Produccion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdCentro VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdEstacion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdRuta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.PC VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.PC VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.Otros apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Exp.Otros apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Cta.Otros apunta a un menu inexistente
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.AtnProyectos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ContabilidadAutomatica VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.Espacio VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.Espacios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.FlujoInv VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Ford VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Cubo.Comisiones Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Autotransportes VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Cubo.Autotransportes Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.CR VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.EvaluacionServicio VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.Cambios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.CR VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Chrysler VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.LineasCredito VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.TipoAmortizacion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.TipoTasa VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Capital VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Capital VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.AdmonCreditos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.WMS VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.WMS VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Hasp VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Credito VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Oferta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Riesgos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Venta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Compras VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Inventarios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Cxc VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Cxp VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Nomina VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ARO VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.EventosPerdida VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.FormaVirtual no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.ModuloCentral no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ModuloCentral VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.Web no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Cta.ProspectoExpress no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Exp.Anexos no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Cubo.IntegracionContable no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.FormasExtras no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.SincroSSB no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Paginas no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Usuarios no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Sitios no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.Propre no esta en la listaAcciones
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCredito Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredSucursales Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCreditoMayoreo Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.CxcCFD Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0174EmbarquesPiso Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.eDoc VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.CFDFlex VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigen Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigenEstatus Favor de revisar condicion att Beto
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.ACW00042FichaTecnica apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Test no esta en la listaAcciones
+Funcional: el campo: ListaAcciones005 esta repetido en el componete MenuPrincipal.dlg/Dialogo del archivo: ..\5000Capacitacion\Reportes MAVI\test\MenuPrincipal_DLG_MAVI.esp
+Funcional: el componente: MenuPrincipal.dlg/Acciones.Config.PanelInformacionConfig esta repetido en al archivo: ..\5000Capacitacion\Reportes MAVI\test\MenuPrincipal_DLG_MAVI.esp
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Mov.Formas no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: ChequeenLote no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramienta.Sincro no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: HERRBUCRED no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramienta.PROPRE no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: DM0128MenuPubliPreSegAut no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: DM0102ASIGPREESP no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramientas.BuroDigital no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones:  no tiene componente
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Paginas VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.CerrarDia VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.VentaSurtirCB VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Produccion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdCentro VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdEstacion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdRuta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.PC VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.PC VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.Otros apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Exp.Otros apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Cta.Otros apunta a un menu inexistente
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.AtnProyectos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ContabilidadAutomatica VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.Espacio VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.Espacios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.FlujoInv VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Ford VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Cubo.Comisiones Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Autotransportes VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Cubo.Autotransportes Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.CR VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.EvaluacionServicio VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.Cambios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.CR VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Chrysler VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.LineasCredito VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.TipoAmortizacion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.TipoTasa VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Capital VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Capital VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.AdmonCreditos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.WMS VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.WMS VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Hasp VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Credito VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Oferta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Riesgos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Venta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Compras VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Inventarios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Cxc VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Cxp VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Nomina VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ARO VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.EventosPerdida VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.FormaVirtual no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.ModuloCentral no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ModuloCentral VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.Web no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Cta.ProspectoExpress no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Exp.Anexos no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Cubo.IntegracionContable no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.FormasExtras no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.SincroSSB no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Paginas no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Usuarios no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Sitios no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.Propre no esta en la listaAcciones
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCredito Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredSucursales Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCreditoMayoreo Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.CxcCFD Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0174EmbarquesPiso Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.eDoc VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.CFDFlex VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigen Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigenEstatus Favor de revisar condicion att Beto
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.ACW00042FichaTecnica apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Test no esta en la listaAcciones
+Funcional: el campo: ListaAcciones005 esta repetido en el componete MenuPrincipal.dlg/Dialogo del archivo: ..\5000Capacitacion\Reportes MAVI\test\MenuPrincipal_DLG_MAVI.esp
+Funcional: el componente: MenuPrincipal.dlg/Acciones.Config.PanelInformacionConfig esta repetido en al archivo: ..\5000Capacitacion\Reportes MAVI\test\MenuPrincipal_DLG_MAVI.esp
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Mov.Formas no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: ChequeenLote no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramienta.Sincro no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: HERRBUCRED no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramienta.PROPRE no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: DM0128MenuPubliPreSegAut no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: DM0102ASIGPREESP no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramientas.BuroDigital no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones:  no tiene componente
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Paginas VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.CerrarDia VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.VentaSurtirCB VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Produccion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdCentro VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdEstacion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdRuta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.PC VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.PC VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.Otros apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Exp.Otros apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Cta.Otros apunta a un menu inexistente
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.AtnProyectos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ContabilidadAutomatica VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.Espacio VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.Espacios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.FlujoInv VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Ford VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Cubo.Comisiones Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Autotransportes VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Cubo.Autotransportes Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.CR VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.EvaluacionServicio VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.Cambios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.CR VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Chrysler VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.LineasCredito VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.TipoAmortizacion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.TipoTasa VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Capital VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Capital VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.AdmonCreditos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.WMS VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.WMS VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Hasp VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Credito VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Oferta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Riesgos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Venta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Compras VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Inventarios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Cxc VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Cxp VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Nomina VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ARO VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.EventosPerdida VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.FormaVirtual no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.ModuloCentral no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ModuloCentral VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.Web no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Cta.ProspectoExpress no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Exp.Anexos no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Cubo.IntegracionContable no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.FormasExtras no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.SincroSSB no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Paginas no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Usuarios no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Sitios no esta en la listaAcciones
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.MaviRuta el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ComisionesChoferesMAVI el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.MaviGenerarRuta el nombre es diferente al componente
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.Propre no esta en la listaAcciones
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCredito Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCredito el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredSucursales Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredSucursales el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCreditoMayoreo Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCreditoMayoreo el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.CxcCFD Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0174EmbarquesPiso Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.eDoc VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.CFDFlex VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.MaviFchExigibles el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.DM0213CatalogoVehiculosProveedores el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigen Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigen el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigenEstatus Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigenEstatus el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0240CtaQuebranto el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.ACD00021AsigJefSup el nombre es diferente al componente
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.ACW00042FichaTecnica apunta a un menu inexistente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.ACW00042FichaTecnica el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.SELP el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.Porcsobreprecio el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.PuntoVentaMavi el nombre es diferente al componente
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Test no esta en la listaAcciones
+Funcional: el campo: ListaAcciones005 esta repetido en el componete MenuPrincipal.dlg/Dialogo del archivo: ..\5000Capacitacion\Reportes MAVI\test\MenuPrincipal_DLG_MAVI.esp
+Funcional: el componente: MenuPrincipal.dlg/Acciones.Config.PanelInformacionConfig esta repetido en al archivo: ..\5000Capacitacion\Reportes MAVI\test\MenuPrincipal_DLG_MAVI.esp
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Mov.Formas no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: ChequeenLote no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramienta.Sincro no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: HERRBUCRED no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramienta.PROPRE no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: DM0128MenuPubliPreSegAut no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: DM0102ASIGPREESP no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramientas.BuroDigital no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones:  no tiene componente
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Paginas VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.CerrarDia VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.VentaSurtirCB VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Produccion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdCentro VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdEstacion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdRuta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.PC VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.PC VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.Otros apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Exp.Otros apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Cta.Otros apunta a un menu inexistente
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.AtnProyectos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ContabilidadAutomatica VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.Espacio VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.Espacios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.FlujoInv VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Ford VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Cubo.Comisiones Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Autotransportes VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Cubo.Autotransportes Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.CR VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.EvaluacionServicio VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.Cambios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.CR VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Chrysler VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.LineasCredito VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.TipoAmortizacion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.TipoTasa VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Capital VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Capital VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.AdmonCreditos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.WMS VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.WMS VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Hasp VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Credito VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Oferta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Riesgos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Venta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Compras VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Inventarios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Cxc VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Cxp VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Nomina VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ARO VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.EventosPerdida VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.FormaVirtual no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.ModuloCentral no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ModuloCentral VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.Web no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Cta.ProspectoExpress no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Exp.Anexos no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Cubo.IntegracionContable no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.FormasExtras no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.SincroSSB no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Paginas no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Usuarios no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Sitios no esta en la listaAcciones
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.MaviRuta el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ComisionesChoferesMAVI el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.MaviGenerarRuta el nombre es diferente al componente
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.Propre no esta en la listaAcciones
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCredito Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCredito el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredSucursales Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredSucursales el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCreditoMayoreo Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCreditoMayoreo el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.CxcCFD Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0174EmbarquesPiso Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.eDoc VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.CFDFlex VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.MaviFchExigibles el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.DM0213CatalogoVehiculosProveedores el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigen Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigen el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigenEstatus Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigenEstatus el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0240CtaQuebranto el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.ACD00021AsigJefSup el nombre es diferente al componente
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.ACW00042FichaTecnica apunta a un menu inexistente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.ACW00042FichaTecnica el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.SELP el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.Porcsobreprecio el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.PuntoVentaMavi el nombre es diferente al componente
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Test no esta en la listaAcciones
+Funcional: el campo: ListaAcciones005 esta repetido en el componete MenuPrincipal.dlg/Dialogo del archivo: ..\5000Capacitacion\Reportes MAVI\test\MenuPrincipal_DLG_MAVI.esp
+Funcional: el componente: MenuPrincipal.dlg/Acciones.Config.PanelInformacionConfig esta repetido en al archivo: ..\5000Capacitacion\Reportes MAVI\test\MenuPrincipal_DLG_MAVI.esp
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Mov.Formas no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: ChequeenLote no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramienta.Sincro no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: HERRBUCRED no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramienta.PROPRE no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: DM0128MenuPubliPreSegAut no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: DM0102ASIGPREESP no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramientas.BuroDigital no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones:  no tiene componente
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Paginas VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.CerrarDia VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.VentaSurtirCB VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Produccion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdCentro VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdEstacion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdRuta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.PC VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.PC VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.Otros apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Exp.Otros apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Cta.Otros apunta a un menu inexistente
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.AtnProyectos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ContabilidadAutomatica VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.Espacio VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.Espacios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.FlujoInv VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Ford VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Cubo.Comisiones Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Autotransportes VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Cubo.Autotransportes Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.CR VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.EvaluacionServicio VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.Cambios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.CR VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Chrysler VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.LineasCredito VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.TipoAmortizacion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.TipoTasa VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Capital VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Capital VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.AdmonCreditos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.WMS VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.WMS VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Hasp VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Credito VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Oferta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Riesgos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Venta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Compras VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Inventarios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Cxc VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Cxp VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Nomina VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ARO VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.EventosPerdida VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.FormaVirtual no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.ModuloCentral no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ModuloCentral VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.Web no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Cta.ProspectoExpress no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Exp.Anexos no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Cubo.IntegracionContable no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.FormasExtras no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.SincroSSB no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Paginas no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Usuarios no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Sitios no esta en la listaAcciones
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.MaviRuta el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ComisionesChoferesMAVI el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.MaviGenerarRuta el nombre es diferente al componente
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.Propre no esta en la listaAcciones
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCredito Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCredito el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredSucursales Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredSucursales el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCreditoMayoreo Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCreditoMayoreo el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.CxcCFD Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0174EmbarquesPiso Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.eDoc VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.CFDFlex VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.MaviFchExigibles el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.DM0213CatalogoVehiculosProveedores el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigen Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigen el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigenEstatus Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigenEstatus el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0240CtaQuebranto el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.ACD00021AsigJefSup el nombre es diferente al componente
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.ACW00042FichaTecnica apunta a un menu inexistente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.ACW00042FichaTecnica el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.SELP el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.Porcsobreprecio el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.PuntoVentaMavi el nombre es diferente al componente
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Test no esta en la listaAcciones
+Funcional: el campo: ListaAcciones005 esta repetido en el componete MenuPrincipal.dlg/Dialogo del archivo: ..\5000Capacitacion\Reportes MAVI\test\MenuPrincipal_DLG_MAVI.esp
+Funcional: el componente: MenuPrincipal.dlg/Acciones.Config.PanelInformacionConfig esta repetido en al archivo: ..\5000Capacitacion\Reportes MAVI\test\MenuPrincipal_DLG_MAVI.esp
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Mov.Formas no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: ChequeenLote no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramienta.Sincro no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: HERRBUCRED no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramienta.PROPRE no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: DM0128MenuPubliPreSegAut no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: DM0102ASIGPREESP no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramientas.BuroDigital no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones:  no tiene componente
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Paginas VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.CerrarDia VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.VentaSurtirCB VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Produccion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdCentro VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdEstacion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdRuta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.PC VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.PC VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.Otros apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Exp.Otros apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Cta.Otros apunta a un menu inexistente
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.AtnProyectos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ContabilidadAutomatica VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.Espacio VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.Espacios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.FlujoInv VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Ford VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Cubo.Comisiones Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Autotransportes VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Cubo.Autotransportes Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.CR VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.EvaluacionServicio VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.Cambios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.CR VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Chrysler VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.LineasCredito VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.TipoAmortizacion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.TipoTasa VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Capital VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Capital VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.AdmonCreditos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.WMS VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.WMS VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Hasp VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Credito VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Oferta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Riesgos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Venta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Compras VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Inventarios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Cxc VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Cxp VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Nomina VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ARO VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.EventosPerdida VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.FormaVirtual no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.ModuloCentral no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ModuloCentral VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.Web no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Cta.ProspectoExpress no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Exp.Anexos no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Cubo.IntegracionContable no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.FormasExtras no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.SincroSSB no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Paginas no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Usuarios no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Sitios no esta en la listaAcciones
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.MaviRuta el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ComisionesChoferesMAVI el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.MaviGenerarRuta el nombre es diferente al componente
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.Propre no esta en la listaAcciones
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCredito Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCredito el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredSucursales Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredSucursales el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCreditoMayoreo Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCreditoMayoreo el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.CxcCFD Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0174EmbarquesPiso Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.eDoc VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.CFDFlex VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.MaviFchExigibles el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.DM0213CatalogoVehiculosProveedores el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigen Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigen el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigenEstatus Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigenEstatus el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0240CtaQuebranto el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.ACD00021AsigJefSup el nombre es diferente al componente
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.ACW00042FichaTecnica apunta a un menu inexistente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.ACW00042FichaTecnica el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.SELP el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.Porcsobreprecio el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.PuntoVentaMavi el nombre es diferente al componente
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Test no esta en la listaAcciones
+Funcional: el campo: ListaAcciones005 esta repetido en el componete MenuPrincipal.dlg/Dialogo del archivo: ..\5000Capacitacion\Reportes MAVI\test\MenuPrincipal_DLG_MAVI.esp
+Funcional: el componente: MenuPrincipal.dlg/Acciones.Config.PanelInformacionConfig esta repetido en al archivo: ..\5000Capacitacion\Reportes MAVI\test\MenuPrincipal_DLG_MAVI.esp
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Mov.Formas no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: ChequeenLote no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramienta.Sincro no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: HERRBUCRED no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramienta.PROPRE no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: DM0128MenuPubliPreSegAut no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: DM0102ASIGPREESP no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramientas.BuroDigital no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones:  no tiene componente
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Paginas VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.CerrarDia VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.VentaSurtirCB VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Produccion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdCentro VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdEstacion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdRuta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.PC VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.PC VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.Otros apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Exp.Otros apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Cta.Otros apunta a un menu inexistente
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.AtnProyectos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ContabilidadAutomatica VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.Espacio VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.Espacios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.FlujoInv VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Ford VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Cubo.Comisiones Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Autotransportes VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Cubo.Autotransportes Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.CR VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.EvaluacionServicio VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.Cambios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.CR VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Chrysler VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.LineasCredito VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.TipoAmortizacion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.TipoTasa VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Capital VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Capital VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.AdmonCreditos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.WMS VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.WMS VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Hasp VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Credito VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Oferta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Riesgos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Venta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Compras VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Inventarios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Cxc VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Cxp VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Nomina VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ARO VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.EventosPerdida VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.FormaVirtual no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.ModuloCentral no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ModuloCentral VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.Web no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Cta.ProspectoExpress no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Exp.Anexos no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Cubo.IntegracionContable no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.FormasExtras no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.SincroSSB no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Paginas no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Usuarios no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Sitios no esta en la listaAcciones
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.MaviRuta el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ComisionesChoferesMAVI el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.MaviGenerarRuta el nombre es diferente al componente
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.Propre no esta en la listaAcciones
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCredito Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCredito el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredSucursales Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredSucursales el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCreditoMayoreo Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCreditoMayoreo el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.CxcCFD Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0174EmbarquesPiso Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.eDoc VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.CFDFlex VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.MaviFchExigibles el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.DM0213CatalogoVehiculosProveedores el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigen Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigen el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigenEstatus Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigenEstatus el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0240CtaQuebranto el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.ACD00021AsigJefSup el nombre es diferente al componente
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.ACW00042FichaTecnica apunta a un menu inexistente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.ACW00042FichaTecnica el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.SELP el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.Porcsobreprecio el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.PuntoVentaMavi el nombre es diferente al componente
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Test no esta en la listaAcciones
+Funcional: el campo: ListaAcciones005 esta repetido en el componete MenuPrincipal.dlg/Dialogo del archivo: ..\5000Capacitacion\Reportes MAVI\test\MenuPrincipal_DLG_MAVI.esp
+Funcional: el componente: MenuPrincipal.dlg/Acciones.Config.PanelInformacionConfig esta repetido en al archivo: ..\5000Capacitacion\Reportes MAVI\test\MenuPrincipal_DLG_MAVI.esp
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Mov.Formas no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: ChequeenLote no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramienta.Sincro no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: HERRBUCRED no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramienta.PROPRE no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: DM0128MenuPubliPreSegAut no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: DM0102ASIGPREESP no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones: Herramientas.BuroDigital no tiene componente
+Funcional: en el archivo: {nombreArchivo} en ListaAcciones:  no tiene componente
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Paginas VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.CerrarDia VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.VentaSurtirCB VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Produccion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdCentro VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdEstacion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.ProdRuta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.PC VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.PC VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.Otros apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Exp.Otros apunta a un menu inexistente
+Funcional: en el archivo: {nombreArchivo} en el componente: Cta.Otros apunta a un menu inexistente
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.AtnProyectos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ContabilidadAutomatica VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.Espacio VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.Espacios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.FlujoInv VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Ford VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Cubo.Comisiones Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.Autotransportes VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Autotransportes VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Cubo.Autotransportes Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.CR VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.EvaluacionServicio VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.Cambios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cubo.CR VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Exp.VIN VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Chrysler VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.LineasCredito VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.TipoAmortizacion VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Cta.TipoTasa VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Capital VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Capital VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.AdmonCreditos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.WMS VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.WMS VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Hasp VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Credito VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Oferta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Riesgos VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Venta VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Compras VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Inventarios VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Cxc VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Cxp VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Hist.Nomina VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ARO VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.EventosPerdida VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.FormaVirtual no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.ModuloCentral no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.ModuloCentral VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.Web no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Cta.ProspectoExpress no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Exp.Anexos no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Cubo.IntegracionContable no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Mov.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Config.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.Fiscal no esta en la listaAcciones
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.Fiscal VisibleCondicion retorna falso
+Funcional: en el archivo: {nombreArchivo} en el componente: Mov.FormasExtras no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.SincroSSB no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Paginas no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Usuarios no esta en la listaAcciones
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Sitios no esta en la listaAcciones
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.MaviRuta el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ComisionesChoferesMAVI el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.MaviGenerarRuta el nombre es diferente al componente
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.Propre no esta en la listaAcciones
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCredito Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCredito el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredSucursales Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredSucursales el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCreditoMayoreo Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.ServicasaServicredCreditoMayoreo el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.CxcCFD Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0174EmbarquesPiso Favor de revisar condicion att Beto
+Advertencia: en el archivo: {nombreArchivo} en el componente: Config.eDoc VisibleCondicion retorna falso
+Advertencia: en el archivo: {nombreArchivo} en el componente: Herramienta.CFDFlex VisibleCondicion retorna falso
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.MaviFchExigibles el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.DM0213CatalogoVehiculosProveedores el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigen Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigen el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigenEstatus Favor de revisar condicion att Beto
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0238ConvenInstVigenEstatus el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: EXPDM0240CtaQuebranto el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.ACD00021AsigJefSup el nombre es diferente al componente
+Funcional: en el archivo: {nombreArchivo} en el componente: Herramienta.ACW00042FichaTecnica apunta a un menu inexistente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.ACW00042FichaTecnica el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.SELP el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Herramienta.Porcsobreprecio el nombre es diferente al componente
+Acceso: en el archivo: {nombreArchivo} en el componente: Mov.PuntoVentaMavi el nombre es diferente al componente
+Funcional: en el archivo: {nombreArchivo} en el componente: Web.Test no esta en la listaAcciones

@@ -9,6 +9,7 @@ exports.jsonRegEx = {
     inComponente: new RegExp(/^\[[\W\w]*?(?=(^\[|^$))/gm),
     nombreComponente: new RegExp(/(?<=^\[)\w*\.(tbl|vis|frm|rep|dlg)(?=\/)/gm),
         //[MenuPrincipal.dlg/Acciones.Exp.MaviRefin] -> MenuPrincipal.dlg
+    parentesisAnidados: new RegExp(/(\((?>[^()]+|(?1))*\))/gm),
     'metodos': {
       'limpiarComentarios': texto => {return texto.replace(this.clsComentarios, '')},
       'limpiarRuta':        ruta => { return ruta.replace(this.reducirRuta, '')},
