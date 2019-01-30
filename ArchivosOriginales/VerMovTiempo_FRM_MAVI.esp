@@ -1,0 +1,35 @@
+[VerMovTiempo.frm/Forma]
+PosicionInicialAncho=736
+
+[VerMovTiempo.frm/Lista.Columnas]
+Usuario=105
+
+; ***** integracion de eliminacion de campo VerMovTiempo.Usuario cambio por Jesus Del Toro Andrade para el desarrollo DM0151 Ventas Menudeo dentro del paquete DM0151_19092011. JR 19-Sep-2011 ***** 
+; **** Cambio en listaencaptura que integra campo VerMovTiempo.Usuario para desarrollo DM0151 Ventas Menudeo del paquete DM0151_12072012. JR 12-Jul-2012. **** 
+[VerMovTiempo.frm/Lista]
+;ListaEnCaptura=EstatusNombre<BR>VerMovTiempo.Situacion<BR>Tiempo<BR>TiempoTotal
+ListaEnCaptura=VerMovTiempo.Usuario<BR>EstatusNombre<BR>VerMovTiempo.Situacion<BR>Tiempo<BR>TiempoTotal
+
+
+
+;[VerMovTiempo.frm/Lista.VerMovTiempo.Usuario]
+;Carpeta=Lista
+;Clave=VerMovTiempo.Usuario
+;Editar=S
+;LineaNueva=S
+;ValidaNombre=S
+;3D=S
+;Tamano=10
+;ColorFondo=Blanco
+;ColorFuente=Negro
+
+[VerMovTiempo.frm/Lista.VerMovTiempo.Usuario]
+Carpeta=Lista
+Clave=VerMovTiempo.Usuario
+Editar=S
+LineaNueva=S
+ValidaNombre=S
+3D=S
+Tamano=10
+ColorFondo=Blanco
+ColorFuente=Negro
