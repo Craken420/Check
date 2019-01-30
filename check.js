@@ -1,5 +1,5 @@
 /*** Archivos ***/
-const leerCarpeta = require('./Utilerias/OperadoresArchivos/leerValidarCarpeta')
+const leerCarpeta = require('./Utilerias/OperadoresArchivos/leerCarpeta')
 const separarEsp = require('./Utilerias/OperadoresArchivos/separarCmpIncorrectoEsp')
 
 /*** Operadores de archivos ***/
