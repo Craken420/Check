@@ -1,8 +1,0 @@
-[ActivoFijo.tbl/FechaEmision]
-CondicionEdicion=1=2
-
-[ActivoFijo.tbl/Personal]
-AyudaIgnoraChequeos=S
-ValidacionConCondiciones=N
- 
-[ActivoFijo.tbl/UEN]ValorPorOmision=Sucursal.wUENCondicionEdicion=Falso

@@ -1,66 +1,0 @@
-; *** Ultima Modificacion: 02-Dic-08
-; *** Responsable: Arly Rubio Camacho
-;**** Se modifico: Etiquetas
-
-
-; **** Integracion de campo NoMotor dentro del paquete DM0185_02062012. JR 05-Jun-2012. ****
-; **** Eliminacion de campo NoMotor dentro del paquete DM0185_14062012. JR 16-Jun-2012. ****
-[SerieLoteProp.tbl/Tabla]
-ListaCampos=Propiedades<BR>Extra1<BR>Extra2<BR>Extra3<BR>Fecha1<BR>Fecha2<BR>Fecha3<BR>Factor1<BR>Factor2<BR>Factor3<BR>PedimentoClave<BR>PedimentoRegimen<BR>PedimentoTipo<BR>Vencimiento<BR>ValorDolares<BR>ValorAduana<BR>ValorComercial<BR>AgenteAduanal<BR>Aduana<BR>DTA<BR>IVA<BR>IGI<BR>TieneRectificacion<BR>PedimentoClave2<BR>PedimentoRegimen2<BR>PedimentoTipo2<BR>Vencimiento2<BR>ValorDolares2<BR>ValorAduana2<BR>ValorComercial2<BR>AgenteAduanal2<BR>Aduana2<BR>DTA2<BR>IVA2<BR>IGI2<BR>Clave2<BR>Observaciones
-SQL=SELECT<BR>  Propiedades,<BR>  Extra1,<BR>  Extra2,<BR>  Extra3,<BR>  Fecha1,<BR>  Fecha2,<BR>  Fecha3,<BR>  Factor1,<BR>  Factor2,<BR>  Factor3,<BR>  PedimentoClave,<BR>  PedimentoRegimen,<BR>  ValorDolares,<BR>  ValorAduana,<BR>  ValorComercial,<BR>  AgenteAduanal,<BR>  Aduana,<BR>  DTA,<BR>  IVA,<BR>  IGI,<BR>  PedimentoTipo,<BR>  Vencimiento,<BR>  PedimentoClave2,<BR>  PedimentoRegimen2,<BR>  PedimentoTipo2,<BR>  Vencimiento2,<BR>  ValorDolares2,<BR>  ValorAduana2,<BR>  ValorComercial2,<BR>  AgenteAduanal2,<BR>  Aduana2,<BR>  DTA2,<BR>  IVA2,<BR>  IGI2,<BR>  TieneRectificacion,<BR>  Clave2,<BR>  Observaciones<BR><BR>FROM<BR>  SerieLoteProp
-
-
-;***** Se cambio del nombre del campo de "Clave" a "Cuadro" (ARC 04-Dic-08)****
-;***** Se quito el valor por omision que tenia ARC 05-Dic-08 ****
-[SerieLoteProp.tbl/Propiedades]
-Nombre=Cuadro
-ValorPorOmision=
-
-
-;***** Se cambio del nombre del campo de "Descripcion 1" a "Pedimento" (ARC 04-Dic-08)****
-;***** Se agrego un valor por omisión variable Valida.Pedimento(ARC 05-Dic-08)****
-[SerieLoteProp.tbl/Extra1]
-Nombre=Pedimento
-ValorPorOmision=Valida.Pedimento
-
-
-;***** Se cambio del nombre del campo de "Descripcion 2" a "Color" (ARC 04-Dic-08)****
-;***** Se agrego un valor por omisión variable Valida.Color(ARC 05-Dic-08)****
-[SerieLoteProp.tbl/Extra2]
-Nombre=Color
-ValorPorOmision=Valida.Color
-
-
-
-;***** Se cambio del nombre del campo de "Descripcion 3" a "Modelo" (ARC 04-Dic-08)****
-;***** Se agrego un valor por omisión variable Valida.Modelo(ARC 05-Dic-08)****
-[SerieLoteProp.tbl/Extra3]
-Nombre=Modelo
-ValorPorOmision=Valida.Modelo
-
-
-;***** Se cambio del nombre del campo de "Fecha 2" a "Fecha Aduanal" (ARC 04-Dic-08)****
-;***** Se agrego un valor por omisión variable Valida.FechaAduanal(ARC 05-Dic-08)****
-[SerieLoteProp.tbl/Fecha2]
-Nombre=Fecha Aduanal
-ValorPorOmision=Valida.FechaAduanal
-
-
-;***** Se agrego un valor por omisión variable Valida.Aduana(ARC 05-Dic-08)****
-[SerieLoteProp.tbl/Aduana]
-ValorPorOmision=Valida.Aduana
-
-
-; **** Integracion de campo NoMotor dentro del paquete DM0185_02062012. JR 05-Jun-2012. ****
-; **** Eliminacion de campo NoMotor dentro del paquete DM0185_14062012. JR 14-Jun-2012. ****
-;[SerieLoteProp.tbl/Nomotor]
-;Clave=Nomotor
-;Nombre=Nomotor
-;Visible=S
-;TamanoValidacion=20
-;Tamano=20
-;Mayusculas=S
-
- 
-[SerieLoteProp.tbl/Tabla]ListaCampos.Cambios=Insertar<TAB>Nomotor<TAB>37SQL.Cambios=Insertar<TAB>  Nomotor<TAB>38 
-[SerieLoteProp.tbl/Nomotor]Clave=NomotorNombre=NomotorVisible=STamanoValidacion=20Tamano=20Mayusculas=S

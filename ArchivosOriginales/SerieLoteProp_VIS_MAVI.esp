@@ -1,23 +1,0 @@
-;Se Agrega Campo NoMotor      odcampos    01-Junio-2012
-; **** Eliminacion de campo NoMotor dentro del paquete DM0185_14062012. JR 16-Jun-2012. ****
-[SerieLoteProp.vis/Vista]
-ListaCampos=SerieLoteProp.Propiedades<BR>SerieLoteProp.Extra1<BR>SerieLoteProp.Extra2<BR>SerieLoteProp.Extra3<BR>SerieLoteProp.Fecha1<BR>SerieLoteProp.Fecha2<BR>SerieLoteProp.Fecha3<BR>SerieLoteProp.Factor1<BR>SerieLoteProp.Factor2<BR>SerieLoteProp.Factor3<BR>SerieLoteProp.PedimentoClave<BR>SerieLoteProp.PedimentoRegimen<BR>SerieLoteProp.PedimentoTipo<BR>SerieLoteProp.Vencimiento<BR>SerieLoteProp.ValorDolares<BR>SerieLoteProp.ValorAduana<BR>SerieLoteProp.ValorComercial<BR>SerieLoteProp.AgenteAduanal<BR>SerieLoteProp.Aduana<BR>SerieLoteProp.DTA<BR>SerieLoteProp.IVA<BR>SerieLoteProp.IGI<BR>SerieLoteProp.TieneRectificacion<BR>SerieLoteProp.PedimentoClave2<BR>SerieLoteProp.PedimentoRegimen2<BR>SerieLoteProp.PedimentoTipo2<BR>SerieLoteProp.Vencimiento2<BR>SerieLoteProp.ValorDolares2<BR>SerieLoteProp.ValorA<CONTINUA>
-ListaCampos002=<CONTINUA>duana2<BR>SerieLoteProp.ValorComercial2<BR>SerieLoteProp.AgenteAduanal2<BR>SerieLoteProp.Aduana2<BR>SerieLoteProp.DTA2<BR>SerieLoteProp.IVA2<BR>SerieLoteProp.IGI2<BR>SerieLoteProp.Clave2<BR>SerieLoteProp.Observaciones<BR>Prov.Proveedor<BR>Prov.Nombre<BR>ProvDestino.Proveedor<BR>ProvDestino.Nombre<BR>PedimentoClave.PedimentoClave<BR>PedimentoClave.Temporalidad<BR>PedimentoClave2.PedimentoClave<BR>PedimentoClave2.Temporalidad<BR>Aduana.Aduana<BR>Aduana.Seccion<BR>Aduana.Denominacion<BR>Aduana2.Aduana<BR>Aduana2.Seccion<BR>Aduana2.Denominacion
-
-SQL=SELECT<BR>  SerieLoteProp.Propiedades,<BR>  SerieLoteProp.Extra1,<BR>  SerieLoteProp.Extra2,<BR>  SerieLoteProp.Extra3,<BR>  SerieLoteProp.Fecha1,<BR>  SerieLoteProp.Fecha2,<BR>  SerieLoteProp.Fecha3,<BR>  SerieLoteProp.Factor1,<BR>  SerieLoteProp.Factor2,<BR>  SerieLoteProp.Factor3,<BR>  SerieLoteProp.PedimentoClave,<BR>  SerieLoteProp.PedimentoRegimen,<BR>  SerieLoteProp.PedimentoTipo,<BR>  SerieLoteProp.Vencimiento,<BR>  SerieLoteProp.ValorDolares,<BR>  SerieLoteProp.ValorAduana,<BR>  SerieLoteProp.ValorComercial,<BR>  SerieLoteProp.AgenteAduanal,<BR>  SerieLoteProp.Aduana,<BR>  SerieLoteProp.DTA,<BR>  SerieLoteProp.IVA,<BR>  SerieLoteProp.IGI,<BR>  SerieLoteProp.TieneRectificacion,<BR>  SerieLoteProp.PedimentoClave2,<BR>  SerieLoteProp.PedimentoRegimen2,<BR>  SerieLoteProp.PedimentoTip<CONTINUA>
-SQL002=<CONTINUA>o2,<BR>  SerieLoteProp.Vencimiento2,<BR>  SerieLoteProp.ValorDolares2,<BR>  SerieLoteProp.ValorAduana2,<BR>  SerieLoteProp.ValorComercial2,<BR>  SerieLoteProp.AgenteAduanal2,<BR>  SerieLoteProp.Aduana2,<BR>  SerieLoteProp.DTA2,<BR>  SerieLoteProp.IVA2,<BR>  SerieLoteProp.IGI2,<BR>  SerieLoteProp.Clave2,<BR>  SerieLoteProp.Observaciones,<BR>  Prov.Proveedor,<BR>  Prov.Nombre,<BR>  ProvDestino.Proveedor,<BR>  ProvDestino.Nombre,<BR>  PedimentoClave.PedimentoClave,<BR>  PedimentoClave.Temporalidad,<BR>  PedimentoClave2.PedimentoClave,<BR>  PedimentoClave2.Temporalidad,<BR>  Aduana.Aduana,<BR>  Aduana.Seccion,<BR>  Aduana.Denominacion,<BR>  Aduana2.Aduana,<BR>  Aduana2.Seccion,<BR>  Aduana2.Denominacion<BR><BR>FROM<BR>  SerieLoteProp<BR>  LEFT OUTER JOIN Prov <CONTINUA>
-SQL003=<CONTINUA>ON SerieLoteProp.AgenteAduanal=Prov.Proveedor<BR>  LEFT OUTER JOIN Prov ProvDestino ON SerieLoteProp.AgenteAduanal2=ProvDestino.Proveedor<BR>  LEFT OUTER JOIN PedimentoClave ON SerieLoteProp.PedimentoClave=PedimentoClave.PedimentoClave<BR>  LEFT OUTER JOIN PedimentoClave PedimentoClave2 ON SerieLoteProp.PedimentoClave2=PedimentoClave2.PedimentoClave<BR>  LEFT OUTER JOIN Aduana ON SerieLoteProp.Aduana=Aduana.Aduana<BR>  LEFT OUTER JOIN Aduana Aduana2 ON SerieLoteProp.Aduana2=Aduana2.Aduana
-
-
-; **** Eliminacion de campo NoMotor dentro del paquete DM0185_14062012. JR 16-Jun-2012. ****
-;[SerieLoteProp.vis/SerieLoteProp.Nomotor]
-;Clave=SerieLoteProp.Nomotor
-;Visible=S
-;LigaTabla=SerieLoteProp
-;LigaCampo=Nomotor
-;Ligado=S
-;ClaveBDE=Nomotor
-
- 
-[SerieLoteProp.vis/Vista]ListaCampos.Cambios=Insertar<TAB>SerieLoteProp.Nomotor<TAB>37SQL.Cambios=Insertar<TAB>  SerieLoteProp.Nomotor,<TAB>38 
-[SerieLoteProp.vis/SerieLoteProp.Nomotor]Clave=SerieLoteProp.NomotorVisible=SLigaTabla=SerieLotePropLigaCampo=NomotorLigado=SClaveBDE=Nomotor
