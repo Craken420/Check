@@ -1,16 +1,15 @@
 /*** Archivos ***/
-const leerCarpeta = require('./Utilerias/OperadoresArchivos/leerCarpeta')
+const { leerCarpetaFiltrada } = require('./Utilerias/OperadoresArchivos/readDirOnlyFile')
 const separarEsp = require('./Utilerias/OperadoresArchivos/separarCmpIncorrectoEsp')
 
 /*** Operadores de archivos ***/
-const filtro = require('./Utilerias/OperadoresArchivos/filtrarArchivos')
 const recodificar = require('./Utilerias/Codificacion/contenidoRecodificado')
 
-const carpeta = 'ArchivosOriginales\\'
+const carpeta = 'Testing\\'
 
-leerCarpeta.obtenerArchivos(carpeta)
+leerCarpetaFiltrada(carpeta, ['.esp',])
     .then(archivos => {
-        filtro.filtrarExtension(archivos).forEach(archivo => {
+        archivos.forEach(archivo => {
             separarEsp.crearArchivoCmpAddCmpArchivo(
                 archivo,
                 recodificar.extraerContenidoRecodificado(archivo))
